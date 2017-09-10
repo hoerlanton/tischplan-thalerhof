@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b12636d-0934-43d0-9e11-bbac60639e35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/default.json" afterPath="$PROJECT_DIR$/config/default.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" afterPath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tischplan.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tischplan.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-591">
-              <caret line="214" column="7" lean-forward="false" selection-start-line="214" selection-start-column="7" selection-end-line="214" selection-end-column="7" />
+            <state relative-caret-position="218">
+              <caret line="207" column="9" lean-forward="true" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
               </folding>
@@ -69,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/default.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -159,11 +158,11 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/TracesListElement.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html" />
         <option value="$PROJECT_DIR$/angular-src/src/polyfills.ts" />
         <option value="$PROJECT_DIR$/config/default.json" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
       </list>
     </option>
   </component>
@@ -331,12 +330,12 @@
       <workItem from="1502883978615" duration="3390000" />
       <workItem from="1503043478862" duration="413000" />
       <workItem from="1504947841837" duration="26031000" />
-      <workItem from="1505031823195" duration="4257000" />
+      <workItem from="1505031823195" duration="5506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34091000" />
+    <option name="totallyTimeSpent" value="35340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -628,16 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="214" column="7" lean-forward="false" selection-start-line="214" selection-start-column="7" selection-end-line="214" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -674,6 +663,16 @@
         <state relative-caret-position="45">
           <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="207" column="9" lean-forward="true" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
