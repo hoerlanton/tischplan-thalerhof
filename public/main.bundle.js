@@ -294,35 +294,55 @@ var TischplanComponent = (function () {
         var trace8 = [];
         var trace9 = [];
         var trace10 = [];
-        if (tracesListeElemente[0].data[0].length === 8) {
-            trace1 = tracesListeElemente[0].data[0].concat(tracesListeElemente[0].data[1]);
+        if (this.tracesListeElemente[0].data[0] !== undefined) {
+            if (tracesListeElemente[0].data[0].length === 8) {
+                trace1 = tracesListeElemente[0].data[0].concat(tracesListeElemente[0].data[1]);
+            }
         }
-        if (tracesListeElemente[0].data[1].length === 8) {
-            trace2 = tracesListeElemente[0].data[1].concat(tracesListeElemente[0].data[2]);
+        if (this.tracesListeElemente[0].data[1] !== undefined) {
+            if (tracesListeElemente[0].data[1].length === 8) {
+                trace2 = tracesListeElemente[0].data[1].concat(tracesListeElemente[0].data[2]);
+            }
         }
-        if (tracesListeElemente[0].data[2].length === 8) {
-            trace3 = tracesListeElemente[0].data[2].concat(tracesListeElemente[0].data[3]);
+        if (this.tracesListeElemente[0].data[2] !== undefined) {
+            if (tracesListeElemente[0].data[2].length === 8) {
+                trace3 = tracesListeElemente[0].data[2].concat(tracesListeElemente[0].data[3]);
+            }
         }
-        if (tracesListeElemente[0].data[3].length === 8) {
-            trace4 = tracesListeElemente[0].data[3].concat(tracesListeElemente[0].data[4]);
+        if (this.tracesListeElemente[0].data[3] !== undefined) {
+            if (tracesListeElemente[0].data[3].length === 8) {
+                trace4 = tracesListeElemente[0].data[3].concat(tracesListeElemente[0].data[4]);
+            }
         }
-        if (tracesListeElemente[0].data[4].length === 8) {
-            trace5 = tracesListeElemente[0].data[4].concat(tracesListeElemente[0].data[5]);
+        if (this.tracesListeElemente[0].data[4] !== undefined) {
+            if (tracesListeElemente[0].data[4].length === 8) {
+                trace5 = tracesListeElemente[0].data[4].concat(tracesListeElemente[0].data[5]);
+            }
         }
-        if (tracesListeElemente[0].data[5].length === 8) {
-            trace6 = tracesListeElemente[0].data[5].concat(tracesListeElemente[0].data[6]);
+        if (this.tracesListeElemente[0].data[5] !== undefined) {
+            if (tracesListeElemente[0].data[5].length === 8) {
+                trace6 = tracesListeElemente[0].data[5].concat(tracesListeElemente[0].data[6]);
+            }
         }
-        if (tracesListeElemente[0].data[6].length === 8) {
-            trace7 = tracesListeElemente[0].data[6].concat(tracesListeElemente[0].data[7]);
+        if (this.tracesListeElemente[0].data[6] !== undefined) {
+            if (tracesListeElemente[0].data[6].length === 8) {
+                trace7 = tracesListeElemente[0].data[6].concat(tracesListeElemente[0].data[7]);
+            }
         }
-        if (tracesListeElemente[0].data[7].length === 8) {
-            trace8 = tracesListeElemente[0].data[7].concat(tracesListeElemente[0].data[8]);
+        if (this.tracesListeElemente[0].data[7] !== undefined) {
+            if (tracesListeElemente[0].data[7].length === 8) {
+                trace8 = tracesListeElemente[0].data[7].concat(tracesListeElemente[0].data[8]);
+            }
         }
-        if (tracesListeElemente[0].data[8].length === 8) {
-            trace9 = tracesListeElemente[0].data[8].concat(tracesListeElemente[0].data[9]);
+        if (this.tracesListeElemente[0].data[8] !== undefined) {
+            if (tracesListeElemente[0].data[8].length === 8) {
+                trace9 = tracesListeElemente[0].data[8].concat(tracesListeElemente[0].data[9]);
+            }
         }
-        if (tracesListeElemente[0].data[9].length === 8) {
-            trace10 = tracesListeElemente[0].data[9].concat(tracesListeElemente[0].data[10]);
+        if (this.tracesListeElemente[0].data[9] !== undefined) {
+            if (tracesListeElemente[0].data[9].length === 8) {
+                trace10 = tracesListeElemente[0].data[9].concat(tracesListeElemente[0].data[10]);
+            }
         }
         /*
         this.tracesListeElemente.push(trace2);
