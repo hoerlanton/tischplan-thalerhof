@@ -1,0 +1,27 @@
+{
+  "name": "digitalertischplan",
+  "version": "0.0.1",
+  "description": "Simple table planning tool for restaurants in hotels (PMS PRotel)",
+  "repository": "https://github.com/hoerlanton/digitalerTischplan.git",
+  "homepage": "http://www.servicio.io",
+  "author": "Anton Hoerl <anton@servicio.io>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "csvtojson": "^1.1.7",
+    "express": "^4.15.3",
+    "mongojs": "^2.4.0",
+    "multer": "^1.3.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0"
+  },
+  "main": "app.js",
+  "engines": {
+    "node": ">= 0.4.1"
+  },
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
