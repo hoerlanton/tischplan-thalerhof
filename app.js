@@ -56,7 +56,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     res.send(req.files);
     let uploadedFileName = req.files[0].filename;
     let json = [];
-    csv()
+    csv({noheader:true})
         .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)))
         .on('csv',(csvRow)=>{
         json.push(csvRow);
@@ -64,7 +64,9 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     //console.log("after stringifying: " + csvDatei);
     })
     .on('done', (error)=>{
+
             csvDatei = JSON.stringify(json);
+            console.log(csvDatei);
         if (csvDatei.indexOf("Im Haus NEU nach Zimmer") !== -1) {
             postImHausListeToDB();
         } else if (csvDatei.indexOf("Anreiseliste aktuell") !== -1) {
@@ -72,6 +74,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
         } else {
             postTracesListeToDB();
         }
+        console.log('end')
     });
     //New User is saved in DB, function called in receivedAuthentication - send to index.js /guests REST-FUL API
     function postImHausListeToDB() {

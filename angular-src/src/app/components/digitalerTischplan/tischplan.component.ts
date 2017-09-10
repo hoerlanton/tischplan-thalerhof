@@ -53,11 +53,13 @@ export class TischplanComponent implements OnInit {
         this.tischplanService.getImHausListe()
             .subscribe(imHausListeElemente => {
                 this.imHausListeElemente = imHausListeElemente[0].data;
+                console.log(this.imHausListeElemente);
             });
 
         this.tischplanService.getAnreiseListe()
             .subscribe(anreiseListeElemente => {
                 this.anreiseListeElemente = anreiseListeElemente[0].data;
+              console.log(this.anreiseListeElemente);
             });
 
         this.tischplanService.getTracesListe()
