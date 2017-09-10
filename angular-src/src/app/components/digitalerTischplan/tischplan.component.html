@@ -16,7 +16,8 @@
                 <ul class="nav navbar-nav">
                     <li><img alt="Brand" href="http://www.servicio.io" src="http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png" style="height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;"></li>
                     <li style="text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px"><a href="http://servicio.io/tester-info-2">INFO</a></li>
-                    <button (click)="print()">print</button>
+                    <button (click)="printTables()" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px">Tische Drucken</button>
+                  <button (click)="printPlan()" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px">Tischplan Drucken</button>
                 </ul>
             </div>
             <ul class="nav navbar-nav navbar-right">
@@ -46,9 +47,9 @@
                                                       <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
                                                           <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
                                                               <p><b> Tisch: {{table}} </b><br></p>
-                                                              <div *ngIf=!isbesetzt;>
+                                                              <div *ngIf=isbesetzt;>
                                                                   <div class="placeholder" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">
-                                                                      <p>Im-HAUS-LISTE Element hier hin ziehen</p>
+                                                                      <p>Listen-Element hier hin ziehen</p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -99,13 +100,14 @@
                       <div *ngFor="let anreiseListeElement of anreiseListeElemente">
                           <div class='container' id='container2' [dragula]='"evented-bag"'>
                               <div class="card" id="card2">
-                                  <p> <b>Name:</b> {{anreiseListeElement[19]}}<br>
-                                      <b>Zimmernummer:</b> {{anreiseListeElement[20]}}<br>
-                                      <b>PreisTyp:</b> {{anreiseListeElement[24]}}<br>
+                                  <p> <b>Name:</b> {{anreiseListeElement[20]}}<br>
+                                      <b>Zimmernummer:</b> {{anreiseListeElement[22]}}<br>
+                                      <b>PreisTyp:</b> {{anreiseListeElement[26]}}<br>
                                       <b>Anreise:</b> {{anreiseListeElement[11]}}<br>
-                                      <b>Abreise:</b> {{anreiseListeElement[22]}}<br>
-                                      <b>Personen Anzahl:</b> {{anreiseListeElement[23]}}<br>
-                                      <b>RB/SOU:</b> {{anreiseListeElement[25]}}<br>
+                                      <b>Abreise:</b> {{anreiseListeElement[24]}}<br>
+                                      <b>Personen Anzahl:</b> {{anreiseListeElement[25]}}<br>
+                                      <b>RB/SOU:</b> {{anreiseListeElement[26]}}<br>
+                                      <b>Notiz2:</b> {{anreiseListeElement[27]}}<br>
                                   </p>
                               </div>
                           </div>
@@ -118,12 +120,12 @@
                       <div *ngFor="let tracesListeElement of tracesListeElemente; let t = index;">
                           <div class='container' id='container3' [dragula]='"evented-bag"' >
                             <div class="card" id="card3">
-                              <b>Zimmernummer:</b>{{tracesListeElement[0]}}<br>
-                              <b>Name:</b>{{tracesListeElement[1]}}<br>
-                              <b>Gäste Kategorie:</b>{{tracesListeElement[2]}}<br>
-                              <b>Anreise:</b>{{tracesListeElement[3]}}<br>
-                              <b>Abreise:</b>{{tracesListeElement[5]}}<br>
-                              <b>Trace:</b>{{tracesListeElement[8]}}<br>
+                              <b>Zimmernummer:</b> {{tracesListeElement[0]}}<br>
+                              <b>Name:</b> {{tracesListeElement[1]}}<br>
+                              <b>Gäste Kategorie:</b> {{tracesListeElement[2]}}<br>
+                              <b>Anreise:</b> {{tracesListeElement[3]}}<br>
+                              <b>Abreise:</b> {{tracesListeElement[5]}}<br>
+                              <b>Trace:</b> {{tracesListeElement[8]}}<br>
                             </div>
                           </div>
                       </div>
