@@ -153,7 +153,7 @@
                   </div>
               </div>
             <div id="printSectionId2">
-                <div class="row">
+                <div class="row" style="background-color: #eaf3f3">
                     <div *ngFor="let table of tables; let j = index;">
                         <div *ngFor="let bgColor of bgColors; let i = index;">
                             <div *ngIf="i === j">
@@ -161,7 +161,7 @@
                                     <div *ngIf="g === i">
                                         <div *ngFor="let leftValue of leftValues; let f = index;">
                                             <div *ngIf="f === g">
-                                                <div class="t{{table}}" (click)="moveTable(g, j, f)" [ngStyle]="{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + 0bgColor}">
+                                                <div class="t{{table}}" (click)="moveTable(g, j, f)" [ngStyle]="{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}">
                                                     <div *ngIf="tables[j] !== tables[j+1]">
                                                         <p>{{table}}</p>
                                                     </div>
