@@ -149,7 +149,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n    <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n    <nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <ul class=\"nav navbar-nav\">\n                    <li><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;\"></li>\n                    <li style=\"text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px\"><a href=\"http://servicio.io/tester-info-2\">INFO</a></li>\n                  <button (click)=\"printToCart1('printSectionId1')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px\" class=\"button\">TischInfo Drucken</button>\n                  <button (click)=\"printToCart2('printSectionId2')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px\" class=\"button\">Tischplan Drucken</button>\n                </ul>\n            </div>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><img alt=\"Partner\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png\" style=\"height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 5px;float: right; text-align: right; display:table-cell; vertical-align:middle;\"></li>\n            </ul>\n        </div>\n    </nav>\n\n    <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n        <%= errMsg  %>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"container-fluid\">\n          <div id=\"printSectionId1\">\n              <div class=\"col-md-4\"><h3>Restaurant</h3>\n                  <div class=\"col-xs-12\" style=\"padding: 0px 0px 0px 0px;\">\n                      <div class=\"row1\">\n                          <div class='wrapper' id=\"wrapper\">\n                              <div *ngFor=\"let table of tables; let j = index;\">\n                                  <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                      <div *ngIf=\"i === j\">\n                                          <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                              <div *ngIf=\"h === i\">\n                                                  <div *ngIf=\"tables[j] !== tables[j+1]\">\n                                                      <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                      <button style=\"  float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                                          <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                              <p><b> Tisch: {{table}} </b><br></p>\n                                                              <div *ngIf=isbesetzt;>\n                                                                  <div class=\"placeholder\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">\n                                                                      <p>Listen-Element hier hin ziehen</p>\n                                                                  </div>\n                                                              </div>\n                                                          </div>\n                                                      </div>\n                                                  </div>\n                                              </div>\n                                          </div>\n                                      </div>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n          <div class=\"col-md-4\">\n              <div class=\"csv\"  style=\"border-bottom: solid 20px #0a7a74; width: 105%; height: 150px; padding: 10px 20px 20px 20px\"><h3>CSV-Datei hochladen</h3>\n                  <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n                      <input type=\"file\" style=\"float: left; margin-top: 10px; color: #0a7a74\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                      <button style=\" background-color: #0a7a74; float: right; color:  white\" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">CSV HOCHLADEN</button>\n                  </form>\n              </div>\n              <h3>Im-Haus-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let imHausListeElement of imHausListeElemente\">\n                          <div class='container' id='container1' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card1\">\n                              <p> <b>Name:</b> {{imHausListeElement[23]}}<br>\n                                  <b>Sprache:</b> {{imHausListeElement[25]}}<br>\n                                  <b>Zimmernummer:</b> {{imHausListeElement[26]}}<br>\n                                  <b>PreisTyp:</b> {{imHausListeElement[28]}}<br>\n                                  <b>Anreise:</b> {{imHausListeElement[29]}}<br>\n                                  <b>Abreise:</b> {{imHausListeElement[30]}}<br>\n                                  <b>Personen Anzahl:</b> {{imHausListeElement[31]}}<br>\n                                  <b>RB/SOU:</b> {{imHausListeElement[32]}}<br>\n                                  <b>Notiz2:</b> {{imHausListeElement[33]}}<br>\n                              </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Anreise-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let anreiseListeElement of anreiseListeElemente\">\n                          <div class='container' id='container2' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card2\">\n                                  <p> <b>Name:</b> {{anreiseListeElement[20]}}<br>\n                                      <b>Zimmernummer:</b> {{anreiseListeElement[22]}}<br>\n                                      <b>PreisTyp:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Anreise:</b> {{anreiseListeElement[11]}}<br>\n                                      <b>Abreise:</b> {{anreiseListeElement[24]}}<br>\n                                      <b>Personen Anzahl:</b> {{anreiseListeElement[25]}}<br>\n                                      <b>RB/SOU:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Notiz2:</b> {{anreiseListeElement[27]}}<br>\n                                  </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Traces-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let tracesListeElement of tracesListeElemente; let t = index;\">\n                          <div class='container' id='container3' [dragula]='\"evented-bag\"' >\n                            <div class=\"card\" id=\"card3\">\n                              <b>Zimmernummer:</b> {{tracesListeElement[0]}}<br>\n                              <b>Name:</b> {{tracesListeElement[1]}}<br>\n                              <b>Gäste Kategorie:</b> {{tracesListeElement[2]}}<br>\n                              <b>Anreise:</b> {{tracesListeElement[3]}}<br>\n                              <b>Abreise:</b> {{tracesListeElement[5]}}<br>\n                              <b>Trace:</b> {{tracesListeElement[8]}}<br>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n\n          <div class=\"col-md-6\">\n              <div class=\"row1\" style=\"height: auto\">\n                  <div class=\"col-md-3\"  (click)=\"showSonnbergZirbn()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor1}\">Sonnberg-Zirbn</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showPanorama()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor2}\">Panorama</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showRestaurant()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor3}\">Restaurant</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showWintergarten()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor4}\">Wintergarten</h3>\n                  </div>\n              </div>\n            <div id=\"printSectionId2\">\n                <div class=\"row\">\n                    <div *ngFor=\"let table of tables; let j = index;\">\n                        <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                            <div *ngIf=\"i === j\">\n                                <div *ngFor=\"let topValue of topValues; let g = index;\">\n                                    <div *ngIf=\"g === i\">\n                                        <div *ngFor=\"let leftValue of leftValues; let f = index;\">\n                                            <div *ngIf=\"f === g\">\n                                                <div class=\"t{{table}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'background-color': '#' + bgColor, 'top': topValue + 'px', 'left': leftValue + 'px'}\">\n                                                    <div *ngIf=\"tables[j] !== tables[j+1]\">\n                                                        <p>{{table}}</p>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n          </div>\n        </div>\n    </div>\n</body>\n\n</html>\n\n\n"
+module.exports = "\n<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n    <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n    <nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <ul class=\"nav navbar-nav\">\n                    <li><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;\"></li>\n                    <li style=\"text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px\"><a href=\"http://servicio.io/tester-info-2\">INFO</a></li>\n                  <button (click)=\"printToCart1('printSectionId1')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px\" class=\"button\">TischInfo Drucken</button>\n                  <button (click)=\"printToCart2('printSectionId2')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px\" class=\"button\">Tischplan Drucken</button>\n                </ul>\n            </div>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><img alt=\"Partner\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png\" style=\"height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 5px;float: right; text-align: right; display:table-cell; vertical-align:middle;\"></li>\n            </ul>\n        </div>\n    </nav>\n\n    <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n        <%= errMsg  %>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"container-fluid\">\n          <div id=\"printSectionId1\">\n              <div class=\"col-md-4\"><h3>Restaurant</h3>\n                  <div class=\"col-xs-12\" style=\"padding: 0px 0px 0px 0px;\">\n                      <div class=\"row1\">\n                          <div class='wrapper' id=\"wrapper\">\n                              <div *ngFor=\"let table of tables; let j = index;\">\n                                  <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                      <div *ngIf=\"i === j\">\n                                          <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                              <div *ngIf=\"h === i\">\n                                                  <div *ngIf=\"tables[j] !== tables[j+1]\">\n                                                      <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                      <button style=\"  float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                                          <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                              <p><b> Tisch: {{table}} </b><br></p>\n                                                                <div *ngIf=isbesetzt;>\n\n                                                                  <div *ngFor=\"let placeholder of placeholders; let p = index\" (click)=\"placeholderHide(p)\">\n                                                                    <div *ngIf=\"p === h\">\n                                                                      <div *ngIf=placeholder;>\n                                                                        <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                                      </div>\n                                                                    </div>\n                                                                  </div>\n                                                                </div>\n                                                          </div>\n                                                      </div>\n                                                  </div>\n                                              </div>\n                                          </div>\n                                      </div>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n          <div class=\"col-md-4\">\n              <div class=\"csv\"  style=\"border-bottom: solid 20px #0a7a74; width: 105%; height: 150px; padding: 10px 20px 20px 20px\"><h3>CSV-Datei hochladen</h3>\n                  <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n                      <input type=\"file\" style=\"float: left; margin-top: 10px; color: #0a7a74\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                      <button style=\" background-color: #0a7a74; float: right; color:  white\" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">CSV HOCHLADEN</button>\n                  </form>\n              </div>\n              <h3>Im-Haus-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let imHausListeElement of imHausListeElemente\">\n                          <div class='container' id='container1' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card1\">\n                              <p> <b>Name:</b> {{imHausListeElement[23]}}<br>\n                                  <b>Sprache:</b> {{imHausListeElement[25]}}<br>\n                                  <b>Zimmernummer:</b> {{imHausListeElement[26]}}<br>\n                                  <b>PreisTyp:</b> {{imHausListeElement[28]}}<br>\n                                  <b>Anreise:</b> {{imHausListeElement[29]}}<br>\n                                  <b>Abreise:</b> {{imHausListeElement[30]}}<br>\n                                  <b>Personen Anzahl:</b> {{imHausListeElement[31]}}<br>\n                                  <b>RB/SOU:</b> {{imHausListeElement[32]}}<br>\n                                  <b>Notiz2:</b> {{imHausListeElement[33]}}<br>\n                              </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Anreise-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let anreiseListeElement of anreiseListeElemente\">\n                          <div class='container' id='container2' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card2\">\n                                  <p> <b>Name:</b> {{anreiseListeElement[20]}}<br>\n                                      <b>Zimmernummer:</b> {{anreiseListeElement[22]}}<br>\n                                      <b>PreisTyp:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Anreise:</b> {{anreiseListeElement[11]}}<br>\n                                      <b>Abreise:</b> {{anreiseListeElement[24]}}<br>\n                                      <b>Personen Anzahl:</b> {{anreiseListeElement[25]}}<br>\n                                      <b>RB/SOU:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Notiz2:</b> {{anreiseListeElement[27]}}<br>\n                                  </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Traces-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let tracesListeElement of tracesListeElemente; let t = index;\">\n                          <div class='container' id='container3' [dragula]='\"evented-bag\"' >\n                            <div class=\"card\" id=\"card3\">\n                              <b>Zimmernummer:</b> {{tracesListeElement[0]}}<br>\n                              <b>Name:</b> {{tracesListeElement[1]}}<br>\n                              <b>Gäste Kategorie:</b> {{tracesListeElement[2]}}<br>\n                              <b>Anreise:</b> {{tracesListeElement[3]}}<br>\n                              <b>Abreise:</b> {{tracesListeElement[5]}}<br>\n                              <b>Trace:</b> {{tracesListeElement[8]}}<br>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n\n          <div class=\"col-md-6\">\n              <div class=\"row1\" style=\"height: auto\">\n                  <div class=\"col-md-3\"  (click)=\"showSonnbergZirbn()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor1}\">Sonnberg-Zirbn</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showPanorama()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor2}\">Panorama</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showRestaurant()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor3}\">Restaurant</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showWintergarten()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor4}\">Wintergarten</h3>\n                  </div>\n              </div>\n            <div id=\"printSectionId2\">\n                <div class=\"row\">\n                    <div *ngFor=\"let table of tables; let j = index;\">\n                        <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                            <div *ngIf=\"i === j\">\n                                <div *ngFor=\"let topValue of topValues; let g = index;\">\n                                    <div *ngIf=\"g === i\">\n                                        <div *ngFor=\"let leftValue of leftValues; let f = index;\">\n                                            <div *ngIf=\"f === g\">\n                                                <div class=\"t{{table}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'background-color': '#' + bgColor, 'top': topValue + 'px', 'left': leftValue + 'px'}\">\n                                                    <div *ngIf=\"tables[j] !== tables[j+1]\">\n                                                        <p>{{table}}</p>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n          </div>\n        </div>\n    </div>\n</body>\n\n</html>\n\n\n"
 
 /***/ }),
 
@@ -189,6 +189,7 @@ var TischplanComponent = (function () {
         this.element = element;
         this.renderer = renderer;
         this.tracesListeElemente = [];
+        this.placeholders = [];
         this.filesToUpload = [];
         this.isDropped = [];
         var DomBaseElement = this.element.nativeElement;
@@ -211,13 +212,7 @@ var TischplanComponent = (function () {
             //this.tracesListeElemente = tracesListeElemente[0].data;
             _this.formatTracesListeElements(tracesListeElemente);
         });
-        /*
-        function filterTracesListeElemente(tracesListeDataElemente) {
-            console.log(tracesListeDataElemente);
-        }
-        */
-        //92
-        //this.tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525];
+        this.placeholders = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
         this.bgColors = ['ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff', 'ffffff'];
         this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
         this.isDropped = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
@@ -447,8 +442,16 @@ var TischplanComponent = (function () {
             this.isBesetzt[h] = true;
         }
     };
+    TischplanComponent.prototype.placeholderHide = function (p) {
+        if (this.placeholders[p] === true) {
+            this.placeholders[p] = false;
+        }
+        else {
+            this.placeholders[p] = true;
+        }
+    };
     TischplanComponent.prototype.showSonnbergZirbn = function () {
-        console.log("Hoi!");
+        console.log("showSonnbergZirbn!");
         this.topValues = [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
         this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170, 50, 50, 50, 50, 200,];
         this.tables = [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58];
@@ -472,9 +475,9 @@ var TischplanComponent = (function () {
         }
     };
     TischplanComponent.prototype.showPanorama = function () {
-        console.log("Hoi!");
-        this.topValues = [440, 440, 440, 440, 440, 440, 440, 340, 280, 220, 160, 160, 220, 280, 340, 340, 280, 220, 160, 340, 280, 220, 160, 160, 220, 280, 340, 400, 460, 520, 580, 640];
-        this.leftValues = [220, 280, 340, 400, 460, 520, 580, 580, 580, 580, 580, 460, 460, 460, 460, 340, 340, 340, 340, 220, 220, 220, 220, 60, 60, 60, 60, 60, 60, 60, 60, 60];
+        console.log("showPanorama!");
+        this.topValues = [440, 440, 440, 440, 440, 440, 440, 340, 280, 220, 160, 160, 220, 280, 340, 340, 280, 220, 160, 340, 280, 220, 160, 160, 220, 280, 340, 400, 460, 520];
+        this.leftValues = [220, 280, 340, 400, 460, 520, 580, 580, 580, 580, 580, 460, 460, 460, 460, 340, 340, 340, 340, 220, 220, 220, 220, 60, 60, 60, 60, 60, 60, 60];
         this.tables = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89];
         if (this.buttonBgColor2 === "eaf3f3") {
             this.buttonBgColor2 = "0a7a74";
@@ -496,7 +499,7 @@ var TischplanComponent = (function () {
         }
     };
     TischplanComponent.prototype.showRestaurant = function () {
-        console.log("Hoi!");
+        console.log("showRestaurant!");
         this.topValues = [500, 500, 500, 500, 350, 350, 350, 200, 200, 200, 200, 200, 300, 400, 500, 500, 350];
         this.leftValues = [60, 120, 180, 240, 120, 180, 240, 60, 180, 240, 340, 440, 440, 440, 440, 340, 340];
         this.tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -520,7 +523,7 @@ var TischplanComponent = (function () {
         }
     };
     TischplanComponent.prototype.showWintergarten = function () {
-        console.log("Hoi!");
+        console.log("showWintergarten!");
         this.topValues = [115, 115, 115, 115, 215, 215, 420, 460, 530, 530, 460, 420, 350, 420, 380, 380, 290, 280, 230, 180, 130, 130, 180, 115, 180];
         this.leftValues = [420, 500, 590, 680, 590, 690, 590, 640, 630, 560, 530, 400, 340, 340, 280, 200, 150, 110, 70, 50, 40, 150, 260, 300, 330];
         this.tables = [501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525];
@@ -544,51 +547,381 @@ var TischplanComponent = (function () {
         }
     };
     TischplanComponent.prototype.moveTable = function (g, j, f) {
-        console.log("HELLO");
-        console.log(j);
+        console.log("moveTable clicked");
+        console.log(g, j, f + "-" + this.leftValues[f] + "-" + this.topValues[g]);
+        //Sonnberg-Zirbn
+        //50
         if (g === 10 && this.topValues[g] === 430) {
             this.topValues[g] = 400;
             this.tables.splice(j + 1, 1, 50);
-            console.log(this.tables);
         }
         else if (g === 10 && this.topValues[g] === 400) {
             this.topValues[g] = 430;
             this.tables.splice(j + 1, 1, 51);
         }
-        console.log("HELLO");
-        console.log(g, j, f + this.leftValues[f] + this.topValues[g]);
+        //52
         if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
             this.topValues[g] = 280;
             this.leftValues[f] = 200;
             this.tables.splice(j + 1, 1, 52);
-            console.log(this.tables);
         }
         else if (g === 12 && this.leftValues[f] === 200 && this.topValues[g] === 280) {
             this.leftValues[f] = 230;
             this.topValues[g] = 280;
             this.tables.splice(j + 1, 1, 53);
         }
+        //54
         if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 320) {
             this.topValues[g] = 290;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 54);
-            console.log(this.tables);
         }
         else if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 290) {
             this.topValues[g] = 320;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 55);
         }
+        //56
         if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 200) {
             this.topValues[g] = 170;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 56);
-            console.log(this.tables);
         }
         else if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 170) {
             this.topValues[g] = 200;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 57);
+        }
+        //Panorama Restaurant
+        //60
+        if (g === 0 && this.leftValues[f] === 220 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 250;
+            this.tables.splice(j + 1, 1, 60);
+        }
+        else if (g === 0 && this.leftValues[f] === 250 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 61);
+        }
+        //61
+        if (g === 1 && this.leftValues[f] === 280 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 310;
+            this.tables.splice(j + 1, 1, 61);
+        }
+        else if (g === 1 && this.leftValues[f] === 310 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 280;
+            this.tables.splice(j + 1, 1, 62);
+        }
+        //62
+        if (g === 2 && this.leftValues[f] === 340 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 370;
+            this.tables.splice(j + 1, 1, 62);
+        }
+        else if (g === 2 && this.leftValues[f] === 370 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 63);
+        }
+        //63
+        if (g === 3 && this.leftValues[f] === 400 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 430;
+            this.tables.splice(j + 1, 1, 63);
+        }
+        else if (g === 3 && this.leftValues[f] === 430 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 400;
+            this.tables.splice(j + 1, 1, 64);
+        }
+        //64
+        if (g === 4 && this.leftValues[f] === 460 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 490;
+            this.tables.splice(j + 1, 1, 64);
+        }
+        else if (g === 4 && this.leftValues[f] === 490 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 65);
+        }
+        //65
+        if (g === 5 && this.leftValues[f] === 520 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 550;
+            this.tables.splice(j + 1, 1, 65);
+        }
+        else if (g === 5 && this.leftValues[f] === 550 && this.topValues[g] === 440) {
+            this.topValues[g] = 440;
+            this.leftValues[f] = 520;
+            this.tables.splice(j + 1, 1, 66);
+        }
+        //67
+        if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 340) {
+            this.topValues[g] = 310;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 67);
+        }
+        else if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 310) {
+            this.topValues[g] = 340;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 68);
+        }
+        //68
+        if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 280) {
+            this.topValues[g] = 250;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 68);
+        }
+        else if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 250) {
+            this.topValues[g] = 280;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 69);
+        }
+        //69
+        if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 220) {
+            this.topValues[g] = 190;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 69);
+        }
+        else if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 190) {
+            this.topValues[g] = 220;
+            this.leftValues[f] = 580;
+            this.tables.splice(j + 1, 1, 70);
+        }
+        //71
+        if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 160) {
+            this.topValues[g] = 190;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 71);
+        }
+        else if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 190) {
+            this.topValues[g] = 160;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 72);
+        }
+        //72
+        if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 220) {
+            this.topValues[g] = 250;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 72);
+        }
+        else if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 250) {
+            this.topValues[g] = 220;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 73);
+        }
+        //73
+        if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 280) {
+            this.topValues[g] = 310;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 73);
+        }
+        else if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 310) {
+            this.topValues[g] = 280;
+            this.leftValues[f] = 460;
+            this.tables.splice(j + 1, 1, 74);
+        }
+        //75
+        if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 340) {
+            this.topValues[g] = 310;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 75);
+        }
+        else if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 310) {
+            this.topValues[g] = 340;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 76);
+        }
+        //76
+        if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 280) {
+            this.topValues[g] = 250;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 76);
+        }
+        else if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 250) {
+            this.topValues[g] = 280;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 77);
+        }
+        //77
+        if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 220) {
+            this.topValues[g] = 190;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 77);
+        }
+        else if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 190) {
+            this.topValues[g] = 220;
+            this.leftValues[f] = 340;
+            this.tables.splice(j + 1, 1, 78);
+        }
+        //79
+        if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 340) {
+            this.topValues[g] = 310;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 79);
+        }
+        else if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 310) {
+            this.topValues[g] = 340;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 80);
+        }
+        //80
+        if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 280) {
+            this.topValues[g] = 250;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 80);
+        }
+        else if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 250) {
+            this.topValues[g] = 280;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 81);
+        }
+        //81
+        if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 220) {
+            this.topValues[g] = 190;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 81);
+        }
+        else if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 190) {
+            this.topValues[g] = 220;
+            this.leftValues[f] = 220;
+            this.tables.splice(j + 1, 1, 82);
+        }
+        //83
+        if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 160) {
+            this.topValues[g] = 190;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 83);
+        }
+        else if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 190) {
+            this.topValues[g] = 160;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 84);
+        }
+        //84
+        if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 220) {
+            this.topValues[g] = 250;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 84);
+        }
+        else if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 250) {
+            this.topValues[g] = 220;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 85);
+        }
+        //85
+        if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 280) {
+            this.topValues[g] = 310;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 85);
+        }
+        else if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 310) {
+            this.topValues[g] = 280;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 86);
+        }
+        //86
+        if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 340) {
+            this.topValues[g] = 370;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 86);
+        }
+        else if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 370) {
+            this.topValues[g] = 340;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 87);
+        }
+        //87
+        if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 400) {
+            this.topValues[g] = 430;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 87);
+        }
+        else if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 430) {
+            this.topValues[g] = 400;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 88);
+        }
+        //88
+        if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 460) {
+            this.topValues[g] = 490;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 88);
+        }
+        else if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 490) {
+            this.topValues[g] = 460;
+            this.leftValues[f] = 60;
+            this.tables.splice(j + 1, 1, 89);
+        }
+        //9
+        if (g === 8 && this.leftValues[f] === 180 && this.topValues[g] === 200) {
+            this.topValues[g] = 200;
+            this.leftValues[f] = 210;
+            this.tables.splice(j + 1, 1, 9);
+        }
+        else if (g === 8 && this.leftValues[f] === 210 && this.topValues[g] === 200) {
+            this.topValues[g] = 200;
+            this.leftValues[f] = 180;
+            this.tables.splice(j + 1, 1, 10);
+        }
+        //501
+        if (g === 0 && this.leftValues[f] === 420 && this.topValues[g] === 115) {
+            this.topValues[g] = 115;
+            this.leftValues[f] = 470;
+            this.tables.splice(j + 1, 1, 501);
+        }
+        else if (g === 0 && this.leftValues[f] === 470 && this.topValues[g] === 115) {
+            this.topValues[g] = 115;
+            this.leftValues[f] = 420;
+            this.tables.splice(j + 1, 1, 502);
+        }
+        //503
+        if (g === 2 && this.leftValues[f] === 590 && this.topValues[g] === 115) {
+            this.topValues[g] = 115;
+            this.leftValues[f] = 640;
+            this.tables.splice(j + 1, 1, 503);
+        }
+        else if (g === 2 && this.leftValues[f] === 640 && this.topValues[g] === 115) {
+            this.topValues[g] = 115;
+            this.leftValues[f] = 590;
+            this.tables.splice(j + 1, 1, 504);
+        }
+        //505
+        if (g === 4 && this.leftValues[f] === 590 && this.topValues[g] === 215) {
+            this.topValues[g] = 215;
+            this.leftValues[f] = 640;
+            this.tables.splice(j + 1, 1, 505);
+        }
+        else if (g === 4 && this.leftValues[f] === 640 && this.topValues[g] === 215) {
+            this.topValues[g] = 215;
+            this.leftValues[f] = 590;
+            this.tables.splice(j + 1, 1, 506);
+        }
+        //515
+        if (g === 14 && this.leftValues[f] === 280 && this.topValues[g] === 380) {
+            this.topValues[g] = 380;
+            this.leftValues[f] = 240;
+            this.tables.splice(j + 1, 1, 515);
+        }
+        else if (g === 14 && this.leftValues[f] === 240 && this.topValues[g] === 380) {
+            this.topValues[g] = 380;
+            this.leftValues[f] = 280;
+            this.tables.splice(j + 1, 1, 516);
+        }
+        //523
+        if (g === 23 && this.leftValues[f] === 300 && this.topValues[g] === 115) {
+            this.topValues[g] = 130;
+            this.leftValues[f] = 260;
+            this.tables.splice(j, 1, 523);
+        }
+        else if (g === 23 && this.leftValues[f] === 260 && this.topValues[g] === 130) {
+            this.topValues[g] = 115;
+            this.leftValues[f] = 300;
+            this.tables.splice(j, 1, 524);
         }
     };
     TischplanComponent.prototype.printToCart1 = function (printSectionId1) {

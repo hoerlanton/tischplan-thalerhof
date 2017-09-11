@@ -46,11 +46,15 @@
                                                       <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
                                                           <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
                                                               <p><b> Tisch: {{table}} </b><br></p>
-                                                              <div *ngIf=isbesetzt;>
-                                                                  <div class="placeholder" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">
-                                                                      <p>Listen-Element hier hin ziehen</p>
+                                                                <div *ngIf=isbesetzt>
+                                                                  <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                                    <div *ngIf="p === h">
+                                                                      <div *ngIf=placeholder;>
+                                                                        <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
+                                                                      </div>
+                                                                    </div>
                                                                   </div>
-                                                              </div>
+                                                                </div>
                                                           </div>
                                                       </div>
                                                   </div>
