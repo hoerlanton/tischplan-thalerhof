@@ -42,21 +42,21 @@
                                           <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
                                               <div *ngIf="h === i">
                                                   <div *ngIf="tables[j] !== tables[j+1]">
-                                                      <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': '#' + bgColor}">
-                                                      <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
-                                                        <div class="table" [ngStyle]="{'background-color': '#' + bgColor}" >
-                                                            <p><b> Tisch: {{table}} </b><br></p>
-                                                              <div *ngIf=isbesetzt>
-                                                                <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
-                                                                  <div *ngIf="p === h">
-                                                                    <div *ngIf=placeholder;>
-                                                                      <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
-                                                                    </div>
-                                                                  </div>
-                                                                </div>
+                                                    <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': '#' + bgColor}">
+                                                    <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                                      <div class="table" [ngStyle]="{'background-color': '#' + bgColor}" >
+                                                        <p><b> Tisch: {{table}} </b><br></p>
+                                                        <div *ngIf=isbesetzt>
+                                                          <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                            <div *ngIf="p === h">
+                                                              <div *ngIf=placeholder;>
+                                                                <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
                                                               </div>
+                                                            </div>
+                                                          </div>
                                                         </div>
                                                       </div>
+                                                    </div>
                                                   </div>
                                               </div>
                                           </div>
@@ -161,7 +161,7 @@
                                     <div *ngIf="g === i">
                                         <div *ngFor="let leftValue of leftValues; let f = index;">
                                             <div *ngIf="f === g">
-                                                <div class="t{{table}}" (click)="moveTable(g, j, f)" [ngStyle]="{'background-color': '#' + bgColor, 'top': topValue + 'px', 'left': leftValue + 'px'}">
+                                                <div class="t{{table}}" (click)="moveTable(g, j, f)" [ngStyle]="{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + 0bgColor}">
                                                     <div *ngIf="tables[j] !== tables[j+1]">
                                                         <p>{{table}}</p>
                                                     </div>
