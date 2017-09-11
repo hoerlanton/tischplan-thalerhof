@@ -44,7 +44,8 @@
                                                   <div *ngIf="tables[j] !== tables[j+1]">
                                                       <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': '#' + bgColor}">
                                                       <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
-                                                          <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
+
+                                                        <div class="table" [ngStyle]="{'background-color': '#' + bgColor}" >
                                                             <p><b> Tisch: {{table}} </b><br></p>
                                                               <div *ngIf=isbesetzt>
                                                                 <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
