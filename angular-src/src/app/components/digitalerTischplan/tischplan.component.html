@@ -157,7 +157,7 @@
                                     <div *ngIf="g === i">
                                         <div *ngFor="let leftValue of leftValues; let f = index;">
                                             <div *ngIf="f === g">
-                                                <div class="t{{table}}" (click)="moveTable(g, j)" [ngStyle]="{'background-color': '#' + bgColor, 'top': topValue + 'px', 'left': leftValue + 'px'}">
+                                                <div class="t{{table}}" (click)="moveTable(g, j, f)" [ngStyle]="{'background-color': '#' + bgColor, 'top': topValue + 'px', 'left': leftValue + 'px'}">
                                                     <div *ngIf="tables[j] !== tables[j+1]">
                                                         <p>{{table}}</p>
                                                     </div>

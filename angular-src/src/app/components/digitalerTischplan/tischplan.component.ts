@@ -330,9 +330,9 @@ export class TischplanComponent implements OnInit {
     showSonnbergZirbn() {
         console.log("Hoi!");
 
-        this.topValues = [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
-        this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170, 50, 50, 50, 50, 200,];
-        this.tables = [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58];
+        this.topValues =  [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
+        this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170,  50,  50,  50,  50, 200,];
+        this.tables =     [40,   41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,  57,  58];
 
         if (this.buttonBgColor1 === "eaf3f3") {
             this.buttonBgColor1 = "0a7a74";
@@ -422,20 +422,63 @@ export class TischplanComponent implements OnInit {
         }
     }
 
-    moveTable(g, j) {
+    moveTable(g, j, f) {
         console.log("HELLO");
         console.log(j);
 
-        if (g === 0 && this.topValues[g] === 430) {
+        if (g === 10 && this.topValues[g] === 430) {
             this.topValues[g] = 400;
             this.tables.splice(j + 1, 1, 50);
 
             console.log(this.tables)
 
-        } else if (g === 0 && this.topValues[g] === 400) {
+        } else if (g === 10 && this.topValues[g] === 400) {
             this.topValues[g] = 430;
             this.tables.splice(j + 1, 1, 51);
         }
+
+      console.log("HELLO");
+      console.log(g, j, f + this.leftValues[f] + this.topValues[g]);
+
+      if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
+        this.topValues[g] = 280;
+        this.leftValues[f] = 200;
+        this.tables.splice(j + 1, 1, 52);
+
+        console.log(this.tables)
+
+      } else if (g === 12 && this.leftValues[f] === 200 && this.topValues[g] === 280) {
+        this.leftValues[f] = 230;
+        this.topValues[g] = 280;
+        this.tables.splice(j + 1, 1, 53);
+      }
+
+      if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 320) {
+        this.topValues[g] = 290;
+        this.leftValues[f] = 50;
+        this.tables.splice(j + 1, 1, 54);
+
+        console.log(this.tables)
+
+      } else if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 290) {
+        this.topValues[g] = 320;
+        this.leftValues[f] = 50;
+        this.tables.splice(j + 1, 1, 55);
+      }
+
+
+      if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 200) {
+        this.topValues[g] = 170;
+        this.leftValues[f] = 50;
+        this.tables.splice(j + 1, 1, 56);
+
+        console.log(this.tables)
+
+      } else if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 170) {
+        this.topValues[g] = 200;
+        this.leftValues[f] = 50;
+        this.tables.splice(j + 1, 1, 57);
+      }
     }
 
   printToCart1(printSectionId1: string) {
