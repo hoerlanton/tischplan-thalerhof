@@ -15,8 +15,8 @@
                 <ul class="nav navbar-nav">
                     <li><img alt="Brand" href="http://www.servicio.io" src="http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png" style="height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;"></li>
                     <li style="text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px; margin-right: 20px; background-color: #eaf3f3; color: #FFFFFF;"><a href="http://servicio.io/tester-info-3-2">INFO</a></li>
-                  <button (click)="printToCart1('printSectionId1')" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px" class="button">TischInfo Drucken</button>
-                  <button (click)="printToCart2('printSectionId2')" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px" class="button">Tischplan Drucken</button>
+                  <button (click)="printToCart1('printSectionId1')" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px" class="button">Tisch Übersicht Drucken</button>
+                  <button (click)="printToCart2('printSectionId2')" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 20px" class="button">Tisch Plan Drucken</button>
                 </ul>
             </div>
             <ul class="nav navbar-nav navbar-right">
@@ -70,7 +70,7 @@
           </div>
 
           <div class="col-md-4">
-              <div class="csv"  style="border-bottom: solid 20px #0a7a74; width: 105%; height: 150px; padding: 10px 20px 20px 20px"><h3>CSV-Datei hochladen</h3>
+              <div class="csv"  style="border-bottom: solid 20px #0a7a74; width: 110%; height: 150px; padding: 10px 20px 20px 20px"><h3>CSV-Datei hochladen</h3>
                   <form class="SendMessage" (submit)="sendMessage($event)">
                       <input type="file" style="float: left; margin-top: 10px; color: #0a7a74" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
                       <button style=" background-color: #0a7a74; float: right; color:  white" type="button" class="btn btn-send" (click)="upload()">CSV HOCHLADEN</button>
@@ -137,8 +137,8 @@
           </div>
 
 
-          <div class="col-md-6">
-              <div class="row1" style="height: auto">
+          <div class="col-md-6"><h3>Tisch Plan</h3>
+              <div class="row1" style="height: auto; max-width: 95%">
                   <div class="col-md-3"  (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
                       <h3 [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</h3>
                   </div>
@@ -153,7 +153,7 @@
                   </div>
               </div>
             <div id="printSectionId2">
-                <div class="row" style="background-color: #eaf3f3">
+                <div class="row" style="background-color: #eaf3f3; border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;" >
                     <div *ngFor="let table of tables; let j = index;">
                         <div *ngFor="let bgColor of bgColors; let i = index;">
                             <div *ngIf="i === j">
