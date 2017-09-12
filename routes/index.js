@@ -24,12 +24,12 @@ router.post('/anreiseListe', function(req, res, next) {
 
     db.anreiseListe.remove({});
 
-            db.anreiseListe.save(anreiseListe, function (err, anreiseListe) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(anreiseListe);
-            });
+    db.anreiseListe.save(anreiseListe, function (err, anreiseListe) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(anreiseListe);
+    });
 });
 
 //Save ImHausListe
