@@ -18,18 +18,15 @@ router.post('/anreiseListe', function(req, res, next) {
     //JSON string is parsed to a JSON object
     console.log("Post request made to /anreiseListe");
     let anreiseListe = {
-        data: "",
-    };
+        data: "",};
     anreiseListe.data = req.body;
 
-    db.anreiseListe.remove({});
-
-    db.anreiseListe.save(anreiseListe, function (err, anreiseListe) {
+    db.anreiseListe.remove({}, db.anreiseListe.save(anreiseListe, function (err, anreiseListe) {
         if (err) {
             res.send(err);
         }
         res.json(anreiseListe);
-    });
+    }));
 });
 
 //Save ImHausListe
@@ -41,14 +38,12 @@ router.post('/imHausListe', function(req, res, next) {
     };
     imHausListe.data = req.body;
 
-    db.imHausListe.remove({});
-
-    db.imHausListe.save(imHausListe, function (err, imHausListe) {
+    db.imHausListe.remove({}, db.imHausListe.save(imHausListe, function (err, imHausListe) {
         if (err) {
             res.send(err);
         }
         res.json(imHausListe);
-    });
+    }));
 });
 
 //Save TracesListe
@@ -60,14 +55,12 @@ router.post('/tracesListe', function(req, res, next) {
     };
     tracesListe.data = req.body;
 
-    db.tracesListe.remove({});
-
-    db.tracesListe.save(tracesListe, function (err, tracesListe) {
+    db.tracesListe.remove({}, db.tracesListe.save(tracesListe, function (err, tracesListe) {
         if (err) {
             res.send(err);
         }
         res.json(tracesListe);
-    });
+    }));
 });
 
 //Get anreiseListe
