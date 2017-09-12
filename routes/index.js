@@ -43,12 +43,12 @@ router.post('/imHausListe', function(req, res, next) {
 
     db.imHausListe.remove({});
 
-            db.imHausListe.save(imHausListe, function (err, imHausListe) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(imHausListe);
-            });
+    db.imHausListe.save(imHausListe, function (err, imHausListe) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(imHausListe);
+    });
 });
 
 //Save TracesListe
@@ -62,12 +62,12 @@ router.post('/tracesListe', function(req, res, next) {
 
     db.tracesListe.remove({});
 
-            db.tracesListe.save(tracesListe, function (err, tracesListe) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(tracesListe);
-            });
+    db.tracesListe.save(tracesListe, function (err, tracesListe) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(tracesListe);
+    });
 });
 
 //Get anreiseListe
