@@ -7,7 +7,7 @@ const   express = require('express'),
         db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe']);
 
 //Bodyparser middleware
-router.use(bodyParser.urlencoded({ extended: false}));
+router.use(bodyParser.urlencoded({}));
 
 
 //----->REST-FUL API<------//
@@ -28,6 +28,7 @@ router.post('/anreiseListe', function(req, res, next) {
             res.send(err);
         }
         res.json(anreiseListe);
+        console.log(anreiseListe);
     }, 5000));
 });
 
