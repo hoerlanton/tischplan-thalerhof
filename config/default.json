@@ -1,4 +1,4 @@
 {
-    "serverURL" : "www.tischplan.servicio.io",
-    "hostURL": "tischplan.servicio.io"
+    "serverURL" : "https://digitalertischplan.herokuapp.com",
+    "hostURL": "digitalertischplan.herokuapp.com"
 }
