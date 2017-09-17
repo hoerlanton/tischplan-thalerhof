@@ -29,7 +29,8 @@ router.post('/anreiseListe', function(req, res, next) {
         }
         res.json(anreiseListe);
         console.log(anreiseListe);
-    }, 5000));
+        console.log("anreiseListe save called");
+    }, 10000));
 });
 
 //Save ImHausListe
@@ -48,7 +49,8 @@ router.post('/imHausListe', function(req, res, next) {
             res.send(err);
         }
         res.json(imHausListe);
-    }, 5000));
+        console.log("imHausListe save called");
+    }, 10000));
 });
 
 //Save TracesListe
@@ -67,7 +69,8 @@ router.post('/tracesListe', function(req, res, next) {
             res.send(err);
         }
         res.json(tracesListe);
-        }, 5000));
+        console.log("tracesListe save called");
+        }, 10000));
 });
 
 //Get anreiseListe
