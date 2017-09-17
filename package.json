@@ -18,8 +18,7 @@
   },
   "main": "app.js",
   "engines": {
-    "node": ">= 0.4.1",
-    "npm": "2.1.x"
+    "node": ">= 0.4.1"
   },
   "scripts": {
     "start": "node app",
