@@ -15,6 +15,8 @@ import { LeftValue } from '../../../../LeftValue';
 import { TopValue } from '../../../../TopValue';
 import { buttonBgColor } from '../../../../buttonBgColor';
 import { IsBesetzt } from '../../../../IsBesetzt';
+import {isBoolean} from "util";
+import {containsElement} from "@angular/animations/browser/src/render/shared";
 
 @Component({
     selector: 'tischplan',
@@ -39,13 +41,19 @@ export class TischplanComponent implements OnInit {
     tracesListeElemente: any[] = [];
     placeholders: any[] = [];
     tables: Table[];
+    tablesSonnbergZirbn: Table[];
+    tablesPanorama: Table[];
+    tablesRestaurant: Table[];
+    tablesWintergarten: Table[];
     title: string;
     dateGenerated: any;
     filesToUpload: Array<File> = [];
     isBesetzt: IsBesetzt[];
     isDropped: any[] = [];
-
-
+    showSonnbergZirbnBool: boolean = false;
+    showPanoramaBool: boolean = false;
+    showRestaurantBool: boolean = false;
+    showWintergartenBool: boolean = false;
 
     constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
         let DomBaseElement = this.element.nativeElement;
@@ -63,6 +71,18 @@ export class TischplanComponent implements OnInit {
               console.log(this.anreiseListeElemente);
             });
 
+      this.tischplanService.getTables()
+        .subscribe(tables => {
+          this.tablesSonnbergZirbn = tables[0].tables;
+          this.tablesPanorama = tables[1].tables;
+          this.tablesRestaurant = tables[2].tables;
+          this.tablesWintergarten = tables[3].tables;
+          console.log(this.tablesSonnbergZirbn);
+          console.log(this.tablesPanorama);
+          console.log(this.tablesRestaurant);
+          console.log(this.tablesWintergarten);
+        });
+
         this.tischplanService.getTracesListe()
             .subscribe(tracesListeElemente  => {
                     //console.log(tracesListeElemente);
@@ -71,10 +91,6 @@ export class TischplanComponent implements OnInit {
                     //this.tracesListeElemente = tracesListeElemente[0].data;
                     this.formatTracesListeElements(tracesListeElemente);
             });
-
-
-
-
 
         this.buttonBgColor1 = "eaf3f3";
         this.buttonBgColor2 = "eaf3f3";
@@ -325,13 +341,15 @@ export class TischplanComponent implements OnInit {
   }
     showSonnbergZirbn() {
         console.log("showSonnbergZirbn!");
-
+        this.showSonnbergZirbnBool = true;
+        this.showPanoramaBool = false;
+        this.showRestaurantBool = false;
+        this.showWintergartenBool = false;
         this.topValues =  [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
         this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170,  50,  50,  50,  50, 200];
-        this.tables =     [40,   41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,  57,  58];
         this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-      this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-      this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
+        this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
 
         if (this.buttonBgColor1 === "eaf3f3") {
             this.buttonBgColor1 = "0a7a74";
@@ -353,14 +371,15 @@ export class TischplanComponent implements OnInit {
 
     showPanorama() {
         console.log("showPanorama!");
+        this.showSonnbergZirbnBool = false;
+        this.showPanoramaBool = true;
+        this.showRestaurantBool = false;
+        this.showWintergartenBool = false;
         this.topValues =  [440, 440, 440, 440, 440, 440, 440, 340, 280, 220, 160, 160, 220, 280, 340, 340, 280, 220, 160, 340, 280, 220, 160, 160, 220, 280, 340, 400, 460, 520];
         this.leftValues = [220, 280, 340, 400, 460, 520, 580, 580, 580, 580, 580, 460, 460, 460, 460, 340, 340, 340, 340, 220, 220, 220, 220,  60,  60,  60,  60,  60,  60,  60];
-        this.tables =     [60,   61,  62,  63,  64,  65,  66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89];
-      this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-
-      this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,                             false, false, false, false, false, false, false, false, false, false];
-
-      this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,                              true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
+        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
+        this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
 
         if (this.buttonBgColor2 === "eaf3f3") {
             this.buttonBgColor2 = "0a7a74";
@@ -382,13 +401,16 @@ export class TischplanComponent implements OnInit {
 
     showRestaurant() {
         console.log("showRestaurant!");
+        this.showSonnbergZirbnBool = false;
+        this.showPanoramaBool = false;
+        this.showRestaurantBool = true;
+        this.showWintergartenBool = false;
         this.topValues =  [500, 500, 500, 500, 350, 350, 350, 200, 200, 200, 200, 200, 300, 400, 500, 500, 350];
         this.leftValues = [60,  120, 180, 240, 120, 180, 240,  60, 180, 240, 340, 440, 440, 440, 440, 340, 340];
-        this.tables =     [1,     2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17];
-      this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
+        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
+        this.isBesetzt =    [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+        this.placeholders = [ true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
 
-      this.isBesetzt =    [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-      this.placeholders = [ true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
         if (this.buttonBgColor3 === "eaf3f3") {
             this.buttonBgColor3 = "0a7a74";
             this.buttonBgColor1 = "eaf3f3";
@@ -409,29 +431,32 @@ export class TischplanComponent implements OnInit {
 
     showWintergarten() {
         console.log("showWintergarten!");
+        this.showSonnbergZirbnBool = false;
+        this.showPanoramaBool = false;
+        this.showRestaurantBool = true;
+        this.showWintergartenBool = false;
         this.topValues =  [115, 115, 115, 115, 215, 215, 420, 460, 530, 530, 460, 420, 350, 420, 380, 380, 290, 280, 230, 180, 130, 130, 180, 115, 180];
         this.leftValues = [420, 500, 590, 680, 590, 690, 590, 640, 630, 560, 530, 400, 340, 340, 280, 200, 150, 110,  70,  50,  40, 150, 260, 300, 330];
-        this.tables =     [501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525];
-      this.bgColors =     ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-      this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-      this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, true,  true,  true,  true,  true, true];
+        this.bgColors =     ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
+        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, true,  true,  true,  true,  true, true];
 
-      if (this.buttonBgColor4 === "eaf3f3") {
-            this.buttonBgColor4 = "0a7a74";
-            this.buttonBgColor1 = "eaf3f3";
-            this.buttonBgColor2 = "eaf3f3";
-            this.buttonBgColor3 = "eaf3f3"
-        } else {
-            this.buttonBgColor4 = "eaf3f3";
-        }
-        if (this.fontColor4 === "0a7a74") {
-            this.fontColor4 = "eaf3f3";
-            this.fontColor1 = "0a7a74";
-            this.fontColor2 = "0a7a74";
-            this.fontColor3 = "0a7a74"
-        } else {
-            this.fontColor4 = "0a7a74";
-        }
+        if (this.buttonBgColor4 === "eaf3f3") {
+              this.buttonBgColor4 = "0a7a74";
+              this.buttonBgColor1 = "eaf3f3";
+              this.buttonBgColor2 = "eaf3f3";
+              this.buttonBgColor3 = "eaf3f3"
+          } else {
+              this.buttonBgColor4 = "eaf3f3";
+          }
+          if (this.fontColor4 === "0a7a74") {
+              this.fontColor4 = "eaf3f3";
+              this.fontColor1 = "0a7a74";
+              this.fontColor2 = "0a7a74";
+              this.fontColor3 = "0a7a74"
+          } else {
+              this.fontColor4 = "0a7a74";
+          }
     }
 
     moveTable(g, j, f) {
@@ -801,5 +826,4 @@ export class TischplanComponent implements OnInit {
     popupWinindow.document.write('<html><head><style> .row .t1 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t2 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t3 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t4 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t5 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t6 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t7 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t8 { width: 100px; height: 90px; border: solid 1px #0a7a74; position: absolute; } .row .t9 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t10 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t11 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t12 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t13 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t14 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t15 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t16 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t17 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t40 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t41 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t42 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t43 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t44 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t45 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t46 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t47 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t48 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t49 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t50 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t51 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t52 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t53 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t54 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t55 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t56 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t57 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t58 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t60 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t61 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t62 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t63 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t64 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t65 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t66 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t67 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t68 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t69 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t70 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t71 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t72 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t73 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t74 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t75 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t76 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t77 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t78 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t79 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t80 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t81 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t82 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t83 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t84 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t85 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t86 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t87 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t88 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t89 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t501 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t502 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t503 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t504 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t505 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t506 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t507 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t508 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t509 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t510 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t511 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t512 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t513 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t514 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t515 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t516 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t517 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(10deg); } .row .t518 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(30deg); } .row .t519 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(50deg); } .row .t520 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(70deg); } .row .t521 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(90deg); } .row .t522 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t523 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t524 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t525 { width: 40px; height: 40px; position: absolute; transform: rotate(45deg); } </style></head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }
-
 }

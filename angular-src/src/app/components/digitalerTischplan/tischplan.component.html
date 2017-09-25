@@ -36,33 +36,122 @@
                   <div class="col-xs-12" style="padding: 0px 0px 0px 0px;">
                       <div class="row1">
                           <div class='wrapper' id="wrapper">
-                              <div *ngFor="let table of tables; let j = index;">
-                                  <div *ngFor="let bgColor of bgColors; let i = index;">
-                                      <div *ngIf="i === j">
-                                          <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
-                                              <div *ngIf="h === i">
-                                                  <div *ngIf="tables[j] !== tables[j+1]">
-                                                    <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
-                                                    <button style="  float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
-                                                      <div class="table" [ngStyle]="{'background-color': '#' + bgColor}" >
-                                                        <p><b> Tisch: {{table}} </b><br></p>
-                                                        <div *ngIf=isbesetzt>
-                                                          <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
-                                                            <div *ngIf="p === h">
-                                                              <div *ngIf=placeholder;>
-                                                                <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
+                              <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
+                                <div *ngFor="let bgColor of bgColors; let i = index;">
+                                  <div *ngIf="i === j">
+                                    <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
+                                      <div *ngIf="h === i">
+                                        <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
+                                          <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
+                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                            <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
+                                              <div *ngIf="showSonnbergZirbnBool">
+                                                <p><b> Tisch: {{tableSonnbergZirbn}} </b><br></p>
                                               </div>
+                                            <div *ngIf=isbesetzt>
+                                              <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                <div *ngIf="p === h">
+                                                  <div *ngIf=placeholder;>
+                                                    <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                           </div>
+                                        </div>
                                       </div>
+                                    </div>
                                   </div>
+                                </div>
                               </div>
+                            </div>
+                            <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
+                              <div *ngFor="let bgColor of bgColors; let i = index;">
+                                <div *ngIf="i === j">
+                                  <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
+                                    <div *ngIf="h === i">
+                                      <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
+                                        <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
+                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                          <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
+                                            <div *ngIf="showPanoramaBool">
+                                              <p><b> Tisch: {{tablePanorama}} </b><br></p>
+                                            </div>
+                                            <div *ngIf=isbesetzt>
+                                              <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                <div *ngIf="p === h">
+                                                  <div *ngIf=placeholder;>
+                                                    <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
+                              <div *ngFor="let bgColor of bgColors; let i = index;">
+                                <div *ngIf="i === j">
+                                  <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
+                                    <div *ngIf="h === i">
+                                      <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
+                                        <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
+                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                          <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
+                                            <div *ngIf="showRestaurantBool">
+                                              <p><b> Tisch: {{tableRestaurant}} </b><br></p>
+                                            </div>
+                                            <div *ngIf=isbesetzt>
+                                              <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                <div *ngIf="p === h">
+                                                  <div *ngIf=placeholder;>
+                                                    <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
+                              <div *ngFor="let bgColor of bgColors; let i = index;">
+                                <div *ngIf="i === j">
+                                  <div *ngFor="let isbesetzt of isBesetzt; let h = index;">
+                                    <div *ngIf="h === i">
+                                      <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
+                                        <div class='container' id='container' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
+                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="besetzt(i, h, j)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                          <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
+                                            <div *ngIf="showWintergartenBool">
+                                              <p><b> Tisch: {{tableWintergarten}} </b><br></p>
+                                            </div>
+                                            <div *ngIf=isbesetzt>
+                                              <div *ngFor="let placeholder of placeholders; let p = index" (click)="placeholderHide(p)">
+                                                <div *ngIf="p === h">
+                                                  <div *ngIf=placeholder;>
+                                                    <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                       </div>
                   </div>

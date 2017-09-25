@@ -19,4 +19,8 @@ export class TischplanService {
         return this.http.get('tracesListe')
             .map(res => res.json());
     }
+    getTables() {
+    return this.http.get('tables')
+      .map(res => res.json());
+  }
 }

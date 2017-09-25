@@ -4,10 +4,10 @@ const   express = require('express'),
         router = express.Router(),
         bodyParser = require('body-parser'),
         mongojs = require('mongojs'),
-        db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe']);
+        db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables']);
 
 //Bodyparser middleware
-router.use(bodyParser.urlencoded({}));
+router.use(bodyParser.urlencoded({ extended: false}));
 
 
 //----->REST-FUL API<------//
@@ -108,5 +108,18 @@ router.get('/tracesListe', function(req, res, next) {
         res.json(tracesListe);
     });
 });
+
+//Get Tables
+router.get('/tables', function(req, res, next) {
+    console.log("tables get called");
+    //Get guests from Mongo DB
+    db.tables.find(function(err, tables){
+        if (err){
+            res.send(err);
+        }
+        res.json(tables);
+    });
+});
+
 
 module.exports = router;
