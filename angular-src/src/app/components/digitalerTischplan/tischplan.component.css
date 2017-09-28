@@ -181,7 +181,7 @@ html, body {
     padding: 20px 20px 20px 20px;
 }
 
-.row .container-fluid .col-md-6 .row .t1 {
+.row .container-fluid .col-md-6 #printSectionId2 .row .t1 {
     width: 30px;
     height: 60px;
     background-color: #FFFFFF;
@@ -189,7 +189,7 @@ html, body {
 
 }
 
-.row .container-fluid .col-md-6 .row .t2 {
+.row .container-fluid .col-md-6 #printSectionId2 .row .t2 {
     width: 30px;
     height: 60px;
     background-color: #FFFFFF;

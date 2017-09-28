@@ -136,7 +136,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "html, body {\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row {\n    height: 100%;\n}\n\n.row .container-fluid {\n    height: 100%;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 150px;\n}\n\n.row .container-fluid .col-md-4 {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    border-left: 5px solid #0a7a74;\n    border-right: 5px solid #0a7a74;\n    height: 100%;\n    border-bottom: 20px solid #0a7a74;\n    max-width: 20%;\n}\n\n\n\n.row .container-fluid .col-md-4 .row1 {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    width: 105%;\n    height: 232.5px;\n    padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 {\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n    height: 800px;\n    padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n    overflow: auto;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n    height: 800px;\n    padding-top: 20px;\n}\n\n\n.row .container-fluid .col-md-6 h3 {\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin: 0 auto;\n    display: inline-block;\n    color: #0a7a74;\n    position: relative;\n    text-align:center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group {\n    border-top:3px solid #0a7a74;\n    width: 105%;\n    padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12  .group {\n    border-top:3px solid #0a7a74;\n    width: 105%;\n    padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group1 {\n    margin-top: 20px;\n    overflow: auto;\n    max-height: 300px;\n    display: inline-block;\n    border-top:3px solid #0a7a74;\n    width: 102%;\n    padding: 10px 10px 10px 25px;\n}\n\n.row1 .col {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.row1 .col:nth-child(2) {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.row1 .col:nth-child(3) {\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n}\n\n.row .col-md-4 .row2 {\n    padding-bottom: 10px;\n    position: relative;\n    min-height: 100%;\n    border-bottom: 1px solid red;\n}\n\n.card {\n    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n    background: rgba(255,255,255, 1);\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n    padding:10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n    padding:10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n    padding: 10px 10px 10px 10px;\n    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n    background: rgba(255,255,255, 1);\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n    padding: 10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 {\n    height: 620px;\n    width: 58%;\n    background-color: #eaf3f3;\n    padding: 20px 10px 20px 10px;\n    border-left: 5px solid #0a7a74;\n    border-right: 5px solid #0a7a74;\n    border-bottom: 20px solid #0a7a74;\n}\n\n.row .container-fluid .col-md-6 .row {\n    background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n    height: 100%;\n}\n\n.row .container-fluid .col-md-6 .row1 .col-md-3 {\n    margin: 0px 0px 0px 0px;\n    padding: 20px 20px 20px 20px;\n}\n\n.row .container-fluid .col-md-6 .row .t1 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n\n}\n\n.row .container-fluid .col-md-6 .row .t2 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t3 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t4 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t5 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t6 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t7 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t8 {\n    width: 100px;\n    height: 90px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t9 {\n    width: 40px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t10 {\n    width: 40px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t11 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t12 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t13 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t14 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t15 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t16 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t17 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t40 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t41 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t42 {\n    width: 80px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t43 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t44 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t45 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t46 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t47 {\n    width: 80px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t48 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t49 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t50 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t51 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t52 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t53 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t54 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t55 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t56 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t57 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t58 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t60 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t61 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t62 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t63 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t64 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t65 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t66 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t67 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t68 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t69 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t70 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t71 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t72 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t73 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t74 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t75 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t76 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t77 {\n     width: 60px;\n     height: 30px;\n     background-color: #FFFFFF;\n     position: absolute;\n }\n\n.row .container-fluid .col-md-6 .row .t78 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n\n.row .container-fluid .col-md-6 .row .t79 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t80 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t81 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t82 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t83 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t84 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t85 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row  .t86 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t87 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t88 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t89 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t501 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t502 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t503 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t504 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t505 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t506 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t507 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n}\n\n.row .container-fluid .col-md-6 .row .t508 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t509 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t510 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t511 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t512 {\n    width: 80px;\n    height: 45px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t513 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t514 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t515 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t516 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t517 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n\n.row .container-fluid .col-md-6 .row .t518 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n\n.row .container-fluid .col-md-6 .row .t519 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(50deg);\n            transform: rotate(50deg);\n}\n\n.row .container-fluid .col-md-6 .row .t520 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(70deg);\n            transform: rotate(70deg);\n}\n\n.row .container-fluid .col-md-6 .row .t521 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n}\n\n.row .container-fluid .col-md-6 .row .t522 {\n    width: 80px;\n    height: 45px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t523 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t524 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t525 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n", ""]);
+exports.push([module.i, "html, body {\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row {\n    height: 100%;\n}\n\n.row .container-fluid {\n    height: 100%;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 150px;\n}\n\n.row .container-fluid .col-md-4 {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    border-left: 5px solid #0a7a74;\n    border-right: 5px solid #0a7a74;\n    height: 100%;\n    border-bottom: 20px solid #0a7a74;\n    max-width: 20%;\n}\n\n\n\n.row .container-fluid .col-md-4 .row1 {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    width: 105%;\n    height: 232.5px;\n    padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n    overflow: auto;\n    margin: 0 0 0 0;\n    display: inline-block;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 {\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n    height: 800px;\n    padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n    overflow: auto;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n    height: 800px;\n    padding-top: 20px;\n}\n\n\n.row .container-fluid .col-md-6 h3 {\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin: 0 auto;\n    display: inline-block;\n    color: #0a7a74;\n    position: relative;\n    text-align:center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group {\n    border-top:3px solid #0a7a74;\n    width: 105%;\n    padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12  .group {\n    border-top:3px solid #0a7a74;\n    width: 105%;\n    padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group1 {\n    margin-top: 20px;\n    overflow: auto;\n    max-height: 300px;\n    display: inline-block;\n    border-top:3px solid #0a7a74;\n    width: 102%;\n    padding: 10px 10px 10px 25px;\n}\n\n.row1 .col {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.row1 .col:nth-child(2) {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.row1 .col:nth-child(3) {\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n}\n\n.row .col-md-4 .row2 {\n    padding-bottom: 10px;\n    position: relative;\n    min-height: 100%;\n    border-bottom: 1px solid red;\n}\n\n.card {\n    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n    background: rgba(255,255,255, 1);\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n    padding:10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n    padding:10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n    padding: 10px 10px 10px 10px;\n    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n    background: rgba(255,255,255, 1);\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n    padding: 10px 10px 10px 10px;\n    max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 {\n    height: 620px;\n    width: 58%;\n    background-color: #eaf3f3;\n    padding: 20px 10px 20px 10px;\n    border-left: 5px solid #0a7a74;\n    border-right: 5px solid #0a7a74;\n    border-bottom: 20px solid #0a7a74;\n}\n\n.row .container-fluid .col-md-6 .row {\n    background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n    height: 100%;\n}\n\n.row .container-fluid .col-md-6 .row1 .col-md-3 {\n    margin: 0px 0px 0px 0px;\n    padding: 20px 20px 20px 20px;\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t1 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t2 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t3 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t4 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t5 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t6 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t7 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t8 {\n    width: 100px;\n    height: 90px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t9 {\n    width: 40px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t10 {\n    width: 40px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t11 {\n    width: 30px;\n    height: 80px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t12 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t13 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t14 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t15 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t16 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t17 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t40 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t41 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t42 {\n    width: 80px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t43 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t44 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t45 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t46 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t47 {\n    width: 80px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t48 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t49 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t50 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t51 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t52 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t53 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t54 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t55 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t56 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t57 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t58 {\n    width: 60px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t60 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t61 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t62 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t63 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t64 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t65 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t66 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t67 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t68 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t69 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t70 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t71 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t72 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t73 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t74 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t75 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t76 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t77 {\n     width: 60px;\n     height: 30px;\n     background-color: #FFFFFF;\n     position: absolute;\n }\n\n.row .container-fluid .col-md-6 .row .t78 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n\n.row .container-fluid .col-md-6 .row .t79 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t80 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t81 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t82 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t83 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t84 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t85 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row  .t86 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t87 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t88 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t89 {\n    width: 60px;\n    height: 30px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t501 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t502 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t503 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t504 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t505 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t506 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t507 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n}\n\n.row .container-fluid .col-md-6 .row .t508 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t509 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t510 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t511 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t512 {\n    width: 80px;\n    height: 45px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t513 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t514 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    border-radius: 50%;\n\n}\n\n.row .container-fluid .col-md-6 .row .t515 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t516 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t517 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n\n.row .container-fluid .col-md-6 .row .t518 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n\n.row .container-fluid .col-md-6 .row .t519 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(50deg);\n            transform: rotate(50deg);\n}\n\n.row .container-fluid .col-md-6 .row .t520 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(70deg);\n            transform: rotate(70deg);\n}\n\n.row .container-fluid .col-md-6 .row .t521 {\n    width: 30px;\n    height: 60px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n}\n\n.row .container-fluid .col-md-6 .row .t522 {\n    width: 80px;\n    height: 45px;\n    background-color: #FFFFFF;\n    position: absolute;\n}\n\n.row .container-fluid .col-md-6 .row .t523 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t524 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n\n.row .container-fluid .col-md-6 .row .t525 {\n    width: 40px;\n    height: 40px;\n    background-color: #FFFFFF;\n    position: absolute;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n}\n", ""]);
 
 // exports
 
@@ -149,7 +149,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n    <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n    <nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <ul class=\"nav navbar-nav\">\n                    <li><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;\"></li>\n                    <li style=\"text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px; margin-right: 20px;\"><a href=\"http://servicio.io/tester-info-3-2\">Anleitung</a></li>\n                  <button (click)=\"printToCart1('printSectionId1')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px\" class=\"button\">Tisch Übersicht Drucken</button>\n                  <button (click)=\"printToCart2('printSectionId2')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px\" class=\"button\">Tisch Plan Drucken</button>\n                </ul>\n            </div>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><img alt=\"Partner\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png\" style=\"height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 5px;float: right; text-align: right; display:table-cell; vertical-align:middle;\"></li>\n            </ul>\n        </div>\n    </nav>\n\n    <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n        <%= errMsg  %>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"container-fluid\">\n          <div id=\"printSectionId1\">\n              <div class=\"col-md-4\"><h3>Tisch Übersicht</h3>\n                  <div class=\"col-xs-12\" style=\"padding: 0px 0px 0px 0px;\">\n                      <div class=\"row1\">\n                          <div class='wrapper' id=\"wrapper\">\n                              <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n                                <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                  <div *ngIf=\"i === j\">\n                                    <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                      <div *ngIf=\"h === i\">\n                                        <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n                                          <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                            <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                              <div *ngIf=\"showSonnbergZirbnBool\">\n                                                <p><b> Tisch: {{tableSonnbergZirbn}} </b><br></p>\n                                              </div>\n                                            <div *ngIf=isbesetzt>\n                                              <div *ngFor=\"let placeholder of placeholders; let p = index\" (click)=\"placeholderHide(p)\">\n                                                <div *ngIf=\"p === h\">\n                                                  <div *ngIf=placeholder;>\n                                                    <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                            <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n                              <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                <div *ngIf=\"i === j\">\n                                  <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                    <div *ngIf=\"h === i\">\n                                      <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n                                        <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                          <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                            <div *ngIf=\"showPanoramaBool\">\n                                              <p><b> Tisch: {{tablePanorama}} </b><br></p>\n                                            </div>\n                                            <div *ngIf=isbesetzt>\n                                              <div *ngFor=\"let placeholder of placeholders; let p = index\" (click)=\"placeholderHide(p)\">\n                                                <div *ngIf=\"p === h\">\n                                                  <div *ngIf=placeholder;>\n                                                    <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                            <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n                              <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                <div *ngIf=\"i === j\">\n                                  <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                    <div *ngIf=\"h === i\">\n                                      <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n                                        <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                          <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                            <div *ngIf=\"showRestaurantBool\">\n                                              <p><b> Tisch: {{tableRestaurant}} </b><br></p>\n                                            </div>\n                                            <div *ngIf=isbesetzt>\n                                              <div *ngFor=\"let placeholder of placeholders; let p = index\" (click)=\"placeholderHide(p)\">\n                                                <div *ngIf=\"p === h\">\n                                                  <div *ngIf=placeholder;>\n                                                    <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                            <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n                              <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                                <div *ngIf=\"i === j\">\n                                  <div *ngFor=\"let isbesetzt of isBesetzt; let h = index;\">\n                                    <div *ngIf=\"h === i\">\n                                      <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n                                        <div class='container' id='container' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                          <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                            <div *ngIf=\"showWintergartenBool\">\n                                              <p><b> Tisch: {{tableWintergarten}} </b><br></p>\n                                            </div>\n                                            <div *ngIf=isbesetzt>\n                                              <div *ngFor=\"let placeholder of placeholders; let p = index\" (click)=\"placeholderHide(p)\">\n                                                <div *ngIf=\"p === h\">\n                                                  <div *ngIf=placeholder;>\n                                                    <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n          <div class=\"col-md-4\">\n              <div class=\"csv\"  style=\" width: 100%; height: 150px; padding: 10px 20px 50px 20px\"><h3>CSV-Datei hochladen</h3>\n                <div class=\"line\"></div>\n                <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n                      <input type=\"file\" style=\"float: left; margin-top: 10px; color: #0a7a74\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                      <button style=\" background-color: #0a7a74; float: right; color:  white\" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">CSV HOCHLADEN</button>\n                  </form>\n              </div>\n              <h3>Im-Haus-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let imHausListeElement of imHausListeElemente\">\n                          <div class='container' id='container1' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card1\">\n                              <p> <b>Name:</b> {{imHausListeElement[23]}}<br>\n                                  <b>Sprache:</b> {{imHausListeElement[25]}}<br>\n                                  <b>Zimmernummer:</b> {{imHausListeElement[26]}}<br>\n                                  <b>PreisTyp:</b> {{imHausListeElement[28]}}<br>\n                                  <b>Anreise:</b> {{imHausListeElement[29]}}<br>\n                                  <b>Abreise:</b> {{imHausListeElement[30]}}<br>\n                                  <b>Personen Anzahl:</b> {{imHausListeElement[31]}}<br>\n                                  <b>RB/SOU:</b> {{imHausListeElement[32]}}<br>\n                                  <b>Notiz2:</b> {{imHausListeElement[33]}}<br>\n                              </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Anreise-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let anreiseListeElement of anreiseListeElemente\">\n                          <div class='container' id='container2' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card2\">\n                                  <p> <b>Name:</b> {{anreiseListeElement[20]}}<br>\n                                      <b>Zimmernummer:</b> {{anreiseListeElement[22]}}<br>\n                                      <b>PreisTyp:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Anreise:</b> {{anreiseListeElement[11]}}<br>\n                                      <b>Abreise:</b> {{anreiseListeElement[24]}}<br>\n                                      <b>Personen Anzahl:</b> {{anreiseListeElement[25]}}<br>\n                                      <b>RB/SOU:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Notiz2:</b> {{anreiseListeElement[27]}}<br>\n                                  </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Traces-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let tracesListeElement of tracesListeElemente; let t = index;\">\n                          <div class='container' id='container3' [dragula]='\"evented-bag\"' >\n                            <div class=\"card\" id=\"card3\">\n                              <b>Zimmernummer:</b> {{tracesListeElement[0]}}<br>\n                              <b>Name:</b> {{tracesListeElement[1]}}<br>\n                              <b>Gäste Kategorie:</b> {{tracesListeElement[2]}}<br>\n                              <b>Anreise:</b> {{tracesListeElement[3]}}<br>\n                              <b>Abreise:</b> {{tracesListeElement[5]}}<br>\n                              <b>Trace:</b> {{tracesListeElement[8]}}<br>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n\n          <div class=\"col-md-6\"><h3>Tisch Plan</h3>\n              <div class=\"row1\" style=\"height: auto; max-width: 95%\">\n                  <div class=\"col-md-3\"  (click)=\"showSonnbergZirbn()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor1}\">Sonnberg-Zirbn</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showPanorama()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor2}\">Panorama</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showRestaurant()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor3}\">Restaurant</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showWintergarten()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor4}\">Wintergarten</h3>\n                  </div>\n              </div>\n            <div id=\"printSectionId2\">\n                <div class=\"row\" style=\"background-color: #eaf3f3; border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\" >\n                    <div *ngFor=\"let table of tables; let j = index;\">\n                        <div *ngFor=\"let bgColor of bgColors; let i = index;\">\n                            <div *ngIf=\"i === j\">\n                                <div *ngFor=\"let topValue of topValues; let g = index;\">\n                                    <div *ngIf=\"g === i\">\n                                        <div *ngFor=\"let leftValue of leftValues; let f = index;\">\n                                            <div *ngIf=\"f === g\">\n                                                <div class=\"t{{table}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}\">\n                                                    <div *ngIf=\"tables[j] !== tables[j+1]\">\n                                                        <p>{{table}}</p>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n          </div>\n        </div>\n    </div>\n</body>\n\n</html>\n\n\n"
+module.exports = "<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n    <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n    <nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <ul class=\"nav navbar-nav\">\n                    <li><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;\"></li>\n                    <li style=\"text-align: left; display:table-cell; vertical-align:middle; margin-bottom: 5px; margin-right: 20px;\"><a href=\"http://servicio.io/tester-info-3-2\">Anleitung</a></li>\n                  <button (click)=\"printToCart1('printSectionId1')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px\" class=\"button\">Tisch Übersicht Drucken</button>\n                  <button (click)=\"printToCart2('printSectionId2')\" style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px\" class=\"button\">Tisch Plan Drucken</button>\n                </ul>\n            </div>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><img alt=\"Partner\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png\" style=\"height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 5px;float: right; text-align: right; display:table-cell; vertical-align:middle;\"></li>\n            </ul>\n        </div>\n    </nav>\n\n    <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n        <%= errMsg  %>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"container-fluid\">\n          <div id=\"printSectionId1\">\n              <div class=\"col-md-4\"><h3>Tisch Übersicht</h3>\n                  <div class=\"col-xs-12\" style=\"padding: 0px 0px 0px 0px;\">\n                      <div class=\"row1\">\n                          <div class='wrapper' id=\"wrapper\">\n                            <div *ngIf=\"showSonnbergZirbnBool\">\n                              <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n                                <div *ngFor=\"let bgColor of bgColorsSonnbergZirbn; let i = index;\">\n                                  <div *ngIf=\"i === j\">\n                                    <div *ngFor=\"let isbesetzt of isBesetztSonnbergZirbn; let h = index;\">\n                                      <div *ngIf=\"h === i\">\n                                        <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n                                          <div class='container' id='containerSonnbergZirbn' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                            <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                <p><b> Tisch: {{tableSonnbergZirbn.number}} </b><br></p>\n                                            <div *ngIf=isbesetzt>\n                                              <div *ngFor=\"let placeholder of placeholdersSonnbergZirbn; let p = index\" (click)=\"placeholderHide(p)\">\n                                                <div *ngIf=\"p === h\">\n                                                  <div *ngIf=placeholder;>\n                                                    <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                              </div>\n                            </div>\n                            <div *ngIf=\"showPanoramaBool\">\n                              <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n                                <div *ngFor=\"let bgColor of bgColorsPanorama; let i = index;\">\n                                  <div *ngIf=\"i === j\">\n                                    <div *ngFor=\"let isbesetzt of isBesetztPanorama; let h = index;\">\n                                      <div *ngIf=\"h === i\">\n                                        <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n                                          <div class='container' id='containerPanorama' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                          <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                            <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                <p><b> Tisch: {{tablePanorama.number}} </b><br></p>\n                                              <div *ngIf=isbesetzt>\n                                                <div *ngFor=\"let placeholder of placeholdersPanorama; let p = index\" (click)=\"placeholderHide(p)\">\n                                                  <div *ngIf=\"p === h\">\n                                                    <div *ngIf=placeholder;>\n                                                      <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                    </div>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                            <div *ngIf=\"showRestaurantBool\">\n                              <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n                                <div *ngFor=\"let bgColor of bgColorsRestaurant; let i = index;\">\n                                  <div *ngIf=\"i === j\">\n                                    <div *ngFor=\"let isbesetzt of isBesetztRestaurant; let h = index;\">\n                                      <div *ngIf=\"h === i\">\n                                        <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n                                          <div class='container' id='containerRestaurant' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                            <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                            <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                <p><b> Tisch: {{tableRestaurant.number}} </b><br></p>\n                                              <div *ngIf=isbesetzt>\n                                                <div *ngFor=\"let placeholder of placeholdersRestaurant; let p = index\" (click)=\"placeholderHide(p)\">\n                                                  <div *ngIf=\"p === h\">\n                                                    <div *ngIf=placeholder;>\n                                                      <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                    </div>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                            <div *ngIf=\"showWintergartenBool\">\n                              <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n                                <div *ngFor=\"let bgColor of bgColorsWintergarten; let i = index;\">\n                                  <div *ngIf=\"i === j\">\n                                    <div *ngFor=\"let isbesetzt of isBesetztWintergarten; let h = index;\">\n                                      <div *ngIf=\"h === i\">\n                                        <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n                                          <div class='container' id='containerWintergarten' [dragula]='\"evented-bag\"' [ngStyle]=\"{'background-color': + bgColor}\">\n                                            <button style=\"float: right; margin: 20px 0px 20px 0px\" type=\"button\" class=\"btn btn-send\" (click)=\"besetzt(i, h, j)\">{{isbesetzt ? \"ZURÜCKSETZEN\": \"BESETZEN\"}}</button>\n                                            <div class=\"table\" [ngStyle]=\"{'background-color': '#' + bgColor}\">\n                                                <p><b> Tisch: {{tableWintergarten.number}} </b><br></p>\n                                              <div *ngIf=isbesetzt>\n                                                <div *ngFor=\"let placeholder of placeholdersWintergarten; let p = index\" (click)=\"placeholderHide(p)\">\n                                                  <div *ngIf=\"p === h\">\n                                                    <div *ngIf=placeholder;>\n                                                      <p style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen. Klicken Sie um Nachricht auszublenden!</p>\n                                                    </div>\n                                                  </div>\n                                                </div>\n                                              </div>\n                                            </div>\n                                          </div>\n                                        </div>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n          <div class=\"col-md-4\">\n              <div class=\"csv\"  style=\" width: 100%; height: 150px; padding: 10px 20px 50px 20px\"><h3>CSV-Datei hochladen</h3>\n                <div class=\"line\"></div>\n                <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n                      <input type=\"file\" style=\"float: left; margin-top: 10px; color: #0a7a74\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                      <button style=\" background-color: #0a7a74; float: right; color:  white\" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">CSV HOCHLADEN</button>\n                  </form>\n              </div>\n              <h3>Im-Haus-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let imHausListeElement of imHausListeElemente\">\n                          <div class='container' id='container1' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card1\">\n                              <p> <b>Name:</b> {{imHausListeElement[23]}}<br>\n                                  <b>Sprache:</b> {{imHausListeElement[25]}}<br>\n                                  <b>Zimmernummer:</b> {{imHausListeElement[26]}}<br>\n                                  <b>PreisTyp:</b> {{imHausListeElement[28]}}<br>\n                                  <b>Anreise:</b> {{imHausListeElement[29]}}<br>\n                                  <b>Abreise:</b> {{imHausListeElement[30]}}<br>\n                                  <b>Personen Anzahl:</b> {{imHausListeElement[31]}}<br>\n                                  <b>RB/SOU:</b> {{imHausListeElement[32]}}<br>\n                                  <b>Notiz2:</b> {{imHausListeElement[33]}}<br>\n                              </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Anreise-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let anreiseListeElement of anreiseListeElemente\">\n                          <div class='container' id='container2' [dragula]='\"evented-bag\"'>\n                              <div class=\"card\" id=\"card2\">\n                                  <p> <b>Name:</b> {{anreiseListeElement[20]}}<br>\n                                      <b>Zimmernummer:</b> {{anreiseListeElement[22]}}<br>\n                                      <b>PreisTyp:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Anreise:</b> {{anreiseListeElement[11]}}<br>\n                                      <b>Abreise:</b> {{anreiseListeElement[24]}}<br>\n                                      <b>Personen Anzahl:</b> {{anreiseListeElement[25]}}<br>\n                                      <b>RB/SOU:</b> {{anreiseListeElement[26]}}<br>\n                                      <b>Notiz2:</b> {{anreiseListeElement[27]}}<br>\n                                  </p>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <h3>Traces-Liste</h3>\n              <div class=\"row1\">\n                  <div class='wrapper'>\n                      <div *ngFor=\"let tracesListeElement of tracesListeElemente; let t = index;\">\n                          <div class='container' id='container3' [dragula]='\"evented-bag\"' >\n                            <div class=\"card\" id=\"card3\">\n                              <b>Zimmernummer:</b> {{tracesListeElement[0]}}<br>\n                              <b>Name:</b> {{tracesListeElement[1]}}<br>\n                              <b>Gäste Kategorie:</b> {{tracesListeElement[2]}}<br>\n                              <b>Anreise:</b> {{tracesListeElement[3]}}<br>\n                              <b>Abreise:</b> {{tracesListeElement[5]}}<br>\n                              <b>Trace:</b> {{tracesListeElement[8]}}<br>\n                            </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n\n\n          <div class=\"col-md-6\"><h3>Tisch Plan</h3>\n              <div class=\"row1\" style=\"height: auto; max-width: 95%\">\n                  <div class=\"col-md-3\"  (click)=\"showSonnbergZirbn()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor1}\">Sonnberg-Zirbn</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showPanorama()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor2}\">Panorama</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showRestaurant()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor3}\">Restaurant</h3>\n                  </div>\n                  <div class=\"col-md-3\"  (click)=\"showWintergarten()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n                      <h3 [ngStyle]=\"{'color': '#' + fontColor4}\">Wintergarten</h3>\n                  </div>\n              </div>\n            <div id=\"printSectionId2\">\n                <div class=\"row\" style=\"background-color: #eaf3f3; border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\" >\n                  <div *ngIf=\"showSonnbergZirbnBool\">\n                    <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n                        <div *ngFor=\"let bgColor of bgColorsSonnbergZirbn; let i = index;\">\n                            <div *ngIf=\"i === j\">\n                                <div *ngFor=\"let topValue of topValuesSonnbergZirbn; let g = index;\">\n                                    <div *ngIf=\"g === i\">\n                                        <div *ngFor=\"let leftValue of leftValuesSonnbergZirbn; let f = index;\">\n                                            <div *ngIf=\"f === g\">\n                                                <div class=\"t{{tableSonnbergZirbn.number}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}\">\n                                                    <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n                                                        <p>{{tableSonnbergZirbn.number}}</p>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                  </div>\n                  <div *ngIf=\"showPanoramaBool\">\n                    <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n                      <div *ngFor=\"let bgColor of bgColorsPanorama; let i = index;\">\n                        <div *ngIf=\"i === j\">\n                          <div *ngFor=\"let topValue of topValuesPanorama; let g = index;\">\n                            <div *ngIf=\"g === i\">\n                              <div *ngFor=\"let leftValue of leftValuesPanorama; let f = index;\">\n                                <div *ngIf=\"f === g\">\n                                  <div class=\"t{{tablePanorama.number}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}\">\n                                    <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n                                      <p>{{tablePanorama.number}}</p>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div *ngIf=\"showWintergartenBool\">\n                    <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n                      <div *ngFor=\"let bgColor of bgColorsWintergarten; let i = index;\">\n                        <div *ngIf=\"i === j\">\n                          <div *ngFor=\"let topValue of topValuesWintergarten; let g = index;\">\n                            <div *ngIf=\"g === i\">\n                              <div *ngFor=\"let leftValue of leftValuesWintergarten; let f = index;\">\n                                <div *ngIf=\"f === g\">\n                                  <div class=\"t{{tableWintergarten.number}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}\">\n                                    <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n                                      <p>{{tableWintergarten.number}}</p>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div *ngIf=\"showRestaurantBool\">\n                    <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n                      <div *ngFor=\"let bgColor of bgColorsRestaurant; let i = index;\">\n                        <div *ngIf=\"i === j\">\n                          <div *ngFor=\"let topValue of topValuesRestaurant; let g = index;\">\n                            <div *ngIf=\"g === i\">\n                              <div *ngFor=\"let leftValue of leftValuesRestaurant; let f = index;\">\n                                <div *ngIf=\"f === g\">\n                                  <div class=\"t{{tableRestaurant.number}}\" (click)=\"moveTable(g, j, f)\" [ngStyle]=\"{'top': topValue + 'px', 'left': leftValue + 'px', 'background-color': + bgColor}\">\n                                    <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n                                      <p>{{tableRestaurant.number}}</p>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n            </div>\n          </div>\n        </div>\n    </div>\n</body>\n\n</html>\n\n\n"
 
 /***/ }),
 
@@ -188,14 +188,30 @@ var TischplanComponent = (function () {
         this.dragulaService = dragulaService;
         this.element = element;
         this.renderer = renderer;
+        this.topValues = [];
+        this.bgColorsSonnbergZirbn = [];
+        this.placeholdersSonnbergZirbn = [];
+        this.isBesetztSonnbergZirbn = [];
+        this.topValuesSonnbergZirbn = [];
+        this.leftValuesSonnbergZirbn = [];
+        this.bgColorsPanorama = [];
+        this.placeholdersPanorama = [];
+        this.isBesetztPanorama = [];
+        this.topValuesPanorama = [];
+        this.leftValuesPanorama = [];
+        this.bgColorsWintergarten = [];
+        this.placeholdersWintergarten = [];
+        this.isBesetztWintergarten = [];
+        this.topValuesWintergarten = [];
+        this.leftValuesWintergarten = [];
+        this.bgColorsRestaurant = [];
+        this.placeholdersRestaurant = [];
+        this.isBesetztRestaurant = [];
+        this.topValuesRestaurant = [];
+        this.leftValuesRestaurant = [];
         this.tracesListeElemente = [];
-        this.placeholders = [];
         this.filesToUpload = [];
         this.isDropped = [];
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = false;
         var DomBaseElement = this.element.nativeElement;
         var wrapperElementsChildNames = [];
         this.tischplanService.getImHausListe()
@@ -212,12 +228,38 @@ var TischplanComponent = (function () {
             .subscribe(function (tables) {
             _this.tablesSonnbergZirbn = tables[0].tables;
             _this.tablesPanorama = tables[1].tables;
-            _this.tablesRestaurant = tables[2].tables;
-            _this.tablesWintergarten = tables[3].tables;
+            _this.tablesWintergarten = tables[2].tables;
+            _this.tablesRestaurant = tables[3].tables;
+            for (var i = 0; i < tables[0].tables.length; i++) {
+                _this.bgColorsSonnbergZirbn.push(_this.tablesSonnbergZirbn[i].bgColor);
+                _this.isBesetztSonnbergZirbn.push(_this.tablesSonnbergZirbn[i].isBesetzt);
+                _this.placeholdersSonnbergZirbn.push(_this.tablesSonnbergZirbn[i].placeholder);
+                _this.topValuesSonnbergZirbn.push(_this.tablesSonnbergZirbn[i].topValue);
+                _this.leftValuesSonnbergZirbn.push(_this.tablesSonnbergZirbn[i].leftValue);
+            }
+            for (var i = 0; i < tables[1].tables.length; i++) {
+                _this.bgColorsPanorama.push(_this.tablesPanorama[i].bgColor);
+                _this.isBesetztPanorama.push(_this.tablesPanorama[i].isBesetzt);
+                _this.placeholdersPanorama.push(_this.tablesPanorama[i].placeholder);
+                _this.placeholdersPanorama.push(_this.tablesPanorama[i].placeholder);
+                _this.topValuesPanorama.push(_this.tablesPanorama[i].topValue);
+                _this.leftValuesPanorama.push(_this.tablesPanorama[i].leftValue);
+            }
+            for (var i = 0; i < tables[2].tables.length; i++) {
+                _this.bgColorsWintergarten.push(_this.tablesWintergarten[i].bgColor);
+                _this.isBesetztWintergarten.push(_this.tablesWintergarten[i].isBesetzt);
+                _this.placeholdersWintergarten.push(_this.tablesWintergarten[i].placeholder);
+                _this.topValuesWintergarten.push(_this.tablesWintergarten[i].topValue);
+                _this.leftValuesWintergarten.push(_this.tablesWintergarten[i].leftValue);
+            }
+            for (var i = 0; i < tables[3].tables.length; i++) {
+                _this.bgColorsRestaurant.push(_this.tablesRestaurant[i].bgColor);
+                _this.isBesetztRestaurant.push(_this.tablesRestaurant[i].isBesetzt);
+                _this.placeholdersRestaurant.push(_this.tablesRestaurant[i].placeholder);
+                _this.topValuesRestaurant.push(_this.tablesRestaurant[i].topValue);
+                _this.leftValuesRestaurant.push(_this.tablesRestaurant[i].leftValue);
+            }
             console.log(_this.tablesSonnbergZirbn);
-            console.log(_this.tablesPanorama);
-            console.log(_this.tablesRestaurant);
-            console.log(_this.tablesWintergarten);
         });
         this.tischplanService.getTracesListe()
             .subscribe(function (tracesListeElemente) {
@@ -433,45 +475,41 @@ var TischplanComponent = (function () {
         //console.log(this.successMsg);
         //this.product.photo = fileInput.target.files[0]['name'];
     };
-    TischplanComponent.prototype.besetzt = function (i, h, j) {
-        if (this.bgColors[i] === "#ffffff") {
-            this.bgColors[i] = "#0a7a74";
-            if (this.tables[j] === this.tables[j - 1]) {
-                this.bgColors[i - 1] = "#0a7a74";
+    /*
+        besetzt(i, h, j) {
+            if (this.bgColors[i] === "#ffffff") {
+                this.bgColors[i] = "#0a7a74";
+                if (this.tables[j] === this.tables[j - 1]) {
+                    this.bgColors[i - 1] = "#0a7a74";
+                }
+            } else {
+                this.bgColors[i] = "#ffffff";
+                if (this.tables[j] === this.tables[j - 1]) {
+                    this.bgColors[i - 1] = "#ffffff";
+                }
             }
-        }
-        else {
-            this.bgColors[i] = "#ffffff";
-            if (this.tables[j] === this.tables[j - 1]) {
-                this.bgColors[i - 1] = "#ffffff";
+            if (this.isBesetzt[h] == true) {
+                this.isBesetzt[h] = false;
+            } else {
+                this.isBesetzt[h] = true;
             }
+    
         }
-        if (this.isBesetzt[h] == true) {
-            this.isBesetzt[h] = false;
-        }
-        else {
-            this.isBesetzt[h] = true;
-        }
-    };
-    TischplanComponent.prototype.placeholderHide = function (p) {
+    
+      placeholderHide(p) {
         if (this.placeholders[p] === true) {
-            this.placeholders[p] = false;
+          this.placeholders[p] = false;
+        } else {
+          this.placeholders[p] = true;
         }
-        else {
-            this.placeholders[p] = true;
-        }
-    };
+      }
+      */
     TischplanComponent.prototype.showSonnbergZirbn = function () {
         console.log("showSonnbergZirbn!");
         this.showSonnbergZirbnBool = true;
         this.showPanoramaBool = false;
         this.showRestaurantBool = false;
         this.showWintergartenBool = false;
-        this.topValues = [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
-        this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170, 50, 50, 50, 50, 200];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
         if (this.buttonBgColor1 === "eaf3f3") {
             this.buttonBgColor1 = "0a7a74";
             this.buttonBgColor2 = "eaf3f3";
@@ -495,13 +533,9 @@ var TischplanComponent = (function () {
         console.log("showPanorama!");
         this.showSonnbergZirbnBool = false;
         this.showPanoramaBool = true;
+        console.log(this.showPanoramaBool);
         this.showRestaurantBool = false;
         this.showWintergartenBool = false;
-        this.topValues = [440, 440, 440, 440, 440, 440, 440, 340, 280, 220, 160, 160, 220, 280, 340, 340, 280, 220, 160, 340, 280, 220, 160, 160, 220, 280, 340, 400, 460, 520];
-        this.leftValues = [220, 280, 340, 400, 460, 520, 580, 580, 580, 580, 580, 460, 460, 460, 460, 340, 340, 340, 340, 220, 220, 220, 220, 60, 60, 60, 60, 60, 60, 60];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
         if (this.buttonBgColor2 === "eaf3f3") {
             this.buttonBgColor2 = "0a7a74";
             this.buttonBgColor1 = "eaf3f3";
@@ -527,11 +561,6 @@ var TischplanComponent = (function () {
         this.showPanoramaBool = false;
         this.showRestaurantBool = true;
         this.showWintergartenBool = false;
-        this.topValues = [500, 500, 500, 500, 350, 350, 350, 200, 200, 200, 200, 200, 300, 400, 500, 500, 350];
-        this.leftValues = [60, 120, 180, 240, 120, 180, 240, 60, 180, 240, 340, 440, 440, 440, 440, 340, 340];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
         if (this.buttonBgColor3 === "eaf3f3") {
             this.buttonBgColor3 = "0a7a74";
             this.buttonBgColor1 = "eaf3f3";
@@ -555,13 +584,8 @@ var TischplanComponent = (function () {
         console.log("showWintergarten!");
         this.showSonnbergZirbnBool = false;
         this.showPanoramaBool = false;
-        this.showRestaurantBool = true;
-        this.showWintergartenBool = false;
-        this.topValues = [115, 115, 115, 115, 215, 215, 420, 460, 530, 530, 460, 420, 350, 420, 380, 380, 290, 280, 230, 180, 130, 130, 180, 115, 180];
-        this.leftValues = [420, 500, 590, 680, 590, 690, 590, 640, 630, 560, 530, 400, 340, 340, 280, 200, 150, 110, 70, 50, 40, 150, 260, 300, 330];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
+        this.showRestaurantBool = false;
+        this.showWintergartenBool = true;
         if (this.buttonBgColor4 === "eaf3f3") {
             this.buttonBgColor4 = "0a7a74";
             this.buttonBgColor1 = "eaf3f3";
@@ -581,384 +605,355 @@ var TischplanComponent = (function () {
             this.fontColor4 = "0a7a74";
         }
     };
-    TischplanComponent.prototype.moveTable = function (g, j, f) {
-        console.log("moveTable clicked");
-        console.log(g, j, f + "-" + this.leftValues[f] + "-" + this.topValues[g]);
-        //Sonnberg-Zirbn
-        //50
-        if (g === 10 && this.topValues[g] === 430) {
-            this.topValues[g] = 400;
-            this.tables.splice(j + 1, 1, 50);
-        }
-        else if (g === 10 && this.topValues[g] === 400) {
-            this.topValues[g] = 430;
-            this.tables.splice(j + 1, 1, 51);
-        }
-        //52
-        if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
+    /*
+        moveTable(g, j, f) {
+    
+          console.log("moveTable clicked");
+          console.log(g, j, f + "-" +  this.leftValues[f] + "-" + this.topValues[g]);
+    
+          //Sonnberg-Zirbn
+          //50
+          if (g === 10 && this.topValues[g] === 430) {
+              this.topValues[g] = 400;
+              this.tables.splice(j + 1, 1, 50);
+          }   else if (g === 10 && this.topValues[g] === 400) {
+              this.topValues[g] = 430;
+              this.tables.splice(j + 1, 1, 51);
+          }
+          //52
+          if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
             this.topValues[g] = 280;
             this.leftValues[f] = 200;
             this.tables.splice(j + 1, 1, 52);
-        }
-        else if (g === 12 && this.leftValues[f] === 200 && this.topValues[g] === 280) {
+          } else if (g === 12 && this.leftValues[f] === 200 && this.topValues[g] === 280) {
             this.leftValues[f] = 230;
             this.topValues[g] = 280;
             this.tables.splice(j + 1, 1, 53);
-        }
-        //54
-        if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 320) {
+          }
+          //54
+          if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 320) {
             this.topValues[g] = 290;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 54);
-        }
-        else if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 290) {
+          } else if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 290) {
             this.topValues[g] = 320;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 55);
-        }
-        //56
-        if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 200) {
+          }
+          //56
+          if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 200) {
             this.topValues[g] = 170;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 56);
-        }
-        else if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 170) {
+          } else if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 170) {
             this.topValues[g] = 200;
             this.leftValues[f] = 50;
             this.tables.splice(j + 1, 1, 57);
-        }
-        //Panorama Restaurant
-        //60
-        if (g === 0 && this.leftValues[f] === 220 && this.topValues[g] === 440) {
+          }
+    
+          //Panorama Restaurant
+          //60
+          if (g === 0 && this.leftValues[f] === 220 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 250;
             this.tables.splice(j + 1, 1, 60);
-        }
-        else if (g === 0 && this.leftValues[f] === 250 && this.topValues[g] === 440) {
+          } else if (g === 0 && this.leftValues[f] === 250 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 61);
-        }
-        //61
-        if (g === 1 && this.leftValues[f] === 280 && this.topValues[g] === 440) {
+          }
+          //61
+          if (g === 1 && this.leftValues[f] === 280 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 310;
             this.tables.splice(j + 1, 1, 61);
-        }
-        else if (g === 1 && this.leftValues[f] === 310 && this.topValues[g] === 440) {
+          } else if (g === 1 && this.leftValues[f] === 310 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 280;
             this.tables.splice(j + 1, 1, 62);
-        }
-        //62
-        if (g === 2 && this.leftValues[f] === 340 && this.topValues[g] === 440) {
+          }
+          //62
+          if (g === 2 && this.leftValues[f] === 340 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 370;
             this.tables.splice(j + 1, 1, 62);
-        }
-        else if (g === 2 && this.leftValues[f] === 370 && this.topValues[g] === 440) {
+          } else if (g === 2 && this.leftValues[f] === 370 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 63);
-        }
-        //63
-        if (g === 3 && this.leftValues[f] === 400 && this.topValues[g] === 440) {
+          }
+          //63
+          if (g === 3 && this.leftValues[f] === 400 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 430;
             this.tables.splice(j + 1, 1, 63);
-        }
-        else if (g === 3 && this.leftValues[f] === 430 && this.topValues[g] === 440) {
+          } else if (g === 3 && this.leftValues[f] === 430 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 400;
             this.tables.splice(j + 1, 1, 64);
-        }
-        //64
-        if (g === 4 && this.leftValues[f] === 460 && this.topValues[g] === 440) {
+          }
+          //64
+          if (g === 4 && this.leftValues[f] === 460 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 490;
             this.tables.splice(j + 1, 1, 64);
-        }
-        else if (g === 4 && this.leftValues[f] === 490 && this.topValues[g] === 440) {
+          } else if (g === 4 && this.leftValues[f] === 490 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 65);
-        }
-        //65
-        if (g === 5 && this.leftValues[f] === 520 && this.topValues[g] === 440) {
+          }
+          //65
+          if (g === 5 && this.leftValues[f] === 520 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 550;
             this.tables.splice(j + 1, 1, 65);
-        }
-        else if (g === 5 && this.leftValues[f] === 550 && this.topValues[g] === 440) {
+          } else if (g === 5 && this.leftValues[f] === 550 && this.topValues[g] === 440) {
             this.topValues[g] = 440;
             this.leftValues[f] = 520;
             this.tables.splice(j + 1, 1, 66);
-        }
-        //67
-        if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 340) {
+          }
+          //67
+          if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 340) {
             this.topValues[g] = 310;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 67);
-        }
-        else if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 310) {
+          } else if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 310) {
             this.topValues[g] = 340;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 68);
-        }
-        //68
-        if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 280) {
+          }
+          //68
+          if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 280) {
             this.topValues[g] = 250;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 68);
-        }
-        else if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 250) {
+          } else if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 250) {
             this.topValues[g] = 280;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 69);
-        }
-        //69
-        if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 220) {
+          }
+          //69
+          if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 220) {
             this.topValues[g] = 190;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 69);
-        }
-        else if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 190) {
+          } else if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 190) {
             this.topValues[g] = 220;
             this.leftValues[f] = 580;
             this.tables.splice(j + 1, 1, 70);
-        }
-        //71
-        if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 160) {
+          }
+          //71
+          if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 160) {
             this.topValues[g] = 190;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 71);
-        }
-        else if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 190) {
+          } else if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 190) {
             this.topValues[g] = 160;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 72);
-        }
-        //72
-        if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 220) {
+          }
+          //72
+          if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 220) {
             this.topValues[g] = 250;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 72);
-        }
-        else if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 250) {
+          } else if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 250) {
             this.topValues[g] = 220;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 73);
-        }
-        //73
-        if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 280) {
+          }
+          //73
+          if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 280) {
             this.topValues[g] = 310;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 73);
-        }
-        else if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 310) {
+          } else if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 310) {
             this.topValues[g] = 280;
             this.leftValues[f] = 460;
             this.tables.splice(j + 1, 1, 74);
-        }
-        //75
-        if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 340) {
+          }
+          //75
+          if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 340) {
             this.topValues[g] = 310;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 75);
-        }
-        else if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 310) {
+          } else if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 310) {
             this.topValues[g] = 340;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 76);
-        }
-        //76
-        if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 280) {
+          }
+          //76
+          if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 280) {
             this.topValues[g] = 250;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 76);
-        }
-        else if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 250) {
+          } else if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 250) {
             this.topValues[g] = 280;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 77);
-        }
-        //77
-        if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 220) {
+          }
+          //77
+          if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 220) {
             this.topValues[g] = 190;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 77);
-        }
-        else if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 190) {
+          } else if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 190) {
             this.topValues[g] = 220;
             this.leftValues[f] = 340;
             this.tables.splice(j + 1, 1, 78);
-        }
-        //79
-        if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 340) {
+          }
+          //79
+          if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 340) {
             this.topValues[g] = 310;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 79);
-        }
-        else if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 310) {
+          } else if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 310) {
             this.topValues[g] = 340;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 80);
-        }
-        //80
-        if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 280) {
+          }
+          //80
+          if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 280) {
             this.topValues[g] = 250;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 80);
-        }
-        else if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 250) {
+          } else if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 250) {
             this.topValues[g] = 280;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 81);
-        }
-        //81
-        if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 220) {
+          }
+          //81
+          if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 220) {
             this.topValues[g] = 190;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 81);
-        }
-        else if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 190) {
+          } else if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 190) {
             this.topValues[g] = 220;
             this.leftValues[f] = 220;
             this.tables.splice(j + 1, 1, 82);
-        }
-        //83
-        if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 160) {
+          }
+          //83
+          if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 160) {
             this.topValues[g] = 190;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 83);
-        }
-        else if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 190) {
+          } else if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 190) {
             this.topValues[g] = 160;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 84);
-        }
-        //84
-        if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 220) {
+          }
+          //84
+          if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 220) {
             this.topValues[g] = 250;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 84);
-        }
-        else if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 250) {
+          } else if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 250) {
             this.topValues[g] = 220;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 85);
-        }
-        //85
-        if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 280) {
+          }
+          //85
+          if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 280) {
             this.topValues[g] = 310;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 85);
-        }
-        else if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 310) {
+          } else if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 310) {
             this.topValues[g] = 280;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 86);
-        }
-        //86
-        if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 340) {
+          }
+          //86
+          if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 340) {
             this.topValues[g] = 370;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 86);
-        }
-        else if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 370) {
+          } else if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 370) {
             this.topValues[g] = 340;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 87);
-        }
-        //87
-        if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 400) {
+          }
+          //87
+          if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 400) {
             this.topValues[g] = 430;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 87);
-        }
-        else if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 430) {
+          } else if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 430) {
             this.topValues[g] = 400;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 88);
-        }
-        //88
-        if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 460) {
+          }
+          //88
+          if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 460) {
             this.topValues[g] = 490;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 88);
-        }
-        else if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 490) {
+          } else if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 490) {
             this.topValues[g] = 460;
             this.leftValues[f] = 60;
             this.tables.splice(j + 1, 1, 89);
-        }
-        //9
-        if (g === 8 && this.leftValues[f] === 180 && this.topValues[g] === 200) {
+          }
+          //9
+          if (g === 8 && this.leftValues[f] === 180 && this.topValues[g] === 200) {
             this.topValues[g] = 200;
             this.leftValues[f] = 210;
             this.tables.splice(j + 1, 1, 9);
-        }
-        else if (g === 8 && this.leftValues[f] === 210 && this.topValues[g] === 200) {
+          } else if (g === 8 && this.leftValues[f] === 210 && this.topValues[g] === 200) {
             this.topValues[g] = 200;
             this.leftValues[f] = 180;
             this.tables.splice(j + 1, 1, 10);
-        }
-        //501
-        if (g === 0 && this.leftValues[f] === 420 && this.topValues[g] === 115) {
+          }
+          //501
+          if (g === 0 && this.leftValues[f] === 420 && this.topValues[g] === 115) {
             this.topValues[g] = 115;
             this.leftValues[f] = 470;
             this.tables.splice(j + 1, 1, 501);
-        }
-        else if (g === 0 && this.leftValues[f] === 470 && this.topValues[g] === 115) {
+          } else if (g === 0 && this.leftValues[f] === 470 && this.topValues[g] === 115) {
             this.topValues[g] = 115;
             this.leftValues[f] = 420;
             this.tables.splice(j + 1, 1, 502);
-        }
-        //503
-        if (g === 2 && this.leftValues[f] === 590 && this.topValues[g] === 115) {
+          }
+          //503
+          if (g === 2 && this.leftValues[f] === 590 && this.topValues[g] === 115) {
             this.topValues[g] = 115;
             this.leftValues[f] = 640;
             this.tables.splice(j + 1, 1, 503);
-        }
-        else if (g === 2 && this.leftValues[f] === 640 && this.topValues[g] === 115) {
+          } else if (g === 2 && this.leftValues[f] === 640 && this.topValues[g] === 115) {
             this.topValues[g] = 115;
             this.leftValues[f] = 590;
             this.tables.splice(j + 1, 1, 504);
-        }
-        //505
-        if (g === 4 && this.leftValues[f] === 590 && this.topValues[g] === 215) {
+          }
+          //505
+          if (g === 4 && this.leftValues[f] === 590 && this.topValues[g] === 215) {
             this.topValues[g] = 215;
             this.leftValues[f] = 640;
             this.tables.splice(j + 1, 1, 505);
-        }
-        else if (g === 4 && this.leftValues[f] === 640 && this.topValues[g] === 215) {
+          } else if (g === 4 && this.leftValues[f] === 640 && this.topValues[g] === 215) {
             this.topValues[g] = 215;
             this.leftValues[f] = 590;
             this.tables.splice(j + 1, 1, 506);
-        }
-        //515
-        if (g === 14 && this.leftValues[f] === 280 && this.topValues[g] === 380) {
+          }
+          //515
+          if (g === 14 && this.leftValues[f] === 280 && this.topValues[g] === 380) {
             this.topValues[g] = 380;
             this.leftValues[f] = 240;
             this.tables.splice(j + 1, 1, 515);
-        }
-        else if (g === 14 && this.leftValues[f] === 240 && this.topValues[g] === 380) {
+          } else if (g === 14 && this.leftValues[f] === 240 && this.topValues[g] === 380) {
             this.topValues[g] = 380;
             this.leftValues[f] = 280;
             this.tables.splice(j + 1, 1, 516);
-        }
-        //523
-        if (g === 23 && this.leftValues[f] === 300 && this.topValues[g] === 115) {
+          }
+          //523
+          if (g === 23 && this.leftValues[f] === 300 && this.topValues[g] === 115) {
             this.topValues[g] = 130;
             this.leftValues[f] = 260;
             this.tables.splice(j, 1, 523);
-        }
-        else if (g === 23 && this.leftValues[f] === 260 && this.topValues[g] === 130) {
+          } else if (g === 23 && this.leftValues[f] === 260 && this.topValues[g] === 130) {
             this.topValues[g] = 115;
             this.leftValues[f] = 300;
             this.tables.splice(j, 1, 524);
+          }
         }
-    };
+    */
     TischplanComponent.prototype.printToCart1 = function (printSectionId1) {
         var popupWinindow;
         var innerContents = document.getElementById(printSectionId1).innerHTML;

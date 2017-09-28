@@ -34,26 +34,49 @@ export class TischplanComponent implements OnInit {
     fontColor3: string;
     fontColor4: string;
     leftValues: LeftValue[];
-    topValues: TopValue[];
-    bgColors: BgColor[];
+    topValues: any[] = [];
+
+    bgColorsSonnbergZirbn: BgColor[] = [];
+    placeholdersSonnbergZirbn: any[] = [];
+    isBesetztSonnbergZirbn: IsBesetzt[]  = [];
+    topValuesSonnbergZirbn: any[] = [];
+    leftValuesSonnbergZirbn: any[] = [];
+
+    bgColorsPanorama: BgColor[] = [];
+    placeholdersPanorama: any[] = [];
+    isBesetztPanorama: IsBesetzt[]  = [];
+    topValuesPanorama: any[] = [];
+    leftValuesPanorama: any[] = [];
+
+    bgColorsWintergarten: BgColor[] = [];
+    placeholdersWintergarten: any[] = [];
+    isBesetztWintergarten: IsBesetzt[]  = [];
+    topValuesWintergarten: any[] = [];
+    leftValuesWintergarten: any[] = [];
+
+    bgColorsRestaurant: BgColor[] = [];
+    placeholdersRestaurant: any[] = [];
+    isBesetztRestaurant: IsBesetzt[]  = [];
+    topValuesRestaurant: any[] = [];
+    leftValuesRestaurant: any[] = [];
+
+
     imHausListeElemente: ImHausListe[];
     anreiseListeElemente: AnreiseListe[];
     tracesListeElemente: any[] = [];
-    placeholders: any[] = [];
     tables: Table[];
     tablesSonnbergZirbn: Table[];
     tablesPanorama: Table[];
     tablesRestaurant: Table[];
     tablesWintergarten: Table[];
     title: string;
-    dateGenerated: any;
     filesToUpload: Array<File> = [];
-    isBesetzt: IsBesetzt[];
+
     isDropped: any[] = [];
-    showSonnbergZirbnBool: boolean = false;
-    showPanoramaBool: boolean = false;
-    showRestaurantBool: boolean = false;
-    showWintergartenBool: boolean = false;
+    showSonnbergZirbnBool: boolean;
+    showPanoramaBool: boolean;
+    showRestaurantBool: boolean;
+    showWintergartenBool: boolean;
 
     constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
         let DomBaseElement = this.element.nativeElement;
@@ -75,12 +98,45 @@ export class TischplanComponent implements OnInit {
         .subscribe(tables => {
           this.tablesSonnbergZirbn = tables[0].tables;
           this.tablesPanorama = tables[1].tables;
-          this.tablesRestaurant = tables[2].tables;
-          this.tablesWintergarten = tables[3].tables;
+          this.tablesWintergarten = tables[2].tables;
+          this.tablesRestaurant = tables[3].tables;
+
+          for(let i = 0; i < tables[0].tables.length; i++) {
+            this.bgColorsSonnbergZirbn.push(this.tablesSonnbergZirbn[i].bgColor);
+            this.isBesetztSonnbergZirbn.push(this.tablesSonnbergZirbn[i].isBesetzt);
+            this.placeholdersSonnbergZirbn.push(this.tablesSonnbergZirbn[i].placeholder);
+            this.topValuesSonnbergZirbn.push(this.tablesSonnbergZirbn[i].topValue);
+            this.leftValuesSonnbergZirbn.push(this.tablesSonnbergZirbn[i].leftValue);
+          }
+
+          for(let i = 0; i < tables[1].tables.length; i++) {
+            this.bgColorsPanorama.push(this.tablesPanorama[i].bgColor);
+            this.isBesetztPanorama.push(this.tablesPanorama[i].isBesetzt);
+            this.placeholdersPanorama.push(this.tablesPanorama[i].placeholder);
+            this.placeholdersPanorama.push(this.tablesPanorama[i].placeholder);
+            this.topValuesPanorama.push(this.tablesPanorama[i].topValue);
+            this.leftValuesPanorama.push(this.tablesPanorama[i].leftValue);
+          }
+
+          for(let i = 0; i < tables[2].tables.length; i++) {
+            this.bgColorsWintergarten.push(this.tablesWintergarten[i].bgColor);
+            this.isBesetztWintergarten.push(this.tablesWintergarten[i].isBesetzt);
+            this.placeholdersWintergarten.push(this.tablesWintergarten[i].placeholder);
+            this.topValuesWintergarten.push(this.tablesWintergarten[i].topValue);
+            this.leftValuesWintergarten.push(this.tablesWintergarten[i].leftValue);
+          }
+
+          for(let i = 0; i < tables[3].tables.length; i++) {
+            this.bgColorsRestaurant.push(this.tablesRestaurant[i].bgColor);
+            this.isBesetztRestaurant.push(this.tablesRestaurant[i].isBesetzt);
+            this.placeholdersRestaurant.push(this.tablesRestaurant[i].placeholder);
+            this.topValuesRestaurant.push(this.tablesRestaurant[i].topValue);
+            this.leftValuesRestaurant.push(this.tablesRestaurant[i].leftValue);
+          }
+
+
+
           console.log(this.tablesSonnbergZirbn);
-          console.log(this.tablesPanorama);
-          console.log(this.tablesRestaurant);
-          console.log(this.tablesWintergarten);
         });
 
         this.tischplanService.getTracesListe()
@@ -311,7 +367,7 @@ export class TischplanComponent implements OnInit {
         //console.log(this.successMsg);
         //this.product.photo = fileInput.target.files[0]['name'];
     }
-
+/*
     besetzt(i, h, j) {
         if (this.bgColors[i] === "#ffffff") {
             this.bgColors[i] = "#0a7a74";
@@ -339,17 +395,14 @@ export class TischplanComponent implements OnInit {
       this.placeholders[p] = true;
     }
   }
+  */
     showSonnbergZirbn() {
+
         console.log("showSonnbergZirbn!");
         this.showSonnbergZirbnBool = true;
         this.showPanoramaBool = false;
         this.showRestaurantBool = false;
         this.showWintergartenBool = false;
-        this.topValues =  [340, 220, 140, 200, 280, 280, 200, 140, 220, 340, 430, 370, 280, 280, 320, 260, 200, 140, 140];
-        this.leftValues = [630, 630, 600, 570, 570, 510, 510, 400, 400, 400, 200, 200, 230, 170,  50,  50,  50,  50, 200];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
 
         if (this.buttonBgColor1 === "eaf3f3") {
             this.buttonBgColor1 = "0a7a74";
@@ -373,13 +426,9 @@ export class TischplanComponent implements OnInit {
         console.log("showPanorama!");
         this.showSonnbergZirbnBool = false;
         this.showPanoramaBool = true;
+        console.log(this.showPanoramaBool);
         this.showRestaurantBool = false;
         this.showWintergartenBool = false;
-        this.topValues =  [440, 440, 440, 440, 440, 440, 440, 340, 280, 220, 160, 160, 220, 280, 340, 340, 280, 220, 160, 340, 280, 220, 160, 160, 220, 280, 340, 400, 460, 520];
-        this.leftValues = [220, 280, 340, 400, 460, 520, 580, 580, 580, 580, 580, 460, 460, 460, 460, 340, 340, 340, 340, 220, 220, 220, 220,  60,  60,  60,  60,  60,  60,  60];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt =    [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
 
         if (this.buttonBgColor2 === "eaf3f3") {
             this.buttonBgColor2 = "0a7a74";
@@ -405,11 +454,7 @@ export class TischplanComponent implements OnInit {
         this.showPanoramaBool = false;
         this.showRestaurantBool = true;
         this.showWintergartenBool = false;
-        this.topValues =  [500, 500, 500, 500, 350, 350, 350, 200, 200, 200, 200, 200, 300, 400, 500, 500, 350];
-        this.leftValues = [60,  120, 180, 240, 120, 180, 240,  60, 180, 240, 340, 440, 440, 440, 440, 340, 340];
-        this.bgColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt =    [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [ true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true];
+
 
         if (this.buttonBgColor3 === "eaf3f3") {
             this.buttonBgColor3 = "0a7a74";
@@ -433,13 +478,8 @@ export class TischplanComponent implements OnInit {
         console.log("showWintergarten!");
         this.showSonnbergZirbnBool = false;
         this.showPanoramaBool = false;
-        this.showRestaurantBool = true;
-        this.showWintergartenBool = false;
-        this.topValues =  [115, 115, 115, 115, 215, 215, 420, 460, 530, 530, 460, 420, 350, 420, 380, 380, 290, 280, 230, 180, 130, 130, 180, 115, 180];
-        this.leftValues = [420, 500, 590, 680, 590, 690, 590, 640, 630, 560, 530, 400, 340, 340, 280, 200, 150, 110,  70,  50,  40, 150, 260, 300, 330];
-        this.bgColors =     ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
-        this.isBesetzt = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-        this.placeholders = [true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, true,  true,  true,  true,  true, true];
+        this.showRestaurantBool = false;
+        this.showWintergartenBool = true;
 
         if (this.buttonBgColor4 === "eaf3f3") {
               this.buttonBgColor4 = "0a7a74";
@@ -458,7 +498,7 @@ export class TischplanComponent implements OnInit {
               this.fontColor4 = "0a7a74";
           }
     }
-
+/*
     moveTable(g, j, f) {
 
       console.log("moveTable clicked");
@@ -806,7 +846,7 @@ export class TischplanComponent implements OnInit {
         this.tables.splice(j, 1, 524);
       }
     }
-
+*/
   printToCart1(printSectionId1: string) {
     let popupWinindow;
     let innerContents = document.getElementById(printSectionId1).innerHTML;
