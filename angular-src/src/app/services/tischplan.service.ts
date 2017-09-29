@@ -22,5 +22,14 @@ export class TischplanService {
     getTables() {
     return this.http.get('tables')
       .map(res => res.json());
+    }
+
+  occupyTable(tableSonnbergZirbn) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    console.log(tableSonnbergZirbn);
+    console.log(headers);
+    return this.http.post('tables', tableSonnbergZirbn, {headers: headers} )
+      .map(res => res.json());
   }
 }

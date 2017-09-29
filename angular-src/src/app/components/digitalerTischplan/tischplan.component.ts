@@ -367,27 +367,31 @@ export class TischplanComponent implements OnInit {
         //console.log(this.successMsg);
         //this.product.photo = fileInput.target.files[0]['name'];
     }
-/*
-    besetzt(i, h, j) {
-        if (this.bgColors[i] === "#ffffff") {
-            this.bgColors[i] = "#0a7a74";
-            if (this.tables[j] === this.tables[j - 1]) {
-                this.bgColors[i - 1] = "#0a7a74";
-            }
-        } else {
-            this.bgColors[i] = "#ffffff";
-            if (this.tables[j] === this.tables[j - 1]) {
-                this.bgColors[i - 1] = "#ffffff";
-            }
-        }
-        if (this.isBesetzt[h] == true) {
-            this.isBesetzt[h] = false;
-        } else {
-            this.isBesetzt[h] = true;
-        }
 
+    occupy(tableSonnbergZirbn, i) {
+         this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
+           this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
+           /*
+           if (this.bgColors[i] === "#ffffff") {
+             this.bgColors[i] = "#0a7a74";
+             if (this.tables[j] === this.tables[j - 1]) {
+               this.bgColors[i - 1] = "#0a7a74";
+             }
+           } else {
+             this.bgColors[i] = "#ffffff";
+             if (this.tables[j] === this.tables[j - 1]) {
+               this.bgColors[i - 1] = "#ffffff";
+             }
+           }
+           if (this.isBesetzt[h] == true) {
+             this.isBesetzt[h] = false;
+           } else {
+             this.isBesetzt[h] = true;
+           }
+            */
+         });
     }
-
+  /*
   placeholderHide(p) {
     if (this.placeholders[p] === true) {
       this.placeholders[p] = false;
@@ -395,7 +399,7 @@ export class TischplanComponent implements OnInit {
       this.placeholders[p] = true;
     }
   }
-  */
+            */
     showSonnbergZirbn() {
 
         console.log("showSonnbergZirbn!");
@@ -498,6 +502,7 @@ export class TischplanComponent implements OnInit {
               this.fontColor4 = "0a7a74";
           }
     }
+
 /*
     moveTable(g, j, f) {
 

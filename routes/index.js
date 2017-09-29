@@ -1,17 +1,19 @@
-'use strict';
-
 const   express = require('express'),
         router = express.Router(),
         bodyParser = require('body-parser'),
         mongojs = require('mongojs'),
+        cors = require('cors'),
         db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables']);
 
 //Bodyparser middleware
 router.use(bodyParser.urlencoded({ extended: false}));
 
+router.use(bodyParser.json());
+
+//Cors middleware
+router.use(cors());
 
 //----->REST-FUL API<------//
-
 
 //Save AnreiseListe
 router.post('/anreiseListe', function(req, res, next) {
@@ -120,6 +122,23 @@ router.get('/tables', function(req, res, next) {
         res.json(tables);
     });
 });
+
+//occupyTable
+router.post('/tables', function(req, res, next) {
+//JSON string is parsed to a JSON object
+    console.log("occupyTable request made to /occupyTable");
+    let occupyTable = req.body;
+    console.log(occupyTable);
+
+    db.tables.update(
+        {department: occupyTable.department,
+            "tables.number": occupyTable.number} ,
+        {$set: {"tables.$.bgColor": "#0a7a74"}});
+    res.json(occupyTable);
+
+});
+
+
 
 
 module.exports = router;
