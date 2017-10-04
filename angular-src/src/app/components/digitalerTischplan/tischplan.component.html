@@ -37,13 +37,13 @@
                           <div class='wrapper' id="wrapper">
                             <div *ngIf="showSonnbergZirbnBool">
                               <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
-                                <div *ngFor="let bgColor of bgColorsSonnbergZirbn; let i = index;">4
+                                <div *ngFor="let bgColor of bgColorsSonnbergZirbn; let i = index;">
                                   <div *ngIf="i === j">
                                     <div *ngFor="let isbesetzt of isBesetztSonnbergZirbn; let h = index;">
                                       <div *ngIf="h === i">
                                         <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
                                           <div class='container' id='containerSonnbergZirbn' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + bgColor}">
-                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, i)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
+                                          <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, i, h)">{{isbesetzt ? "ZURÜCKSETZEN": "BESETZEN"}}</button>
                                             <div class="table" [ngStyle]="{'background-color': '#' + bgColor}">
                                                 <p><b> Tisch: {{tableSonnbergZirbn.number}} </b><br></p>
                                             <div *ngIf=isbesetzt>

@@ -124,21 +124,48 @@ router.get('/tables', function(req, res, next) {
 });
 
 //occupyTable
-router.post('/tables', function(req, res, next) {
+router.post('/occupyTable', function(req, res, next) {
 //JSON string is parsed to a JSON object
     console.log("occupyTable request made to /occupyTable");
     let occupyTable = req.body;
-    console.log(occupyTable);
+    //console.log(occupyTable);
 
     db.tables.update(
         {department: occupyTable.department,
             "tables.number": occupyTable.number} ,
         {$set: {"tables.$.bgColor": "#0a7a74"}});
-    res.json(occupyTable);
-
+    db.tables.find(
+        {department: occupyTable.department,
+            "tables.number": occupyTable.number}, function(err, tables){
+        if (err){
+            res.send(err);
+        }
+        console.log(tables);
+        res.json(tables);
+    });
 });
 
+//dispenseTable
+router.post('/dispenseTable', function(req, res, next) {
+//JSON string is parsed to a JSON object
+    console.log("dispenseTable request made to /dispenseTable");
+    let dispenseTable = req.body;
+    //console.log(dispenseTable);
 
+    db.tables.update(
+        {department: dispenseTable.department,
+            "tables.number": dispenseTable.number},
+        {$set: {"tables.$.bgColor": "#ffffff"}});
+        db.tables.find(
+            {department: dispenseTable.department,
+                "tables.number": dispenseTable.number}, function(err, tables){
+                if (err){
+                    res.send(err);
+                }
+                console.log(tables);
+                res.json(tables);
+            });
 
+});
 
 module.exports = router;

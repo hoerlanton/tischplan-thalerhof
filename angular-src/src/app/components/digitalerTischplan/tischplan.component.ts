@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import {NgClass} from '@angular/common'
+import { Response } from '@angular/http';
 
 import { ImHausListe } from '../../../../ImHausListe';
 import { AnreiseListe } from '../../../../AnreiseListe';
@@ -59,7 +60,6 @@ export class TischplanComponent implements OnInit {
     isBesetztRestaurant: IsBesetzt[]  = [];
     topValuesRestaurant: any[] = [];
     leftValuesRestaurant: any[] = [];
-
 
     imHausListeElemente: ImHausListe[];
     anreiseListeElemente: AnreiseListe[];
@@ -368,9 +368,11 @@ export class TischplanComponent implements OnInit {
         //this.product.photo = fileInput.target.files[0]['name'];
     }
 
-    occupy(tableSonnbergZirbn, i) {
-         this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
-           this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
+    occupy(tableSonnbergZirbn, i, h) {
+
+      console.log("Occupy Table!!!");
+      console.log(tableSonnbergZirbn);
+      console.log(i);
            /*
            if (this.bgColors[i] === "#ffffff") {
              this.bgColors[i] = "#0a7a74";
@@ -384,13 +386,32 @@ export class TischplanComponent implements OnInit {
              }
            }
            if (this.isBesetzt[h] == true) {
+            this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
+            this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
              this.isBesetzt[h] = false;
            } else {
+            this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
+            this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
              this.isBesetzt[h] = true;
-           }
+
             */
-         });
-    }
+
+      if (this.bgColorsSonnbergZirbn[i] === "#ffffff") {
+        //this.isBesetztSonnbergZirbn[h] = true;
+        this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(response => {
+          console.log("RESPONSE:" + JSON.stringify(response[0].tables[i].bgColor));
+          this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
+        })
+      } else {
+        //this.isBesetztSonnbergZirbn[h] = false;
+        this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(response => {
+          console.log("RESPONSE:" + JSON.stringify(response[0].tables[i].bgColor));
+          this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
+        })
+      }
+  }
+
+
   /*
   placeholderHide(p) {
     if (this.placeholders[p] === true) {

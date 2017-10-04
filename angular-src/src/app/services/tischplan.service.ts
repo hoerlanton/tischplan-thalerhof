@@ -27,9 +27,15 @@ export class TischplanService {
   occupyTable(tableSonnbergZirbn) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    console.log(tableSonnbergZirbn);
-    console.log(headers);
-    return this.http.post('tables', tableSonnbergZirbn, {headers: headers} )
+    return this.http.post('occupyTable', tableSonnbergZirbn, {headers: headers} )
       .map(res => res.json());
   }
+
+  dispenseTable(tableSonnbergZirbn) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('dispenseTable', tableSonnbergZirbn, {headers: headers} )
+      .map(res => res.json());
+  }
+
 }
