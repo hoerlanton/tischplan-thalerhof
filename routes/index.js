@@ -133,16 +133,27 @@ router.post('/occupyTable', function(req, res, next) {
     db.tables.update(
         {department: occupyTable.department,
             "tables.number": occupyTable.number} ,
-        {$set: {"tables.$.bgColor": "#0a7a74"}});
-    db.tables.find(
-        {department: occupyTable.department,
-            "tables.number": occupyTable.number}, function(err, tables){
-        if (err){
-            res.send(err);
-        }
-        console.log(tables);
-        res.json(tables);
-    });
+        {$set: {"tables.$.bgColor": "#0a7a74"}}, function (err, tables) {
+            if (err) {
+                console.log("OI");
+            }
+            console.log("HOI");
+        });
+
+        setTimeout(function() {
+            db.tables.find(
+                {
+                    department: occupyTable.department,
+                    "tables.number": occupyTable.number
+                }, function (err, tables) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    res.json(tables);
+                    console.log(JSON.stringify(tables));
+                });
+        }, 100);
+
 });
 
 //dispenseTable
@@ -152,20 +163,32 @@ router.post('/dispenseTable', function(req, res, next) {
     let dispenseTable = req.body;
     //console.log(dispenseTable);
 
-    db.tables.update(
-        {department: dispenseTable.department,
-            "tables.number": dispenseTable.number},
-        {$set: {"tables.$.bgColor": "#ffffff"}});
+    db.tables.findAndModify({
+            query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
+            update: {$set: {"tables.$.bgColor": "#ffffff"} },
+            new: false
+        }, function (err, tables) {
+        if (err) {
+            console.log("OI");
+        }
+        console.log("HOI");
+    });
+
+    setTimeout(function() {
         db.tables.find(
-            {department: dispenseTable.department,
-                "tables.number": dispenseTable.number}, function(err, tables){
-                if (err){
+            {
+                department: dispenseTable.department,
+                "tables.number": dispenseTable.number
+            }, function (err, tables) {
+                if (err) {
                     res.send(err);
                 }
-                console.log(tables);
                 res.json(tables);
+                console.log(JSON.stringify(tables));
             });
+    }, 100);
 
 });
+
 
 module.exports = router;

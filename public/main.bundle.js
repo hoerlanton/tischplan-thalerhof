@@ -500,19 +500,18 @@ var TischplanComponent = (function () {
          this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
          this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
           this.isBesetzt[h] = true;
-
          */
         if (this.bgColorsSonnbergZirbn[i] === "#ffffff") {
             //this.isBesetztSonnbergZirbn[h] = true;
             this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(function (response) {
-                console.log("RESPONSE:" + JSON.stringify(response[0].tables[i].bgColor));
+                console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].bgColor));
                 _this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
             });
         }
         else {
             //this.isBesetztSonnbergZirbn[h] = false;
             this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(function (response) {
-                console.log("RESPONSE:" + JSON.stringify(response[0].tables[i].bgColor));
+                console.log("RESPONSE2:" + JSON.stringify(response[0].tables[i].bgColor));
                 _this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
             });
         }
