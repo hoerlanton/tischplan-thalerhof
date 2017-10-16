@@ -4,20 +4,10 @@ import { DragulaService } from "ng2-dragula";
 import { Http } from '@angular/http';
 import { OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import {NgClass} from '@angular/common'
-import { Response } from '@angular/http';
-
 import { ImHausListe } from '../../../../ImHausListe';
 import { AnreiseListe } from '../../../../AnreiseListe';
-import { TracesListElement } from '../../../../TracesListElement';
 import { Table } from '../../../../Table';
-import { BgColor } from '../../../../BgColor';
 import { LeftValue } from '../../../../LeftValue';
-import { TopValue } from '../../../../TopValue';
-import { buttonBgColor } from '../../../../buttonBgColor';
-import { IsBesetzt } from '../../../../IsBesetzt';
-import {isBoolean} from "util";
-import {containsElement} from "@angular/animations/browser/src/render/shared";
 
 @Component({
     selector: 'tischplan',
@@ -37,38 +27,14 @@ export class TischplanComponent implements OnInit {
     leftValues: LeftValue[];
     topValues: any[] = [];
 
-    bgColorsSonnbergZirbn: BgColor[] = [];
-    placeholdersSonnbergZirbn: any[] = [];
-    isBesetztSonnbergZirbn: IsBesetzt[]  = [];
-    topValuesSonnbergZirbn: any[] = [];
-    leftValuesSonnbergZirbn: any[] = [];
-
-    bgColorsPanorama: BgColor[] = [];
-    placeholdersPanorama: any[] = [];
-    isBesetztPanorama: IsBesetzt[]  = [];
-    topValuesPanorama: any[] = [];
-    leftValuesPanorama: any[] = [];
-
-    bgColorsWintergarten: BgColor[] = [];
-    placeholdersWintergarten: any[] = [];
-    isBesetztWintergarten: IsBesetzt[]  = [];
-    topValuesWintergarten: any[] = [];
-    leftValuesWintergarten: any[] = [];
-
-    bgColorsRestaurant: BgColor[] = [];
-    placeholdersRestaurant: any[] = [];
-    isBesetztRestaurant: IsBesetzt[]  = [];
-    topValuesRestaurant: any[] = [];
-    leftValuesRestaurant: any[] = [];
-
     imHausListeElemente: ImHausListe[];
     anreiseListeElemente: AnreiseListe[];
     tracesListeElemente: any[] = [];
     tables: Table[];
-    tablesSonnbergZirbn: Table[];
-    tablesPanorama: Table[];
-    tablesRestaurant: Table[];
-    tablesWintergarten: Table[];
+    tablesSonnbergZirbn: Table[] = [];
+    tablesPanorama: Table[] = [];
+    tablesRestaurant: Table[] = [];
+    tablesWintergarten: Table[] = [];
     title: string;
     filesToUpload: Array<File> = [];
 
@@ -94,49 +60,31 @@ export class TischplanComponent implements OnInit {
               console.log(this.anreiseListeElemente);
             });
 
-      this.tischplanService.getTables()
-        .subscribe(tables => {
-          this.tablesSonnbergZirbn = tables[0].tables;
-          this.tablesPanorama = tables[1].tables;
-          this.tablesWintergarten = tables[2].tables;
-          this.tablesRestaurant = tables[3].tables;
+        this.tischplanService.getTables()
+          .subscribe(tables => {
+            console.log("TABLES LENGTH: " + tables.length);
 
-          for(let i = 0; i < tables[0].tables.length; i++) {
-            this.bgColorsSonnbergZirbn.push(this.tablesSonnbergZirbn[i].bgColor);
-            this.isBesetztSonnbergZirbn.push(this.tablesSonnbergZirbn[i].isBesetzt);
-            this.placeholdersSonnbergZirbn.push(this.tablesSonnbergZirbn[i].placeholder);
-            this.topValuesSonnbergZirbn.push(this.tablesSonnbergZirbn[i].topValue);
-            this.leftValuesSonnbergZirbn.push(this.tablesSonnbergZirbn[i].leftValue);
-          }
-
-          for(let i = 0; i < tables[1].tables.length; i++) {
-            this.bgColorsPanorama.push(this.tablesPanorama[i].bgColor);
-            this.isBesetztPanorama.push(this.tablesPanorama[i].isBesetzt);
-            this.placeholdersPanorama.push(this.tablesPanorama[i].placeholder);
-            this.placeholdersPanorama.push(this.tablesPanorama[i].placeholder);
-            this.topValuesPanorama.push(this.tablesPanorama[i].topValue);
-            this.leftValuesPanorama.push(this.tablesPanorama[i].leftValue);
-          }
-
-          for(let i = 0; i < tables[2].tables.length; i++) {
-            this.bgColorsWintergarten.push(this.tablesWintergarten[i].bgColor);
-            this.isBesetztWintergarten.push(this.tablesWintergarten[i].isBesetzt);
-            this.placeholdersWintergarten.push(this.tablesWintergarten[i].placeholder);
-            this.topValuesWintergarten.push(this.tablesWintergarten[i].topValue);
-            this.leftValuesWintergarten.push(this.tablesWintergarten[i].leftValue);
-          }
-
-          for(let i = 0; i < tables[3].tables.length; i++) {
-            this.bgColorsRestaurant.push(this.tablesRestaurant[i].bgColor);
-            this.isBesetztRestaurant.push(this.tablesRestaurant[i].isBesetzt);
-            this.placeholdersRestaurant.push(this.tablesRestaurant[i].placeholder);
-            this.topValuesRestaurant.push(this.tablesRestaurant[i].topValue);
-            this.leftValuesRestaurant.push(this.tablesRestaurant[i].leftValue);
-          }
+            for (let a = 0; a < tables.length; a++) {
+              if (tables[a].department === "Panorama") {
+                this.tablesPanorama = tables[a].tables;
+              }
+              else if (tables[a].department === "Wintergarten") {
+                this.tablesWintergarten = tables[a].tables;
+              }
+              else if (tables[a].department === "Sonnberg-Zirbn") {
+                this.tablesSonnbergZirbn = tables[a].tables;
+              }
+              else if (tables[a].department === "Restaurant") {
+                this.tablesRestaurant = tables[a].tables;
+              }
+            }
 
 
+            console.log(this.tablesPanorama);
+            console.log(this.tablesWintergarten);
+            console.log(this.tablesSonnbergZirbn);
+            console.log(this.tablesRestaurant);
 
-          console.log(this.tablesSonnbergZirbn);
         });
 
         this.tischplanService.getTracesListe()
@@ -163,7 +111,7 @@ export class TischplanComponent implements OnInit {
         });
         dragulaService.drop.subscribe((value) => {
             console.log(`drop: ${value[0]}`);
-            this.onDrop(value.slice(1), DomBaseElement, wrapperElementsChildNames);
+            this.onDrop(value.slice(1));
         });
         dragulaService.over.subscribe((value) => {
             console.log(`over: ${value[0]}`);
@@ -320,17 +268,54 @@ export class TischplanComponent implements OnInit {
         let [e, el] = args;
     }
 
-    private onDrop(args, DomBaseElement, wrapperElementsChildNames) {
-        let [e, el] = args;
-        console.log("Args = ");
-        console.log(args);
-        //Check if one of the elements with the id #container has a element with the id #card as child element
-        let containerElements = DomBaseElement.querySelectorAll('.container a');
-        console.log("ContainerElements:");
-        console.log("Container Elements = ");
-        console.log(containerElements);
-        console.log(containerElements.length);
-        //this.isDropped[0] = false;
+    private onDrop(args) {
+      let [e, el] = args;
+      console.log("Args = ");
+      let information = args[0].innerText;
+      let department = JSON.stringify(args[1].id);
+      let departementSubstring = department.substring(10, department.length - 1);
+      //console.log(args[1].innerText);
+      let tableNumber = args[1].innerText;
+      console.log("tableNumber" + tableNumber);
+      let tableNumberSubstring = tableNumber.substring(7, 9);
+      console.log("tableNumberSubstring" + tableNumberSubstring);
+      let dataString = [];
+      dataString.push(information + departementSubstring + tableNumberSubstring);
+
+      console.log(dataString);
+
+      console.log(departementSubstring);
+      console.log(tableNumberSubstring);
+
+      this.tischplanService.addInformationToTable(dataString)
+        .subscribe(response => {
+        let arrayIndex = response[1];
+          //console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
+          this.tablesSonnbergZirbn[arrayIndex] = response[0].tables[arrayIndex];
+          console.log(this.tablesSonnbergZirbn);
+      });
+
+        console.log("Occupy Table!");
+        this.tischplanService.occupyTable(dataString).subscribe(response => {
+          let arrayIndex = response[1];
+          console.log("arrayIndex:" + arrayIndex);
+          console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
+          console.log("isBesetzt:" + JSON.stringify(response[0].tables[arrayIndex].isBesetzt));
+          this.tablesSonnbergZirbn[arrayIndex].bgColor = response[0].tables[arrayIndex].bgColor;
+          this.tablesSonnbergZirbn[arrayIndex].isBesetzt = response[0].tables[arrayIndex].isBesetzt;
+          console.log(this.tablesSonnbergZirbn[arrayIndex]);
+        });
+
+      this.tischplanService.removePlaceholder(dataString).subscribe(response => {
+        let arrayIndex = response[1];
+        console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
+        this.tablesSonnbergZirbn[arrayIndex].placeholder = response[0].tables[arrayIndex].placeholder;
+        console.log(this.tablesSonnbergZirbn[arrayIndex].placeholder);
+      });
+
+      e = "";
+      el = "";
+
     }
 
     private onOver(args) {
@@ -368,58 +353,25 @@ export class TischplanComponent implements OnInit {
         //this.product.photo = fileInput.target.files[0]['name'];
     }
 
-    occupy(tableSonnbergZirbn, i, h) {
+    occupy(tableSonnbergZirbn, j) {
+      this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(response => {
+        console.log("Dispense Table!");
+        console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
+        console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
+        this.tablesSonnbergZirbn[j].bgColor = response[0].tables[j].bgColor;
+        this.tablesSonnbergZirbn[j].isBesetzt = response[0].tables[j].isBesetzt;
+        console.log(this.tablesSonnbergZirbn[j].isBesetzt);
+      });
 
-      console.log("Occupy Table!!!");
-      console.log(tableSonnbergZirbn);
-      console.log(i);
-           /*
-           if (this.bgColors[i] === "#ffffff") {
-             this.bgColors[i] = "#0a7a74";
-             if (this.tables[j] === this.tables[j - 1]) {
-               this.bgColors[i - 1] = "#0a7a74";
-             }
-           } else {
-             this.bgColors[i] = "#ffffff";
-             if (this.tables[j] === this.tables[j - 1]) {
-               this.bgColors[i - 1] = "#ffffff";
-             }
-           }
-           if (this.isBesetzt[h] == true) {
-            this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
-            this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
-             this.isBesetzt[h] = false;
-           } else {
-            this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(tableSonnbergZirbn => {
-            this.bgColorsSonnbergZirbn[i] = tableSonnbergZirbn.bgColor;
-             this.isBesetzt[h] = true;
-            */
+      this.tischplanService.addPlaceholder(tableSonnbergZirbn).subscribe(response => {
+        console.log("Add placeholder!");
+        console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
+        this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+        console.log(this.tablesSonnbergZirbn[j].placeholder);
+      });
 
-      if (this.bgColorsSonnbergZirbn[i] === "#ffffff") {
-        //this.isBesetztSonnbergZirbn[h] = true;
-        this.tischplanService.occupyTable(tableSonnbergZirbn).subscribe(response => {
-          console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].bgColor));
-          this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
-        })
-      } else {
-        //this.isBesetztSonnbergZirbn[h] = false;
-        this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(response => {
-          console.log("RESPONSE2:" + JSON.stringify(response[0].tables[i].bgColor));
-          this.bgColorsSonnbergZirbn[i] = response[0].tables[i].bgColor;
-        })
-      }
   }
 
-
-  /*
-  placeholderHide(p) {
-    if (this.placeholders[p] === true) {
-      this.placeholders[p] = false;
-    } else {
-      this.placeholders[p] = true;
-    }
-  }
-            */
     showSonnbergZirbn() {
 
         console.log("showSonnbergZirbn!");

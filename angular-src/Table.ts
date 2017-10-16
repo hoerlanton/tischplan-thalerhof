@@ -4,5 +4,14 @@ export class Table {
   leftValue: string;
   bgColor: string;
   isBesetzt: boolean;
-  placeholder: boolean
+  placeholder: boolean;
+  nameValue: string;
+  spracheValue: string;
+  zimmernummerValue: string;
+  preistypValue: string;
+  anreiseValue: string;
+  abreiseValue: string;
+  personenAnzahlValue: string;
+  rbsouValue: string;
+  notiz2Value: string;
 }
