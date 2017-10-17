@@ -274,48 +274,43 @@ export class TischplanComponent implements OnInit {
       let information = args[0].innerText;
       let department = JSON.stringify(args[1].id);
       let departementSubstring = department.substring(10, department.length - 1);
-      //console.log(args[1].innerText);
+      console.log(args);
       let tableNumber = args[1].innerText;
       console.log("tableNumber" + tableNumber);
       let tableNumberSubstring = tableNumber.substring(7, 9);
       console.log("tableNumberSubstring" + tableNumberSubstring);
       let dataString = [];
       dataString.push(information + departementSubstring + tableNumberSubstring);
-
-      console.log(dataString);
-
-      console.log(departementSubstring);
-      console.log(tableNumberSubstring);
+      //console.log(dataString);
+      //console.log(departementSubstring);
+      //console.log(tableNumberSubstring);
 
       this.tischplanService.addInformationToTable(dataString)
         .subscribe(response => {
-        let arrayIndex = response[1];
-          //console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
-          this.tablesSonnbergZirbn[arrayIndex] = response[0].tables[arrayIndex];
-          console.log(this.tablesSonnbergZirbn);
+          // let arrayIndex = response[1];
+          // console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
+          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          // console.log(this.tablesSonnbergZirbn[arrayIndex]);
       });
 
         console.log("Occupy Table!");
-        this.tischplanService.occupyTable(dataString).subscribe(response => {
-          let arrayIndex = response[1];
-          console.log("arrayIndex:" + arrayIndex);
-          console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
-          console.log("isBesetzt:" + JSON.stringify(response[0].tables[arrayIndex].isBesetzt));
-          this.tablesSonnbergZirbn[arrayIndex].bgColor = response[0].tables[arrayIndex].bgColor;
-          this.tablesSonnbergZirbn[arrayIndex].isBesetzt = response[0].tables[arrayIndex].isBesetzt;
-          console.log(this.tablesSonnbergZirbn[arrayIndex]);
+        this.tischplanService.occupyTable(dataString)
+          .subscribe(response => {
+            //let arrayIndex = response[1];
+            //console.log("arrayIndex:" + arrayIndex);
+            //console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
+            console.log("Response:" + JSON.stringify(response));
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
 
-      this.tischplanService.removePlaceholder(dataString).subscribe(response => {
-        let arrayIndex = response[1];
-        console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
-        this.tablesSonnbergZirbn[arrayIndex].placeholder = response[0].tables[arrayIndex].placeholder;
-        console.log(this.tablesSonnbergZirbn[arrayIndex].placeholder);
+      this.tischplanService.removePlaceholder(dataString)
+        .subscribe(response => {
+          //let arrayIndex = response[1];
+          //console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
+          this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
-
-      e = "";
-      el = "";
-
     }
 
     private onOver(args) {
@@ -329,7 +324,7 @@ export class TischplanComponent implements OnInit {
     }
 
     ngOnInit() {
-        //this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
+        // this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
     }
 
     upload() {
@@ -830,8 +825,8 @@ export class TischplanComponent implements OnInit {
     popupWinindow = window.open('', '_blank', 'width=600,height=700,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
     popupWinindow.document.open();
     popupWinindow.document.write('<html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">\n' +
-      '    <script src="node_modules/core-js/client/shim.min.js"></script>\n' +
-      '    <script src="<your-libs-directory>/object-assign.min.js"></script></head><body onload="window.print()">' + innerContents + '</html>');
+      '<script src="node_modules/core-js/client/shim.min.js"></script>\n' +
+      '<script src="<your-libs-directory>/object-assign.min.js"></script></head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }
 

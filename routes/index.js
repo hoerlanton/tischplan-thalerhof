@@ -127,10 +127,10 @@ router.get('/tables', function(req, res, next) {
 router.post('/occupyTable', function(req, res, next) {
 //JSON string is parsed to a JSON object
     console.log("occupyTable request made to /occupyTable");
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
-    console.log(splitted);
+    //console.log(splitted);
     let informationElements2 = [];
     for (let s = 0; s < splitted.length; s++){
         informationElements2.push(splitted[s].split(":"));
@@ -143,8 +143,8 @@ router.post('/occupyTable', function(req, res, next) {
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
     }
-    console.log(departmentValueDB);
-    console.log(tableValue);
+    //console.log(departmentValueDB);
+    //console.log(tableValue);
 
     //console.log(occupyTable);
     let arrayElement = 0;
@@ -158,22 +158,27 @@ router.post('/occupyTable', function(req, res, next) {
             if (err) {
                 console.log("Error");
             }
-            arrayElement = tables.nModified;
-            console.log("UPDATED OCCUPY " + arrayElement)
+            //arrayElement = tables.nModified;
+            console.log(tables);
         });
 
         setTimeout(function() {
-            db.tables.find(
+            db.tables.findOne(
                 {
-                    department: departmentValueDB,
+                    "department": departmentValueDB,
                     "tables.number": tableValue
-                }, function (err, tables) {
+                },
+                {
+                    "tables.$": 1,
+                },
+                function (err, tables) {
                     if (err) {
                         res.send(err);
                     }
-                    tables.push(arrayElement);
+                    //tables.push(arrayElement);
                     res.json(tables);
-                    console.log(JSON.stringify("TABLES occupytable" + tables));
+                    console.log("occupytable");
+                    console.log(JSON.stringify(tables));
                 });
         }, 100);
 });
@@ -217,11 +222,11 @@ router.post('/dispenseTable', function(req, res, next) {
 //removePlaceholder
 router.post('/removePlaceholder', function(req, res, next) {
 //JSON string is parsed to a JSON object
-    console.log("removePlaceholder request made to /removePlaceholder");
-    console.log(JSON.stringify(req.body));
+    //console.log("removePlaceholder request made to /removePlaceholder");
+    //console.log(JSON.stringify(req.body));
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
-    console.log(splitted);
+    //console.log(splitted);
     let informationElements2 = [];
     for (let s = 0; s < splitted.length; s++){
         informationElements2.push(splitted[s].split(":"));
@@ -234,8 +239,8 @@ router.post('/removePlaceholder', function(req, res, next) {
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
     }
-    console.log(departmentValueDB);
-    console.log(tableValue);
+    //console.log(departmentValueDB);
+    //console.log(tableValue);
 
     //console.log(occupyTable);
     let arrayElement = 0;
@@ -250,21 +255,26 @@ router.post('/removePlaceholder', function(req, res, next) {
             if (err) {
                 console.log("Error");
             }
-            arrayElement = tables.nModified;
+            console.log(tables);
+
+            //arrayElement = tables.nModified;
         });
 
     setTimeout(function() {
-        db.tables.find(
+        db.tables.findOne(
             {
                 department: departmentValueDB,
                 "tables.number": tableValue
+            },{
+                "tables.$": 1,
             }, function (err, tables) {
                 if (err) {
                     res.send(err);
                 }
-                tables.push(arrayElement);
+                //tables.push(arrayElement);
                 res.json(tables);
-                console.log(JSON.stringify("TABLES removePlaceholder" + tables));
+                console.log("removeplaceholder");
+                console.log(JSON.stringify(tables));
             });
     }, 100);
 });
@@ -304,7 +314,7 @@ router.post('/addPlaceholder', function(req, res, next) {
 });
 
 
-//addPlaceholder
+//addInformationToTable
 router.post('/addInformationToTable', function(req, res, next) {
 //JSON string is parsed to a JSON object
     //console.log("addInformationToTable request made to /addInformationToTable");
@@ -367,21 +377,28 @@ router.post('/addInformationToTable', function(req, res, next) {
             if (err) {
                 console.log("Error");
             }
-            arrayElement = tables.nModified;
+            //arrayElement = tables.nModified;
+
+            console.log(tables);
         });
 
     setTimeout(function() {
-        db.tables.find(
+        db.tables.findOne(
             {
                 department: departmentValueDB,
                 "tables.number": tableValue
-            }, function (err, tables) {
+            },
+            {
+                "tables.$": 1,
+            },
+            function (err, tables) {
                 if (err) {
                     res.send(err);
                 }
-                tables.push(arrayElement);
+                //tables.push(arrayElement);
                 res.json(tables);
-      //          console.log(JSON.stringify("TABLES addInformationToTable" + tables));
+                console.log("addInformationToTable");
+                console.log(JSON.stringify(tables));
             });
     }, 100);
 });

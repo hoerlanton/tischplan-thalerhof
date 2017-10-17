@@ -28,10 +28,10 @@ export class TischplanService {
       .map(res => res.json());
   }
 
-  occupyTable(tableSonnbergZirbn) {
+  occupyTable(dataString) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('occupyTable', tableSonnbergZirbn, {headers: headers})
+    return this.http.post('occupyTable', dataString, {headers: headers})
       .map(res => res.json());
   }
 
@@ -43,10 +43,10 @@ export class TischplanService {
       );
   }
 
-  removePlaceholder(tableSonnbergZirbn) {
+  removePlaceholder(dataString) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('removePlaceholder', tableSonnbergZirbn, {headers: headers})
+    return this.http.post('removePlaceholder', dataString, {headers: headers})
       .map(res => res.json()
       );
   }

@@ -409,41 +409,40 @@ var TischplanComponent = (function () {
         var information = args[0].innerText;
         var department = JSON.stringify(args[1].id);
         var departementSubstring = department.substring(10, department.length - 1);
-        //console.log(args[1].innerText);
+        console.log(args);
         var tableNumber = args[1].innerText;
         console.log("tableNumber" + tableNumber);
         var tableNumberSubstring = tableNumber.substring(7, 9);
         console.log("tableNumberSubstring" + tableNumberSubstring);
         var dataString = [];
         dataString.push(information + departementSubstring + tableNumberSubstring);
-        console.log(dataString);
-        console.log(departementSubstring);
-        console.log(tableNumberSubstring);
+        //console.log(dataString);
+        //console.log(departementSubstring);
+        //console.log(tableNumberSubstring);
         this.tischplanService.addInformationToTable(dataString)
             .subscribe(function (response) {
-            var arrayIndex = response[1];
-            //console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
-            _this.tablesSonnbergZirbn[arrayIndex] = response[0].tables[arrayIndex];
-            console.log(_this.tablesSonnbergZirbn);
+            // let arrayIndex = response[1];
+            // console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
+            _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            // console.log(this.tablesSonnbergZirbn[arrayIndex]);
         });
         console.log("Occupy Table!");
-        this.tischplanService.occupyTable(dataString).subscribe(function (response) {
-            var arrayIndex = response[1];
-            console.log("arrayIndex:" + arrayIndex);
-            console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
-            console.log("isBesetzt:" + JSON.stringify(response[0].tables[arrayIndex].isBesetzt));
-            _this.tablesSonnbergZirbn[arrayIndex].bgColor = response[0].tables[arrayIndex].bgColor;
-            _this.tablesSonnbergZirbn[arrayIndex].isBesetzt = response[0].tables[arrayIndex].isBesetzt;
-            console.log(_this.tablesSonnbergZirbn[arrayIndex]);
+        this.tischplanService.occupyTable(dataString)
+            .subscribe(function (response) {
+            //let arrayIndex = response[1];
+            //console.log("arrayIndex:" + arrayIndex);
+            //console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
+            console.log("Response:" + JSON.stringify(response));
+            _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
-        this.tischplanService.removePlaceholder(dataString).subscribe(function (response) {
-            var arrayIndex = response[1];
-            console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
-            _this.tablesSonnbergZirbn[arrayIndex].placeholder = response[0].tables[arrayIndex].placeholder;
-            console.log(_this.tablesSonnbergZirbn[arrayIndex].placeholder);
+        this.tischplanService.removePlaceholder(dataString)
+            .subscribe(function (response) {
+            //let arrayIndex = response[1];
+            //console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
+            _this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+            //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
-        e = "";
-        el = "";
     };
     TischplanComponent.prototype.onOver = function (args) {
         var e = args[0], el = args[1], container = args[2];
@@ -454,7 +453,7 @@ var TischplanComponent = (function () {
         // do something
     };
     TischplanComponent.prototype.ngOnInit = function () {
-        //this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
+        // this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
     };
     TischplanComponent.prototype.upload = function () {
         var _this = this;
@@ -948,8 +947,8 @@ var TischplanComponent = (function () {
         popupWinindow = window.open('', '_blank', 'width=600,height=700,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
         popupWinindow.document.open();
         popupWinindow.document.write('<html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">\n' +
-            '    <script src="node_modules/core-js/client/shim.min.js"></script>\n' +
-            '    <script src="<your-libs-directory>/object-assign.min.js"></script></head><body onload="window.print()">' + innerContents + '</html>');
+            '<script src="node_modules/core-js/client/shim.min.js"></script>\n' +
+            '<script src="<your-libs-directory>/object-assign.min.js"></script></head><body onload="window.print()">' + innerContents + '</html>');
         popupWinindow.document.close();
     };
     TischplanComponent.prototype.printToCart2 = function (printSectionId2) {
@@ -1018,10 +1017,10 @@ var TischplanService = (function () {
         return this.http.get('tables')
             .map(function (res) { return res.json(); });
     };
-    TischplanService.prototype.occupyTable = function (tableSonnbergZirbn) {
+    TischplanService.prototype.occupyTable = function (dataString) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('occupyTable', tableSonnbergZirbn, { headers: headers })
+        return this.http.post('occupyTable', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.dispenseTable = function (tableSonnbergZirbn) {
@@ -1030,10 +1029,10 @@ var TischplanService = (function () {
         return this.http.post('dispenseTable', tableSonnbergZirbn, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    TischplanService.prototype.removePlaceholder = function (tableSonnbergZirbn) {
+    TischplanService.prototype.removePlaceholder = function (dataString) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('removePlaceholder', tableSonnbergZirbn, { headers: headers })
+        return this.http.post('removePlaceholder', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.addPlaceholder = function (tableSonnbergZirbn) {
