@@ -14,4 +14,5 @@ export class Table {
   personenAnzahlValue: string;
   rbsouValue: string;
   notiz2Value: string;
+  trace: string;
 }
