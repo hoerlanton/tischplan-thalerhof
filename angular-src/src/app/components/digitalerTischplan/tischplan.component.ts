@@ -276,8 +276,14 @@ export class TischplanComponent implements OnInit {
       let departementSubstring = department.substring(10, department.length - 1);
       console.log(args);
       let tableNumber = args[1].innerText;
+      let tableNumberSubstring = "";
       console.log("tableNumber" + tableNumber);
-      let tableNumberSubstring = tableNumber.substring(7, 9);
+      let freiMachen = "FREI MACHEN";
+      if (tableNumber.indexOf(freiMachen) !== -1) {
+        tableNumberSubstring = tableNumber.substring(18, 20);
+      } else {
+        tableNumberSubstring = tableNumber.substring(6, 8);
+      }
       console.log("tableNumberSubstring" + tableNumberSubstring);
       let dataString = [];
       dataString.push(information + departementSubstring + tableNumberSubstring);

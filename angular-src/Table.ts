@@ -15,4 +15,24 @@ export class Table {
   rbsouValue: string;
   notiz2Value: string;
   trace: string;
+  nameValue2: string;
+  spracheValue2: string;
+  zimmernummerValue2: string;
+  preistypValue2: string;
+  anreiseValue2: string;
+  abreiseValue2: string;
+  personenAnzahlValue2: string;
+  rbsouValue2: string;
+  notiz2Value2: string;
+  trace2: string;
+  nameValue3: string;
+  spracheValue3: string;
+  zimmernummerValue3: string;
+  preistypValue3: string;
+  anreiseValue3: string;
+  abreiseValue3: string;
+  personenAnzahlValue3: string;
+  rbsouValue3: string;
+  notiz2Value3: string;
+  trace3: string;
 }

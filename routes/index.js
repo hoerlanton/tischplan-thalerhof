@@ -144,7 +144,7 @@ router.post('/occupyTable', function(req, res, next) {
         departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 4);
         tableValue = informationElements2[9][0].substring(informationElements2[9][0].length - 4, informationElements2[9][0].length - 2);
         //console.log(departmentValueDB);
-        // console.log(tableValue);
+        //console.log(tableValue);
         //console.log(occupyTable);
     } else if (informationElements2.length === 9) {
         console.log("Anreise");
@@ -186,7 +186,7 @@ router.post('/occupyTable', function(req, res, next) {
                         res.send(err);
                     }
                     res.json(tables);
-                    //console.log(JSON.stringify(tables));
+                    console.log(JSON.stringify(tables));
                 });
         }, 100);
 });
@@ -200,8 +200,39 @@ router.post('/dispenseTable', function(req, res, next) {
             query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
             update: {$set: {
                 "tables.$.bgColor": "#ffffff",
-                "tables.$.isBesetzt": "false"
-            } },
+                "tables.$.isBesetzt": "false",
+            }, $unset: {
+                    "tables.$.nameValue": 1,
+                    "tables.$.spracheValue": 1,
+                    "tables.$.zimmernummerValue": 1,
+                    "tables.$.preistypValue": 1,
+                    "tables.$.anreiseValue": 1,
+                    "tables.$.abreiseValue": 1,
+                    "tables.$.personenAnzahlValue": 1,
+                    "tables.$.rbsouValue": 1,
+                    "tables.$.notiz2Value": 1,
+                    "tables.$.trace": 1,
+                    "tables.$.nameValue2": 1,
+                    "tables.$.spracheValue2": 1,
+                    "tables.$.zimmernummerValue2": 1,
+                    "tables.$.preistypValue2": 1,
+                    "tables.$.anreiseValue2": 1,
+                    "tables.$.abreiseValue2": 1,
+                    "tables.$.personenAnzahlValue2": 1,
+                    "tables.$.rbsouValue2": 1,
+                    "tables.$.notiz2Value2": 1,
+                    "tables.$.trace2": 1,
+                    "tables.$.nameValue3": 1,
+                    "tables.$.spracheValue3": 1,
+                    "tables.$.zimmernummerValue3": 1,
+                    "tables.$.preistypValue3": 1,
+                    "tables.$.anreiseValue3": 1,
+                    "tables.$.abreiseValue3": 1,
+                    "tables.$.personenAnzahlValue3": 1,
+                    "tables.$.rbsouValue3": 1,
+                    "tables.$.notiz2Value3": 1,
+                    "tables.$.trace3": 1,
+    } },
             new: false
         }, function (err, tables) {
         if (err) {
@@ -330,10 +361,9 @@ router.post('/addPlaceholder', function(req, res, next) {
 router.post('/addInformationToTable', function(req, res, next) {
     //JSON string is parsed to a JSON object
     console.log("addInformationToTable request made to /addInformationToTable");
-    //console.log(JSON.stringify(req.body));
+    console.log(JSON.stringify("-------->" + req.body));
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
-    //console.log(splitted);
     let informationElements2 = [];
     let departmentValueDB = "";
     let nameValue = "";
@@ -348,9 +378,11 @@ router.post('/addInformationToTable', function(req, res, next) {
     let departmentValue = "";
     let tableValue = "";
     let trace = "";
+
     for (let s = 0; s < splitted.length; s++){
       informationElements2.push(splitted[s].split(":"));
     }
+
     console.log(informationElements2);
     //console.log(informationElements2[0][0]);
     //console.log(informationElements2[1][0]);
@@ -363,6 +395,7 @@ router.post('/addInformationToTable', function(req, res, next) {
     //console.log(informationElements2[8][0]);
     //console.log(informationElements2[9][0]);
     if(informationElements2.length === 10) {
+     console.log("Im Haus Liste gedropped");
      nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
      spracheValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
      zimmernummerValue = informationElements2[2][1].substring(3, informationElements2[2][1].length);
@@ -375,7 +408,7 @@ router.post('/addInformationToTable', function(req, res, next) {
      departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 4);
      tableValue = informationElements2[9][0].substring(informationElements2[9][0].length - 4, informationElements2[9][0].length - 2);
     } else if (informationElements2.length === 9) {
-        console.log("Anreise");
+        console.log("Anreise Liste gedropped");
         nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
         zimmernummerValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
         preistypValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
@@ -387,9 +420,9 @@ router.post('/addInformationToTable', function(req, res, next) {
         departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 4);
         tableValue = informationElements2[8][0].substring(informationElements2[8][0].length - 4, informationElements2[8][0].length - 2);
     } else {
-        console.log("Trace");
-        zimmernummerValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
-        nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
+        console.log("Trace Liste gedropped");
+        zimmernummerValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
+        nameValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
         preistypValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
         anreiseValue = informationElements2[3][1].substring(1, informationElements2[3][1].length);
         abreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
@@ -399,37 +432,107 @@ router.post('/addInformationToTable', function(req, res, next) {
     }
 
 
-    console.log(" nameValue " + nameValue + " spracheValue " + spracheValue + " zimmernummerValue " + zimmernummerValue + " preistypValue " + preistypValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " rbsouValue " + rbsouValue + " notiz2Value " + notiz2Value + " departmentValue " + departmentValue + " tableValue " + tableValue);
+    //console.log(" nameValue " + nameValue + " spracheValue " + spracheValue + " zimmernummerValue " + zimmernummerValue + " preistypValue " + preistypValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " rbsouValue " + rbsouValue + " notiz2Value " + notiz2Value + " departmentValue " + departmentValue + " tableValue " + tableValue);
 
 
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
     }
     //console.log(departmentValueDB);
-    let arrayElement = 0;
-
-    db.tables.update(
-        {department: departmentValueDB,
-            "tables.number": tableValue} ,
-        {$set: {
-            "tables.$.nameValue": nameValue,
-            "tables.$.spracheValue": spracheValue,
-            "tables.$.zimmernummerValue": zimmernummerValue,
-            "tables.$.preistypValue": preistypValue,
-            "tables.$.anreiseValue": anreiseValue,
-            "tables.$.abreiseValue": abreiseValue,
-            "tables.$.personenAnzahlValue": personenAnzahlValue,
-            "tables.$.rbsouValue": rbsouValue,
-            "tables.$.notiz2Value": notiz2Value,
-            "tables.$.trace": trace,
-
-        }}, function (err, tables) {
+    db.tables.findOne(
+        {
+            department: departmentValueDB,
+            "tables.number": tableValue
+        },
+        {
+            "tables.$": 1,
+        },
+        function (err, tablesfirst) {
             if (err) {
-                console.log("Error");
+                res.send(err);
             }
-            console.log("addInformationToTable updated successfully");
-        });
+            if (tablesfirst === null) {
+                return;
+            }
+            console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
+            if (JSON.stringify(tablesfirst.tables[0]).length < 350) {
+                db.tables.update(
+                    {
+                        department: departmentValueDB,
+                        "tables.number": tableValue
+                    },
+                    {
+                        $set: {
+                            "tables.$.nameValue": nameValue,
+                            "tables.$.spracheValue": spracheValue,
+                            "tables.$.zimmernummerValue": zimmernummerValue,
+                            "tables.$.preistypValue": preistypValue,
+                            "tables.$.anreiseValue": anreiseValue,
+                            "tables.$.abreiseValue": abreiseValue,
+                            "tables.$.personenAnzahlValue": personenAnzahlValue,
+                            "tables.$.rbsouValue": rbsouValue,
+                            "tables.$.notiz2Value": notiz2Value,
+                            "tables.$.trace": trace,
 
+                        }
+                    }, function (err, tables) {
+                        if (err) {
+                            console.log("Error");
+                        }
+                        console.log("addInformationToTable updated successfully");
+                    });
+            } else if (JSON.stringify(tablesfirst.tables[0]).length > 350 && JSON.stringify(tablesfirst.tables[0]).length < 600) {
+                db.tables.update(
+                    {
+                        department: departmentValueDB,
+                        "tables.number": tableValue
+                    },
+                    {
+                        $set: {
+                            "tables.$.nameValue2": nameValue,
+                            "tables.$.spracheValue2": spracheValue,
+                            "tables.$.zimmernummerValue2": zimmernummerValue,
+                            "tables.$.preistypValue2": preistypValue,
+                            "tables.$.anreiseValue2": anreiseValue,
+                            "tables.$.abreiseValue2": abreiseValue,
+                            "tables.$.personenAnzahlValue2": personenAnzahlValue,
+                            "tables.$.rbsouValue2": rbsouValue,
+                            "tables.$.notiz2Value2": notiz2Value,
+                            "tables.$.trace2": trace,
+                        }
+                    }, function (err, tables) {
+                        if (err) {
+                            console.log("Error");
+                        }
+                        console.log("addInformationToTable updated successfully");
+                    });
+            } else if (JSON.stringify(tablesfirst.tables[0]).length > 600) {
+                db.tables.update(
+                    {
+                        department: departmentValueDB,
+                        "tables.number": tableValue
+                    },
+                    {
+                        $set: {
+                            "tables.$.nameValue3": nameValue,
+                            "tables.$.spracheValue3": spracheValue,
+                            "tables.$.zimmernummerValue3": zimmernummerValue,
+                            "tables.$.preistypValue3": preistypValue,
+                            "tables.$.anreiseValue3": anreiseValue,
+                            "tables.$.abreiseValue3": abreiseValue,
+                            "tables.$.personenAnzahlValue3": personenAnzahlValue,
+                            "tables.$.rbsouValue3": rbsouValue,
+                            "tables.$.notiz2Value3": notiz2Value,
+                            "tables.$.trace3": trace,
+                        }
+                    }, function (err, tables) {
+                        if (err) {
+                            console.log("Error");
+                        }
+                        console.log("addInformationToTable updated successfully");
+                    });
+            }
+        });
     setTimeout(function() {
         db.tables.findOne(
             {
@@ -445,7 +548,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                 }
                 res.json(tables);
             });
-    }, 100);
+    }, 300);
 });
 
 
