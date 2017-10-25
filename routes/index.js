@@ -140,28 +140,39 @@ router.post('/occupyTable', function(req, res, next) {
     }
     //console.log(informationElements2);
 
-    if(informationElements2.length === 10) {
-        departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 4);
-        tableValue = informationElements2[9][0].substring(informationElements2[9][0].length - 4, informationElements2[9][0].length - 2);
+    if(informationElements2.length >= 10) {
+        console.log("Im-Haus-Liste");
+        departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[9][0].toString().match(/\d+/);
         //console.log(departmentValueDB);
         //console.log(tableValue);
         //console.log(occupyTable);
     } else if (informationElements2.length === 9) {
         console.log("Anreise");
-        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 4);
-        tableValue = informationElements2[8][0].substring(informationElements2[8][0].length - 4, informationElements2[8][0].length - 2);
+        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[8][0].toString().match(/\d+/);
     } else {
         console.log("Trace");
-        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 4);
-        tableValue = informationElements2[informationElements2.length - 1][0].substring(informationElements2[informationElements2.length - 1][0].length - 4, informationElements2[informationElements2.length - 1][0].length - 2);
+        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
     }
+
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
+    }
+    else if(departmentValue === "Panorama") {
+        departmentValueDB = "Panorama";
+    }
+    else if(departmentValue === "Restaurant") {
+        departmentValueDB = "Restaurant";
+    }
+    else if(departmentValue === "Wintergarten") {
+        departmentValueDB = "Wintergarten";
     }
 
     db.tables.update(
         {department: departmentValueDB,
-            "tables.number": tableValue},
+            "tables.number": tableValue[0]},
         {$set: {
             "tables.$.bgColor": "#0a7a74",
             "tables.$.isBesetzt": "true"
@@ -176,7 +187,7 @@ router.post('/occupyTable', function(req, res, next) {
             db.tables.findOne(
                 {
                     "department": departmentValueDB,
-                    "tables.number": tableValue
+                    "tables.number": tableValue[0]
                 },
                 {
                     "tables.$": 1,
@@ -196,6 +207,7 @@ router.post('/dispenseTable', function(req, res, next) {
     //JSON string is parsed to a JSON object
     console.log("dispenseTable request made to /dispenseTable");
     let dispenseTable = req.body;
+    console.log("dispenseTable" + JSON.stringify(dispenseTable));
     db.tables.findAndModify({
             query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
             update: {$set: {
@@ -251,6 +263,7 @@ router.post('/dispenseTable', function(req, res, next) {
                     res.send(err);
                 }
                 res.json(tables);
+                console.log("Dispense Table: " + JSON.stringify(tables));
             });
     }, 100);
 });
@@ -271,21 +284,32 @@ router.post('/removePlaceholder', function(req, res, next) {
         informationElements2.push(splitted[s].split(":"));
     }
 
-    if(informationElements2.length === 10) {
-        departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 4);
-        tableValue = informationElements2[9][0].substring(informationElements2[9][0].length - 4, informationElements2[9][0].length - 2);
+    if(informationElements2.length >= 10) {
+        console.log("Im-Haus-Liste");
+        departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[9][0].toString().match(/\d+/);
     } else if (informationElements2.length === 9) {
         console.log("Anreise");
-        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 4);
-        tableValue = informationElements2[8][0].substring(informationElements2[8][0].length - 4, informationElements2[8][0].length - 2);
+        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[8][0].toString().match(/\d+/);
     } else {
         console.log("Trace");
-        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 4);
-        tableValue = informationElements2[informationElements2.length - 1][0].substring(informationElements2[informationElements2.length - 1][0].length - 4, informationElements2[informationElements2.length - 1][0].length - 2);
+        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
     }
+
 
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
+    }
+    else if(departmentValue === "Panorama") {
+        departmentValueDB = "Panorama";
+    }
+    else if(departmentValue === "Restaurant") {
+        departmentValueDB = "Restaurant";
+    }
+    else if(departmentValue === "Wintergarten") {
+        departmentValueDB = "Wintergarten";
     }
 
     //console.log(departmentValueDB);
@@ -295,7 +319,7 @@ router.post('/removePlaceholder', function(req, res, next) {
     db.tables.update(
         {
             department: departmentValueDB,
-            "tables.number": tableValue
+            "tables.number": tableValue[0]
         },
         {$set: {
             "tables.$.placeholder": "false",
@@ -310,7 +334,7 @@ router.post('/removePlaceholder', function(req, res, next) {
         db.tables.findOne(
             {
                 department: departmentValueDB,
-                "tables.number": tableValue
+                "tables.number": tableValue[0]
             },{
                 "tables.$": 1,
             }, function (err, tables) {
@@ -394,7 +418,7 @@ router.post('/addInformationToTable', function(req, res, next) {
     //console.log(informationElements2[7][0]);
     //console.log(informationElements2[8][0]);
     //console.log(informationElements2[9][0]);
-    if(informationElements2.length === 10) {
+    if(informationElements2.length >= 10) {
      console.log("Im Haus Liste gedropped");
      nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
      spracheValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
@@ -405,8 +429,9 @@ router.post('/addInformationToTable', function(req, res, next) {
      personenAnzahlValue = informationElements2[6][1].substring(1, informationElements2[6][1].length);
      rbsouValue = informationElements2[7][1].substring(1, informationElements2[7][1].length);
      notiz2Value = informationElements2[8][1].substring(1, informationElements2[8][1].length);
-     departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 4);
-     tableValue = informationElements2[9][0].substring(informationElements2[9][0].length - 4, informationElements2[9][0].length - 2);
+     departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+     tableValue = informationElements2[9][0].toString().match(/\d+/);
+
     } else if (informationElements2.length === 9) {
         console.log("Anreise Liste gedropped");
         nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
@@ -417,8 +442,8 @@ router.post('/addInformationToTable', function(req, res, next) {
         personenAnzahlValue = informationElements2[5][1].substring(1, informationElements2[5][1].length);
         rbsouValue = informationElements2[6][1].substring(1, informationElements2[6][1].length);
         notiz2Value = informationElements2[7][1].substring(1, informationElements2[7][1].length);
-        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 4);
-        tableValue = informationElements2[8][0].substring(informationElements2[8][0].length - 4, informationElements2[8][0].length - 2);
+        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[8][0].toString().match(/\d+/);
     } else {
         console.log("Trace Liste gedropped");
         zimmernummerValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
@@ -427,22 +452,33 @@ router.post('/addInformationToTable', function(req, res, next) {
         anreiseValue = informationElements2[3][1].substring(1, informationElements2[3][1].length);
         abreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
         trace = informationElements2[5][1].substring(1, informationElements2[5][1].length);
-        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 4);
-        tableValue = informationElements2[informationElements2.length - 1][0].substring(informationElements2[informationElements2.length - 1][0].length - 4, informationElements2[informationElements2.length - 1][0].length - 2);
+        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
     }
 
 
-    //console.log(" nameValue " + nameValue + " spracheValue " + spracheValue + " zimmernummerValue " + zimmernummerValue + " preistypValue " + preistypValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " rbsouValue " + rbsouValue + " notiz2Value " + notiz2Value + " departmentValue " + departmentValue + " tableValue " + tableValue);
+    console.log(" nameValue " + nameValue + " spracheValue " + spracheValue + " zimmernummerValue " + zimmernummerValue + " preistypValue " + preistypValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " rbsouValue " + rbsouValue + " notiz2Value " + notiz2Value + " departmentValue " + departmentValue + " tableValue " + tableValue);
 
 
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
     }
-    //console.log(departmentValueDB);
+    else if(departmentValue === "Panorama") {
+        departmentValueDB = "Panorama";
+    }
+    else if(departmentValue === "Restaurant") {
+        departmentValueDB = "Restaurant";
+    }
+    else if(departmentValue === "Wintergarten") {
+        departmentValueDB = "Wintergarten";
+    }
+    console.log(departmentValueDB);
+    console.log(tableValue[0]);
+    setTimeout(function() {
     db.tables.findOne(
         {
             department: departmentValueDB,
-            "tables.number": tableValue
+            "tables.number": tableValue[0]
         },
         {
             "tables.$": 1,
@@ -452,6 +488,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                 res.send(err);
             }
             if (tablesfirst === null) {
+                console.log("tablesfirst is null");
                 return;
             }
             console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
@@ -459,7 +496,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                 db.tables.update(
                     {
                         department: departmentValueDB,
-                        "tables.number": tableValue
+                        "tables.number": tableValue[0]
                     },
                     {
                         $set: {
@@ -485,7 +522,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                 db.tables.update(
                     {
                         department: departmentValueDB,
-                        "tables.number": tableValue
+                        "tables.number": tableValue[0]
                     },
                     {
                         $set: {
@@ -510,7 +547,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                 db.tables.update(
                     {
                         department: departmentValueDB,
-                        "tables.number": tableValue
+                        "tables.number": tableValue[0]
                     },
                     {
                         $set: {
@@ -533,11 +570,13 @@ router.post('/addInformationToTable', function(req, res, next) {
                     });
             }
         });
+    }, 300);
+
     setTimeout(function() {
         db.tables.findOne(
             {
                 department: departmentValueDB,
-                "tables.number": tableValue
+                "tables.number": tableValue[0]
             },
             {
                 "tables.$": 1,
@@ -547,8 +586,9 @@ router.post('/addInformationToTable', function(req, res, next) {
                     res.send(err);
                 }
                 res.json(tables);
+                console.log(JSON.stringify(tables));
             });
-    }, 300);
+    }, 500);
 });
 
 

@@ -274,16 +274,11 @@ export class TischplanComponent implements OnInit {
       let information = args[0].innerText;
       let department = JSON.stringify(args[1].id);
       let departementSubstring = department.substring(10, department.length - 1);
-      console.log(args);
+      console.log(departementSubstring);
       let tableNumber = args[1].innerText;
       let tableNumberSubstring = "";
       console.log("tableNumber" + tableNumber);
-      let freiMachen = "FREI MACHEN";
-      if (tableNumber.indexOf(freiMachen) !== -1) {
-        tableNumberSubstring = tableNumber.substring(18, 20);
-      } else {
-        tableNumberSubstring = tableNumber.substring(6, 8);
-      }
+      tableNumberSubstring = tableNumber.toString().match(/\d+/);
       console.log("tableNumberSubstring" + tableNumberSubstring);
       let dataString = [];
       dataString.push(information + departementSubstring + tableNumberSubstring);
@@ -294,8 +289,19 @@ export class TischplanComponent implements OnInit {
       this.tischplanService.addInformationToTable(dataString)
         .subscribe(response => {
           // let arrayIndex = response[1];
-          // console.log("RESPONSE1:" + JSON.stringify(response[0].tables[i].isBesetzt));
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          console.log("RESPONSE addInformationToTable:" + JSON.stringify(response));
+          if(response.tables[0].department === "Sonnberg-Zirbn") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if(response.tables[0].department === "Panorama") {
+            this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if(response.tables[0].department === "Restaurant") {
+            this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if(response.tables[0].department === "Wintergarten") {
+            this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+          }
           // console.log(this.tablesSonnbergZirbn[arrayIndex]);
       });
 
@@ -305,16 +311,44 @@ export class TischplanComponent implements OnInit {
             //let arrayIndex = response[1];
             //console.log("arrayIndex:" + arrayIndex);
             //console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
-            console.log("Response:" + JSON.stringify(response));
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            console.log("Response occupyTable:" + JSON.stringify(response));
+
+            if(response.tables[0].department === "Sonnberg-Zirbn") {
+              this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            }
+            else if(response.tables[0].department === "Panorama") {
+              this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            }
+            else if(response.tables[0].department === "Restaurant") {
+              this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            }
+            else if(response.tables[0].department === "Wintergarten") {
+              this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            }
+
+
             //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
 
       this.tischplanService.removePlaceholder(dataString)
         .subscribe(response => {
           //let arrayIndex = response[1];
-          //console.log("placeholder:" + JSON.stringify(response[0].tables[arrayIndex].placeholder));
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          console.log("Response placeholder:" + JSON.stringify(response));
+          if(response.tables[0].department === "Sonnberg-Zirbn") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          }
+          else if(response.tables[0].department === "Panorama") {
+            this.tablesPanorama[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          }
+          else if(response.tables[0].department === "Restaurant") {
+            this.tablesRestaurant[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          }
+          else if(response.tables[0].department === "Wintergarten") {
+            this.tablesWintergarten[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
+          }
+
+
+
           //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
     }
@@ -354,21 +388,46 @@ export class TischplanComponent implements OnInit {
         //this.product.photo = fileInput.target.files[0]['name'];
     }
 
-    occupy(tableSonnbergZirbn, j) {
-      this.tischplanService.dispenseTable(tableSonnbergZirbn).subscribe(response => {
-        console.log("Dispense Table!");
+    occupy(table, j) {
+      this.tischplanService.dispenseTable(table).subscribe(response => {
+        console.log("Dispense Table:");
         console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
         console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
-        this.tablesSonnbergZirbn[j].bgColor = response[0].tables[j].bgColor;
-        this.tablesSonnbergZirbn[j].isBesetzt = response[0].tables[j].isBesetzt;
-        console.log(this.tablesSonnbergZirbn[j].isBesetzt);
+
+        if(response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j].bgColor = response[0].tables[j].bgColor;
+          this.tablesSonnbergZirbn[j].isBesetzt = response[0].tables[j].isBesetzt;
+        }
+        else if(response[0].tables[j].department === "Panorama") {
+          this.tablesPanorama[j].bgColor = response[0].tables[j].bgColor;
+          this.tablesPanorama[j].isBesetzt = response[0].tables[j].isBesetzt;
+        }
+        else if(response[0].tables[j].department === "Restaurant") {
+          this.tablesRestaurant[j].bgColor = response[0].tables[j].bgColor;
+          this.tablesRestaurant[j].isBesetzt = response[0].tables[j].isBesetzt;
+        }
+        else if(response[0].tables[j].department === "Wintergarten") {
+          this.tablesWintergarten[j].bgColor = response[0].tables[j].bgColor;
+          this.tablesWintergarten[j].isBesetzt = response[0].tables[j].isBesetzt;
+        }
       });
 
-      this.tischplanService.addPlaceholder(tableSonnbergZirbn).subscribe(response => {
+      this.tischplanService.addPlaceholder(table).subscribe(response => {
         console.log("Add placeholder!");
         console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
-        this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
-        console.log(this.tablesSonnbergZirbn[j].placeholder);
+        //console.log(this.tablesSonnbergZirbn[j].placeholder);
+        if(response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if(response[0].tables[j].department === "Panorama") {
+          this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if(response[0].tables[j].department === "Restaurant") {
+          this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if(response[0].tables[j].department === "Wintergarten") {
+          this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+        }
       });
 
   }

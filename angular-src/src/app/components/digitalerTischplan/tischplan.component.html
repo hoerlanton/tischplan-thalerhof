@@ -84,7 +84,7 @@
                                           </p>
                                         </div>
                                       </div>
-                                      <div *ngIf="tableSonnbergZirbn.placeholder === 'true'" (click)="placeholderHide(tableSonnbergZirbn, j)">
+                                      <div *ngIf="tableSonnbergZirbn.placeholder === 'true'">
                                         <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
                                       </div>
                                     </div>
@@ -92,78 +92,175 @@
                                 </div>
                               </div>
                             </div>
+
                             <div *ngIf="showPanoramaBool">
                               <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
                                 <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
+                                  <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
                                   <div class='container' id='containerPanorama' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
-                                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : 'BESETZTEN'}}</button>
+                                    <p><b> Tisch:</b>{{tablePanorama.number}} </p><br>
                                     <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
-                                      <p><b> Tisch:</b>{{tablePanorama.number}} </p><br>
-                                      <p style="background-color: #FFFFFF"><b> Name:</b>{{tablePanorama.nameValue}}<br>
-                                        <b> Sprache:</b>{{tablePanorama.spracheValue}}<br>
-                                        <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue}}<br>
-                                        <b> Preis Typ:</b>{{tablePanorama.preistypValue}}<br>
-                                        <b> Anreise Datum:</b>{{tablePanorama.anreiseValue}}<br>
-                                        <b> Abreise Datum:</b>{{tablePanorama.abreiseValue}}<br>
-                                        <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue}}<br>
-                                        <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
-                                        <b> Notiz2:</b>{{tablePanorama.notiz2Value}}</p>
                                       <div *ngIf="tablePanorama.isBesetzt === 'true'">
-                                        <div *ngIf="tablePanorama.placeholder === 'true'" (click)="placeholderHide(tablePanorama, j)">
-                                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
+                                        <p style="background-color: #FFFFFF">
+                                          <b> Name:</b>{{tablePanorama.nameValue}}<br>
+                                          <b> Sprache:</b>{{tablePanorama.spracheValue}}<br>
+                                          <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue}}<br>
+                                          <b> Preis Typ:</b>{{tablePanorama.preistypValue}}<br>
+                                          <b> Anreise Datum:</b>{{tablePanorama.anreiseValue}}<br>
+                                          <b> Abreise Datum:</b>{{tablePanorama.abreiseValue}}<br>
+                                          <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue}}<br>
+                                          <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
+                                          <b> Notiz2:</b>{{tablePanorama.notiz2Value}}<br>
+                                          <b> Trace:</b>{{tablePanorama.trace}}
+                                        </p>
+                                        <div *ngIf="tablePanorama.nameValue2">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tablePanorama.nameValue2}}<br>
+                                            <b> Sprache:</b>{{tablePanorama.spracheValue2}}<br>
+                                            <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue2}}<br>
+                                            <b> Preis Typ:</b>{{tablePanorama.preistypValue2}}<br>
+                                            <b> Anreise Datum:</b>{{tablePanorama.anreiseValue2}}<br>
+                                            <b> Abreise Datum:</b>{{tablePanorama.abreiseValue2}}<br>
+                                            <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue2}}<br>
+                                            <b> RB/SOU:</b>{{tablePanorama.rbsouValue2}}<br>
+                                            <b> Notiz2:</b>{{tablePanorama.notiz2Value2}}<br>
+                                            <b> Trace:</b>{{tablePanorama.trace2}}
+                                          </p>
                                         </div>
+                                        <div *ngIf="tablePanorama.nameValue3">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tablePanorama.nameValue3}}<br>
+                                            <b> Sprache:</b>{{tablePanorama.spracheValue3}}<br>
+                                            <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue3}}<br>
+                                            <b> Preis Typ:</b>{{tablePanorama.preistypValue3}}<br>
+                                            <b> Anreise Datum:</b>{{tablePanorama.anreiseValue3}}<br>
+                                            <b> Abreise Datum:</b>{{tablePanorama.abreiseValue3}}<br>
+                                            <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue3}}<br>
+                                            <b> RB/SOU:</b>{{tablePanorama.rbsouValue3}}<br>
+                                            <b> Notiz2:</b>{{tablePanorama.notiz2Value3}}<br>
+                                            <b> Trace:</b>{{tablePanorama.trace3}}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div *ngIf="tablePanorama.placeholder === 'true'">
+                                        <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
+
                             <div *ngIf="showRestaurantBool">
                               <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
                                 <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
+                                  <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
                                   <div class='container' id='containerRestaurant' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
-                                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : 'BESETZTEN'}}</button>
+                                    <p><b> Tisch:</b>{{tableRestaurant.number}} </p><br>
                                     <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
-                                      <p><b> Tisch:</b>{{tableRestaurant.number}} </p><br>
-                                      <p style="background-color: #FFFFFF"><b> Name:</b>{{tableRestaurant.nameValue}}<br>
-                                        <b> Sprache:</b>{{tableRestaurant.spracheValue}}<br>
-                                        <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue}}<br>
-                                        <b> Preis Typ:</b>{{tableRestaurant.preistypValue}}<br>
-                                        <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue}}<br>
-                                        <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue}}<br>
-                                        <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
-                                        <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
-                                        <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}</p>
                                       <div *ngIf="tableRestaurant.isBesetzt === 'true'">
-                                        <div *ngIf="tableRestaurant.placeholder === 'true'" (click)="placeholderHide(tableRestaurant, j)">
-                                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
+                                        <p style="background-color: #FFFFFF">
+                                          <b> Name:</b>{{tableRestaurant.nameValue}}<br>
+                                          <b> Sprache:</b>{{tableRestaurant.spracheValue}}<br>
+                                          <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue}}<br>
+                                          <b> Preis Typ:</b>{{tableRestaurant.preistypValue}}<br>
+                                          <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue}}<br>
+                                          <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue}}<br>
+                                          <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
+                                          <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
+                                          <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}<br>
+                                          <b> Trace:</b>{{tableRestaurant.trace}}
+                                        </p>
+                                        <div *ngIf="tableRestaurant.nameValue2">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tableRestaurant.nameValue2}}<br>
+                                            <b> Sprache:</b>{{tableRestaurant.spracheValue2}}<br>
+                                            <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue2}}<br>
+                                            <b> Preis Typ:</b>{{tableRestaurant.preistypValue2}}<br>
+                                            <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue2}}<br>
+                                            <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue2}}<br>
+                                            <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue2}}<br>
+                                            <b> RB/SOU:</b>{{tableRestaurant.rbsouValue2}}<br>
+                                            <b> Notiz2:</b>{{tableRestaurant.notiz2Value2}}<br>
+                                            <b> Trace:</b>{{tableRestaurant.trace2}}
+                                          </p>
                                         </div>
+                                        <div *ngIf="tableRestaurant.nameValue3">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tableRestaurant.nameValue3}}<br>
+                                            <b> Sprache:</b>{{tableRestaurant.spracheValue3}}<br>
+                                            <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue3}}<br>
+                                            <b> Preis Typ:</b>{{tableRestaurant.preistypValue3}}<br>
+                                            <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue3}}<br>
+                                            <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue3}}<br>
+                                            <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue3}}<br>
+                                            <b> RB/SOU:</b>{{tableRestaurant.rbsouValue3}}<br>
+                                            <b> Notiz2:</b>{{tableRestaurant.notiz2Value3}}<br>
+                                            <b> Trace:</b>{{tableRestaurant.trace3}}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div *ngIf="tableRestaurant.placeholder === 'true'">
+                                        <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
+
+
                             <div *ngIf="showWintergartenBool">
                               <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
                                 <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
+                                  <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
                                   <div class='container' id='containerWintergarten' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
-                                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : 'BESETZTEN'}}</button>
+                                    <p><b> Tisch:</b>{{tableWintergarten.number}} </p><br>
                                     <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
-                                      <p><b> Tisch:</b>{{tableWintergarten.number}} </p><br>
-                                      <p style="background-color: #FFFFFF"><b> Name:</b>{{tableWintergarten.nameValue}}<br>
-                                        <b> Sprache:</b>{{tableWintergarten.spracheValue}}<br>
-                                        <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue}}<br>
-                                        <b> Preis Typ:</b>{{tableWintergarten.preistypValue}}<br>
-                                        <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue}}<br>
-                                        <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue}}<br>
-                                        <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
-                                        <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
-                                        <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}</p>
                                       <div *ngIf="tableWintergarten.isBesetzt === 'true'">
-                                        <div *ngIf="tableWintergarten.placeholder === 'true'" (click)="placeholderHide(tableWintergarten, j)">
-                                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
+                                        <p style="background-color: #FFFFFF">
+                                          <b> Name:</b>{{tableWintergarten.nameValue}}<br>
+                                          <b> Sprache:</b>{{tableWintergarten.spracheValue}}<br>
+                                          <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue}}<br>
+                                          <b> Preis Typ:</b>{{tableWintergarten.preistypValue}}<br>
+                                          <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue}}<br>
+                                          <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue}}<br>
+                                          <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
+                                          <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
+                                          <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}<br>
+                                          <b> Trace:</b>{{tableWintergarten.trace}}
+                                        </p>
+                                        <div *ngIf="tableWintergarten.nameValue2">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tableWintergarten.nameValue2}}<br>
+                                            <b> Sprache:</b>{{tableWintergarten.spracheValue2}}<br>
+                                            <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue2}}<br>
+                                            <b> Preis Typ:</b>{{tableWintergarten.preistypValue2}}<br>
+                                            <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue2}}<br>
+                                            <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue2}}<br>
+                                            <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue2}}<br>
+                                            <b> RB/SOU:</b>{{tableWintergarten.rbsouValue2}}<br>
+                                            <b> Notiz2:</b>{{tableWintergarten.notiz2Value2}}<br>
+                                            <b> Trace:</b>{{tableWintergarten.trace2}}
+                                          </p>
                                         </div>
+                                        <div *ngIf="tableWintergarten.nameValue3">
+                                          <p style="background-color: #FFFFFF">
+                                            <b> Name:</b>{{tableWintergarten.nameValue3}}<br>
+                                            <b> Sprache:</b>{{tableWintergarten.spracheValue3}}<br>
+                                            <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue3}}<br>
+                                            <b> Preis Typ:</b>{{tableWintergarten.preistypValue3}}<br>
+                                            <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue3}}<br>
+                                            <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue3}}<br>
+                                            <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue3}}<br>
+                                            <b> RB/SOU:</b>{{tableWintergarten.rbsouValue3}}<br>
+                                            <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
+                                            <b> Trace:</b>{{tableWintergarten.trace3}}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div *ngIf="tableWintergarten.placeholder === 'true'">
+                                        <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
                                       </div>
                                     </div>
                                   </div>
