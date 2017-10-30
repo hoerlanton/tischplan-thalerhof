@@ -25,7 +25,6 @@ router.post('/anreiseListe', function(req, res, next) {
 
     db.anreiseListe.remove({});
 
-
     setTimeout(function() {
         db.anreiseListe.save(anreiseListe, function(err, anreiseListe) {
                 if (err) {
@@ -35,7 +34,8 @@ router.post('/anreiseListe', function(req, res, next) {
                 console.log(anreiseListe);
                 console.log("anreiseListe save called");
         });
-}, 100);
+    }, 100);
+});
 
 //Save ImHausListe
 router.post('/imHausListe', function(req, res, next) {
@@ -56,7 +56,7 @@ router.post('/imHausListe', function(req, res, next) {
             console.log("imHausListe save called");
         });
     }, 100);
-
+});
 
 //Save TracesListe
 router.post('/tracesListe', function(req, res, next) {
@@ -66,10 +66,9 @@ router.post('/tracesListe', function(req, res, next) {
         data: "",
     };
     tracesListe.data = req.body;
-
     db.tracesListe.remove({});
     setTimeout(function() {
-    db.tracesListe.save(tracesListe, function (err, tracesListe) {
+    db.tracesListe.save(tracesListe, function(err, tracesListe) {
         if (err) {
             res.send(err);
         }
@@ -77,7 +76,7 @@ router.post('/tracesListe', function(req, res, next) {
         console.log("tracesListe save called");
     });
     }, 100);
-
+});
 
 //Get anreiseListe
 router.get('/anreiseListe', function(req, res, next) {
