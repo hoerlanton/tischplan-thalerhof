@@ -25,15 +25,17 @@ router.post('/anreiseListe', function(req, res, next) {
 
     db.anreiseListe.remove({});
 
-    db.anreiseListe.save(anreiseListe, setTimeout(function (err, anreiseListe) {
-        if (err) {
-            res.send(err);
-        }
-        res.json(anreiseListe);
-        console.log(anreiseListe);
-        console.log("anreiseListe save called");
-    }, 10000));
-});
+
+    setTimeout(function() {
+        db.anreiseListe.save(anreiseListe, function(err, anreiseListe) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(anreiseListe);
+                console.log(anreiseListe);
+                console.log("anreiseListe save called");
+        });
+}, 100);
 
 //Save ImHausListe
 router.post('/imHausListe', function(req, res, next) {
@@ -45,15 +47,16 @@ router.post('/imHausListe', function(req, res, next) {
     imHausListe.data = req.body;
 
     db.imHausListe.remove({});
+    setTimeout(function() {
+        db.imHausListe.save(imHausListe, function (err, imHausListe) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(imHausListe);
+            console.log("imHausListe save called");
+        });
+    }, 100);
 
-    db.imHausListe.save(imHausListe, setTimeout(function (err, imHausListe) {
-        if (err) {
-            res.send(err);
-        }
-        res.json(imHausListe);
-        console.log("imHausListe save called");
-    }, 10000));
-});
 
 //Save TracesListe
 router.post('/tracesListe', function(req, res, next) {
@@ -65,15 +68,16 @@ router.post('/tracesListe', function(req, res, next) {
     tracesListe.data = req.body;
 
     db.tracesListe.remove({});
-
-    db.tracesListe.save(tracesListe, setTimeout(function (err, tracesListe) {
+    setTimeout(function() {
+    db.tracesListe.save(tracesListe, function (err, tracesListe) {
         if (err) {
             res.send(err);
         }
         res.json(tracesListe);
         console.log("tracesListe save called");
-        }, 10000));
-});
+    });
+    }, 100);
+
 
 //Get anreiseListe
 router.get('/anreiseListe', function(req, res, next) {
