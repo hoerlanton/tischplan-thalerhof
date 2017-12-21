@@ -361,7 +361,7 @@
                 <div class="row" style="background-color: #eaf3f3; border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;" >
                   <div *ngIf="showSonnbergZirbnBool">
                     <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
-                      <div class="t{{tableSonnbergZirbn.number}}" (click)="moveTable(j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor}">
+                      <div class="t{{tableSonnbergZirbn.number}}" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor}">
                         <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
                           <p>{{tableSonnbergZirbn.number}}</p>
                         </div>
@@ -370,7 +370,7 @@
                   </div>
                   <div *ngIf="showPanoramaBool">
                     <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
-                      <div class="t{{tablePanorama.number}}" (click)="moveTable(j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor}">
+                      <div class="t{{tablePanorama.number}}" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor}">
                         <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
                           <p>{{tablePanorama.number}}</p>
                         </div>
@@ -379,7 +379,7 @@
                   </div>
                   <div *ngIf="showRestaurantBool">
                     <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
-                      <div class="t{{tableRestaurant.number}}" (click)="moveTable(j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor}">
+                      <div class="t{{tableRestaurant.number}}" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor}">
                         <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
                           <p>{{tableRestaurant.number}}</p>
                         </div>
@@ -388,7 +388,7 @@
                   </div>
                   <div *ngIf="showWintergartenBool">
                     <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
-                      <div class="t{{tableWintergarten.number}}" (click)="moveTable(j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor}">
+                      <div class="t{{tableWintergarten.number}}" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor}">
                         <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
                           <p>{{tableWintergarten.number}}</p>
                         </div>

@@ -491,7 +491,6 @@ export class TischplanComponent implements OnInit {
         this.showRestaurantBool = true;
         this.showWintergartenBool = false;
 
-
         if (this.buttonBgColor3 === "eaf3f3") {
             this.buttonBgColor3 = "0a7a74";
             this.buttonBgColor1 = "eaf3f3";
@@ -534,356 +533,33 @@ export class TischplanComponent implements OnInit {
               this.fontColor4 = "0a7a74";
           }
     }
-
-/*
-    moveTable(g, j, f) {
+    moveTable(table, j) {
 
       console.log("moveTable clicked");
-      console.log(g, j, f + "-" +  this.leftValues[f] + "-" + this.topValues[g]);
+      console.log('table :' + table.number + 'j' +  j);
+      this.tischplanService.moveTable(table).subscribe(response => {
+        console.log('Response:' + JSON.stringify(response));
 
-      //Sonnberg-Zirbn
-      //50
-      if (g === 10 && this.topValues[g] === 430) {
-          this.topValues[g] = 400;
-          this.tables.splice(j + 1, 1, 50);
-      }   else if (g === 10 && this.topValues[g] === 400) {
-          this.topValues[g] = 430;
-          this.tables.splice(j + 1, 1, 51);
-      }
-      //52
-      if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 200;
-        this.tables.splice(j + 1, 1, 52);
-      } else if (g === 12 && this.leftValues[f] === 200 && this.topValues[g] === 280) {
-        this.leftValues[f] = 230;
-        this.topValues[g] = 280;
-        this.tables.splice(j + 1, 1, 53);
-      }
-      //54
-      if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 320) {
-        this.topValues[g] = 290;
-        this.leftValues[f] = 50;
-        this.tables.splice(j + 1, 1, 54);
-      } else if (g === 14 && this.leftValues[f] === 50 && this.topValues[g] === 290) {
-        this.topValues[g] = 320;
-        this.leftValues[f] = 50;
-        this.tables.splice(j + 1, 1, 55);
-      }
-      //56
-      if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 200) {
-        this.topValues[g] = 170;
-        this.leftValues[f] = 50;
-        this.tables.splice(j + 1, 1, 56);
-      } else if (g === 16 && this.leftValues[f] === 50 && this.topValues[g] === 170) {
-        this.topValues[g] = 200;
-        this.leftValues[f] = 50;
-        this.tables.splice(j + 1, 1, 57);
-      }
+        //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
+        console.log("topValue:" + JSON.stringify(response.tables[0].topValue));
+        console.log("topValue:" + JSON.stringify(response.tables[0].leftValue));
 
-      //Panorama Restaurant
-      //60
-      if (g === 0 && this.leftValues[f] === 220 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 250;
-        this.tables.splice(j + 1, 1, 60);
-      } else if (g === 0 && this.leftValues[f] === 250 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 61);
-      }
-      //61
-      if (g === 1 && this.leftValues[f] === 280 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 310;
-        this.tables.splice(j + 1, 1, 61);
-      } else if (g === 1 && this.leftValues[f] === 310 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 280;
-        this.tables.splice(j + 1, 1, 62);
-      }
-      //62
-      if (g === 2 && this.leftValues[f] === 340 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 370;
-        this.tables.splice(j + 1, 1, 62);
-      } else if (g === 2 && this.leftValues[f] === 370 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 63);
-      }
-      //63
-      if (g === 3 && this.leftValues[f] === 400 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 430;
-        this.tables.splice(j + 1, 1, 63);
-      } else if (g === 3 && this.leftValues[f] === 430 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 400;
-        this.tables.splice(j + 1, 1, 64);
-      }
-      //64
-      if (g === 4 && this.leftValues[f] === 460 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 490;
-        this.tables.splice(j + 1, 1, 64);
-      } else if (g === 4 && this.leftValues[f] === 490 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 65);
-      }
-      //65
-      if (g === 5 && this.leftValues[f] === 520 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 550;
-        this.tables.splice(j + 1, 1, 65);
-      } else if (g === 5 && this.leftValues[f] === 550 && this.topValues[g] === 440) {
-        this.topValues[g] = 440;
-        this.leftValues[f] = 520;
-        this.tables.splice(j + 1, 1, 66);
-      }
-      //67
-      if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 340) {
-        this.topValues[g] = 310;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 67);
-      } else if (g === 7 && this.leftValues[f] === 580 && this.topValues[g] === 310) {
-        this.topValues[g] = 340;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 68);
-      }
-      //68
-      if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 280) {
-        this.topValues[g] = 250;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 68);
-      } else if (g === 8 && this.leftValues[f] === 580 && this.topValues[g] === 250) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 69);
-      }
-      //69
-      if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 220) {
-        this.topValues[g] = 190;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 69);
-      } else if (g === 9 && this.leftValues[f] === 580 && this.topValues[g] === 190) {
-        this.topValues[g] = 220;
-        this.leftValues[f] = 580;
-        this.tables.splice(j + 1, 1, 70);
-      }
-      //71
-      if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 160) {
-        this.topValues[g] = 190;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 71);
-      } else if (g === 11 && this.leftValues[f] === 460 && this.topValues[g] === 190) {
-        this.topValues[g] = 160;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 72);
-      }
-      //72
-      if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 220) {
-        this.topValues[g] = 250;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 72);
-      } else if (g === 12 && this.leftValues[f] === 460 && this.topValues[g] === 250) {
-        this.topValues[g] = 220;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 73);
-      }
-      //73
-      if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 280) {
-        this.topValues[g] = 310;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 73);
-      } else if (g === 13 && this.leftValues[f] === 460 && this.topValues[g] === 310) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 460;
-        this.tables.splice(j + 1, 1, 74);
-      }
-      //75
-      if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 340) {
-        this.topValues[g] = 310;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 75);
-      } else if (g === 15 && this.leftValues[f] === 340 && this.topValues[g] === 310) {
-        this.topValues[g] = 340;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 76);
-      }
-      //76
-      if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 280) {
-        this.topValues[g] = 250;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 76);
-      } else if (g === 16 && this.leftValues[f] === 340 && this.topValues[g] === 250) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 77);
-      }
-      //77
-      if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 220) {
-        this.topValues[g] = 190;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 77);
-      } else if (g === 17 && this.leftValues[f] === 340 && this.topValues[g] === 190) {
-        this.topValues[g] = 220;
-        this.leftValues[f] = 340;
-        this.tables.splice(j + 1, 1, 78);
-      }
-      //79
-      if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 340) {
-        this.topValues[g] = 310;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 79);
-      } else if (g === 19 && this.leftValues[f] === 220 && this.topValues[g] === 310) {
-        this.topValues[g] = 340;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 80);
-      }
-      //80
-      if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 280) {
-        this.topValues[g] = 250;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 80);
-      } else if (g === 20 && this.leftValues[f] === 220 && this.topValues[g] === 250) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 81);
-      }
-      //81
-      if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 220) {
-        this.topValues[g] = 190;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 81);
-      } else if (g === 21 && this.leftValues[f] === 220 && this.topValues[g] === 190) {
-        this.topValues[g] = 220;
-        this.leftValues[f] = 220;
-        this.tables.splice(j + 1, 1, 82);
-      }
-      //83
-      if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 160) {
-        this.topValues[g] = 190;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 83);
-      } else if (g === 23 && this.leftValues[f] === 60 && this.topValues[g] === 190) {
-        this.topValues[g] = 160;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 84);
-      }
-      //84
-      if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 220) {
-        this.topValues[g] = 250;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 84);
-      } else if (g === 24 && this.leftValues[f] === 60 && this.topValues[g] === 250) {
-        this.topValues[g] = 220;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 85);
-      }
-      //85
-      if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 280) {
-        this.topValues[g] = 310;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 85);
-      } else if (g === 25 && this.leftValues[f] === 60 && this.topValues[g] === 310) {
-        this.topValues[g] = 280;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 86);
-      }
-      //86
-      if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 340) {
-        this.topValues[g] = 370;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 86);
-      } else if (g === 26 && this.leftValues[f] === 60 && this.topValues[g] === 370) {
-        this.topValues[g] = 340;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 87);
-      }
-      //87
-      if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 400) {
-        this.topValues[g] = 430;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 87);
-      } else if (g === 27 && this.leftValues[f] === 60 && this.topValues[g] === 430) {
-        this.topValues[g] = 400;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 88);
-      }
-      //88
-      if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 460) {
-        this.topValues[g] = 490;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 88);
-      } else if (g === 28 && this.leftValues[f] === 60 && this.topValues[g] === 490) {
-        this.topValues[g] = 460;
-        this.leftValues[f] = 60;
-        this.tables.splice(j + 1, 1, 89);
-      }
-      //9
-      if (g === 8 && this.leftValues[f] === 180 && this.topValues[g] === 200) {
-        this.topValues[g] = 200;
-        this.leftValues[f] = 210;
-        this.tables.splice(j + 1, 1, 9);
-      } else if (g === 8 && this.leftValues[f] === 210 && this.topValues[g] === 200) {
-        this.topValues[g] = 200;
-        this.leftValues[f] = 180;
-        this.tables.splice(j + 1, 1, 10);
-      }
-      //501
-      if (g === 0 && this.leftValues[f] === 420 && this.topValues[g] === 115) {
-        this.topValues[g] = 115;
-        this.leftValues[f] = 470;
-        this.tables.splice(j + 1, 1, 501);
-      } else if (g === 0 && this.leftValues[f] === 470 && this.topValues[g] === 115) {
-        this.topValues[g] = 115;
-        this.leftValues[f] = 420;
-        this.tables.splice(j + 1, 1, 502);
-      }
-      //503
-      if (g === 2 && this.leftValues[f] === 590 && this.topValues[g] === 115) {
-        this.topValues[g] = 115;
-        this.leftValues[f] = 640;
-        this.tables.splice(j + 1, 1, 503);
-      } else if (g === 2 && this.leftValues[f] === 640 && this.topValues[g] === 115) {
-        this.topValues[g] = 115;
-        this.leftValues[f] = 590;
-        this.tables.splice(j + 1, 1, 504);
-      }
-      //505
-      if (g === 4 && this.leftValues[f] === 590 && this.topValues[g] === 215) {
-        this.topValues[g] = 215;
-        this.leftValues[f] = 640;
-        this.tables.splice(j + 1, 1, 505);
-      } else if (g === 4 && this.leftValues[f] === 640 && this.topValues[g] === 215) {
-        this.topValues[g] = 215;
-        this.leftValues[f] = 590;
-        this.tables.splice(j + 1, 1, 506);
-      }
-      //515
-      if (g === 14 && this.leftValues[f] === 280 && this.topValues[g] === 380) {
-        this.topValues[g] = 380;
-        this.leftValues[f] = 240;
-        this.tables.splice(j + 1, 1, 515);
-      } else if (g === 14 && this.leftValues[f] === 240 && this.topValues[g] === 380) {
-        this.topValues[g] = 380;
-        this.leftValues[f] = 280;
-        this.tables.splice(j + 1, 1, 516);
-      }
-      //523
-      if (g === 23 && this.leftValues[f] === 300 && this.topValues[g] === 115) {
-        this.topValues[g] = 130;
-        this.leftValues[f] = 260;
-        this.tables.splice(j, 1, 523);
-      } else if (g === 23 && this.leftValues[f] === 260 && this.topValues[g] === 130) {
-        this.topValues[g] = 115;
-        this.leftValues[f] = 300;
-        this.tables.splice(j, 1, 524);
-      }
-    }
-*/
+        if (response.tables[0].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j].topValue = response.tables[0].topValue;
+          this.tablesSonnbergZirbn[j].leftValue = response.tables[0].leftValue;
+        } else if(response.tables[0].department === "Panorama") {
+          this.tablesPanorama[j].topValue = response.tables[0].topValue;
+          this.tablesPanorama[j].leftValue = response.tables[0].leftValue;
+        } else if(response.tables[0].department === "Restaurant") {
+          this.tablesRestaurant[j].topValue = response.tables[0].topValue;
+          this.tablesRestaurant[j].leftValue = response.tables[0].leftValue;
+        } else if(response.tables[0].department === "Wintergarten") {
+          this.tablesWintergarten[j].topValue = response.tables[0].topValue;
+          this.tablesWintergarten[j].leftValue = response.tables[0].leftValue;
+        }
+        });
+}
+
   printToCart1(printSectionId1: string) {
     let popupWinindow;
     let innerContents = document.getElementById(printSectionId1).innerHTML;

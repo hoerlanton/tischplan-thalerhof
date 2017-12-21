@@ -35,6 +35,13 @@ export class TischplanService {
       .map(res => res.json());
   }
 
+  moveTable(dataString) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('moveTable', dataString, {headers: headers})
+      .map(res => res.json());
+  }
+
   dispenseTable(tableSonnbergZirbn) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
