@@ -89,7 +89,7 @@ export class TischplanComponent implements OnInit {
 
         this.tischplanService.getTracesListe()
             .subscribe(tracesListeElemente  => {
-                    //console.log(tracesListeElemente);
+                    console.log('92' + JSON.stringify(tracesListeElemente));
                     //console.log("2:" + tracesListeElemente[0].data[0]);
                     //console.log(tracesListeElemente[0].data.length);
                     //this.tracesListeElemente = tracesListeElemente[0].data;
@@ -124,8 +124,6 @@ export class TischplanComponent implements OnInit {
     }
 
     public formatTracesListeElements(tracesListeElemente) {
-
-
       for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
         if (tracesListeElemente[0].data[o].length === 7) {
           tracesListeElemente[0].data[o].splice(0, 5);
@@ -167,101 +165,30 @@ export class TischplanComponent implements OnInit {
           tracesListeElemente[0].data[o].splice(1, 2);
         }
       }
-      let trace1 = [];
-      let trace2 = [];
-      let trace3 = [];
-      let trace4 = [];
-      let trace5 = [];
-      let trace6 = [];
-      let trace7 = [];
-      let trace8 = [];
-      let trace9 = [];
-      let trace10 = [];
-      if (tracesListeElemente[0].data[0] !== undefined) {
-        if (tracesListeElemente[0].data[0].length === 8) {
-          trace1 = tracesListeElemente[0].data[0].concat(tracesListeElemente[0].data[1]);
-        }
-      }
-      if (tracesListeElemente[0].data[1] !== undefined) {
-        if (tracesListeElemente[0].data[1].length === 8) {
-          trace2 = tracesListeElemente[0].data[1].concat(tracesListeElemente[0].data[2]);
-        }
-      }
-      if (tracesListeElemente[0].data[2] !== undefined) {
-        if (tracesListeElemente[0].data[2].length === 8) {
-          trace3 = tracesListeElemente[0].data[2].concat(tracesListeElemente[0].data[3]);
-        }
-      }
-      if (tracesListeElemente[0].data[3] !== undefined) {
-        if (tracesListeElemente[0].data[3].length === 8) {
-          trace4 = tracesListeElemente[0].data[3].concat(tracesListeElemente[0].data[4]);
-        }
-      }
-      if (tracesListeElemente[0].data[4] !== undefined) {
-        if (tracesListeElemente[0].data[4].length === 8) {
-          trace5 = tracesListeElemente[0].data[4].concat(tracesListeElemente[0].data[5]);
-        }
-      }
-      if (tracesListeElemente[0].data[5] !== undefined) {
-        if (tracesListeElemente[0].data[5].length === 8) {
-          trace6 = tracesListeElemente[0].data[5].concat(tracesListeElemente[0].data[6]);
-        }
-      }
-      if (tracesListeElemente[0].data[6] !== undefined) {
-        if (tracesListeElemente[0].data[6].length === 8) {
-          trace7 = tracesListeElemente[0].data[6].concat(tracesListeElemente[0].data[7]);
-        }
-      }
-      if (tracesListeElemente[0].data[7] !== undefined) {
-        if (tracesListeElemente[0].data[7].length === 8) {
-          trace8 = tracesListeElemente[0].data[7].concat(tracesListeElemente[0].data[8]);
-        }
-      }
-      if (tracesListeElemente[0].data[8] !== undefined) {
-        if (tracesListeElemente[0].data[8].length === 8) {
-          trace9 = tracesListeElemente[0].data[8].concat(tracesListeElemente[0].data[9]);
-        }
-      }
-      if (tracesListeElemente[0].data[9] !== undefined) {
-        if (tracesListeElemente[0].data[9].length === 8) {
-          trace10 = tracesListeElemente[0].data[9].concat(tracesListeElemente[0].data[10]);
-        }
+      for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
+        console.log(tracesListeElemente[0].data[o]);
       }
 
-      console.log(trace1);
-      if(trace1.length === 9){
-        this.tracesListeElemente.push(trace1)
-      }
-      if(trace2.length === 9){
-        this.tracesListeElemente.push(trace2)
-      }
-      if(trace3.length === 9){
-        this.tracesListeElemente.push(trace3)
-      }
-      if(trace4.length === 9){
-        this.tracesListeElemente.push(trace4)
-      }
-      if(trace5.length === 9){
-        this.tracesListeElemente.push(trace5)
-      }
-      if(trace6.length === 9){
-        this.tracesListeElemente.push(trace6)
-      }
-      if(trace7.length === 9){
-        this.tracesListeElemente.push(trace7)
-      }
-      if(trace8.length === 9){
-        this.tracesListeElemente.push(trace8)
-      }
-      if(trace9.length === 9){
-        this.tracesListeElemente.push(trace9)
-      }
-      if(trace10.length === 9){
-        this.tracesListeElemente.push(trace10)
+      let trace = [];
+
+      for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
+        trace[o] = [];
       }
 
-      console.log(tracesListeElemente[0].data);
-      console.log(this.tracesListeElemente);
+      for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
+        if (tracesListeElemente[0].data[o] !== undefined) {
+          if (tracesListeElemente[0].data[o].length === 8) {
+            trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o+1]);
+          }
+        }
+      }
+      for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
+        if (trace[o].length === 9) {
+          this.tracesListeElemente.push(trace[o])
+        }
+      }
+      console.log('263' + tracesListeElemente[0].data);
+      console.log('264 ' + this.tracesListeElemente);
     }
 
     private onDrag(args) {
