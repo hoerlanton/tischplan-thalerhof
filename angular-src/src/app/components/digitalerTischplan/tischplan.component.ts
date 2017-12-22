@@ -79,7 +79,6 @@ export class TischplanComponent implements OnInit {
               }
             }
 
-
             console.log(this.tablesPanorama);
             console.log(this.tablesWintergarten);
             console.log(this.tablesSonnbergZirbn);
@@ -166,7 +165,7 @@ export class TischplanComponent implements OnInit {
         }
       }
       for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-        console.log(tracesListeElemente[0].data[o]);
+        console.log(o + tracesListeElemente[0].data[o]);
       }
 
       let trace = [];
@@ -468,21 +467,21 @@ export class TischplanComponent implements OnInit {
         console.log('Response:' + JSON.stringify(response));
 
         //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
-        console.log("topValue:" + JSON.stringify(response.tables[0].topValue));
-        console.log("topValue:" + JSON.stringify(response.tables[0].leftValue));
+        console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
+        console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
 
-        if (response.tables[0].department === "Sonnberg-Zirbn") {
-          this.tablesSonnbergZirbn[j].topValue = response.tables[0].topValue;
-          this.tablesSonnbergZirbn[j].leftValue = response.tables[0].leftValue;
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j].topValue = response[0].tables[j].topValue;
+          this.tablesSonnbergZirbn[j].leftValue = response[0].tables[j].leftValue;
         } else if(response.tables[0].department === "Panorama") {
-          this.tablesPanorama[j].topValue = response.tables[0].topValue;
-          this.tablesPanorama[j].leftValue = response.tables[0].leftValue;
+          this.tablesPanorama[j].topValue = response[0].tables[j].topValue;
+          this.tablesPanorama[j].leftValue = response[0].tables[j].leftValue;
         } else if(response.tables[0].department === "Restaurant") {
-          this.tablesRestaurant[j].topValue = response.tables[0].topValue;
-          this.tablesRestaurant[j].leftValue = response.tables[0].leftValue;
+          this.tablesRestaurant[j].topValue = response[0].tables[j].topValue;
+          this.tablesRestaurant[j].leftValue = response[0].tables[j].leftValue;
         } else if(response.tables[0].department === "Wintergarten") {
-          this.tablesWintergarten[j].topValue = response.tables[0].topValue;
-          this.tablesWintergarten[j].leftValue = response.tables[0].leftValue;
+          this.tablesWintergarten[j].topValue = response[0].tables[j].topValue;
+          this.tablesWintergarten[j].leftValue = response[0].tables[j].leftValue;
         }
         });
 }

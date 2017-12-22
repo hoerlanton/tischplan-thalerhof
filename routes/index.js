@@ -164,7 +164,7 @@ router.post('/moveTable', function(req, res, next) {
             },
             {
                 $set: {
-                    "tables.$.topValue": "400",
+                    "tables.$.topValue": "460",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -172,7 +172,28 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
-    } else if (tableNumber === '50' && topValue === '400') {
+        /*
+        db.tables.update(
+            {
+            }, { $push: { tables: {
+                "arrayIndex": "11",
+                "department": "Sonnberg-Zirbn",
+                "number": "51",
+                "topValue": "400",
+                "leftValue": "200",
+                "bgColor": "#ffffff",
+                "isBesetzt": "false",
+                "placeholder": "true"
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("removeTable Update successful");
+            });
+        */
+    } else if (tableNumber === '50' && topValue === '460') {
         db.tables.update(
             {
                 department: departmentValue,
@@ -188,7 +209,21 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
-
+        /*
+        db.tables.update(
+            {
+            }, { $pull: { tables: {
+                "number": "51",
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("removeTable Update successful");
+                console.log(tables);
+            });
+*/
         //52
         //if (g === 12 && this.leftValues[f] === 230 && this.topValues[g] === 280) {
     } else if (tableNumber === '52' && topValue === '280' && leftValue === '230') {
@@ -1333,13 +1368,9 @@ router.post('/moveTable', function(req, res, next) {
                 console.log("moveTable Update successful");
             });
     }        setTimeout(function() {
-        db.tables.findOne(
+        db.tables.find(
             {
                 "department": departmentValue,
-                "tables.number": tableNumber
-            },
-            {
-                "tables.$": 1,
             },
             function (err, tables) {
                 if (err) {
