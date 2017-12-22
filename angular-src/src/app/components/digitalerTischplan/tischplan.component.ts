@@ -473,13 +473,13 @@ export class TischplanComponent implements OnInit {
         if (response[0].tables[j].department === "Sonnberg-Zirbn") {
           this.tablesSonnbergZirbn[j].topValue = response[0].tables[j].topValue;
           this.tablesSonnbergZirbn[j].leftValue = response[0].tables[j].leftValue;
-        } else if(response.tables[0].department === "Panorama") {
+        } else if(response[0].tables[j].department === "Panorama") {
           this.tablesPanorama[j].topValue = response[0].tables[j].topValue;
           this.tablesPanorama[j].leftValue = response[0].tables[j].leftValue;
-        } else if(response.tables[0].department === "Restaurant") {
+        } else if(response[0].tables[j].department === "Restaurant") {
           this.tablesRestaurant[j].topValue = response[0].tables[j].topValue;
           this.tablesRestaurant[j].leftValue = response[0].tables[j].leftValue;
-        } else if(response.tables[0].department === "Wintergarten") {
+        } else if(response[0].tables[j].department === "Wintergarten") {
           this.tablesWintergarten[j].topValue = response[0].tables[j].topValue;
           this.tablesWintergarten[j].leftValue = response[0].tables[j].leftValue;
         }

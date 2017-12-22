@@ -591,15 +591,15 @@ var TischplanComponent = (function () {
                 _this.tablesSonnbergZirbn[j].topValue = response[0].tables[j].topValue;
                 _this.tablesSonnbergZirbn[j].leftValue = response[0].tables[j].leftValue;
             }
-            else if (response.tables[0].department === "Panorama") {
+            else if (response[0].tables[j].department === "Panorama") {
                 _this.tablesPanorama[j].topValue = response[0].tables[j].topValue;
                 _this.tablesPanorama[j].leftValue = response[0].tables[j].leftValue;
             }
-            else if (response.tables[0].department === "Restaurant") {
+            else if (response[0].tables[j].department === "Restaurant") {
                 _this.tablesRestaurant[j].topValue = response[0].tables[j].topValue;
                 _this.tablesRestaurant[j].leftValue = response[0].tables[j].leftValue;
             }
-            else if (response.tables[0].department === "Wintergarten") {
+            else if (response[0].tables[j].department === "Wintergarten") {
                 _this.tablesWintergarten[j].topValue = response[0].tables[j].topValue;
                 _this.tablesWintergarten[j].leftValue = response[0].tables[j].leftValue;
             }
