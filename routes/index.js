@@ -1679,7 +1679,7 @@ router.post('/addInformationToTable', function(req, res, next) {
      console.log("Im Haus Liste gedropped");
      nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
      spracheValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
-     zimmernummerValue = informationElements2[2][1].substring(3, informationElements2[2][1].length);
+     zimmernummerValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
      preistypValue = informationElements2[3][1].substring(1, informationElements2[3][1].length);
      anreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
      abreiseValue = informationElements2[5][1].substring(1, informationElements2[5][1].length);
