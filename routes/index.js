@@ -156,7 +156,76 @@ router.post('/moveTable', function(req, res, next) {
     console.log('departmentValue' + departmentValue);
     console.log('topValue' + topValue);
 
-    if (tableNumber === '50' && topValue === '430') {
+
+ if (tableNumber === '19' && topValue === '200' && leftValue === '550') {
+    db.tables.update(
+        {
+            department: departmentValue,
+            "tables.number": tableNumber
+        },
+        {
+            $set: {
+                "tables.$.topValue": "200",
+                "tables.$.leftValue": "580",
+            }
+        }, function (err, tables) {
+            if (err) {
+                console.log("Error");
+            }
+            console.log("moveTable Update successful");
+        });
+} else if (tableNumber === '19' && topValue === '200' && leftValue === '580') {
+     db.tables.update(
+         {
+             department: departmentValue,
+             "tables.number": tableNumber
+         },
+         {
+             $set: {
+                 "tables.$.topValue": "200",
+                 "tables.$.leftValue": "550",
+             }
+         }, function (err, tables) {
+             if (err) {
+                 console.log("Error");
+             }
+             console.log("moveTable Update successful");
+         });
+ } else if (tableNumber === '20' && topValue === '200' && leftValue === '610') {
+         db.tables.update(
+             {
+                 department: departmentValue,
+                 "tables.number": tableNumber
+             },
+             {
+                 $set: {
+                     "tables.$.topValue": "200",
+                     "tables.$.leftValue": "640",
+                 }
+             }, function (err, tables) {
+                 if (err) {
+                     console.log("Error");
+                 }
+                 console.log("moveTable Update successful");
+             });
+     } else if (tableNumber === '20' && topValue === '200' && leftValue === '640') {
+         db.tables.update(
+             {
+                 department: departmentValue,
+                 "tables.number": tableNumber
+             },
+             {
+                 $set: {
+                     "tables.$.topValue": "200",
+                     "tables.$.leftValue": "610",
+                 }
+             }, function (err, tables) {
+                 if (err) {
+                     console.log("Error");
+                 }
+                 console.log("moveTable Update successful");
+             });
+ } else if (tableNumber === '50' && topValue === '430') {
         db.tables.update(
             {
                 department: departmentValue,
@@ -311,6 +380,40 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
+    } else if (tableNumber === '55' && topValue === '260' && leftValue === '50') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "230",
+                    "tables.$.leftValue": "50",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
+    } else if (tableNumber === '55' && topValue === '230' && leftValue === '50') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "260",
+                    "tables.$.leftValue": "50",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
     } else if (tableNumber === '56' && topValue === '200' && leftValue === '50') {
         db.tables.update(
             {
@@ -328,6 +431,7 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
+
     } else if (tableNumber === '56' && topValue === '170' && leftValue === '50') {
         db.tables.update(
             {
@@ -345,7 +449,41 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
+    } else if (tableNumber === '58' && topValue === '140' && leftValue === '170') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "140",
+                    "tables.$.leftValue": "200",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
 
+    } else if (tableNumber === '58' && topValue === '140' && leftValue === '200') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "140",
+                    "tables.$.leftValue": "170",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
     } else if (tableNumber === '60' && topValue === '440' && leftValue === '220') {
         db.tables.update(
             {

@@ -54,7 +54,7 @@ let csvDatei = "";
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     console.log("console log in app.post upload", 'files', req.files);
     res.send(req.files);
-    let uploadedFileName = req.files[0].filename;
+    let uploadedFileName = req.files[0].filename.replace(/ /g, "");
     let json = [];
     csv({noheader:true})
         .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)))
