@@ -1,16 +1,16 @@
 html, body {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    background-color: #0a7a74;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #0a7a74;
 }
 
 .row {
-    height: 100%;
+  height: 100%;
 }
 
 .row .container-fluid {
-    height: 100%;
+  height: 100%;
 }
 
 .line{
@@ -23,64 +23,64 @@ html, body {
 }
 
 .row .container-fluid .col-md-4 {
-    background-color: #f3efe4;
-    padding: 20px 10px 20px 10px;
-    border-left: 5px solid #0a7a74;
-    border-right: 5px solid #0a7a74;
-    height: 100%;
-    border-bottom: 20px solid #0a7a74;
-    max-width: 20%;
+  background-color: #f3efe4;
+  padding: 20px 10px 20px 10px;
+  border-left: 5px solid #0a7a74;
+  border-right: 5px solid #0a7a74;
+  height: 100%;
+  border-bottom: 20px solid #0a7a74;
+  max-width: 20%;
 }
 
 .row .container-fluid .col-md-4 .row1 {
-    overflow: auto;
-    margin: 0 0 0 0;
-    display: inline-block;
-    width: 105%;
-    height: 232.5px;
-    padding-top: 20px;
+  overflow: auto;
+  margin: 0 0 0 0;
+  display: inline-block;
+  width: 105%;
+  height: 232.5px;
+  padding-top: 20px;
 }
 
 .row .container-fluid .col-md-4 .row1 .wrapper {
-    overflow: auto;
-    margin: 0 0 0 0;
-    display: inline-block;
-    max-width: 100%;
+  overflow: auto;
+  margin: 0 0 0 0;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .row .container-fluid .col-md-4 .row1 .wrapper .container {
-    overflow: auto;
-    margin: 20px 40px 20px 0;
-    display: inline-block;
-    max-width: 100%;
-    border-radius: 3px;
+  overflow: auto;
+  margin: 20px 40px 20px 0;
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 3px;
 }
 
 .row .container-fluid .col-md-4 .row3 {
-    margin: 0 auto;
-    display: inline-block;
-    width: 100%;
-    height: 800px;
-    padding-top: 20px;
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+  height: 800px;
+  padding-top: 20px;
 }
 
 .row .container-fluid .col-md-4 .col-xs-12 .row1 {
-    overflow: auto;
-    margin: 0 auto;
-    display: inline-block;
-    width: 100%;
-    height: 800px;
-    padding-top: 20px;
+  overflow: auto;
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+  height: 800px;
+  padding-top: 20px;
 }
 
 
 .row .container-fluid .col-md-6 h3 {
-    align-content: center;
-    margin: 0 auto;
-    display: inline-block;
-    color: #0a7a74;
-    position: relative;
-    text-align:center;
+  align-content: center;
+  margin: 0 auto;
+  display: inline-block;
+  color: #0a7a74;
+  position: relative;
+  text-align:center;
 }
 
 .row .container-fluid .col-md-4 h3 {
@@ -90,56 +90,56 @@ html, body {
 }
 
 .row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group {
-    border-top:3px solid #0a7a74;
-    width: 105%;
-    padding: 10px 10px 10px 30px;
+  border-top:3px solid #0a7a74;
+  width: 105%;
+  padding: 10px 10px 10px 30px;
 }
 
 .row .container-fluid .col-md-4 .row3 .col-xs-12  .group {
-    border-top:3px solid #0a7a74;
-    width: 105%;
-    padding: 10px 10px 10px 30px;
+  border-top:3px solid #0a7a74;
+  width: 105%;
+  padding: 10px 10px 10px 30px;
 }
 
 .row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group1 {
-    margin-top: 20px;
-    overflow: auto;
-    max-height: 300px;
-    display: inline-block;
-    border-top:3px solid #0a7a74;
-    width: 102%;
-    padding: 10px 10px 10px 25px;
+  margin-top: 20px;
+  overflow: auto;
+  max-height: 300px;
+  display: inline-block;
+  border-top:3px solid #0a7a74;
+  width: 102%;
+  padding: 10px 10px 10px 25px;
 }
 
 .row1 .col {
-    flex: 1;
+  flex: 1;
 }
 
 .row1 .col:nth-child(1) {
-    order: 1;
+  order: 1;
 }
 .row1 .col:nth-child(2) {
-    order: 0;
+  order: 0;
 }
 .row1 .col:nth-child(3) {
-    order: 2;
+  order: 2;
 }
 
 .row .col-md-4 .row2 {
-    padding-bottom: 10px;
-    position: relative;
-    min-height: 100%;
-    border-bottom: 1px solid red;
+  padding-bottom: 10px;
+  position: relative;
+  min-height: 100%;
+  border-bottom: 1px solid red;
 }
 
 .card {
-    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */
-    background: rgba(255,255,255, 1);
+  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */
+  background: rgba(255,255,255, 1);
 }
 
 .row .container-fluid .col-md-4 .row1 .wrapper .container .card p {
-    /*padding:10px 10px 10px 10px;*/
-    max-width: 100%;
+  /*padding:10px 10px 10px 10px;*/
+  max-width: 100%;
 }
 
 .row .container-fluid .col-md-4 .wrapper .container .card p {
@@ -148,849 +148,432 @@ html, body {
 }
 
 .row .container-fluid .col-md-4 .row3 .row1 p {
-    /*padding: 10px 10px 10px 10px;*/
-    background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */
-    background: rgba(255,255,255, 1);
-    max-width: 100%;
+  /*padding: 10px 10px 10px 10px;*/
+  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */
+  background: rgba(255,255,255, 1);
+  max-width: 100%;
 }
 
 .row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {
-    /*padding: 10px 10px 10px 10px;*/
-    max-width: 100%;
+  /*padding: 10px 10px 10px 10px;*/
+  max-width: 100%;
 }
 
 .row .container-fluid .col-md-6 {
-    height: 620px;
-    width: 58%;
-    background-color: #eaf3f3;
-    padding: 20px 10px 20px 10px;
-    border-left: 5px solid #0a7a74;
-    border-right: 5px solid #0a7a74;
-    border-bottom: 20px solid #0a7a74;
+  height: 620px;
+  width: 58%;
+  background-color: #eaf3f3;
+  padding: 20px 10px 20px 10px;
+  border-left: 5px solid #0a7a74;
+  border-right: 5px solid #0a7a74;
+  border-bottom: 20px solid #0a7a74;
 }
 
 .row .container-fluid .col-md-6 .row {
-    background-color: #eaf3f3;
-    padding: 20px 10px 20px 10px;
-    height: 100%;
+  background-color: #eaf3f3;
+  padding: 20px 10px 20px 10px;
+  height: 100%;
 }
 
 .row .container-fluid .col-md-6 .row1 .col-md-3 {
-    margin: 0px 0px 0px 0px;
-    padding: 20px 20px 20px 20px;
+  margin: 0px 0px 0px 0px;
+  padding: 20px 20px 20px 20px;
 }
 
 .row .container-fluid .col-md-6 #printSectionId2 .row .t1 {
-    width: 60px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 #printSectionId2 .row .t2 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t3 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t4 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t5 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t6 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t7 {
-    width: 60px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t8 {
-    width: 50px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t9 {
-    width: 50px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t10 {
-    width: 50px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t11 {
-    width: 50px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t12 {
-    width: 60px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t13 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t14 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t15 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t16 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t17 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t18 {
-    width: 60px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t19 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t20 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t21 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t22 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t23 {
-    width: 60px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t24 {
-    width: 30px;
-    height: 50px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t40 {
-    width: 60px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t41 {
-    width: 60px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t42 {
-    width: 80px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t43 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t44 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t45 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t46 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t47 {
-    width: 80px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t48 {
-    width: 60px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t49 {
-    width: 60px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t50 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t51 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t52 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t53 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t54 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t55 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t56 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t57 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t58 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t59 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t60 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t61 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t62 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t63 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t64 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t65 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t66 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t67 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t68 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t69 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t70 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t71 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t72 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t73 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t74 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t75 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t76 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t77 {
-     width: 60px;
-     height: 30px;
-     background-color: #FFFFFF;
-     position: absolute;
-    border: solid 1px #0a7a74;
- }
+  position: absolute;
+}
 
 .row .container-fluid .col-md-6 .row .t78 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 
 .row .container-fluid .col-md-6 .row .t79 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t80 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t81 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t82 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t83 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t84 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t85 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row  .t86 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t87 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 
 .row .container-fluid .col-md-6 .row .t88 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t89 {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t501 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t502 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t503 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t504 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t505 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t506 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t507 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t508 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t509 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t510 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t511 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t512 {
-    width: 80px;
-    height: 45px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t513 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t514 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border-radius: 50%;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t515 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t516 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t517 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(10deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t518 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(30deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t519 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(50deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t520 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(70deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t521 {
-    width: 30px;
-    height: 60px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(90deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t522 {
-    width: 80px;
-    height: 45px;
-    background-color: #FFFFFF;
-    position: absolute;
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t523 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t524 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }
 
 .row .container-fluid .col-md-6 .row .t525 {
-    width: 40px;
-    height: 40px;
-    background-color: #FFFFFF;
-    position: absolute;
-    transform: rotate(45deg);
-    border: solid 1px #0a7a74;
+  position: absolute;
 }

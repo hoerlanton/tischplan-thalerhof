@@ -1,14 +1,14 @@
 'use strict';
 
 const   bodyParser = require('body-parser'),
-        express = require('express'),
-        app = express(),
-        multer = require('multer'),
-        routes = require('./routes/index'),
-        path = require('path'),
-        request = require('request'),
-        http = require('http'),
-        config = require('config');
+    express = require('express'),
+    app = express(),
+    multer = require('multer'),
+    routes = require('./routes/index'),
+    path = require('path'),
+    request = require('request'),
+    http = require('http'),
+    config = require('config');
 
 const csv=require('csvtojson');
 
@@ -59,23 +59,23 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     csv({noheader:true})
         .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)))
         .on('csv',(csvRow)=>{
-        json.push(csvRow);
-    //console.log("json = " + JSON.stringify(json));
-    //console.log("after stringifying: " + csvDatei);
-    })
-    .on('done', (error)=>{
+            json.push(csvRow);
+            //console.log("json = " + JSON.stringify(json));
+            //console.log("after stringifying: " + csvDatei);
+        })
+        .on('done', (error)=>{
 
             csvDatei = JSON.stringify(json);
             console.log(csvDatei);
-        if (csvDatei.indexOf("Im Haus NEU") !== -1) {
-            postImHausListeToDB();
-        } else if (csvDatei.indexOf("Anreiseliste") !== -1) {
-            postAnreiseListeToDB();
-        } else if (csvDatei.indexOf("Trace Report") !== -1){
-            postTracesListeToDB();
-        }
-        console.log('end')
-    });
+            if (csvDatei.indexOf("Im Haus NEU") !== -1) {
+                postImHausListeToDB();
+            } else if (csvDatei.indexOf("Anreiseliste") !== -1) {
+                postAnreiseListeToDB();
+            } else if (csvDatei.indexOf("Trace Report") !== -1){
+                postTracesListeToDB();
+            }
+            console.log('end')
+        });
     //New User is saved in DB, function called in receivedAuthentication - send to index.js /guests REST-FUL API
     function postImHausListeToDB() {
         // An object of options to indicate where to post to
