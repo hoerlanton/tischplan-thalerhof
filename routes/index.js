@@ -163,7 +163,7 @@ router.post('/moveTable', function(req, res, next) {
     console.log('tableNumber' + tableNumber);
     console.log('departmentValue' + departmentValue);
     console.log('topValue' + topValue);
-
+    console.log('leftValue' + leftValue);
 
     if (tableNumber === '19' && topValue === '200' && leftValue === '550') {
         db.tables.update(
@@ -251,11 +251,11 @@ router.post('/moveTable', function(req, res, next) {
             }, { $push: {
                 tables: {
                     $each: [ {
-                        "arrayIndex": "20",
+                        "arrayIndex": "19",
                         "department": "Restaurant",
-                        "number": "21",
+                        "number": "20",
                         "topValue": "200",
-                        "leftValue": "670",
+                        "leftValue": "610",
                         "bgColor": "#ffffff",
                         "isBesetzt": "false",
                         "placeholder": "true",
@@ -307,12 +307,26 @@ router.post('/moveTable', function(req, res, next) {
                 $set: {
                     "tables.$.topValue": "200",
                     "tables.$.leftValue": "640",
+                    "tables.$.width": "60",
                 }
             }, function (err, tables) {
                 if (err) {
                     console.log("Error");
                 }
                 console.log("moveTable Update successful");
+            });
+        db.tables.update(
+            {
+            }, { $pull: { tables: {
+                "number": "21",
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("removeTable Update successful");
+                console.log(tables);
             });
     } else if (tableNumber === '20' && topValue === '200' && leftValue === '640') {
         db.tables.update(
@@ -324,6 +338,7 @@ router.post('/moveTable', function(req, res, next) {
                 $set: {
                     "tables.$.topValue": "200",
                     "tables.$.leftValue": "610",
+                    "tables.$.width": "30",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -336,17 +351,19 @@ router.post('/moveTable', function(req, res, next) {
                 department: departmentValue,
             }, { $push: {
                 tables: {
-                    $each: [ { "arrayIndex": 11,
-                        "department": "Sonnberg-Zirbn",
-                        "number": "51",
-                        "topValue": "400",
-                        "leftValue": "200",
+                    $each: [ {
+                        "arrayIndex": "20",
+                        "department": "Restaurant",
+                        "number": "21",
+                        "topValue": "200",
+                        "leftValue": "670",
                         "bgColor": "#ffffff",
                         "isBesetzt": "false",
                         "placeholder": "true",
-                        "width": "60",
-                        "height": "30",
-                        "border": "solid 1px #0a7a74" } ],
+                        "border": "solid 1px #0a7a74",
+                        "width": "30",
+                        "height": "60"
+                    } ],
                     $sort: { number: 1 } } } },
             { multi: true },
             function (err, tables) {
@@ -962,7 +979,7 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("addTable Update successful");
             });
-    } else if (tableNumber === '60' && topValue === '440' && leftValue === '220') {
+    } else if (tableNumber === '60' && topValue === '440' && leftValue === '220' && width === '30') {
         db.tables.update(
             {
                 department: departmentValue,
@@ -972,6 +989,7 @@ router.post('/moveTable', function(req, res, next) {
                 $set: {
                     "tables.$.topValue": "440",
                     "tables.$.leftValue": "250",
+                    "tables.$.width": "60",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -979,7 +997,20 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
-    } else if (tableNumber === '60' && topValue === '440' && leftValue === '250') {
+        db.tables.update(
+            {
+            }, { $pull: { tables: {
+                "number": "61",
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+                console.log(tables);
+            });
+    } else if (tableNumber === '60' && topValue === '440' && leftValue === '250' && width === '60') {
         db.tables.update(
             {
                 department: departmentValue,
@@ -988,7 +1019,8 @@ router.post('/moveTable', function(req, res, next) {
             {
                 $set: {
                     "tables.$.topValue": "440",
-                    "tables.$.leftValue": "220",
+                    "tables.$.leftValue": "250",
+                    "tables.$.width": "90",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -996,6 +1028,144 @@ router.post('/moveTable', function(req, res, next) {
                 }
                 console.log("moveTable Update successful");
             });
+        db.tables.update(
+            {
+            }, { $pull: { tables: {
+                "number": "62",
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+                console.log(tables);
+            });
+    } else if (tableNumber === '60' && topValue === '440' && leftValue === '250' && width === '90') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "440",
+                    "tables.$.leftValue": "250",
+                    "tables.$.width": "120",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
+        db.tables.update(
+            {
+            }, { $pull: { tables: {
+                "number": "63",
+            } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+                console.log(tables);
+            });
+
+    } else if (tableNumber === '60' && topValue === '440' && leftValue === '250' && width === '120') {
+        db.tables.update(
+            {
+                department: departmentValue,
+                "tables.number": tableNumber
+            },
+            {
+                $set: {
+                    "tables.$.topValue": "440",
+                    "tables.$.leftValue": "230",
+                    "tables.$.width": "30",
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("moveTable Update successful");
+            });
+        db.tables.update(
+            {
+                department: departmentValue,
+            }, { $push: { tables: {
+                $each: [      {
+                    "arrayIndex": "3",
+                    "department": "Panorama",
+                    "number": "63",
+                    "topValue": "440",
+                    "leftValue": "400",
+                    "bgColor": "#ffffff",
+                    "isBesetzt": "false",
+                    "placeholder": "true",
+                    "width": "30",
+                    "height": "60",
+                    "border": "solid 1px #0a7a74"
+                } ],
+                $sort: { number: 1 } } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+            });    db.tables.update(
+            {
+                department: departmentValue,
+            }, { $push: { tables: {
+                $each: [      {
+                    "arrayIndex": "2",
+                    "department": "Panorama",
+                    "number": "62",
+                    "topValue": "440",
+                    "leftValue": "340",
+                    "bgColor": "#ffffff",
+                    "isBesetzt": "false",
+                    "placeholder": "true",
+                    "width": "30",
+                    "height": "60",
+                    "border": "solid 1px #0a7a74"
+                } ],
+                $sort: { number: 1 } } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+            });
+        db.tables.update(
+            {
+                department: departmentValue,
+            }, { $push: { tables: {
+                $each: [     {
+                    "arrayIndex": "1",
+                    "department": "Panorama",
+                    "number": "61",
+                    "topValue": "440",
+                    "leftValue": "280",
+                    "bgColor": "#ffffff",
+                    "isBesetzt": "false",
+                    "placeholder": "true",
+                    "width": "30",
+                    "height": "60",
+                    "border": "solid 1px #0a7a74"
+                } ],
+                $sort: { number: 1 } } } },
+            { multi: true
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addTable Update successful");
+            });
+
     } else if (tableNumber === '61' && topValue === '440' && leftValue === '280') {
         db.tables.update(
             {

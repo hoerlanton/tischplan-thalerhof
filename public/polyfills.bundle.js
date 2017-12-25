@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp(["polyfills"],{
 
 /***/ "../../../../../src/polyfills.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6098,7 +6098,7 @@ global.IntlPolyfill = __webpack_require__("../../../../intl/lib/core.js");
 
 // Require all locale data for `Intl`. This module will be
 // ignored when bundling for the browser with Browserify/Webpack.
-__webpack_require__(0);
+__webpack_require__(2);
 
 // hack to export the polyfill as global Intl if needed
 if (!global.Intl) {
@@ -13370,20 +13370,20 @@ Zone.__load_patch('util', function (global, Zone, api) {
 
 /***/ }),
 
-/***/ 0:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 2:
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("../../../../../src/polyfills.ts");
 
 
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
 /***/ })
 
-},[2]);
+},[1]);
 //# sourceMappingURL=polyfills.bundle.js.map
