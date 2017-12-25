@@ -388,7 +388,7 @@
           </div>
           <div *ngIf="showWintergartenBool">
             <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
-              <div class="t{{tableWintergarten.number}}" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transform}">
+              <div class="t{{tableWintergarten.number}}" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}">
                 <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
                   <p>{{tableWintergarten.number}}</p>
                 </div>

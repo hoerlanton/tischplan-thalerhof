@@ -5,6 +5,11 @@ export class Table {
   bgColor: string;
   isBesetzt: boolean;
   placeholder: boolean;
+  border: string;
+  width: string;
+  height: string;
+  borderRadius: string;
+  transformValue: string;
   nameValue: string;
   spracheValue: string;
   zimmernummerValue: string;
