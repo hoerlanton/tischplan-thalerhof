@@ -97,9 +97,9 @@
               <div *ngIf="showPanoramaBool">
                 <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
                   <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <div class='cards-container' id='containerPanorama' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
-                      <p><b> Tisch:</b>{{tablePanorama.number}} </p><br>
+                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                    <p><b> Tisch:</b>{{tablePanorama.number}} </p><br>
+                    <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
                         <div *ngIf="tablePanorama.isBesetzt === 'true'">
                           <p style="background-color: #FFFFFF">
@@ -143,9 +143,9 @@
                             </p>
                           </div>
                         </div>
-                        <div *ngIf="tablePanorama.placeholder === 'true'">
-                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!  </p>
-                        </div>
+                      </div>
+                      <div *ngIf="tablePanorama.placeholder === 'true'">
+                        <p [dragula]='"evented-bag"' id="Panorama" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!  {{tablePanorama.number}} {{tablePanorama.department}} </p>
                       </div>
                     </div>
                   </div>
@@ -155,9 +155,9 @@
               <div *ngIf="showRestaurantBool">
                 <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
                   <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <div class='cards-container' id='containerRestaurant' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
-                      <p><b> Tisch:</b>{{tableRestaurant.number}} </p><br>
+                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                    <p><b> Tisch:</b>{{tableRestaurant.number}} </p><br>
+                    <div class='cards-container' id='containerRestaurant' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
                         <div *ngIf="tableRestaurant.isBesetzt === 'true'">
                           <p style="background-color: #FFFFFF">
@@ -201,9 +201,9 @@
                             </p>
                           </div>
                         </div>
-                        <div *ngIf="tableRestaurant.placeholder === 'true'">
-                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
-                        </div>
+                      </div>
+                      <div *ngIf="tableRestaurant.placeholder === 'true'">
+                        <p [dragula]='"evented-bag"' id="Restaurant" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}}</p>
                       </div>
                     </div>
                   </div>
@@ -214,9 +214,9 @@
               <div *ngIf="showWintergartenBool">
                 <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
                   <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <div class='cards-container' id='containerWintergarten' [dragula]='"evented-bag"' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
-                      <p><b> Tisch:</b>{{tableWintergarten.number}} </p><br>
+                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                    <p><b> Tisch:</b>{{tableWintergarten.number}} </p><br>
+                    <div class='cards-container' id='containerWintergarten' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
                         <div *ngIf="tableWintergarten.isBesetzt === 'true'">
                           <p style="background-color: #FFFFFF">
@@ -260,9 +260,9 @@
                             </p>
                           </div>
                         </div>
-                        <div *ngIf="tableWintergarten.placeholder === 'true'">
-                          <p style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!</p>
-                        </div>
+                      </div>
+                      <div *ngIf="tableWintergarten.placeholder === 'true'">
+                        <p [dragula]='"evented-bag"' id="Wintergarten" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableWintergarten.number}} {{tableWintergarten.department}}</p>
                       </div>
                     </div>
                   </div>
