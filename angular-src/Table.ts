@@ -5,6 +5,7 @@ export class Table {
   bgColor: string;
   isBesetzt: boolean;
   placeholder: boolean;
+  department: string;
   border: string;
   width: string;
   height: string;

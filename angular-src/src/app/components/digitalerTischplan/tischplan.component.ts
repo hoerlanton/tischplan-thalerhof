@@ -96,10 +96,10 @@ export class TischplanComponent implements OnInit {
         this.formatTracesListeElements(tracesListeElemente);
       });
 
-    this.buttonBgColor1 = "eaf3f3";
-    this.buttonBgColor2 = "eaf3f3";
-    this.buttonBgColor3 = "eaf3f3";
-    this.buttonBgColor4 = "eaf3f3";
+    this.buttonBgColor1 = "f3efe4";
+    this.buttonBgColor2 = "f3efe4";
+    this.buttonBgColor3 = "f3efe4";
+    this.buttonBgColor4 = "f3efe4";
     this.fontColor1 = "0a7a74";
     this.fontColor2 = "0a7a74";
     this.fontColor3 = "0a7a74";
@@ -200,8 +200,9 @@ export class TischplanComponent implements OnInit {
     console.log("Args = ");
     let information = args[0].innerText;
     let department = JSON.stringify(args[1].id);
-    let departementSubstring = department.substring(10, department.length - 1);
-    console.log(departementSubstring);
+    console.log("departement" + department);
+    let departementSubstring = department.substring(1, department.length - 1);
+    console.log("departementSubstring" + departementSubstring);
     let tableNumber = args[1].innerText;
     let tableNumberSubstring = "";
     console.log("tableNumber" + tableNumber);
@@ -363,13 +364,13 @@ export class TischplanComponent implements OnInit {
     this.showRestaurantBool = false;
     this.showWintergartenBool = false;
 
-    if (this.buttonBgColor1 === "eaf3f3") {
+    if (this.buttonBgColor1 === "f3efe4") {
       this.buttonBgColor1 = "0a7a74";
-      this.buttonBgColor2 = "eaf3f3";
-      this.buttonBgColor3 = "eaf3f3";
-      this.buttonBgColor4 = "eaf3f3"
+      this.buttonBgColor2 = "f3efe4";
+      this.buttonBgColor3 = "f3efe4";
+      this.buttonBgColor4 = "f3efe4"
     } else {
-      this.buttonBgColor1 = "eaf3f3";
+      this.buttonBgColor1 = "f3efe4";
     }
     if (this.fontColor1 === "0a7a74") {
       this.fontColor1 = "eaf3f3";
@@ -389,13 +390,13 @@ export class TischplanComponent implements OnInit {
     this.showRestaurantBool = false;
     this.showWintergartenBool = false;
 
-    if (this.buttonBgColor2 === "eaf3f3") {
+    if (this.buttonBgColor2 === "f3efe4") {
       this.buttonBgColor2 = "0a7a74";
-      this.buttonBgColor1 = "eaf3f3";
-      this.buttonBgColor3 = "eaf3f3";
-      this.buttonBgColor4 = "eaf3f3"
+      this.buttonBgColor1 = "f3efe4";
+      this.buttonBgColor3 = "f3efe4";
+      this.buttonBgColor4 = "f3efe4"
     } else {
-      this.buttonBgColor2 = "eaf3f3";
+      this.buttonBgColor2 = "f3efe4";
     }
     if (this.fontColor2 === "0a7a74") {
       this.fontColor2 = "eaf3f3";
@@ -414,13 +415,13 @@ export class TischplanComponent implements OnInit {
     this.showRestaurantBool = true;
     this.showWintergartenBool = false;
 
-    if (this.buttonBgColor3 === "eaf3f3") {
+    if (this.buttonBgColor3 === "f3efe4") {
       this.buttonBgColor3 = "0a7a74";
-      this.buttonBgColor1 = "eaf3f3";
-      this.buttonBgColor2 = "eaf3f3";
-      this.buttonBgColor4 = "eaf3f3"
+      this.buttonBgColor1 = "f3efe4";
+      this.buttonBgColor2 = "f3efe4";
+      this.buttonBgColor4 = "f3efe4"
     } else {
-      this.buttonBgColor3 = "eaf3f3";
+      this.buttonBgColor3 = "f3efe4";
     }
     if (this.fontColor3 === "0a7a74") {
       this.fontColor3 = "eaf3f3";
@@ -439,13 +440,13 @@ export class TischplanComponent implements OnInit {
     this.showRestaurantBool = false;
     this.showWintergartenBool = true;
 
-    if (this.buttonBgColor4 === "eaf3f3") {
+    if (this.buttonBgColor4 === "f3efe4") {
       this.buttonBgColor4 = "0a7a74";
-      this.buttonBgColor1 = "eaf3f3";
-      this.buttonBgColor2 = "eaf3f3";
-      this.buttonBgColor3 = "eaf3f3"
+      this.buttonBgColor1 = "f3efe4";
+      this.buttonBgColor2 = "f3efe4";
+      this.buttonBgColor3 = "f3efe4"
     } else {
-      this.buttonBgColor4 = "eaf3f3";
+      this.buttonBgColor4 = "f3efe4";
     }
     if (this.fontColor4 === "0a7a74") {
       this.fontColor4 = "eaf3f3";
