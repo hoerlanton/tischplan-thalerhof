@@ -50,18 +50,29 @@ export class TischplanComponent implements OnInit {
 
     this.tischplanService.getImHausListe()
       .subscribe(imHausListeElemente => {
-        this.imHausListeElemente = imHausListeElemente[0].data;
-        console.log(this.imHausListeElemente);
+        if(imHausListeElemente === null) {
+          return;
+        } else {
+          this.imHausListeElemente = imHausListeElemente[0].data;
+          console.log(this.imHausListeElemente);
+        }
       });
 
     this.tischplanService.getAnreiseListe()
       .subscribe(anreiseListeElemente => {
-        this.anreiseListeElemente = anreiseListeElemente[0].data;
-        console.log(this.anreiseListeElemente);
+        if(anreiseListeElemente === null) {
+          return;
+        } else {
+          this.anreiseListeElemente = anreiseListeElemente[0].data;
+          console.log(this.anreiseListeElemente);
+        }
       });
 
     this.tischplanService.getTables()
       .subscribe(tables => {
+        if(tables === null) {
+          return;
+        } else {
         console.log("TABLES LENGTH: " + tables.length);
 
         for (let a = 0; a < tables.length; a++) {
@@ -78,6 +89,7 @@ export class TischplanComponent implements OnInit {
           else if (tables[a].department === "Restaurant") {
             this.tablesRestaurant = tables[a].tables;
           }
+          }
         }
 
         console.log(this.tablesPanorama);
@@ -89,11 +101,15 @@ export class TischplanComponent implements OnInit {
 
     this.tischplanService.getTracesListe()
       .subscribe(tracesListeElemente  => {
-        console.log('92' + JSON.stringify(tracesListeElemente));
-        //console.log("2:" + tracesListeElemente[0].data[0]);
-        //console.log(tracesListeElemente[0].data.length);
-        //this.tracesListeElemente = tracesListeElemente[0].data;
-        this.formatTracesListeElements(tracesListeElemente);
+        if(tracesListeElemente === null) {
+          return;
+        } else {
+          console.log('92' + JSON.stringify(tracesListeElemente));
+          //console.log("2:" + tracesListeElemente[0].data[0]);
+          //console.log(tracesListeElemente[0].data.length);
+          //this.tracesListeElemente = tracesListeElemente[0].data;
+          this.formatTracesListeElements(tracesListeElemente);
+        }
       });
 
     this.buttonBgColor1 = "f3efe4";
@@ -218,17 +234,21 @@ export class TischplanComponent implements OnInit {
       .subscribe(response => {
         // let arrayIndex = response[1];
         console.log("RESPONSE addInformationToTable:" + JSON.stringify(response));
-        if(response.tables[0].department === "Sonnberg-Zirbn") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-        }
-        else if(response.tables[0].department === "Panorama") {
-          this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
-        }
-        else if(response.tables[0].department === "Restaurant") {
-          this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
-        }
-        else if(response.tables[0].department === "Wintergarten") {
-          this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+        if(response === null) {
+          return;
+        } else {
+          if (response.tables[0].department === "Sonnberg-Zirbn") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Panorama") {
+            this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Restaurant") {
+            this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Wintergarten") {
+            this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+          }
         }
         // console.log(this.tablesSonnbergZirbn[arrayIndex]);
       });
@@ -240,20 +260,23 @@ export class TischplanComponent implements OnInit {
         //console.log("arrayIndex:" + arrayIndex);
         //console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
         console.log("Response occupyTable:" + JSON.stringify(response));
+        if(response === null) {
+          return;
+        } else {
 
-        if(response.tables[0].department === "Sonnberg-Zirbn") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          if (response.tables[0].department === "Sonnberg-Zirbn") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Panorama") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Restaurant") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
+          else if (response.tables[0].department === "Wintergarten") {
+            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+          }
         }
-        else if(response.tables[0].department === "Panorama") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-        }
-        else if(response.tables[0].department === "Restaurant") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-        }
-        else if(response.tables[0].department === "Wintergarten") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-        }
-
 
         //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
@@ -322,18 +345,21 @@ export class TischplanComponent implements OnInit {
       console.log("Dispense Table:");
       console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
       console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
-
-      if(response[0].tables[j].department === "Sonnberg-Zirbn") {
-        this.tablesSonnbergZirbn[j] = response[0].tables[j];
-      }
-      else if(response[0].tables[j].department === "Panorama") {
-        this.tablesSonnbergZirbn[j] = response[0].tables[j];
-      }
-      else if(response[0].tables[j].department === "Restaurant") {
-        this.tablesSonnbergZirbn[j] = response[0].tables[j];
-      }
-      else if(response[0].tables[j].department === "Wintergarten") {
-        this.tablesSonnbergZirbn[j] = response[0].tables[j];
+      if(response === null) {
+        return;
+      } else {
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+        }
+        else if (response[0].tables[j].department === "Panorama") {
+          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+        }
+        else if (response[0].tables[j].department === "Restaurant") {
+          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+        }
+        else if (response[0].tables[j].department === "Wintergarten") {
+          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+        }
       }
     });
 
@@ -341,17 +367,21 @@ export class TischplanComponent implements OnInit {
       console.log("Add placeholder!");
       console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
       //console.log(this.tablesSonnbergZirbn[j].placeholder);
-      if(response[0].tables[j].department === "Sonnberg-Zirbn") {
-        this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
-      }
-      else if(response[0].tables[j].department === "Panorama") {
-        this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
-      }
-      else if(response[0].tables[j].department === "Restaurant") {
-        this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
-      }
-      else if(response[0].tables[j].department === "Wintergarten") {
-        this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+      if(response === null) {
+        return;
+      } else {
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if (response[0].tables[j].department === "Panorama") {
+          this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if (response[0].tables[j].department === "Restaurant") {
+          this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
+        }
+        else if (response[0].tables[j].department === "Wintergarten") {
+          this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+        }
       }
     });
 
@@ -468,15 +498,18 @@ export class TischplanComponent implements OnInit {
       //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
       console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
       console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-
-      if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-        this.tablesSonnbergZirbn = response[0].tables;
-      } else if(response[0].tables[j].department === "Panorama") {
-        this.tablesPanorama = response[0].tables;
-      } else if(response[0].tables[j].department === "Restaurant") {
-        this.tablesRestaurant = response[0].tables;
-      } else if(response[0].tables[j].department === "Wintergarten") {
-        this.tablesWintergarten = response[0].tables;
+      if(response === null) {
+        return;
+      } else {
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.tablesSonnbergZirbn = response[0].tables;
+        } else if (response[0].tables[j].department === "Panorama") {
+          this.tablesPanorama = response[0].tables;
+        } else if (response[0].tables[j].department === "Restaurant") {
+          this.tablesRestaurant = response[0].tables;
+        } else if (response[0].tables[j].department === "Wintergarten") {
+          this.tablesWintergarten = response[0].tables;
+        }
       }
     });
   }
