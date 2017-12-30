@@ -257,7 +257,7 @@ export class TischplanComponent implements OnInit {
 
         //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
-
+    /*
     this.tischplanService.removePlaceholder(dataString)
       .subscribe(response => {
         //let arrayIndex = response[1];
@@ -279,6 +279,7 @@ export class TischplanComponent implements OnInit {
 
         //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
+     */
   }
 
   private onOver(args) {
