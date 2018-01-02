@@ -422,13 +422,13 @@ var TischplanComponent = (function () {
                     _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
                 }
                 else if (response.tables[0].department === "Panorama") {
-                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                    _this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
                 }
                 else if (response.tables[0].department === "Restaurant") {
-                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                    _this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
                 }
                 else if (response.tables[0].department === "Wintergarten") {
-                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                    _this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
                 }
             }
             //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
@@ -501,13 +501,13 @@ var TischplanComponent = (function () {
                     _this.tablesSonnbergZirbn[j] = response[0].tables[j];
                 }
                 else if (response[0].tables[j].department === "Panorama") {
-                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                    _this.tablesPanorama[j] = response[0].tables[j];
                 }
                 else if (response[0].tables[j].department === "Restaurant") {
-                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                    _this.tablesRestaurant[j] = response[0].tables[j];
                 }
                 else if (response[0].tables[j].department === "Wintergarten") {
-                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                    _this.tablesWintergarten[j] = response[0].tables[j];
                 }
             }
         });
