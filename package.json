@@ -12,6 +12,8 @@
     "cors": "^2.8.4",
     "csvtojson": "^1.1.7",
     "express": "^4.15.3",
+    "file-system": "^2.2.2",
+    "iconv-lite": "^0.4.19",
     "mongojs": "^2.4.0",
     "multer": "^1.3.0",
     "nodemon": "^1.11.0",

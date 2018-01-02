@@ -8,9 +8,9 @@ const   bodyParser = require('body-parser'),
     path = require('path'),
     request = require('request'),
     http = require('http'),
-    config = require('config');
-
-const csv=require('csvtojson');
+    config = require('config'),
+    fs = require("fs"),
+    csv = require('csvtojson');
 
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -49,7 +49,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 let csvDatei = "";
 
-
+/*
 
 function fetchAscii(csvRow)
 {
@@ -68,6 +68,18 @@ function fetchAscii(csvRow)
     return convertedObj;
 
 }
+*/
+
+
+
+
+
+
+
+function forceUnicodeEncoding(string) {
+    return unescape(encodeURIComponent(string));
+}
+
 
 //source: https://gist.github.com/aitoribanez/8b2d38601f6916139f5754aae5bcc15f
 //New file got attached to message
@@ -76,118 +88,141 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     res.send(req.files);
     console.log("req.files:");
     console.log(req.files);
+
+
+
     let uploadedFileName = req.files[0].filename.replace(/ /g, "");
+
+    let data = '';
+    let csvRow = '';
     let json = [];
-    csv
 
-    ({noheader:true, encoding: "iso-8859-1"})
-        .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)), {encoding: "iso-8859-1"})
-        .on('csv', (csvRow)=>{
-            //csvRow.replace(/\u00e4/g, "ae");
+    var readStream = fs.createReadStream(String("uploads/" + uploadedFileName), 'binary');
 
-            // Ü, ü     \u00dc, \u00fc
-            // Ä, ä     \u00c4, \u00e4
-            // Ö, ö     \u00d6, \u00f6
-            // ß
+    readStream.on('data', function(chunk) {
+        String(data += chunk);
 
-            json.push(csvRow);
-            let hoi = encodeURIComponent(csvRow);
-            console.log(decodeURIComponent(hoi));
+    }).on('end', function() {
+        console.log(typeof data);
+        csv({noheader:true})
+            .fromString(data)
+            .on('csv',(csvRow)=>{ // this func will be called 3 times
+                console.log(csvRow);// => [1,2,3] , [4,5,6]  , [7,8,9]
 
+                json.push(csvRow);
 
-            //fetchAscii(csvRow);
+            })
+            .on('done', (error)=>{
 
-
-
-            //console.log("json = " + JSON.stringify(json));
-            //console.log("after stringifying: " + csvDatei);
-        })
-        .on('done', (error)=>{
-
-            csvDatei = JSON.stringify(json);
-            //console.log(csvDatei);
-            if (csvDatei.indexOf("Im Haus NEU") !== -1) {
-                postImHausListeToDB();
-            } else if (csvDatei.indexOf("Anreiseliste") !== -1) {
-                postAnreiseListeToDB();
-            } else if (csvDatei.indexOf("Trace Report") !== -1){
-                postTracesListeToDB();
-            }
-            console.log('end')
-        });
-    //New User is saved in DB, function called in receivedAuthentication - send to index.js /guests REST-FUL API
-    function postImHausListeToDB() {
-        // An object of options to indicate where to post to
-        let post_options = {
-            //Change URL to hotelmessengertagbag.herokuapp.com if deploying
-            host: HOST_URL,
-            port: '80',
-            path: '/imHausListe',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-
-        // Set up the request
-        let post_req = http.request(post_options, function (res) {
-            res.setEncoding('utf8');
-            res.on('data', function (chunk) {
-                console.log('Response: ' + "chunk as string");
+                csvDatei = JSON.stringify(json);
+                console.log('csvDatei: ');
+                console.log(csvDatei);
+                if (csvDatei.indexOf("Im Haus") !== -1) {
+                    postImHausListeToDB();
+                } else if (csvDatei.indexOf("Anreiseliste") !== -1) {
+                    postAnreiseListeToDB();
+                } else if (csvDatei.indexOf("Trace Report") !== -1){
+                    postTracesListeToDB();
+                }
+                console.log('end')
             });
-        });
 
-        // post the data
-        post_req.write(csvDatei);
-        post_req.end();
-    }
-    function postAnreiseListeToDB() {
-        // An object of options to indicate where to post to
-        let post_options = {
-            //Change URL to hotelmessengertagbag.herokuapp.com if deploying
-            host: HOST_URL,
-            port: '80',
-            path: '/anreiseListe',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-        // Set up the request
-        let post_req = http.request(post_options, function (res) {
-            res.setEncoding('utf8');
-            res.on('data', function (chunk) {
-                console.log('Response: ' + "chunk as string");
+
+        //New User is saved in DB, function called in receivedAuthentication - send to index.js /guests REST-FUL API
+        function postImHausListeToDB() {
+            // An object of options to indicate where to post to
+            let post_options = {
+                //Change URL to hotelmessengertagbag.herokuapp.com if deploying
+                host: HOST_URL,
+                port: '80',
+                path: '/imHausListe',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            // Set up the request
+            let post_req = http.request(post_options, function (res) {
+                res.setEncoding('utf8');
+                res.on('data', function (chunk) {
+                    console.log('Response: ' + "chunk as string");
+                });
             });
-        });
-        // post the data
-        post_req.write(csvDatei);
-        post_req.end();
-    }
-    function postTracesListeToDB () {
-        // An object of options to indicate where to post to
-        let post_options = {
-            //Change URL to hotelmessengertagbag.herokuapp.com if deploying
-            host: HOST_URL,
-            port: '80',
-            path: '/tracesListe',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-        // Set up the request
-        let post_req = http.request(post_options, function (res) {
-            res.setEncoding('utf8');
-            res.on('data', function (chunk) {
-                console.log('Response: ' + "chunk as string");
+
+            // post the data
+            post_req.write(csvDatei);
+            post_req.end();
+        }
+        function postAnreiseListeToDB() {
+            // An object of options to indicate where to post to
+            let post_options = {
+                //Change URL to hotelmessengertagbag.herokuapp.com if deploying
+                host: HOST_URL,
+                port: '80',
+                path: '/anreiseListe',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            // Set up the request
+            let post_req = http.request(post_options, function (res) {
+                res.setEncoding('utf8');
+                res.on('data', function (chunk) {
+                    console.log('Response: ' + "chunk as string");
+                });
             });
-        });
-        // post the data
-        post_req.write(csvDatei);
-        post_req.end();
-    }
-});
+            // post the data
+            post_req.write(csvDatei);
+            post_req.end();
+        }
+        function postTracesListeToDB () {
+            // An object of options to indicate where to post to
+            let post_options = {
+                //Change URL to hotelmessengertagbag.herokuapp.com if deploying
+                host: HOST_URL,
+                port: '80',
+                path: '/tracesListe',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            // Set up the request
+            let post_req = http.request(post_options, function (res) {
+                res.setEncoding('utf8');
+                res.on('data', function (chunk) {
+                    console.log('Response: ' + "chunk as string");
+                });
+            });
+            // post the data
+            post_req.write(csvDatei);
+            post_req.end();
+        }
+    });
+    });
+
+    //console.log('after calling readFile');
+
+
+
+
+
+/*
+setTimeout(function() {
+
+    fs.readFileSync("https://fcfa59e8.ngrok.io/uploads/0.591530697666085*TracesListe.csv", 'utf-8');
+
+    var text = fs.readFileSync("https://fcfa59e8.ngrok.io/uploads/0.591530697666085*TracesListe.csv",'utf8');
+    console.log(text);
+
+}, 1500);
+
+
+
+*/
+
 
 /*
  * Start server
