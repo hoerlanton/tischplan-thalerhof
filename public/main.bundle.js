@@ -140,7 +140,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "html, body {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  background-color: #0a7a74;\n}\n\n.row {\n  height: 100%;\n}\n\n.row .container-fluid {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 150px;\n}\n\n.row .print-col, .row .upload-col, .row .table-col {\n  background-color: #f3efe4;\n  padding: 20px 10px 20px 10px;\n  border-left: 5px solid #0a7a74;\n  border-right: 5px solid #0a7a74;\n  min-height: 100vh;\n  border-bottom: 20px solid #0a7a74;\n  box-sizing: border-box;\n}\n\n.row .upload-col {\n  display: none;\n}\n\n@media (min-width: 1200px) {\n  .row .upload-col {\n    display: block;\n  }\n}\n\n.row1 {\n  height: calc((100vh - 244px) / 3);\n  overflow: auto;\n}\n\n.inner-table {\n  height: calc(100vh - 44px);\n  overflow: auto;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px;\n}\n\n.cards-container .card {\n  padding: 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group {\n  border-top:3px solid #0a7a74;\n  width: 105%;\n  padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12  .group {\n  border-top:3px solid #0a7a74;\n  width: 105%;\n  padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group1 {\n  margin-top: 20px;\n  overflow: auto;\n  max-height: 300px;\n  display: inline-block;\n  border-top:3px solid #0a7a74;\n  width: 102%;\n  padding: 10px 10px 10px 25px;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.row .container-fluid .col-md-6 .row1 .col-md-3 {\n  margin: 0px 0px 0px 0px;\n  padding: 20px 20px 20px 20px;\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t1 {\n  position: absolute;\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t2 {\n  position: absolute;\n}\n\n.row .container-fluid .row .table-item {\n  position: absolute;\n}\n\n", ""]);
+exports.push([module.i, "html, body {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  background-color: #0a7a74;\n}\n\n.row {\n  height: 100%;\n}\n\n.row .container-fluid {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 150px;\n}\n\n.row .print-col, .row .upload-col, .row .table-col {\n  background-color: #f3efe4;\n  padding: 20px 10px 20px 10px;\n  border-left: 5px solid #0a7a74;\n  border-right: 5px solid #0a7a74;\n  min-height: 100vh;\n  border-bottom: 20px solid #0a7a74;\n  box-sizing: border-box;\n}\n\n.row .upload-col {\n  display: none;\n}\n\n@media (min-width: 1200px) {\n  .row .upload-col {\n    display: block;\n  }\n}\n\n.row1 {\n  height: calc((100vh - 244px) / 3);\n  overflow: auto;\n}\n\n.inner-table {\n  height: calc(100vh - 44px);\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px;\n}\n\n.cards-container .card {\n  padding: 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group {\n  border-top:3px solid #0a7a74;\n  width: 105%;\n  padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12  .group {\n  border-top:3px solid #0a7a74;\n  width: 105%;\n  padding: 10px 10px 10px 30px;\n}\n\n.row .container-fluid .col-md-4 .row3 .col-xs-12 .form-group1 {\n  margin-top: 20px;\n  overflow: auto;\n  max-height: 300px;\n  display: inline-block;\n  border-top:3px solid #0a7a74;\n  width: 102%;\n  padding: 10px 10px 10px 25px;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.row .container-fluid .col-md-6 .row1 .col-md-3 {\n  margin: 0px 0px 0px 0px;\n  padding: 20px 20px 20px 20px;\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t1 {\n  position: absolute;\n}\n\n.row .container-fluid .col-md-6 #printSectionId2 .row .t2 {\n  position: absolute;\n}\n\n.row .container-fluid .row .table-item {\n  position: absolute;\n}\n\n", ""]);
 
 // exports
 
@@ -204,30 +204,55 @@ var TischplanComponent = (function () {
         var wrapperElementsChildNames = [];
         this.tischplanService.getImHausListe()
             .subscribe(function (imHausListeElemente) {
-            _this.imHausListeElemente = imHausListeElemente[0].data;
-            console.log(_this.imHausListeElemente);
+            if (imHausListeElemente === null) {
+                return;
+            }
+            else {
+                _this.imHausListeElemente = imHausListeElemente[0].data;
+                console.log(_this.imHausListeElemente);
+            }
         });
         this.tischplanService.getAnreiseListe()
             .subscribe(function (anreiseListeElemente) {
-            _this.anreiseListeElemente = anreiseListeElemente[0].data;
-            console.log(_this.anreiseListeElemente);
+            if (anreiseListeElemente === null) {
+                return;
+            }
+            else {
+                _this.anreiseListeElemente = anreiseListeElemente[0].data;
+                console.log(_this.anreiseListeElemente);
+            }
         });
         this.tischplanService.getTables()
             .subscribe(function (tables) {
-            console.log("TABLES LENGTH: " + tables.length);
-            for (var a = 0; a < tables.length; a++) {
-                if (tables[a].department === "Panorama") {
-                    _this.tablesPanorama = tables[a].tables;
-                }
-                else if (tables[a].department === "Wintergarten") {
-                    _this.tablesWintergarten = tables[a].tables;
-                    console.log('Test' + JSON.stringify(_this.tablesWintergarten));
-                }
-                else if (tables[a].department === "Sonnberg-Zirbn") {
-                    _this.tablesSonnbergZirbn = tables[a].tables;
-                }
-                else if (tables[a].department === "Restaurant") {
-                    _this.tablesRestaurant = tables[a].tables;
+            if (tables === null) {
+                return;
+            }
+            else {
+                console.log("TABLES LENGTH: " + tables.length);
+                tables[2].tables.sort(function (a, b) {
+                    if (Number(a.number) < Number(b.number))
+                        return -1;
+                    if (Number(a.number) > Number(b.number))
+                        return 1;
+                    return 0;
+                });
+                var sorted = tables.sort();
+                console.log('sorted:');
+                console.log(sorted);
+                for (var a = 0; a < tables.length; a++) {
+                    if (tables[a].department === "Panorama") {
+                        _this.tablesPanorama = tables[a].tables;
+                    }
+                    else if (tables[a].department === "Wintergarten") {
+                        _this.tablesWintergarten = tables[a].tables;
+                        console.log('Test' + JSON.stringify(_this.tablesWintergarten));
+                    }
+                    else if (tables[a].department === "Sonnberg-Zirbn") {
+                        _this.tablesSonnbergZirbn = tables[a].tables;
+                    }
+                    else if (tables[a].department === "Restaurant") {
+                        _this.tablesRestaurant = tables[a].tables;
+                    }
                 }
             }
             console.log(_this.tablesPanorama);
@@ -237,11 +262,16 @@ var TischplanComponent = (function () {
         });
         this.tischplanService.getTracesListe()
             .subscribe(function (tracesListeElemente) {
-            console.log('92' + JSON.stringify(tracesListeElemente));
-            //console.log("2:" + tracesListeElemente[0].data[0]);
-            //console.log(tracesListeElemente[0].data.length);
-            //this.tracesListeElemente = tracesListeElemente[0].data;
-            _this.formatTracesListeElements(tracesListeElemente);
+            if (tracesListeElemente === null) {
+                return;
+            }
+            else {
+                console.log('92' + JSON.stringify(tracesListeElemente));
+                //console.log("2:" + tracesListeElemente[0].data[0]);
+                //console.log(tracesListeElemente[0].data.length);
+                //this.tracesListeElemente = tracesListeElemente[0].data;
+                _this.formatTracesListeElements(tracesListeElemente);
+            }
         });
         this.buttonBgColor1 = "f3efe4";
         this.buttonBgColor2 = "f3efe4";
@@ -358,17 +388,22 @@ var TischplanComponent = (function () {
             .subscribe(function (response) {
             // let arrayIndex = response[1];
             console.log("RESPONSE addInformationToTable:" + JSON.stringify(response));
-            if (response.tables[0].department === "Sonnberg-Zirbn") {
-                _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            if (response === null) {
+                return;
             }
-            else if (response.tables[0].department === "Panorama") {
-                _this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Restaurant") {
-                _this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Wintergarten") {
-                _this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+            else {
+                if (response.tables[0].department === "Sonnberg-Zirbn") {
+                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Panorama") {
+                    _this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Restaurant") {
+                    _this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Wintergarten") {
+                    _this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+                }
             }
             // console.log(this.tablesSonnbergZirbn[arrayIndex]);
         });
@@ -379,17 +414,22 @@ var TischplanComponent = (function () {
             //console.log("arrayIndex:" + arrayIndex);
             //console.log("bgColor:" + JSON.stringify(response[0].tables[arrayIndex].bgColor));
             console.log("Response occupyTable:" + JSON.stringify(response));
-            if (response.tables[0].department === "Sonnberg-Zirbn") {
-                _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            if (response === null) {
+                return;
             }
-            else if (response.tables[0].department === "Panorama") {
-                _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Restaurant") {
-                _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Wintergarten") {
-                _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            else {
+                if (response.tables[0].department === "Sonnberg-Zirbn") {
+                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Panorama") {
+                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Restaurant") {
+                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                }
+                else if (response.tables[0].department === "Wintergarten") {
+                    _this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+                }
             }
             //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
@@ -453,34 +493,44 @@ var TischplanComponent = (function () {
             console.log("Dispense Table:");
             console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
             console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
-            if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+            if (response === null) {
+                return;
             }
-            else if (response[0].tables[j].department === "Panorama") {
-                _this.tablesSonnbergZirbn[j] = response[0].tables[j];
-            }
-            else if (response[0].tables[j].department === "Restaurant") {
-                _this.tablesSonnbergZirbn[j] = response[0].tables[j];
-            }
-            else if (response[0].tables[j].department === "Wintergarten") {
-                _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+            else {
+                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                }
+                else if (response[0].tables[j].department === "Panorama") {
+                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                }
+                else if (response[0].tables[j].department === "Restaurant") {
+                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                }
+                else if (response[0].tables[j].department === "Wintergarten") {
+                    _this.tablesSonnbergZirbn[j] = response[0].tables[j];
+                }
             }
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
             console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
             //console.log(this.tablesSonnbergZirbn[j].placeholder);
-            if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                _this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+            if (response === null) {
+                return;
             }
-            else if (response[0].tables[j].department === "Panorama") {
-                _this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
-            }
-            else if (response[0].tables[j].department === "Restaurant") {
-                _this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
-            }
-            else if (response[0].tables[j].department === "Wintergarten") {
-                _this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+            else {
+                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+                    _this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+                }
+                else if (response[0].tables[j].department === "Panorama") {
+                    _this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
+                }
+                else if (response[0].tables[j].department === "Restaurant") {
+                    _this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
+                }
+                else if (response[0].tables[j].department === "Wintergarten") {
+                    _this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+                }
             }
         });
     };
@@ -594,17 +644,22 @@ var TischplanComponent = (function () {
             //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
             console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
             console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-            if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                _this.tablesSonnbergZirbn = response[0].tables;
+            if (response === null) {
+                return;
             }
-            else if (response[0].tables[j].department === "Panorama") {
-                _this.tablesPanorama = response[0].tables;
-            }
-            else if (response[0].tables[j].department === "Restaurant") {
-                _this.tablesRestaurant = response[0].tables;
-            }
-            else if (response[0].tables[j].department === "Wintergarten") {
-                _this.tablesWintergarten = response[0].tables;
+            else {
+                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+                    _this.tablesSonnbergZirbn = response[0].tables;
+                }
+                else if (response[0].tables[j].department === "Panorama") {
+                    _this.tablesPanorama = response[0].tables;
+                }
+                else if (response[0].tables[j].department === "Restaurant") {
+                    _this.tablesRestaurant = response[0].tables;
+                }
+                else if (response[0].tables[j].department === "Wintergarten") {
+                    _this.tablesWintergarten = response[0].tables;
+                }
             }
         });
     };

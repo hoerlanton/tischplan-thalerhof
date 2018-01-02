@@ -75,7 +75,22 @@ export class TischplanComponent implements OnInit {
         } else {
         console.log("TABLES LENGTH: " + tables.length);
 
-        for (let a = 0; a < tables.length; a++) {
+
+
+
+          tables[2].tables.sort(function(a, b){
+            if ( Number(a.number) < Number(b.number) )
+              return -1;
+            if ( Number(a.number) > Number(b.number)  )
+              return 1;
+            return 0;
+          });
+
+          let sorted = tables.sort();
+          console.log('sorted:');
+          console.log(sorted);
+
+          for (let a = 0; a < tables.length; a++) {
           if (tables[a].department === "Panorama") {
             this.tablesPanorama = tables[a].tables;
           }

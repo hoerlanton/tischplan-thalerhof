@@ -5196,7 +5196,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                     return;
                 }
                 console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
-                if (JSON.stringify(tablesfirst.tables[0]).length < 350) {
+                if (!("nameValue" in tablesfirst.tables[0])) {
                     db.tables.update(
                         {
                             department: departmentValueDB,
@@ -5222,7 +5222,8 @@ router.post('/addInformationToTable', function(req, res, next) {
                             }
                             console.log("addInformationToTable updated successfully");
                         });
-                } else if (JSON.stringify(tablesfirst.tables[0]).length > 350 && JSON.stringify(tablesfirst.tables[0]).length < 600) {
+                } else if (!("nameValue2" in tablesfirst.tables[0])) {
+
                     db.tables.update(
                         {
                             department: departmentValueDB,
@@ -5247,7 +5248,8 @@ router.post('/addInformationToTable', function(req, res, next) {
                             }
                             console.log("addInformationToTable updated successfully");
                         });
-                } else if (JSON.stringify(tablesfirst.tables[0]).length > 600) {
+                } else if (!("nameValue3" in tablesfirst.tables[0])) {
+
                     db.tables.update(
                         {
                             department: departmentValueDB,
