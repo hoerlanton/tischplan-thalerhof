@@ -97,7 +97,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     let csvRow = '';
     let json = [];
 
-    var readStream = fs.createReadStream(String("uploads/" + uploadedFileName), 'binary');
+    var readStream = fs.createReadStream(String("./uploads/" + uploadedFileName), 'binary');
 
     readStream.on('data', function(chunk) {
         String(data += chunk);
