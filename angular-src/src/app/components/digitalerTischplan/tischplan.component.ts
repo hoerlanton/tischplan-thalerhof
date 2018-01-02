@@ -283,13 +283,13 @@ export class TischplanComponent implements OnInit {
             this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Panorama") {
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Restaurant") {
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Wintergarten") {
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
           }
         }
 
@@ -367,13 +367,13 @@ export class TischplanComponent implements OnInit {
           this.tablesSonnbergZirbn[j] = response[0].tables[j];
         }
         else if (response[0].tables[j].department === "Panorama") {
-          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+          this.tablesPanorama[j] = response[0].tables[j];
         }
         else if (response[0].tables[j].department === "Restaurant") {
-          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+          this.tablesRestaurant[j] = response[0].tables[j];
         }
         else if (response[0].tables[j].department === "Wintergarten") {
-          this.tablesSonnbergZirbn[j] = response[0].tables[j];
+          this.tablesWintergarten[j] = response[0].tables[j];
         }
       }
     });

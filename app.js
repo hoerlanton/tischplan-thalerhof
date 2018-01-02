@@ -49,24 +49,63 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 let csvDatei = "";
 
+
+
+function fetchAscii(csvRow)
+{
+
+    var convertedObj = '';
+
+    for(let i = 0; i < csvRow.length; i++)
+    {
+
+        var asciiChar = csvRow.charCodeAt(i);
+
+        convertedObj += '&#' + asciiChar + ';';
+
+    }
+
+    return convertedObj;
+
+}
+
 //source: https://gist.github.com/aitoribanez/8b2d38601f6916139f5754aae5bcc15f
 //New file got attached to message
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     console.log("console log in app.post upload", 'files', req.files);
     res.send(req.files);
+    console.log("req.files:");
+    console.log(req.files);
     let uploadedFileName = req.files[0].filename.replace(/ /g, "");
     let json = [];
-    csv({noheader:true})
-        .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)))
-        .on('csv',(csvRow)=>{
+    csv
+
+    ({noheader:true, encoding: "iso-8859-1"})
+        .fromStream(request.get(String(config.get('serverURL') + "/uploads/" + uploadedFileName)), {encoding: "iso-8859-1"})
+        .on('csv', (csvRow)=>{
+            //csvRow.replace(/\u00e4/g, "ae");
+
+            // Ü, ü     \u00dc, \u00fc
+            // Ä, ä     \u00c4, \u00e4
+            // Ö, ö     \u00d6, \u00f6
+            // ß
+
             json.push(csvRow);
+            let hoi = encodeURIComponent(csvRow);
+            console.log(decodeURIComponent(hoi));
+
+
+            //fetchAscii(csvRow);
+
+
+
             //console.log("json = " + JSON.stringify(json));
             //console.log("after stringifying: " + csvDatei);
         })
         .on('done', (error)=>{
 
             csvDatei = JSON.stringify(json);
-            console.log(csvDatei);
+            //console.log(csvDatei);
             if (csvDatei.indexOf("Im Haus NEU") !== -1) {
                 postImHausListeToDB();
             } else if (csvDatei.indexOf("Anreiseliste") !== -1) {
