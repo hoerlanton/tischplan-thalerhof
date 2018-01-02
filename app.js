@@ -49,38 +49,6 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 let csvDatei = "";
 
-/*
-
-function fetchAscii(csvRow)
-{
-
-    var convertedObj = '';
-
-    for(let i = 0; i < csvRow.length; i++)
-    {
-
-        var asciiChar = csvRow.charCodeAt(i);
-
-        convertedObj += '&#' + asciiChar + ';';
-
-    }
-
-    return convertedObj;
-
-}
-*/
-
-
-
-
-
-
-
-function forceUnicodeEncoding(string) {
-    return unescape(encodeURIComponent(string));
-}
-
-
 //source: https://gist.github.com/aitoribanez/8b2d38601f6916139f5754aae5bcc15f
 //New file got attached to message
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
@@ -201,7 +169,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
             post_req.end();
         }
     });
-    });
+});
 
     //console.log('after calling readFile');
 
