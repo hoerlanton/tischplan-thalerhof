@@ -8,9 +8,6 @@ import { ImHausListe } from '../../../../ImHausListe';
 import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { LeftValue } from '../../../../LeftValue';
-import {SchemaInformation} from "@angular/language-service/src/html_info";
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import {DropdownModule} from "ng2-dropdown";
 
 
 @Component({
@@ -40,8 +37,6 @@ export class TischplanComponent implements OnInit {
   tablesRestaurant: Table[] = [];
   tablesWintergarten: Table[] = [];
   filesToUpload: Array<File> = [];
-  additionalInformation: string;
-
   isDropped: any[] = [];
   showSonnbergZirbnBool: boolean;
   showPanoramaBool: boolean;
