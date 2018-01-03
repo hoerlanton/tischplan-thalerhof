@@ -73,4 +73,12 @@ export class TischplanService {
       .map(res => res.json()
       );
   }
+
+  sendInformation(newInformation) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    console.log(headers);
+    return this.http.post('newInformation', newInformation, {headers: headers} )
+      .map(res => res.json());
+  }
 }

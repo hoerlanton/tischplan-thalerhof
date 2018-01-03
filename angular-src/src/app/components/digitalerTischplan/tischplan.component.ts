@@ -8,6 +8,7 @@ import { ImHausListe } from '../../../../ImHausListe';
 import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { LeftValue } from '../../../../LeftValue';
+import {SchemaInformation} from "@angular/language-service/src/html_info";
 
 @Component({
   selector: 'tischplan',
@@ -35,14 +36,19 @@ export class TischplanComponent implements OnInit {
   tablesPanorama: Table[] = [];
   tablesRestaurant: Table[] = [];
   tablesWintergarten: Table[] = [];
-  title: string;
   filesToUpload: Array<File> = [];
+  additionalInformation: string;
 
   isDropped: any[] = [];
   showSonnbergZirbnBool: boolean;
   showPanoramaBool: boolean;
   showRestaurantBool: boolean;
   showWintergartenBool: boolean;
+
+  title: string;
+  roomNumber: string;
+  tableNumber: string;
+
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
     let DomBaseElement = this.element.nativeElement;
@@ -527,6 +533,31 @@ export class TischplanComponent implements OnInit {
         }
       }
     });
+  }
+
+  sendInformation(event) {
+    event.preventDefault();
+    let newInformation = {
+      text: this.title,
+      roomNumber: this.roomNumber,
+      tableNumber: this.tableNumber
+    };
+    if (newInformation.text === undefined) {
+      this._flashMessagesService.show('Die Nachricht ist leer ... ',
+        { cssClass: 'alert-danger', timeout: 20000 });
+      return;
+    }
+    console.log(newInformation);
+
+    this.tischplanService.sendInformation(newInformation)
+      .subscribe(Information => {
+        //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
+        console.log('Information: ' + JSON.stringify(Information));
+        console.log(Information.tables[0]);
+        console.log("------");
+        //console.log(Information[0].tables);
+        this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+      });
   }
 
   printToCart1(printSectionId1: string) {

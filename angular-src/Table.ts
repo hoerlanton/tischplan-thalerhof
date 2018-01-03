@@ -41,4 +41,5 @@ export class Table {
   rbsouValue3: string;
   notiz2Value3: string;
   trace3: string;
+  newInformation: string;
 }

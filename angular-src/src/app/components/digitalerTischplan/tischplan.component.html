@@ -27,6 +27,15 @@
 <div class="row">
   <div class="container-fluid">
     <div id="printSectionId1" class="col-xs-12 col-sm-4 col-lg-2 print-col">
+      <h3>Info hinzufügen</h3>
+      <form class="SendInformation" (submit)="sendInformation($event)">
+        <div class="form-group" style="margin-bottom: 40px">
+          <input  class="form-control" style="margin-top: 20px" id="roomNumber" [(ngModel)]="roomNumber" name="roomNumber" placeholder="Zimmer Nummer">
+          <input  class="form-control" style="margin-top: 20px" id="tableNumber" [(ngModel)]="tableNumber" name="tableNumber" placeholder="Tisch Nummer">
+          <input class="form-control"   style="margin-top: 20px"  id="exampleInputEmail1"  [(ngModel)]="title" name="title" placeholder="Info hinzufügen">
+          <button type="submit" style="float: right; margin: 10px 0px 0px 0px; background-color: #0a7a74; color: #FFFFFF" class="btn btn-primary">Hinzufügen</button>
+        </div>
+      </form>
       <div>
         <h3>Tisch Übersicht</h3>
         <div class="inner-table" style="padding: 0px 0px 0px 0px;">
@@ -50,7 +59,9 @@
                             <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableSonnbergZirbn.trace}}
+                            <b> Trace:</b>{{tableSonnbergZirbn.trace}}<br>
+                            <b> New Information: </b>{{tableSonnbergZirbn.newInformation}}
+
                           </p>
                           <div *ngIf="tableSonnbergZirbn.nameValue2">
                             <p style="background-color: #FFFFFF">

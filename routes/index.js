@@ -4928,6 +4928,7 @@ router.post('/dispenseTable', function(req, res, next) {
             "tables.$.rbsouValue": 1,
             "tables.$.notiz2Value": 1,
             "tables.$.trace": 1,
+            "tables.$.newInformation": 1,
             "tables.$.nameValue2": 1,
             "tables.$.spracheValue2": 1,
             "tables.$.zimmernummerValue2": 1,
@@ -5297,5 +5298,40 @@ router.post('/addInformationToTable', function(req, res, next) {
     }, 500);
 });
 
+router.post('/newInformation', function(req, res, next) {
+    console.log("newInformation post called");
+    //Get guests from Mongo DB
+
+    console.log(req.body);
+    let newInformation = req.body;
+
+    db.tables.update(
+        {"tables.number": newInformation.tableNumber} ,
+        {$set: {
+            "tables.$.newInformation": newInformation.text + newInformation.roomNumber,
+        }}, function (err, tables) {
+            if (err) {
+                console.log("Error");
+            }
+            console.log("No Error");
+        });
+
+    setTimeout(function() {
+        db.tables.findOne(
+            {
+                "tables.number": newInformation.tableNumber
+            },
+            {
+                "tables.$": 1,
+            },
+            function (err, tables) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(tables);
+                console.log(JSON.stringify(tables));
+            });
+    }, 500);
+});
 
 module.exports = router;
