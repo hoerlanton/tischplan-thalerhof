@@ -4957,6 +4957,8 @@ router.post('/dispenseTable', function(req, res, next) {
             "tables.$.notiz2Value": 1,
             "tables.$.trace": 1,
             "tables.$.newInformation": 1,
+            "tables.$.newInformation1": 1,
+            "tables.$.newInformation2": 1,
             "tables.$.nameValue2": 1,
             "tables.$.spracheValue2": 1,
             "tables.$.zimmernummerValue2": 1,
@@ -5333,21 +5335,76 @@ router.post('/newInformationToTables', function(req, res, next) {
     console.log(req.body);
     let newInformation = req.body;
 
-        db.tables.update(
+
+
+    setTimeout(function() {
+        db.tables.findOne(
             {
-                "tables.number": newInformation.tableNumber,
-                "tables.zimmernummerValue": newInformation.roomNumber
+                "tables.number": newInformation.tableNumber
             },
             {
-                $set: {
-                    "tables.$.newInformation": newInformation.text,
-                }
-            }, function (err, tables) {
+                "tables.$": 1,
+            },
+            function (err, tablesfirst) {
                 if (err) {
-                    console.log("Error");
+                    res.send(err);
                 }
-                console.log("No Error");
+                if (tablesfirst === null) {
+                    console.log("tablesfirst is null");
+                    return;
+                }
+                console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
+                if (!("newInformation" in tablesfirst.tables[0])) {
+                    db.tables.update(
+                        {
+                            "tables.number": newInformation.tableNumber,
+                        },
+                        {
+                            $set: {
+                                "tables.$.newInformation": newInformation.text + " " + newInformation.roomNumber,
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("addInformationToTable updated successfully");
+                        });
+                } else if (!("newInformation1" in tablesfirst.tables[0])) {
+
+                    db.tables.update(
+                        {
+                            "tables.number": newInformation.tableNumber,
+                        },
+                        {
+                            $set: {
+                                "tables.$.newInformation1": newInformation.text + " " + newInformation.roomNumber,
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("addInformationToTable updated successfully");
+                        });
+                } else if (!("newInformation2" in tablesfirst.tables[0])) {
+
+                    db.tables.update(
+                        {
+                            "tables.number": newInformation.tableNumber,
+                        },
+                        {
+                            $set: {
+                                "tables.$.newInformation2": newInformation.text + " " + newInformation.roomNumber,
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("addInformationToTable updated successfully");
+                        });
+                }
             });
+    }, 300);
+
     setTimeout(function() {
         db.tables.findOne(
             {

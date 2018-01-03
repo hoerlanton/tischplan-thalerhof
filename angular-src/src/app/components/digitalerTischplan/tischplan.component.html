@@ -33,7 +33,6 @@
           </ul>
       </div>
       <li><img alt="Partner" href="http://www.salzburgerhof.servicio.io/wlanlandingpage" src="http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png" style="height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 25px; float: right; text-align: right; display:table-cell; vertical-align:middle;"></li>
-
     </ul>
 </nav>
 
@@ -49,11 +48,13 @@
         <div class="form-group" style="margin-bottom: 40px">
           <input  class="form-control" style="margin-top: 20px" id="roomNumber" [(ngModel)]="roomNumber" name="roomNumber" placeholder="Zimmer Nummer">
           <input  class="form-control" style="margin-top: 20px" id="tableNumber" [(ngModel)]="tableNumber" name="tableNumber" placeholder="Tisch Nummer">
-          <input class="form-control"   style="margin-top: 20px"  id="exampleInputEmail1"  [(ngModel)]="title" name="title" placeholder="Info hinzufügen">
+          ​<textarea id="informationText" rows="5" type="text" style="margin-bottom: 10px" [(ngModel)]="title" placeholder="Trace hinzufügen" name="title" class="form-control" required>
+          </textarea>
           <button type="submit" style="float: right; margin: 10px 0px 0px 0px; background-color: #0a7a74; color: #FFFFFF" class="btn btn-primary">Hinzufügen</button>
         </div>
       </form>
-      <div>
+      <div style="margin-top: 90px">
+        <div class="line1"></div>
         <h3>Tisch Übersicht</h3>
         <div class="inner-table" style="padding: 0px 0px 0px 0px;">
           <div class="row3">
@@ -62,7 +63,7 @@
                 <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
                   <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
                     <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, j)">{{tableSonnbergZirbn.isBesetzt === 'true' ? 'FREI MACHEN' : '' }}</button>
-                    <p><b> Tisch: {{tableSonnbergZirbn.number}}</b> </p><br>
+                    <h4><b> Tisch: {{tableSonnbergZirbn.number}}</b> </h4><br>
                     <div class='cards-container' id='containerSonnbergZirbn'  [ngStyle]="{'background-color': + tableSonnbergZirbn.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableSonnbergZirbn.bgColor}">
                         <div *ngIf="tableSonnbergZirbn.isBesetzt === 'true'">
@@ -77,8 +78,6 @@
                             <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value}}<br>
                             <b> Trace:</b>{{tableSonnbergZirbn.trace}}<br>
-                            <b> New Information: </b>{{tableSonnbergZirbn.newInformation}}
-
                           </p>
                           <div *ngIf="tableSonnbergZirbn.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -91,7 +90,7 @@
                               <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableSonnbergZirbn.trace2}}
+                              <b> Trace:</b>{{tableSonnbergZirbn.trace2}}<br>
                             </p>
                           </div>
                           <div *ngIf="tableSonnbergZirbn.nameValue3">
@@ -105,7 +104,22 @@
                               <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableSonnbergZirbn.trace3}}
+                              <b> Trace:</b>{{tableSonnbergZirbn.trace3}}<br>
+                            </p>
+                          </div>
+                          <div *ngIf="tableSonnbergZirbn.newInformation">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newInformation.substring(tableSonnbergZirbn.newInformation.length - 3, tableSonnbergZirbn.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation.substring(0, tableSonnbergZirbn.newInformation.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableSonnbergZirbn.newInformation1">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newInformation1.substring(tableSonnbergZirbn.newInformation1.length - 3, tableSonnbergZirbn.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation1.substring(0, tableSonnbergZirbn.newInformation1.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableSonnbergZirbn.newInformation2">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newInformation2.substring(tableSonnbergZirbn.newInformation2.length - 3, tableSonnbergZirbn.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation2.substring(0, tableSonnbergZirbn.newInformation2.length - 3)}}
                             </p>
                           </div>
                         </div>
@@ -122,7 +136,7 @@
                 <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
                   <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
                     <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <p><b> Tisch:</b>{{tablePanorama.number}} </p><br>
+                    <h4><b> Tisch: {{tablePanorama.number}}</b> </h4><br>
                     <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
                         <div *ngIf="tablePanorama.isBesetzt === 'true'">
@@ -136,7 +150,8 @@
                             <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tablePanorama.notiz2Value}}<br>
-                            <b> Trace:</b>{{tablePanorama.trace}}
+                            <b> Trace:</b>{{tablePanorama.trace}}<br>
+                            <b> Neuer Trace: </b>{{tablePanorama.newInformation}}
                           </p>
                           <div *ngIf="tablePanorama.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -149,7 +164,8 @@
                               <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tablePanorama.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tablePanorama.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tablePanorama.trace2}}
+                              <b> Trace:</b>{{tablePanorama.trace2}}<br>
+                              <b> Neuer Trace: </b>{{tablePanorama.newInformation2}}
                             </p>
                           </div>
                           <div *ngIf="tablePanorama.nameValue3">
@@ -163,7 +179,8 @@
                               <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tablePanorama.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tablePanorama.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tablePanorama.trace3}}
+                              <b> Trace:</b>{{tablePanorama.trace3}}<br>
+                              <b> Neuer Trace: </b>{{tablePanorama.newInformation3}}
                             </p>
                           </div>
                         </div>
@@ -180,7 +197,7 @@
                 <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
                   <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
                     <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <p><b> Tisch:</b>{{tableRestaurant.number}} </p><br>
+                    <h4><b> Tisch: {{tableRestaurant.number}}</b> </h4><br>
                     <div class='cards-container' id='containerRestaurant' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
                         <div *ngIf="tableRestaurant.isBesetzt === 'true'">
@@ -194,7 +211,9 @@
                             <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableRestaurant.trace}}
+                            <b> Trace:</b>{{tableRestaurant.trace}}<br>
+                            <b> Neuer Trace: </b>{{tableRestaurant.newInformation}}
+
                           </p>
                           <div *ngIf="tableRestaurant.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -207,7 +226,8 @@
                               <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tableRestaurant.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tableRestaurant.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace2}}
+                              <b> Trace:</b>{{tableRestaurant.trace2}}<br>
+                              <b> Neuer Trace: </b>{{tableRestaurant.newInformation2}}
                             </p>
                           </div>
                           <div *ngIf="tableRestaurant.nameValue3">
@@ -221,7 +241,8 @@
                               <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tableRestaurant.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tableRestaurant.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace3}}
+                              <b> Trace:</b>{{tableRestaurant.trace3}}<br>
+                              <b> Neuer Trace: </b>{{tableRestaurant.newInformation3}}
                             </p>
                           </div>
                         </div>
@@ -239,7 +260,7 @@
                 <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
                   <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
                     <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <p><b> Tisch:</b>{{tableWintergarten.number}} </p><br>
+                    <h4><b> Tisch: {{tableWintergarten.number}}</b> </h4><br>
                     <div class='cards-container' id='containerWintergarten' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
                         <div *ngIf="tableWintergarten.isBesetzt === 'true'">
@@ -253,7 +274,8 @@
                             <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableWintergarten.trace}}
+                            <b> Trace:</b>{{tableWintergarten.trace}}<br>
+                            <b> Neuer Trace: </b>{{tableWintergarten.newInformation}}<br>
                           </p>
                           <div *ngIf="tableWintergarten.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -266,7 +288,8 @@
                               <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tableWintergarten.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tableWintergarten.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace2}}
+                              <b> Trace:</b>{{tableWintergarten.trace2}}<br>
+                              <b> Neuer Trace: </b>{{tableWintergarten.newInformation2}}
                             </p>
                           </div>
                           <div *ngIf="tableWintergarten.nameValue3">
@@ -280,7 +303,8 @@
                               <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tableWintergarten.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace3}}
+                              <b> Trace:</b>{{tableWintergarten.trace3}}<br>
+                              <b> Neuer Trace: </b>{{tableWintergarten.newInformation3}}
                             </p>
                           </div>
                         </div>

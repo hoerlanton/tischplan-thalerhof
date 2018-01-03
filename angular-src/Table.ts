@@ -42,4 +42,6 @@ export class Table {
   notiz2Value3: string;
   trace3: string;
   newInformation: string;
+  newInformation1: string;
+  newInformation2: string;
 }
