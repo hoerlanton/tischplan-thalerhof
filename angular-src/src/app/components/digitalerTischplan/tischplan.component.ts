@@ -560,6 +560,9 @@ export class TischplanComponent implements OnInit {
       this._flashMessagesService.show('Die Nachricht ist leer ... ',
         { cssClass: 'alert-danger', timeout: 20000 });
       return;
+    } else {
+      this._flashMessagesService.show('Erfolgreich Information gespeichert ... ',
+        { cssClass: 'alert-success', timeout: 20000 });
     }
     console.log(newInformation.tableNumber);
 

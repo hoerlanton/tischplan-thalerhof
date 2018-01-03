@@ -141,7 +141,7 @@ router.get('/information', function(req, res, next) {
 //Delete scheduled message
 router.post('/deleteInformationElement', function(req, res, next) {
     //JSON string is parsed to a JSON object
-    console.log("Delete request made to /deleteScheduledMessage");
+    console.log("Delete request made to /deleteInformationElement");
     let informationElementToDelete = req.body;
     console.log(JSON.stringify(informationElementToDelete));
     db.newInformation.remove({
