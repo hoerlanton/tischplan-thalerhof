@@ -3,7 +3,7 @@ const   express = require('express'),
     bodyParser = require('body-parser'),
     mongojs = require('mongojs'),
     cors = require('cors'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables']);
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation']);
 
 //Bodyparser middleware
 router.use(bodyParser.urlencoded({ extended: false}));
@@ -124,6 +124,34 @@ router.get('/tables', function(req, res, next) {
         }
         res.json(tables);
     });
+});
+
+//Get Information
+router.get('/information', function(req, res, next) {
+    console.log("tables get called");
+    //Get guests from Mongo DB
+    db.newInformation.find(function(err, information){
+        if (err){
+            res.send(err);
+        }
+        res.json(information);
+    });
+});
+
+//Delete scheduled message
+router.post('/deleteInformationElement', function(req, res, next) {
+    //JSON string is parsed to a JSON object
+    console.log("Delete request made to /deleteScheduledMessage");
+    let informationElementToDelete = req.body;
+    console.log(JSON.stringify(informationElementToDelete));
+    db.newInformation.remove({
+
+            roomNumber: informationElementToDelete.roomNumber
+        },
+        {
+            justOne: true,
+        });
+    res.json(informationElementToDelete);
 });
 
 //moveTable
@@ -5298,24 +5326,28 @@ router.post('/addInformationToTable', function(req, res, next) {
     }, 500);
 });
 
-router.post('/newInformation', function(req, res, next) {
-    console.log("newInformation post called");
+router.post('/newInformationToTables', function(req, res, next) {
+    console.log("newInformationToTables post called");
     //Get guests from Mongo DB
 
     console.log(req.body);
     let newInformation = req.body;
 
-    db.tables.update(
-        {"tables.number": newInformation.tableNumber} ,
-        {$set: {
-            "tables.$.newInformation": newInformation.text + newInformation.roomNumber,
-        }}, function (err, tables) {
-            if (err) {
-                console.log("Error");
-            }
-            console.log("No Error");
-        });
-
+        db.tables.update(
+            {
+                "tables.number": newInformation.tableNumber,
+                "tables.zimmernummerValue": newInformation.roomNumber
+            },
+            {
+                $set: {
+                    "tables.$.newInformation": newInformation.text,
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("No Error");
+            });
     setTimeout(function() {
         db.tables.findOne(
             {
@@ -5332,6 +5364,23 @@ router.post('/newInformation', function(req, res, next) {
                 console.log(JSON.stringify(tables));
             });
     }, 500);
+});
+
+
+router.post('/newInformationToBox', function(req, res, next) {
+    console.log("newInformationToBox post called");
+    //Get guests from Mongo DB
+
+    console.log(req.body);
+    let newInformation = req.body;
+
+
+    db.newInformation.save(newInformation, function(err, newInformation) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(newInformation);
+    });
 });
 
 module.exports = router;

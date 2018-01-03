@@ -8,6 +8,10 @@
 </head>
 
 <body>
+
+
+
+
 <nav class="navbar navbar-default" style="max-width: 100%">
       <ul class="nav navbar-nav" style="max-width: 100%; margin-left: 20px">
         <li><img alt="Brand" href="http://www.servicio.io" src="http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png" style="height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;"></li>
@@ -16,7 +20,20 @@
         <li><button (click)="printToCart2('printSectionId2')" style="text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px" class="button">Tisch Plan Drucken</button></li>
       </ul>
     <ul class="nav navbar-nav navbar-right">
+      <div class="btn-group" style="height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 25px; float: left; text-align: right; display:table-cell; vertical-align:middle;" dropdown>
+        <button dropdownToggle type="button" style=" background-color: #0a7a74; color: #FFFFFF" class="btn btn-primary dropdown-toggle">
+          Traces Box <span class="caret"></span>
+        </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu" style="overflow: auto; height: 350px; width: 200px">
+            <div *ngFor="let newInformationElement of newInformationElements; let j = index;">
+              <button style="float: right;" type="submit" class="btn btn-send" (click)="delete(newInformationElements, j)">x</button>
+              <li role="menuitem" style="padding: 5px"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br></li>
+              <li class="divider dropdown-divider"></li>
+            </div>
+          </ul>
+      </div>
       <li><img alt="Partner" href="http://www.salzburgerhof.servicio.io/wlanlandingpage" src="http://servicio.io/wp-content/uploads/2017/06/Salzburger-Hof_Marke_CMYK-ohne-hintergrund.png" style="height: 45px; width: auto; margin-top: 10px; margin-bottom: 5px; margin-right: 25px; float: right; text-align: right; display:table-cell; vertical-align:middle;"></li>
+
     </ul>
 </nav>
 
@@ -45,7 +62,7 @@
                 <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
                   <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
                     <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, j)">{{tableSonnbergZirbn.isBesetzt === 'true' ? 'FREI MACHEN' : '' }}</button>
-                    <p><b> Tisch: </b>{{tableSonnbergZirbn.number}} </p><br>
+                    <p><b> Tisch: {{tableSonnbergZirbn.number}}</b> </p><br>
                     <div class='cards-container' id='containerSonnbergZirbn'  [ngStyle]="{'background-color': + tableSonnbergZirbn.bgColor}">
                       <div class="table" [ngStyle]="{'background-color': '#' + tableSonnbergZirbn.bgColor}">
                         <div *ngIf="tableSonnbergZirbn.isBesetzt === 'true'">
@@ -350,7 +367,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="col-xs-12 col-sm-8 col-lg-7 table-col">
       <div class="row1">

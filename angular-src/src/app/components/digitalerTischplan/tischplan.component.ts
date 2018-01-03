@@ -9,6 +9,9 @@ import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { LeftValue } from '../../../../LeftValue';
 import {SchemaInformation} from "@angular/language-service/src/html_info";
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import {DropdownModule} from "ng2-dropdown";
+
 
 @Component({
   selector: 'tischplan',
@@ -44,6 +47,7 @@ export class TischplanComponent implements OnInit {
   showPanoramaBool: boolean;
   showRestaurantBool: boolean;
   showWintergartenBool: boolean;
+  newInformationElements: any[] = [];
 
   title: string;
   roomNumber: string;
@@ -71,6 +75,16 @@ export class TischplanComponent implements OnInit {
         } else {
           this.anreiseListeElemente = anreiseListeElemente[0].data;
           console.log(this.anreiseListeElemente);
+        }
+      });
+
+    this.tischplanService.getInformationElements()
+      .subscribe(informationElemente => {
+        if(informationElemente === null) {
+          return;
+        } else {
+          this.newInformationElements = informationElemente;
+          console.log(this.newInformationElements);
         }
       });
 
@@ -547,18 +561,40 @@ export class TischplanComponent implements OnInit {
         { cssClass: 'alert-danger', timeout: 20000 });
       return;
     }
-    console.log(newInformation);
+    console.log(newInformation.tableNumber);
 
-    this.tischplanService.sendInformation(newInformation)
+    if (newInformation.tableNumber) {
+      this.tischplanService.sendInformation(newInformation)
+        .subscribe(Information => {
+          //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
+          console.log('Information: ' + JSON.stringify(Information));
+          console.log(Information.tables[0]);
+          console.log("------");
+          //console.log(Information[0].tables);
+          this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+        });
+    }
+    this.tischplanService.sendInformationToBox(newInformation)
       .subscribe(Information => {
         //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
         console.log('Information: ' + JSON.stringify(Information));
-        console.log(Information.tables[0]);
-        console.log("------");
+        //console.log(Information.tables[0]);
+        //console.log("------");
         //console.log(Information[0].tables);
-        this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+        this.newInformationElements.push(Information);
+        console.log(this.newInformationElements);
       });
   }
+
+  delete(informationElement, j) {
+    console.log(informationElement);
+    console.log(j);
+    this.tischplanService.deleteInformationElement(informationElement)
+      .subscribe(informationElement => {
+        this.newInformationElements.splice (j, 1);
+      });
+  }
+
 
   printToCart1(printSectionId1: string) {
     let popupWinindow;
