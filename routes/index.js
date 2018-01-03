@@ -5362,6 +5362,8 @@ router.post('/newInformationToTables', function(req, res, next) {
                         {
                             $set: {
                                 "tables.$.newInformation": newInformation.text + " " + newInformation.roomNumber,
+                                "tables.$.date": newInformation.date,
+
                             }
                         }, function (err, tables) {
                             if (err) {
@@ -5378,6 +5380,7 @@ router.post('/newInformationToTables', function(req, res, next) {
                         {
                             $set: {
                                 "tables.$.newInformation1": newInformation.text + " " + newInformation.roomNumber,
+                                "tables.$.date": newInformation.date,
                             }
                         }, function (err, tables) {
                             if (err) {
@@ -5394,6 +5397,7 @@ router.post('/newInformationToTables', function(req, res, next) {
                         {
                             $set: {
                                 "tables.$.newInformation2": newInformation.text + " " + newInformation.roomNumber,
+                                "tables.$.date": newInformation.date,
                             }
                         }, function (err, tables) {
                             if (err) {

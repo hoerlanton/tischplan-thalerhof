@@ -43,7 +43,7 @@ export class TischplanComponent implements OnInit {
   showRestaurantBool: boolean;
   showWintergartenBool: boolean;
   newInformationElements: any[] = [];
-
+  dateGenerated: any;
   title: string;
   roomNumber: string;
   tableNumber: string;
@@ -546,11 +546,13 @@ export class TischplanComponent implements OnInit {
 
   sendInformation(event) {
     event.preventDefault();
+    this.dateGenerated = new Date();
     let newInformation = {
       text: this.title,
       roomNumber: this.roomNumber,
-      tableNumber: this.tableNumber
-    };
+      tableNumber: this.tableNumber,
+      date: this.dateGenerated
+    }
     if (newInformation.text === undefined) {
       this._flashMessagesService.show('Die Nachricht ist leer ... ',
         { cssClass: 'alert-danger', timeout: 20000 });
@@ -593,7 +595,7 @@ export class TischplanComponent implements OnInit {
         //console.log("------");
         //console.log(Information[0].tables);
         this.newInformationElements.push(Information);
-        console.log(this.newInformationElements);
+        console.log('this.newInformationElements' + this.newInformationElements);
       });
   }
 
