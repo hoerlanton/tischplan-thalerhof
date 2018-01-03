@@ -705,16 +705,16 @@ var TischplanComponent = (function () {
                     return;
                 }
                 else {
-                    if (Information.tables[Information.tables[0].arrayIndex].department === "Sonnberg-Zirbn") {
+                    if (Information.tables[0].department === "Sonnberg-Zirbn") {
                         _this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
                     }
-                    else if (Information.tables[Information.tables[0].arrayIndex].department === "Panorama") {
+                    else if (Information.tables[0].department === "Panorama") {
                         _this.tablesPanorama[Information.tables[0].arrayIndex] = Information.tables[0];
                     }
-                    else if (Information.tables[Information.tables[0].arrayIndex].department === "Restaurant") {
+                    else if (Information.tables[0].department === "Restaurant") {
                         _this.tablesRestaurant[Information.tables[0].arrayIndex] = Information.tables[0];
                     }
-                    else if (Information.tables[Information.tables[0].arrayIndex].department === "Wintergarten") {
+                    else if (Information.tables[0].department === "Wintergarten") {
                         _this.tablesWintergarten[Information.tables[0].arrayIndex] = Information.tables[0];
                     }
                 }
