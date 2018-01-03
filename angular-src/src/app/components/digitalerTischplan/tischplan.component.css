@@ -47,12 +47,12 @@ html, body {
 }
 
 .row1 {
-  height: calc((100vh - 244px) / 3);
+  height: calc((100vh - 286px) / 3);
   overflow: auto;
 }
 
 .inner-table {
-  height: calc(100vh - 44px);
+  height: calc(100vh - 440px);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }

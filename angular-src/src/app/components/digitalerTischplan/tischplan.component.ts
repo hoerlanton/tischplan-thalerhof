@@ -602,9 +602,12 @@ export class TischplanComponent implements OnInit {
       });
   }
 
-  delete(informationElement, j) {
+  delete(informationElement, j, event) {
     console.log(informationElement);
     console.log(j);
+
+      event.stopPropagation();
+
     this.tischplanService.deleteInformationElement(informationElement)
       .subscribe(informationElement => {
         this.newInformationElements.splice (j, 1);
