@@ -574,7 +574,20 @@ export class TischplanComponent implements OnInit {
           console.log(Information.tables[0]);
           console.log("------");
           //console.log(Information[0].tables);
-          this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+
+          if (Information === null) {
+            return;
+          } else {
+            if (Information.tables[Information.tables[0].arrayIndex].department === "Sonnberg-Zirbn") {
+              this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+            } else if (Information.tables[Information.tables[0].arrayIndex].department === "Panorama") {
+              this.tablesPanorama[Information.tables[0].arrayIndex] = Information.tables[0];
+            } else if (Information.tables[Information.tables[0].arrayIndex].department === "Restaurant") {
+              this.tablesRestaurant[Information.tables[0].arrayIndex] = Information.tables[0];
+            } else if (Information.tables[Information.tables[0].arrayIndex].department === "Wintergarten") {
+              this.tablesWintergarten[Information.tables[0].arrayIndex] = Information.tables[0];
+            }
+          }
         });
     }
     this.tischplanService.sendInformationToBox(newInformation)

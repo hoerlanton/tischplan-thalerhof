@@ -151,7 +151,6 @@
                             <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tablePanorama.notiz2Value}}<br>
                             <b> Trace:</b>{{tablePanorama.trace}}<br>
-                            <b> Neuer Trace: </b>{{tablePanorama.newInformation}}
                           </p>
                           <div *ngIf="tablePanorama.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -165,7 +164,6 @@
                               <b> RB/SOU:</b>{{tablePanorama.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tablePanorama.notiz2Value2}}<br>
                               <b> Trace:</b>{{tablePanorama.trace2}}<br>
-                              <b> Neuer Trace: </b>{{tablePanorama.newInformation2}}
                             </p>
                           </div>
                           <div *ngIf="tablePanorama.nameValue3">
@@ -180,7 +178,21 @@
                               <b> RB/SOU:</b>{{tablePanorama.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tablePanorama.notiz2Value3}}<br>
                               <b> Trace:</b>{{tablePanorama.trace3}}<br>
-                              <b> Neuer Trace: </b>{{tablePanorama.newInformation3}}
+                            </p>
+                          </div>
+                          <div *ngIf="tablePanorama.newInformation">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tablePanorama.newInformation.substring(tablePanorama.newInformation.length - 3, tablePanorama.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation.substring(0, tablePanorama.newInformation.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tablePanorama.newInformation1">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tablePanorama.newInformation1.substring(tablePanorama.newInformation1.length - 3, tablePanorama.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation1.substring(0, tablePanorama.newInformation1.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tablePanorama.newInformation2">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tablePanorama.newInformation2.substring(tablePanorama.newInformation2.length - 3, tablePanorama.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation2.substring(0, tablePanorama.newInformation2.length - 3)}}
                             </p>
                           </div>
                         </div>
@@ -245,6 +257,21 @@
                               <b> Neuer Trace: </b>{{tableRestaurant.newInformation3}}
                             </p>
                           </div>
+                          <div *ngIf="tableRestaurant.newInformation">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation.substring(tableRestaurant.newInformation.length - 3, tableRestaurant.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation.substring(0, tableRestaurant.newInformation.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableRestaurant.newInformation1">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation1.substring(tableRestaurant.newInformation1.length - 3, tableRestaurant.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation1.substring(0, tableRestaurant.newInformation1.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableRestaurant.newInformation2">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation2.substring(tableRestaurant.newInformation2.length - 3, tableRestaurant.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation2.substring(0, tableRestaurant.newInformation2.length - 3)}}
+                            </p>
+                          </div>
                         </div>
                       </div>
                       <div *ngIf="tableRestaurant.placeholder === 'true'">
@@ -305,6 +332,21 @@
                               <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
                               <b> Trace:</b>{{tableWintergarten.trace3}}<br>
                               <b> Neuer Trace: </b>{{tableWintergarten.newInformation3}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableWintergarten.newInformation">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation.substring(tableWintergarten.newInformation.length - 3, tableWintergarten.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation.substring(0, tableWintergarten.newInformation.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableWintergarten.newInformation1">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation1.substring(tableWintergarten.newInformation1.length - 3, tableWintergarten.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation1.substring(0, tableWintergarten.newInformation1.length - 3)}}
+                            </p>
+                          </div>
+                          <div *ngIf="tableWintergarten.newInformation2">
+                            <p style="background-color: #FFFFFF; border: solid 3px red">
+                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation2.substring(tableWintergarten.newInformation2.length - 3, tableWintergarten.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation2.substring(0, tableWintergarten.newInformation2.length - 3)}}
                             </p>
                           </div>
                         </div>
