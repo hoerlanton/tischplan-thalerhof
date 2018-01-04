@@ -4979,6 +4979,7 @@ router.post('/dispenseTable', function(req, res, next) {
             "tables.$.rbsouValue3": 1,
             "tables.$.notiz2Value3": 1,
             "tables.$.trace3": 1,
+            "tables.$.date": 1
         } },
         new: false
     }, function (err, tables) {
