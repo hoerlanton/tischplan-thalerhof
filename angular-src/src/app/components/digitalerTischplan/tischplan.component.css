@@ -26,6 +26,10 @@ html, body {
   top: 345px;
 }
 
+.inner-table {
+  min-height: 370px;
+}
+
 .row .print-col, .row .upload-col, .row .table-col {
   background-color: #f3efe4;
   padding: 20px 10px 20px 10px;
