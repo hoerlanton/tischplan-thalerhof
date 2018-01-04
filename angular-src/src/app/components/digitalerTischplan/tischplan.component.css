@@ -23,7 +23,7 @@ html, body {
   border-bottom: solid 10px #0a7a74;
   position: absolute;
   right: 0px;
-  top: 345px;
+  top: 455px;
 }
 
 .inner-table {
@@ -50,19 +50,13 @@ html, body {
   }
 }
 
-@media (min-width: 1200px) {
-  . {
-    display: block;
-  }
-}
-
 .row1 {
-  height: calc((100vh - 286px) / 3);
+  height: calc((100vh - 290px) / 3);
   overflow: auto;
 }
 
 .inner-table {
-  height: calc(100vh - 440px);
+  height: calc(100vh - 640px);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
