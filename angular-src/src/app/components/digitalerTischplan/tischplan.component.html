@@ -182,19 +182,19 @@
                               <b> Trace:</b>{{tablePanorama.trace3}}<br>
                             </p>
                           </div>
-                          <div *ngIf="tablePanorama.newInformation">
+                          <div *ngIf="tablePanorama.newTraceText">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newInformation.substring(tablePanorama.newInformation.length - 3, tablePanorama.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation.substring(0, tablePanorama.newInformation.length - 3)}}
+                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee}} <br> <b> Name: </b>{{tablePanorama.newTraceName}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate}}
                             </p>
                           </div>
-                          <div *ngIf="tablePanorama.newInformation1">
+                          <div *ngIf="tablePanorama.newTraceText1">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newInformation1.substring(tablePanorama.newInformation1.length - 3, tablePanorama.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation1.substring(0, tablePanorama.newInformation1.length - 3)}}
+                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText1}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee1}} <br> <b> Name: </b>{{tablePanorama.newTraceName1}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate1}}
                             </p>
                           </div>
-                          <div *ngIf="tablePanorama.newInformation2">
+                          <div *ngIf="tablePanorama.newTraceText2">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newInformation2.substring(tablePanorama.newInformation2.length - 3, tablePanorama.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newInformation2.substring(0, tablePanorama.newInformation2.length - 3)}}
+                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText2}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee2}} <br> <b> Name: </b>{{tablePanorama.newTraceName2}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate2}}
                             </p>
                           </div>
                         </div>
@@ -225,8 +225,7 @@
                             <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableRestaurant.trace}}<br>
-                            <b> Neuer Trace: </b>{{tableRestaurant.newInformation}}
+                            <b> Trace:</b>{{tableRestaurant.trace}}
 
                           </p>
                           <div *ngIf="tableRestaurant.nameValue2">
@@ -240,8 +239,7 @@
                               <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tableRestaurant.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tableRestaurant.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace2}}<br>
-                              <b> Neuer Trace: </b>{{tableRestaurant.newInformation2}}
+                              <b> Trace:</b>{{tableRestaurant.trace2}}
                             </p>
                           </div>
                           <div *ngIf="tableRestaurant.nameValue3">
@@ -255,23 +253,22 @@
                               <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tableRestaurant.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tableRestaurant.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace3}}<br>
-                              <b> Neuer Trace: </b>{{tableRestaurant.newInformation3}}
+                              <b> Trace:</b>{{tableRestaurant.trace3}}
                             </p>
                           </div>
-                          <div *ngIf="tableRestaurant.newInformation">
+                          <div *ngIf="tableRestaurant.newTraceText">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation.substring(tableRestaurant.newInformation.length - 3, tableRestaurant.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation.substring(0, tableRestaurant.newInformation.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee}} <br> <b> Name: </b>{{tableRestaurant.newTraceName}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate}}
                             </p>
                           </div>
-                          <div *ngIf="tableRestaurant.newInformation1">
+                          <div *ngIf="tableRestaurant.newTraceText1">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation1.substring(tableRestaurant.newInformation1.length - 3, tableRestaurant.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation1.substring(0, tableRestaurant.newInformation1.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText1}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee1}} <br> <b> Name: </b>{{tableRestaurant.newTraceName1}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate1}}
                             </p>
                           </div>
-                          <div *ngIf="tableRestaurant.newInformation2">
+                          <div *ngIf="tableRestaurant.newTraceText2">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newInformation2.substring(tableRestaurant.newInformation2.length - 3, tableRestaurant.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newInformation2.substring(0, tableRestaurant.newInformation2.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText2}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee2}} <br> <b> Name: </b>{{tableRestaurant.newTraceName2}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate2}}
                             </p>
                           </div>
                         </div>
@@ -303,8 +300,7 @@
                             <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
                             <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
                             <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableWintergarten.trace}}<br>
-                            <b> Neuer Trace: </b>{{tableWintergarten.newInformation}}<br>
+                            <b> Trace:</b>{{tableWintergarten.trace}}
                           </p>
                           <div *ngIf="tableWintergarten.nameValue2">
                             <p style="background-color: #FFFFFF">
@@ -317,8 +313,7 @@
                               <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue2}}<br>
                               <b> RB/SOU:</b>{{tableWintergarten.rbsouValue2}}<br>
                               <b> Notiz2:</b>{{tableWintergarten.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace2}}<br>
-                              <b> Neuer Trace: </b>{{tableWintergarten.newInformation2}}
+                              <b> Trace:</b>{{tableWintergarten.trace2}}
                             </p>
                           </div>
                           <div *ngIf="tableWintergarten.nameValue3">
@@ -332,23 +327,22 @@
                               <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue3}}<br>
                               <b> RB/SOU:</b>{{tableWintergarten.rbsouValue3}}<br>
                               <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace3}}<br>
-                              <b> Neuer Trace: </b>{{tableWintergarten.newInformation3}}
+                              <b> Trace:</b>{{tableWintergarten.trace3}}
                             </p>
                           </div>
-                          <div *ngIf="tableWintergarten.newInformation">
+                          <div *ngIf="tableWintergarten.newTraceText">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation.substring(tableWintergarten.newInformation.length - 3, tableWintergarten.newInformation.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation.substring(0, tableWintergarten.newInformation.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee}} <br> <b> Name: </b>{{tableWintergarten.newTraceName}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate}}
                             </p>
                           </div>
-                          <div *ngIf="tableWintergarten.newInformation1">
+                          <div *ngIf="tableWintergarten.newTraceText1">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation1.substring(tableWintergarten.newInformation1.length - 3, tableWintergarten.newInformation1.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation1.substring(0, tableWintergarten.newInformation1.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText1}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee1}} <br> <b> Name: </b>{{tableWintergarten.newTraceName1}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate1}}
                             </p>
                           </div>
-                          <div *ngIf="tableWintergarten.newInformation2">
+                          <div *ngIf="tableWintergarten.newTraceText2">
                             <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newInformation2.substring(tableWintergarten.newInformation2.length - 3, tableWintergarten.newInformation2.length)}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newInformation2.substring(0, tableWintergarten.newInformation2.length - 3)}}
+                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText2}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee2}} <br> <b> Name: </b>{{tableWintergarten.newTraceName2}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate2}}
                             </p>
                           </div>
                         </div>
