@@ -56,7 +56,7 @@ html, body {
 }
 
 .inner-table {
-  height: calc(100vh - 640px);
+  height: calc(100vh - 540px);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
