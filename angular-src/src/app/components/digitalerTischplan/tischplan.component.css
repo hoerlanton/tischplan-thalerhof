@@ -14,31 +14,127 @@ html, body {
   border-bottom: solid 10px #0a7a74;
   position: absolute;
   right: 0px;
-  top: 150px;
+  top: 100px;
 }
 
-.line1{
-  width: 100%;
-  height: 20px;
-  border-bottom: solid 10px #0a7a74;
-  position: absolute;
-  right: 0px;
-  top: 455px;
+.printTwo {
+  background-color: #0a7a74;
 }
 
 .inner-table {
   min-height: 370px;
 }
 
-.row .print-col, .row .upload-col, .row .table-col {
+
+.inner-table {
+  height: calc(100vh - 100px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.row4 {
+  margin-top: 80px;
+}
+
+@media (min-width: 1200px) {
+  .row4 {
+    margin-top: 350px;
+  }
+}
+
+.row .table-col {
+  min-height: 100vh;
   background-color: #f3efe4;
   padding: 20px 10px 20px 10px;
+  border-left: 5px solid #0a7a74;
+  border-right: 5px solid #0a7a74;
+  border-bottom: 20px solid #0a7a74;
+  box-sizing: border-box;
+}
+
+@media (min-width: 800px) {
+  .row .table-col {
+    min-height: calc(100vh + 380px);
+    background-color: #f3efe4;
+    padding: 20px 10px 20px 10px;
+    border-left: 5px solid #0a7a74;
+    border-right: 5px solid #0a7a74;
+    border-bottom: 20px solid #0a7a74;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 800px) {
+  .inner-table {
+    min-height: calc(100vh + 380px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (min-width: 1200px) {
+  .row .table-col {
+    min-height: calc(100vh + 250px);
+    background-color: #f3efe4;
+    padding: 20px 10px 20px 10px;
+    border-left: 5px solid #0a7a74;
+    border-right: 5px solid #0a7a74;
+    border-bottom: 20px solid #0a7a74;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner-table {
+    min-height: calc(100vh + 250px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+.row .print-col {
+  padding: 0;
+  background-color: #f3efe4;
   border-left: 5px solid #0a7a74;
   border-right: 5px solid #0a7a74;
   min-height: 100vh;
   border-bottom: 20px solid #0a7a74;
   box-sizing: border-box;
 }
+
+@media (min-width: 800px) {
+  .row .upload-col {
+    background-color: #f3efe4;
+    padding: 20px 10px 20px 10px;
+    border-left: 5px solid #0a7a74;
+    border-right: 5px solid #0a7a74;
+    border-bottom: 20px solid #0a7a74;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+}
+@media (min-width: 1200px) {
+  .row .upload-col {
+    background-color: #f3efe4;
+    padding: 20px 10px 20px 10px;
+    border-left: 5px solid #0a7a74;
+    border-right: 5px solid #0a7a74;
+    border-bottom: 20px solid #0a7a74;
+    box-sizing: border-box;
+    min-height: calc(100vh + 337px);
+  }
+}
+
+  .row .upload-col {
+    background-color: #f3efe4;
+    padding: 20px 10px 20px 10px;
+    border-left: 5px solid #0a7a74;
+    border-right: 5px solid #0a7a74;
+    border-bottom: 20px solid #0a7a74;
+    box-sizing: border-box;
+    height: 100vh;
+  }
 
 .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .anleitung {
   display: none;
@@ -51,14 +147,8 @@ html, body {
 }
 
 .row1 {
-  height: calc((100vh - 290px) / 3);
+  height: calc((100vh + 100px) / 3);
   overflow: auto;
-}
-
-.inner-table {
-  height: calc(100vh - 540px);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .cards-container {
@@ -179,14 +269,12 @@ html, body {
   height: auto;
 }
 
-
-
 .printTwo {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  min-height: 550px;
+  min-height: 580px;
 }
 
-.row .container-fluid .table-col .printTwo .table-item {
+.row .container-fluid .print-col .printTwo .table-item {
   position: absolute;
 }

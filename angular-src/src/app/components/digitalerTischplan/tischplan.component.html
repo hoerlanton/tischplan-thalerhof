@@ -8,10 +8,6 @@
 </head>
 
 <body>
-
-
-
-
 <nav class="navbar navbar-default" style="max-width: 100%">
       <ul class="nav navbar-nav" style="max-width: 100%; margin-left: 20px">
         <li><img alt="Brand" href="http://www.servicio.io" src="http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png" style="height: 45px; width: auto; margin-top:15px; margin-right: 50px; text-align: left; display:table-cell; vertical-align:middle;"></li>
@@ -26,7 +22,7 @@
         </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu" style="overflow: auto; height: 350px; width: 200px">
             <div *ngFor="let newInformationElement of newInformationElements; let j = index;">
-              <button style="float: right; background-color: #0a7a74; color: #FFFFFF" type="submit" class="btn btn-send" (click)="delete(newInformationElement, j, $event)">x</button>
+              <button style="float: right; background-color: #0a7a74; color: #FFFFFF; margin-right: 20px" type="submit" class="btn btn-send" (click)="delete(newInformationElement, j, $event)">x</button>
               <li role="menuitem" style="padding: 5px;"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br><b>Datum: </b> {{newInformationElement.date}}<br><b>Name: </b> {{newInformationElement.name}}<br><b>Mitarbeiter: </b> {{newInformationElement.employee}}</li>
               <li class="divider dropdown-divider"></li>
             </div>
@@ -42,316 +38,75 @@
 
 <div class="row">
   <div class="container-fluid">
-    <div class="col-xs-12 col-sm-4 col-lg-2 print-col">
-      <h3>Info hinzufügen</h3>
+    <div class="col-xs-12 col-sm-8 col-lg-4 print-col">
+      <h3 style="margin: 20px 0 20px 20px">Info hinzufügen</h3>
       <form class="SendInformation"  #myForm="ngForm" (submit)="sendInformation($event); myForm.reset() ">
-        <div class="form-group" style="margin-bottom: 40px">
-          <input  class="form-control" style="margin-top: 20px" id="name" [(ngModel)]="nameTraceInput" name="Name" placeholder="Name">
-          <input  class="form-control" style="margin-top: 20px" id="roomNumber" [(ngModel)]="roomNumber" name="roomNumber" placeholder="Zimmer Nummer">
-          <input  class="form-control" style="margin-top: 20px" id="tableNumber" [(ngModel)]="tableNumber" name="tableNumber" placeholder="Tisch Nummer">
-          <input  class="form-control" style="margin-top: 20px" id="employee" [(ngModel)]="employee" name="employee" placeholder="Mitarbeiter">
-          ​<textarea id="informationText" rows="5" type="text" style="margin-bottom: 10px" [(ngModel)]="title" placeholder="Trace hinzufügen" name="title" class="form-control" required>
-          </textarea>
-          <button type="button|submit|reset" style="float: right; margin: 10px 0px 0px 0px; background-color: #0a7a74; color: #FFFFFF" class="btn btn-primary">Hinzufügen</button>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="col-lg-6">
+              <input  class="form-control" style="margin-top: 20px" id="name" [(ngModel)]="nameTraceInput" name="Name" placeholder="Name">
+              <input  class="form-control" style="margin-top: 20px" id="roomNumber" [(ngModel)]="roomNumber" name="roomNumber" placeholder="Zimmer Nummer">
+            </div>
+            <div class="col-lg-6">
+              <input  class="form-control" style="margin-top: 20px" id="tableNumber" [(ngModel)]="tableNumber" name="tableNumber" placeholder="Tisch Nummer">
+              <input  class="form-control" style="margin-top: 20px" id="employee" [(ngModel)]="employee" name="employee" placeholder="Mitarbeiter">
+            </div>
+            <div class="col-lg-12">
+              <textarea id="informationText" rows="5" type="text" style="margin-bottom: 10px; margin-top: 20px" [(ngModel)]="title" placeholder="Trace hinzufügen" name="title" class="form-control" required>
+              </textarea>
+            </div>
+          </div>
+          <button type="button|submit|reset" style="float: right; margin: 10px 20px 0px 0px; background-color: #0a7a74; color: #FFFFFF" class="btn btn-primary">Hinzufügen</button>
         </div>
       </form>
-      <div style="margin-top: 90px">
-        <div class="line1"></div>
-        <h3>Tisch Übersicht</h3>
-        <div id="printSectionId1" class="inner-table" style="padding: 0px 0px 0px 0px;">
-          <div class="row3">
-            <div class='wrapper' id="wrapper">
-              <div *ngIf="showSonnbergZirbnBool">
-                <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
-                  <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, j)">{{tableSonnbergZirbn.isBesetzt === 'true' ? 'FREI MACHEN' : '' }}</button>
-                    <h4><b> Tisch: {{tableSonnbergZirbn.number}}</b> </h4><br>
-                    <div class='cards-container' id='containerSonnbergZirbn'  [ngStyle]="{'background-color': + tableSonnbergZirbn.bgColor}">
-                      <div class="table" [ngStyle]="{'background-color': '#' + tableSonnbergZirbn.bgColor}">
-                        <div *ngIf="tableSonnbergZirbn.isBesetzt === 'true'">
-                          <p style="background-color: #FFFFFF">
-                            <b> Name:</b>{{tableSonnbergZirbn.nameValue}}<br>
-                            <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue}}<br>
-                            <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue}}<br>
-                            <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue}}<br>
-                            <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue}}<br>
-                            <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue}}<br>
-                            <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br>
-                            <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue}}<br>
-                            <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableSonnbergZirbn.trace}}<br>
-                          </p>
-                          <div *ngIf="tableSonnbergZirbn.nameValue2">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableSonnbergZirbn.nameValue2}}<br>
-                              <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue2}}<br>
-                              <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue2}}<br>
-                              <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue2}}<br>
-                              <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue2}}<br>
-                              <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue2}}<br>
-                              <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue2}}<br>
-                              <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue2}}<br>
-                              <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableSonnbergZirbn.trace2}}<br>
-                            </p>
-                          </div>
-                          <div *ngIf="tableSonnbergZirbn.nameValue3">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableSonnbergZirbn.nameValue3}}<br>
-                              <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue3}}<br>
-                              <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue3}}<br>
-                              <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue3}}<br>
-                              <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue3}}<br>
-                              <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue3}}<br>
-                              <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue3}}<br>
-                              <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue3}}<br>
-                              <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableSonnbergZirbn.trace3}}<br>
-                            </p>
-                          </div>
-                          <div *ngIf="tableSonnbergZirbn.newTraceText">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableSonnbergZirbn.newTraceText1">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText1}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee1}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName1}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate1}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableSonnbergZirbn.newTraceText2">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText2}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee2}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName2}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate2}}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="tableSonnbergZirbn.placeholder === 'true'">
-                        <p [dragula]='"evented-bag"' id="Sonnberg-Zirbn" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableSonnbergZirbn.number}} {{tableSonnbergZirbn.department}}</p>
-                      </div>
-                    </div>
-                  </div>
+      <div class="row4">
+        <div class="col-md-3 col-xs-3" (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
+          <h5 [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</h5>
+        </div>
+        <div class="col-md-3 col-xs-3" (click)="showPanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
+          <h5 [ngStyle]="{'color': '#' + fontColor2}">Panorama</h5>
+        </div>
+        <div class="col-md-3 col-xs-3"  (click)="showRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
+          <h5 [ngStyle]="{'color': '#' + fontColor3}">Restaurant</h5>
+        </div>
+        <div class="col-md-3 col-xs-3"  (click)="showWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
+          <h5 [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</h5>
+        </div>
+      </div>
+      <div id="printSectionId2" class="col-xs-12 printTwo">
+        <div class="row" style="border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;" >
+          <div *ngIf="showSonnbergZirbnBool">
+            <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
+              <div class="t{{tableSonnbergZirbn.number}} table-item" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}">
+                <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
+                  <p>{{tableSonnbergZirbn.number}}</p>
                 </div>
               </div>
-
-              <div *ngIf="showPanoramaBool">
-                <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
-                  <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <h4><b> Tisch: {{tablePanorama.number}}</b> </h4><br>
-                    <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
-                      <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
-                        <div *ngIf="tablePanorama.isBesetzt === 'true'">
-                          <p style="background-color: #FFFFFF">
-                            <b> Name:</b>{{tablePanorama.nameValue}}<br>
-                            <b> Sprache:</b>{{tablePanorama.spracheValue}}<br>
-                            <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue}}<br>
-                            <b> Preis Typ:</b>{{tablePanorama.preistypValue}}<br>
-                            <b> Anreise Datum:</b>{{tablePanorama.anreiseValue}}<br>
-                            <b> Abreise Datum:</b>{{tablePanorama.abreiseValue}}<br>
-                            <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue}}<br>
-                            <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
-                            <b> Notiz2:</b>{{tablePanorama.notiz2Value}}<br>
-                            <b> Trace:</b>{{tablePanorama.trace}}<br>
-                          </p>
-                          <div *ngIf="tablePanorama.nameValue2">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tablePanorama.nameValue2}}<br>
-                              <b> Sprache:</b>{{tablePanorama.spracheValue2}}<br>
-                              <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue2}}<br>
-                              <b> Preis Typ:</b>{{tablePanorama.preistypValue2}}<br>
-                              <b> Anreise Datum:</b>{{tablePanorama.anreiseValue2}}<br>
-                              <b> Abreise Datum:</b>{{tablePanorama.abreiseValue2}}<br>
-                              <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue2}}<br>
-                              <b> RB/SOU:</b>{{tablePanorama.rbsouValue2}}<br>
-                              <b> Notiz2:</b>{{tablePanorama.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tablePanorama.trace2}}<br>
-                            </p>
-                          </div>
-                          <div *ngIf="tablePanorama.nameValue3">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tablePanorama.nameValue3}}<br>
-                              <b> Sprache:</b>{{tablePanorama.spracheValue3}}<br>
-                              <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue3}}<br>
-                              <b> Preis Typ:</b>{{tablePanorama.preistypValue3}}<br>
-                              <b> Anreise Datum:</b>{{tablePanorama.anreiseValue3}}<br>
-                              <b> Abreise Datum:</b>{{tablePanorama.abreiseValue3}}<br>
-                              <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue3}}<br>
-                              <b> RB/SOU:</b>{{tablePanorama.rbsouValue3}}<br>
-                              <b> Notiz2:</b>{{tablePanorama.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tablePanorama.trace3}}<br>
-                            </p>
-                          </div>
-                          <div *ngIf="tablePanorama.newTraceText">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee}} <br> <b> Name: </b>{{tablePanorama.newTraceName}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate}}
-                            </p>
-                          </div>
-                          <div *ngIf="tablePanorama.newTraceText1">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText1}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee1}} <br> <b> Name: </b>{{tablePanorama.newTraceName1}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate1}}
-                            </p>
-                          </div>
-                          <div *ngIf="tablePanorama.newTraceText2">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText2}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee2}} <br> <b> Name: </b>{{tablePanorama.newTraceName2}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate2}}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="tablePanorama.placeholder === 'true'">
-                        <p [dragula]='"evented-bag"' id="Panorama" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!  {{tablePanorama.number}} {{tablePanorama.department}} </p>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          <div *ngIf="showPanoramaBool">
+            <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
+              <div class="t{{tablePanorama.number}} table-item" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor,  'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}">
+                <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
+                  <p>{{tablePanorama.number}}</p>
                 </div>
               </div>
-
-              <div *ngIf="showRestaurantBool">
-                <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
-                  <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <h4><b> Tisch: {{tableRestaurant.number}}</b> </h4><br>
-                    <div class='cards-container' id='containerRestaurant' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
-                      <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
-                        <div *ngIf="tableRestaurant.isBesetzt === 'true'">
-                          <p style="background-color: #FFFFFF">
-                            <b> Name:</b>{{tableRestaurant.nameValue}}<br>
-                            <b> Sprache:</b>{{tableRestaurant.spracheValue}}<br>
-                            <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue}}<br>
-                            <b> Preis Typ:</b>{{tableRestaurant.preistypValue}}<br>
-                            <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue}}<br>
-                            <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue}}<br>
-                            <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
-                            <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
-                            <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableRestaurant.trace}}
-
-                          </p>
-                          <div *ngIf="tableRestaurant.nameValue2">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableRestaurant.nameValue2}}<br>
-                              <b> Sprache:</b>{{tableRestaurant.spracheValue2}}<br>
-                              <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue2}}<br>
-                              <b> Preis Typ:</b>{{tableRestaurant.preistypValue2}}<br>
-                              <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue2}}<br>
-                              <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue2}}<br>
-                              <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue2}}<br>
-                              <b> RB/SOU:</b>{{tableRestaurant.rbsouValue2}}<br>
-                              <b> Notiz2:</b>{{tableRestaurant.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace2}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableRestaurant.nameValue3">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableRestaurant.nameValue3}}<br>
-                              <b> Sprache:</b>{{tableRestaurant.spracheValue3}}<br>
-                              <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue3}}<br>
-                              <b> Preis Typ:</b>{{tableRestaurant.preistypValue3}}<br>
-                              <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue3}}<br>
-                              <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue3}}<br>
-                              <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue3}}<br>
-                              <b> RB/SOU:</b>{{tableRestaurant.rbsouValue3}}<br>
-                              <b> Notiz2:</b>{{tableRestaurant.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableRestaurant.trace3}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableRestaurant.newTraceText">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee}} <br> <b> Name: </b>{{tableRestaurant.newTraceName}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableRestaurant.newTraceText1">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText1}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee1}} <br> <b> Name: </b>{{tableRestaurant.newTraceName1}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate1}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableRestaurant.newTraceText2">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText2}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee2}} <br> <b> Name: </b>{{tableRestaurant.newTraceName2}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate2}}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="tableRestaurant.placeholder === 'true'">
-                        <p [dragula]='"evented-bag"' id="Restaurant" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}}</p>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          <div *ngIf="showRestaurantBool">
+            <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
+              <div class="t{{tableRestaurant.number}} table-item" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}">
+                <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
+                  <p>{{tableRestaurant.number}}</p>
                 </div>
               </div>
-
-
-              <div *ngIf="showWintergartenBool">
-                <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
-                  <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
-                    <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-                    <h4><b> Tisch: {{tableWintergarten.number}}</b> </h4><br>
-                    <div class='cards-container' id='containerWintergarten' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
-                      <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
-                        <div *ngIf="tableWintergarten.isBesetzt === 'true'">
-                          <p style="background-color: #FFFFFF">
-                            <b> Name:</b>{{tableWintergarten.nameValue}}<br>
-                            <b> Sprache:</b>{{tableWintergarten.spracheValue}}<br>
-                            <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue}}<br>
-                            <b> Preis Typ:</b>{{tableWintergarten.preistypValue}}<br>
-                            <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue}}<br>
-                            <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue}}<br>
-                            <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
-                            <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
-                            <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}<br>
-                            <b> Trace:</b>{{tableWintergarten.trace}}
-                          </p>
-                          <div *ngIf="tableWintergarten.nameValue2">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableWintergarten.nameValue2}}<br>
-                              <b> Sprache:</b>{{tableWintergarten.spracheValue2}}<br>
-                              <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue2}}<br>
-                              <b> Preis Typ:</b>{{tableWintergarten.preistypValue2}}<br>
-                              <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue2}}<br>
-                              <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue2}}<br>
-                              <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue2}}<br>
-                              <b> RB/SOU:</b>{{tableWintergarten.rbsouValue2}}<br>
-                              <b> Notiz2:</b>{{tableWintergarten.notiz2Value2}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace2}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableWintergarten.nameValue3">
-                            <p style="background-color: #FFFFFF">
-                              <b> Name:</b>{{tableWintergarten.nameValue3}}<br>
-                              <b> Sprache:</b>{{tableWintergarten.spracheValue3}}<br>
-                              <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue3}}<br>
-                              <b> Preis Typ:</b>{{tableWintergarten.preistypValue3}}<br>
-                              <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue3}}<br>
-                              <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue3}}<br>
-                              <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue3}}<br>
-                              <b> RB/SOU:</b>{{tableWintergarten.rbsouValue3}}<br>
-                              <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
-                              <b> Trace:</b>{{tableWintergarten.trace3}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableWintergarten.newTraceText">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee}} <br> <b> Name: </b>{{tableWintergarten.newTraceName}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableWintergarten.newTraceText1">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText1}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee1}} <br> <b> Name: </b>{{tableWintergarten.newTraceName1}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate1}}
-                            </p>
-                          </div>
-                          <div *ngIf="tableWintergarten.newTraceText2">
-                            <p style="background-color: #FFFFFF; border: solid 3px red">
-                              <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText2}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee2}} <br> <b> Name: </b>{{tableWintergarten.newTraceName2}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate2}}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="tableWintergarten.placeholder === 'true'">
-                        <p [dragula]='"evented-bag"' id="Wintergarten" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableWintergarten.number}} {{tableWintergarten.department}}</p>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          <div *ngIf="showWintergartenBool">
+            <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
+              <div class="t{{tableWintergarten.number}} table-item" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}">
+                <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
+                  <p>{{tableWintergarten.number}}</p>
                 </div>
               </div>
             </div>
@@ -359,9 +114,8 @@
         </div>
       </div>
     </div>
-
-    <div class="col-xs-12 col-lg-3 upload-col">
-      <div class="csv"  style=" width: 100%; height: 150px; padding: 10px 20px 50px 20px"><h3>CSV-Datei hochladen</h3>
+    <div class="col-xs-12 col-lg-4 upload-col">
+      <div class="csv"  style=" width: 100%; height: 100px;"><h3>CSV-Datei hochladen</h3>
         <div class="line"></div>
         <form class="SendMessage" (submit)="sendMessage($event)">
           <input type="file" style="float: left; margin-top: 10px; color: #0a7a74" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
@@ -430,55 +184,301 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-8 col-lg-7 table-col">
-      <div class="row1">
-        <div class="col-md-3 col-xs-3" (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
-          <h5 [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</h5>
-        </div>
-        <div class="col-md-3 col-xs-3" (click)="showPanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
-          <h5 [ngStyle]="{'color': '#' + fontColor2}">Panorama</h5>
-        </div>
-        <div class="col-md-3 col-xs-3"  (click)="showRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
-          <h5 [ngStyle]="{'color': '#' + fontColor3}">Restaurant</h5>
-        </div>
-        <div class="col-md-3 col-xs-3"  (click)="showWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
-          <h5 [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</h5>
-        </div>
-      </div>
-      <div id="printSectionId2" class="col-xs-12 printTwo">
-        <div class="row" style="border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;" >
-          <div *ngIf="showSonnbergZirbnBool">
-            <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
-              <div class="t{{tableSonnbergZirbn.number}} table-item" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}">
+    <div class="col-xs-12 col-sm-4 col-lg-4 table-col">
+      <h3>Tisch Übersicht</h3>
+      <div id="printSectionId1" class="inner-table" style="padding: 0px 0px 0px 0px;">
+        <div class="row3">
+          <div class='wrapper' id="wrapper">
+            <div *ngIf="showSonnbergZirbnBool">
+              <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
                 <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
-                  <p>{{tableSonnbergZirbn.number}}</p>
+                  <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, j)">{{tableSonnbergZirbn.isBesetzt === 'true' ? 'FREI MACHEN' : '' }}</button>
+                  <h4><b> Tisch: {{tableSonnbergZirbn.number}}</b> </h4><br>
+                  <div class='cards-container' id='containerSonnbergZirbn'  [ngStyle]="{'background-color': + tableSonnbergZirbn.bgColor}">
+                    <div class="table" [ngStyle]="{'background-color': '#' + tableSonnbergZirbn.bgColor}">
+                      <div *ngIf="tableSonnbergZirbn.isBesetzt === 'true'">
+                        <p style="background-color: #FFFFFF">
+                          <b> Name:</b>{{tableSonnbergZirbn.nameValue}}<br>
+                          <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue}}<br>
+                          <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue}}<br>
+                          <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue}}<br>
+                          <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue}}<br>
+                          <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue}}<br>
+                          <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br>
+                          <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue}}<br>
+                          <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value}}<br>
+                          <b> Trace:</b>{{tableSonnbergZirbn.trace}}<br>
+                        </p>
+                        <div *ngIf="tableSonnbergZirbn.nameValue2">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableSonnbergZirbn.nameValue2}}<br>
+                            <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue2}}<br>
+                            <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue2}}<br>
+                            <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue2}}<br>
+                            <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue2}}<br>
+                            <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue2}}<br>
+                            <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue2}}<br>
+                            <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue2}}<br>
+                            <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value2}}<br>
+                            <b> Trace:</b>{{tableSonnbergZirbn.trace2}}<br>
+                          </p>
+                        </div>
+                        <div *ngIf="tableSonnbergZirbn.nameValue3">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableSonnbergZirbn.nameValue3}}<br>
+                            <b> Sprache:</b>{{tableSonnbergZirbn.spracheValue3}}<br>
+                            <b> Zimmernummer:</b>{{tableSonnbergZirbn.zimmernummerValue3}}<br>
+                            <b> Preis Typ:</b>{{tableSonnbergZirbn.preistypValue3}}<br>
+                            <b> Anreise Datum:</b>{{tableSonnbergZirbn.anreiseValue3}}<br>
+                            <b> Abreise Datum:</b>{{tableSonnbergZirbn.abreiseValue3}}<br>
+                            <b> Personenanzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue3}}<br>
+                            <b> RB/SOU:</b>{{tableSonnbergZirbn.rbsouValue3}}<br>
+                            <b> Notiz2:</b>{{tableSonnbergZirbn.notiz2Value3}}<br>
+                            <b> Trace:</b>{{tableSonnbergZirbn.trace3}}<br>
+                          </p>
+                        </div>
+                        <div *ngIf="tableSonnbergZirbn.newTraceText">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableSonnbergZirbn.newTraceText1">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText1}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee1}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName1}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate1}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableSonnbergZirbn.newTraceText2">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableSonnbergZirbn.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableSonnbergZirbn.newTraceText2}} <br> <b> Tischnummer: </b>{{tableSonnbergZirbn.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableSonnbergZirbn.newTraceEmployee2}} <br> <b> Name: </b>{{tableSonnbergZirbn.newTraceName2}} <br> <b> Datum: </b>{{tableSonnbergZirbn.newTraceDate2}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="tableSonnbergZirbn.placeholder === 'true'">
+                      <p [dragula]='"evented-bag"' id="Sonnberg-Zirbn" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableSonnbergZirbn.number}} {{tableSonnbergZirbn.department}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div *ngIf="showPanoramaBool">
-            <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
-              <div class="t{{tablePanorama.number}} table-item" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor,  'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}">
+
+            <div *ngIf="showPanoramaBool">
+              <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
                 <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-                  <p>{{tablePanorama.number}}</p>
+                  <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                  <h4><b> Tisch: {{tablePanorama.number}}</b> </h4><br>
+                  <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
+                    <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
+                      <div *ngIf="tablePanorama.isBesetzt === 'true'">
+                        <p style="background-color: #FFFFFF">
+                          <b> Name:</b>{{tablePanorama.nameValue}}<br>
+                          <b> Sprache:</b>{{tablePanorama.spracheValue}}<br>
+                          <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue}}<br>
+                          <b> Preis Typ:</b>{{tablePanorama.preistypValue}}<br>
+                          <b> Anreise Datum:</b>{{tablePanorama.anreiseValue}}<br>
+                          <b> Abreise Datum:</b>{{tablePanorama.abreiseValue}}<br>
+                          <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue}}<br>
+                          <b> RB/SOU:</b>{{tablePanorama.rbsouValue}}<br>
+                          <b> Notiz2:</b>{{tablePanorama.notiz2Value}}<br>
+                          <b> Trace:</b>{{tablePanorama.trace}}<br>
+                        </p>
+                        <div *ngIf="tablePanorama.nameValue2">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tablePanorama.nameValue2}}<br>
+                            <b> Sprache:</b>{{tablePanorama.spracheValue2}}<br>
+                            <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue2}}<br>
+                            <b> Preis Typ:</b>{{tablePanorama.preistypValue2}}<br>
+                            <b> Anreise Datum:</b>{{tablePanorama.anreiseValue2}}<br>
+                            <b> Abreise Datum:</b>{{tablePanorama.abreiseValue2}}<br>
+                            <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue2}}<br>
+                            <b> RB/SOU:</b>{{tablePanorama.rbsouValue2}}<br>
+                            <b> Notiz2:</b>{{tablePanorama.notiz2Value2}}<br>
+                            <b> Trace:</b>{{tablePanorama.trace2}}<br>
+                          </p>
+                        </div>
+                        <div *ngIf="tablePanorama.nameValue3">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tablePanorama.nameValue3}}<br>
+                            <b> Sprache:</b>{{tablePanorama.spracheValue3}}<br>
+                            <b> Zimmernummer:</b>{{tablePanorama.zimmernummerValue3}}<br>
+                            <b> Preis Typ:</b>{{tablePanorama.preistypValue3}}<br>
+                            <b> Anreise Datum:</b>{{tablePanorama.anreiseValue3}}<br>
+                            <b> Abreise Datum:</b>{{tablePanorama.abreiseValue3}}<br>
+                            <b> Personenanzahl:</b>{{tablePanorama.personenAnzahlValue3}}<br>
+                            <b> RB/SOU:</b>{{tablePanorama.rbsouValue3}}<br>
+                            <b> Notiz2:</b>{{tablePanorama.notiz2Value3}}<br>
+                            <b> Trace:</b>{{tablePanorama.trace3}}<br>
+                          </p>
+                        </div>
+                        <div *ngIf="tablePanorama.newTraceText">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee}} <br> <b> Name: </b>{{tablePanorama.newTraceName}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate}}
+                          </p>
+                        </div>
+                        <div *ngIf="tablePanorama.newTraceText1">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText1}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee1}} <br> <b> Name: </b>{{tablePanorama.newTraceName1}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate1}}
+                          </p>
+                        </div>
+                        <div *ngIf="tablePanorama.newTraceText2">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText2}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee2}} <br> <b> Name: </b>{{tablePanorama.newTraceName2}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate2}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="tablePanorama.placeholder === 'true'">
+                      <p [dragula]='"evented-bag"' id="Panorama" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!  {{tablePanorama.number}} {{tablePanorama.department}} </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div *ngIf="showRestaurantBool">
-            <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
-              <div class="t{{tableRestaurant.number}} table-item" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}">
+
+            <div *ngIf="showRestaurantBool">
+              <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
                 <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
-                  <p>{{tableRestaurant.number}}</p>
+                  <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                  <h4><b> Tisch: {{tableRestaurant.number}}</b> </h4><br>
+                  <div class='cards-container' id='containerRestaurant' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
+                    <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
+                      <div *ngIf="tableRestaurant.isBesetzt === 'true'">
+                        <p style="background-color: #FFFFFF">
+                          <b> Name:</b>{{tableRestaurant.nameValue}}<br>
+                          <b> Sprache:</b>{{tableRestaurant.spracheValue}}<br>
+                          <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue}}<br>
+                          <b> Preis Typ:</b>{{tableRestaurant.preistypValue}}<br>
+                          <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue}}<br>
+                          <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue}}<br>
+                          <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br>
+                          <b> RB/SOU:</b>{{tableRestaurant.rbsouValue}}<br>
+                          <b> Notiz2:</b>{{tableRestaurant.notiz2Value}}<br>
+                          <b> Trace:</b>{{tableRestaurant.trace}}
+
+                        </p>
+                        <div *ngIf="tableRestaurant.nameValue2">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableRestaurant.nameValue2}}<br>
+                            <b> Sprache:</b>{{tableRestaurant.spracheValue2}}<br>
+                            <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue2}}<br>
+                            <b> Preis Typ:</b>{{tableRestaurant.preistypValue2}}<br>
+                            <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue2}}<br>
+                            <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue2}}<br>
+                            <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue2}}<br>
+                            <b> RB/SOU:</b>{{tableRestaurant.rbsouValue2}}<br>
+                            <b> Notiz2:</b>{{tableRestaurant.notiz2Value2}}<br>
+                            <b> Trace:</b>{{tableRestaurant.trace2}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableRestaurant.nameValue3">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableRestaurant.nameValue3}}<br>
+                            <b> Sprache:</b>{{tableRestaurant.spracheValue3}}<br>
+                            <b> Zimmernummer:</b>{{tableRestaurant.zimmernummerValue3}}<br>
+                            <b> Preis Typ:</b>{{tableRestaurant.preistypValue3}}<br>
+                            <b> Anreise Datum:</b>{{tableRestaurant.anreiseValue3}}<br>
+                            <b> Abreise Datum:</b>{{tableRestaurant.abreiseValue3}}<br>
+                            <b> Personenanzahl:</b>{{tableRestaurant.personenAnzahlValue3}}<br>
+                            <b> RB/SOU:</b>{{tableRestaurant.rbsouValue3}}<br>
+                            <b> Notiz2:</b>{{tableRestaurant.notiz2Value3}}<br>
+                            <b> Trace:</b>{{tableRestaurant.trace3}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableRestaurant.newTraceText">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee}} <br> <b> Name: </b>{{tableRestaurant.newTraceName}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableRestaurant.newTraceText1">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText1}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee1}} <br> <b> Name: </b>{{tableRestaurant.newTraceName1}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate1}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableRestaurant.newTraceText2">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableRestaurant.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableRestaurant.newTraceText2}} <br> <b> Tischnummer: </b>{{tableRestaurant.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableRestaurant.newTraceEmployee2}} <br> <b> Name: </b>{{tableRestaurant.newTraceName2}} <br> <b> Datum: </b>{{tableRestaurant.newTraceDate2}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="tableRestaurant.placeholder === 'true'">
+                      <p [dragula]='"evented-bag"' id="Restaurant" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div *ngIf="showWintergartenBool">
-            <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
-              <div class="t{{tableWintergarten.number}} table-item" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}">
+
+
+            <div *ngIf="showWintergartenBool">
+              <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
                 <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
-                  <p>{{tableWintergarten.number}}</p>
+                  <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableWintergarten, j)">{{tableWintergarten.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+                  <h4><b> Tisch: {{tableWintergarten.number}}</b> </h4><br>
+                  <div class='cards-container' id='containerWintergarten' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
+                    <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
+                      <div *ngIf="tableWintergarten.isBesetzt === 'true'">
+                        <p style="background-color: #FFFFFF">
+                          <b> Name:</b>{{tableWintergarten.nameValue}}<br>
+                          <b> Sprache:</b>{{tableWintergarten.spracheValue}}<br>
+                          <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue}}<br>
+                          <b> Preis Typ:</b>{{tableWintergarten.preistypValue}}<br>
+                          <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue}}<br>
+                          <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue}}<br>
+                          <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br>
+                          <b> RB/SOU:</b>{{tableWintergarten.rbsouValue}}<br>
+                          <b> Notiz2:</b>{{tableWintergarten.notiz2Value}}<br>
+                          <b> Trace:</b>{{tableWintergarten.trace}}
+                        </p>
+                        <div *ngIf="tableWintergarten.nameValue2">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableWintergarten.nameValue2}}<br>
+                            <b> Sprache:</b>{{tableWintergarten.spracheValue2}}<br>
+                            <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue2}}<br>
+                            <b> Preis Typ:</b>{{tableWintergarten.preistypValue2}}<br>
+                            <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue2}}<br>
+                            <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue2}}<br>
+                            <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue2}}<br>
+                            <b> RB/SOU:</b>{{tableWintergarten.rbsouValue2}}<br>
+                            <b> Notiz2:</b>{{tableWintergarten.notiz2Value2}}<br>
+                            <b> Trace:</b>{{tableWintergarten.trace2}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableWintergarten.nameValue3">
+                          <p style="background-color: #FFFFFF">
+                            <b> Name:</b>{{tableWintergarten.nameValue3}}<br>
+                            <b> Sprache:</b>{{tableWintergarten.spracheValue3}}<br>
+                            <b> Zimmernummer:</b>{{tableWintergarten.zimmernummerValue3}}<br>
+                            <b> Preis Typ:</b>{{tableWintergarten.preistypValue3}}<br>
+                            <b> Anreise Datum:</b>{{tableWintergarten.anreiseValue3}}<br>
+                            <b> Abreise Datum:</b>{{tableWintergarten.abreiseValue3}}<br>
+                            <b> Personenanzahl:</b>{{tableWintergarten.personenAnzahlValue3}}<br>
+                            <b> RB/SOU:</b>{{tableWintergarten.rbsouValue3}}<br>
+                            <b> Notiz2:</b>{{tableWintergarten.notiz2Value3}}<br>
+                            <b> Trace:</b>{{tableWintergarten.trace3}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableWintergarten.newTraceText">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee}} <br> <b> Name: </b>{{tableWintergarten.newTraceName}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableWintergarten.newTraceText1">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText1}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee1}} <br> <b> Name: </b>{{tableWintergarten.newTraceName1}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate1}}
+                          </p>
+                        </div>
+                        <div *ngIf="tableWintergarten.newTraceText2">
+                          <p style="background-color: #FFFFFF; border: solid 3px red">
+                            <b> Zimmernummer: </b>{{tableWintergarten.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tableWintergarten.newTraceText2}} <br> <b> Tischnummer: </b>{{tableWintergarten.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tableWintergarten.newTraceEmployee2}} <br> <b> Name: </b>{{tableWintergarten.newTraceName2}} <br> <b> Datum: </b>{{tableWintergarten.newTraceDate2}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="tableWintergarten.placeholder === 'true'">
+                      <p [dragula]='"evented-bag"' id="Wintergarten" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableWintergarten.number}} {{tableWintergarten.department}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -486,8 +486,8 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 </body>
 
 </html>

@@ -171,27 +171,6 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     });
 });
 
-    //console.log('after calling readFile');
-
-
-
-
-
-/*
-setTimeout(function() {
-
-    fs.readFileSync("https://fcfa59e8.ngrok.io/uploads/0.591530697666085*TracesListe.csv", 'utf-8');
-
-    var text = fs.readFileSync("https://fcfa59e8.ngrok.io/uploads/0.591530697666085*TracesListe.csv",'utf8');
-    console.log(text);
-
-}, 1500);
-
-
-
-*/
-
-
 /*
  * Start server
  * Webhooks must be available via SSL with a certificate signed by a valid
