@@ -17,20 +17,38 @@ html, body {
   top: 100px;
 }
 
+@media (min-width: 1200px) {
+  .printTwo {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #0a7a74;
+    min-height: calc(100vh - 400px);
+  }
+}
+
+@media (min-width: 800px) {
+  .printTwo {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #0a7a74;
+    min-height: 570px;
+  }
+}
+
 .printTwo {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: #0a7a74;
-}
-
-.inner-table {
-  min-height: 370px;
+  min-height: 570px;
 }
 
 
-.inner-table {
-  height: calc(100vh - 100px);
+.row .inner-table {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 100px);
 }
+
 
 .row4 {
   margin-top: 80px;
@@ -44,6 +62,7 @@ html, body {
 
 .row .table-col {
   min-height: 100vh;
+  max-height: 100vh;
   background-color: #f3efe4;
   padding: 20px 10px 20px 10px;
   border-left: 5px solid #0a7a74;
@@ -54,7 +73,7 @@ html, body {
 
 @media (min-width: 800px) {
   .row .table-col {
-    min-height: calc(100vh + 380px);
+    min-height: calc(100vh +  375px);
     background-color: #f3efe4;
     padding: 20px 10px 20px 10px;
     border-left: 5px solid #0a7a74;
@@ -65,8 +84,8 @@ html, body {
 }
 
 @media (min-width: 800px) {
-  .inner-table {
-    min-height: calc(100vh + 380px);
+  .row .inner-table {
+    max-height: calc(100vh + 300px);
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -74,7 +93,8 @@ html, body {
 
 @media (min-width: 1200px) {
   .row .table-col {
-    min-height: calc(100vh + 250px);
+    min-height: 100vh;
+    max-height: calc(100vh - 100px);
     background-color: #f3efe4;
     padding: 20px 10px 20px 10px;
     border-left: 5px solid #0a7a74;
@@ -85,13 +105,12 @@ html, body {
 }
 
 @media (min-width: 1200px) {
-  .inner-table {
-    min-height: calc(100vh + 250px);
+  .row .inner-table {
+    max-height: calc(100vh - 100px);
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-
 
 .row .print-col {
   padding: 0;
@@ -111,7 +130,8 @@ html, body {
     border-right: 5px solid #0a7a74;
     border-bottom: 20px solid #0a7a74;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
   }
 }
 @media (min-width: 1200px) {
@@ -122,19 +142,28 @@ html, body {
     border-right: 5px solid #0a7a74;
     border-bottom: 20px solid #0a7a74;
     box-sizing: border-box;
-    min-height: calc(100vh + 337px);
+    min-height: 100vh;
+    max-height: 100vh;
+
   }
 }
 
-  .row .upload-col {
-    background-color: #f3efe4;
-    padding: 20px 10px 20px 10px;
-    border-left: 5px solid #0a7a74;
-    border-right: 5px solid #0a7a74;
-    border-bottom: 20px solid #0a7a74;
-    box-sizing: border-box;
-    height: 100vh;
-  }
+.row .upload-col {
+  background-color: #f3efe4;
+  padding: 20px 10px 20px 10px;
+  border-left: 5px solid #0a7a74;
+  border-right: 5px solid #0a7a74;
+  border-bottom: 20px solid #0a7a74;
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.row1 {
+  height: calc((100vh - 250px) / 3);
+  overflow: auto;
+}
+
 
 .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .anleitung {
   display: none;
@@ -146,10 +175,6 @@ html, body {
   }
 }
 
-.row1 {
-  height: calc((100vh + 100px) / 3);
-  overflow: auto;
-}
 
 .cards-container {
   margin: 10px 0px 10px 0px;
@@ -265,15 +290,7 @@ html, body {
   height: 100%;
 }
 
-.row .container-fluid .table-col .row1 {
-  height: auto;
-}
 
-.printTwo {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  min-height: 580px;
-}
 
 .row .container-fluid .print-col .printTwo .table-item {
   position: absolute;
