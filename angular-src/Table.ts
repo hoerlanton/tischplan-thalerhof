@@ -7,6 +7,7 @@ export class Table {
   placeholder: boolean;
   department: string;
   border: string;
+  arrayIndex: string;
   width: string;
   height: string;
   borderRadius: string;

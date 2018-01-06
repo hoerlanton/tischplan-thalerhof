@@ -252,6 +252,10 @@ export class TischplanComponent implements OnInit {
     let departementSubstring = department.substring(1, department.length - 1);
     console.log("departementSubstring" + departementSubstring);
     let tableNumber = args[1].innerText;
+    let numbers = tableNumber.match(/\d+/g);
+    console.log("numbers: " + numbers);
+    let arrayIndex = numbers[1];
+    console.log("arrayIndex: " + arrayIndex);
     let tableNumberSubstring = "";
     console.log("tableNumber" + tableNumber);
     tableNumberSubstring = tableNumber.toString().match(/\d+/);
@@ -270,16 +274,16 @@ export class TischplanComponent implements OnInit {
           return;
         } else {
           if (response.tables[0].department === "Sonnberg-Zirbn") {
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Panorama") {
-            this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesPanorama[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Restaurant") {
-            this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesRestaurant[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Wintergarten") {
-            this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesWintergarten[arrayIndex] = response.tables[0];
           }
         }
         // console.log(this.tablesSonnbergZirbn[arrayIndex]);
@@ -297,16 +301,16 @@ export class TischplanComponent implements OnInit {
         } else {
 
           if (response.tables[0].department === "Sonnberg-Zirbn") {
-            this.tablesSonnbergZirbn[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Panorama") {
-            this.tablesPanorama[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesPanorama[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Restaurant") {
-            this.tablesRestaurant[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesRestaurant[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "Wintergarten") {
-            this.tablesWintergarten[response.tables[0].arrayIndex] = response.tables[0];
+            this.tablesWintergarten[arrayIndex] = response.tables[0];
           }
         }
 
@@ -556,7 +560,7 @@ export class TischplanComponent implements OnInit {
       date: this.dateGenerated,
       name: this.nameTraceInput,
       employee: this.employee
-    }
+    };
     if (newInformation.text === undefined) {
       this._flashMessagesService.show('Die Nachricht ist leer ... ',
         { cssClass: 'alert-danger', timeout: 20000 });
@@ -580,13 +584,29 @@ export class TischplanComponent implements OnInit {
             return;
           } else {
             if (Information.tables[0].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn[Information.tables[0].arrayIndex] = Information.tables[0];
+              for (let i = 0; i < this.tablesSonnbergZirbn.length; i++) {
+                if (this.tablesSonnbergZirbn[i].number === Information.tables[0].number) {
+                  this.tablesSonnbergZirbn[i] = Information.tables[0];
+                }
+              }
             } else if (Information.tables[0].department === "Panorama") {
-              this.tablesPanorama[Information.tables[0].arrayIndex] = Information.tables[0];
+              for (let i = 0; i < this.tablesPanorama.length; i++) {
+                if (this.tablesPanorama[i].number === Information.tables[0].number) {
+                  this.tablesPanorama[i] = Information.tables[0];
+                }
+              }
             } else if (Information.tables[0].department === "Restaurant") {
-              this.tablesRestaurant[Information.tables[0].arrayIndex] = Information.tables[0];
+              for (let i = 0; i < this.tablesRestaurant.length; i++) {
+                if (this.tablesRestaurant[i].number === Information.tables[0].number) {
+                  this.tablesRestaurant[i] = Information.tables[0];
+                }
+              }
             } else if (Information.tables[0].department === "Wintergarten") {
-              this.tablesWintergarten[Information.tables[0].arrayIndex] = Information.tables[0];
+              for (let i = 0; i < this.tablesWintergarten.length; i++) {
+                if (this.tablesWintergarten[i].number === Information.tables[0].number) {
+                  this.tablesWintergarten[i] = Information.tables[0];
+                }
+              }
             }
           }
         });
