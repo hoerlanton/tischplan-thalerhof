@@ -290,8 +290,16 @@ html, body {
   height: 100%;
 }
 
-
-
 .row .container-fluid .print-col .printTwo .table-item {
   position: absolute;
+}
+
+.btn-send {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .btn-send {
+    display: block;
+  }
 }

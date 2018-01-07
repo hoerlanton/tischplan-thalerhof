@@ -371,7 +371,41 @@ module.exports = {
                     console.log("addTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '523' && topValue === '110' && leftValue === '260' && width === '80') {
+        } else if (tableNumber === '523' && topValue === '110' && leftValue === '260' && width === '80' && height === '40') {
+            db.tables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "40",
+                        "tables.$.height": "120",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.tables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "525",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                    console.log(tables);
+                });
+        } else if (tableNumber === '523' && topValue === '110' && leftValue === '260' && height === '120' && width === '40') {
             db.tables.update(
                 {
                     department: departmentValue,
@@ -382,8 +416,8 @@ module.exports = {
                         "tables.$.topValue": "180",
                         "tables.$.leftValue": "260",
                         "tables.$.width": "40",
-                        "tables.$.transformValue": "rotate(45deg)",
-
+                        "tables.$.height": "40",
+                        "tables.$.transformValue": "rotate(45deg)"
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -391,6 +425,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
+
             db.tables.update(
                 {
                     department: departmentValue,
@@ -403,6 +438,38 @@ module.exports = {
                                 "number": "524",
                                 "topValue": "115",
                                 "leftValue": "300",
+                                "bgColor": "#ffffff",
+                                "isBesetzt": "false",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "40",
+                                "height": "40",
+                                "transformValue": "rotate(45deg)"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+            db.tables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [  {
+                                "arrayIndex": "24",
+                                "department": "Wintergarten",
+                                "number": "525",
+                                "topValue": "180",
+                                "leftValue": "330",
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
