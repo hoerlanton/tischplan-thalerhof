@@ -105,7 +105,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "30",
                                 "height": "60"
                             }],
@@ -135,7 +135,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "30",
                                 "height": "60"
                             }],
@@ -218,7 +218,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "30",
                                 "height": "60"
                             }],

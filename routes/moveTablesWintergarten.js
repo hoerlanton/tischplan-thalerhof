@@ -67,7 +67,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "40",
                                 "height": "40"
                             }],
@@ -149,7 +149,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "40",
                                 "height": "40",
                                 "transformValue": "rotate(45deg)"
@@ -233,7 +233,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "40",
                                 "height": "40",
                                 "transformValue": "rotate(45deg)"
@@ -318,7 +318,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "40",
                                 "height": "40",
                                 "transformValue": "rotate(45deg)"
@@ -406,7 +406,7 @@ module.exports = {
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
-                                "border": "solid 3px f3efe4",
+                                "border": "solid 3px #f3efe4",
                                 "width": "40",
                                 "height": "40",
                                 "transformValue": "rotate(45deg)"
