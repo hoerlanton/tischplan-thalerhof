@@ -525,47 +525,51 @@ router.post('/addInformationToTable', function(req, res, next) {
     let tableValue = "";
     let trace = "";
 
-    for (let s = 0; s < splitted.length; s++){
-        informationElements2.push(splitted[s].split(":"));
+    for (let s = 0; s < splitted.length; s++) {
+        informationElements2.push(splitted[s].split(/:(.+)/)[1]);
+        if (informationElements2[s] === undefined) {
+            informationElements2[s] = splitted[s]
+        }
     }
 
+    console.log("informationElements2:");
     console.log(informationElements2);
     if(informationElements2.length >= 10) {
         console.log("Im Haus Liste gedropped");
-        nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
-        spracheValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
-        zimmernummerValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
-        preistypValue = informationElements2[3][1].substring(1, informationElements2[3][1].length);
-        anreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
-        abreiseValue = informationElements2[5][1].substring(1, informationElements2[5][1].length);
-        personenAnzahlValue = informationElements2[6][1].substring(1, informationElements2[6][1].length);
-        rbsouValue = informationElements2[7][1].substring(1, informationElements2[7][1].length);
-        notiz2Value = informationElements2[8][1].substring(1, informationElements2[8][1].length);
-        departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[9][0].toString().match(/\d+/);
+        nameValue = informationElements2[0].substring(1, informationElements2[0].length);
+        spracheValue = informationElements2[1].substring(1, informationElements2[1].length);
+        zimmernummerValue = informationElements2[2].substring(1, informationElements2[2].length);
+        preistypValue = informationElements2[3].substring(1, informationElements2[3].length);
+        anreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
+        abreiseValue = informationElements2[5].substring(1, informationElements2[5].length);
+        personenAnzahlValue = informationElements2[6].substring(1, informationElements2[6].length);
+        rbsouValue = informationElements2[7].substring(1, informationElements2[7].length);
+        notiz2Value = informationElements2[8].substring(1, informationElements2[8].length);
+        departmentValue = informationElements2[9].substring(1, informationElements2[9].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[9].toString().match(/\d+/);
 
     } else if (informationElements2.length === 9) {
         console.log("Anreise Liste gedropped");
-        nameValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
-        zimmernummerValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
-        preistypValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
-        anreiseValue = informationElements2[3][2].substring(1, informationElements2[3][2].length);
-        abreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
-        personenAnzahlValue = informationElements2[5][1].substring(1, informationElements2[5][1].length);
-        rbsouValue = informationElements2[6][1].substring(1, informationElements2[6][1].length);
-        notiz2Value = informationElements2[7][1].substring(1, informationElements2[7][1].length);
-        departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[8][0].toString().match(/\d+/);
+        nameValue = informationElements2[0].substring(1, informationElements2[0].length);
+        zimmernummerValue = informationElements2[1].substring(1, informationElements2[1].length);
+        preistypValue = informationElements2[2].substring(1, informationElements2[2].length);
+        anreiseValue = informationElements2[3].substring(1, informationElements2[3].length);
+        abreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
+        personenAnzahlValue = informationElements2[5].substring(1, informationElements2[5].length);
+        rbsouValue = informationElements2[6].substring(1, informationElements2[6].length);
+        notiz2Value = informationElements2[7].substring(1, informationElements2[7].length);
+        departmentValue = informationElements2[8].substring(1, informationElements2[8].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[8].toString().match(/\d+/);
     } else {
         console.log("Trace Liste gedropped");
-        zimmernummerValue = informationElements2[0][1].substring(1, informationElements2[0][1].length);
-        nameValue = informationElements2[1][1].substring(1, informationElements2[1][1].length);
-        preistypValue = informationElements2[2][1].substring(1, informationElements2[2][1].length);
-        anreiseValue = informationElements2[3][1].substring(1, informationElements2[3][1].length);
-        abreiseValue = informationElements2[4][1].substring(1, informationElements2[4][1].length);
-        trace = informationElements2[5][1].substring(1, informationElements2[5][1].length);
-        departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
+        zimmernummerValue = informationElements2[0].substring(1, informationElements2[0].length);
+        nameValue = informationElements2[1].substring(1, informationElements2[1].length);
+        preistypValue = informationElements2[2].substring(1, informationElements2[2].length);
+        anreiseValue = informationElements2[3].substring(1, informationElements2[3].length);
+        abreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
+        trace = informationElements2[5].substring(1, informationElements2[5].length);
+        departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+        tableValue = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
     }
 
 

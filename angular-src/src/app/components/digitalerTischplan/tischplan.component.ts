@@ -316,29 +316,6 @@ export class TischplanComponent implements OnInit {
 
         //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
       });
-    /*
-    this.tischplanService.removePlaceholder(dataString)
-      .subscribe(response => {
-        //let arrayIndex = response[1];
-        console.log("Response placeholder:" + JSON.stringify(response));
-        if(response.tables[0].department === "Sonnberg-Zirbn") {
-          this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-        }
-        else if(response.tables[0].department === "Panorama") {
-          this.tablesPanorama[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-        }
-        else if(response.tables[0].department === "Restaurant") {
-          this.tablesRestaurant[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-        }
-        else if(response.tables[0].department === "Wintergarten") {
-          this.tablesWintergarten[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-        }
-
-
-
-        //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
-      });
-     */
   }
 
   private onOver(args) {
