@@ -226,18 +226,47 @@ export class TischplanComponent implements OnInit {
     for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
       if (tracesListeElemente[0].data[o] !== undefined) {
         if (tracesListeElemente[0].data[o].length === 8) {
-          trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o+1]);
+          trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]);
+          console.log('tracesListeElemente[0].data[o + 2] : ');
+          console.log(tracesListeElemente[0].data[o + 2]);
+          if (tracesListeElemente[0].data[o + 2] !== undefined) {
+            if (tracesListeElemente[0].data[o + 2].length === 1) {
+              trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]);
+              if (tracesListeElemente[0].data[o + 3] !== undefined) {
+                if (tracesListeElemente[0].data[o + 3].length === 1) {
+                  trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]).concat(tracesListeElemente[0].data[o + 3]);
+                }
+              }
+            }
+          }
         }
       }
     }
     for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (trace[o].length === 9) {
-        this.tracesListeElemente.push(trace[o])
+      let traceTemp = [];
+      if (trace[o].length === 10) {
+        traceTemp = trace[o].splice(trace[o].length - 2, trace[o].length);
+      } else if (trace[o].length === 11) {
+        traceTemp = trace[o].splice(trace[o].length - 3, trace[o].length);
+      }
+        console.log('traceTemp' + traceTemp);
+        let traceTempJoined = traceTemp.join(" ");
+        console.log('traceTempJoined' + traceTempJoined);
+        trace[o].push(traceTempJoined);
+      }
+
+
+    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
+      if (trace[o].length > 8) {
+        this.tracesListeElemente.push(trace[o]);
       }
     }
-    console.log('263' + tracesListeElemente[0].data);
-    console.log('264 ' + this.tracesListeElemente);
+    console.log('tracesListeElemente[0].data');
+    console.log(tracesListeElemente[0].data);
+    console.log('this.tracesListeElemente');
+    console.log(this.tracesListeElemente);
   }
+
 
   private onDrag(args) {
     let [e, el] = args;

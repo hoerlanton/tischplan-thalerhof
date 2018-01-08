@@ -365,16 +365,43 @@ var TischplanComponent = (function () {
             if (tracesListeElemente[0].data[o] !== undefined) {
                 if (tracesListeElemente[0].data[o].length === 8) {
                     trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]);
+                    console.log('tracesListeElemente[0].data[o + 2] : ');
+                    console.log(tracesListeElemente[0].data[o + 2]);
+                    if (tracesListeElemente[0].data[o + 2] !== undefined) {
+                        if (tracesListeElemente[0].data[o + 2].length === 1) {
+                            trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]);
+                            if (tracesListeElemente[0].data[o + 3] !== undefined) {
+                                if (tracesListeElemente[0].data[o + 3].length === 1) {
+                                    trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]).concat(tracesListeElemente[0].data[o + 3]);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
         for (var o = 0; o < tracesListeElemente[0].data.length; o++) {
-            if (trace[o].length === 9) {
+            var traceTemp = [];
+            if (trace[o].length === 10) {
+                traceTemp = trace[o].splice(trace[o].length - 2, trace[o].length);
+            }
+            else if (trace[o].length === 11) {
+                traceTemp = trace[o].splice(trace[o].length - 3, trace[o].length);
+            }
+            console.log('traceTemp' + traceTemp);
+            var traceTempJoined = traceTemp.join(" ");
+            console.log('traceTempJoined' + traceTempJoined);
+            trace[o].push(traceTempJoined);
+        }
+        for (var o = 0; o < tracesListeElemente[0].data.length; o++) {
+            if (trace[o].length > 8) {
                 this.tracesListeElemente.push(trace[o]);
             }
         }
-        console.log('263' + tracesListeElemente[0].data);
-        console.log('264 ' + this.tracesListeElemente);
+        console.log('tracesListeElemente[0].data');
+        console.log(tracesListeElemente[0].data);
+        console.log('this.tracesListeElemente');
+        console.log(this.tracesListeElemente);
     };
     TischplanComponent.prototype.onDrag = function (args) {
         var e = args[0], el = args[1];
@@ -451,29 +478,6 @@ var TischplanComponent = (function () {
             }
             //console.log("bgColor:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
         });
-        /*
-        this.tischplanService.removePlaceholder(dataString)
-          .subscribe(response => {
-            //let arrayIndex = response[1];
-            console.log("Response placeholder:" + JSON.stringify(response));
-            if(response.tables[0].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-            }
-            else if(response.tables[0].department === "Panorama") {
-              this.tablesPanorama[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-            }
-            else if(response.tables[0].department === "Restaurant") {
-              this.tablesRestaurant[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-            }
-            else if(response.tables[0].department === "Wintergarten") {
-              this.tablesWintergarten[response.tables[0].arrayIndex].placeholder = response.tables[0].placeholder;
-            }
-    
-    
-    
-            //console.log("placeholder:" + JSON.stringify(this.tablesSonnbergZirbn[arrayIndex]));
-          });
-         */
     };
     TischplanComponent.prototype.onOver = function (args) {
         var e = args[0], el = args[1], container = args[2];
