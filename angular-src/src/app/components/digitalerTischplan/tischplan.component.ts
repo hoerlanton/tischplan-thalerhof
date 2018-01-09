@@ -8,6 +8,7 @@ import { ImHausListe } from '../../../../ImHausListe';
 import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { LeftValue } from '../../../../LeftValue';
+import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 
 @Component({
@@ -49,6 +50,7 @@ export class TischplanComponent implements OnInit {
   tableNumber: string;
   employee: string;
   nameTraceInput: string;
+  backgroundColor: string;
 
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
@@ -152,6 +154,8 @@ export class TischplanComponent implements OnInit {
     this.fontColor2 = "f3efe4";
     this.fontColor3 = "f3efe4";
     this.fontColor4 = "f3efe4";
+
+    this.backgroundColor = "ffffff";
 
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
@@ -349,12 +353,37 @@ export class TischplanComponent implements OnInit {
 
   private onOver(args) {
     let [e, el, container] = args;
-    // do something
+
+    console.log(e);
+    console.log(el);
+    console.log(container);
+
+    this.backgroundColor = "0a7a74";
+
+    console.log("Args = ");
+    let information = args[0].innerText;
+    let department = JSON.stringify(args[1].id);
+    console.log("information" + information);
+    console.log("departement" + department);
   }
 
   private onOut(args) {
+
     let [e, el, container] = args;
-    // do something
+
+    /*
+    console.log(e);
+    console.log(el);
+    console.log(container);
+
+    this.backgroundColor = "0a7a74";
+
+    console.log("Args = ");
+    let information = args[0].innerText;
+    let department = JSON.stringify(args[1].id);
+    console.log("information" + information);
+    console.log("departement" + department);
+  */
   }
 
   ngOnInit() {

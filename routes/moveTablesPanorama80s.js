@@ -1,11 +1,7 @@
-/**
- * Created by antonhorl on 06.01.18.
- */
-
 module.exports = {
     moveTable: function (db, tableNumber, departmentValue, topValue, leftValue, height, width) {
-
-
+        console.log('TOOOOOOOOOOOOOOOOOOOP');
+        console.log(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         if (tableNumber === '80' && topValue === '280' && leftValue === '220' && height === '30') {
             db.tables.update(
                 {
@@ -450,6 +446,8 @@ module.exports = {
                 });
 
         } else if (tableNumber === '84' && topValue === '220' && leftValue === '60' && height === '30') {
+            console.log(':::::::::::::::::::::::::_-------------WRONG.------------:::::::::::::::::::::::::');
+
             db.tables.update(
                 {
                     department: departmentValue,
@@ -483,6 +481,7 @@ module.exports = {
                     console.log(tables);
                 });
         } else if (tableNumber === '84' && topValue === '220' && leftValue === '60' && height === '60') {
+            console.log(':::::::::::::::::::::::::_-------------RIGTH.------------:::::::::::::::::::::::::');
             db.tables.update(
                 {
                     department: departmentValue,

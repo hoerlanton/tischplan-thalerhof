@@ -174,8 +174,8 @@ router.post('/moveTable', function(req, res, next) {
     let leftValueBefore = splitted[4];
     let widthValueBefore = splitted[9];
     let heightValueBefore = splitted[10];
-    console.log('HOI' + tableNumberBefore);
-    console.log('HOI 2' + departmentValueBefore);
+    console.log('tableNumberBefore: ' + tableNumberBefore);
+    console.log('departmentValueBefore: ' + departmentValueBefore);
     let splitted2 = tableNumberBefore.split(":");
     let splitted3 = departmentValueBefore.split(":");
     let splitted4 = topValueBefore.split(":");
@@ -183,22 +183,19 @@ router.post('/moveTable', function(req, res, next) {
     let splitted6 = widthValueBefore.split(":");
     let splitted7 = heightValueBefore.split(":");
 
-
     let tableNumber = splitted2[1].substring(1, splitted2[1].length - 1);
     let departmentValue = splitted3[1].substring(1, splitted3[1].length - 1);
     let topValue = splitted4[1].substring(1, splitted4[1].length - 1);
     let leftValue = splitted5[1].substring(1, splitted5[1].length - 1);
     let width = splitted6[1].substring(1, splitted6[1].length - 1);
-    let height = splitted7[1].substring(1, splitted7[1].length - 1);
+    let height = splitted7[1].substring(1, splitted7[1].length - 2);
+
     console.log('height: ' + height);
     console.log('width: ' + width);
-    //Sonnberg-Zirbn
-    //50
-
-    console.log('tableNumber' + tableNumber);
-    console.log('departmentValue' + departmentValue);
-    console.log('topValue' + topValue);
-    console.log('leftValue' + leftValue);
+    console.log('tableNumber: ' + tableNumber);
+    console.log('departmentValue: ' + departmentValue);
+    console.log('topValue: ' + topValue);
+    console.log('leftValue: ' + leftValue);
 
     moveTablesPanorama60s.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
     moveTablesPanorama70s.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
@@ -219,7 +216,7 @@ router.post('/moveTable', function(req, res, next) {
                 res.json(tables);
                 console.log('response tables ->' + JSON.stringify(tables));
             });
-    }, 100);
+    }, 400);
 });
 
 
