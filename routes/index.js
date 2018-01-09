@@ -19,7 +19,7 @@ router.use(bodyParser.json());
 //Cors middleware
 router.use(cors());
 
-//----->REST-FUL API<------//
+//----->DB API<------//
 
 //Save AnreiseListe
 router.post('/anreiseListe', function(req, res, next) {
@@ -164,9 +164,7 @@ router.post('/deleteInformationElement', function(req, res, next) {
 router.post('/moveTable', function(req, res, next) {
     console.log("moveTable request made to /moveTable");
 
-    let tableValue = "";
     let data = JSON.stringify(req.body);
-    console.log('data -> ' + data);
     let splitted = data.split(",");
     let tableNumberBefore = splitted[2];
     let departmentValueBefore = splitted[1];
@@ -174,8 +172,7 @@ router.post('/moveTable', function(req, res, next) {
     let leftValueBefore = splitted[4];
     let widthValueBefore = splitted[9];
     let heightValueBefore = splitted[10];
-    console.log('tableNumberBefore: ' + tableNumberBefore);
-    console.log('departmentValueBefore: ' + departmentValueBefore);
+
     let splitted2 = tableNumberBefore.split(":");
     let splitted3 = departmentValueBefore.split(":");
     let splitted4 = topValueBefore.split(":");
@@ -191,7 +188,9 @@ router.post('/moveTable', function(req, res, next) {
     let heightArray = splitted7[1].toString().match(/\d+/);
     let height = heightArray[0];
 
-
+    console.log('data -> ' + data);
+    console.log('tableNumberBefore: ' + tableNumberBefore);
+    console.log('departmentValueBefore: ' + departmentValueBefore);
     console.log('height: ' + height);
     console.log('width: ' + width);
     console.log('tableNumber: ' + tableNumber);
@@ -225,28 +224,32 @@ router.post('/moveTable', function(req, res, next) {
 
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
-    //JSON string is parsed to a JSON object
     console.log("occupyTable request made to /occupyTable");
-    //console.log(JSON.stringify(req.body));
+    //JSON string is parsed to a JSON object
     let departmentValueDB = "";
     let departmentValue = "";
     let tableValue = "";
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
-    //console.log(splitted);
     let informationElements2 = [];
+
     for (let s = 0; s < splitted.length; s++){
         informationElements2.push(splitted[s].split(":"));
     }
+
+    //console.log(JSON.stringify(req.body));
+    //console.log(splitted);
     //console.log(informationElements2);
 
     if(informationElements2.length >= 10) {
         console.log("Im-Haus-Liste");
         departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
         tableValue = informationElements2[9][0].toString().match(/\d+/);
+
         //console.log(departmentValueDB);
         //console.log(tableValue);
         //console.log(occupyTable);
+
     } else if (informationElements2.length === 9) {
         console.log("Anreise");
         departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
@@ -304,10 +307,13 @@ router.post('/occupyTable', function(req, res, next) {
 
 //dispenseTable
 router.post('/dispenseTable', function(req, res, next) {
-    //JSON string is parsed to a JSON object
     console.log("dispenseTable request made to /dispenseTable");
+
+    //JSON string is parsed to a JSON object
     let dispenseTable = req.body;
-    console.log("dispenseTable" + JSON.stringify(dispenseTable));
+
+    //console.log("dispenseTable" + JSON.stringify(dispenseTable));
+
     db.tables.findAndModify({
         query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
         update: {$set: {
@@ -391,19 +397,22 @@ router.post('/dispenseTable', function(req, res, next) {
 
 //removePlaceholder
 router.post('/removePlaceholder', function(req, res, next) {
-//JSON string is parsed to a JSON object
-    //console.log("removePlaceholder request made to /removePlaceholder");
-    //console.log(JSON.stringify(req.body));
+    console.log("removePlaceholder request made to /removePlaceholder");
+
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
     let departmentValue = "";
     let tableValue = "";
     let departmentValueDB = "";
-    //console.log(splitted);
     let informationElements2 = [];
+
     for (let s = 0; s < splitted.length; s++){
         informationElements2.push(splitted[s].split(":"));
     }
+
+    //JSON string is parsed to a JSON object
+    //console.log(JSON.stringify(req.body));
+    //console.log(splitted);
 
     if(informationElements2.length >= 10) {
         console.log("Im-Haus-Liste");
@@ -435,8 +444,8 @@ router.post('/removePlaceholder', function(req, res, next) {
 
     //console.log(departmentValueDB);
     //console.log(tableValue);
-
     //console.log(occupyTable);
+
     db.tables.update(
         {
             department: departmentValueDB,
@@ -469,9 +478,11 @@ router.post('/removePlaceholder', function(req, res, next) {
 
 //addPlaceholder
 router.post('/addPlaceholder', function(req, res, next) {
-    //JSON string is parsed to a JSON object
     console.log("addPlaceholder request made to /addPlaceholder");
+
+    //JSON string is parsed to a JSON object
     let addPlaceholder = req.body;
+
     //console.log(occupyTable);
 
     db.tables.update(
@@ -504,9 +515,10 @@ router.post('/addPlaceholder', function(req, res, next) {
 
 //addInformationToTable
 router.post('/addInformationToTable', function(req, res, next) {
-    //JSON string is parsed to a JSON object
     console.log("addInformationToTable request made to /addInformationToTable");
-    console.log(JSON.stringify("-------->" + req.body));
+
+    //JSON string is parsed to a JSON object
+
     let data = JSON.stringify(req.body);
     let splitted = data.split("\\");
     let informationElements2 = [];
@@ -523,6 +535,7 @@ router.post('/addInformationToTable', function(req, res, next) {
     let departmentValue = "";
     let tableValue = "";
     let trace = "";
+    let tableValueArray = [];
 
     for (let s = 0; s < splitted.length; s++) {
         informationElements2.push(splitted[s].split(/:(.+)/)[1]);
@@ -531,8 +544,10 @@ router.post('/addInformationToTable', function(req, res, next) {
         }
     }
 
-    console.log("informationElements2:");
-    console.log(informationElements2);
+    //console.log(JSON.stringify("req.body: " + req.body));
+    //console.log("informationElements2:");
+    //console.log(informationElements2);
+
     if(informationElements2.length >= 10) {
         console.log("Im Haus Liste gedropped");
         nameValue = informationElements2[0].substring(1, informationElements2[0].length);
@@ -545,7 +560,8 @@ router.post('/addInformationToTable', function(req, res, next) {
         rbsouValue = informationElements2[7].substring(1, informationElements2[7].length);
         notiz2Value = informationElements2[8].substring(1, informationElements2[8].length);
         departmentValue = informationElements2[9].substring(1, informationElements2[9].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[9].toString().match(/\d+/);
+        tableValueArray = informationElements2[9].toString().match(/\d+/);
+        tableValue = tableValueArray[0];
 
     } else if (informationElements2.length === 9) {
         console.log("Anreise Liste gedropped");
@@ -558,7 +574,9 @@ router.post('/addInformationToTable', function(req, res, next) {
         rbsouValue = informationElements2[6].substring(1, informationElements2[6].length);
         notiz2Value = informationElements2[7].substring(1, informationElements2[7].length);
         departmentValue = informationElements2[8].substring(1, informationElements2[8].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[8].toString().match(/\d+/);
+        tableValueArray = informationElements2[8].toString().match(/\d+/);
+        tableValue = tableValueArray[0];
+
     } else {
         console.log("Trace Liste gedropped");
         zimmernummerValue = informationElements2[0].substring(1, informationElements2[0].length);
@@ -568,12 +586,9 @@ router.post('/addInformationToTable', function(req, res, next) {
         abreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
         trace = informationElements2[5].substring(1, informationElements2[5].length);
         departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-        tableValue = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
+        tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
+        tableValue = tableValueArray[0];
     }
-
-
-    console.log(" nameValue " + nameValue + " spracheValue " + spracheValue + " zimmernummerValue " + zimmernummerValue + " preistypValue " + preistypValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " rbsouValue " + rbsouValue + " notiz2Value " + notiz2Value + " departmentValue " + departmentValue + " tableValue " + tableValue);
-
 
     if(departmentValue === "SonnbergZirbn") {
         departmentValueDB = "Sonnberg-Zirbn";
@@ -587,13 +602,16 @@ router.post('/addInformationToTable', function(req, res, next) {
     else if(departmentValue === "Wintergarten") {
         departmentValueDB = "Wintergarten";
     }
-    console.log(departmentValueDB);
-    console.log(tableValue[0]);
+
+    //console.log("nameValue: " + nameValue + " spracheValue: " + spracheValue + " zimmernummerValue: " + zimmernummerValue + " preistypValue: " + preistypValue + " anreiseValue: " + anreiseValue + " abreiseValue: " + abreiseValue + " personenAnzahlValue: " + personenAnzahlValue + " rbsouValue: " + rbsouValue + " notiz2Value: " + notiz2Value + " departmentValue: " + departmentValue + " tableValue: " + tableValue);
+    //console.log(departmentValueDB);
+    //console.log(tableValue);
+
     setTimeout(function() {
         db.tables.findOne(
             {
                 department: departmentValueDB,
-                "tables.number": tableValue[0]
+                "tables.number": tableValue
             },
             {
                 "tables.$": 1,
@@ -611,7 +629,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                     db.tables.update(
                         {
                             department: departmentValueDB,
-                            "tables.number": tableValue[0]
+                            "tables.number": tableValue
                         },
                         {
                             $set: {
@@ -638,7 +656,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                     db.tables.update(
                         {
                             department: departmentValueDB,
-                            "tables.number": tableValue[0]
+                            "tables.number": tableValue
                         },
                         {
                             $set: {
@@ -664,7 +682,7 @@ router.post('/addInformationToTable', function(req, res, next) {
                     db.tables.update(
                         {
                             department: departmentValueDB,
-                            "tables.number": tableValue[0]
+                            "tables.number": tableValue
                         },
                         {
                             $set: {
@@ -693,7 +711,7 @@ router.post('/addInformationToTable', function(req, res, next) {
         db.tables.findOne(
             {
                 department: departmentValueDB,
-                "tables.number": tableValue[0]
+                "tables.number": tableValue
             },
             {
                 "tables.$": 1,
@@ -710,13 +728,12 @@ router.post('/addInformationToTable', function(req, res, next) {
 
 router.post('/newInformationToTables', function(req, res, next) {
     console.log("newInformationToTables post called");
-    //Get guests from Mongo DB
 
-    console.log(req.body);
     let newInformation = req.body;
 
+    //console.log(req.body);
 
-
+    //Get guests from Mongo DB
     setTimeout(function() {
         db.tables.findOne(
             {
@@ -814,7 +831,7 @@ router.post('/newInformationToTables', function(req, res, next) {
                     res.send(err);
                 }
                 res.json(tables);
-                console.log(JSON.stringify(tables));
+                //console.log(JSON.stringify(tables));
             });
     }, 500);
 });
