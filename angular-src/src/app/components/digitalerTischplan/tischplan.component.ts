@@ -31,8 +31,15 @@ export class TischplanComponent implements OnInit {
 
   imHausListeElemente: ImHausListe[];
   anreiseListeElemente: AnreiseListe[];
+  tablesTemp: any[] = [];
+  tempTablesArray: any[] = [];
+  tempTablesArray2:  any[] = [];
+  tempTablesArray1: any[] = [];
+  tempTablesArray3: any[] = [];
+
   tracesListeElemente: any[] = [];
-  tables: Table[];
+  tables: any[] = [];
+  uniqueTables: any[] = [];
   tablesSonnbergZirbn: Table[] = [];
   tablesPanorama: Table[] = [];
   tablesRestaurant: Table[] = [];
@@ -51,6 +58,7 @@ export class TischplanComponent implements OnInit {
   employee: string;
   nameTraceInput: string;
   backgroundColor: string;
+  dateGeneratedListe: any;
 
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
@@ -62,7 +70,7 @@ export class TischplanComponent implements OnInit {
         if(imHausListeElemente === null) {
           return;
         } else {
-          this.imHausListeElemente = imHausListeElemente[0].data;
+          this.imHausListeElemente = imHausListeElemente;
           console.log(this.imHausListeElemente);
         }
       });
@@ -72,7 +80,7 @@ export class TischplanComponent implements OnInit {
         if(anreiseListeElemente === null) {
           return;
         } else {
-          this.anreiseListeElemente = anreiseListeElemente[0].data;
+          this.anreiseListeElemente = anreiseListeElemente;
           console.log(this.anreiseListeElemente);
         }
       });
@@ -131,6 +139,11 @@ export class TischplanComponent implements OnInit {
         console.log(this.tablesSonnbergZirbn);
         console.log(this.tablesRestaurant);
 
+        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+
+
+        this.formatAzListe(tables);
+
       });
 
     this.tischplanService.getTracesListe()
@@ -142,10 +155,12 @@ export class TischplanComponent implements OnInit {
           //console.log("2:" + tracesListeElemente[0].data[0]);
           //console.log(tracesListeElemente[0].data.length);
           //this.tracesListeElemente = tracesListeElemente[0].data;
-          this.formatTracesListeElements(tracesListeElemente);
+          this.tracesListeElemente = tracesListeElemente;
+          //this.formatTracesListeElements(tracesListeElemente);
         }
       });
 
+    this.dateGeneratedListe = new Date();
     this.buttonBgColor1 = "0a7a74";
     this.buttonBgColor2 = "0a7a74";
     this.buttonBgColor3 = "0a7a74";
@@ -156,6 +171,9 @@ export class TischplanComponent implements OnInit {
     this.fontColor4 = "f3efe4";
 
     this.backgroundColor = "ffffff";
+
+
+
 
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
@@ -175,6 +193,176 @@ export class TischplanComponent implements OnInit {
     });
   }
 
+  public formatAzListe(tables) {
+
+    function filterByID(obj) {
+      if ('nameValue2' in obj || 'nameValue3' in obj) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    this.tempTablesArray = this.tables.filter(filterByID);
+
+    for (let i: number = 0; i < this.tables.length; i++) {
+      if (this.tables[i].nameValue2 || this.tables[i].nameValue3) {
+        this.tables.splice(i, 1);
+      }
+    }
+
+    for (let i: number = 0; i < this.tempTablesArray.length; i++) {
+      this.tempTablesArray2[i] = new Table();
+    }
+
+    for (let i: number = 0; i < this.tempTablesArray.length; i++) {
+      this.tempTablesArray3[i] = new Table();
+    }
+
+    for (let i: number = 0; i < this.tempTablesArray.length; i++) {
+      this.tempTablesArray1[i] = new Table();
+    }
+
+
+    for (let a: number = 0; a < this.tempTablesArray.length; a++) {
+      if (typeof this.tempTablesArray[a].nameValue !== "undefined") {
+        this.tempTablesArray2[a].nameValue = this.tempTablesArray[a].nameValue;
+        this.tempTablesArray2[a].notiz2Value = this.tempTablesArray[a].notiz2Value;
+        this.tempTablesArray2[a].personenAnzahlValue = this.tempTablesArray[a].personenAnzahlValue;
+        this.tempTablesArray2[a].number = this.tempTablesArray[a].number;
+        this.tempTablesArray2[a].zimmernummerValue = this.tempTablesArray[a].zimmernummerValue;
+        this.tempTablesArray2[a].anreiseValue = this.tempTablesArray[a].anreiseValue;
+        this.tempTablesArray2[a].abreiseValue = this.tempTablesArray[a].abreiseValue;
+        this.tempTablesArray2[a].trace = this.tempTablesArray[a].trace;
+        this.tables = this.tables.concat(this.tempTablesArray2[a]);
+      }
+
+    }
+
+
+    for (let a: number = 0; a < this.tempTablesArray.length; a++) {
+      if (typeof this.tempTablesArray[a].nameValue2 !== "undefined") {
+        this.tempTablesArray1[a].nameValue = this.tempTablesArray[a].nameValue2;
+        this.tempTablesArray1[a].notiz2Value = this.tempTablesArray[a].notiz2Value2;
+        this.tempTablesArray1[a].personenAnzahlValue = this.tempTablesArray[a].personenAnzahlValue2;
+        this.tempTablesArray1[a].number = this.tempTablesArray[a].number;
+        this.tempTablesArray1[a].zimmernummerValue = this.tempTablesArray[a].zimmernummerValue2;
+        this.tempTablesArray1[a].anreiseValue = this.tempTablesArray[a].anreiseValue2;
+        this.tempTablesArray1[a].abreiseValue = this.tempTablesArray[a].abreiseValue2;
+        this.tempTablesArray1[a].trace = this.tempTablesArray[a].trace2;
+        this.tables = this.tables.concat(this.tempTablesArray1[a]);
+      }
+    }
+
+
+    for (let a: number = 0; a < this.tempTablesArray.length; a++) {
+      if (typeof this.tempTablesArray[a].nameValue3 !== "undefined") {
+        this.tempTablesArray3[a].nameValue = this.tempTablesArray[a].nameValue3;
+        this.tempTablesArray3[a].notiz2Value = this.tempTablesArray[a].notiz2Value3;
+        this.tempTablesArray3[a].personenAnzahlValue = this.tempTablesArray[a].personenAnzahlValue3;
+        this.tempTablesArray3[a].number = this.tempTablesArray[a].number;
+        this.tempTablesArray3[a].zimmernummerValue = this.tempTablesArray[a].zimmernummerValue3;
+        this.tempTablesArray3[a].anreiseValue = this.tempTablesArray[a].anreiseValue3;
+        this.tempTablesArray3[a].abreiseValue = this.tempTablesArray[a].abreiseValue3;
+        this.tempTablesArray3[a].trace = this.tempTablesArray[a].trace3;
+        this.tables = this.tables.concat(this.tempTablesArray3[a]);
+
+      }
+    }
+
+
+
+    /*
+     for (let row=0; row<tempTablesArray.length; row++) {
+     tempTablesArray[row] = [];
+     for (let col=0; col < tempTablesArray[row].length; col++) {
+     tempTablesArrayRow = tempTablesArray[row][col];
+     }
+     }
+
+
+
+
+     <b> Name:</b> {{tableTeestubeTeelounge.nameValue2}}<br>
+     <b> Zimmernummer:</b> {{tableTeestubeTeelounge.zimmernummerValue2}}<br>
+     <b> Anreise Datum:</b> {{tableTeestubeTeelounge.anreiseValue2}}<br>
+     <b> Abreise Datum:</b> {{tableTeestubeTeelounge.abreiseValue2}}<br>
+     <b> Personenanzahl:</b> {{tableTeestubeTeelounge.personenAnzahlValue2}}<br>
+     <b> Notiz1:</b> {{tableTeestubeTeelounge.notiz3Value}}<br>
+     <b> Notiz2:</b> {{tableTeestubeTeelounge.notiz4Value}}<br>
+     <b> Trace:</b> {{tableTeestubeTeelounge.trace2}}<br>
+     <b> BemerkungValue:</b> {{tableTeestubeTeelounge.bemerkungValue3}}<br>
+     </p>
+     </div>
+     <div *ngIf="tableTeestubeTeelounge.nameValue3">
+     <p style="background-color: #FFFFFF; padding: 10px">
+     <b> Name:</b> {{tableTeestubeTeelounge.nameValue3}}<br>
+     <b> Sprache:</b> {{tableTeestubeTeelounge.katValue3}}<br>
+     <b> Zimmernummer:</b> {{tableTeestubeTeelounge.zimmernummerValue3}}<br>
+     <b> Anreise Datum:</b> {{tableTeestubeTeelounge.anreiseValue3}}<br>
+     <b> Abreise Datum:</b> {{tableTeestubeTeelounge.abreiseValue3}}<br>
+     <b> Personenanzahl:</b> {{tableTeestubeTeelounge.personenAnzahlValue3}}<br>
+     <b> Notiz1:</b> {{tableTeestubeTeelounge.notiz5Value}}<br>
+     <b> Notiz2:</b> {{tableTeestubeTeelounge.notiz6Value}}<br>
+     <b> Trace:</b> {{tableTeestubeTeelounge.trace3}}<br>
+     <b> BemerkungValue:</b> {{tableTeestubeTeelounge.bemerkungValue6}}<br>
+
+
+     */
+    console.log(this.tempTablesArray1);
+    console.log(this.tempTablesArray);
+    console.log(this.tempTablesArray2);
+    console.log(this.tempTablesArray3);
+
+
+    console.log('this.tables before sort ');
+    console.log(this.tables);
+
+    for (let i: number = 0; i < this.tables.length; i++) {
+      if (!("nameValue" in this.tables[i])) {
+        this.tables.splice(i,1);
+      }
+    }
+
+    /*
+     this.tables.sort(function(a, b){
+     if (a.nameValue < b.nameValue) return -1;
+     if (a.nameValue > b.nameValue) return 1;
+     return 0;
+     });
+
+     */
+
+
+    this.tables = this.tables.sort(function(a, b) {
+      if (typeof a.nameValue !== "undefined" && typeof b.nameValue !== "undefined") {
+        var nameA = a.nameValue.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.nameValue.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+      }
+    });
+
+    console.log('this.tables after sort: ');
+
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+
+    this.uniqueTables = this.tables.filter( onlyUnique );
+
+    console.log(this.tables);
+  }
+
+
+  /*
   public formatTracesListeElements(tracesListeElemente) {
     for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
       if (tracesListeElemente[0].data[o].length === 7) {
@@ -271,7 +459,7 @@ export class TischplanComponent implements OnInit {
     console.log(this.tracesListeElemente);
   }
 
-
+*/
   private onDrag(args) {
     let [e, el] = args;
   }
@@ -280,6 +468,21 @@ export class TischplanComponent implements OnInit {
     let [e, el] = args;
     console.log("Args = ");
     let information = args[0].innerText;
+
+    console.log("information: " + information);
+    let informationElements = information.split(/\n/);
+    console.log(informationElements);
+    let informationElements2 = [];
+    for (let s = 0; s < informationElements.length; s++) {
+      informationElements2.push(informationElements[s].split(/:(.+)/)[1]);
+      if (informationElements2[s] === undefined) {
+        informationElements2[s] = informationElements[s]
+      }
+    }
+    console.log(informationElements2);
+
+
+
     let department = JSON.stringify(args[1].id);
     console.log("departement" + department);
     let departementSubstring = department.substring(1, department.length - 1);
@@ -321,6 +524,29 @@ export class TischplanComponent implements OnInit {
         }
         // console.log(this.tablesSonnbergZirbn[arrayIndex]);
       });
+
+
+    this.tischplanService.updateImHausListeElement(informationElements2)
+      .subscribe(response => {
+        //this.imHausListeElemente = response;
+        console.log('updateImHausListeElement response: ');
+        console.log(response);
+      });
+
+    this.tischplanService.updateAnreiseListeElement(informationElements2)
+      .subscribe(response => {
+        //this.imHausListeElemente = response;
+        console.log('updateAnreiseListeElement response: ');
+        console.log(response);
+      });
+
+    this.tischplanService.updateTracesListeElement(informationElements2)
+      .subscribe(response => {
+        //this.imHausListeElemente = response;
+        console.log('updateTracesListeElement response: ');
+        console.log(response);
+      });
+
 
     console.log("Occupy Table!");
     this.tischplanService.occupyTable(dataString)
@@ -690,4 +916,13 @@ export class TischplanComponent implements OnInit {
     popupWinindow.document.write('<html><head><style> .row .t1 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t2 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t3 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t4 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t5 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t6 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t7 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t8 { width: 100px; height: 90px; border: solid 1px #0a7a74; position: absolute; } .row .t9 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t10 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t11 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t12 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t13 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t14 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t15 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t16 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t17 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t18 { position: absolute; } .row .t19 { position: absolute; }.row .t20 { position: absolute; } .row .t21 { position: absolute; }  .row .t22 { position: absolute; } .row .t23 { position: absolute; } .row .t24 { position: absolute; } .row .t40 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t41 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t42 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t43 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t44 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t45 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t46 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t47 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t48 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t49 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t50 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t51 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t52 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t53 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t54 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t55 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t56 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t57 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t58 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t59 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t60 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t61 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t62 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t63 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t64 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t65 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t66 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t67 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t68 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t69 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t70 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t71 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t72 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t73 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t74 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t75 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t76 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t77 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t78 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t79 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t80 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t81 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t82 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t83 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t84 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t85 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t86 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t87 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t88 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t89 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t501 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t502 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t503 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t504 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t505 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t506 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t507 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t508 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t509 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t510 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t511 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t512 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t513 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t514 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t515 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t516 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t517 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(10deg); } .row .t518 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(30deg); } .row .t519 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(50deg); } .row .t520 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(70deg); } .row .t521 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(90deg); } .row .t522 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t523 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t524 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t525 { width: 40px; height: 40px; position: absolute; transform: rotate(45deg); } </style></head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }
+  printToCart3(printSectionId3: string){
+    let popupWinindow;
+    let innerContents = document.getElementById(printSectionId3).innerHTML;
+    popupWinindow = window.open('', '_blank', 'width=1000,height=1000,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+    popupWinindow.document.open();
+    popupWinindow.document.write('<html><head><style></style></head><body onload="window.print()">' + innerContents + '</html>');
+    popupWinindow.document.close();
+  }
+
 }
