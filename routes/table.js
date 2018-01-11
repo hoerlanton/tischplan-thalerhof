@@ -6,7 +6,7 @@ module.exports = {
     getTable: function (req, res, db) {
 
         console.log("tables get called");
-//Get guests from Mongo DB
+        //Get guests from Mongo DB
         db.tables.find(function (err, tables) {
             if (err) {
                 res.send(err);
@@ -79,7 +79,7 @@ module.exports = {
 
 
         console.log("occupyTable request made to /occupyTable");
-//JSON string is parsed to a JSON object
+        //JSON string is parsed to a JSON object
         let departmentValueDB = "";
         let departmentValue = "";
         let tableValue = "";
@@ -91,9 +91,9 @@ module.exports = {
             informationElements2.push(splitted[s].split(":"));
         }
 
-//console.log(JSON.stringify(req.body));
-//console.log(splitted);
-//console.log(informationElements2);
+        //console.log(JSON.stringify(req.body));
+        //console.log(splitted);
+        //console.log(informationElements2);
 
         if (informationElements2.length >= 10) {
             console.log("Im-Haus-Liste");
@@ -167,10 +167,10 @@ module.exports = {
 
         console.log("dispenseTable request made to /dispenseTable");
 
-//JSON string is parsed to a JSON object
+        //JSON string is parsed to a JSON object
         let dispenseTable = req.body;
 
-//console.log("dispenseTable" + JSON.stringify(dispenseTable));
+        //console.log("dispenseTable" + JSON.stringify(dispenseTable));
 
         db.tables.findAndModify({
             query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
@@ -286,9 +286,9 @@ module.exports = {
             }
         }
 
-//console.log(JSON.stringify("req.body: " + req.body));
-//console.log("informationElements2:");
-//console.log(informationElements2);
+        //console.log(JSON.stringify("req.body: " + req.body));
+        //console.log("informationElements2:");
+        //console.log(informationElements2);
 
         if (informationElements2.length >= 10) {
             console.log("Im Haus Liste gedropped");
@@ -345,9 +345,9 @@ module.exports = {
             departmentValueDB = "Wintergarten";
         }
 
-//console.log("nameValue: " + nameValue + " spracheValue: " + spracheValue + " zimmernummerValue: " + zimmernummerValue + " preistypValue: " + preistypValue + " anreiseValue: " + anreiseValue + " abreiseValue: " + abreiseValue + " personenAnzahlValue: " + personenAnzahlValue + " rbsouValue: " + rbsouValue + " notiz2Value: " + notiz2Value + " departmentValue: " + departmentValue + " tableValue: " + tableValue);
-//console.log(departmentValueDB);
-//console.log(tableValue);
+        //console.log("nameValue: " + nameValue + " spracheValue: " + spracheValue + " zimmernummerValue: " + zimmernummerValue + " preistypValue: " + preistypValue + " anreiseValue: " + anreiseValue + " abreiseValue: " + abreiseValue + " personenAnzahlValue: " + personenAnzahlValue + " rbsouValue: " + rbsouValue + " notiz2Value: " + notiz2Value + " departmentValue: " + departmentValue + " tableValue: " + tableValue);
+        //console.log(departmentValueDB);
+        //console.log(tableValue);
 
         setTimeout(function () {
             db.tables.findOne(
@@ -467,4 +467,4 @@ module.exports = {
                 });
         }, 500);
     }
-}
+};

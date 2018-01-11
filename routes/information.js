@@ -7,7 +7,9 @@ module.exports = {
 
 
         console.log("tables get called");
-//Get guests from Mongo DB
+
+        //Get guests from Mongo DB
+
         db.newInformation.find(function (err, information) {
             if (err) {
                 res.send(err);
@@ -39,9 +41,9 @@ module.exports = {
 
         let newInformation = req.body;
 
-//console.log(req.body);
+        //console.log(req.body);
+        //Get guests from Mongo DB
 
-//Get guests from Mongo DB
         setTimeout(function () {
             db.tables.findOne(
                 {

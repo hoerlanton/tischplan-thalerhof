@@ -16,9 +16,9 @@ module.exports = {
 
         imHausListeData.data = req.body;
 
-//console.log(imHausListeData.data);
-//console.log(imHausListe[0].name);
-//console.log(imHausListe[1]);
+        //console.log(imHausListeData.data);
+        //console.log(imHausListe[0].name);
+        //console.log(imHausListe[1]);
 
         for (let i = 0; i < imHausListeData.data.length; i++) {
             console.log(i);
@@ -37,9 +37,9 @@ module.exports = {
 
         console.log(imHausListe);
 
-//console.log('req.body' + req.body);
-//console.log('imHausListe' +  imHausListe);
-//imHausListe.data = req.body;
+        //console.log('req.body' + req.body);
+        //console.log('imHausListe' +  imHausListe);
+        //imHausListe.data = req.body;
 
         db.imHausListe.remove({});
         setTimeout(function () {
@@ -109,4 +109,4 @@ module.exports = {
                 });
         }, 700);
     },
-}
+};

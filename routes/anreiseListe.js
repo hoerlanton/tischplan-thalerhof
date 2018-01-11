@@ -29,7 +29,7 @@ module.exports = {
                 "zimmernummer": anreiseListeData.data[i][22],
                 "anreise": anreiseListeData.data[i][11],
                 "abreise": anreiseListeData.data[i][24],
-                "personenAnzahl": anreiseListeData.data[i][24],
+                "personenAnzahl": anreiseListeData.data[i][25],
                 "notiz2": anreiseListeData.data[i][27]
             });
         };
@@ -103,6 +103,6 @@ module.exports = {
             res.json(anreiseListe);
         });
     },
-}
+};
 
 

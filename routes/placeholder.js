@@ -10,10 +10,10 @@ module.exports = {
 
         console.log("addPlaceholder request made to /addPlaceholder");
 
-//JSON string is parsed to a JSON object
+        //JSON string is parsed to a JSON object
         let addPlaceholder = req.body;
 
-//console.log(occupyTable);
+        //console.log(occupyTable);
 
         db.tables.update(
             {
@@ -63,9 +63,9 @@ module.exports = {
             informationElements2.push(splitted[s].split(":"));
         }
 
-//JSON string is parsed to a JSON object
-//console.log(JSON.stringify(req.body));
-//console.log(splitted);
+        //JSON string is parsed to a JSON object
+        //console.log(JSON.stringify(req.body));
+        //console.log(splitted);
 
         if (informationElements2.length >= 10) {
             console.log("Im-Haus-Liste");
@@ -95,9 +95,9 @@ module.exports = {
             departmentValueDB = "Wintergarten";
         }
 
-//console.log(departmentValueDB);
-//console.log(tableValue);
-//console.log(occupyTable);
+        //console.log(departmentValueDB);
+        //console.log(tableValue);
+        //console.log(occupyTable);
 
         db.tables.update(
             {
@@ -130,4 +130,4 @@ module.exports = {
                 });
         }, 100);
     },
-}
+};

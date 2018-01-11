@@ -1,7 +1,7 @@
 module.exports = {
     moveTable: function (db, tableNumber, departmentValue, topValue, leftValue, height, width) {
-        console.log('TOOOOOOOOOOOOOOOOOOOP');
-        console.log(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        //console.log(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+
         if (tableNumber === '80' && topValue === '280' && leftValue === '220' && height === '30') {
             db.tables.update(
                 {

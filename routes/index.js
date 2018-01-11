@@ -29,64 +29,64 @@ router.use(cors());
 
 //Save AnreiseListe
 router.post('/anreiseListe', function(req, res, next) {
-    anreiseliste.saveAnreiseListe(req, res, db)});
+anreiseliste.saveAnreiseListe(req, res, db)});
 //Update AnreiseListe
 router.post('/updateAnreiseListeElement', function(req, res, next) {
-    anreiseliste.updateAnreiseListe(req, res, db)});
+anreiseliste.updateAnreiseListe(req, res, db)});
 //Get anreiseListe
 router.get('/anreiseListe', function(req, res, next) {
-    anreiseliste.getAnreiseListe(req, res, db)});
+anreiseliste.getAnreiseListe(req, res, db)});
 //Save ImHausListe
 router.post('/imHausListe', function(req, res, next) {
-    imHausListe.saveImHausListe(req, res, db)});
+imHausListe.saveImHausListe(req, res, db)});
 //Update ImHausListe
 router.post('/updateImHausListeElement', function(req, res, next) {
-    imHausListe.updateImHausListe(req, res, db)});
+imHausListe.updateImHausListe(req, res, db)});
 //Get imHausListe
 router.get('/imHausListe', function(req, res, next) {
-    imHausListe.getImHausListe(req, res, db)});
+imHausListe.getImHausListe(req, res, db)});
 //Save TracesListe
 router.post('/tracesListe', function(req, res, next) {
-    traceListe.saveTraceListe(req, res, db)});
+traceListe.saveTraceListe(req, res, db)});
 //Update TraceListe
 router.post('/updateTracesListeElement', function(req, res, next) {
-    traceListe.updateTraceListe(req, res, db)});
+traceListe.updateTraceListe(req, res, db)});
 //Get TracesListe
 router.get('/tracesListe', function(req, res, next) {
-    traceListe.getTraceListe(req, res, db)});
+traceListe.getTraceListe(req, res, db)});
 //Get Information
 router.get('/information', function(req, res, next) {
-    information.getInformation(req, res, db)});
+information.getInformation(req, res, db)});
 //Delete Information Element
 router.post('/deleteInformationElement', function(req, res, next) {
-    information.deleteInformation(req, res, db)});
+information.deleteInformation(req, res, db)});
 //Post New Information to Box
 router.post('/newInformationToBox', function(req, res, next) {
-    information.newInformationToBox(req, res, db)});
+information.newInformationToBox(req, res, db)});
 //Post New Information to Table
 router.post('/newInformationToTables', function(req, res, next) {
-    information.newInformationToTable(req, res, db)});
+information.newInformationToTable(req, res, db)});
 //removePlaceholder
 router.post('/removePlaceholder', function(req, res, next) {
-    placeholder.removePlaceholder(req, res, db)});
+placeholder.removePlaceholder(req, res, db)});
 //addPlaceholder
 router.post('/addPlaceholder', function(req, res, next) {
-    placeholder.addPlaceholder(req, res, db)});
+placeholder.addPlaceholder(req, res, db)});
 //Get Tables
 router.get('/tables', function(req, res, next) {
-    table.getTable(req, res, db)});
+table.getTable(req, res, db)});
 //moveTable
 router.post('/moveTable', function(req, res, next) {
-    table.moveTable(req, res, db)});
+table.moveTable(req, res, db)});
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
-    table.occupyTable(req, res, db)});
+table.occupyTable(req, res, db)});
 //dispenseTable
 router.post('/dispenseTable', function(req, res, next) {
-    table.dispenseTable(req, res, db)});
+table.dispenseTable(req, res, db)});
 //addInformationToTable
 router.post('/addInformationToTable', function(req, res, next) {
-    table.addInformationToTable(req, res, db)});
+table.addInformationToTable(req, res, db)});
 
 
 module.exports = router;

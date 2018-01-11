@@ -1,7 +1,6 @@
 module.exports = {
     moveTable: function (db, tableNumber, departmentValue, topValue, leftValue, height, width) {
 
-
         if (tableNumber === '19' && topValue === '200' && leftValue === '550') {
             db.tables.update(
                 {

@@ -5,13 +5,8 @@
 module.exports = {
     saveTraceListe: function (req, res, db) {
 
-
-
-
-
         //JSON string is parsed to a JSON object
         console.log("Post request made to /tracesListe");
-
 
         let tracesListeElemente = {
             data: "",
@@ -119,12 +114,7 @@ module.exports = {
         console.log("trace: ");
         console.log(trace);
 
-
-
-
-
-
-/*
+        /*
         for (let o = 0; o < tracesListeData.data.length; o++) {
             if (tracesListeData.data[o].length === 7) {
                 tracesListeData.data[o].splice(0, 4);
@@ -189,7 +179,7 @@ module.exports = {
         trace[0].splice(20, 0, "");
         trace[0].splice(20, 0, "");
 
-//tracesListeElemente.push(trace[0]);
+        tracesListeElemente.push(trace[0]);
 
         for (let o = 0; o < tracesListeData.data.length; o++) {
             if (trace[o].length === 30) {
@@ -203,24 +193,24 @@ module.exports = {
             }
         }
 
-//for (let o = 1; o < tracesListeData.data.length; o++) {
-//   if (trace[o].length > 26) {
-//      tracesListeElemente.push(trace[o]);
-// }
-//}
-//console.log('263' + tracesListeData.data);
-//console.log('264 ' + tracesListeElemente);
-//console.log(tracesListeElemente);
-//for (let o = 0; o < tracesListeElemente.length; o++) {
-//if (trace[o].length === 25 || trace[o].length === 14) {
-//}
-//}
+            for (let o = 1; o < tracesListeData.data.length; o++) {
+            if (trace[o].length > 26) {
+            tracesListeElemente.push(trace[o]);
+                }
+                }
+            console.log('263' + tracesListeData.data);
+            console.log('264 ' + tracesListeElemente);
+            console.log(tracesListeElemente);
+            for (let o = 0; o < tracesListeElemente.length; o++) {
+            if (trace[o].length === 25 || trace[o].length === 14) {
+                }
+                }
 
-//console.log(imHausListeData.data);
-//console.log(imHausListe[0].name);
-//console.log(imHausListe[1]);
+            console.log(imHausListeData.data);
+            console.log(imHausListe[0].name);
+            console.log(imHausListe[1]);
+            */
 
- */
         for (let i = 0; i < trace.length; i++) {
             if (trace[i].length > 8) {
                 console.log(i);
@@ -303,4 +293,4 @@ module.exports = {
                 });
         }, 700);
     },
-}
+};
