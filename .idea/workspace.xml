@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b12636d-0934-43d0-9e11-bbac60639e35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/anreiseListe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/imHausListe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/information.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/placeholder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/traceListe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.018996816555523433*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.06874940819337705*anreisen.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.07884800196839947*imhaus.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.13823915128560027*imhaus.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.1938680974070095*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.22646280035754507*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.26040281072828964*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.2646129856615913*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.2731657705286028*imhaus.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.2840923333030061*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.3042734915711718*anreisen.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.3530701138549919*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.41547506635188114*imhaus.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.4226818666626053*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.5733926334221671*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.6542729062337664*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.6915256354512429*imhaus.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.7070415159281569*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.7508901144556892*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.7600818238320171*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.7900244498194264*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.8332742029640035*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.8829715712300139*traces.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.8843363367524562*anreisen.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0.8873133473028962*anreisen.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/AnreiseListe.ts" afterPath="$PROJECT_DIR$/angular-src/AnreiseListe.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/ImHausListe.ts" afterPath="$PROJECT_DIR$/angular-src/ImHausListe.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/TracesListElement.ts" afterPath="$PROJECT_DIR$/angular-src/TracesListElement.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.css" afterPath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html" afterPath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" afterPath="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/services/tischplan.service.ts" afterPath="$PROJECT_DIR$/angular-src/src/app/services/tischplan.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/default.json" afterPath="$PROJECT_DIR$/config/default.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/inline.bundle.js.map" afterPath="$PROJECT_DIR$/public/inline.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main.bundle.js" afterPath="$PROJECT_DIR$/public/main.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main.bundle.js.map" afterPath="$PROJECT_DIR$/public/main.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tischplan.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tischplan.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="458" column="42" lean-forward="true" selection-start-line="366" selection-start-column="4" selection-end-line="458" selection-end-column="42" />
+            <state relative-caret-position="132">
+              <caret line="337" column="21" lean-forward="true" selection-start-line="337" selection-start-column="21" selection-end-line="337" selection-end-column="21" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
               </folding>
@@ -97,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/default.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -312,9 +270,9 @@
         <option value="$PROJECT_DIR$/routes/anreiseListe.js" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.css" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
         <option value="$PROJECT_DIR$/routes/traceListe.js" />
         <option value="$PROJECT_DIR$/config/default.json" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
       </list>
     </option>
   </component>
@@ -687,12 +645,12 @@
       <workItem from="1514887355531" duration="59261000" />
       <workItem from="1515051107384" duration="76731000" />
       <workItem from="1515516167040" duration="1166000" />
-      <workItem from="1515578373041" duration="15279000" />
+      <workItem from="1515578373041" duration="17170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464278000" />
+    <option name="totallyTimeSpent" value="466169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,16 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="458" column="42" lean-forward="true" selection-start-line="366" selection-start-column="4" selection-end-line="458" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/tischplan.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
@@ -1156,6 +1104,16 @@
         <state relative-caret-position="45">
           <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="337" column="21" lean-forward="true" selection-start-line="337" selection-start-column="21" selection-end-line="337" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
