@@ -82,7 +82,7 @@
               <div class="t{{tableSonnbergZirbn.number}} table-item" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}">
                 <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
                   <p><b>{{tableSonnbergZirbn.number}}</b></p>
-                  <p style="color: #9d9d9d "><b>{{tableSonnbergZirbn.personenAnzahlValue}}<br>{{tableSonnbergZirbn.personenAnzahlValue2}}<br>{{tableSonnbergZirbn.personenAnzahlValue3}}</b></p>
+                  <p style="color: #000000 "><b>{{tableSonnbergZirbn.personenAnzahlValue}}<br>{{tableSonnbergZirbn.personenAnzahlValue2}}<br>{{tableSonnbergZirbn.personenAnzahlValue3}}</b></p>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@
               <div class="t{{tablePanorama.number}} table-item" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor,  'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}">
                 <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
                   <p><b>{{tablePanorama.number}}</b></p>
-                  <p style="color: #9d9d9d "><b>{{tablePanorama.personenAnzahlValue}}<br>{{tablePanorama.personenAnzahlValue2}}<br>{{tablePanorama.personenAnzahlValue3}}</b></p>
+                  <p style="color: #000000 "><b>{{tablePanorama.personenAnzahlValue}}<br>{{tablePanorama.personenAnzahlValue2}}<br>{{tablePanorama.personenAnzahlValue3}}</b></p>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
               <div class="t{{tableRestaurant.number}} table-item" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}">
                 <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
                   <p><b>{{tableRestaurant.number}}</b></p>
-                  <p style="color: #9d9d9d "><b>{{tableRestaurant.personenAnzahlValue}}<br>{{tableRestaurant.personenAnzahlValue2}}<br>{{tableRestaurant.personenAnzahlValue3}}</b></p>
+                  <p style="color: #000000 "><b>{{tableRestaurant.personenAnzahlValue}}<br>{{tableRestaurant.personenAnzahlValue2}}<br>{{tableRestaurant.personenAnzahlValue3}}</b></p>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@
               <div class="t{{tableWintergarten.number}} table-item" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}">
                 <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
                   <p><b>{{tableWintergarten.number}}</b></p>
-                  <p style="color: #9d9d9d "><b>{{tableWintergarten.personenAnzahlValue}}<br>{{tableWintergarten.personenAnzahlValue2}}<br>{{tableWintergarten.personenAnzahlValue3}}</b></p>
+                  <p style="color: #000000 "><b>{{tableWintergarten.personenAnzahlValue}}<br>{{tableWintergarten.personenAnzahlValue2}}<br>{{tableWintergarten.personenAnzahlValue3}}</b></p>
                 </div>
               </div>
             </div>
@@ -142,8 +142,8 @@
                     <b>Personen Anzahl:</b> {{imHausListeElement.personenAnzahl}}<br>
                     <b>Notiz2:</b> {{imHausListeElement.notiz2}}<br>
                   </p>
-                  <div *ngIf="imHausListeElement.bgColor === 'f3efe4'">
-                    <i class="fa fa-check" style="float: right;"></i>
+                  <div *ngIf="imHausListeElement.bgColor === '0a7a74'">
+                    <i class="fa fa-check" style="float: right; color: white"></i>
                   </div>
                 </div>
               </div>
@@ -163,8 +163,8 @@
                     <b>Personen Anzahl:</b> {{anreiseListeElement.personenAnzahl}}<br>
                     <b>Notiz2:</b> {{anreiseListeElement.notiz2}}<br>
                   </p>
-                  <div *ngIf="anreiseListeElement.bgColor === 'f3efe4'">
-                    <i class="fa fa-check" style="float: right;"></i>
+                  <div *ngIf="anreiseListeElement.bgColor === '0a7a74'">
+                    <i class="fa fa-check" style="float: right; color: white""></i>
                   </div>
                 </div>
               </div>
@@ -184,8 +184,8 @@
                     <b>Abreise:</b> {{tracesListeElement.abreise}}<br>
                     <b>Trace:</b> {{tracesListeElement.trace}}<br>
                   </p>
-                  <div *ngIf="tracesListeElement.bgColor === 'f3efe4'">
-                    <i class="fa fa-check" style="float: right;"></i>
+                  <div *ngIf="tracesListeElement.bgColor === '0a7a74'">
+                    <i class="fa fa-check" style="float: right; color: white"></i>
                   </div>
                 </div>
               </div>
