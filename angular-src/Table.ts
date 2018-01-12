@@ -3,6 +3,7 @@ export class Table {
   topValue: string;
   leftValue: string;
   bgColor: string;
+  color: string;
   isBesetzt: boolean;
   placeholder: boolean;
   department: string;
