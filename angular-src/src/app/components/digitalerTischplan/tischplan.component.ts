@@ -139,7 +139,7 @@ export class TischplanComponent implements OnInit {
         console.log(this.tablesSonnbergZirbn);
         console.log(this.tablesRestaurant);
 
-        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+        this.tables = this.tables.concat(this.tablesWintergarten).concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
 
 
         this.formatAzListe(tables);

@@ -220,7 +220,7 @@ module.exports = {
                     "name": trace[i][1],
                     "zimmernummer": trace[i][0],
                     "anreise": trace[i][3],
-                    "abreise": trace[i][4],
+                    "abreise": trace[i][5],
                     "trace": trace[i][8]
                 });
             }

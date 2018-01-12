@@ -278,6 +278,8 @@ module.exports = {
         let tableValue = "";
         let trace = "";
         let tableValueArray = [];
+        let value = "nAnreise";
+
 
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(/:(.+)/)[1]);
@@ -286,40 +288,27 @@ module.exports = {
             }
         }
 
+        let infoElementString = JSON.stringify(splitted);
+
+        console.log('infoElementString: ' + infoElementString);
+
         //console.log(JSON.stringify("req.body: " + req.body));
-        //console.log("informationElements2:");
-        //console.log(informationElements2);
+        console.log("informationElements2:");
+        console.log(informationElements2);
 
-        if (informationElements2.length >= 10) {
-            console.log("Im Haus Liste gedropped");
-            nameValue = informationElements2[0].substring(1, informationElements2[0].length);
-            spracheValue = informationElements2[1].substring(1, informationElements2[1].length);
-            zimmernummerValue = informationElements2[2].substring(1, informationElements2[2].length);
-            preistypValue = informationElements2[3].substring(1, informationElements2[3].length);
-            anreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
-            abreiseValue = informationElements2[5].substring(1, informationElements2[5].length);
-            personenAnzahlValue = informationElements2[6].substring(1, informationElements2[6].length);
-            rbsouValue = informationElements2[7].substring(1, informationElements2[7].length);
-            notiz2Value = informationElements2[8].substring(1, informationElements2[8].length);
-            departmentValue = informationElements2[9].substring(1, informationElements2[9].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-            tableValueArray = informationElements2[9].toString().match(/\d+/);
-            tableValue = tableValueArray[0];
-
-        } else if (informationElements2.length === 9) {
-            console.log("Anreise Liste gedropped");
+        if (infoElementString.indexOf(value) != -1 && infoElementString.indexOf('nTrace') === -1) {
+            console.log("Im Haus Liste gedropped / Anreise Liste ");
             nameValue = informationElements2[0].substring(1, informationElements2[0].length);
             zimmernummerValue = informationElements2[1].substring(1, informationElements2[1].length);
-            preistypValue = informationElements2[2].substring(1, informationElements2[2].length);
-            anreiseValue = informationElements2[3].substring(1, informationElements2[3].length);
-            abreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
-            personenAnzahlValue = informationElements2[5].substring(1, informationElements2[5].length);
-            rbsouValue = informationElements2[6].substring(1, informationElements2[6].length);
-            notiz2Value = informationElements2[7].substring(1, informationElements2[7].length);
-            departmentValue = informationElements2[8].substring(1, informationElements2[8].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
-            tableValueArray = informationElements2[8].toString().match(/\d+/);
+            anreiseValue = informationElements2[2].substring(1, informationElements2[2].length);
+            abreiseValue = informationElements2[3].substring(1, informationElements2[3].length);
+            personenAnzahlValue = informationElements2[4].substring(1, informationElements2[4].length);
+            notiz2Value = informationElements2[5].substring(1, informationElements2[5].length);
+            departmentValue = informationElements2[6].substring(1, informationElements2[6].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
+            tableValueArray = informationElements2[6].toString().match(/\d+/);
             tableValue = tableValueArray[0];
 
-        } else {
+        } else if (infoElementString.indexOf('nTrace') != -1) {
             console.log("Trace Liste gedropped");
             zimmernummerValue = informationElements2[0].substring(1, informationElements2[0].length);
             nameValue = informationElements2[1].substring(1, informationElements2[1].length);
@@ -345,7 +334,7 @@ module.exports = {
             departmentValueDB = "Wintergarten";
         }
 
-        //console.log("nameValue: " + nameValue + " spracheValue: " + spracheValue + " zimmernummerValue: " + zimmernummerValue + " preistypValue: " + preistypValue + " anreiseValue: " + anreiseValue + " abreiseValue: " + abreiseValue + " personenAnzahlValue: " + personenAnzahlValue + " rbsouValue: " + rbsouValue + " notiz2Value: " + notiz2Value + " departmentValue: " + departmentValue + " tableValue: " + tableValue);
+        console.log("nameValue: " + nameValue + " spracheValue: " + spracheValue + " zimmernummerValue: " + zimmernummerValue + " preistypValue: " + preistypValue + " anreiseValue: " + anreiseValue + " abreiseValue: " + abreiseValue + " personenAnzahlValue: " + personenAnzahlValue + " rbsouValue: " + rbsouValue + " notiz2Value: " + notiz2Value + " departmentValue: " + departmentValue + " tableValue: " + tableValue);
         //console.log(departmentValueDB);
         //console.log(tableValue);
 
