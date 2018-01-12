@@ -3,7 +3,6 @@
  */
 module.exports = {
     moveTable: function (db, tableNumber, departmentValue, topValue, leftValue, height, width) {
-
         if (tableNumber === '60' && topValue === '440' && leftValue === '220' && width === '30') {
             db.tables.update(
                 {
@@ -1512,8 +1511,6 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-
-
         }
     }
 };

@@ -2,6 +2,15 @@
  * Created by antonhorl on 11.01.18.
  */
 
+const
+    moveTablesPanorama60s = require('./moveTablesPanorama60s.js'),
+    moveTablesPanorama70s = require('./moveTablesPanorama70s.js'),
+    moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
+    moveTablesSonnbergZirbn = require('./moveTablesSonnbergZirbn.js'),
+    moveTablesWintergarten = require('./moveTablesWintergarten.js'),
+    moveTablesRestaurant = require('./moveTablesRestaurant.js');
+
+
 module.exports = {
     getTable: function (req, res, db) {
 

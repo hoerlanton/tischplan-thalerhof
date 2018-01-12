@@ -791,6 +791,7 @@ export class TischplanComponent implements OnInit {
       this.fontColor4 = "f3efe4";
     }
   }
+
   moveTable(table, j) {
 
     console.log("moveTable clicked");

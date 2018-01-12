@@ -75,9 +75,24 @@ placeholder.addPlaceholder(req, res, db)});
 //Get Tables
 router.get('/tables', function(req, res, next) {
 table.getTable(req, res, db)});
+
+//moveTable
+router.post('/moveTable', function(req, res, next) {
+table.moveTable(req, res, db);
+});
+
 //moveTable
 router.post('/moveTable', function(req, res, next) {
 table.moveTable(req, res, db)});
+
+//moveTable
+router.post('/moveTable', function(req, res, next) {
+table.moveTable(req, res, db)});
+
+//moveTable
+router.post('/moveTable', function(req, res, next) {
+table.moveTable(req, res, db)});
+
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
 table.occupyTable(req, res, db)});
