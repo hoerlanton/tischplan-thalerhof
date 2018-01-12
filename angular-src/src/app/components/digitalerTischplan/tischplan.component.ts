@@ -59,6 +59,8 @@ export class TischplanComponent implements OnInit {
   nameTraceInput: string;
   backgroundColor: string;
   dateGeneratedListe: any;
+  tablesOccupied: number;
+  tableNumbers: any[] = [];
 
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
@@ -142,6 +144,7 @@ export class TischplanComponent implements OnInit {
         this.tables = this.tables.concat(this.tablesWintergarten).concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
 
 
+
         this.formatAzListe(tables);
 
       });
@@ -169,7 +172,7 @@ export class TischplanComponent implements OnInit {
     this.fontColor2 = "f3efe4";
     this.fontColor3 = "f3efe4";
     this.fontColor4 = "f3efe4";
-
+    this.tablesOccupied = 0;
     this.backgroundColor = "ffffff";
 
 
@@ -358,11 +361,24 @@ export class TischplanComponent implements OnInit {
 
     console.log('this.tables after sort: ');
 
+    console.log("this.uniqueTables: ");
+    console.log(this.uniqueTables);
+
+    for (let i: number = 0; i < this.tables.length; i++) {
+      console.log(i);
+      if ("nameValue" in this.tables[i]) {
+        console.log("--->" + i);
+        this.tableNumbers.push(this.tables[i].number);
+      }
+    }
+
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
     }
 
-    this.uniqueTables = this.tables.filter( onlyUnique );
+    this.uniqueTables = this.tableNumbers.filter( onlyUnique );
+
+    this.tablesOccupied = this.uniqueTables.length - 1;
 
     console.log(this.tables);
   }
