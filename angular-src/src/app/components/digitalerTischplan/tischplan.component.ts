@@ -378,7 +378,7 @@ export class TischplanComponent implements OnInit {
 
     this.uniqueTables = this.tableNumbers.filter( onlyUnique );
 
-    this.tablesOccupied = this.uniqueTables.length - 1;
+    this.tablesOccupied = this.uniqueTables.length;
 
     console.log(this.tables);
   }
