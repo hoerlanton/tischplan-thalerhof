@@ -749,6 +749,13 @@ var TischplanComponent = (function () {
                 return;
             }
             else {
+                response[0].tables.sort(function (a, b) {
+                    if (Number(a.number) < Number(b.number))
+                        return -1;
+                    if (Number(a.number) > Number(b.number))
+                        return 1;
+                    return 0;
+                });
                 if (response[0].tables[j].department === "Sonnberg-Zirbn") {
                     _this.tablesSonnbergZirbn[j] = response[0].tables[j];
                 }
@@ -756,10 +763,10 @@ var TischplanComponent = (function () {
                     _this.tablesPanorama[j] = response[0].tables[j];
                 }
                 else if (response[0].tables[j].department === "Restaurant") {
-                    _this.tablesRestaurant[j] = response[0].tables[j];
+                    _this.tablesRestaurant = response[0].tables;
                 }
                 else if (response[0].tables[j].department === "Wintergarten") {
-                    _this.tablesWintergarten[j] = response[0].tables[j];
+                    _this.tablesWintergarten = response[0].tables;
                 }
             }
         });

@@ -651,6 +651,16 @@ export class TischplanComponent implements OnInit {
       if(response === null) {
         return;
       } else {
+
+        response[0].tables.sort(function(a, b){
+          if ( Number(a.number) < Number(b.number) )
+            return -1;
+          if ( Number(a.number) > Number(b.number)  )
+            return 1;
+          return 0;
+        });
+
+
         if (response[0].tables[j].department === "Sonnberg-Zirbn") {
           this.tablesSonnbergZirbn[j] = response[0].tables[j];
         }
@@ -658,10 +668,10 @@ export class TischplanComponent implements OnInit {
           this.tablesPanorama[j] = response[0].tables[j];
         }
         else if (response[0].tables[j].department === "Restaurant") {
-          this.tablesRestaurant[j] = response[0].tables[j];
+          this.tablesRestaurant = response[0].tables;
         }
         else if (response[0].tables[j].department === "Wintergarten") {
-          this.tablesWintergarten[j] = response[0].tables[j];
+          this.tablesWintergarten = response[0].tables;
         }
       }
     });
