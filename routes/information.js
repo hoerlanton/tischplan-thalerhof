@@ -4,12 +4,8 @@
 
 module.exports = {
     getInformation: function (req, res, db) {
-
-
         console.log("tables get called");
-
         //Get guests from Mongo DB
-
         db.newInformation.find(function (err, information) {
             if (err) {
                 res.send(err);
@@ -17,11 +13,10 @@ module.exports = {
             res.json(information);
         });
     },
-
-    newInformationToTable: function (req, res, db) {
+    deleteInformation: function (req, res, db) {
 
         //JSON string is parsed to a JSON object
-        console.log("Delete request made to /deleteInformationElement");
+        console.log("deleteInformation request made to /deleteInformation");
         let informationElementToDelete = req.body;
         console.log(JSON.stringify(informationElementToDelete));
         db.newInformation.remove({
@@ -33,11 +28,10 @@ module.exports = {
             });
         res.json(informationElementToDelete);
     },
+    newInformationToTable: function (req, res, db) {
 
-    deleteInformation: function (req, res, db) {
 
-
-        console.log("newInformationToTables post called");
+        console.log("newInformationToTable post called");
 
         let newInformation = req.body;
 
@@ -149,7 +143,7 @@ module.exports = {
     newInformationToBox: function (req, res, db) {
 
         console.log("newInformationToBox post called");
-//Get guests from Mongo DB
+        //Get guests from Mongo DB
 
         console.log(req.body);
         let newInformation = req.body;

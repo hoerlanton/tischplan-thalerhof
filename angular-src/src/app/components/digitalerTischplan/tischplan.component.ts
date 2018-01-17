@@ -870,7 +870,7 @@ export class TischplanComponent implements OnInit {
         .subscribe(Information => {
           //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
           console.log('Information: ' + JSON.stringify(Information));
-          console.log(Information.tables[0]);
+          //console.log(Information.tables[0]);
           console.log("------");
           //console.log(Information[0].tables);
 

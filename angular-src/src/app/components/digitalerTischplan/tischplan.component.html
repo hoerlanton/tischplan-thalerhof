@@ -24,10 +24,10 @@
           Traces Box <span class="caret"></span>
         </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu" style="overflow: auto; height: 350px; width: 200px">
-            <div *ngFor="let newInformationElement of newInformationElements; let j = index;" (click)="none($event)">
-              <button style="float: right; background-color: #0a7a74; color: #FFFFFF; margin-right: 20px" type="submit" class="btn btn-send" (click)="delete(newInformationElement, j, $event)">x</button>
-              <li role="menuitem" style="padding: 5px;"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br><b>Datum: </b> {{newInformationElement.date}}<br><b>Name: </b> {{newInformationElement.name}}<br><b>Mitarbeiter: </b> {{newInformationElement.employee}}</li>
-              <li class="divider dropdown-divider"></li>
+            <div *ngFor="let newInformationElement of newInformationElements; let j = index;" >
+            <button style="float: right; background-color: #0a7a74; color: #FFFFFF; margin-right: 20px" type="submit" class="btn btn-send" (click)="delete(newInformationElement, j, $event)">x</button>
+                <li role="menuitem" style="padding: 5px;" (click)="none($event)"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br><b>Datum: </b> {{newInformationElement.date}}<br><b>Name: </b> {{newInformationElement.name}}<br><b>Mitarbeiter: </b> {{newInformationElement.employee}}</li>
+                <li class="divider dropdown-divider"></li>
             </div>
           </ul>
       </div>
