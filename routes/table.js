@@ -221,6 +221,46 @@ module.exports = {
                     "tables.$.rbsouValue3": 1,
                     "tables.$.notiz2Value3": 1,
                     "tables.$.trace3": 1,
+                    "tables.$.nameValue4": 1,
+                    "tables.$.spracheValue4": 1,
+                    "tables.$.zimmernummerValue4": 1,
+                    "tables.$.preistypValue4": 1,
+                    "tables.$.anreiseValue4": 1,
+                    "tables.$.abreiseValue4": 1,
+                    "tables.$.personenAnzahlValue4": 1,
+                    "tables.$.rbsouValue4": 1,
+                    "tables.$.notiz2Value4": 1,
+                    "tables.$.trace4": 1,
+                    "tables.$.nameValue5": 1,
+                    "tables.$.spracheValue5": 1,
+                    "tables.$.zimmernummerValue5": 1,
+                    "tables.$.preistypValue5": 1,
+                    "tables.$.anreiseValue5": 1,
+                    "tables.$.abreiseValue5": 1,
+                    "tables.$.personenAnzahlValue5": 1,
+                    "tables.$.rbsouValue5": 1,
+                    "tables.$.notiz2Value5": 1,
+                    "tables.$.trace5": 1,
+                    "tables.$.nameValue6": 1,
+                    "tables.$.spracheValue6": 1,
+                    "tables.$.zimmernummerValue6": 1,
+                    "tables.$.preistypValue6": 1,
+                    "tables.$.anreiseValue6": 1,
+                    "tables.$.abreiseValue6": 1,
+                    "tables.$.personenAnzahlValue6": 1,
+                    "tables.$.rbsouValue6": 1,
+                    "tables.$.notiz2Value6": 1,
+                    "tables.$.trace6": 1,
+                    "tables.$.nameValue7": 1,
+                    "tables.$.spracheValue7": 1,
+                    "tables.$.zimmernummerValue7": 1,
+                    "tables.$.preistypValue7": 1,
+                    "tables.$.anreiseValue7": 1,
+                    "tables.$.abreiseValue7": 1,
+                    "tables.$.personenAnzahlValue7": 1,
+                    "tables.$.rbsouValue7": 1,
+                    "tables.$.notiz2Value7": 1,
+                    "tables.$.trace7": 1,
                     "tables.$.newTraceDate": 1,
                     "tables.$.newTraceText": 1,
                     "tables.$.newTraceRoomNumber": 1,
@@ -436,6 +476,110 @@ module.exports = {
                                     "tables.$.rbsouValue3": rbsouValue,
                                     "tables.$.notiz2Value3": notiz2Value,
                                     "tables.$.trace3": trace,
+                                }
+                            }, function (err, tables) {
+                                if (err) {
+                                    console.log("Error");
+                                }
+                                console.log("addInformationToTable updated successfully");
+                            });
+                    } else if (!("nameValue4" in tablesfirst.tables[0])) {
+
+                db.tables.update(
+                    {
+                        department: departmentValueDB,
+                        "tables.number": tableValue
+                    },
+                    {
+                        $set: {
+                            "tables.$.nameValue4": nameValue,
+                            "tables.$.spracheValue4": spracheValue,
+                            "tables.$.zimmernummerValue4": zimmernummerValue,
+                            "tables.$.preistypValue4": preistypValue,
+                            "tables.$.anreiseValue4": anreiseValue,
+                            "tables.$.abreiseValue4": abreiseValue,
+                            "tables.$.personenAnzahlValue4": personenAnzahlValue,
+                            "tables.$.rbsouValue4": rbsouValue,
+                            "tables.$.notiz2Value4": notiz2Value,
+                            "tables.$.trace4": trace,
+                        }
+                    }, function (err, tables) {
+                        if (err) {
+                            console.log("Error");
+                        }
+                        console.log("addInformationToTable updated successfully");
+                    });
+            } else if (!("nameValue5" in tablesfirst.tables[0])) {
+
+                        db.tables.update(
+                            {
+                                department: departmentValueDB,
+                                "tables.number": tableValue
+                            },
+                            {
+                                $set: {
+                                    "tables.$.nameValue5": nameValue,
+                                    "tables.$.spracheValue5": spracheValue,
+                                    "tables.$.zimmernummerValue5": zimmernummerValue,
+                                    "tables.$.preistypValue5": preistypValue,
+                                    "tables.$.anreiseValue5": anreiseValue,
+                                    "tables.$.abreiseValue5": abreiseValue,
+                                    "tables.$.personenAnzahlValue5": personenAnzahlValue,
+                                    "tables.$.rbsouValue5": rbsouValue,
+                                    "tables.$.notiz2Value5": notiz2Value,
+                                    "tables.$.trace5": trace,
+                                }
+                            }, function (err, tables) {
+                                if (err) {
+                                    console.log("Error");
+                                }
+                                console.log("addInformationToTable updated successfully");
+                            });
+                    } else if (!("nameValue6" in tablesfirst.tables[0])) {
+
+                        db.tables.update(
+                            {
+                                department: departmentValueDB,
+                                "tables.number": tableValue
+                            },
+                            {
+                                $set: {
+                                    "tables.$.nameValue6": nameValue,
+                                    "tables.$.spracheValue6": spracheValue,
+                                    "tables.$.zimmernummerValue6": zimmernummerValue,
+                                    "tables.$.preistypValue6": preistypValue,
+                                    "tables.$.anreiseValue6": anreiseValue,
+                                    "tables.$.abreiseValue6": abreiseValue,
+                                    "tables.$.personenAnzahlValue6": personenAnzahlValue,
+                                    "tables.$.rbsouValue6": rbsouValue,
+                                    "tables.$.notiz2Value6": notiz2Value,
+                                    "tables.$.trace6": trace,
+                                }
+                            }, function (err, tables) {
+                                if (err) {
+                                    console.log("Error");
+                                }
+                                console.log("addInformationToTable updated successfully");
+                            });
+                    } else if (!("nameValue7" in tablesfirst.tables[0])) {
+
+                        db.tables.update(
+                            {
+                                department: departmentValueDB,
+                                "tables.number": tableValue
+                            },
+                            {
+                                $set: {
+                                    "tables.$.nameValue7": nameValue,
+                                    "tables.$.spracheValue7": spracheValue,
+                                    "tables.$.zimmernummerValue7": zimmernummerValue,
+                                    "tables.$.preistypValue7": preistypValue,
+                                    "tables.$.anreiseValue7": anreiseValue,
+                                    "tables.$.abreiseValue7": abreiseValue,
+                                    "tables.$.personenAnzahlValue7": personenAnzahlValue,
+                                    "tables.$.rbsouValue7": rbsouValue,
+                                    "tables.$.notiz2Value7": notiz2Value,
+                                    "tables.$.trace7": trace,
                                 }
                             }, function (err, tables) {
                                 if (err) {
