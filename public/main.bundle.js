@@ -237,6 +237,13 @@ var TischplanComponent = (function () {
                 return;
             }
             else {
+                imHausListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
                 _this.imHausListeElemente = imHausListeElemente;
                 console.log(_this.imHausListeElemente);
             }
@@ -247,6 +254,13 @@ var TischplanComponent = (function () {
                 return;
             }
             else {
+                anreiseListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
                 _this.anreiseListeElemente = anreiseListeElemente;
                 console.log(_this.anreiseListeElemente);
             }
@@ -307,6 +321,13 @@ var TischplanComponent = (function () {
                 return;
             }
             else {
+                tracesListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
                 console.log('92' + JSON.stringify(tracesListeElemente));
                 //console.log("2:" + tracesListeElemente[0].data[0]);
                 //console.log(tracesListeElemente[0].data.length);

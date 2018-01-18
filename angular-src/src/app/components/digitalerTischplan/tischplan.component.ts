@@ -72,6 +72,13 @@ export class TischplanComponent implements OnInit {
         if(imHausListeElemente === null) {
           return;
         } else {
+
+          imHausListeElemente.sort(function(a, b){
+            if(a.name < b.name) return -1;
+            if(a.name > b.name) return 1;
+            return 0;
+          });
+
           this.imHausListeElemente = imHausListeElemente;
           console.log(this.imHausListeElemente);
         }
@@ -82,6 +89,13 @@ export class TischplanComponent implements OnInit {
         if(anreiseListeElemente === null) {
           return;
         } else {
+
+          anreiseListeElemente.sort(function(a, b){
+            if(a.name < b.name) return -1;
+            if(a.name > b.name) return 1;
+            return 0;
+          });
+
           this.anreiseListeElemente = anreiseListeElemente;
           console.log(this.anreiseListeElemente);
         }
@@ -103,9 +117,6 @@ export class TischplanComponent implements OnInit {
           return;
         } else {
         console.log("TABLES LENGTH: " + tables.length);
-
-
-
 
           tables[2].tables.sort(function(a, b){
             if ( Number(a.number) < Number(b.number) )
@@ -143,8 +154,6 @@ export class TischplanComponent implements OnInit {
 
         this.tables = this.tables.concat(this.tablesWintergarten).concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
 
-
-
         this.formatAzListe(tables);
 
       });
@@ -154,6 +163,14 @@ export class TischplanComponent implements OnInit {
         if(tracesListeElemente === null) {
           return;
         } else {
+
+          tracesListeElemente.sort(function(a, b){
+            if(a.name < b.name) return -1;
+            if(a.name > b.name) return 1;
+            return 0;
+          });
+
+
           console.log('92' + JSON.stringify(tracesListeElemente));
           //console.log("2:" + tracesListeElemente[0].data[0]);
           //console.log(tracesListeElemente[0].data.length);
