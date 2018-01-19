@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TischplanComponent } from './components/digitalerTischplan/tischplan.component';
+import { PrintComponent } from './components/print/print.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DragulaModule } from 'ng2-dragula';
 import {NgClass} from '@angular/common';
@@ -13,7 +14,7 @@ import {DropdownModule} from "ng2-dropdown";
 
 @NgModule({
   declarations: [
-    AppComponent, TischplanComponent
+    AppComponent, TischplanComponent, PrintComponent
   ],
   imports: [
     FormsModule,

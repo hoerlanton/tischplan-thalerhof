@@ -9,7 +9,8 @@ import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { LeftValue } from '../../../../LeftValue';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
-
+import { PrintComponent } from '../print/print.component';
+import { SharedService } from '../sharedService';
 
 @Component({
   selector: 'tischplan',
@@ -18,6 +19,10 @@ import {el} from "@angular/platform-browser/testing/src/browser_util";
 })
 
 export class TischplanComponent implements OnInit {
+
+  //@ViewChild(PrintComponent) print: PrintComponent;
+  @Input() print: PrintComponent;
+
   buttonBgColor1: string;
   buttonBgColor2: string;
   buttonBgColor3: string;
@@ -63,7 +68,7 @@ export class TischplanComponent implements OnInit {
   tableNumbers: any[] = [];
 
 
-  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer) {
+  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService, private element: ElementRef, private renderer: Renderer, private sharedService: SharedService) {
     let DomBaseElement = this.element.nativeElement;
     let wrapperElementsChildNames = [];
 
@@ -211,6 +216,7 @@ export class TischplanComponent implements OnInit {
       console.log(`out: ${value[0]}`);
       this.onOut(value.slice(1));
     });
+
   }
 
   public formatAzListe(tables) {
@@ -292,43 +298,7 @@ export class TischplanComponent implements OnInit {
 
 
 
-    /*
-     for (let row=0; row<tempTablesArray.length; row++) {
-     tempTablesArray[row] = [];
-     for (let col=0; col < tempTablesArray[row].length; col++) {
-     tempTablesArrayRow = tempTablesArray[row][col];
-     }
-     }
 
-
-
-
-     <b> Name:</b> {{tableTeestubeTeelounge.nameValue2}}<br>
-     <b> Zimmernummer:</b> {{tableTeestubeTeelounge.zimmernummerValue2}}<br>
-     <b> Anreise Datum:</b> {{tableTeestubeTeelounge.anreiseValue2}}<br>
-     <b> Abreise Datum:</b> {{tableTeestubeTeelounge.abreiseValue2}}<br>
-     <b> Personenanzahl:</b> {{tableTeestubeTeelounge.personenAnzahlValue2}}<br>
-     <b> Notiz1:</b> {{tableTeestubeTeelounge.notiz3Value}}<br>
-     <b> Notiz2:</b> {{tableTeestubeTeelounge.notiz4Value}}<br>
-     <b> Trace:</b> {{tableTeestubeTeelounge.trace2}}<br>
-     <b> BemerkungValue:</b> {{tableTeestubeTeelounge.bemerkungValue3}}<br>
-     </p>
-     </div>
-     <div *ngIf="tableTeestubeTeelounge.nameValue3">
-     <p style="background-color: #FFFFFF; padding: 10px">
-     <b> Name:</b> {{tableTeestubeTeelounge.nameValue3}}<br>
-     <b> Sprache:</b> {{tableTeestubeTeelounge.katValue3}}<br>
-     <b> Zimmernummer:</b> {{tableTeestubeTeelounge.zimmernummerValue3}}<br>
-     <b> Anreise Datum:</b> {{tableTeestubeTeelounge.anreiseValue3}}<br>
-     <b> Abreise Datum:</b> {{tableTeestubeTeelounge.abreiseValue3}}<br>
-     <b> Personenanzahl:</b> {{tableTeestubeTeelounge.personenAnzahlValue3}}<br>
-     <b> Notiz1:</b> {{tableTeestubeTeelounge.notiz5Value}}<br>
-     <b> Notiz2:</b> {{tableTeestubeTeelounge.notiz6Value}}<br>
-     <b> Trace:</b> {{tableTeestubeTeelounge.trace3}}<br>
-     <b> BemerkungValue:</b> {{tableTeestubeTeelounge.bemerkungValue6}}<br>
-
-
-     */
     console.log(this.tempTablesArray1);
     console.log(this.tempTablesArray);
     console.log(this.tempTablesArray2);
@@ -401,104 +371,6 @@ export class TischplanComponent implements OnInit {
   }
 
 
-  /*
-  public formatTracesListeElements(tracesListeElemente) {
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 7) {
-        tracesListeElemente[0].data[o].splice(0, 5);
-        tracesListeElemente[0].data[o].splice(6, 7);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 8) {
-        tracesListeElemente[0].data.splice(o, 1);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 24) {
-        tracesListeElemente[0].data[o].splice(0, 12);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 13) {
-        tracesListeElemente[0].data.splice(o, 1);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 19) {
-        tracesListeElemente[0].data[o].splice(0, 17);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 1) {
-        tracesListeElemente[0].data.splice(o, 1);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 12) {
-        tracesListeElemente[0].data[o].splice(8, 12);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o].length === 2) {
-        tracesListeElemente[0].data[o].splice(1, 2);
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      console.log(o + tracesListeElemente[0].data[o]);
-    }
-
-    let trace = [];
-
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      trace[o] = [];
-    }
-
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (tracesListeElemente[0].data[o] !== undefined) {
-        if (tracesListeElemente[0].data[o].length === 8) {
-          trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]);
-          console.log('tracesListeElemente[0].data[o + 2] : ');
-          console.log(tracesListeElemente[0].data[o + 2]);
-          if (tracesListeElemente[0].data[o + 2] !== undefined) {
-            if (tracesListeElemente[0].data[o + 2].length === 1) {
-              trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]);
-              if (tracesListeElemente[0].data[o + 3] !== undefined) {
-                if (tracesListeElemente[0].data[o + 3].length === 1) {
-                  trace[o] = tracesListeElemente[0].data[o].concat(tracesListeElemente[0].data[o + 1]).concat(tracesListeElemente[0].data[o + 2]).concat(tracesListeElemente[0].data[o + 3]);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      let traceTemp = [];
-      if (trace[o].length === 10) {
-        traceTemp = trace[o].splice(trace[o].length - 2, trace[o].length);
-      } else if (trace[o].length === 11) {
-        traceTemp = trace[o].splice(trace[o].length - 3, trace[o].length);
-      }
-        console.log('traceTemp' + traceTemp);
-        let traceTempJoined = traceTemp.join(" ");
-        console.log('traceTempJoined' + traceTempJoined);
-        trace[o].push(traceTempJoined);
-      }
-
-
-    for (let o = 0; o < tracesListeElemente[0].data.length; o++) {
-      if (trace[o].length > 8) {
-        this.tracesListeElemente.push(trace[o]);
-      }
-    }
-    console.log('tracesListeElemente[0].data');
-    console.log(tracesListeElemente[0].data);
-    console.log('this.tracesListeElemente');
-    console.log(this.tracesListeElemente);
-  }
-
-*/
   private onDrag(args) {
     let [e, el] = args;
   }
@@ -970,13 +842,9 @@ export class TischplanComponent implements OnInit {
     popupWinindow.document.write('<html><head><style> .row .t1 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t2 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t3 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t4 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t5 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t6 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t7 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t8 { width: 100px; height: 90px; border: solid 1px #0a7a74; position: absolute; } .row .t9 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t10 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t11 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t12 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t13 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t14 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t15 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t16 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t17 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t18 { position: absolute; } .row .t19 { position: absolute; }.row .t20 { position: absolute; } .row .t21 { position: absolute; }  .row .t22 { position: absolute; } .row .t23 { position: absolute; } .row .t24 { position: absolute; } .row .t40 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t41 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t42 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t43 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t44 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t45 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t46 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t47 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t48 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t49 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t50 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t51 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t52 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t53 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t54 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t55 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t56 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t57 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t58 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t59 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t60 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t61 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t62 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t63 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t64 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t65 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t66 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t67 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t68 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t69 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t70 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t71 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t72 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t73 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t74 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t75 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t76 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t77 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t78 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t79 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t80 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t81 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t82 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t83 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t84 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t85 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t86 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t87 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t88 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t89 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t501 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t502 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t503 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t504 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t505 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t506 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t507 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t508 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t509 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t510 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t511 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t512 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t513 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t514 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t515 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t516 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t517 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(10deg); } .row .t518 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(30deg); } .row .t519 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(50deg); } .row .t520 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(70deg); } .row .t521 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(90deg); } .row .t522 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t523 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t524 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t525 { width: 40px; height: 40px; position: absolute; transform: rotate(45deg); } </style></head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }
-  printToCart3(printSectionId3: string){
-    let popupWinindow;
-    let innerContents = document.getElementById(printSectionId3).innerHTML;
-    popupWinindow = window.open('', '_blank', 'width=1000,height=1000,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
-    popupWinindow.document.open();
-    popupWinindow.document.write('<html><head><style></style></head><body onload="window.print()">' + innerContents + '</html>');
-    popupWinindow.document.close();
-  }
+
+  printToCart3(a: string){
+    this.sharedService.printToCart3(a);
+  };
 
 }
