@@ -23,5 +23,4 @@ export class RestaurantComponent implements OnInit {
   occupy(table, j) {
     this.occupied.emit({table, j});
   }
-
 }

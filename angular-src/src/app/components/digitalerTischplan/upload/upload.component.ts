@@ -6,7 +6,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-upload',
   templateUrl: 'upload.component.html',
-  styleUrls: ['upload.component.css']
+  styleUrls: ['../tischplan.component.css']
 })
 export class UploadComponent implements OnInit {
   filesToUpload: Array<File> = [];
@@ -14,6 +14,10 @@ export class UploadComponent implements OnInit {
   constructor(private http: Http, private _flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
+  }
+
+  fileChangeEvent(fileInput: any) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 
   upload(){

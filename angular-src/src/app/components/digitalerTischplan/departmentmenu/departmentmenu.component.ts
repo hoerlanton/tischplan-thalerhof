@@ -55,6 +55,10 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor1 = "f3efe4";
       }
       this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
+      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
+      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+
     }
 
     showPanorama() {
@@ -82,6 +86,9 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor2 = "f3efe4";
       }
       this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
+      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
+      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
 
     }
 
@@ -109,6 +116,9 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor3 = "f3efe4";
       }
       this.showRestaurantBoolChange.emit(this.showRestaurantBool);
+      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
+      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
     }
 
     showWintergarten() {
@@ -135,6 +145,9 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor4 = "f3efe4";
       }
       this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
+      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
+      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
     }
 
 }

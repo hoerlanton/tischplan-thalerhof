@@ -1,13 +1,16 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { NavService }   from '../../../services/tables.service';
 
 @Component({
   selector: 'app-departments',
   templateUrl: 'departments.component.html',
   styleUrls: ['../tischplan.component.css']
 })
+
 export class DepartmentsComponent implements OnInit {
 
   @Input('tablesWintergarten') tablesWintergarten: Table[];
@@ -18,8 +21,16 @@ export class DepartmentsComponent implements OnInit {
   @Input('showPanoramaBool') showPanoramaBool: boolean;
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Output()
+  dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
+  @Output()
+  dispensedRestaurant:EventEmitter<any> = new EventEmitter();
+  @Output()
+  dispensedWintergarten:EventEmitter<any> = new EventEmitter();
+  @Output()
+  dispensedPanorama:EventEmitter<any> = new EventEmitter();
 
-  constructor(private tischplanService: TischplanService) {
+  constructor(private tischplanService: TischplanService, private _navService:NavService) {
   }
 
   ngOnInit() {
@@ -28,8 +39,8 @@ export class DepartmentsComponent implements OnInit {
   occupied(table){
     console.log("table.j");
     console.log(table.j);
-    console.log("table");
-    console.log(table);
+    console.log("table.table");
+    console.log(table.table);
     this.occupy(table.table, table.j);
   }
 
@@ -39,6 +50,7 @@ export class DepartmentsComponent implements OnInit {
       console.log("Dispense Table:");
       console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
       console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
+      console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].department));
       if (response === null) {
         return;
       } else {
@@ -49,14 +61,21 @@ export class DepartmentsComponent implements OnInit {
             return 1;
           return 0;
         });
-            if (response[0].tables.department === "Sonnberg-Zirbn") {
+            if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+              console.log(' this._navService.changeNav(response[0].tables); called');
+              this.dispensedSonnbergZirbn.emit(response[0].tables);
+            } else if (response[0].tables[j].department === "Panorama") {
+              this.dispensedPanorama.emit(response[0].tables);
               this.tablesSonnbergZirbn = response[0].tables;
-          } else if (response[0].tables.department === "Panorama") {
-              this.tablesPanorama = response[0].tables;
-            } else if (response[0].tables.department === "Restaurant") {
-              this.tablesRestaurant = response[0].tables;
-            } else if (response[0].tables.department === "Wintergarten") {
-              this.tablesWintergarten = response[0].tables;
+
+            } else if (response[0].tables[j].department === "Restaurant") {
+              this.dispensedRestaurant.emit(response[0].tables);
+              this.tablesSonnbergZirbn = response[0].tables;
+
+            } else if (response[0].tables[j].department === "Wintergarten") {
+              this.dispensedWintergarten.emit(response[0].tables);
+              this.tablesSonnbergZirbn = response[0].tables;
+
             }
         }
     });
@@ -137,32 +156,5 @@ export class DepartmentsComponent implements OnInit {
           }
         }
       });
-  }
-
-  moveTable(table, j) {
-    console.log("moveTable clicked");
-    console.log('table :' + table.number + 'j' + j);
-    this.tischplanService.moveTable(table).subscribe(response => {
-      console.log('Response:' + JSON.stringify(response));
-      //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
-      console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
-      console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-      if (response === null) {
-        return;
-      } else {
-        if (response[0].tables.department === "Sonnberg-Zirbn") {
-          this.tablesSonnbergZirbn = response[0].tables;
-        }
-        else if (response[0].tables.department === "Panorama") {
-          this.tablesPanorama = response[0].tables;
-        }
-        else if (response[0].tables.department === "Restaurant") {
-          this.tablesRestaurant = response[0].tables;
-        }
-        else if (response[0].tables.department === "Wintergarten") {
-          this.tablesWintergarten = response[0].tables;
-        }
-      }
-    });
   }
 }

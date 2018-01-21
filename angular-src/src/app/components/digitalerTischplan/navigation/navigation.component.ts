@@ -9,7 +9,8 @@ import { TischplanService } from '../../../services/tischplan.service';
 })
 export class NavigationComponent implements OnInit {
 
-  @Input('newInformationElements') newInformationElements: any[] = [];;
+  @Input('newInformationElements') newInformationElements: any[] = [];
+  @Input('tablesOccupied') tablesOccupied: number;
 
   constructor(private tischplanService: TischplanService) { }
 
