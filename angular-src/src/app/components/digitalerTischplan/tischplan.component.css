@@ -170,12 +170,12 @@ html, body {
 }
 
 
-.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .anleitung {
+.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {
   display: none;
 }
 
 @media (min-width: 1200px) {
-  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .anleitung{
+  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {
     display: block;
   }
 }
