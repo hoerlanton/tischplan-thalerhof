@@ -155,8 +155,7 @@ export class TischplanComponent {
           return;
         } else {
         console.log("TABLES LENGTH: " + tables.length);
-
-          tables[2].tables.sort(function(a, b){
+          tables[3].tables.sort(function(a, b){
             if ( Number(a.number) < Number(b.number) )
               return -1;
             if ( Number(a.number) > Number(b.number)  )
