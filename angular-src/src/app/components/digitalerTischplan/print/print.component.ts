@@ -23,6 +23,8 @@ export class PrintComponent {
 
   @Output()
   getTablesOccupied:EventEmitter<number> = new EventEmitter();
+  @Output()
+  getTablesforAzListe:EventEmitter<number> = new EventEmitter();
 
   tempTablesArray: any[] = [];
   tempTablesArray2:  any[] = [];
@@ -175,6 +177,7 @@ export class PrintComponent {
     this.uniqueTables = this.tableNumbers.filter( onlyUnique );
     this.tablesOccupied = this.uniqueTables.length;
     this.getTablesOccupied.emit(this.tablesOccupied);
+    this.getTablesforAzListe.emit(this.tables);
 
     console.log(this.tables);
     console.log("this.tablesOccupied" + this.tablesOccupied);
