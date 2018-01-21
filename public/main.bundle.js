@@ -372,10 +372,6 @@ var TischplanComponent = (function () {
             console.log("out: " + value[0]);
             _this.onOut(value.slice(1));
         });
-        //      this.sharedService.caseNumber$.subscribe(
-        //        data => {
-        //          console.log('Sibling1Component-received from sibling2: ' + data);
-        //        });
     }
     TischplanComponent.prototype.formatAzListe = function (tables) {
         function filterByID(obj) {
