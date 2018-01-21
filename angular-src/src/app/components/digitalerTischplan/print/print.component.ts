@@ -24,7 +24,7 @@ export class PrintComponent {
   @Output()
   getTablesOccupied:EventEmitter<number> = new EventEmitter();
   @Output()
-  getTablesforAzListe:EventEmitter<number> = new EventEmitter();
+  getTablesforAzListe:EventEmitter<any> = new EventEmitter();
 
   tempTablesArray: any[] = [];
   tempTablesArray2:  any[] = [];
