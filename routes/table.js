@@ -8,7 +8,8 @@ const
     moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
     moveTablesSonnbergZirbn = require('./moveTablesSonnbergZirbn.js'),
     moveTablesWintergarten = require('./moveTablesWintergarten.js'),
-    moveTablesRestaurant = require('./moveTablesRestaurant.js');
+    moveTablesRestaurant1024 = require('./moveTablesRestaurant10-24.js'),
+    moveTablesRestaurant110 = require('./moveTablesRestaurant1-10.js');
 
 
 module.exports = {
@@ -67,7 +68,8 @@ module.exports = {
         moveTablesPanorama80s.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         moveTablesSonnbergZirbn.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         moveTablesWintergarten.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        moveTablesRestaurant.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        moveTablesRestaurant110.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        moveTablesRestaurant1024.moveTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
             db.tables.find(

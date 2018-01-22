@@ -9,12 +9,13 @@ const   express = require('express'),
     moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
     moveTablesSonnbergZirbn = require('./moveTablesSonnbergZirbn.js'),
     moveTablesWintergarten = require('./moveTablesWintergarten.js'),
-    moveTablesRestaurant = require('./moveTablesRestaurant.js');
-    anreiseliste = require('./anreiseListe.js');
-    imHausListe = require('./imHausListe.js');
-    traceListe = require('./traceListe.js');
-    information = require('./information.js');
-    placeholder = require('./placeholder.js');
+    moveTablesRestaurant110 = require('./moveTablesRestaurant1-10.js'),
+    moveTablesRestaurant1024 = require('./moveTablesRestaurant10-24.js'),
+    anreiseliste = require('./anreiseListe.js'),
+    imHausListe = require('./imHausListe.js'),
+    traceListe = require('./traceListe.js'),
+    information = require('./information.js'),
+    placeholder = require('./placeholder.js'),
     table = require('./table.js');
 
 //Bodyparser middleware
@@ -75,24 +76,10 @@ placeholder.addPlaceholder(req, res, db)});
 //Get Tables
 router.get('/tables', function(req, res, next) {
 table.getTable(req, res, db)});
-
 //moveTable
 router.post('/moveTable', function(req, res, next) {
 table.moveTable(req, res, db);
 });
-
-//moveTable
-router.post('/moveTable', function(req, res, next) {
-table.moveTable(req, res, db)});
-
-//moveTable
-router.post('/moveTable', function(req, res, next) {
-table.moveTable(req, res, db)});
-
-//moveTable
-router.post('/moveTable', function(req, res, next) {
-table.moveTable(req, res, db)});
-
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
 table.occupyTable(req, res, db)});

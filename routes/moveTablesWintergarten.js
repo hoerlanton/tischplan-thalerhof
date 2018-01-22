@@ -335,6 +335,89 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
+        } else if (tableNumber === '517' && topValue === '290' && leftValue === '150' && width === '30') {
+            db.tables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "60",
+                        "tables.$.transformValue": "rotate(0deg)",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.tables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "518",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                    console.log(tables);
+                });
+        } else if (tableNumber === '517' && topValue === '290' && leftValue === '150' && width === '60') {
+            db.tables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "30",
+                        "tables.$.transformValue": "rotate(10deg)",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.tables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [ {
+                                "arrayIndex": "17",
+                                "department": "Wintergarten",
+                                "number": "518",
+                                "topValue": "280",
+                                "leftValue": "110",
+                                "bgColor": "#ffffff",
+                                "isBesetzt": "false",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "30",
+                                "height": "60",
+                                "transformValue": "rotate(30deg)"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
         } else if (tableNumber === '523' && topValue === '180' && leftValue === '260' && width === '40') {
             db.tables.update(
                 {
