@@ -34,16 +34,6 @@ export class PrintComponent {
   tablesOccupied: number;
   tableNumbers: any[] = [];
 
-
-  /*
-    constructor( private sharedService: SharedService) {
-      this.sharedService.caseNumber$.subscribe(
-        data => {
-          console.log('Sibling1Component-received from sibling2: ' + data);
-          this.printToCart3(data);
-        });
-    }
-  */
   ngOnInit() {
   }
 

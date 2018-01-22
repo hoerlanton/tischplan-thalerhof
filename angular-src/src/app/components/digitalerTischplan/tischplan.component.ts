@@ -45,7 +45,7 @@ export class TischplanComponent {
   @ViewChild(UploadComponent)
   private uploadComponent: UploadComponent;
 
-  item: any;
+  //item: any;
   subscription:Subscription;
   buttonBgColor1: string;
   buttonBgColor2: string;
@@ -90,8 +90,8 @@ export class TischplanComponent {
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService:NavService) {
 
-    this.subscription = this._navService.navItem$
-      .subscribe(tables => this.tablesPanorama = tables);
+    //this.subscription = this._navService.navItem$
+    //  .subscribe(tables => this.tablesPanorama = tables);
 
     this.dateGeneratedListe = new Date();
     this.buttonBgColor1 = "0a7a74";
@@ -108,6 +108,7 @@ export class TischplanComponent {
     this.showPanoramaBool = false;
     this.showRestaurantBool = false;
     this.showWintergartenBool = false;
+
     this.tischplanService.getImHausListe()
       .subscribe(imHausListeElemente => {
         if(imHausListeElemente === null) {
@@ -124,6 +125,7 @@ export class TischplanComponent {
           console.log(this.imHausListeElemente);
         }
       });
+
     this.tischplanService.getAnreiseListe()
       .subscribe(anreiseListeElemente => {
         if(anreiseListeElemente === null) {
@@ -140,6 +142,7 @@ export class TischplanComponent {
           console.log(this.anreiseListeElemente);
         }
       });
+
     this.tischplanService.getInformationElements()
       .subscribe(informationElemente => {
         if(informationElemente === null) {
@@ -149,6 +152,7 @@ export class TischplanComponent {
           console.log(this.newInformationElements);
         }
       });
+
     this.tischplanService.getTables()
       .subscribe(tables => {
         if(tables === null) {

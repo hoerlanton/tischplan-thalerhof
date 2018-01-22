@@ -14,7 +14,6 @@ export class TracesListeComponent implements OnInit {
 
   @Input('tracesListeElemente') tracesListeElemente: TracesListElement[];
 
-
   ngOnInit() {
   }
   updateTracesListeElement(informationElements2) {
