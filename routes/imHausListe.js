@@ -32,8 +32,7 @@ module.exports = {
                 "personenAnzahl": imHausListeData.data[i][31],
                 "notiz2": imHausListeData.data[i][33],
             });
-        }
-        ;
+        };
 
         console.log(imHausListe);
 

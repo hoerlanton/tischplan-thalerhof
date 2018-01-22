@@ -221,7 +221,8 @@ module.exports = {
                     "zimmernummer": trace[i][0],
                     "anreise": trace[i][3],
                     "abreise": trace[i][5],
-                    "trace": trace[i][8]
+                    "trace": trace[i][8],
+                    "border": "solid 3px red"
                 });
             }
         }
@@ -267,7 +268,7 @@ module.exports = {
             },
             {
                 $set: {
-                    "bgColor": "0a7a74",
+                    "bgColor": "0a7a74"
                 }
             }, function (err, tables) {
                 if (err) {
