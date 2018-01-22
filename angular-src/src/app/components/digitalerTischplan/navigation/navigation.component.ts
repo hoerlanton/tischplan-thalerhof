@@ -60,4 +60,8 @@ export class NavigationComponent implements OnInit {
     popupWinindow.document.write('<html><head><style></style></head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }
+
+  none(event) {
+    event.stopPropagation();
+  }
 }

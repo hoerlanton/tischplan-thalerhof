@@ -306,10 +306,4 @@ export class TischplanComponent {
   delete(informationElement, j, event) {
     this.navigationComponent.delete(informationElement, j, event);
   }
-  none(event) {
-    event.stopPropagation();
-  }
-
-
-
 }
