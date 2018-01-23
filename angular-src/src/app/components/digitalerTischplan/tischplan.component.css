@@ -51,16 +51,6 @@ html, body {
 }
 
 
-.row4 {
-  margin-top: 80px;
-}
-
-@media (min-width: 1200px) {
-  .row4 {
-    margin-top: 350px;
-  }
-}
-
 .row .table-col {
   min-height: 100vh;
   max-height: 100vh;
