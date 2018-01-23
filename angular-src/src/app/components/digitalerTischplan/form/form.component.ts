@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Table } from '../../../../../Table';
@@ -25,6 +25,8 @@ export class FormComponent implements OnInit {
   @Input('showInfoFormBool') showInfoFormBool: boolean;
   @Input('showNotizFormBool') showNotizFormBool: boolean;
   @Input('notizElements') notizElements: any;
+  @Output()
+  notizResponse:EventEmitter<any> = new EventEmitter();
 
   notizInput: string;
   departmentNotizInput: string;
@@ -131,6 +133,7 @@ export class FormComponent implements OnInit {
         //console.log(Information.tables[0]);
         //console.log("------");
         //console.log(Information[0].tables);
+        this.notizResponse.emit(Notiz);
         this.notizElements = Notiz;
         console.log('this.newInformationElements' + this.newInformationElements);
       });

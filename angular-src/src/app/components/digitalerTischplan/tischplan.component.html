@@ -40,7 +40,10 @@
                   [tablesSonnbergZirbn]="tablesSonnbergZirbn"
                   [tablesWintergarten]="tablesWintergarten"
                   [showNotizFormBool]="showNotizFormBool"
-                  [showInfoFormBool]="showInfoFormBool">
+                  [showInfoFormBool]="showInfoFormBool"
+                  [notizElements]="notizElements"
+                  (notizResponse)="notizElements=$event">
+
         </app-form>
         <app-departmentmenu
           [buttonBgColor1]="buttonBgColor1"
