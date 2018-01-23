@@ -97,6 +97,7 @@ export class TischplanComponent {
   tablesOccupied: number;
   tableNumbers: any[] = [];
   notizElements: any[] = [];
+  term: string;
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService:NavService) {
 

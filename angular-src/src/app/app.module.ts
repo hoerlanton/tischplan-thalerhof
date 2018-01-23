@@ -27,11 +27,12 @@ import { DepartmentsComponent } from './components/digitalerTischplan/department
 import { FormMenuComponent } from './components/digitalerTischplan/form-menu/form-menu.component';
 import { NotizComponent } from './components/digitalerTischplan/notiz/notiz.component';
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
-
+import { SearchComponent } from './components/digitalerTischplan/search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
-    AppComponent, TischplanComponent, PrintComponent, WintergartenComponent, RestaurantComponent, PanoramaComponent, SonnbergZirbnComponent, NavigationComponent, FormComponent, TableplanComponent, DepartmentmenuComponent, UploadComponent, ImHausListeComponent, AnreiseListeComponent, TracesListeComponent, DepartmentsComponent, FormMenuComponent, NotizComponent, AlleComponent
+    AppComponent, TischplanComponent, PrintComponent, WintergartenComponent, RestaurantComponent, PanoramaComponent, SonnbergZirbnComponent, NavigationComponent, FormComponent, TableplanComponent, DepartmentmenuComponent, UploadComponent, ImHausListeComponent, AnreiseListeComponent, TracesListeComponent, DepartmentsComponent, FormMenuComponent, NotizComponent, AlleComponent, SearchComponent
   ],
   imports: [
     FormsModule,
@@ -40,7 +41,8 @@ import { AlleComponent } from './components/digitalerTischplan/departments/alle/
     DragulaModule,
     ReactiveFormsModule,
     BrowserModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    Ng2SearchPipeModule
   ],
   providers: [NavService],
   bootstrap: [AppComponent]

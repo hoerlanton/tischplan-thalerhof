@@ -93,7 +93,8 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4 col-lg-4 table-col">
-        <h3>Übergabe Notiz</h3><br>
+        <h3>Suche:</h3><app-search (termExport)="term = $event"></app-search>
+          <br><h3>Übergabe Notiz</h3><br>
         <app-notiz
           [showPanoramaBool]="showPanoramaBool"
           [showRestaurantBool]="showRestaurantBool"
@@ -116,7 +117,8 @@
                                (dispensedSonnbergZirbn)="tablesSonnbergZirbn=$event"
                                (dispensedRestaurant)="tablesRestaurant=$event"
                                (dispensedPanorama)="tablesPanorama=$event"
-                               (dispensedWintergarten)="tablesWintergarten=$event">
+                               (dispensedWintergarten)="tablesWintergarten=$event"
+                               [term]="term">
               </app-departments>
             </div>
           </div>

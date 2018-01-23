@@ -12,8 +12,11 @@ export class AlleComponent implements OnInit {
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('tablesWintergarten') tablesWintergarten: Table[];
+  @Input('term') term: string;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

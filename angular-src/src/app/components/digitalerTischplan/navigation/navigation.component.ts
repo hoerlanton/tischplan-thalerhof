@@ -64,4 +64,8 @@ export class NavigationComponent implements OnInit {
   none(event) {
     event.stopPropagation();
   }
+
+  brandClick() {
+    window.location.reload()
+  }
 }
