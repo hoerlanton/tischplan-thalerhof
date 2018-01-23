@@ -26,11 +26,12 @@ import { TracesListeComponent } from './components/digitalerTischplan/traces-lis
 import { DepartmentsComponent } from './components/digitalerTischplan/departments/departments.component';
 import { FormMenuComponent } from './components/digitalerTischplan/form-menu/form-menu.component';
 import { NotizComponent } from './components/digitalerTischplan/notiz/notiz.component';
+import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, TischplanComponent, PrintComponent, WintergartenComponent, RestaurantComponent, PanoramaComponent, SonnbergZirbnComponent, NavigationComponent, FormComponent, TableplanComponent, DepartmentmenuComponent, UploadComponent, ImHausListeComponent, AnreiseListeComponent, TracesListeComponent, DepartmentsComponent, FormMenuComponent, NotizComponent
+    AppComponent, TischplanComponent, PrintComponent, WintergartenComponent, RestaurantComponent, PanoramaComponent, SonnbergZirbnComponent, NavigationComponent, FormComponent, TableplanComponent, DepartmentmenuComponent, UploadComponent, ImHausListeComponent, AnreiseListeComponent, TracesListeComponent, DepartmentsComponent, FormMenuComponent, NotizComponent, AlleComponent
   ],
   imports: [
     FormsModule,

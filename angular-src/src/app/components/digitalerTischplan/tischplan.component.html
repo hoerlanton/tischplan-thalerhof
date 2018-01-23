@@ -43,25 +43,28 @@
                   [showInfoFormBool]="showInfoFormBool"
                   [notizElements]="notizElements"
                   (notizResponse)="notizElements=$event">
-
         </app-form>
         <app-departmentmenu
           [buttonBgColor1]="buttonBgColor1"
           [buttonBgColor2]="buttonBgColor2"
           [buttonBgColor3]="buttonBgColor3"
           [buttonBgColor4]="buttonBgColor4"
+          [buttonBgColor5]="buttonBgColor5"
           [fontColor1]="fontColor1"
           [fontColor2]="fontColor2"
           [fontColor3]="fontColor3"
           [fontColor4]="fontColor4"
+          [fontColor5]="fontColor5"
           [showPanoramaBool]="showPanoramaBool"
           [showRestaurantBool]="showRestaurantBool"
           [showSonnbergZirbnBool]="showSonnbergZirbnBool"
           [showWintergartenBool]="showWintergartenBool"
+          [showAlleBool]="showAlleBool"
           (showSonnbergZirbnBoolChange)="showSonnbergZirbnBool=$event"
           (showPanoramaBoolChange)="showPanoramaBool=$event"
           (showRestaurantBoolChange)="showRestaurantBool=$event"
-          (showWintergartenBoolChange)="showWintergartenBool=$event">
+          (showWintergartenBoolChange)="showWintergartenBool=$event"
+          (showAlleBoolChange)="showAlleBool=$event">
         </app-departmentmenu>
         <app-tableplan [tablesWintergarten]="tablesWintergarten"
                        [showWintergartenBool]="showWintergartenBool"
@@ -74,7 +77,8 @@
                        (movedSonnbergZirbn)="tablesSonnbergZirbn = $event"
                        (movedRestaurant)="tablesRestaurant = $event"
                        (movedPanorama)="tablesPanorama = $event"
-                       (movedWintergarten)="tablesWintergarten = $event">
+                       (movedWintergarten)="tablesWintergarten = $event"
+                       [showAlleBool]="showAlleBool">
         </app-tableplan>
       </div>
       <div class="col-xs-12 col-lg-4 upload-col">

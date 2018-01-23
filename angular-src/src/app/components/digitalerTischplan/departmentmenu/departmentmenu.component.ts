@@ -11,18 +11,23 @@ export class DepartmentmenuComponent implements AfterViewInit {
   @Input('buttonBgColor2') buttonBgColor2: string;
   @Input('buttonBgColor3') buttonBgColor3: string;
   @Input('buttonBgColor4') buttonBgColor4: string;
+  @Input('buttonBgColor5') buttonBgColor5: string;
   @Input('fontColor1') fontColor1: string;
   @Input('fontColor2') fontColor2: string;
   @Input('fontColor3') fontColor3: string;
   @Input('fontColor4') fontColor4: string;
+  @Input('fontColor5') fontColor5: string;
   @Input('showPanoramaBool') showPanoramaBool: boolean;
   @Input('showRestaurantBool') showRestaurantBool: boolean;
   @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
   @Input('showWintergartenBool') showWintergartenBool: boolean;
+  @Input('showAlleBool') showAlleBool: boolean;
   @Output() showSonnbergZirbnBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showPanoramaBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showRestaurantBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showWintergartenBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showAlleBoolChange: EventEmitter<boolean> = new EventEmitter();
+
   constructor() {  }
 
   ngOnInit() {
@@ -37,12 +42,14 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showPanoramaBool = false;
       this.showRestaurantBool = false;
       this.showWintergartenBool = false;
+      this.showAlleBool = false;
 
       if (this.buttonBgColor1 === "0a7a74") {
         this.buttonBgColor1 = "f3efe4";
         this.buttonBgColor2 = "0a7a74";
         this.buttonBgColor3 = "0a7a74";
-        this.buttonBgColor4 = "0a7a74"
+        this.buttonBgColor4 = "0a7a74";
+        this.buttonBgColor5 = "0a7a74"
       } else {
         this.buttonBgColor1 = "0a7a74";
       }
@@ -50,7 +57,8 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor1 = "0a7a74";
         this.fontColor2 = "f3efe4";
         this.fontColor3 = "f3efe4";
-        this.fontColor4 = "f3efe4"
+        this.fontColor4 = "f3efe4";
+        this.fontColor5 = "f3efe4"
       } else {
         this.fontColor1 = "f3efe4";
       }
@@ -58,7 +66,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showRestaurantBoolChange.emit(this.showRestaurantBool);
       this.showPanoramaBoolChange.emit(this.showPanoramaBool);
       this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-
+      this.showAlleBoolChange.emit(this.showAlleBool);
     }
 
     showPanorama() {
@@ -68,12 +76,14 @@ export class DepartmentmenuComponent implements AfterViewInit {
       console.log(this.showPanoramaBool);
       this.showRestaurantBool = false;
       this.showWintergartenBool = false;
+      this.showAlleBool = false;
 
       if (this.buttonBgColor2 === "0a7a74") {
         this.buttonBgColor2 = "f3efe4";
         this.buttonBgColor1 = "0a7a74";
         this.buttonBgColor3 = "0a7a74";
-        this.buttonBgColor4 = "0a7a74"
+        this.buttonBgColor4 = "0a7a74";
+        this.buttonBgColor5 = "0a7a74"
       } else {
         this.buttonBgColor2 = "0a7a74";
       }
@@ -81,7 +91,9 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor2 = "0a7a74";
         this.fontColor1 = "f3efe4";
         this.fontColor3 = "f3efe4";
-        this.fontColor4 = "f3efe4"
+        this.fontColor4 = "f3efe4";
+        this.fontColor5 = "f3efe4"
+
       } else {
         this.fontColor2 = "f3efe4";
       }
@@ -89,7 +101,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
       this.showRestaurantBoolChange.emit(this.showRestaurantBool);
       this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-
+      this.showAlleBoolChange.emit(this.showAlleBool);
     }
 
     showRestaurant() {
@@ -98,12 +110,14 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showPanoramaBool = false;
       this.showRestaurantBool = true;
       this.showWintergartenBool = false;
+      this.showAlleBool = false;
 
       if (this.buttonBgColor3 === "0a7a74") {
         this.buttonBgColor3 = "f3efe4";
         this.buttonBgColor1 = "0a7a74";
         this.buttonBgColor2 = "0a7a74";
-        this.buttonBgColor4 = "0a7a74"
+        this.buttonBgColor4 = "0a7a74";
+        this.buttonBgColor5 = "0a7a74"
       } else {
         this.buttonBgColor3 = "0a7a74";
       }
@@ -111,7 +125,8 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor3 = "0a7a74";
         this.fontColor1 = "f3efe4";
         this.fontColor2 = "f3efe4";
-        this.fontColor4 = "f3efe4"
+        this.fontColor4 = "f3efe4";
+        this.fontColor5 = "f3efe4"
       } else {
         this.fontColor3 = "f3efe4";
       }
@@ -119,6 +134,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
       this.showPanoramaBoolChange.emit(this.showPanoramaBool);
       this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+      this.showAlleBoolChange.emit(this.showAlleBool);
     }
 
     showWintergarten() {
@@ -127,12 +143,14 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showPanoramaBool = false;
       this.showRestaurantBool = false;
       this.showWintergartenBool = true;
+      this.showAlleBool = false;
 
       if (this.buttonBgColor4 === "0a7a74") {
         this.buttonBgColor4 = "f3efe4";
         this.buttonBgColor1 = "0a7a74";
         this.buttonBgColor2 = "0a7a74";
-        this.buttonBgColor3 = "0a7a74"
+        this.buttonBgColor3 = "0a7a74";
+        this.buttonBgColor5 = "0a7a74"
       } else {
         this.buttonBgColor4 = "0a7a74";
       }
@@ -140,7 +158,8 @@ export class DepartmentmenuComponent implements AfterViewInit {
         this.fontColor4 = "0a7a74";
         this.fontColor1 = "f3efe4";
         this.fontColor2 = "f3efe4";
-        this.fontColor3 = "f3efe4"
+        this.fontColor3 = "f3efe4";
+        this.fontColor5 = "f3efe4"
       } else {
         this.fontColor4 = "f3efe4";
       }
@@ -148,8 +167,40 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
       this.showRestaurantBoolChange.emit(this.showRestaurantBool);
       this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+      this.showAlleBoolChange.emit(this.showAlleBool);
     }
+  showAlle() {
+    console.log("showAlle!");
+    this.showSonnbergZirbnBool = false;
+    this.showPanoramaBool = false;
+    this.showRestaurantBool = false;
+    this.showWintergartenBool = false;
+    this.showAlleBool = true;
 
+    if (this.buttonBgColor5 === "0a7a74") {
+      this.buttonBgColor5 = "f3efe4";
+      this.buttonBgColor1 = "0a7a74";
+      this.buttonBgColor2 = "0a7a74";
+      this.buttonBgColor3 = "0a7a74";
+      this.buttonBgColor4 = "0a7a74"
+    } else {
+      this.buttonBgColor5 = "0a7a74";
+    }
+    if (this.fontColor5 === "f3efe4") {
+      this.fontColor5 = "0a7a74";
+      this.fontColor1 = "f3efe4";
+      this.fontColor2 = "f3efe4";
+      this.fontColor3 = "f3efe4";
+      this.fontColor4 = "f3efe4"
+    } else {
+      this.fontColor5 = "f3efe4";
+    }
+    this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+    this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
+    this.showRestaurantBoolChange.emit(this.showRestaurantBool);
+    this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+    this.showAlleBoolChange.emit(this.showAlleBool);
+  }
 }
 
 
