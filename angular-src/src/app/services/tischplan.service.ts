@@ -140,12 +140,4 @@ export class TischplanService {
     return this.http.get('getNotiz')
       .map(res => res.json());
   }
-
-  deleteNotizElement(informationElement) {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    console.log(headers);
-    return this.http.post('deleteNotiz', informationElement, {headers: headers})
-      .map(res => res.json());
-  }
 }

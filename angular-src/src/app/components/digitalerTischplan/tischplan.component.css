@@ -18,14 +18,6 @@ html, body {
   top: 115px;
 }
 
-.line1{
-  width: 100%;
-  height: 20px;
-  border-bottom: solid 10px #0a7a74;
-  position: absolute;
-  right: 0px;
-  top: 115px;
-}
 
 @media (min-width: 1200px) {
   .printTwo {
@@ -59,10 +51,10 @@ html, body {
   max-height: calc(100vh - 240px);
 }
 
-
 .row4 {
   margin-top: 90px;
 }
+
 .row .table-col {
   min-height: 100vh;
   max-height: 100vh;
