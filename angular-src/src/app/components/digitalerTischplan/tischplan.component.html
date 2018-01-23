@@ -9,17 +9,17 @@
 </head>
 
 <body>
-  <app-navigation [newInformationElements]="newInformationElements"
-                  [tablesOccupied]="tablesOccupied"
-                  (getTablesOccupied)="tablesOccupied = $event">
-  </app-navigation>
   <div id="charge-error" class="alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>">
     <%= errMsg  %>
   </div>
   <div class="row">
     <div class="container-fluid">
+      <app-navigation  [newInformationElements]="newInformationElements"
+                       [tablesOccupied]="tablesOccupied"
+                       (getTablesOccupied)="tablesOccupied = $event">
+      </app-navigation>
       <div class="col-xs-12 col-sm-8 col-lg-4 print-col">
-        <app-form-menu [buttonBgColorInfoForm]="buttonBgColorInfoForm"
+        <app-form-menu style="min-height: 40px" [buttonBgColorInfoForm]="buttonBgColorInfoForm"
                        [buttonBgColorNotizForm]="buttonBgColorNotizForm"
                        [fontColorInfoForm]="fontColorInfoForm"
                        [fontColorNotizForm]="fontColorNotizForm"
