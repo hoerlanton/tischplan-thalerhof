@@ -122,12 +122,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_digitalerTischplan_anreise_liste_anreise_liste_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/anreise-liste/anreise-liste.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_traces_liste_traces_liste_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/traces-liste/traces-liste.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_digitalerTischplan_departments_departments_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/departments/departments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_digitalerTischplan_form_menu_form_menu_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_digitalerTischplan_notiz_notiz_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -160,7 +164,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */], __WEBPACK_IMPORTED_MODULE_6__components_digitalerTischplan_print_print_component__["a" /* PrintComponent */], __WEBPACK_IMPORTED_MODULE_11__components_digitalerTischplan_departments_wintergarten_wintergarten_component__["a" /* WintergartenComponent */], __WEBPACK_IMPORTED_MODULE_12__components_digitalerTischplan_departments_restaurant_restaurant_component__["a" /* RestaurantComponent */], __WEBPACK_IMPORTED_MODULE_13__components_digitalerTischplan_departments_panorama_panorama_component__["a" /* PanoramaComponent */], __WEBPACK_IMPORTED_MODULE_14__components_digitalerTischplan_departments_sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */], __WEBPACK_IMPORTED_MODULE_15__components_digitalerTischplan_navigation_navigation_component__["a" /* NavigationComponent */], __WEBPACK_IMPORTED_MODULE_16__components_digitalerTischplan_form_form_component__["a" /* FormComponent */], __WEBPACK_IMPORTED_MODULE_17__components_digitalerTischplan_tableplan_tableplan_component__["a" /* TableplanComponent */], __WEBPACK_IMPORTED_MODULE_18__components_digitalerTischplan_departmentmenu_departmentmenu_component__["a" /* DepartmentmenuComponent */], __WEBPACK_IMPORTED_MODULE_19__components_digitalerTischplan_upload_upload_component__["a" /* UploadComponent */], __WEBPACK_IMPORTED_MODULE_20__components_digitalerTischplan_im_haus_liste_im_haus_liste_component__["a" /* ImHausListeComponent */], __WEBPACK_IMPORTED_MODULE_21__components_digitalerTischplan_anreise_liste_anreise_liste_component__["a" /* AnreiseListeComponent */], __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_traces_liste_traces_liste_component__["a" /* TracesListeComponent */], __WEBPACK_IMPORTED_MODULE_23__components_digitalerTischplan_departments_departments_component__["a" /* DepartmentsComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */], __WEBPACK_IMPORTED_MODULE_6__components_digitalerTischplan_print_print_component__["a" /* PrintComponent */], __WEBPACK_IMPORTED_MODULE_11__components_digitalerTischplan_departments_wintergarten_wintergarten_component__["a" /* WintergartenComponent */], __WEBPACK_IMPORTED_MODULE_12__components_digitalerTischplan_departments_restaurant_restaurant_component__["a" /* RestaurantComponent */], __WEBPACK_IMPORTED_MODULE_13__components_digitalerTischplan_departments_panorama_panorama_component__["a" /* PanoramaComponent */], __WEBPACK_IMPORTED_MODULE_14__components_digitalerTischplan_departments_sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */], __WEBPACK_IMPORTED_MODULE_15__components_digitalerTischplan_navigation_navigation_component__["a" /* NavigationComponent */], __WEBPACK_IMPORTED_MODULE_16__components_digitalerTischplan_form_form_component__["a" /* FormComponent */], __WEBPACK_IMPORTED_MODULE_17__components_digitalerTischplan_tableplan_tableplan_component__["a" /* TableplanComponent */], __WEBPACK_IMPORTED_MODULE_18__components_digitalerTischplan_departmentmenu_departmentmenu_component__["a" /* DepartmentmenuComponent */], __WEBPACK_IMPORTED_MODULE_19__components_digitalerTischplan_upload_upload_component__["a" /* UploadComponent */], __WEBPACK_IMPORTED_MODULE_20__components_digitalerTischplan_im_haus_liste_im_haus_liste_component__["a" /* ImHausListeComponent */], __WEBPACK_IMPORTED_MODULE_21__components_digitalerTischplan_anreise_liste_anreise_liste_component__["a" /* AnreiseListeComponent */], __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_traces_liste_traces_liste_component__["a" /* TracesListeComponent */], __WEBPACK_IMPORTED_MODULE_23__components_digitalerTischplan_departments_departments_component__["a" /* DepartmentsComponent */], __WEBPACK_IMPORTED_MODULE_24__components_digitalerTischplan_form_menu_form_menu_component__["a" /* FormMenuComponent */], __WEBPACK_IMPORTED_MODULE_25__components_digitalerTischplan_notiz_notiz_component__["a" /* NotizComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
@@ -473,7 +477,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/components/digitalerTischplan/departments/departments.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sonnberg-zirbn [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\" [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\" (occupied)=\"occupied($event)\"></app-sonnberg-zirbn>\n<app-restaurant [tablesRestaurant]=\"tablesRestaurant\" [showRestaurantBool]=\"showRestaurantBool\" (occupied)=\"occupied($event)\"></app-restaurant>\n<app-panorama [tablesPanorama]=\"tablesPanorama\" [showPanoramaBool]=\"showPanoramaBool\" (occupied)=\"occupied($event)\"></app-panorama>\n<app-wintergarten [tablesWintergarten]=\"tablesWintergarten\" [showWintergartenBool]=\"showWintergartenBool\" (occupied)=\"occupied($event)\"></app-wintergarten>\n"
+module.exports = "<app-sonnberg-zirbn [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\" [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\" (occupied)=\"occupied($event)\"></app-sonnberg-zirbn>\n<app-restaurant [tablesRestaurant]=\"tablesRestaurant\" [showRestaurantBool]=\"showRestaurantBool\"  (occupied)=\"occupied($event)\"></app-restaurant>\n<app-panorama [tablesPanorama]=\"tablesPanorama\" [showPanoramaBool]=\"showPanoramaBool\"  (occupied)=\"occupied($event)\"></app-panorama>\n<app-wintergarten [tablesWintergarten]=\"tablesWintergarten\" [showWintergartenBool]=\"showWintergartenBool\"  (occupied)=\"occupied($event)\"></app-wintergarten>\n"
 
 /***/ }),
 
@@ -939,10 +943,150 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row4\">\n  <div class=\"col-md-6 col-xs-6\" style=\"height: 40px\" (click)=\"showInfoForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorInfoForm}\">\n    <h6 [ngStyle]=\"{'color': '#' + fontColorInfoForm}\">Info hinzufügen</h6>\n  </div>\n  <div class=\"col-md-6 col-xs-6\" style=\"height: 40px\" (click)=\"showNotizForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorNotizForm}\">\n    <h6 [ngStyle]=\"{'color': '#' + fontColorNotizForm}\">Notiz hinzufügen</h6>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormMenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FormMenuComponent = (function () {
+    function FormMenuComponent() {
+        this.showNotizFormBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showInfoFormBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    FormMenuComponent.prototype.ngOnInit = function () {
+    };
+    FormMenuComponent.prototype.ngAfterViewInit = function () {
+    };
+    FormMenuComponent.prototype.showInfoForm = function () {
+        console.log("showInfoForm!");
+        this.showNotizFormBool = true;
+        this.showInfoFormBool = false;
+        if (this.buttonBgColorInfoForm === "0a7a74") {
+            this.buttonBgColorInfoForm = "f3efe4";
+            this.buttonBgColorNotizForm = "0a7a74";
+        }
+        else {
+            this.buttonBgColorInfoForm = "0a7a74";
+        }
+        if (this.fontColorInfoForm === "f3efe4") {
+            this.fontColorInfoForm = "0a7a74";
+            this.fontColorNotizForm = "f3efe4";
+        }
+        else {
+            this.fontColorInfoForm = "f3efe4";
+        }
+        this.showNotizFormBoolChange.emit(this.showNotizFormBool);
+        this.showInfoFormBoolChange.emit(this.showInfoFormBool);
+    };
+    FormMenuComponent.prototype.showNotizForm = function () {
+        console.log("showNotizForm!");
+        this.showNotizFormBool = false;
+        this.showInfoFormBool = true;
+        if (this.buttonBgColorNotizForm === "0a7a74") {
+            this.buttonBgColorNotizForm = "f3efe4";
+            this.buttonBgColorInfoForm = "0a7a74";
+        }
+        else {
+            this.buttonBgColorNotizForm = "0a7a74";
+        }
+        if (this.fontColorNotizForm === "f3efe4") {
+            this.fontColorNotizForm = "0a7a74";
+            this.fontColorInfoForm = "f3efe4";
+        }
+        else {
+            this.fontColorNotizForm = "f3efe4";
+        }
+        this.showNotizFormBoolChange.emit(this.showNotizFormBool);
+        this.showInfoFormBoolChange.emit(this.showInfoFormBool);
+    };
+    return FormMenuComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('buttonBgColorInfoForm'),
+    __metadata("design:type", String)
+], FormMenuComponent.prototype, "buttonBgColorInfoForm", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('fontColorInfoForm'),
+    __metadata("design:type", String)
+], FormMenuComponent.prototype, "fontColorInfoForm", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('fontColorNotizForm'),
+    __metadata("design:type", String)
+], FormMenuComponent.prototype, "fontColorNotizForm", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('buttonBgColorNotizForm'),
+    __metadata("design:type", String)
+], FormMenuComponent.prototype, "buttonBgColorNotizForm", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showNotizFormBool'),
+    __metadata("design:type", Boolean)
+], FormMenuComponent.prototype, "showNotizFormBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showInfoFormBool'),
+    __metadata("design:type", Boolean)
+], FormMenuComponent.prototype, "showInfoFormBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], FormMenuComponent.prototype, "showNotizFormBoolChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _b || Object)
+], FormMenuComponent.prototype, "showInfoFormBoolChange", void 0);
+FormMenuComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-form-menu',
+        template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/form-menu/form-menu.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FormMenuComponent);
+
+var _a, _b;
+//# sourceMappingURL=form-menu.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/digitalerTischplan/form/form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"SendInformation\"  #myForm=\"ngForm\" (submit)=\"sendInformation($event); myForm.reset() \">\n  <div class=\"form-row\">\n    <div class=\"form-group\">\n      <div class=\"col-lg-6\">\n        <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"name\" [(ngModel)]=\"nameTraceInput\" name=\"Name\" placeholder=\"Name\">\n        <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"roomNumber\" [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Zimmer Nummer\">\n      </div>\n      <div class=\"col-lg-6\">\n        <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"tableNumber\" [(ngModel)]=\"tableNumber\" name=\"tableNumber\" placeholder=\"Tisch Nummer\">\n        <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"employee\" [(ngModel)]=\"employee\" name=\"employee\" placeholder=\"Mitarbeiter\">\n      </div>\n      <div class=\"col-lg-12\">\n              <textarea id=\"informationText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"title\" placeholder=\"Trace hinzufügen\" name=\"title\" class=\"form-control\" required>\n              </textarea>\n      </div>\n    </div>\n    <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px; background-color: #0a7a74; color: #FFFFFF\" class=\"btn btn-primary\">Hinzufügen</button>\n  </div>\n</form>\n"
+module.exports = "<div *ngIf=\"showNotizFormBool\">\n  <form class=\"SendInformation\"  #myForm=\"ngForm\" (submit)=\"sendInformation($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\">\n        <div class=\"col-lg-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"name\" [(ngModel)]=\"nameTraceInput\" name=\"Name\" placeholder=\"Name\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"roomNumber\" [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Zimmer Nummer\">\n        </div>\n        <div class=\"col-lg-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"tableNumber\" [(ngModel)]=\"tableNumber\" name=\"tableNumber\" placeholder=\"Tisch Nummer\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"employee\" [(ngModel)]=\"employee\" name=\"employee\" placeholder=\"Mitarbeiter\">\n        </div>\n        <div class=\"col-lg-12\">\n                <textarea id=\"informationText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"title\" placeholder=\"Trace hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px; background-color: #0a7a74; color: #FFFFFF\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n<div *ngIf=\"showInfoFormBool\">\n  <form class=\"SendNotiz\"  #myForm=\"ngForm\" (submit)=\"sendNotiz($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\">\n        <div class=\"col-lg-12\">\n          <label for=\"department\" style=\"margin-top: 20px\">Abteilung</label>\n          <select class=\"form-control\"  id=\"department\" style=\"margin-bottom: 10px;\" required [(ngModel)]=\"departmentNotizInput\" placeholder=\"Abteilung auswählen\" name=\"departmentNotizInput\">\n            <option *ngFor=\"let department of departments\"\n                    [value]=\"department\">\n              {{department}}\n            </option>\n          </select>\n        </div>\n        <div class=\"col-lg-12\">\n                <textarea id=\"notizText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"notizInput\" placeholder=\"Notiz hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px; background-color: #0a7a74; color: #FFFFFF\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -972,6 +1116,8 @@ var FormComponent = (function () {
         this.tischplanService = tischplanService;
         this._flashMessagesService = _flashMessagesService;
         this.newInformationElements = [];
+        this.departments = [];
+        this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
     }
     FormComponent.prototype.ngOnInit = function () {
     };
@@ -1049,6 +1195,31 @@ var FormComponent = (function () {
             console.log('this.newInformationElements' + _this.newInformationElements);
         });
     };
+    FormComponent.prototype.sendNotiz = function (event) {
+        var _this = this;
+        event.preventDefault();
+        var newNotiz = {
+            notizInput: this.notizInput,
+            departmentNotizInput: this.departmentNotizInput,
+        };
+        if (newNotiz.notizInput === undefined) {
+            this._flashMessagesService.show('Die Nachricht ist leer ... ', { cssClass: 'alert-danger', timeout: 20000 });
+            return;
+        }
+        else {
+            this._flashMessagesService.show('Erfolgreich Information gespeichert ... ', { cssClass: 'alert-success', timeout: 20000 });
+        }
+        this.tischplanService.sendInformationToNotizBlock(newNotiz)
+            .subscribe(function (Notiz) {
+            //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
+            console.log('Information: ' + JSON.stringify(Notiz));
+            //console.log(Information.tables[0]);
+            //console.log("------");
+            //console.log(Information[0].tables);
+            _this.notizElements = Notiz;
+            console.log('this.newInformationElements' + _this.newInformationElements);
+        });
+    };
     return FormComponent;
 }());
 __decorate([
@@ -1095,6 +1266,18 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
     __metadata("design:type", Array)
 ], FormComponent.prototype, "tablesSonnbergZirbn", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showInfoFormBool'),
+    __metadata("design:type", Boolean)
+], FormComponent.prototype, "showInfoFormBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showNotizFormBool'),
+    __metadata("design:type", Boolean)
+], FormComponent.prototype, "showNotizFormBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('notizElements'),
+    __metadata("design:type", Object)
+], FormComponent.prototype, "notizElements", void 0);
 FormComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-form',
@@ -1262,6 +1445,87 @@ NavigationComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=navigation.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"showPanoramaBool\">\n  <div *ngFor=\"let notizElement of notizElements\" >\n    <div *ngIf=\"notizElement.departmentNotizInput === 'Panorama'\">\n      <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 10px;\">\n        <p> {{notizElement.notizInput === '' ? \"Keine Notiz\" : notizElement.notizInput}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"showRestaurantBool\">\n  <div *ngFor=\"let notizElement of notizElements\">\n    <div *ngIf=\"notizElement.departmentNotizInput === 'Restaurant'\">\n      <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 10px;\">\n        <p> {{notizElement.notizInput === '' ? \"Keine Notiz\" : notizElement.notizInput}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"showSonnbergZirbnBool\">\n  <div *ngFor=\"let notizElement of notizElements\">\n    <div *ngIf=\"notizElement.departmentNotizInput === 'Sonnberg-Zirbn'\">\n      <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 10px;\">\n        <p> {{notizElement.notizInput === '' ? \"Keine Notiz\" : notizElement.notizInput}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"showWintergartenBool\">\n  <div *ngFor=\"let notizElement of notizElements\">\n    <div *ngIf=\"notizElement.departmentNotizInput === 'Wintergarten'\">\n      <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 10px;\">\n        <p> {{notizElement.notizInput === '' ? \"Keine Notiz\" : notizElement.notizInput}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotizComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NotizComponent = (function () {
+    function NotizComponent() {
+    }
+    NotizComponent.prototype.ngOnInit = function () {
+    };
+    return NotizComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('notizElements'),
+    __metadata("design:type", Object)
+], NotizComponent.prototype, "notizElements", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    __metadata("design:type", Boolean)
+], NotizComponent.prototype, "showWintergartenBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    __metadata("design:type", Boolean)
+], NotizComponent.prototype, "showSonnbergZirbnBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    __metadata("design:type", Boolean)
+], NotizComponent.prototype, "showPanoramaBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    __metadata("design:type", Boolean)
+], NotizComponent.prototype, "showRestaurantBool", void 0);
+NotizComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-notiz',
+        template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/notiz/notiz.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], NotizComponent);
+
+//# sourceMappingURL=notiz.component.js.map
 
 /***/ }),
 
@@ -1637,7 +1901,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n  <app-navigation [newInformationElements]=\"newInformationElements\"\n                  [tablesOccupied]=\"tablesOccupied\"\n                  (getTablesOccupied)=\"tablesOccupied = $event\">\n  </app-navigation>\n  <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n    <%= errMsg  %>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <div class=\"col-xs-12 col-sm-8 col-lg-4 print-col\">\n        <h3 style=\"margin: 20px 0 20px 20px\">Info hinzufügen</h3>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\">\n        </app-form>\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\">\n        </app-departmentmenu>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-4 upload-col\">\n        <app-upload></app-upload>\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-4 table-col\">\n        <h3>Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
+module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n\n<body>\n  <app-navigation [newInformationElements]=\"newInformationElements\"\n                  [tablesOccupied]=\"tablesOccupied\"\n                  (getTablesOccupied)=\"tablesOccupied = $event\">\n  </app-navigation>\n  <div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n    <%= errMsg  %>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <div class=\"col-xs-12 col-sm-8 col-lg-4 print-col\">\n        <app-form-menu [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n                       [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n                       [fontColorInfoForm]=\"fontColorInfoForm\"\n                       [fontColorNotizForm]=\"fontColorNotizForm\"\n                       [showNotizFormBool]=\"showNotizFormBool\"\n                       [showInfoFormBool]=\"showInfoFormBool\"\n                       (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n                       (showNotizFormBoolChange)=\"showNotizFormBool=$event\">\n        </app-form-menu>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\">\n        </app-form>\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\">\n        </app-departmentmenu>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-4 upload-col\">\n        <app-upload></app-upload>\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-4 table-col\">\n        <h3>Übergabe Notiz</h3><br>\n        <app-notiz\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [notizElements]=\"notizElements\">\n        </app-notiz>\n        <h3>Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
 
 /***/ }),
 
@@ -1709,6 +1973,11 @@ var TischplanComponent = (function () {
         this.isDropped = [];
         this.newInformationElements = [];
         this.tableNumbers = [];
+        this.notizElements = [];
+        this.buttonBgColorInfoForm = "0a7a74";
+        this.buttonBgColorNotizForm = "0a7a74";
+        this.fontColorInfoForm = "f3efe4";
+        this.fontColorNotizForm = "f3efe4";
         this.dateGeneratedListe = new Date();
         this.buttonBgColor1 = "0a7a74";
         this.buttonBgColor2 = "0a7a74";
@@ -1766,6 +2035,16 @@ var TischplanComponent = (function () {
             else {
                 _this.newInformationElements = informationElemente;
                 console.log(_this.newInformationElements);
+            }
+        });
+        this.tischplanService.getNotizElements()
+            .subscribe(function (informationElemente) {
+            if (informationElemente === null) {
+                return;
+            }
+            else {
+                _this.notizElements = informationElemente;
+                console.log(_this.notizElements);
             }
         });
         this.tischplanService.getTables()
@@ -2262,6 +2541,24 @@ var TischplanService = (function () {
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('updateTracesListeElement', informationElements2, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    TischplanService.prototype.sendInformationToNotizBlock = function (newInformation) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        console.log(headers);
+        return this.http.post('newNotiz', newInformation, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    TischplanService.prototype.getNotizElements = function () {
+        return this.http.get('getNotiz')
+            .map(function (res) { return res.json(); });
+    };
+    TischplanService.prototype.deleteNotizElement = function (informationElement) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        console.log(headers);
+        return this.http.post('deleteNotiz', informationElement, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return TischplanService;

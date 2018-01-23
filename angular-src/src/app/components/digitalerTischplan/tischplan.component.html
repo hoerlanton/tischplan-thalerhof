@@ -19,7 +19,15 @@
   <div class="row">
     <div class="container-fluid">
       <div class="col-xs-12 col-sm-8 col-lg-4 print-col">
-        <h3 style="margin: 20px 0 20px 20px">Info hinzufügen</h3>
+        <app-form-menu [buttonBgColorInfoForm]="buttonBgColorInfoForm"
+                       [buttonBgColorNotizForm]="buttonBgColorNotizForm"
+                       [fontColorInfoForm]="fontColorInfoForm"
+                       [fontColorNotizForm]="fontColorNotizForm"
+                       [showNotizFormBool]="showNotizFormBool"
+                       [showInfoFormBool]="showInfoFormBool"
+                       (showInfoFormBoolChange)="showInfoFormBool=$event"
+                       (showNotizFormBoolChange)="showNotizFormBool=$event">
+        </app-form-menu>
         <app-form [newInformationElements]="newInformationElements"
                   [dateGenerated]="dateGenerated"
                   [title]="title"
@@ -30,7 +38,9 @@
                   [tablesPanorama]="tablesPanorama"
                   [tablesRestaurant]="tablesRestaurant"
                   [tablesSonnbergZirbn]="tablesSonnbergZirbn"
-                  [tablesWintergarten]="tablesWintergarten">
+                  [tablesWintergarten]="tablesWintergarten"
+                  [showNotizFormBool]="showNotizFormBool"
+                  [showInfoFormBool]="showInfoFormBool">
         </app-form>
         <app-departmentmenu
           [buttonBgColor1]="buttonBgColor1"
@@ -76,6 +86,14 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4 col-lg-4 table-col">
+        <h3>Übergabe Notiz</h3><br>
+        <app-notiz
+          [showPanoramaBool]="showPanoramaBool"
+          [showRestaurantBool]="showRestaurantBool"
+          [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+          [showWintergartenBool]="showWintergartenBool"
+          [notizElements]="notizElements">
+        </app-notiz>
         <h3>Tisch Übersicht</h3>
         <div class="inner-table" style="padding: 0px 0px 0px 0px;">
           <div class="row3">

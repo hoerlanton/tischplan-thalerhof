@@ -55,6 +55,12 @@ export class TischplanComponent {
   fontColor2: string;
   fontColor3: string;
   fontColor4: string;
+  buttonBgColorInfoForm: string;
+  buttonBgColorNotizForm: string;
+  fontColorInfoForm: string;
+  fontColorNotizForm: string;
+  showInfoshowNotizFormBoolFormBool: boolean;
+  showNotizFormBool: boolean;
   topValues: any[] = [];
   imHausListeElemente: ImHausListe[];
   anreiseListeElemente: AnreiseListe[];
@@ -87,12 +93,17 @@ export class TischplanComponent {
   dateGeneratedListe: any;
   tablesOccupied: number;
   tableNumbers: any[] = [];
+  notizElements: any[] = [];
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService:NavService) {
 
     //this.subscription = this._navService.navItem$
     //  .subscribe(tables => this.tablesPanorama = tables);
 
+    this.buttonBgColorInfoForm = "0a7a74";
+    this.buttonBgColorNotizForm = "0a7a74";
+    this.fontColorInfoForm = "f3efe4";
+    this.fontColorNotizForm = "f3efe4";
     this.dateGeneratedListe = new Date();
     this.buttonBgColor1 = "0a7a74";
     this.buttonBgColor2 = "0a7a74";
@@ -150,6 +161,16 @@ export class TischplanComponent {
         } else {
           this.newInformationElements = informationElemente;
           console.log(this.newInformationElements);
+        }
+      });
+
+    this.tischplanService.getNotizElements()
+      .subscribe(informationElemente => {
+        if(informationElemente === null) {
+          return;
+        } else {
+          this.notizElements = informationElemente;
+          console.log(this.notizElements);
         }
       });
 

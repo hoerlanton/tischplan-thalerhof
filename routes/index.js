@@ -3,7 +3,7 @@ const   express = require('express'),
     bodyParser = require('body-parser'),
     mongojs = require('mongojs'),
     cors = require('cors'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation']),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb']),
     moveTablesPanorama60s = require('./moveTablesPanorama60s.js'),
     moveTablesPanorama70s = require('./moveTablesPanorama70s.js'),
     moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
@@ -15,6 +15,7 @@ const   express = require('express'),
     imHausListe = require('./imHausListe.js'),
     traceListe = require('./traceListe.js'),
     information = require('./information.js'),
+    notiz = require('./notiz.js'),
     placeholder = require('./placeholder.js'),
     table = require('./table.js');
 
@@ -78,8 +79,7 @@ router.get('/tables', function(req, res, next) {
 table.getTable(req, res, db)});
 //moveTable
 router.post('/moveTable', function(req, res, next) {
-table.moveTable(req, res, db);
-});
+table.moveTable(req, res, db);});
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
 table.occupyTable(req, res, db)});
@@ -89,6 +89,15 @@ table.dispenseTable(req, res, db)});
 //addInformationToTable
 router.post('/addInformationToTable', function(req, res, next) {
 table.addInformationToTable(req, res, db)});
+//addInformationToTable
+router.get('/getNotiz', function(req, res, next) {
+notiz.getNotiz(req, res, db)});
+//addInformationToTable
+router.post('/newNotiz', function(req, res, next) {
+notiz.newNotiz(req, res, db)});
+//addInformationToTable
+router.post('/deleteNotiz', function(req, res, next) {
+notiz.deleteNotiz(req, res, db)});
 
 
 module.exports = router;

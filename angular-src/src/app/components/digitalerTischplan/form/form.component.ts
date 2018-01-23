@@ -22,8 +22,16 @@ export class FormComponent implements OnInit {
   @Input('tablesPanorama') tablesPanorama: Table[];
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
+  @Input('showInfoFormBool') showInfoFormBool: boolean;
+  @Input('showNotizFormBool') showNotizFormBool: boolean;
+  @Input('notizElements') notizElements: any;
+
+  notizInput: string;
+  departmentNotizInput: string;
+  departments: any[] = [];
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
+    this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
   }
 
   ngOnInit() {
@@ -100,5 +108,32 @@ export class FormComponent implements OnInit {
         this.newInformationElements.push(Information);
         console.log('this.newInformationElements' + this.newInformationElements);
       });
+  }
+
+  sendNotiz(event) {
+    event.preventDefault();
+    let newNotiz = {
+      notizInput: this.notizInput,
+      departmentNotizInput: this.departmentNotizInput,
+    };
+    if (newNotiz.notizInput === undefined) {
+      this._flashMessagesService.show('Die Nachricht ist leer ... ',
+        {cssClass: 'alert-danger', timeout: 20000});
+      return;
+    } else {
+      this._flashMessagesService.show('Erfolgreich Information gespeichert ... ',
+        {cssClass: 'alert-success', timeout: 20000});
+    }
+    this.tischplanService.sendInformationToNotizBlock(newNotiz)
+      .subscribe(Notiz => {
+        //console.log('Information: ' + JSON.stringify(Information.tables[0].tableNumber));
+        console.log('Information: ' + JSON.stringify(Notiz));
+        //console.log(Information.tables[0]);
+        //console.log("------");
+        //console.log(Information[0].tables);
+        this.notizElements = Notiz;
+        console.log('this.newInformationElements' + this.newInformationElements);
+      });
+
   }
 }
