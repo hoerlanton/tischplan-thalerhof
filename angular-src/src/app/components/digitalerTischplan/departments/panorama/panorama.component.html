@@ -6,6 +6,7 @@
       <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
           <div *ngIf="tablePanorama.isBesetzt === 'true'">
+            <div [style.border]="getStyle(tablesPanorama[j].trace)">
             <p style="background-color: #FFFFFF; padding: 10px">
               <b> Name:</b> {{tablePanorama.nameValue}}<br>
               <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue}}<br>
@@ -15,7 +16,9 @@
               <b> Notiz2:</b> {{tablePanorama.notiz2Value}}<br>
               <b> Trace:</b> {{tablePanorama.trace}}<br>
             </p>
+            </div>
             <div *ngIf="tablePanorama.nameValue2">
+              <div [style.border]="getStyle(tablesPanorama[j].trace2)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue2}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue2}}<br>
@@ -25,8 +28,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value2}}<br>
                 <b> Trace:</b> {{tablePanorama.trace2}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue3">
+              <div [style.border]="getStyle(tablesPanorama[j].trace3)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue3}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue3}}<br>
@@ -37,7 +42,9 @@
                 <b> Trace:</b> {{tablePanorama.trace3}}<br>
               </p>
             </div>
+            </div>
             <div *ngIf="tablePanorama.nameValue4">
+              <div [style.border]="getStyle(tablesPanorama[j].trace4)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue4}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue4}}<br>
@@ -49,6 +56,7 @@
               </p>
             </div>
             <div *ngIf="tablePanorama.nameValue5">
+              <div [style.border]="getStyle(tablesPanorama[j].trace5)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue5}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue5}}<br>
@@ -58,8 +66,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value5}}<br>
                 <b> Trace:</b> {{tablePanorama.trace5}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue6">
+              <div [style.border]="getStyle(tablesPanorama[j].trace6)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue6}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue6}}<br>
@@ -69,8 +79,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value6}}<br>
                 <b> Trace:</b> {{tablePanorama.trace6}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue7">
+              <div [style.border]="getStyle(tablesPanorama[j].trace7)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue7}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue7}}<br>
@@ -80,9 +92,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value7}}<br>
                 <b> Trace:</b> {{tablePanorama.trace7}}<br>
               </p>
+              </div>
             </div>
-
             <div *ngIf="tablePanorama.nameValue8">
+              <div [style.border]="getStyle(tablesPanorama[j].trace8)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue8}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue8}}<br>
@@ -92,8 +105,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value8}}<br>
                 <b> Trace:</b> {{tablePanorama.trace8}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue9">
+              <div [style.border]="getStyle(tablesPanorama[j].trace9)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue9}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue9}}<br>
@@ -103,8 +118,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value9}}<br>
                 <b> Trace:</b> {{tablePanorama.trace9}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue10">
+              <div [style.border]="getStyle(tablesPanorama[j].trace10)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue10}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue10}}<br>
@@ -114,8 +131,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value10}}<br>
                 <b> Trace:</b> {{tablePanorama.trace10}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue11">
+              <div [style.border]="getStyle(tablesPanorama[j].trace11)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue11}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue11}}<br>
@@ -125,8 +144,10 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value11}}<br>
                 <b> Trace:</b> {{tablePanorama.trace11}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.nameValue12">
+              <div [style.border]="getStyle(tablesPanorama[j].trace12)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue12}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue12}}<br>
@@ -137,8 +158,9 @@
                 <b> Trace:</b> {{tablePanorama.trace12}}<br>
               </p>
             </div>
-
+            </div>
             <div *ngIf="tablePanorama.nameValue13">
+              <div [style.border]="getStyle(tablesPanorama[j].trace13)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue13}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue13}}<br>
@@ -149,7 +171,9 @@
                 <b> Trace:</b> {{tablePanorama.trace13}}<br>
               </p>
             </div>
+            </div>
             <div *ngIf="tablePanorama.nameValue14">
+              <div [style.border]="getStyle(tablesPanorama[j].trace14)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue14}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue14}}<br>
@@ -160,7 +184,9 @@
                 <b> Trace:</b> {{tablePanorama.trace14}}<br>
               </p>
             </div>
+            </div>
             <div *ngIf="tablePanorama.nameValue15">
+              <div [style.border]="getStyle(tablesPanorama[j].trace15)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tablePanorama.nameValue15}}<br>
                 <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue15}}<br>
@@ -170,6 +196,7 @@
                 <b> Notiz2:</b> {{tablePanorama.notiz2Value15}}<br>
                 <b> Trace:</b> {{tablePanorama.trace15}}<br>
               </p>
+              </div>
             </div>
             <div *ngIf="tablePanorama.newTraceText">
               <p style="background-color: #FFFFFF; border: solid 3px red">

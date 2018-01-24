@@ -21,4 +21,15 @@ export class AlleComponent implements OnInit {
   ngOnInit() {
   }
 
+  getStyle(j) {
+    if (j) {
+      return "solid 3px red";
+    } else {
+      return "";
+    }
+  }
+
+
+
+
 }

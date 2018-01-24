@@ -45,8 +45,8 @@ export class DepartmentsComponent implements OnInit {
     this.occupy(table.table, table.j);
   }
 
-  occupy(table, j) {
 
+  occupy(table, j) {
     this.tischplanService.dispenseTable(table).subscribe(response => {
       console.log("Dispense Table:");
       console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
@@ -76,7 +76,6 @@ export class DepartmentsComponent implements OnInit {
             } else if (response[0].tables[j].department === "Wintergarten") {
               this.dispensedWintergarten.emit(response[0].tables);
               this.tablesSonnbergZirbn = response[0].tables;
-
             }
         }
     });

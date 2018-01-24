@@ -6,6 +6,7 @@
       <div class='cards-container' id='containerWintergarten' [ngStyle]="{'background-color': + tableWintergarten.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + tableWintergarten.bgColor}">
           <div *ngIf="tableWintergarten.isBesetzt === 'true'">
+            <div [style.border]="getStyle(tablesWintergarten[j].trace)">
             <p style="background-color: #FFFFFF; padding: 10px">
               <b> Name:</b> {{tableWintergarten.nameValue}}<br>
               <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue}}<br>
@@ -15,7 +16,9 @@
               <b> Notiz2:</b> {{tableWintergarten.notiz2Value}}<br>
               <b> Trace:</b> {{tableWintergarten.trace}}
             </p>
+            </div>
             <div *ngIf="tableWintergarten.nameValue2">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace2)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue2}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue2}}<br>
@@ -25,8 +28,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value2}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace2}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue3">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace3)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue3}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue3}}<br>
@@ -36,8 +41,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value3}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace3}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue4">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace4)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue4}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue4}}<br>
@@ -47,19 +54,23 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value4}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace4}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue5">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tableWintergarten.nameValue5}}<br>
-                <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue5}}<br>
-                <b> Anreise Datum:</b> {{tableWintergarten.anreiseValue5}}<br>
-                <b> Abreise Datum:</b> {{tableWintergarten.abreiseValue5}}<br>
-                <b> Personenanzahl:</b> {{tableWintergarten.personenAnzahlValue5}}<br>
-                <b> Notiz2:</b> {{tableWintergarten.notiz2Value5}}<br>
-                <b> Trace:</b> {{tableWintergarten.trace5}}
-              </p>
+              <div [style.border]="getStyle(tablesWintergarten[j].trace5)">
+                <p style="background-color: #FFFFFF; padding: 10px">
+                  <b> Name:</b> {{tableWintergarten.nameValue5}}<br>
+                  <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue5}}<br>
+                  <b> Anreise Datum:</b> {{tableWintergarten.anreiseValue5}}<br>
+                  <b> Abreise Datum:</b> {{tableWintergarten.abreiseValue5}}<br>
+                  <b> Personenanzahl:</b> {{tableWintergarten.personenAnzahlValue5}}<br>
+                  <b> Notiz2:</b> {{tableWintergarten.notiz2Value5}}<br>
+                  <b> Trace:</b> {{tableWintergarten.trace5}}
+                </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue6">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace6)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue6}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue6}}<br>
@@ -69,8 +80,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value6}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace6}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue7">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace7)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue7}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue7}}<br>
@@ -80,8 +93,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value7}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace7}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue8">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace8)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue8}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue8}}<br>
@@ -91,8 +106,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value8}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace8}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue9">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace9)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue9}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue9}}<br>
@@ -102,8 +119,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value9}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace9}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue10">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace10)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue10}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue10}}<br>
@@ -113,8 +132,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value10}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace10}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue11">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace11)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue11}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue11}}<br>
@@ -124,8 +145,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value11}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace11}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue12">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace12)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue12}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue12}}<br>
@@ -135,8 +158,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value12}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace12}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue13">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace13)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue13}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue13}}<br>
@@ -146,8 +171,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value13}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace13}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue14">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace14)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue14}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue14}}<br>
@@ -157,8 +184,10 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value14}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace14}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.nameValue15">
+              <div [style.border]="getStyle(tablesWintergarten[j].trace15)">
               <p style="background-color: #FFFFFF; padding: 10px">
                 <b> Name:</b> {{tableWintergarten.nameValue15}}<br>
                 <b> Zimmernummer:</b> {{tableWintergarten.zimmernummerValue15}}<br>
@@ -168,6 +197,7 @@
                 <b> Notiz2:</b> {{tableWintergarten.notiz2Value15}}<br>
                 <b> Trace:</b> {{tableWintergarten.trace15}}
               </p>
+              </div>
             </div>
             <div *ngIf="tableWintergarten.newTraceText">
               <p style="background-color: #FFFFFF; border: solid 3px red">
