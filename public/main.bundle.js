@@ -576,8 +576,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AlleComponent = (function () {
     function AlleComponent() {
+        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     AlleComponent.prototype.ngOnInit = function () {
+    };
+    AlleComponent.prototype.occupy = function (table, j) {
+        this.occupied.emit({ table: table, j: j });
     };
     AlleComponent.prototype.getStyle = function (j) {
         if (j) {
@@ -609,6 +613,10 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
     __metadata("design:type", String)
 ], AlleComponent.prototype, "term", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], AlleComponent.prototype, "occupied", void 0);
 AlleComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-alle',
@@ -618,6 +626,7 @@ AlleComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], AlleComponent);
 
+var _a;
 //# sourceMappingURL=alle.component.js.map
 
 /***/ }),
