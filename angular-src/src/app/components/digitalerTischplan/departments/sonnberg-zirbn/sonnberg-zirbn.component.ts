@@ -11,6 +11,7 @@ export class SonnbergZirbnComponent implements OnInit {
 
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
   @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
+  @Input('term') term: string;
 
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();

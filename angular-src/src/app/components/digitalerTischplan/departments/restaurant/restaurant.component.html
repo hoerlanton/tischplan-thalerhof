@@ -1,5 +1,5 @@
 <div *ngIf="showRestaurantBool">
-  <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
+  <div *ngFor="let tableRestaurant of tablesRestaurant | filter:term; let j = index;">
     <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
       <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
       <h4><b> Tisch: {{tableRestaurant.number}}</b> </h4><br>

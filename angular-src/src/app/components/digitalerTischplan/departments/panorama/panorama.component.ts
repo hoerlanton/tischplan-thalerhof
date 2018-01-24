@@ -11,6 +11,7 @@ export class PanoramaComponent implements OnInit {
 
   @Input('tablesPanorama') tablesPanorama: Table[];
   @Input('showPanoramaBool') showPanoramaBool: boolean;
+  @Input('term') term: string;
 
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();

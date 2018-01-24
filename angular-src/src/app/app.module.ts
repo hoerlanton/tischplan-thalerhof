@@ -29,6 +29,7 @@ import { NotizComponent } from './components/digitalerTischplan/notiz/notiz.comp
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 import { SearchComponent } from './components/digitalerTischplan/search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,8 +43,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     BrowserModule,
     BsDropdownModule.forRoot(),
-    Ng2SearchPipeModule
-  ],
+    Ng2SearchPipeModule,
+    CommonModule
+],
   providers: [NavService],
   bootstrap: [AppComponent]
 })

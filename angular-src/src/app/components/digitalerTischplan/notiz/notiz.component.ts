@@ -11,6 +11,7 @@ export class NotizComponent implements OnInit {
   @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
   @Input('showPanoramaBool') showPanoramaBool: boolean;
   @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('showAlleBool') showAlleBool: boolean;
   constructor() { }
 
   ngOnInit() {

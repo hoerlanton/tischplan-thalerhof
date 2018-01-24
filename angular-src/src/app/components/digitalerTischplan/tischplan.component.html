@@ -93,16 +93,16 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4 col-lg-4 table-col">
-        <h3>Suche:</h3><app-search (termExport)="term = $event"></app-search>
-          <br><h3>Übergabe Notiz</h3><br>
+          <app-search (termExport)="term = $event"></app-search>
         <app-notiz
           [showPanoramaBool]="showPanoramaBool"
           [showRestaurantBool]="showRestaurantBool"
           [showSonnbergZirbnBool]="showSonnbergZirbnBool"
           [showWintergartenBool]="showWintergartenBool"
-          [notizElements]="notizElements">
+          [notizElements]="notizElements"
+          [showAlleBool]="showAlleBool">
         </app-notiz>
-        <h3>Tisch Übersicht</h3>
+        <h3 style="margin-top: 20px">Tisch Übersicht</h3>
         <div class="inner-table" style="padding: 0px 0px 0px 0px;">
           <div class="row3">
             <div class='wrapper' id="wrapper">

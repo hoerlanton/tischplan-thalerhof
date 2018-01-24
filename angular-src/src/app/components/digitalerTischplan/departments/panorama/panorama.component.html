@@ -1,5 +1,5 @@
 <div *ngIf="showPanoramaBool">
-  <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
+  <div *ngFor="let tablePanorama of tablesPanorama | filter:term; let j = index;">
     <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
       <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
       <h4><b> Tisch: {{tablePanorama.number}}</b> </h4><br>

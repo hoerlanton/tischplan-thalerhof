@@ -1,36 +1,39 @@
-<div class="notiz" style="min-height: 105px">
-  <div *ngIf="showPanoramaBool">
-    <div *ngFor="let notizElement of notizElements" >
-      <div *ngIf="notizElement.departmentNotizInput === 'Panorama'">
-        <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
-          <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+<div *ngIf="showAlleBool === false">
+  <br><h3 style="color: #0a7a74">Übergabe Notiz</h3><br>
+  <div class="notiz" style="min-height: 105px">
+    <div *ngIf="showPanoramaBool">
+      <div *ngFor="let notizElement of notizElements" >
+        <div *ngIf="notizElement.departmentNotizInput === 'Panorama'">
+          <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="showRestaurantBool">
-    <div *ngFor="let notizElement of notizElements">
-      <div *ngIf="notizElement.departmentNotizInput === 'Restaurant'">
-        <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
-          <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+    <div *ngIf="showRestaurantBool">
+      <div *ngFor="let notizElement of notizElements">
+        <div *ngIf="notizElement.departmentNotizInput === 'Restaurant'">
+          <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="showSonnbergZirbnBool">
-    <div *ngFor="let notizElement of notizElements">
-      <div *ngIf="notizElement.departmentNotizInput === 'Sonnberg-Zirbn'">
-        <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
-          <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+    <div *ngIf="showSonnbergZirbnBool">
+      <div *ngFor="let notizElement of notizElements">
+        <div *ngIf="notizElement.departmentNotizInput === 'Sonnberg-Zirbn'">
+          <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="showWintergartenBool">
-    <div *ngFor="let notizElement of notizElements">
-      <div *ngIf="notizElement.departmentNotizInput === 'Wintergarten'">
-        <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
-          <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+    <div *ngIf="showWintergartenBool">
+      <div *ngFor="let notizElement of notizElements">
+        <div *ngIf="notizElement.departmentNotizInput === 'Wintergarten'">
+          <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+          </div>
         </div>
       </div>
     </div>

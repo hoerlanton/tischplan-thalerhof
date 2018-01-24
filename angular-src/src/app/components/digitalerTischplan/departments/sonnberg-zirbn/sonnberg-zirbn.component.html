@@ -1,5 +1,5 @@
 <div *ngIf="showSonnbergZirbnBool">
-  <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
+  <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn | filter:term; let j = index;">
     <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
       <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSonnbergZirbn, j)">{{tableSonnbergZirbn.isBesetzt === 'true' ? 'FREI MACHEN' : '' }}</button>
       <h4><b> Tisch: {{tableSonnbergZirbn.number}}</b> </h4><br>

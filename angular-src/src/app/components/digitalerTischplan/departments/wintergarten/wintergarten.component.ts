@@ -11,6 +11,7 @@ export class WintergartenComponent implements OnInit {
 
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
+  @Input('term') term: string;
 
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();

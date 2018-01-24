@@ -11,6 +11,7 @@ export class RestaurantComponent implements OnInit {
 
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('term') term: string;
 
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();

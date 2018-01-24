@@ -1,3 +1,5 @@
-<div>
-  <input type="text" [(ngModel)]="term" (keydown)="keyDownFunction($event)">
-</div>
+<h3>Suche</h3>
+  <div style="margin: 20px">
+    <input type="text" (keyup)="onKey($event)">
+  </div>
+  <div class="line1"></div>
