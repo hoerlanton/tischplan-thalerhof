@@ -1902,7 +1902,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/digitalerTischplan/search/search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Suche</h3>\n  <div style=\"margin: 20px\">\n    <input type=\"text\" (keyup)=\"onKey($event)\">\n  </div>\n  <div class=\"line1\"></div>\n"
+module.exports = "<h3 style=\"color: #0a7a74\">Suche</h3>\n  <div style=\"margin: 20px\">\n    <input type=\"text\" (keyup)=\"onKey($event)\">\n  </div>\n  <div class=\"line1\"></div>\n"
 
 /***/ }),
 
