@@ -2253,6 +2253,9 @@ var TischplanComponent = (function () {
         this.newInformationElements = [];
         this.tableNumbers = [];
         this.notizElements = [];
+        this.date = [];
+        this.parts = [];
+        this.parsedDate = [];
         this.buttonBgColorInfoForm = "0a7a74";
         this.buttonBgColorNotizForm = "0a7a74";
         this.fontColorInfoForm = "f3efe4";
@@ -2488,29 +2491,121 @@ var TischplanComponent = (function () {
         for (var a = 0; a < tables.length; a++) {
             for (var b = 0; b < tables[a].tables.length; b++) {
                 if (tables[a].tables[b].anreiseValue) {
-                    var parts = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
-                    // note parts[1]-1
-                    //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
-                    var date = new Date(2018, parts[1] - 1, parts[0]);
-                    // Mon May 31 2010 00:00:00
-                    //this.tablesRestaurant[j].anreiseValue
-                    var parsedDate = String(date).substring(0, 15);
-                    var dateToday = String(this.dateTodayGenerated).substring(0, 15);
-                    console.log('Parsed Date --->: ' + parsedDate);
-                    console.log('this.dateGenerated --->: ' + dateToday);
-                    if (dateToday.indexOf(parsedDate) !== -1) {
-                        if (tables[a].department === "Panorama") {
-                            this.tablesPanorama[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Wintergarten") {
-                            this.tablesWintergarten[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Sonnberg-Zirbn") {
-                            this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Restaurant") {
-                            this.tablesRestaurant[b].bgColor = "#0a7a74";
-                        }
+                    console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
+                    this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[0] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue2) {
+                    this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[1] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue3) {
+                    this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[2] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue4) {
+                    this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[3] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue5) {
+                    this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[4] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue6) {
+                    this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[5] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue7) {
+                    this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[6] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue8) {
+                    this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[7] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue9) {
+                    this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[8] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue10) {
+                    this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[9] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue11) {
+                    this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[10] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue12) {
+                    this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[11] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue13) {
+                    this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[12] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue14) {
+                    this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[13] = "undefined";
+                }
+                if (tables[a].tables[b].anreiseValue15) {
+                    this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[14] = "undefined";
+                }
+                for (var c = 0; c <= 14; c++) {
+                    if (this.parts[c]) {
+                        this.date[c] = new Date(2018, this.parts[c][1] - 1, this.parts[c][0]);
+                        this.parsedDate[c] = String(this.date[c]).substring(0, 15);
+                    }
+                }
+                // note parts[1]-1
+                //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
+                // Mon May 31 2010 00:00:00
+                //this.tablesRestaurant[j].anreiseValue
+                var dateToday = String(this.dateTodayGenerated).substring(0, 15);
+                console.log('Parsed Date --->: ' + this.parsedDate[0]);
+                console.log('this.dateGenerated --->: ' + dateToday);
+                if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
+                    if (tables[a].department === "Panorama") {
+                        this.tablesPanorama[b].bgColor = "#0a7a74";
+                    }
+                    else if (tables[a].department === "Wintergarten") {
+                        this.tablesWintergarten[b].bgColor = "#0a7a74";
+                    }
+                    else if (tables[a].department === "Sonnberg-Zirbn") {
+                        this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                    }
+                    else if (tables[a].department === "Restaurant") {
+                        this.tablesRestaurant[b].bgColor = "#0a7a74";
                     }
                 }
             }

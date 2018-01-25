@@ -31,7 +31,6 @@ export class DepartmentsComponent implements OnInit {
   dispensedWintergarten:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedPanorama:EventEmitter<any> = new EventEmitter();
-
   constructor(private tischplanService: TischplanService, private _navService:NavService) {
   }
 
