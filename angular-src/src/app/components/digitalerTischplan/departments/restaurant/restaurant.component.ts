@@ -16,8 +16,11 @@ export class RestaurantComponent implements OnInit {
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  dateGenerated: any;
 
+  constructor() {
+    this.dateGenerated = new Date();
+  }
   ngOnInit() {
   }
 

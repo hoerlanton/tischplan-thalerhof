@@ -98,6 +98,7 @@ export class TischplanComponent {
   tableNumbers: any[] = [];
   notizElements: any[] = [];
   term: string;
+  dateTodayGenerated: any;
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService:NavService) {
 
@@ -214,6 +215,7 @@ export class TischplanComponent {
             this.tablesRestaurant = tables[a].tables;
           }
           }
+          this.changeBgColorIfAnreise(tables);
         }
 
         console.log(this.tablesPanorama);
@@ -337,5 +339,40 @@ export class TischplanComponent {
   }
   delete(informationElement, j, event) {
     this.navigationComponent.delete(informationElement, j, event);
+  }
+  changeBgColorIfAnreise(tables) {
+  console.log('=================================================changeBgColorIfAnreise');
+    this.dateTodayGenerated = new Date();
+
+    for (let a = 0; a < tables.length; a++) {
+      for (let b = 0; b < tables[a].tables.length; b++) {
+        if (tables[a].tables[b].anreiseValue) {
+          var parts = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+          // note parts[1]-1
+          //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
+          let date = new Date(2018, parts[1] - 1, parts[0]);
+          // Mon May 31 2010 00:00:00
+          //this.tablesRestaurant[j].anreiseValue
+          let parsedDate = String(date).substring(0, 15);
+          let dateToday = String(this.dateTodayGenerated).substring(0, 15);
+          console.log('Parsed Date --->: ' + parsedDate);
+          console.log('this.dateGenerated --->: ' + dateToday);
+          if (dateToday.indexOf(parsedDate) !== -1) {
+            if (tables[a].department === "Panorama") {
+              this.tablesPanorama[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Wintergarten") {
+              this.tablesWintergarten[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Sonnberg-Zirbn") {
+              this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Restaurant") {
+              this.tablesRestaurant[b].bgColor = "#0a7a74";
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -12,12 +12,14 @@ export class AlleComponent implements OnInit {
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('tablesWintergarten') tablesWintergarten: Table[];
+  @Input('showAlleBool') showAlleBool: boolean;
   @Input('term') term: string;
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
+  dateGenerated: any;
 
   constructor() {
-
+    this.dateGenerated = new Date();
   }
 
   ngOnInit() {
@@ -34,8 +36,6 @@ export class AlleComponent implements OnInit {
       return "";
     }
   }
-
-
 
 
 }

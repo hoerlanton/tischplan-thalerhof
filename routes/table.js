@@ -390,7 +390,7 @@ module.exports = {
 
         console.log("addInformationToTable request made to /addInformationToTable");
 
-//JSON string is parsed to a JSON object
+        //JSON string is parsed to a JSON object
 
         let data = JSON.stringify(req.body);
         let splitted = data.split("\\");

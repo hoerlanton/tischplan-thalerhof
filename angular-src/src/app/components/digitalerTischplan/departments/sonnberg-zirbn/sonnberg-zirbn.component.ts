@@ -16,7 +16,8 @@ export class SonnbergZirbnComponent implements OnInit {
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -32,5 +33,4 @@ export class SonnbergZirbnComponent implements OnInit {
       return "";
     }
   }
-
 }

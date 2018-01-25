@@ -21,6 +21,7 @@ export class DepartmentsComponent implements OnInit {
   @Input('showPanoramaBool') showPanoramaBool: boolean;
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('showAlleBool') showAlleBool: boolean;
   @Input('term') term: string;
   @Output()
   dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
@@ -37,7 +38,7 @@ export class DepartmentsComponent implements OnInit {
   ngOnInit() {
   }
 
-  occupied(table){
+  occupied(table) {
     console.log("table.j");
     console.log(table.j);
     console.log("table.table");
