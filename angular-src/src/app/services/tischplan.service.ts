@@ -79,6 +79,14 @@ export class TischplanService {
       );
   }
 
+  umsetzen(dataString) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('umsetzen', dataString, {headers: headers})
+      .map(res => res.json()
+      );
+  }
+
   sendInformation(newInformation) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
