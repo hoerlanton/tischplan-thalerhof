@@ -65,4 +65,11 @@ export class TableplanComponent implements OnInit {
       }
     });
   }
+  getStyle(j,k,l,m,n,o,p,q,r,s,t,u,v,w,x ) {
+    if (j || k || l || m || n || o || p || q || r || s || t || u || v || w || x) {
+      return "solid 3px red";
+    } else {
+      return "3px solid rgb(243, 239, 228)";
+    }
+  }
 }
