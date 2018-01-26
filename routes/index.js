@@ -96,8 +96,8 @@ notiz.getNotiz(req, res, db)});
 router.post('/newNotiz', function(req, res, next) {
 notiz.newNotiz(req, res, db)});
 //addInformationToTable
-router.post('/deleteNotiz', function(req, res, next) {
-notiz.deleteNotiz(req, res, db)});
+router.post('/umsetzen', function(req, res, next) {
+table.umsetzen(req, res, db)});
 
 
 module.exports = router;
