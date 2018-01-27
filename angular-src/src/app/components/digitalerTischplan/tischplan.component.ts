@@ -222,7 +222,7 @@ export class TischplanComponent {
           }
           }
           this.changeBgColorIfAnreise(tables);
-          this.dispenseIfAbreise(tables);
+          //this.dispenseIfAbreise(tables);
         }
 
         console.log(this.tablesPanorama);
