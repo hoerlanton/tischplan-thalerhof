@@ -447,7 +447,7 @@ export class TischplanComponent {
       }
     }
   }
-
+/*
   dispenseIfAbreise(tables) {
     console.log('=================================================dispenseIfAbreise');
     this.dateTodayGenerated = new Date();
@@ -536,7 +536,7 @@ export class TischplanComponent {
         }
       }
     }
-
+*/
   umsetzen() {
 
       let targetTable = this.quellTisch.zielTisch;

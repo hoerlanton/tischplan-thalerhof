@@ -399,53 +399,6 @@ module.exports = {
         }, 100);
     },
 
-    umsetzen: function (req, res, db) {
-
-        console.log("umsetzen request made to /umsetzen");
-
-        let testBefore = JSON.stringify(req.body);
-        let test = JSON.parse(testBefore);
-
-        departmentValue = test.department;
-        tableValue = test.number;
-
-        db.tables.update(
-            {
-                department: departmentValue,
-                "tables.number": tableValue
-            },
-            {
-                $set: {
-                    "tables.$.bgColor": "#b7b7b7",
-                    "tables.$.isBesetzt": "true"
-                }
-            }, function (err, tables) {
-                if (err) {
-                    console.log("Error");
-                }
-                console.log("occupyTable Update successful");
-            });
-
-        setTimeout(function () {
-            db.tables.findOne(
-                {
-                    "department": departmentValue,
-                    "tables.number": tableValue
-                },
-                {
-                    "tables.$": 1,
-                },
-                function (err, tables) {
-                    if (err) {
-                        res.send(err);
-                    }
-                    res.json(tables);
-                    console.log(JSON.stringify(tables));
-                });
-        }, 100);
-
-        },
-
     addInformationToTable: function (req, res, db) {
 
         console.log("addInformationToTable request made to /addInformationToTable");

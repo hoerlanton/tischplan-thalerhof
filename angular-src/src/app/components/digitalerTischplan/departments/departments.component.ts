@@ -66,15 +66,10 @@ export class DepartmentsComponent implements OnInit {
               this.dispensedSonnbergZirbn.emit(response[0].tables);
             } else if (response[0].tables[j].department === "Panorama") {
               this.dispensedPanorama.emit(response[0].tables);
-              //this.tablesSonnbergZirbn = response[0].tables;
-
             } else if (response[0].tables[j].department === "Restaurant") {
               this.dispensedRestaurant.emit(response[0].tables);
-              //this.tablesSonnbergZirbn = response[0].tables;
-
             } else if (response[0].tables[j].department === "Wintergarten") {
               this.dispensedWintergarten.emit(response[0].tables);
-              //this.tablesSonnbergZirbn = response[0].tables;
             }
         }
     });
@@ -159,32 +154,4 @@ export class DepartmentsComponent implements OnInit {
         }
       });
   }
-
-  umsetzen(dataString, arrayIndex) {
-    console.log("dataString");
-    console.log(dataString);
-    this.tischplanService.umsetzen(dataString)
-      .subscribe(response => {
-          // let arrayIndex = response[1];
-          console.log("RESPONSE addInformationToTable:" + JSON.stringify(response));
-          if (response === null) {
-            return;
-          } else {
-            if (response.tables[0].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Panorama") {
-              this.tablesPanorama[arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Restaurant") {
-              this.tablesRestaurant[arrayIndex] = response.tables[0];
-            }
-            else if (response.tables[0].department === "Wintergarten") {
-              this.tablesWintergarten[arrayIndex] = response.tables[0];
-            }
-          }
-        }
-        // console.log(this.tablesSonnbergZirbn[arrayIndex]);
-      )
-  };
 }

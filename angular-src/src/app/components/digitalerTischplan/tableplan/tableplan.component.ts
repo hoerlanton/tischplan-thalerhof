@@ -69,7 +69,7 @@ export class TableplanComponent implements OnInit {
     if (j || k || l || m || n || o || p || q || r || s || t || u || v || w || x || y) {
       return "solid 3px red";
     } else {
-      return "3px solid rgb(243, 239, 228)";
+      return "solid 3px rgb(243, 239, 228)";
     }
   }
 }
