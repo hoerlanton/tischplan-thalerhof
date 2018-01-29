@@ -119,6 +119,8 @@ h6 {
   border: none;
 }
 
+
+
 .btn-group {
   height: 45px;
   width: auto;
@@ -143,7 +145,7 @@ h6 {
 .form-group {
   max-height: 45px;
   margin: 0;
-  width: 80%;
+  width: 50%;
 }
 
 .form-control {
@@ -269,7 +271,7 @@ h6 {
   .form-group {
     margin: 0;
     width: 70%;
-    max-height: 60%;
+    max-height: 100%;
     margin: 0 2px 20px 10px;
   }
 
@@ -278,7 +280,7 @@ h6 {
     color: #FFFFFF;
     border: none;
     opacity: 80;
-    width: 130%%;
+    width: 130%;
     margin: 0px 0px 0px 0px;
   }
 
