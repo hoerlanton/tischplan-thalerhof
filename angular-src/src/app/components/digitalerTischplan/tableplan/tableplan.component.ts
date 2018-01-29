@@ -19,6 +19,7 @@ export class TableplanComponent implements OnInit {
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
   @Input('showAlleBool') showAlleBool: boolean;
+  @Input('showTablePlanBool') showTablePlanBool: boolean;
   @Output()
   movedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
   @Output()

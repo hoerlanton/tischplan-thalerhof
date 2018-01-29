@@ -1,17 +1,60 @@
-<div class="row4">
-  <div class="col-md-2 col-xs-2" style="height: 40px; width: 20%;" (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
-    <h6 [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</h6>
+<div class="row4" style="min-height: 40px;">
+  <div class="col-md-3 col-xs-3" style="width: 35%">
+  <div class="btn-group-departments" style="height: 45px; width: auto; margin: 0px 10px 5px 0px; float: left; text-align: right; display:table-cell; vertical-align:middle;" dropdown>
+  <button dropdownToggle type="button" style=" color: #FFFFFF; border: none" [ngStyle]="{'background-color': '#' + buttonBgColorDropdownToggle}"   (mouseenter)="mouseEnterDropdownToggle()"  (mouseleave)="mouseLeaveDropdownToggle()" class="btn btn-group-departments">
+    <div *ngIf="showAbteilungen">
+    Abteilungen <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+    <div *ngIf="showAlleBool">
+      Alle <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+    <div *ngIf="showSonnbergZirbnBool">
+      Sonnberg-Zirbn <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+    <div *ngIf="showWintergartenBool">
+      Wintergarten <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+    <div *ngIf="showRestaurantBool">
+      Restaurant <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+    <div *ngIf="showPanoramaBool">
+      Panorama <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    </div>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu" style="overflow: auto; margin: 0px; width: 200px;">
+      <li role="menuitem" class="showSonnbergZirbn" style="padding: 10px" (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
+        <p [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</p>
+      </li>
+    <li style="margin: 0px" class="divider dropdown-divider"></li>
+    <li role="menuitem" class="showPanorama" style="padding: 10px" (click)="showPanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
+        <p [ngStyle]="{'color': '#' + fontColor2}">Panorama</p>
+      </li>
+    <li style="margin: 0px" class="divider dropdown-divider"></li>
+    <li role="menuitem" class="showRestaurant" style="padding: 10px" (click)="showRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
+        <p [ngStyle]="{'color': '#' + fontColor3}">Restaurant</p>
+      </li>
+    <li style="margin: 0px" class="divider dropdown-divider"></li>
+    <li role="menuitem" class="showWintergarten" style="padding: 10px" (click)="showWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
+        <p [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</p>
+      </li>
+    <li style="margin: 0px" class="divider dropdown-divider"></li>
+    <li role="menuitem" class="showAlle" style="padding: 10px" (click)="showAlle()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">
+        <p [ngStyle]="{'color': '#' + fontColor5}">Alle</p>
+      </li>
+    <li style="margin: 0px" class="divider dropdown-divider"></li>
+  </ul>
+</div>
+</div>
+  <div class="col-md-3 col-xs-3" style="min-height: 40px; width: 21%; border-radius: 3px" (click)="showInfoForm()"  (mouseenter)="mouseEnterShowInfoForm()"  (mouseleave)="mouseLeaveShowInfoForm()" [ngStyle]="{'background-color': '#' + buttonBgColorInfoForm}">
+    <p style="margin: 8px 0px 0px 0px; text-align: center" [ngStyle]="{'color': '#' + fontColorInfoForm}">Trace</p>
   </div>
-  <div class="col-md-2 col-xs-2" style="height: 40px; width: 20%;" (click)="showPanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
-    <h6 [ngStyle]="{'color': '#' + fontColor2}">Panorama</h6>
+  <div class="col-md-3 col-xs-3"  style="min-height: 40px; width: 21%; border-radius: 3px" (click)="showNotizForm()"  (mouseenter)="mouseEnterShowNotizForm()"  (mouseleave)="mouseLeaveShowNotizForm()" [ngStyle]="{'background-color': '#' + buttonBgColorNotizForm}">
+    <p style="margin: 8px 0px 0px 0px; text-align: center" [ngStyle]="{'color': '#' + fontColorNotizForm}">Notiz</p>
   </div>
-  <div class="col-md-2 col-xs-2" style="height: 40px; width: 20%;" (click)="showRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
-    <h6 [ngStyle]="{'color': '#' + fontColor3}">Restaurant</h6>
-  </div>
-  <div class="col-md-2 col-xs-2" style="height: 40px; width: 20%;" (click)="showWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
-    <h6 [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</h6>
-  </div>
-  <div class="col-md-2 col-xs-2" style="height: 40px; width: 20%;" (click)="showAlle()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">
-    <h6 [ngStyle]="{'color': '#' + fontColor5}">Alle</h6>
+  <div class="col-md-3 col-xs-3"  style="min-height: 40px; width: 21%; border-radius: 3px" (click)="showTablePlan()"  (mouseenter)="mouseEnterShowTablePlan()"  (mouseleave)="mouseLeaveShowTablePlan()" [ngStyle]="{'background-color': '#' + buttonBgColorShowTablePlan}">
+    <p style="margin: 8px 0px 0px 0px; text-align: center" [ngStyle]="{'color': '#' + fontColorShowTablePlan}">Tischplan</p>
   </div>
 </div>
+
+
+

@@ -25,6 +25,11 @@ export class FormComponent implements OnInit {
   @Input('showInfoFormBool') showInfoFormBool: boolean;
   @Input('showNotizFormBool') showNotizFormBool: boolean;
   @Input('notizElements') notizElements: any;
+  @Input('showWintergartenBool') showWintergartenBool: boolean;
+  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
+  @Input('showPanoramaBool') showPanoramaBool: boolean;
+  @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('showAlleBool') showAlleBool: boolean;
   @Output()
   notizResponse:EventEmitter<any> = new EventEmitter();
 
@@ -139,4 +144,6 @@ export class FormComponent implements OnInit {
       });
 
   }
+
+
 }

@@ -135,7 +135,7 @@ export class PrintComponent {
       if (typeof a.nameValue !== "undefined" && a.nameValue !== null) {
         nameA = a.nameValue.toUpperCase(); // ignore upper and lowercase
       }
-      if (typeof b.nameValue !== "undefined" && a.nameValue !== null  ) {
+      if (typeof b.nameValue !== "undefined" && b.nameValue !== null  ) {
         nameB = b.nameValue.toUpperCase(); // ignore upper and lowercase
       }
       if (nameA < nameB) {

@@ -1,47 +1,48 @@
-<div id="printSectionId2" class="col-xs-12 printTwo">
-  <div class="row" style="border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;">
-    <div *ngIf="showSonnbergZirbnBool">
-      <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
-        <div class="t{{tableSonnbergZirbn.number}} table-item" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}" [style.border]="getStyle(tablesSonnbergZirbn[j].trace, tablesSonnbergZirbn[j].trace2, tablesSonnbergZirbn[j].trace3, tablesSonnbergZirbn[j].trace4, tablesSonnbergZirbn[j].trace5, tablesSonnbergZirbn[j].trace6, tablesSonnbergZirbn[j].trace7, tablesSonnbergZirbn[j].trace8, tablesSonnbergZirbn[j].trace9, tablesSonnbergZirbn[j].trace10, tablesSonnbergZirbn[j].trace11, tablesSonnbergZirbn[j].trace12, tablesSonnbergZirbn[j].trace13, tablesSonnbergZirbn[j].trace14, tablesSonnbergZirbn[j].trace15, tablesSonnbergZirbn[j].newTraceText)">
-          <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
-            <p><b>{{tableSonnbergZirbn.number}} | {{tableSonnbergZirbn.personenAnzahlValue}} {{tableSonnbergZirbn.personenAnzahlValue2}} {{tableSonnbergZirbn.personenAnzahlValue3}} {{tableSonnbergZirbn.personenAnzahlValue4}} {{tableSonnbergZirbn.personenAnzahlValue5}} {{tableSonnbergZirbn.personenAnzahlValue6}} {{tableSonnbergZirbn.personenAnzahlValue7}} {{tableSonnbergZirbn.personenAnzahlValue8}} {{tableSonnbergZirbn.personenAnzahlValue9}} {{tableSonnbergZirbn.personenAnzahlValue10}}  {{tableSonnbergZirbn.personenAnzahlValue11}}  {{tableSonnbergZirbn.personenAnzahlValue12}}  {{tableSonnbergZirbn.personenAnzahlValue13}}  {{tableSonnbergZirbn.personenAnzahlValue14}}  {{tableSonnbergZirbn.personenAnzahlValue15}}</b></p>
+<div *ngIf="showTablePlanBool">
+    <div id="printSectionId2" class="col-xs-12 printTwo">
+    <div class="row" style="border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;">
+      <div *ngIf="showSonnbergZirbnBool">
+        <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
+          <div class="t{{tableSonnbergZirbn.number}} table-item" (click)="moveTable(tableSonnbergZirbn, j)" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}" [style.border]="getStyle(tablesSonnbergZirbn[j].trace, tablesSonnbergZirbn[j].trace2, tablesSonnbergZirbn[j].trace3, tablesSonnbergZirbn[j].trace4, tablesSonnbergZirbn[j].trace5, tablesSonnbergZirbn[j].trace6, tablesSonnbergZirbn[j].trace7, tablesSonnbergZirbn[j].trace8, tablesSonnbergZirbn[j].trace9, tablesSonnbergZirbn[j].trace10, tablesSonnbergZirbn[j].trace11, tablesSonnbergZirbn[j].trace12, tablesSonnbergZirbn[j].trace13, tablesSonnbergZirbn[j].trace14, tablesSonnbergZirbn[j].trace15, tablesSonnbergZirbn[j].newTraceText)">
+            <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
+              <p><b>{{tableSonnbergZirbn.number}} | {{tableSonnbergZirbn.personenAnzahlValue}} {{tableSonnbergZirbn.personenAnzahlValue2}} {{tableSonnbergZirbn.personenAnzahlValue3}} {{tableSonnbergZirbn.personenAnzahlValue4}} {{tableSonnbergZirbn.personenAnzahlValue5}} {{tableSonnbergZirbn.personenAnzahlValue6}} {{tableSonnbergZirbn.personenAnzahlValue7}} {{tableSonnbergZirbn.personenAnzahlValue8}} {{tableSonnbergZirbn.personenAnzahlValue9}} {{tableSonnbergZirbn.personenAnzahlValue10}}  {{tableSonnbergZirbn.personenAnzahlValue11}}  {{tableSonnbergZirbn.personenAnzahlValue12}}  {{tableSonnbergZirbn.personenAnzahlValue13}}  {{tableSonnbergZirbn.personenAnzahlValue14}}  {{tableSonnbergZirbn.personenAnzahlValue15}}</b></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="showPanoramaBool">
-      <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
-        <div class="t{{tablePanorama.number}} table-item" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor,  'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}" [style.border]="getStyle(tablesPanorama[j].trace, tablesPanorama[j].trace2, tablesPanorama[j].trace3, tablesPanorama[j].trace4, tablesPanorama[j].trace5, tablesPanorama[j].trace6, tablesPanorama[j].trace7, tablesPanorama[j].trace8, tablesPanorama[j].trace9, tablesPanorama[j].trace10, tablesPanorama[j].trace11, tablesPanorama[j].trace12, tablesPanorama[j].trace13, tablesPanorama[j].trace14, tablesPanorama[j].trace15, tablesPanorama[j].newTraceText)">
-          <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-            <p><b>{{tablePanorama.number}} | {{tablePanorama.personenAnzahlValue}} {{tablePanorama.personenAnzahlValue2}} {{tablePanorama.personenAnzahlValue3}} {{tablePanorama.personenAnzahlValue4}} {{tablePanorama.personenAnzahlValue5}} {{tablePanorama.personenAnzahlValue6}} {{tablePanorama.personenAnzahlValue7}} {{tablePanorama.personenAnzahlValue8}} {{tablePanorama.personenAnzahlValue9}} {{tablePanorama.personenAnzahlValue10}} {{tablePanorama.personenAnzahlValue11}} {{tablePanorama.personenAnzahlValue12}} {{tablePanorama.personenAnzahlValue13}} {{tablePanorama.personenAnzahlValue14}} {{tablePanorama.personenAnzahlValue15}}</b></p>
-            </div>
+      <div *ngIf="showPanoramaBool">
+        <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
+          <div class="t{{tablePanorama.number}} table-item" (click)="moveTable(tablePanorama, j)" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor,  'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}" [style.border]="getStyle(tablesPanorama[j].trace, tablesPanorama[j].trace2, tablesPanorama[j].trace3, tablesPanorama[j].trace4, tablesPanorama[j].trace5, tablesPanorama[j].trace6, tablesPanorama[j].trace7, tablesPanorama[j].trace8, tablesPanorama[j].trace9, tablesPanorama[j].trace10, tablesPanorama[j].trace11, tablesPanorama[j].trace12, tablesPanorama[j].trace13, tablesPanorama[j].trace14, tablesPanorama[j].trace15, tablesPanorama[j].newTraceText)">
+            <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
+              <p><b>{{tablePanorama.number}} | {{tablePanorama.personenAnzahlValue}} {{tablePanorama.personenAnzahlValue2}} {{tablePanorama.personenAnzahlValue3}} {{tablePanorama.personenAnzahlValue4}} {{tablePanorama.personenAnzahlValue5}} {{tablePanorama.personenAnzahlValue6}} {{tablePanorama.personenAnzahlValue7}} {{tablePanorama.personenAnzahlValue8}} {{tablePanorama.personenAnzahlValue9}} {{tablePanorama.personenAnzahlValue10}} {{tablePanorama.personenAnzahlValue11}} {{tablePanorama.personenAnzahlValue12}} {{tablePanorama.personenAnzahlValue13}} {{tablePanorama.personenAnzahlValue14}} {{tablePanorama.personenAnzahlValue15}}</b></p>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="showRestaurantBool">
-      <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
-        <div class="t{{tableRestaurant.number}} table-item" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}" [style.border]="getStyle(tablesRestaurant[j].trace, tablesRestaurant[j].trace2, tablesRestaurant[j].trace3, tablesRestaurant[j].trace4, tablesRestaurant[j].trace5, tablesRestaurant[j].trace6, tablesRestaurant[j].trace7, tablesRestaurant[j].trace8, tablesRestaurant[j].trace9, tablesRestaurant[j].trace10, tablesRestaurant[j].trace11, tablesRestaurant[j].trace12, tablesRestaurant[j].trace13, tablesRestaurant[j].trace14, tablesRestaurant[j].trace15, tablesRestaurant[j].newTraceText)">
-          <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
-            <p><b>{{tableRestaurant.number}} | {{tableRestaurant.personenAnzahlValue}} {{tableRestaurant.personenAnzahlValue2}} {{tableRestaurant.personenAnzahlValue3}} {{tableRestaurant.personenAnzahlValue4}} {{tableRestaurant.personenAnzahlValue5}} {{tableRestaurant.personenAnzahlValue6}} {{tableRestaurant.personenAnzahlValue7}} {{tableRestaurant.personenAnzahlValue8}} {{tableRestaurant.personenAnzahlValue9}} {{tableRestaurant.personenAnzahlValue10}}  {{tableRestaurant.personenAnzahlValue11}} {{tableRestaurant.personenAnzahlValue12}} {{tableRestaurant.personenAnzahlValue13}} {{tableRestaurant.personenAnzahlValue14}} {{tableRestaurant.personenAnzahlValue15}} </b></p>
-            </div>
+      <div *ngIf="showRestaurantBool">
+        <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
+          <div class="t{{tableRestaurant.number}} table-item" (click)="moveTable(tableRestaurant, j)" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}" [style.border]="getStyle(tablesRestaurant[j].trace, tablesRestaurant[j].trace2, tablesRestaurant[j].trace3, tablesRestaurant[j].trace4, tablesRestaurant[j].trace5, tablesRestaurant[j].trace6, tablesRestaurant[j].trace7, tablesRestaurant[j].trace8, tablesRestaurant[j].trace9, tablesRestaurant[j].trace10, tablesRestaurant[j].trace11, tablesRestaurant[j].trace12, tablesRestaurant[j].trace13, tablesRestaurant[j].trace14, tablesRestaurant[j].trace15, tablesRestaurant[j].newTraceText)">
+            <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
+              <p><b>{{tableRestaurant.number}} | {{tableRestaurant.personenAnzahlValue}} {{tableRestaurant.personenAnzahlValue2}} {{tableRestaurant.personenAnzahlValue3}} {{tableRestaurant.personenAnzahlValue4}} {{tableRestaurant.personenAnzahlValue5}} {{tableRestaurant.personenAnzahlValue6}} {{tableRestaurant.personenAnzahlValue7}} {{tableRestaurant.personenAnzahlValue8}} {{tableRestaurant.personenAnzahlValue9}} {{tableRestaurant.personenAnzahlValue10}}  {{tableRestaurant.personenAnzahlValue11}} {{tableRestaurant.personenAnzahlValue12}} {{tableRestaurant.personenAnzahlValue13}} {{tableRestaurant.personenAnzahlValue14}} {{tableRestaurant.personenAnzahlValue15}} </b></p>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="showWintergartenBool">
-      <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
-        <div class="t{{tableWintergarten.number}} table-item" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}" [style.border]="getStyle(tablesWintergarten[j].trace, tablesWintergarten[j].trace2, tablesWintergarten[j].trace3, tablesWintergarten[j].trace4, tablesWintergarten[j].trace5, tablesWintergarten[j].trace6, tablesWintergarten[j].trace7, tablesWintergarten[j].trace8, tablesWintergarten[j].trace9, tablesWintergarten[j].trace10, tablesWintergarten[j].trace11, tablesWintergarten[j].trace12, tablesWintergarten[j].trace13, tablesWintergarten[j].trace14, tablesWintergarten[j].trace15, tablesWintergarten[j].newTraceText)">
-          <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
-            <p><b>{{tableWintergarten.number}} | {{tableWintergarten.personenAnzahlValue}} {{tableWintergarten.personenAnzahlValue2}} {{tableWintergarten.personenAnzahlValue3}} {{tableWintergarten.personenAnzahlValue4}} {{tableWintergarten.personenAnzahlValue5}} {{tableWintergarten.personenAnzahlValue6}} {{tableWintergarten.personenAnzahlValue7}} {{tableWintergarten.personenAnzahlValue8}} {{tableWintergarten.personenAnzahlValue9}} {{tableWintergarten.personenAnzahlValue10}} {{tableWintergarten.personenAnzahlValue11}} {{tableWintergarten.personenAnzahlValue12}} {{tableWintergarten.personenAnzahlValue13}} {{tableWintergarten.personenAnzahlValue14}} {{tableWintergarten.personenAnzahlValue15}}</b></p>
-            </div>
-            </div>
+      <div *ngIf="showWintergartenBool">
+        <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
+          <div class="t{{tableWintergarten.number}} table-item" (click)="moveTable(tableWintergarten, j)" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor,  'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}" [style.border]="getStyle(tablesWintergarten[j].trace, tablesWintergarten[j].trace2, tablesWintergarten[j].trace3, tablesWintergarten[j].trace4, tablesWintergarten[j].trace5, tablesWintergarten[j].trace6, tablesWintergarten[j].trace7, tablesWintergarten[j].trace8, tablesWintergarten[j].trace9, tablesWintergarten[j].trace10, tablesWintergarten[j].trace11, tablesWintergarten[j].trace12, tablesWintergarten[j].trace13, tablesWintergarten[j].trace14, tablesWintergarten[j].trace15, tablesWintergarten[j].newTraceText)">
+            <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
+              <p><b>{{tableWintergarten.number}} | {{tableWintergarten.personenAnzahlValue}} {{tableWintergarten.personenAnzahlValue2}} {{tableWintergarten.personenAnzahlValue3}} {{tableWintergarten.personenAnzahlValue4}} {{tableWintergarten.personenAnzahlValue5}} {{tableWintergarten.personenAnzahlValue6}} {{tableWintergarten.personenAnzahlValue7}} {{tableWintergarten.personenAnzahlValue8}} {{tableWintergarten.personenAnzahlValue9}} {{tableWintergarten.personenAnzahlValue10}} {{tableWintergarten.personenAnzahlValue11}} {{tableWintergarten.personenAnzahlValue12}} {{tableWintergarten.personenAnzahlValue13}} {{tableWintergarten.personenAnzahlValue14}} {{tableWintergarten.personenAnzahlValue15}}</b></p>
+              </div>
+              </div>
+        </div>
       </div>
-    </div>
-    <div *ngIf="showAlleBool">
-      <br>
-      <br>
-      <br>
-      <h1 style="color: white">Perfekt um eine Suche zu starten ;-)</h1>
+      <div *ngIf="showAlleBool">
+        <br>
+        <br>
+        <br>
+        <h1 style="color: white">Perfekt um eine Suche zu starten ;-)</h1>
+      </div>
     </div>
   </div>
 </div>
-

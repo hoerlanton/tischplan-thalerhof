@@ -16,35 +16,13 @@
     <div class="container-fluid">
       <app-navigation  [newInformationElements]="newInformationElements"
                        [tablesOccupied]="tablesOccupied"
+                       [tablesTempAbreise]="tablesTempAbreise"
                        (getTablesOccupied)="tablesOccupied = $event"
-                       (umsetzenExport)="quellTisch = $event; umsetzen($event)">
+                       (umsetzenExport)="umsetzenInfoVar = $event; umsetzen($event)"
+                       (abreisenExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
+                       (termExport)="term = $event">
       </app-navigation>
       <div class="col-xs-12 col-sm-8 col-lg-4 print-col">
-        <app-form-menu style="min-height: 40px" [buttonBgColorInfoForm]="buttonBgColorInfoForm"
-                       [buttonBgColorNotizForm]="buttonBgColorNotizForm"
-                       [fontColorInfoForm]="fontColorInfoForm"
-                       [fontColorNotizForm]="fontColorNotizForm"
-                       [showNotizFormBool]="showNotizFormBool"
-                       [showInfoFormBool]="showInfoFormBool"
-                       (showInfoFormBoolChange)="showInfoFormBool=$event"
-                       (showNotizFormBoolChange)="showNotizFormBool=$event">
-        </app-form-menu>
-        <app-form [newInformationElements]="newInformationElements"
-                  [dateGenerated]="dateGenerated"
-                  [title]="title"
-                  [roomNumber]="roomNumber"
-                  [tableNumber]="tableNumber"
-                  [employee]="employee"
-                  [nameTraceInput]="nameTraceInput"
-                  [tablesPanorama]="tablesPanorama"
-                  [tablesRestaurant]="tablesRestaurant"
-                  [tablesSonnbergZirbn]="tablesSonnbergZirbn"
-                  [tablesWintergarten]="tablesWintergarten"
-                  [showNotizFormBool]="showNotizFormBool"
-                  [showInfoFormBool]="showInfoFormBool"
-                  [notizElements]="notizElements"
-                  (notizResponse)="notizElements=$event">
-        </app-form>
         <app-departmentmenu
           [buttonBgColor1]="buttonBgColor1"
           [buttonBgColor2]="buttonBgColor2"
@@ -65,8 +43,41 @@
           (showPanoramaBoolChange)="showPanoramaBool=$event"
           (showRestaurantBoolChange)="showRestaurantBool=$event"
           (showWintergartenBoolChange)="showWintergartenBool=$event"
-          (showAlleBoolChange)="showAlleBool=$event">
+          (showAlleBoolChange)="showAlleBool=$event"
+          [buttonBgColorInfoForm]="buttonBgColorInfoForm"
+          [buttonBgColorNotizForm]="buttonBgColorNotizForm"
+          [fontColorInfoForm]="fontColorInfoForm"
+          [fontColorNotizForm]="fontColorNotizForm"
+          [showNotizFormBool]="showNotizFormBool"
+          [showInfoFormBool]="showInfoFormBool"
+          (showInfoFormBoolChange)="showInfoFormBool=$event"
+          (showNotizFormBoolChange)="showNotizFormBool=$event"
+          (showTablePlanBoolChange)="showTablePlanBool=$event"
+          [showTablePlanBool]="showTablePlanBool"
+          [buttonBgColorShowTablePlan]="buttonBgColorShowTablePlan"
+          [fontColorShowTablePlan]="fontColorShowTablePlan">
         </app-departmentmenu>
+        <app-form [newInformationElements]="newInformationElements"
+                  [dateGenerated]="dateGenerated"
+                  [title]="title"
+                  [roomNumber]="roomNumber"
+                  [tableNumber]="tableNumber"
+                  [employee]="employee"
+                  [nameTraceInput]="nameTraceInput"
+                  [tablesPanorama]="tablesPanorama"
+                  [tablesRestaurant]="tablesRestaurant"
+                  [tablesSonnbergZirbn]="tablesSonnbergZirbn"
+                  [tablesWintergarten]="tablesWintergarten"
+                  [showNotizFormBool]="showNotizFormBool"
+                  [showInfoFormBool]="showInfoFormBool"
+                  [notizElements]="notizElements"
+                  [showPanoramaBool]="showPanoramaBool"
+                  [showRestaurantBool]="showRestaurantBool"
+                  [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+                  [showWintergartenBool]="showWintergartenBool"
+                  [showAlleBool]="showAlleBool"
+                  (notizResponse)="notizElements=$event">
+        </app-form>
         <app-tableplan [tablesWintergarten]="tablesWintergarten"
                        [showWintergartenBool]="showWintergartenBool"
                        [tablesSonnbergZirbn]="tablesSonnbergZirbn"
@@ -79,11 +90,11 @@
                        (movedRestaurant)="tablesRestaurant = $event"
                        (movedPanorama)="tablesPanorama = $event"
                        (movedWintergarten)="tablesWintergarten = $event"
-                       [showAlleBool]="showAlleBool">
+                       [showAlleBool]="showAlleBool"
+                       [showTablePlanBool]="showTablePlanBool">
         </app-tableplan>
       </div>
       <div class="col-xs-12 col-lg-4 upload-col">
-        <app-upload></app-upload>
         <div class="outer-cards">
           <h3>Im-Haus-Liste</h3>
           <app-im-haus-liste [imHausListeElemente]="imHausListeElemente"></app-im-haus-liste>
@@ -94,16 +105,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4 col-lg-4 table-col">
-          <app-search (termExport)="term = $event"></app-search>
-        <app-notiz
-          [showPanoramaBool]="showPanoramaBool"
-          [showRestaurantBool]="showRestaurantBool"
-          [showSonnbergZirbnBool]="showSonnbergZirbnBool"
-          [showWintergartenBool]="showWintergartenBool"
-          [notizElements]="notizElements"
-          [showAlleBool]="showAlleBool">
-        </app-notiz>
-        <h3 style="margin-top: 20px">Tisch Übersicht</h3>
+        <h3 >Tisch Übersicht</h3>
         <div class="inner-table" style="padding: 0px 0px 0px 0px;">
           <div class="row3">
             <div class='wrapper' id="wrapper">

@@ -21,7 +21,8 @@ module.exports = {
         console.log(JSON.stringify(informationElementToDelete));
         db.newInformation.remove({
 
-                roomNumber: informationElementToDelete.roomNumber
+                roomNumber: informationElementToDelete.roomNumber,
+                text: informationElementToDelete.text
             },
             {
                 justOne: true,
