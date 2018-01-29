@@ -111,7 +111,7 @@ export class NavigationComponent implements OnInit {
     tables = this.tablesTempAbreise;
 
     console.log('=================================================dispenseIfAbreise');
-    this.dateTodayGenerated = new Date();
+    this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
 
     for (let a = 0; a < tables.length; a++) {
       for (let b = 0; b < tables[a].tables.length; b++) {
