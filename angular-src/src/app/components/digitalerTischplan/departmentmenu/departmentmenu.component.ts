@@ -372,6 +372,97 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.buttonBgColorDropdownToggle = "0a7a74";
     }
   }
+
+
+  mouseEnterSonnbergZirbn() {
+    console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor1 === "0a7a74") {
+      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor1 = "154846";
+    }
+  }
+
+  mouseLeaveSonnbergZirbn() {
+    if (this.buttonBgColor1 === "0a7a74") {
+      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor1 = "154846";
+    } else if (this.buttonBgColor1 === "154846") {
+      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor1 = "0a7a74";
+    }
+  }
+
+  mouseEnterPanorama() {
+    console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor2 === "0a7a74") {
+      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "154846";
+    }
+  }
+
+  mouseLeavePanorama() {
+    if (this.buttonBgColor2 === "0a7a74") {
+      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "154846";
+    } else if (this.buttonBgColor2 === "154846") {
+      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "0a7a74";
+    }
+  }
+
+  mouseEnterRestaurant() {
+    console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor3 === "0a7a74") {
+      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor3 = "154846";
+    }
+  }
+
+  mouseLeaveRestaurant() {
+    if (this.buttonBgColor3 === "0a7a74") {
+      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor3 = "154846";
+    } else if (this.buttonBgColor3 === "154846") {
+      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor3 = "0a7a74";
+    }
+  }
+
+  mouseEnterWintergarten() {
+    console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor4 === "0a7a74") {
+      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor4 = "154846";
+    }
+  }
+
+  mouseLeaveWintergarten() {
+    if (this.buttonBgColor4 === "0a7a74") {
+      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor4 = "154846";
+    } else if (this.buttonBgColor4 === "154846") {
+      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor4 = "0a7a74";
+    }
+  }
+
+  mouseEnterAlle() {
+    console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor5 === "0a7a74") {
+      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor5 = "154846";
+    }
+  }
+
+  mouseLeaveAlle() {
+    if (this.buttonBgColor5 === "0a7a74") {
+      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor5 = "154846";
+    } else if (this.buttonBgColor5 === "154846") {
+      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor5 = "0a7a74";
+    }
+  }
 }
 
 

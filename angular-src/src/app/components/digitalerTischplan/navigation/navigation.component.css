@@ -49,9 +49,7 @@
 .dropdown-toggle {
   background-color: #0a7a74;
   color: #FFFFFF;
-
 }
-
 
 .dropdown-menu {
   overflow: auto;
@@ -88,7 +86,6 @@ h6 {
   max-width: 50%;
 }
 
-
 .btn-default {
   background-color: #0a7a74;
   color: #FFFFFF;
@@ -104,7 +101,6 @@ h6 {
   color: #FFFFFF;
 }
 
-
 .btn-primary {
   background-color: #0a7a74;
   color: #FFFFFF;
@@ -119,7 +115,15 @@ h6 {
   border: none;
 }
 
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+  background-color: #1f5452;
+  color: #FFFFFF;
+}
 
+.btn-primary.focus, .btn-primary:focus {
+  background-color: #0a7a74;
+  color: #FFFFFF;
+}
 
 .btn-group {
   height: 45px;

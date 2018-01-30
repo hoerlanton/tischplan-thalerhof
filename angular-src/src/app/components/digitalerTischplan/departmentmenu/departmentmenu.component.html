@@ -22,23 +22,23 @@
     </div>
   </button>
   <ul *dropdownMenu class="dropdown-menu" role="menu" style="overflow: auto; margin: 0px; width: 200px;">
-      <li role="menuitem" class="showSonnbergZirbn" style="padding: 10px" (click)="showSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
+      <li role="menuitem" class="showSonnbergZirbn" style="padding: 10px" (click)="showSonnbergZirbn()" (mouseenter)="mouseEnterSonnbergZirbn()"  (mouseleave)="mouseLeaveSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
         <p [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</p>
       </li>
     <li style="margin: 0px" class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showPanorama" style="padding: 10px" (click)="showPanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
+    <li role="menuitem" class="showPanorama" style="padding: 10px" (click)="showPanorama()" (mouseenter)="mouseEnterPanorama()"  (mouseleave)="mouseLeavePanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
         <p [ngStyle]="{'color': '#' + fontColor2}">Panorama</p>
       </li>
     <li style="margin: 0px" class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showRestaurant" style="padding: 10px" (click)="showRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
+    <li role="menuitem" class="showRestaurant" style="padding: 10px" (click)="showRestaurant()" (mouseenter)="mouseEnterRestaurant()"  (mouseleave)="mouseLeaveRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
         <p [ngStyle]="{'color': '#' + fontColor3}">Restaurant</p>
       </li>
     <li style="margin: 0px" class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showWintergarten" style="padding: 10px" (click)="showWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
+    <li role="menuitem" class="showWintergarten" style="padding: 10px" (click)="showWintergarten()" (mouseenter)="mouseEnterWintergarten()"  (mouseleave)="mouseLeaveWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
         <p [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</p>
       </li>
     <li style="margin: 0px" class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showAlle" style="padding: 10px" (click)="showAlle()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">
+    <li role="menuitem" class="showAlle" style="padding: 10px" (click)="showAlle()" (mouseenter)="mouseEnterAlle()"  (mouseleave)="mouseLeaveAlle()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">
         <p [ngStyle]="{'color': '#' + fontColor5}">Alle</p>
       </li>
     <li style="margin: 0px" class="divider dropdown-divider"></li>

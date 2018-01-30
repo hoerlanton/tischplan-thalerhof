@@ -239,7 +239,8 @@ export class NavigationComponent implements OnInit {
       tableToMove.targetDepartment = "Wintergarten";
     }
 
-    let index = 0;
+    let indexZiel = 0;
+    let indexQuell = 0;
     tableToMove.number = this.quellTisch;
     tableToMove.targetTable = this.zielTisch;
     console.log(tableToMove);
@@ -255,7 +256,6 @@ export class NavigationComponent implements OnInit {
                 console.log(tables[a].tables[b]);
                 this.tableInformation.push(tables[a].tables[b]);
                 console.log(this.tableInformation);
-                console.log('index: ' + index);
                 this.tableInformation.push(tableToMove);
               }
             }
@@ -265,13 +265,22 @@ export class NavigationComponent implements OnInit {
           for (let b = 0; b < tables[a].tables.length; b++) {
             if (tables[a].department === tableToMove.targetDepartment) {
               if (tables[a].tables[b].number === tableToMove.targetTable) {
-                index = b;
+                indexZiel = b;
+              }
+            }
+          }
+        }
+        for (let a = 0; a < tables.length; a++) {
+          for (let b = 0; b < tables[a].tables.length; b++) {
+            if (tables[a].department === tableToMove.department) {
+              if (tables[a].tables[b].number === tableToMove.number) {
+                indexQuell = b;
               }
             }
           }
         }
         let tableInformationExport = this.tableInformation;
-        this.umsetzenExport.emit({tableToMove, index, tableInformationExport});
+        this.umsetzenExport.emit({tableToMove, indexZiel, indexQuell, tableInformationExport});
       });
 
   }

@@ -91,13 +91,15 @@ html, body {
   padding: 10px 10px 40px 10px;
 }
 
-.row .container-fluid .table-col .inner-table .row3 .wrapper .cards-container {
+
+.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {
   border-radius: 3px;
   border: solid 1px grey;
   padding: 10px 10px 15px 10px;
+
 }
 
-.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {
+#containerRestaurant, #containerPanorama, #containerWintergarten, #containerSonnbergZirbn {
   border-radius: 3px;
   border: solid 1px grey;
 }
@@ -228,6 +230,30 @@ html, body {
 }
 
 
+.btn-primary {
+  background-color: #0a7a74;
+  color: #FFFFFF;
+  margin-left: 20px;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1f5452;
+  color: #FFFFFF;
+  margin-left: 20px;
+  border: none;
+}
+
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+  background-color: #1f5452;
+  color: #FFFFFF;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  background-color: #0a7a74;
+  color: #FFFFFF;
+}
+
 @media (min-width: 700px) {
   .row .table-col {
     max-height: calc(100vh - 10px);
@@ -318,6 +344,7 @@ html, body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
+
 }
 
 
