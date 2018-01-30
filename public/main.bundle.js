@@ -315,7 +315,7 @@ var DepartmentmenuComponent = (function () {
         this.showWintergartenBool = false;
         this.showAlleBool = false;
         this.showAbteilungen = false;
-        if (this.buttonBgColor1 === "0a7a74") {
+        if (this.buttonBgColor1 === "154846") {
             this.buttonBgColor1 = "0d2f2e";
             this.buttonBgColor2 = "0a7a74";
             this.buttonBgColor3 = "0a7a74";
@@ -350,7 +350,7 @@ var DepartmentmenuComponent = (function () {
         this.showWintergartenBool = false;
         this.showAlleBool = false;
         this.showAbteilungen = false;
-        if (this.buttonBgColor2 === "0a7a74") {
+        if (this.buttonBgColor2 === "154846") {
             this.buttonBgColor2 = "0d2f2e";
             this.buttonBgColor1 = "0a7a74";
             this.buttonBgColor3 = "0a7a74";
@@ -384,7 +384,7 @@ var DepartmentmenuComponent = (function () {
         this.showWintergartenBool = false;
         this.showAlleBool = false;
         this.showAbteilungen = false;
-        if (this.buttonBgColor3 === "0a7a74") {
+        if (this.buttonBgColor3 === "154846") {
             this.buttonBgColor3 = "0d2f2e";
             this.buttonBgColor1 = "0a7a74";
             this.buttonBgColor2 = "0a7a74";
@@ -418,7 +418,7 @@ var DepartmentmenuComponent = (function () {
         this.showWintergartenBool = true;
         this.showAlleBool = false;
         this.showAbteilungen = false;
-        if (this.buttonBgColor4 === "0a7a74") {
+        if (this.buttonBgColor4 === "154846") {
             this.buttonBgColor4 = "0d2f2e";
             this.buttonBgColor1 = "0a7a74";
             this.buttonBgColor2 = "0a7a74";
@@ -452,7 +452,7 @@ var DepartmentmenuComponent = (function () {
         this.showWintergartenBool = false;
         this.showAlleBool = true;
         this.showAbteilungen = false;
-        if (this.buttonBgColor5 === "0a7a74") {
+        if (this.buttonBgColor5 === "154846") {
             this.buttonBgColor5 = "0d2f2e";
             this.buttonBgColor1 = "0a7a74";
             this.buttonBgColor2 = "0a7a74";
