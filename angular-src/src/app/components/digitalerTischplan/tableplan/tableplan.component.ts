@@ -73,4 +73,8 @@ export class TableplanComponent implements OnInit {
       return "solid 3px rgb(243, 239, 228)";
     }
   }
+
+  none(event) {
+    event.stopPropagation();
+  }
 }
