@@ -33,6 +33,11 @@ export class TischplanService {
       .map(res => res.json());
   }
 
+  getInformationEmployees() {
+    return this.http.get('informationEmployees')
+      .map(res => res.json());
+  }
+
   occupyTable(dataString) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');

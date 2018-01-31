@@ -26,6 +26,16 @@
     </div>
   </ul>
   <ul class="nav navbar-nav navbar-right" >
+    <div class="btn-group"  dropdown>
+      <button dropdownToggle type="button"  class="btn btn-primary dropdown-toggle">Rangliste <i class="fa fa-gift" aria-hidden="true"></i><span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu" >
+        <div *ngFor="let newInformationEmployee of newInformationEmployees; let j = index;">
+          <li role="menuitem" class="menuitem" (click)="none($event)"> <b>Name: </b> {{newInformationEmployee.employee}} <br><b>Punkte: </b> {{newInformationEmployee.numberOfTraces}}</li>
+          <li class="divider dropdown-divider"></li>
+        </div>
+      </ul>
+    </div>
     <div class="btn-group" dropdown>
       <button dropdownToggle class="btn btn-primary dropdown-toggle" type="button">Abreisen entfernen <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="caret"></span>
       </button>

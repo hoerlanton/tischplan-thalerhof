@@ -31,7 +31,6 @@ module.exports = {
     },
     newInformationToTable: function (req, res, db) {
 
-
         console.log("newInformationToTable post called");
 
         let newInformation = req.body;
@@ -141,7 +140,20 @@ module.exports = {
         }, 500);
     },
 
+    getInformationEmployees: function (req, res, db) {
+        console.log("getInformationEmployees get called");
+        //Get guests from Mongo DB
+        db.newInformationToEmployee.find(function (err, information) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(information);
+        });
+    },
+
     newInformationToBox: function (req, res, db) {
+
+
 
         console.log("newInformationToBox post called");
         //Get guests from Mongo DB
@@ -156,5 +168,36 @@ module.exports = {
             }
             res.json(newInformation);
         });
+
+        setTimeout(function () {
+            db.newInformationToEmployee.findOne(
+                {
+                    "employee": newInformation.employee
+                },
+                {
+                    "employee.$": 1,
+                },
+                function (err, infoEmployee) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    db.newInformationToEmployee.update(
+                        {
+                            "employee": newInformation.employee
+                        },
+                        {
+                     $inc: {
+                         numberOfTraces: +1,
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("newInformationToEmployee updated successfully");
+                        });
+                });
+
+        });
+
     }
 };

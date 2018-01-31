@@ -108,6 +108,7 @@ export class TischplanComponent {
   showTablePlanBool: boolean;
   buttonBgColorShowTablePlan: string;
   fontColorShowTablePlan: string;
+  newInformationEmployees: any[] = [];
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService: NavService) {
 
@@ -146,6 +147,27 @@ export class TischplanComponent {
         } else {
           this.newInformationElements = informationElemente;
           console.log(this.newInformationElements);
+        }
+      });
+
+    this.tischplanService.getInformationEmployees()
+      .subscribe(informationElemente => {
+        if (informationElemente === null) {
+          return;
+        } else {
+
+          informationElemente.sort(function (a, b) {
+            if (Number(a.numberOfTraces) < Number(b.numberOfTraces))
+              return -1;
+            if (Number(a.numberOfTraces) > Number(b.numberOfTraces))
+              return 1;
+            return 0;
+          });
+
+          let sorted = informationElemente.sort();
+
+          this.newInformationEmployees = sorted;
+          console.log(this.newInformationEmployees);
         }
       });
 

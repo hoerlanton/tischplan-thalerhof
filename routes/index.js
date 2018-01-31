@@ -3,7 +3,7 @@ const   express = require('express'),
     bodyParser = require('body-parser'),
     mongojs = require('mongojs'),
     cors = require('cors'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb']),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
     moveTablesPanorama60s = require('./moveTablesPanorama60s.js'),
     moveTablesPanorama70s = require('./moveTablesPanorama70s.js'),
     moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
@@ -95,9 +95,8 @@ notiz.getNotiz(req, res, db)});
 //addInformationToTable
 router.post('/newNotiz', function(req, res, next) {
 notiz.newNotiz(req, res, db)});
-//addInformationToTable
-router.post('/umsetzen', function(req, res, next) {
-table.umsetzen(req, res, db)});
-
+//GetInformation Employees
+router.get('/informationEmployees', function(req, res, next) {
+information.getInformationEmployees(req, res, db)});
 
 module.exports = router;

@@ -12,6 +12,7 @@ export class NavigationComponent implements OnInit {
 
   filesToUpload: Array<File> = [];
   @Input('newInformationElements') newInformationElements: any[] = [];
+  @Input('newInformationEmployees') newInformationEmployees: any[] = [];
   @Input('tablesOccupied') tablesOccupied: number;
   @Input('tablesTempAbreise') tablesTempAbreise: any[] = [];
   @Output()

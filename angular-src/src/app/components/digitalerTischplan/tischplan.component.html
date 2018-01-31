@@ -18,7 +18,8 @@
                        (umsetzenExport)="umsetzenInfoVar = $event; umsetzen($event)"
                        (abreisenExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
                        (termExport)="term = $event"
-                        (reloadLists)="reloadLists($event)">
+                        (reloadLists)="reloadLists($event)"
+                       [newInformationEmployees]="newInformationEmployees">
       </app-navigation><flash-messages></flash-messages>
       <div class="col-xs-12 col-sm-8 col-lg-6 print-col">
         <app-departmentmenu
