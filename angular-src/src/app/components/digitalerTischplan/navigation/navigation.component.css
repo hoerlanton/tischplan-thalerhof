@@ -186,7 +186,7 @@ h6 {
 
 @media (min-width: 700px) {
   .Partner {
-    display: inline-block;
+    display: none;
     max-width: 100%;
     float: right;
   }
@@ -289,4 +289,12 @@ h6 {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .Partner {
+    display: inline-block;
+    max-width: 100%;
+    float: right;
+  }
+}
 
