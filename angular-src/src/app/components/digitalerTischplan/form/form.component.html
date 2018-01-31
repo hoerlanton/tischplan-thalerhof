@@ -4,7 +4,7 @@
       <div *ngIf="showPanoramaBool">
         <div *ngFor="let notizElement of notizElements" >
           <div *ngIf="notizElement.departmentNotizInput === 'Panorama'">
-            <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
             </div>
           </div>
@@ -13,7 +13,7 @@
       <div *ngIf="showRestaurantBool">
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Restaurant'">
-            <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
             </div>
           </div>
@@ -22,7 +22,7 @@
       <div *ngIf="showSonnbergZirbnBool">
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Sonnberg-Zirbn'">
-            <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
             </div>
           </div>
@@ -31,7 +31,7 @@
       <div *ngIf="showWintergartenBool">
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Wintergarten'">
-            <div style="border: solid 3px greenyellow; padding: 10px; margin: 10px;">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
             </div>
           </div>

@@ -245,7 +245,7 @@ html, body {
   border: none;
 }
 
-.btn-group-department {
+.btn-group-departments {
   margin: 0px 10px 5px 0px;
 }
 
@@ -269,18 +269,17 @@ html, body {
 
 @media (min-width: 700px) {
   .row .table-col {
-    max-height: calc(100vh - 128px);
+    max-height: calc(100vh - 70px);
     min-height: calc(100vh - 70px);
     background-color: #f3efe4;
     padding: 20px 10px 20px 10px;
     box-sizing: border-box;
     max-width: calc(100vw - 20px);
     width: 30%;
-    margin-top: 60px;
-
+    margin: 60px 0 0 10px;
   }
 
-  .btn-group-department {
+  .btn-group-departments {
     margin: 0 10px 5px 20px;
   }
 
@@ -292,7 +291,7 @@ html, body {
   }
 
   .row .inner-table {
-    max-height: calc(100vh - 70px);
+    max-height: calc(100vh - 128px);
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
