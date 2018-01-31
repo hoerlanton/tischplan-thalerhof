@@ -139,40 +139,6 @@ export class TischplanComponent {
     this.showWintergartenBool = false;
     this.showAlleBool = false;
 
-    this.tischplanService.getImHausListe()
-      .subscribe(imHausListeElemente => {
-        if (imHausListeElemente === null) {
-          return;
-        } else {
-
-          imHausListeElemente.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-          });
-
-          this.imHausListeElemente = imHausListeElemente;
-          console.log(this.imHausListeElemente);
-        }
-      });
-
-    this.tischplanService.getAnreiseListe()
-      .subscribe(anreiseListeElemente => {
-        if (anreiseListeElemente === null) {
-          return;
-        } else {
-
-          anreiseListeElemente.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-          });
-
-          this.anreiseListeElemente = anreiseListeElemente;
-          console.log(this.anreiseListeElemente);
-        }
-      });
-
     this.tischplanService.getInformationElements()
       .subscribe(informationElemente => {
         if (informationElemente === null) {
@@ -193,75 +159,8 @@ export class TischplanComponent {
         }
       });
 
-    this.tischplanService.getTables()
-      .subscribe(tables => {
-        if (tables === null) {
-          return;
-        } else {
-          console.log("TABLES LENGTH: " + tables.length);
-          tables[3].tables.sort(function (a, b) {
-            if (Number(a.number) < Number(b.number))
-              return -1;
-            if (Number(a.number) > Number(b.number))
-              return 1;
-            return 0;
-          });
-
-          let sorted = tables.sort();
-          console.log('sorted:');
-          console.log(sorted);
-
-          for (let a = 0; a < tables.length; a++) {
-            if (tables[a].department === "Panorama") {
-              this.tablesPanorama = tables[a].tables;
-            }
-            else if (tables[a].department === "Wintergarten") {
-              this.tablesWintergarten = tables[a].tables;
-              console.log('Test' + JSON.stringify(this.tablesWintergarten));
-            }
-            else if (tables[a].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn = tables[a].tables;
-            }
-            else if (tables[a].department === "Restaurant") {
-              this.tablesRestaurant = tables[a].tables;
-            }
-          }
-          this.changeBgColorIfAnreise(tables);
-        }
-
-        console.log(this.tablesPanorama);
-        console.log(this.tablesWintergarten);
-        console.log(this.tablesSonnbergZirbn);
-        console.log(this.tablesRestaurant);
-        this.tablesTempAbreise = tables;
-        this.tables = this.tables.concat(this.tablesWintergarten).concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
-        this.printComponent.formatAzListe(this.tables);
-
-        console.log("this.tables");
-        console.log(this.tables);
-      });
-
-    this.tischplanService.getTracesListe()
-      .subscribe(tracesListeElemente => {
-        if (tracesListeElemente === null) {
-          return;
-        } else {
-
-          tracesListeElemente.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-          });
-
-
-          console.log('92' + JSON.stringify(tracesListeElemente));
-          //console.log("2:" + tracesListeElemente[0].data[0]);
-          //console.log(tracesListeElemente[0].data.length);
-          //this.tracesListeElemente = tracesListeElemente[0].data;
-          this.tracesListeElemente = tracesListeElemente;
-          //this.formatTracesListeElements(tracesListeElemente);
-        }
-      });
+      this.getTables();
+      this.reloadLists();
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
       this.onDrag(value.slice(1));
@@ -376,7 +275,128 @@ export class TischplanComponent {
       this.departmentsComponent.occupy(this.umsetzenInfoVar.tableToMove, this.umsetzenInfoVar.indexQuell);
     }, 2000);
   }
+  reloadLists(){
+    this.tischplanService.getImHausListe()
+      .subscribe(imHausListeElemente => {
+        if (imHausListeElemente === null) {
+          return;
+        } else {
 
+          imHausListeElemente.sort(function (a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+          });
+
+          this.imHausListeElemente = imHausListeElemente;
+          console.log(this.imHausListeElemente);
+        }
+      });
+
+    this.tischplanService.getAnreiseListe()
+      .subscribe(anreiseListeElemente => {
+        if (anreiseListeElemente === null) {
+          return;
+        } else {
+
+          anreiseListeElemente.sort(function (a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+          });
+
+          this.anreiseListeElemente = anreiseListeElemente;
+          console.log(this.anreiseListeElemente);
+        }
+      });
+
+    this.tischplanService.getTracesListe()
+      .subscribe(tracesListeElemente => {
+        if (tracesListeElemente === null) {
+          return;
+        } else {
+
+          tracesListeElemente.sort(function (a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+          });
+
+
+          console.log('92' + JSON.stringify(tracesListeElemente));
+          //console.log("2:" + tracesListeElemente[0].data[0]);
+          //console.log(tracesListeElemente[0].data.length);
+          //this.tracesListeElemente = tracesListeElemente[0].data;
+          this.tracesListeElemente = tracesListeElemente;
+          //this.formatTracesListeElements(tracesListeElemente);
+        }
+      });
+  }
+
+  updateAzList(){
+    setTimeout(() => {
+     this.getTables();
+      setTimeout(() => {
+        console.log('this.tablesWintergarten:');
+        console.log(this.tablesWintergarten);
+        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+        console.log('this.tables: in updateAzList');
+        console.log(this.tables);
+        this.printComponent.formatAzListe(this.tables);
+      }, 3000);
+    }, 1000);
+  }
+
+  getTables(){
+    console.log('2222222222222222222222------------------------------');
+    this.tischplanService.getTables()
+      .subscribe(tables => {
+        if (tables === null) {
+          return;
+        } else {
+          console.log("TABLES LENGTH: " + tables.length);
+          tables[3].tables.sort(function (a, b) {
+            if (Number(a.number) < Number(b.number))
+              return -1;
+            if (Number(a.number) > Number(b.number))
+              return 1;
+            return 0;
+          });
+
+          let sorted = tables.sort();
+          console.log('sorted:');
+          console.log(sorted);
+
+          for (let a = 0; a < tables.length; a++) {
+            if (tables[a].department === "Panorama") {
+              this.tablesPanorama = tables[a].tables;
+            }
+            else if (tables[a].department === "Wintergarten") {
+              this.tablesWintergarten = tables[a].tables;
+              console.log('Test' + JSON.stringify(this.tablesWintergarten));
+            }
+            else if (tables[a].department === "Sonnberg-Zirbn") {
+              this.tablesSonnbergZirbn = tables[a].tables;
+            }
+            else if (tables[a].department === "Restaurant") {
+              this.tablesRestaurant = tables[a].tables;
+            }
+          }
+          this.changeBgColorIfAnreise(tables);
+        }
+
+        console.log(this.tablesPanorama);
+        console.log(this.tablesWintergarten);
+        console.log(this.tablesSonnbergZirbn);
+        console.log(this.tablesRestaurant);
+        this.tablesTempAbreise = tables;
+        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+        this.printComponent.formatAzListe(this.tables);
+
+        console.log("this.tables");
+        console.log(this.tables);
+      });
+  }
 }
 
 

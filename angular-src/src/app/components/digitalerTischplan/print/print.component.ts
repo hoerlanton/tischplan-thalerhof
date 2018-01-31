@@ -41,6 +41,8 @@ export class PrintComponent {
   formatAzListe(tables) {
     console.log('tables in formatAzListe');
     console.log(tables);
+    this.tableNumbers = [];
+    this.uniqueTables = [];
     this.tables = tables;
     function filterByID(obj) {
       if ('nameValue2' in obj || 'nameValue3' in obj) {
@@ -148,9 +150,8 @@ export class PrintComponent {
     });
 
     console.log('this.tables after sort: ');
+    console.log(this.tables);
 
-    console.log("this.uniqueTables: ");
-    console.log(this.uniqueTables);
 
     for (let i: number = 0; i < this.tables.length; i++) {
       console.log(i);
@@ -165,7 +166,20 @@ export class PrintComponent {
     }
 
     this.uniqueTables = this.tableNumbers.filter( onlyUnique );
+    console.log("this.uniqueTables: ");
+    console.log(this.uniqueTables);
+
+    /*
+        for (let i: number = 0; i < this.tables.length; i++) {
+          if (this.tables[i].isBesetzt === true) {
+            console.log("");
+            this.tablesOccupied.push(this.tables[i]);
+          }
+        }
+    */
+
     this.tablesOccupied = this.uniqueTables.length;
+    console.log(this.tablesOccupied);
     this.getTablesOccupied.emit(this.tablesOccupied);
     this.getTablesforAzListe.emit(this.tables);
 

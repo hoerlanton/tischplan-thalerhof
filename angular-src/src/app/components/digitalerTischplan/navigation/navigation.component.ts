@@ -21,6 +21,8 @@ export class NavigationComponent implements OnInit {
   term: string;
   @Output()
   termExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  reloadLists:EventEmitter<any> = new EventEmitter();
   dateTodayGenerated: any;
   date: any[] = [];
   parts: any[] = [];
@@ -102,6 +104,9 @@ export class NavigationComponent implements OnInit {
       // 2nd parameter is optional. You can pass object with options.
       this._flashMessagesService.show('Erfolgreich CSV Datei hochgeladen', {cssClass: 'alert-success', timeout: 10000}))
       .subscribe(files => console.log('files', files));
+    setTimeout(() => {
+      this.reloadLists.emit();
+    }, 3000);
 
   }
 

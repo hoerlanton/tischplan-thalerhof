@@ -17,7 +17,8 @@
                        (getTablesOccupied)="tablesOccupied = $event"
                        (umsetzenExport)="umsetzenInfoVar = $event; umsetzen($event)"
                        (abreisenExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
-                       (termExport)="term = $event">
+                       (termExport)="term = $event"
+                        (reloadLists)="reloadLists($event)">
       </app-navigation><flash-messages></flash-messages>
       <div class="col-xs-12 col-sm-8 col-lg-6 print-col">
         <app-departmentmenu
@@ -119,7 +120,8 @@
                                (dispensedPanorama)="tablesPanorama=$event"
                                (dispensedWintergarten)="tablesWintergarten=$event"
                                [term]="term"
-                               [showAlleBool]="showAlleBool">
+                               [showAlleBool]="showAlleBool"
+                               (updateAzList)="updateAzList($event)">
               </app-departments>
             </div>
           </div>

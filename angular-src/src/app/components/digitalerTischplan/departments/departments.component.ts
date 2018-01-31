@@ -31,6 +31,8 @@ export class DepartmentsComponent implements OnInit {
   dispensedWintergarten:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedPanorama:EventEmitter<any> = new EventEmitter();
+  @Output()
+  updateAzList:EventEmitter<any> = new EventEmitter();
   dateTodayGenerated: any;
   parts: any[] = [];
   date: any[] = [];
@@ -67,7 +69,6 @@ export class DepartmentsComponent implements OnInit {
           return 0;
         });
             if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-              console.log(' this._navService.changeNav(response[0].tables); called');
               this.dispensedSonnbergZirbn.emit(response[0].tables);
             } else if (response[0].tables[j].department === "Panorama") {
               this.dispensedPanorama.emit(response[0].tables);
@@ -75,8 +76,10 @@ export class DepartmentsComponent implements OnInit {
               this.dispensedRestaurant.emit(response[0].tables);
             } else if (response[0].tables[j].department === "Wintergarten") {
               this.dispensedWintergarten.emit(response[0].tables);
+              console.log("Wintergarten" + JSON.stringify(response[0].tables));
             }
         }
+      this.updateAzList.emit();
     });
 
     this.tischplanService.addPlaceholder(table).subscribe(response => {
@@ -157,6 +160,7 @@ export class DepartmentsComponent implements OnInit {
             this.tablesWintergarten[arrayIndex] = response.tables[0];
           }
         }
+        this.updateAzList.emit();
       });
   }
   changeBgColorIfAnreise(tables) {

@@ -396,7 +396,7 @@ module.exports = {
                     res.json(tables);
                     console.log("Dispense Table: " + JSON.stringify(tables));
                 });
-        }, 100);
+        }, 500);
     },
 
     addInformationToTable: function (req, res, db) {

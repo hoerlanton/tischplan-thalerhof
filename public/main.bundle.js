@@ -970,6 +970,7 @@ var DepartmentsComponent = (function () {
         this.dispensedRestaurant = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dispensedWintergarten = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dispensedPanorama = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.updateAzList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.parts = [];
         this.date = [];
         this.parsedDate = [];
@@ -1002,7 +1003,6 @@ var DepartmentsComponent = (function () {
                     return 0;
                 });
                 if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                    console.log(' this._navService.changeNav(response[0].tables); called');
                     _this.dispensedSonnbergZirbn.emit(response[0].tables);
                 }
                 else if (response[0].tables[j].department === "Panorama") {
@@ -1013,8 +1013,10 @@ var DepartmentsComponent = (function () {
                 }
                 else if (response[0].tables[j].department === "Wintergarten") {
                     _this.dispensedWintergarten.emit(response[0].tables);
+                    console.log("Wintergarten" + JSON.stringify(response[0].tables));
                 }
             }
+            _this.updateAzList.emit();
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
@@ -1098,6 +1100,7 @@ var DepartmentsComponent = (function () {
                     _this.tablesWintergarten[arrayIndex] = response.tables[0];
                 }
             }
+            _this.updateAzList.emit();
         });
     };
     DepartmentsComponent.prototype.changeBgColorIfAnreise = function (tables) {
@@ -1284,16 +1287,20 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _d || Object)
 ], DepartmentsComponent.prototype, "dispensedPanorama", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _e || Object)
+], DepartmentsComponent.prototype, "updateAzList", void 0);
 DepartmentsComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-departments',
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/departments/departments.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */]) === "function" && _g || Object])
 ], DepartmentsComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=departments.component.js.map
 
 /***/ }),
@@ -1944,6 +1951,7 @@ var NavigationComponent = (function () {
         this.umsetzenExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.abreisenExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.termExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.reloadLists = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.date = [];
         this.parts = [];
         this.parsedDate = [];
@@ -2010,6 +2018,9 @@ var NavigationComponent = (function () {
             return _this._flashMessagesService.show('Erfolgreich CSV Datei hochgeladen', { cssClass: 'alert-success', timeout: 10000 });
         })
             .subscribe(function (files) { return console.log('files', files); });
+        setTimeout(function () {
+            _this.reloadLists.emit();
+        }, 3000);
     };
     NavigationComponent.prototype.dispenseIfAbreise = function () {
         var tables;
@@ -2251,16 +2262,20 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _c || Object)
 ], NavigationComponent.prototype, "termExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _d || Object)
+], NavigationComponent.prototype, "reloadLists", void 0);
 NavigationComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-navigation',
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _g || Object])
 ], NavigationComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=navigation.component.js.map
 
 /***/ }),
@@ -2306,6 +2321,8 @@ var PrintComponent = (function () {
     PrintComponent.prototype.formatAzListe = function (tables) {
         console.log('tables in formatAzListe');
         console.log(tables);
+        this.tableNumbers = [];
+        this.uniqueTables = [];
         this.tables = tables;
         function filterByID(obj) {
             if ('nameValue2' in obj || 'nameValue3' in obj) {
@@ -2398,8 +2415,7 @@ var PrintComponent = (function () {
             return 0;
         });
         console.log('this.tables after sort: ');
-        console.log("this.uniqueTables: ");
-        console.log(this.uniqueTables);
+        console.log(this.tables);
         for (var i = 0; i < this.tables.length; i++) {
             console.log(i);
             if ("nameValue" in this.tables[i]) {
@@ -2411,7 +2427,18 @@ var PrintComponent = (function () {
             return self.indexOf(value) === index;
         }
         this.uniqueTables = this.tableNumbers.filter(onlyUnique);
+        console.log("this.uniqueTables: ");
+        console.log(this.uniqueTables);
+        /*
+            for (let i: number = 0; i < this.tables.length; i++) {
+              if (this.tables[i].isBesetzt === true) {
+                console.log("");
+                this.tablesOccupied.push(this.tables[i]);
+              }
+            }
+        */
         this.tablesOccupied = this.uniqueTables.length;
+        console.log(this.tablesOccupied);
         this.getTablesOccupied.emit(this.tablesOccupied);
         this.getTablesforAzListe.emit(this.tables);
         console.log(this.tables);
@@ -2656,7 +2683,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
+module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\"\n                        (reloadLists)=\"reloadLists($event)\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\"\n                               (updateAzList)=\"updateAzList($event)\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
 
 /***/ }),
 
@@ -2756,40 +2783,6 @@ var TischplanComponent = (function () {
         this.showRestaurantBool = false;
         this.showWintergartenBool = false;
         this.showAlleBool = false;
-        this.tischplanService.getImHausListe()
-            .subscribe(function (imHausListeElemente) {
-            if (imHausListeElemente === null) {
-                return;
-            }
-            else {
-                imHausListeElemente.sort(function (a, b) {
-                    if (a.name < b.name)
-                        return -1;
-                    if (a.name > b.name)
-                        return 1;
-                    return 0;
-                });
-                _this.imHausListeElemente = imHausListeElemente;
-                console.log(_this.imHausListeElemente);
-            }
-        });
-        this.tischplanService.getAnreiseListe()
-            .subscribe(function (anreiseListeElemente) {
-            if (anreiseListeElemente === null) {
-                return;
-            }
-            else {
-                anreiseListeElemente.sort(function (a, b) {
-                    if (a.name < b.name)
-                        return -1;
-                    if (a.name > b.name)
-                        return 1;
-                    return 0;
-                });
-                _this.anreiseListeElemente = anreiseListeElemente;
-                console.log(_this.anreiseListeElemente);
-            }
-        });
         this.tischplanService.getInformationElements()
             .subscribe(function (informationElemente) {
             if (informationElemente === null) {
@@ -2810,71 +2803,8 @@ var TischplanComponent = (function () {
                 console.log(_this.notizElements);
             }
         });
-        this.tischplanService.getTables()
-            .subscribe(function (tables) {
-            if (tables === null) {
-                return;
-            }
-            else {
-                console.log("TABLES LENGTH: " + tables.length);
-                tables[3].tables.sort(function (a, b) {
-                    if (Number(a.number) < Number(b.number))
-                        return -1;
-                    if (Number(a.number) > Number(b.number))
-                        return 1;
-                    return 0;
-                });
-                var sorted = tables.sort();
-                console.log('sorted:');
-                console.log(sorted);
-                for (var a = 0; a < tables.length; a++) {
-                    if (tables[a].department === "Panorama") {
-                        _this.tablesPanorama = tables[a].tables;
-                    }
-                    else if (tables[a].department === "Wintergarten") {
-                        _this.tablesWintergarten = tables[a].tables;
-                        console.log('Test' + JSON.stringify(_this.tablesWintergarten));
-                    }
-                    else if (tables[a].department === "Sonnberg-Zirbn") {
-                        _this.tablesSonnbergZirbn = tables[a].tables;
-                    }
-                    else if (tables[a].department === "Restaurant") {
-                        _this.tablesRestaurant = tables[a].tables;
-                    }
-                }
-                _this.changeBgColorIfAnreise(tables);
-            }
-            console.log(_this.tablesPanorama);
-            console.log(_this.tablesWintergarten);
-            console.log(_this.tablesSonnbergZirbn);
-            console.log(_this.tablesRestaurant);
-            _this.tablesTempAbreise = tables;
-            _this.tables = _this.tables.concat(_this.tablesWintergarten).concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
-            _this.printComponent.formatAzListe(_this.tables);
-            console.log("this.tables");
-            console.log(_this.tables);
-        });
-        this.tischplanService.getTracesListe()
-            .subscribe(function (tracesListeElemente) {
-            if (tracesListeElemente === null) {
-                return;
-            }
-            else {
-                tracesListeElemente.sort(function (a, b) {
-                    if (a.name < b.name)
-                        return -1;
-                    if (a.name > b.name)
-                        return 1;
-                    return 0;
-                });
-                console.log('92' + JSON.stringify(tracesListeElemente));
-                //console.log("2:" + tracesListeElemente[0].data[0]);
-                //console.log(tracesListeElemente[0].data.length);
-                //this.tracesListeElemente = tracesListeElemente[0].data;
-                _this.tracesListeElemente = tracesListeElemente;
-                //this.formatTracesListeElements(tracesListeElemente);
-            }
-        });
+        this.getTables();
+        this.reloadLists();
         dragulaService.drag.subscribe(function (value) {
             console.log("drag: " + value[0]);
             _this.onDrag(value.slice(1));
@@ -2974,6 +2904,126 @@ var TischplanComponent = (function () {
         setTimeout(function () {
             _this.departmentsComponent.occupy(_this.umsetzenInfoVar.tableToMove, _this.umsetzenInfoVar.indexQuell);
         }, 2000);
+    };
+    TischplanComponent.prototype.reloadLists = function () {
+        var _this = this;
+        this.tischplanService.getImHausListe()
+            .subscribe(function (imHausListeElemente) {
+            if (imHausListeElemente === null) {
+                return;
+            }
+            else {
+                imHausListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
+                _this.imHausListeElemente = imHausListeElemente;
+                console.log(_this.imHausListeElemente);
+            }
+        });
+        this.tischplanService.getAnreiseListe()
+            .subscribe(function (anreiseListeElemente) {
+            if (anreiseListeElemente === null) {
+                return;
+            }
+            else {
+                anreiseListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
+                _this.anreiseListeElemente = anreiseListeElemente;
+                console.log(_this.anreiseListeElemente);
+            }
+        });
+        this.tischplanService.getTracesListe()
+            .subscribe(function (tracesListeElemente) {
+            if (tracesListeElemente === null) {
+                return;
+            }
+            else {
+                tracesListeElemente.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
+                console.log('92' + JSON.stringify(tracesListeElemente));
+                //console.log("2:" + tracesListeElemente[0].data[0]);
+                //console.log(tracesListeElemente[0].data.length);
+                //this.tracesListeElemente = tracesListeElemente[0].data;
+                _this.tracesListeElemente = tracesListeElemente;
+                //this.formatTracesListeElements(tracesListeElemente);
+            }
+        });
+    };
+    TischplanComponent.prototype.updateAzList = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.getTables();
+            setTimeout(function () {
+                console.log('this.tablesWintergarten:');
+                console.log(_this.tablesWintergarten);
+                _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
+                console.log('this.tables: in updateAzList');
+                console.log(_this.tables);
+                _this.printComponent.formatAzListe(_this.tables);
+            }, 3000);
+        }, 1000);
+    };
+    TischplanComponent.prototype.getTables = function () {
+        var _this = this;
+        console.log('2222222222222222222222------------------------------');
+        this.tischplanService.getTables()
+            .subscribe(function (tables) {
+            if (tables === null) {
+                return;
+            }
+            else {
+                console.log("TABLES LENGTH: " + tables.length);
+                tables[3].tables.sort(function (a, b) {
+                    if (Number(a.number) < Number(b.number))
+                        return -1;
+                    if (Number(a.number) > Number(b.number))
+                        return 1;
+                    return 0;
+                });
+                var sorted = tables.sort();
+                console.log('sorted:');
+                console.log(sorted);
+                for (var a = 0; a < tables.length; a++) {
+                    if (tables[a].department === "Panorama") {
+                        _this.tablesPanorama = tables[a].tables;
+                    }
+                    else if (tables[a].department === "Wintergarten") {
+                        _this.tablesWintergarten = tables[a].tables;
+                        console.log('Test' + JSON.stringify(_this.tablesWintergarten));
+                    }
+                    else if (tables[a].department === "Sonnberg-Zirbn") {
+                        _this.tablesSonnbergZirbn = tables[a].tables;
+                    }
+                    else if (tables[a].department === "Restaurant") {
+                        _this.tablesRestaurant = tables[a].tables;
+                    }
+                }
+                _this.changeBgColorIfAnreise(tables);
+            }
+            console.log(_this.tablesPanorama);
+            console.log(_this.tablesWintergarten);
+            console.log(_this.tablesSonnbergZirbn);
+            console.log(_this.tablesRestaurant);
+            _this.tablesTempAbreise = tables;
+            _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
+            _this.printComponent.formatAzListe(_this.tables);
+            console.log("this.tables");
+            console.log(_this.tables);
+        });
     };
     return TischplanComponent;
 }());
