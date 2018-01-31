@@ -995,7 +995,7 @@ module.exports = {
                     console.log("removeTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '6' && topValue === '500' && leftValue === '300' && width === '90') {
+        } else if (tableNumber === '6' && topValue === '500' && leftValue === '360' && width === '90') {
             db.tables.update(
                 {
                     department: departmentValue,
