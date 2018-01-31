@@ -804,7 +804,6 @@ module.exports = {
                                         "tables.$.notiz2Value10": notiz2Value10,
                                         "tables.$.trace10": trace10,
 
-
                                         "tables.$.nameValue11": nameValue11,
                                         "tables.$.zimmernummerValue11": zimmernummerValue11,
                                         "tables.$.anreiseValue11": anreiseValue11,
@@ -854,11 +853,7 @@ module.exports = {
                         }
                     });
             });
-
-
             //preistypValue = informationElements2[0].substring(1, informationElements2[2].length);
-
-
         }
 
         if (departmentValue === "SonnbergZirbn") {
