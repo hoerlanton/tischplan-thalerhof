@@ -10,7 +10,7 @@ export class AuthService {
   isDev: boolean;
 
   constructor(private http: Http) {
-    this.isDev = false; // Change to false before deployment
+    this.isDev = true; // Change to false before deployment
   }
 
   registerUser(user) {
@@ -66,7 +66,7 @@ export class AuthService {
   prepEndpoint(ep) { if (this.isDev) {
       return ep;
     } else {
-      return 'https://d983559a.ngrok.io/'+ep;
+      return 'http://localhost:8000/'+ep;
     }
   }
 }
