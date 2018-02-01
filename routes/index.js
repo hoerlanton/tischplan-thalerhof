@@ -3,6 +3,10 @@ const   express = require('express'),
     bodyParser = require('body-parser'),
     mongojs = require('mongojs'),
     cors = require('cors'),
+    passport = require('passport'),
+    jwt = require('jsonwebtoken'),
+    config = require('../config/database'),
+    User = require('../models/user'),
     db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
     moveTablesPanorama60s = require('./moveTablesPanorama60s.js'),
     moveTablesPanorama70s = require('./moveTablesPanorama70s.js'),
@@ -17,7 +21,8 @@ const   express = require('express'),
     information = require('./information.js'),
     notiz = require('./notiz.js'),
     placeholder = require('./placeholder.js'),
-    table = require('./table.js');
+    table = require('./table.js'),
+    users = require('./users.js');
 
 //Bodyparser middleware
 router.use(bodyParser.urlencoded({ extended: false}));
@@ -98,5 +103,17 @@ notiz.newNotiz(req, res, db)});
 //GetInformation Employees
 router.get('/informationEmployees', function(req, res, next) {
 information.getInformationEmployees(req, res, db)});
+//GetInformation Employees
+router.post('/authenticate', function(req, res, next) {
+users.authenticate(req, res, db)});
+//GetInformation Employees
+router.post('/register', function(req, res, next) {
+users.register(req, res, db)});
+//GetInformation Employees
+router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next) {
+users.profile(req, res, db)});
+
+
+
 
 module.exports = router;

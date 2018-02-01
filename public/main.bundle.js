@@ -53,7 +53,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<tischplan></tischplan>\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -125,6 +125,13 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ng2_search_filter__ = __webpack_require__("../../../../ng2-search-filter/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ng2_search_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ng2_search_filter__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_digitalerTischplan_register_register_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_digitalerTischplan_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -157,6 +164,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+
+var appRoutes = [
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__["a" /* LoginComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_28__components_digitalerTischplan_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_29__components_digitalerTischplan_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -165,20 +186,39 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */], __WEBPACK_IMPORTED_MODULE_6__components_digitalerTischplan_print_print_component__["a" /* PrintComponent */], __WEBPACK_IMPORTED_MODULE_11__components_digitalerTischplan_departments_wintergarten_wintergarten_component__["a" /* WintergartenComponent */], __WEBPACK_IMPORTED_MODULE_12__components_digitalerTischplan_departments_restaurant_restaurant_component__["a" /* RestaurantComponent */], __WEBPACK_IMPORTED_MODULE_13__components_digitalerTischplan_departments_panorama_panorama_component__["a" /* PanoramaComponent */], __WEBPACK_IMPORTED_MODULE_14__components_digitalerTischplan_departments_sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */], __WEBPACK_IMPORTED_MODULE_15__components_digitalerTischplan_navigation_navigation_component__["a" /* NavigationComponent */], __WEBPACK_IMPORTED_MODULE_16__components_digitalerTischplan_form_form_component__["a" /* FormComponent */], __WEBPACK_IMPORTED_MODULE_17__components_digitalerTischplan_tableplan_tableplan_component__["a" /* TableplanComponent */], __WEBPACK_IMPORTED_MODULE_18__components_digitalerTischplan_departmentmenu_departmentmenu_component__["a" /* DepartmentmenuComponent */], __WEBPACK_IMPORTED_MODULE_19__components_digitalerTischplan_im_haus_liste_im_haus_liste_component__["a" /* ImHausListeComponent */], __WEBPACK_IMPORTED_MODULE_20__components_digitalerTischplan_anreise_liste_anreise_liste_component__["a" /* AnreiseListeComponent */], __WEBPACK_IMPORTED_MODULE_21__components_digitalerTischplan_traces_liste_traces_liste_component__["a" /* TracesListeComponent */], __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_departments_departments_component__["a" /* DepartmentsComponent */], __WEBPACK_IMPORTED_MODULE_23__components_digitalerTischplan_departments_alle_alle_component__["a" /* AlleComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_digitalerTischplan_print_print_component__["a" /* PrintComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_digitalerTischplan_departments_wintergarten_wintergarten_component__["a" /* WintergartenComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_digitalerTischplan_departments_restaurant_restaurant_component__["a" /* RestaurantComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_digitalerTischplan_departments_panorama_panorama_component__["a" /* PanoramaComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_digitalerTischplan_departments_sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_digitalerTischplan_navigation_navigation_component__["a" /* NavigationComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_digitalerTischplan_form_form_component__["a" /* FormComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_digitalerTischplan_tableplan_tableplan_component__["a" /* TableplanComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_digitalerTischplan_departmentmenu_departmentmenu_component__["a" /* DepartmentmenuComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_digitalerTischplan_im_haus_liste_im_haus_liste_component__["a" /* ImHausListeComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_digitalerTischplan_anreise_liste_anreise_liste_component__["a" /* AnreiseListeComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_digitalerTischplan_traces_liste_traces_liste_component__["a" /* TracesListeComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_departments_departments_component__["a" /* DepartmentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_digitalerTischplan_departments_alle_alle_component__["a" /* AlleComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_digitalerTischplan_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_digitalerTischplan_profile_profile_component__["a" /* ProfileComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_8_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_9_ng2_dragula__["DragulaModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_24_ng2_search_filter__["Ng2SearchPipeModule"],
-            __WEBPACK_IMPORTED_MODULE_25__angular_common__["CommonModule"]
+            __WEBPACK_IMPORTED_MODULE_25__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_26__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_7__services_tables_service__["a" /* NavService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__services_tables_service__["a" /* NavService */], __WEBPACK_IMPORTED_MODULE_31__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_32__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -1894,6 +1934,103 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/digitalerTischplan/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "html, body {\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row {\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row .container-fluid {\n    background-color: #0a7a74;\n    height: 1000px;\n}\n\n.row .container-fluid .col-md-4 {\n    background-color: #0a7a74;\n    padding: 20px 10px 20px 10px;\n    border-left: 10px solid #0a7a74;\n    border-right: 10px solid #0a7a74;\n    height: 100%;\n    border-bottom: 40px solid #0a7a74;\n}\n\n\n\n\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n</head>\n<body>\n<div class=\"row\">\n<div class=\"container-fluid\">\n    <div class=\"col-md-4\">\n    </div>\n    <div class=\"col-md-4\" style=\"padding-top: 200px\">\n    <h2 style=\"color: #FFFFFF\">Login</h2>\n      <form (submit)=\"onLoginSubmit()\">\n        <div class=\"form-group\">\n          <label style=\"color: #FFFFFF\">Benutzername</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\n        </div>\n        <div class=\"form-group\">\n          <label style=\"color: #FFFFFF\">Passwort</label>\n          <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\n        </div>\n        <input type=\"submit\" class=\"btn btn-primary\" style=\"background-color: #ffffff; color: #0a7a74\" value=\"Login\">\n      </form>\n    </div>\n    <div class=\"col-md-4\">\n    </div>\n</div>\n</div>\n</body>\n</html>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LoginComponent = (function () {
+    function LoginComponent(authService, router, flashMessage) {
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.onLoginSubmit = function () {
+        var _this = this;
+        var user = {
+            username: this.username,
+            password: this.password
+        };
+        console.log("Login submit");
+        this.authService.authenticateUser(user).subscribe(function (data) {
+            if (data.success) {
+                _this.authService.storeUserData(data.token, data.user);
+                _this.flashMessage.show('You are now logged in', {
+                    cssClass: 'alert-success',
+                    timeout: 5000
+                });
+                _this.router.navigate(['dashboard']);
+            }
+            else {
+                _this.flashMessage.show(data.msg, {
+                    cssClass: 'alert-danger',
+                    timeout: 5000
+                });
+                _this.router.navigate(['login']);
+            }
+        });
+    };
+    return LoginComponent;
+}());
+LoginComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-login',
+        template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/login/login.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/login/login.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+], LoginComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2279,7 +2416,7 @@ NavigationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _g || Object])
 ], NavigationComponent);
 
 var _a, _b, _c, _d, _e, _f, _g;
@@ -2511,6 +2648,150 @@ PrintComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=print.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/profile/profile.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/profile/profile.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ProfileComponent = (function () {
+    function ProfileComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getProfile().subscribe(function (profile) {
+            _this.user = profile.user;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
+    };
+    return ProfileComponent;
+}());
+ProfileComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-profile',
+        template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/profile/profile.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+], ProfileComponent);
+
+var _a, _b;
+//# sourceMappingURL=profile.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/register/register.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"page-header\">Register</h2>\n<form (submit)=\"onRegisterSubmit()\">\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/digitalerTischplan/register/register.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RegisterComponent = (function () {
+    function RegisterComponent(validateService, flashMessage, authService, router) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.authService = authService;
+        this.router = router;
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent.prototype.onRegisterSubmit = function () {
+        var _this = this;
+        var user = {
+            name: this.name,
+            email: this.email,
+            username: this.username,
+            password: this.password
+        };
+        // Required Fields
+        if (!this.validateService.validateRegister(user)) {
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Validate Email
+        if (!this.validateService.validateEmail(user.email)) {
+            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Register user
+        this.authService.registerUser(user).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
+                _this.router.navigate(['/login']);
+            }
+            else {
+                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                _this.router.navigate(['/register']);
+            }
+        });
+    };
+    return RegisterComponent;
+}());
+RegisterComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-register',
+        template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/register/register.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
+], RegisterComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=register.component.js.map
 
 /***/ }),
 
@@ -3163,6 +3444,146 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/guards/auth.guard.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = (function () {
+    function AuthGuard(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function () {
+        if (this.authService.loggedIn()) {
+            console.log('CAN ACTIVATE IS TRUE');
+            return true;
+        }
+        else {
+            this.router.navigate(['/login']);
+            console.log('CAN ACTIVATE IS FALSE');
+            return false;
+        }
+    };
+    return AuthGuard;
+}());
+AuthGuard = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+], AuthGuard);
+
+var _a, _b;
+//# sourceMappingURL=auth.guard.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AuthService = (function () {
+    function AuthService(http) {
+        this.http = http;
+        this.isDev = true; // Change to false before deployment
+    }
+    AuthService.prototype.registerUser = function (user) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('register');
+        return this.http.post(ep, user, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    // Gets called from submit login form
+    AuthService.prototype.authenticateUser = function (user) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('authenticate');
+        return this.http.post(ep, user, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.getProfile = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('profile');
+        return this.http.get(ep, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    // Gets called from submit login form
+    AuthService.prototype.storeUserData = function (token, user) {
+        localStorage.setItem('id_token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        this.authToken = token;
+        this.user = user;
+        console.log(JSON.stringify(user));
+    };
+    AuthService.prototype.loadToken = function () {
+        var token = localStorage.getItem('id_token');
+        this.authToken = token;
+    };
+    AuthService.prototype.loggedIn = function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])('id_token');
+    };
+    AuthService.prototype.logout = function () {
+        this.authToken = null;
+        this.user = null;
+        localStorage.clear();
+    };
+    AuthService.prototype.prepEndpoint = function (ep) {
+        if (this.isDev) {
+            return ep;
+        }
+        else {
+            return 'http://localhost:8000/' + ep;
+        }
+    };
+    return AuthService;
+}());
+AuthService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], AuthService);
+
+var _a;
+//# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/tables.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3251,85 +3672,85 @@ var TischplanService = (function () {
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.occupyTable = function (dataString) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('occupyTable', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.moveTable = function (dataString) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('moveTable', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.dispenseTable = function (tableSonnbergZirbn) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('dispenseTable', tableSonnbergZirbn, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.removePlaceholder = function (dataString) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('removePlaceholder', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.addPlaceholder = function (tableSonnbergZirbn) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('addPlaceholder', tableSonnbergZirbn, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.addInformationToTable = function (dataString) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('addInformationToTable', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.sendInformation = function (newInformation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('newInformationToTables', newInformation, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.sendInformationToBox = function (newInformation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('newInformationToBox', newInformation, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.deleteInformationElement = function (informationElement) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('deleteInformationElement', informationElement, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.updateImHausListeElement = function (informationElements2) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('updateImHausListeElement', informationElements2, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.updateAnreiseListeElement = function (informationElements2) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('updateAnreiseListeElement', informationElements2, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.updateTracesListeElement = function (informationElements2) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('updateTracesListeElement', informationElements2, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TischplanService.prototype.sendInformationToNotizBlock = function (newInformation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('newNotiz', newInformation, { headers: headers })
@@ -3343,11 +3764,53 @@ var TischplanService = (function () {
 }());
 TischplanService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
 ], TischplanService);
 
 var _a;
 //# sourceMappingURL=tischplan.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/validate.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ValidateService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ValidateService = (function () {
+    function ValidateService() {
+    }
+    ValidateService.prototype.validateRegister = function (user) {
+        if (user.name === undefined || user.email === undefined || user.username === undefined || user.password === undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ValidateService.prototype.validateEmail = function (email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    };
+    return ValidateService;
+}());
+ValidateService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], ValidateService);
+
+//# sourceMappingURL=validate.service.js.map
 
 /***/ }),
 

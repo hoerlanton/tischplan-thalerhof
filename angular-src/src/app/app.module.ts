@@ -26,10 +26,46 @@ import { DepartmentsComponent } from './components/digitalerTischplan/department
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/digitalerTischplan/login/login.component';
+import { RegisterComponent } from './components/digitalerTischplan/register/register.component';
+import { HomeComponent } from './components/digitalerTischplan/home/home.component';
+import { ProfileComponent } from './components/digitalerTischplan/profile/profile.component';
+
+import { AuthGuard } from './guards/auth.guard';
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+
+
+const appRoutes: Routes =  [
+  {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: TischplanComponent, canActivate: [AuthGuard]},
+  {path: 'register', component: RegisterComponent},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+];
 
 @NgModule({
   declarations: [
-    AppComponent, TischplanComponent, PrintComponent, WintergartenComponent, RestaurantComponent, PanoramaComponent, SonnbergZirbnComponent, NavigationComponent, FormComponent, TableplanComponent, DepartmentmenuComponent, ImHausListeComponent, AnreiseListeComponent, TracesListeComponent, DepartmentsComponent, AlleComponent
+    AppComponent,
+    TischplanComponent,
+    PrintComponent,
+    WintergartenComponent,
+    RestaurantComponent,
+    PanoramaComponent,
+    SonnbergZirbnComponent,
+    NavigationComponent,
+    FormComponent,
+    TableplanComponent,
+    DepartmentmenuComponent,
+    ImHausListeComponent,
+    AnreiseListeComponent,
+    TracesListeComponent,
+    DepartmentsComponent,
+    AlleComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     FormsModule,
@@ -40,9 +76,10 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     BsDropdownModule.forRoot(),
     Ng2SearchPipeModule,
-    CommonModule
-],
-  providers: [NavService],
+    CommonModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [NavService, ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
