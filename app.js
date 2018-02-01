@@ -10,7 +10,13 @@ const   bodyParser = require('body-parser'),
     http = require('http'),
     config = require('config'),
     fs = require("fs"),
-    csv = require('csvtojson');
+    cors = require('cors'),
+    csv = require('csvtojson'),
+    passport = require('passport'),
+    mongoose = require('mongoose'),
+    configDatabase = require('./config/database'),
+    users = require('./routes/users');
+
 
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -22,14 +28,38 @@ app.use(bodyParser.json());
 //Setting port
 app.set('port', process.env.PORT || 8000);
 
+// CORS Middleware
+app.use(cors());
+
+
 //Set Public folder as static folder
 app.use(express.static('public'));
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
+
+// Connect To Database
+mongoose.connect(configDatabase.database, { useMongoClient: true });
+
+// On Connection
+mongoose.connection.once('open', () => {
+    console.log('Connected to database '+configDatabase.database);
+});
+
+// On Error
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+
 
 // le dice a express que el directorio 'uploads', es estatico.
 app.use("/uploads", express.static(path.join(__dirname, 'uploads')));
 
 //Use ./routes/index.js as routes root /
 app.use('/', routes);
+
 
 // HOST_URL used for DB calls - SERVER_URL without https or https://
 const HOST_URL = config.get('hostURL');

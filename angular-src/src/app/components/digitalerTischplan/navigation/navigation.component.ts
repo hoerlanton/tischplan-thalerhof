@@ -1,14 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Http } from '@angular/http';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnDestroy {
 
   filesToUpload: Array<File> = [];
   @Input('newInformationElements') newInformationElements: any[] = [];
@@ -32,7 +36,7 @@ export class NavigationComponent implements OnInit {
   zielTisch: any;
   tableInformation: any[] = [];
 
-  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService) { }
+  constructor(private tischplanService: TischplanService, private ref: ChangeDetectorRef, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router,) { }
 
   ngOnInit() {
   }
@@ -302,5 +306,23 @@ export class NavigationComponent implements OnInit {
     this.term = event.target.value;
     console.log(this.term);
     this.termExport.emit(this.term);
+  }
+
+  onLogoutClick() {
+    this.authService.logout();
+    //this._flashMessagesService.show('You are logged out', {
+    //  cssClass: 'alert-success',
+    //  timeout: 3000
+    //});
+    this.router.navigate(['/login']);
+    return false;
+  }
+
+  // ... your code
+
+  ngOnDestroy() {
+   this.ref.detach(); // try this
+    // for me I was detect changes inside "subscribe" so was enough for me to just unsubscribe;
+    // this.authObserver.unsubscribe();
   }
 }

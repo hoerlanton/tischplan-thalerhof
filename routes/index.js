@@ -114,6 +114,4 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), function(r
 users.profile(req, res, db)});
 
 
-
-
 module.exports = router;

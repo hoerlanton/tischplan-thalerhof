@@ -2,21 +2,21 @@
   max-width: 100%;
   background-color: #0d2f2e;
   border-radius: 0px;
-  max-height: 80px;
+  max-height: 120px;
   display: -webkit-box;
 }
 
 .container {
-  max-height: 80px;
+  max-height: 120px;
   display: -webkit-box;
   padding: 0;
   margin: 0
 }
 
 .navbar-nav {
-  max-width: 100%;
+  max-width: 10%;
   margin-left: 10px;
-  max-height:  80px;
+  max-height:  120px;
   display: -webkit-box;
 }
 
@@ -37,6 +37,7 @@
   min-width: 30px;
   text-align: center;
   margin-top: 12px;
+  margin-left: 30px;
 }
 
 .TischH3 {
@@ -140,7 +141,7 @@ h6 {
 }
 
 .navbar-left {
-  margin-top: 0px;
+  margin-top: 40px;
   max-width: 100%;
   display: -webkit-inline-box;
   float: right;
@@ -184,7 +185,7 @@ h6 {
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .Partner {
     display: none;
     max-width: 100%;
@@ -198,7 +199,6 @@ h6 {
 
   .navbar-right {
     max-width: 100%;
-    min-width: calc(100vw - 300px);
   }
 
   .container {
@@ -230,6 +230,10 @@ h6 {
   .search-btn-default {
     float: right;
   }
+
+  .TischDiv{
+    margin-left: 35px;
+  }
 }
 
 
@@ -260,7 +264,7 @@ h6 {
 
   .navbar-nav {
     display: block;
-    min-width: 25%;
+    min-width: 34%;
   }
 
   .container {
@@ -269,7 +273,7 @@ h6 {
   }
 
   .navbar-right {
-    max-width: 100%;
+    max-width: 65%;
     min-width: 50%;
   }
   .form-group {
@@ -284,13 +288,13 @@ h6 {
     color: #FFFFFF;
     border: none;
     opacity: 80;
-    width: 130%;
+    width: 135px;
     margin: 0px 0px 0px 0px;
   }
 }
 
 
-@media (min-width: 1400px) {
+@media (min-width: 1500px) {
   .Partner {
     display: inline-block;
     max-width: 100%;

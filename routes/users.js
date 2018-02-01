@@ -26,8 +26,6 @@ module.exports = {
         console.log("Check!");
         const username = req.body.username;
         const password = req.body.password;
-
-        console.log(username + password);
         User.getUserByUsername(username, (err, user) => {
             if (err) throw err;
             if (!user) {
@@ -37,7 +35,7 @@ module.exports = {
             User.comparePassword(password, user.password, (err, isMatch) => {
                 if (err) throw err;
                 if (isMatch) {
-                    const token = jwt.sign(user, config.secret, {
+                    const token = jwt.sign(user.toJSON(), config.secret, {
                         expiresIn: 604800 // 1 week
                     });
 
