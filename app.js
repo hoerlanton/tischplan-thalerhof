@@ -31,9 +31,8 @@ app.set('port', process.env.PORT || 8000);
 // CORS Middleware
 app.use(cors());
 
-
 //Set Public folder as static folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport Middleware
 app.use(passport.initialize());
@@ -57,8 +56,14 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 // le dice a express que el directorio 'uploads', es estatico.
 app.use("/uploads", express.static(path.join(__dirname, 'uploads')));
 
+//app.use('/users', users);
+
 //Use ./routes/index.js as routes root /
 app.use('/', routes);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 
 // HOST_URL used for DB calls - SERVER_URL without https or https://

@@ -199,10 +199,12 @@ h6 {
 
   .navbar-right {
     max-width: 100%;
+    margin-right: 10px;
   }
 
   .container {
     display: block;
+    width: auto;
   }
 
   .navbar-fixed-top {
@@ -234,10 +236,14 @@ h6 {
   .TischDiv{
     margin-left: 35px;
   }
+  .navbar-nav {
+    max-width: 30%;
+  }
+
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
   .btn-default {
     display: block;
   }
@@ -291,10 +297,14 @@ h6 {
     width: 135px;
     margin: 0px 0px 0px 0px;
   }
+
+  .TischDiv{
+    margin-left: 0px;
+  }
 }
 
 
-@media (min-width: 1500px) {
+@media (min-width: 1650px) {
   .Partner {
     display: inline-block;
     max-width: 100%;

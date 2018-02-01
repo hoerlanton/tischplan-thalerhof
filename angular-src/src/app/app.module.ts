@@ -36,7 +36,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 
-
 const appRoutes: Routes =  [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
@@ -74,10 +73,10 @@ const appRoutes: Routes =  [
     DragulaModule,
     ReactiveFormsModule,
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),
     Ng2SearchPipeModule,
-    CommonModule,
-    RouterModule.forRoot(appRoutes)
+    CommonModule
   ],
   providers: [NavService, ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

@@ -24,6 +24,8 @@
         </div>
       </ul>
     </div>
+    <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']">DASHBOARD</a></li>
+    <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">LOGIN</a></li>
     <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="/">LOGOUT</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right" >
@@ -32,13 +34,14 @@
       </button>
       <ul *dropdownMenu class="dropdown-menu" role="menu" >
         <div *ngFor="let newInformationEmployee of newInformationEmployees; let j = index;">
+
           <li role="menuitem" class="menuitem" (click)="none($event)"> <b>Name: </b> {{newInformationEmployee.employee}} <br><b>Punkte: </b> {{newInformationEmployee.numberOfTraces}}</li>
           <li class="divider dropdown-divider"></li>
         </div>
       </ul>
     </div>
     <div class="btn-group" dropdown>
-      <button dropdownToggle class="btn btn-primary dropdown-toggle" type="button">Abreisen entfernen <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="caret"></span>
+      <button dropdownToggle class="btn btn-primary dropdown-toggle" type="button">Abreisen <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="caret"></span>
       </button>
       <ul *dropdownMenu class="dropdown-menu" role="menu" style="max-height: 100px; padding: 0">
         <li role="menuitem" class="menuitem" style="color: black;">Abbrechen</li>
