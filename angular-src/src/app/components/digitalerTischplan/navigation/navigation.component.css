@@ -3,21 +3,21 @@
   background-color: #0d2f2e;
   border-radius: 0px;
   max-height: 120px;
-  display: -webkit-box;
+  display: block;
 }
 
 .container {
   max-height: 120px;
-  display: -webkit-box;
+  display: block;
   padding: 0;
   margin: 0
 }
 
 .navbar-nav {
-  max-width: 10%;
+  max-width: 35%;
   margin-left: 10px;
-  max-height:  120px;
-  display: -webkit-box;
+  max-height:  40px;
+  display: -webkit-inline-box;
 }
 
 .brand {
@@ -37,7 +37,8 @@
   min-width: 30px;
   text-align: center;
   margin-top: 12px;
-  margin-left: 30px;
+  margin-left: 48px;
+  max-width: 50px;
 }
 
 .TischH3 {
@@ -68,6 +69,10 @@
  float: left;
   margin-top: 10px;
   color: #0a7a74;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border: none;
 }
 
 .btn-send {
@@ -145,6 +150,7 @@ h6 {
   max-width: 100%;
   display: -webkit-inline-box;
   float: right;
+  border: none;
 }
 
 .form-group {
@@ -158,7 +164,7 @@ h6 {
   color: #FFFFFF;
   border: none;
   opacity: 80;
-  width: 90%;
+  width: 110%;
   margin: 0px 0px 0px 0px;
 }
 
@@ -166,6 +172,9 @@ h6 {
   background-color: #0a7a74;
   color: #FFFFFF;
   border: none;
+  float: right;
+  margin-top: -38px;
+  margin-right: 20px;
 }
 
 .Partner {
@@ -184,8 +193,53 @@ h6 {
   margin-bottom: 30px;
 }
 
+@media (max-width: 500px) {
 
-@media (min-width: 800px) {
+  .navbar-left {
+    margin-top: 0px;
+    display: block;
+  }
+}
+
+@media (min-width: 500px ) and  (max-width: 774px) {
+  .navbar-fixed-top {
+    display: -webkit-box;
+    max-height: 56px;
+  }
+  .container {
+    display: -webkit-inline-box;
+    width: auto;
+    max-height: 55px;
+  }
+  .navbar-nav {
+    margin-top: 0;
+    max-width: 79%;
+    display: -webkit-inline-box;
+    max-height: 50px;
+  }
+  .navbar-right{
+    display: inline-block;
+    max-width: 79%;
+    margin-top: -32px;
+    margin-right: 10px;
+
+  }
+  .navbar-left{
+    display: block;
+    margin-top: 31px;
+  }
+  .form-group {
+    display: block;
+  }
+  .form-control{
+    width: 110%;
+  }
+  .search-btn-default {
+    margin-top: -38px;
+  }
+}
+
+@media (min-width: 775px) {
   .Partner {
     display: none;
     max-width: 100%;
@@ -226,18 +280,20 @@ h6 {
 
   .navbar-left {
     display: block;
-    margin-top: 10px;
+    margin-top: 11px;
   }
 
   .search-btn-default {
     float: right;
+    margin-top: 0px;
   }
 
   .TischDiv{
     margin-left: 35px;
   }
   .navbar-nav {
-    max-width: 30%;
+    max-width: 300px;
+    min-width: 300px;
   }
 
 }
