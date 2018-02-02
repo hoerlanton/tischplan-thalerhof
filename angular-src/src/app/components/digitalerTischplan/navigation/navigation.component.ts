@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.css']
 })
-export class NavigationComponent implements OnDestroy {
+export class NavigationComponent implements OnInit {
 
   filesToUpload: Array<File> = [];
   @Input('newInformationElements') newInformationElements: any[] = [];
@@ -36,7 +36,7 @@ export class NavigationComponent implements OnDestroy {
   zielTisch: any;
   tableInformation: any[] = [];
 
-  constructor(private tischplanService: TischplanService, private ref: ChangeDetectorRef, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router,) { }
+  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router,) { }
 
   ngOnInit() {
   }
@@ -319,10 +319,4 @@ export class NavigationComponent implements OnDestroy {
   }
 
   // ... your code
-
-  ngOnDestroy() {
-   this.ref.detach(); // try this
-    // for me I was detect changes inside "subscribe" so was enough for me to just unsubscribe;
-    // this.authObserver.unsubscribe();
-  }
 }

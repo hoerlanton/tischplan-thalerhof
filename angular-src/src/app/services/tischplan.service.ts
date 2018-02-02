@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TischplanService {
+  Http: Http;
   constructor(private http: Http) {
     console.log('Task service initialized!');
   }

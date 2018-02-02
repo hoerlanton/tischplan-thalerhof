@@ -1,9 +1,14 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit  } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { NavService }   from '../../../services/tables.service';
+import { TischplanComponent } from '../tischplan.component';
+import { DragulaService } from "ng2-dragula";
+import { Http, Headers } from '@angular/http';
+
+
 
 @Component({
   selector: 'app-departments',
@@ -11,13 +16,13 @@ import { NavService }   from '../../../services/tables.service';
   styleUrls: ['../tischplan.component.css']
 })
 
-export class DepartmentsComponent implements OnInit {
+export class DepartmentsComponent implements AfterViewInit {
 
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
   @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
-  @Input('tablesPanorama') tablesPanorama: Table[];
+  @Input() tablesPanorama: Table[];
   @Input('showPanoramaBool') showPanoramaBool: boolean;
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
@@ -37,11 +42,20 @@ export class DepartmentsComponent implements OnInit {
   parts: any[] = [];
   date: any[] = [];
   parsedDate: any[] = [];
+  a: any;
+  b: any;
 
-  constructor(private tischplanService: TischplanService, private _navService:NavService) {
+  constructor( private tischplanService: TischplanService) {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    console.log("this.tablesPanorama:");
+
+
+
   }
 
   occupied(table) {
@@ -163,103 +177,125 @@ export class DepartmentsComponent implements OnInit {
         this.updateAzList.emit();
       });
   }
+
+
   changeBgColorIfAnreise(tables) {
     console.log('=================================================changeBgColorIfAnreise');
     this.dateTodayGenerated = new Date();
 
-    for (let a = 0; a < tables.length; a++) {
-      for (let b = 0; b < tables[a].tables.length; b++) {
+    setTimeout(() => {
+      for (let a = 0; a < tables.length; a++) {
+        for (let b = 0; b < tables[a].tables.length; b++) {
 
-        if (tables[a].tables[b].anreiseValue) {
-          console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
-          this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);} else {
-          this.parts[0] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue2) {
-          this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);}else {
-          this.parts[1] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue3) {
-          this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);}else {
-          this.parts[2] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue4) {
-          this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);}else {
-          this.parts[3] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue5) {
-          this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);}else {
-          this.parts[4] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue6) {
-          this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);}else {
-          this.parts[5] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue7) {
-          this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);}else {
-          this.parts[6] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue8) {
-          this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);}else {
-          this.parts[7] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue9) {
-          this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);}else {
-          this.parts[8] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue10) {
-          this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);}else {
-          this.parts[9] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue11) {
-          this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);}else {
-          this.parts[10] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue12) {
-          this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);}else {
-          this.parts[11] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue13) {
-          this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);}else {
-          this.parts[12] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue14) {
-          this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);}else {
-          this.parts[13] = "undefined";
-        }
-        if (tables[a].tables[b].anreiseValue15) {
-          this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);}else {
-          this.parts[14] = "undefined";
-        }
+          if (tables[a].tables[b].anreiseValue) {
+            console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
+            this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+          } else {
+            this.parts[0] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue2) {
+            this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
+          } else {
+            this.parts[1] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue3) {
+            this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
+          } else {
+            this.parts[2] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue4) {
+            this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
+          } else {
+            this.parts[3] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue5) {
+            this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
+          } else {
+            this.parts[4] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue6) {
+            this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
+          } else {
+            this.parts[5] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue7) {
+            this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
+          } else {
+            this.parts[6] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue8) {
+            this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
+          } else {
+            this.parts[7] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue9) {
+            this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
+          } else {
+            this.parts[8] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue10) {
+            this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
+          } else {
+            this.parts[9] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue11) {
+            this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
+          } else {
+            this.parts[10] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue12) {
+            this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
+          } else {
+            this.parts[11] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue13) {
+            this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
+          } else {
+            this.parts[12] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue14) {
+            this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
+          } else {
+            this.parts[13] = "undefined";
+          }
+          if (tables[a].tables[b].anreiseValue15) {
+            this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
+          } else {
+            this.parts[14] = "undefined";
+          }
 
-        for (let c = 0; c <= 14; c++) {
-          if (this.parts[c]) {
-            this.date[c] = new Date(2018, this.parts[c][1] - 1, this.parts[c][0]);
-            this.parsedDate[c] = String(this.date[c]).substring(0, 15);
+          for (let c = 0; c <= 14; c++) {
+            if (this.parts[c]) {
+              this.date[c] = new Date(2018, this.parts[c][1] - 1, this.parts[c][0]);
+              this.parsedDate[c] = String(this.date[c]).substring(0, 15);
+            }
           }
-        }
-        // note parts[1]-1
-        //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
-        // Mon May 31 2010 00:00:00
-        //this.tablesRestaurant[j].anreiseValue
-        let dateToday = String(this.dateTodayGenerated).substring(0, 15);
-        console.log('Parsed Date --->: ' + this.parsedDate[0]);
-        console.log('this.dateGenerated --->: ' + dateToday);
-        if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
-          if (tables[a].department === "Panorama") {
-            this.tablesPanorama[b].bgColor = "#0a7a74";
-          }
-          else if (tables[a].department === "Wintergarten") {
-            this.tablesWintergarten[b].bgColor = "#0a7a74";
-          }
-          else if (tables[a].department === "Sonnberg-Zirbn") {
-            this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
-          }
-          else if (tables[a].department === "Restaurant") {
-            this.tablesRestaurant[b].bgColor = "#0a7a74";
+          // note parts[1]-1
+          //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
+          // Mon May 31 2010 00:00:00
+          //this.tablesRestaurant[j].anreiseValue
+          let dateToday = String(this.dateTodayGenerated).substring(0, 15);
+          console.log('Parsed Date --->: ' + this.parsedDate[0]);
+          console.log('this.dateGenerated --->: ' + dateToday);
+          if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
+            if (tables[a].department === "Panorama") {
+              console.log(this.tablesPanorama);
+              console.log(this.tablesPanorama[b]);
+              this.tablesPanorama[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Wintergarten") {
+              this.tablesWintergarten[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Sonnberg-Zirbn") {
+              this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+            }
+            else if (tables[a].department === "Restaurant") {
+              this.tablesRestaurant[b].bgColor = "#0a7a74";
+            }
           }
         }
       }
-    }
+    }, 1000);
+
   }
 }

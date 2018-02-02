@@ -277,7 +277,7 @@ border: none;
 
 @media (min-width: 700px) {
 
-  .row .container-fluid .print-col .row4 {
+  .row4 {
     margin-top: 20px;
   }
 

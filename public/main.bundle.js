@@ -175,6 +175,7 @@ var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__["a" /* LoginComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_27__components_digitalerTischplan_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__components_digitalerTischplan_tischplan_component__["a" /* TischplanComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_22__components_digitalerTischplan_departments_departments_component__["a" /* DepartmentsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_28__components_digitalerTischplan_register_register_component__["a" /* RegisterComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_29__components_digitalerTischplan_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
@@ -213,10 +214,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9_ng2_dragula__["DragulaModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_26__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_24_ng2_search_filter__["Ng2SearchPipeModule"],
-            __WEBPACK_IMPORTED_MODULE_25__angular_common__["CommonModule"]
+            __WEBPACK_IMPORTED_MODULE_25__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_26__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+            __WEBPACK_IMPORTED_MODULE_26__angular_router__["b" /* RouterModule */].forChild(appRoutes)
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_7__services_tables_service__["a" /* NavService */], __WEBPACK_IMPORTED_MODULE_31__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_32__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
@@ -989,7 +991,6 @@ module.exports = "<app-sonnberg-zirbn [term]=\"term\" [tablesSonnbergZirbn]=\"ta
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__ = __webpack_require__("../../../../../src/app/services/tischplan.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_tables_service__ = __webpack_require__("../../../../../src/app/services/tables.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1001,11 +1002,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var DepartmentsComponent = (function () {
-    function DepartmentsComponent(tischplanService, _navService) {
+    function DepartmentsComponent(tischplanService) {
         this.tischplanService = tischplanService;
-        this._navService = _navService;
         this.dispensedSonnbergZirbn = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dispensedRestaurant = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dispensedWintergarten = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -1016,6 +1015,9 @@ var DepartmentsComponent = (function () {
         this.parsedDate = [];
     }
     DepartmentsComponent.prototype.ngOnInit = function () {
+    };
+    DepartmentsComponent.prototype.ngAfterViewInit = function () {
+        console.log("this.tablesPanorama:");
     };
     DepartmentsComponent.prototype.occupied = function (table) {
         console.log("table.j");
@@ -1144,130 +1146,135 @@ var DepartmentsComponent = (function () {
         });
     };
     DepartmentsComponent.prototype.changeBgColorIfAnreise = function (tables) {
+        var _this = this;
         console.log('=================================================changeBgColorIfAnreise');
         this.dateTodayGenerated = new Date();
-        for (var a = 0; a < tables.length; a++) {
-            for (var b = 0; b < tables[a].tables.length; b++) {
-                if (tables[a].tables[b].anreiseValue) {
-                    console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
-                    this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[0] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue2) {
-                    this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[1] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue3) {
-                    this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[2] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue4) {
-                    this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[3] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue5) {
-                    this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[4] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue6) {
-                    this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[5] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue7) {
-                    this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[6] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue8) {
-                    this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[7] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue9) {
-                    this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[8] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue10) {
-                    this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[9] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue11) {
-                    this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[10] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue12) {
-                    this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[11] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue13) {
-                    this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[12] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue14) {
-                    this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[13] = "undefined";
-                }
-                if (tables[a].tables[b].anreiseValue15) {
-                    this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
-                }
-                else {
-                    this.parts[14] = "undefined";
-                }
-                for (var c = 0; c <= 14; c++) {
-                    if (this.parts[c]) {
-                        this.date[c] = new Date(2018, this.parts[c][1] - 1, this.parts[c][0]);
-                        this.parsedDate[c] = String(this.date[c]).substring(0, 15);
+        setTimeout(function () {
+            for (var a = 0; a < tables.length; a++) {
+                for (var b = 0; b < tables[a].tables.length; b++) {
+                    if (tables[a].tables[b].anreiseValue) {
+                        console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
+                        _this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
                     }
-                }
-                // note parts[1]-1
-                //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
-                // Mon May 31 2010 00:00:00
-                //this.tablesRestaurant[j].anreiseValue
-                var dateToday = String(this.dateTodayGenerated).substring(0, 15);
-                console.log('Parsed Date --->: ' + this.parsedDate[0]);
-                console.log('this.dateGenerated --->: ' + dateToday);
-                if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
-                    if (tables[a].department === "Panorama") {
-                        this.tablesPanorama[b].bgColor = "#0a7a74";
+                    else {
+                        _this.parts[0] = "undefined";
                     }
-                    else if (tables[a].department === "Wintergarten") {
-                        this.tablesWintergarten[b].bgColor = "#0a7a74";
+                    if (tables[a].tables[b].anreiseValue2) {
+                        _this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
                     }
-                    else if (tables[a].department === "Sonnberg-Zirbn") {
-                        this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                    else {
+                        _this.parts[1] = "undefined";
                     }
-                    else if (tables[a].department === "Restaurant") {
-                        this.tablesRestaurant[b].bgColor = "#0a7a74";
+                    if (tables[a].tables[b].anreiseValue3) {
+                        _this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[2] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue4) {
+                        _this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[3] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue5) {
+                        _this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[4] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue6) {
+                        _this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[5] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue7) {
+                        _this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[6] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue8) {
+                        _this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[7] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue9) {
+                        _this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[8] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue10) {
+                        _this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[9] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue11) {
+                        _this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[10] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue12) {
+                        _this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[11] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue13) {
+                        _this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[12] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue14) {
+                        _this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[13] = "undefined";
+                    }
+                    if (tables[a].tables[b].anreiseValue15) {
+                        _this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
+                    }
+                    else {
+                        _this.parts[14] = "undefined";
+                    }
+                    for (var c = 0; c <= 14; c++) {
+                        if (_this.parts[c]) {
+                            _this.date[c] = new Date(2018, _this.parts[c][1] - 1, _this.parts[c][0]);
+                            _this.parsedDate[c] = String(_this.date[c]).substring(0, 15);
+                        }
+                    }
+                    // note parts[1]-1
+                    //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
+                    // Mon May 31 2010 00:00:00
+                    //this.tablesRestaurant[j].anreiseValue
+                    var dateToday = String(_this.dateTodayGenerated).substring(0, 15);
+                    console.log('Parsed Date --->: ' + _this.parsedDate[0]);
+                    console.log('this.dateGenerated --->: ' + dateToday);
+                    if (dateToday.indexOf(_this.parsedDate[0] || _this.parsedDate[1] || _this.parsedDate[2] || _this.parsedDate[3] || _this.parsedDate[4] || _this.parsedDate[5] || _this.parsedDate[6] || _this.parsedDate[7] || _this.parsedDate[8] || _this.parsedDate[9] || _this.parsedDate[10] || _this.parsedDate[11] || _this.parsedDate[12] || _this.parsedDate[13] || _this.parsedDate[14] || _this.parsedDate[15]) !== -1) {
+                        if (tables[a].department === "Panorama") {
+                            console.log(_this.tablesPanorama);
+                            console.log(_this.tablesPanorama[b]);
+                            _this.tablesPanorama[b].bgColor = "#0a7a74";
+                        }
+                        else if (tables[a].department === "Wintergarten") {
+                            _this.tablesWintergarten[b].bgColor = "#0a7a74";
+                        }
+                        else if (tables[a].department === "Sonnberg-Zirbn") {
+                            _this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                        }
+                        else if (tables[a].department === "Restaurant") {
+                            _this.tablesRestaurant[b].bgColor = "#0a7a74";
+                        }
                     }
                 }
             }
-        }
+        }, 1000);
     };
     return DepartmentsComponent;
 }());
@@ -1288,7 +1295,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], DepartmentsComponent.prototype, "showSonnbergZirbnBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Array)
 ], DepartmentsComponent.prototype, "tablesPanorama", void 0);
 __decorate([
@@ -1337,10 +1344,10 @@ DepartmentsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/departments/departments.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_tables_service__["a" /* NavService */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _f || Object])
 ], DepartmentsComponent);
 
-var _a, _b, _c, _d, _e, _f, _g;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=departments.component.js.map
 
 /***/ }),
@@ -2079,9 +2086,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var NavigationComponent = (function () {
-    function NavigationComponent(tischplanService, ref, http, _flashMessagesService, authService, router) {
+    function NavigationComponent(tischplanService, http, _flashMessagesService, authService, router) {
         this.tischplanService = tischplanService;
-        this.ref = ref;
         this.http = http;
         this._flashMessagesService = _flashMessagesService;
         this.authService = authService;
@@ -2387,12 +2393,6 @@ var NavigationComponent = (function () {
         this.router.navigate(['/login']);
         return false;
     };
-    // ... your code
-    NavigationComponent.prototype.ngOnDestroy = function () {
-        this.ref.detach(); // try this
-        // for me I was detect changes inside "subscribe" so was enough for me to just unsubscribe;
-        // this.authObserver.unsubscribe();
-    };
     return NavigationComponent;
 }());
 __decorate([
@@ -2433,10 +2433,10 @@ NavigationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/navigation/navigation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]) === "function" && _k || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]) === "function" && _j || Object])
 ], NavigationComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=navigation.component.js.map
 
 /***/ }),
@@ -2975,7 +2975,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "html, body {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  background-color: #0a7a74;\n}\n\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {\nborder: none;\n}\n\n.container-fluid {\n  padding: 0 0 10px 0;\n  margin: 0;\n  height: 100%;\n  max-width: 100vw;\n  background-color: #0a7a74;\n}\n\n.row {\n  height: 100%;\n  max-width: 100vw;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 115px;\n}\n\n.line1{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 95px;\n}\n\n.printTwo {\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n  background-color: #0a7a74;\n  min-height: 580px;\n}\n\n.row .inner-table {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  max-height: calc(100vh - 70px);\n}\n\n.row .table-col {\n  min-height: calc(100vh - 10px);\n  max-height: calc(100vh - 10px);\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  border-radius: 3px;\n  margin: 100px 0 0 25px;\n  width: calc(100vw - 20px);\n}\n\n.print-col {\n  padding: 0;\n  border-left: 5px solid #0a7a74;\n  border-right: 5px solid #0a7a74;\n  min-height: 100vh;\n  border-bottom: 20px solid #0a7a74;\n  box-sizing: border-box;\n  margin-top: 50px;\n}\n\n.row .upload-col {\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 10px);\n  max-height: calc(100vh - 10px);\n  border-radius: 3px;\n}\n\n.section3 {\n  display: none;\n}\n\n.row1 {\n  height: calc((100vh - 125px) / 3);\n  overflow: auto;\n}\n\n.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {\n  display: none;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px 10px 40px 10px;\n}\n\n\n.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n\n}\n\n#containerRestaurant, #containerPanorama, #containerWintergarten, #containerSonnbergZirbn {\n  border-radius: 3px;\n  border: solid 1px grey;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .upload-col .csv h3 {\n  margin: 0;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.table-item {\n  position: absolute;\n}\n\n.btn-send {\n  display: none;\n}\n\n.csv {\n  margin-bottom: 30px;\n}\n\n.btn-default {\n  display: none;\n}\n\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-group-departments {\n  margin: 0px 10px 5px 0px;\n}\n\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n@media (max-width: 700px) {\n  .row4 {\n    margin-top: 90px;\n  }\n}\n\n@media (min-width: 700px) {\n\n  .row .container-fluid .print-col .row4 {\n    margin-top: 20px;\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 70px);\n    min-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    max-width: calc(100vw - 20px);\n    width: 30%;\n    margin: 60px 0 0 10px;\n  }\n\n  .btn-group-departments {\n    margin: 0 10px 5px 20px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: 580px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 128px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height:  calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n  }\n\n  .navbar-left{\n    margin-right: 20px;\n  }\n}\n\n\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .row4 {\n    margin-top: 0px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh);\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 10px);\n    min-height: calc(100vh - 10px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    width: 24%;\n    margin: 60px 0 0 10px;\n\n  }\n\n  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {\n    display: block;\n  }\n\n  .print-col {\n    width: 50%;\n    margin-top: 70px;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height: calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n    margin-top: 60px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 70px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n}\n\n", ""]);
+exports.push([module.i, "html, body {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  background-color: #0a7a74;\n}\n\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {\nborder: none;\n}\n\n.container-fluid {\n  padding: 0 0 10px 0;\n  margin: 0;\n  height: 100%;\n  max-width: 100vw;\n  background-color: #0a7a74;\n}\n\n.row {\n  height: 100%;\n  max-width: 100vw;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 115px;\n}\n\n.line1{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 95px;\n}\n\n.printTwo {\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n  background-color: #0a7a74;\n  min-height: 580px;\n}\n\n.row .inner-table {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  max-height: calc(100vh - 70px);\n}\n\n.row .table-col {\n  min-height: calc(100vh - 10px);\n  max-height: calc(100vh - 10px);\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  border-radius: 3px;\n  margin: 100px 0 0 25px;\n  width: calc(100vw - 20px);\n}\n\n.print-col {\n  padding: 0;\n  border-left: 5px solid #0a7a74;\n  border-right: 5px solid #0a7a74;\n  min-height: 100vh;\n  border-bottom: 20px solid #0a7a74;\n  box-sizing: border-box;\n  margin-top: 50px;\n}\n\n.row .upload-col {\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 10px);\n  max-height: calc(100vh - 10px);\n  border-radius: 3px;\n}\n\n.section3 {\n  display: none;\n}\n\n.row1 {\n  height: calc((100vh - 125px) / 3);\n  overflow: auto;\n}\n\n.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {\n  display: none;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px 10px 40px 10px;\n}\n\n\n.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n\n}\n\n#containerRestaurant, #containerPanorama, #containerWintergarten, #containerSonnbergZirbn {\n  border-radius: 3px;\n  border: solid 1px grey;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\n.row .container-fluid .upload-col .csv h3 {\n  margin: 0;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.table-item {\n  position: absolute;\n}\n\n.btn-send {\n  display: none;\n}\n\n.csv {\n  margin-bottom: 30px;\n}\n\n.btn-default {\n  display: none;\n}\n\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-group-departments {\n  margin: 0px 10px 5px 0px;\n}\n\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n@media (max-width: 700px) {\n  .row4 {\n    margin-top: 90px;\n  }\n}\n\n@media (min-width: 700px) {\n\n  .row4 {\n    margin-top: 20px;\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 70px);\n    min-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    max-width: calc(100vw - 20px);\n    width: 30%;\n    margin: 60px 0 0 10px;\n  }\n\n  .btn-group-departments {\n    margin: 0 10px 5px 20px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: 580px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 128px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height:  calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n  }\n\n  .navbar-left{\n    margin-right: 20px;\n  }\n}\n\n\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .row4 {\n    margin-top: 0px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh);\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 10px);\n    min-height: calc(100vh - 10px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    width: 24%;\n    margin: 60px 0 0 10px;\n\n  }\n\n  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Tisch, .anleitung {\n    display: block;\n  }\n\n  .print-col {\n    width: 50%;\n    margin-top: 70px;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height: calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n    margin-top: 60px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 70px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n}\n\n", ""]);
 
 // exports
 
@@ -2988,7 +2988,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\"\n                        (reloadLists)=\"reloadLists($event)\"\n                       [newInformationEmployees]=\"newInformationEmployees\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\"\n                               (updateAzList)=\"updateAzList($event)\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
+module.exports = "<router-outlet></router-outlet>\n<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\"\n                        (reloadLists)=\"reloadLists($event)\"\n                       [newInformationEmployees]=\"newInformationEmployees\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\"\n                               (updateAzList)=\"updateAzList($event)\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
 
 /***/ }),
 
@@ -3010,7 +3010,6 @@ module.exports = "<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"vie
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__anreise_liste_anreise_liste_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/anreise-liste/anreise-liste.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__traces_liste_traces_liste_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/traces-liste/traces-liste.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__departments_departments_component__ = __webpack_require__("../../../../../src/app/components/digitalerTischplan/departments/departments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_tables_service__ = __webpack_require__("../../../../../src/app/services/tables.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3032,15 +3031,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var TischplanComponent = (function () {
-    function TischplanComponent(tischplanService, dragulaService, _navService) {
+    function TischplanComponent(tischplanService, dragulaService) {
         //this.subscription = this._navService.navItem$
         //  .subscribe(tables => this.tablesPanorama = tables);
         var _this = this;
         this.tischplanService = tischplanService;
         this.dragulaService = dragulaService;
-        this._navService = _navService;
         this.topValues = [];
         this.tablesTemp = [];
         this.tempTablesArray = [];
@@ -3065,6 +3062,7 @@ var TischplanComponent = (function () {
         this.tableInformation = [];
         this.tablesTempAbreise = [];
         this.newInformationEmployees = [];
+        this.history = [];
         this.buttonBgColorInfoForm = "0a7a74";
         this.buttonBgColorNotizForm = "0a7a74";
         this.buttonBgColorShowTablePlan = "0a7a74";
@@ -3336,12 +3334,12 @@ var TischplanComponent = (function () {
                         _this.tablesRestaurant = tables[a].tables;
                     }
                 }
+                console.log(_this.tablesPanorama);
+                console.log(_this.tablesWintergarten);
+                console.log(_this.tablesSonnbergZirbn);
+                console.log(_this.tablesRestaurant);
                 _this.changeBgColorIfAnreise(tables);
             }
-            console.log(_this.tablesPanorama);
-            console.log(_this.tablesWintergarten);
-            console.log(_this.tablesSonnbergZirbn);
-            console.log(_this.tablesRestaurant);
             _this.tablesTempAbreise = tables;
             _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
             _this.printComponent.formatAzListe(_this.tables);
@@ -3393,10 +3391,10 @@ TischplanComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/digitalerTischplan/tischplan.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_12__services_tables_service__["a" /* NavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12__services_tables_service__["a" /* NavService */]) === "function" && _m || Object])
+    __metadata("design:paramtypes", [typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_tischplan_service__["a" /* TischplanService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"]) === "function" && _l || Object])
 ], TischplanComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 //this.departmentsComponent.occupy(tableToMove, j);
 //# sourceMappingURL=tischplan.component.js.map
 

@@ -109,11 +109,13 @@ export class TischplanComponent {
   buttonBgColorShowTablePlan: string;
   fontColorShowTablePlan: string;
   newInformationEmployees: any[] = [];
+  history: string[] = [];
 
-  constructor(private tischplanService: TischplanService, private dragulaService: DragulaService, private _navService: NavService) {
+  constructor(private tischplanService: TischplanService, private dragulaService: DragulaService) {
 
     //this.subscription = this._navService.navItem$
     //  .subscribe(tables => this.tablesPanorama = tables);
+
 
     this.buttonBgColorInfoForm = "0a7a74";
     this.buttonBgColorNotizForm = "0a7a74";
@@ -404,13 +406,14 @@ export class TischplanComponent {
               this.tablesRestaurant = tables[a].tables;
             }
           }
+          console.log(this.tablesPanorama);
+          console.log(this.tablesWintergarten);
+          console.log(this.tablesSonnbergZirbn);
+          console.log(this.tablesRestaurant);
           this.changeBgColorIfAnreise(tables);
         }
 
-        console.log(this.tablesPanorama);
-        console.log(this.tablesWintergarten);
-        console.log(this.tablesSonnbergZirbn);
-        console.log(this.tablesRestaurant);
+
         this.tablesTempAbreise = tables;
         this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
         this.printComponent.formatAzListe(this.tables);
