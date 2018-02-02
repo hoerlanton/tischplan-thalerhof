@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit  } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit, AfterViewChecked  } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
@@ -16,7 +16,7 @@ import { Http, Headers } from '@angular/http';
   styleUrls: ['../tischplan.component.css']
 })
 
-export class DepartmentsComponent implements AfterViewInit {
+export class DepartmentsComponent implements AfterViewChecked {
 
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
@@ -27,6 +27,7 @@ export class DepartmentsComponent implements AfterViewInit {
   @Input('tablesRestaurant') tablesRestaurant: Table[];
   @Input('showRestaurantBool') showRestaurantBool: boolean;
   @Input('showAlleBool') showAlleBool: boolean;
+  @Input() tablesTempAbreise: any;
   @Input('term') term: string;
   @Output()
   dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
@@ -44,18 +45,12 @@ export class DepartmentsComponent implements AfterViewInit {
   parsedDate: any[] = [];
   a: any;
   b: any;
+  tables: any;
 
   constructor( private tischplanService: TischplanService) {
   }
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
-    console.log("this.tablesPanorama:");
-
-
-
   }
 
   occupied(table) {
@@ -178,88 +173,88 @@ export class DepartmentsComponent implements AfterViewInit {
       });
   }
 
+  ngAfterViewChecked() {
+      this.tables = this.tablesTempAbreise;
 
-  changeBgColorIfAnreise(tables) {
-    console.log('=================================================changeBgColorIfAnreise');
-    this.dateTodayGenerated = new Date();
+      console.log('================changeBgColorIfAnreise');
+      this.dateTodayGenerated = new Date();
 
-    setTimeout(() => {
-      for (let a = 0; a < tables.length; a++) {
-        for (let b = 0; b < tables[a].tables.length; b++) {
+      for (let a = 0; a < this.tables.length; a++) {
+        for (let b = 0; b < this.tables[a].tables.length; b++) {
 
-          if (tables[a].tables[b].anreiseValue) {
-            console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
-            this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue) {
+            console.log('tables[a].tables[b].anreiseValue: ' + b + " " + this.tables[a].tables[b].anreiseValue);
+            this.parts[0] = this.tables[a].tables[b].anreiseValue.match(/(\d+)/g);
           } else {
             this.parts[0] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue2) {
-            this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue2) {
+            this.parts[1] = this.tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
           } else {
             this.parts[1] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue3) {
-            this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue3) {
+            this.parts[2] = this.tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
           } else {
             this.parts[2] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue4) {
-            this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue4) {
+            this.parts[3] = this.tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
           } else {
             this.parts[3] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue5) {
-            this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue5) {
+            this.parts[4] = this.tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
           } else {
             this.parts[4] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue6) {
-            this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue6) {
+            this.parts[5] = this.tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
           } else {
             this.parts[5] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue7) {
-            this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue7) {
+            this.parts[6] = this.tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
           } else {
             this.parts[6] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue8) {
-            this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue8) {
+            this.parts[7] = this.tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
           } else {
             this.parts[7] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue9) {
-            this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue9) {
+            this.parts[8] = this.tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
           } else {
             this.parts[8] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue10) {
-            this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue10) {
+            this.parts[9] = this.tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
           } else {
             this.parts[9] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue11) {
-            this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue11) {
+            this.parts[10] = this.tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
           } else {
             this.parts[10] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue12) {
-            this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue12) {
+            this.parts[11] = this.tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
           } else {
             this.parts[11] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue13) {
-            this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue13) {
+            this.parts[12] = this.tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
           } else {
             this.parts[12] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue14) {
-            this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue14) {
+            this.parts[13] = this.tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
           } else {
             this.parts[13] = "undefined";
           }
-          if (tables[a].tables[b].anreiseValue15) {
-            this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
+          if (this.tables[a].tables[b].anreiseValue15) {
+            this.parts[14] = this.tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
           } else {
             this.parts[14] = "undefined";
           }
@@ -278,24 +273,22 @@ export class DepartmentsComponent implements AfterViewInit {
           console.log('Parsed Date --->: ' + this.parsedDate[0]);
           console.log('this.dateGenerated --->: ' + dateToday);
           if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
-            if (tables[a].department === "Panorama") {
+            if (this.tables[a].department === "Panorama") {
               console.log(this.tablesPanorama);
               console.log(this.tablesPanorama[b]);
               this.tablesPanorama[b].bgColor = "#0a7a74";
             }
-            else if (tables[a].department === "Wintergarten") {
+            else if (this.tables[a].department === "Wintergarten") {
               this.tablesWintergarten[b].bgColor = "#0a7a74";
             }
-            else if (tables[a].department === "Sonnberg-Zirbn") {
+            else if (this.tables[a].department === "Sonnberg-Zirbn") {
               this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
             }
-            else if (tables[a].department === "Restaurant") {
+            else if (this.tables[a].department === "Restaurant") {
               this.tablesRestaurant[b].bgColor = "#0a7a74";
             }
           }
         }
       }
-    }, 1000);
-
   }
 }

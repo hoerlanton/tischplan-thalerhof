@@ -1016,9 +1016,6 @@ var DepartmentsComponent = (function () {
     }
     DepartmentsComponent.prototype.ngOnInit = function () {
     };
-    DepartmentsComponent.prototype.ngAfterViewInit = function () {
-        console.log("this.tablesPanorama:");
-    };
     DepartmentsComponent.prototype.occupied = function (table) {
         console.log("table.j");
         console.log(table.j);
@@ -1145,136 +1142,134 @@ var DepartmentsComponent = (function () {
             _this.updateAzList.emit();
         });
     };
-    DepartmentsComponent.prototype.changeBgColorIfAnreise = function (tables) {
-        var _this = this;
-        console.log('=================================================changeBgColorIfAnreise');
+    DepartmentsComponent.prototype.ngAfterViewChecked = function () {
+        this.tables = this.tablesTempAbreise;
+        console.log('================changeBgColorIfAnreise');
         this.dateTodayGenerated = new Date();
-        setTimeout(function () {
-            for (var a = 0; a < tables.length; a++) {
-                for (var b = 0; b < tables[a].tables.length; b++) {
-                    if (tables[a].tables[b].anreiseValue) {
-                        console.log('tables[a].tables[b].anreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
-                        _this.parts[0] = tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+        for (var a = 0; a < this.tables.length; a++) {
+            for (var b = 0; b < this.tables[a].tables.length; b++) {
+                if (this.tables[a].tables[b].anreiseValue) {
+                    console.log('tables[a].tables[b].anreiseValue: ' + b + " " + this.tables[a].tables[b].anreiseValue);
+                    this.parts[0] = this.tables[a].tables[b].anreiseValue.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[0] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue2) {
+                    this.parts[1] = this.tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[1] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue3) {
+                    this.parts[2] = this.tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[2] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue4) {
+                    this.parts[3] = this.tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[3] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue5) {
+                    this.parts[4] = this.tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[4] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue6) {
+                    this.parts[5] = this.tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[5] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue7) {
+                    this.parts[6] = this.tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[6] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue8) {
+                    this.parts[7] = this.tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[7] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue9) {
+                    this.parts[8] = this.tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[8] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue10) {
+                    this.parts[9] = this.tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[9] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue11) {
+                    this.parts[10] = this.tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[10] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue12) {
+                    this.parts[11] = this.tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[11] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue13) {
+                    this.parts[12] = this.tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[12] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue14) {
+                    this.parts[13] = this.tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[13] = "undefined";
+                }
+                if (this.tables[a].tables[b].anreiseValue15) {
+                    this.parts[14] = this.tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
+                }
+                else {
+                    this.parts[14] = "undefined";
+                }
+                for (var c = 0; c <= 14; c++) {
+                    if (this.parts[c]) {
+                        this.date[c] = new Date(2018, this.parts[c][1] - 1, this.parts[c][0]);
+                        this.parsedDate[c] = String(this.date[c]).substring(0, 15);
                     }
-                    else {
-                        _this.parts[0] = "undefined";
+                }
+                // note parts[1]-1
+                //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
+                // Mon May 31 2010 00:00:00
+                //this.tablesRestaurant[j].anreiseValue
+                var dateToday = String(this.dateTodayGenerated).substring(0, 15);
+                console.log('Parsed Date --->: ' + this.parsedDate[0]);
+                console.log('this.dateGenerated --->: ' + dateToday);
+                if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
+                    if (this.tables[a].department === "Panorama") {
+                        console.log(this.tablesPanorama);
+                        console.log(this.tablesPanorama[b]);
+                        this.tablesPanorama[b].bgColor = "#0a7a74";
                     }
-                    if (tables[a].tables[b].anreiseValue2) {
-                        _this.parts[1] = tables[a].tables[b].anreiseValue2.match(/(\d+)/g);
+                    else if (this.tables[a].department === "Wintergarten") {
+                        this.tablesWintergarten[b].bgColor = "#0a7a74";
                     }
-                    else {
-                        _this.parts[1] = "undefined";
+                    else if (this.tables[a].department === "Sonnberg-Zirbn") {
+                        this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
                     }
-                    if (tables[a].tables[b].anreiseValue3) {
-                        _this.parts[2] = tables[a].tables[b].anreiseValue3.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[2] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue4) {
-                        _this.parts[3] = tables[a].tables[b].anreiseValue4.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[3] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue5) {
-                        _this.parts[4] = tables[a].tables[b].anreiseValue5.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[4] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue6) {
-                        _this.parts[5] = tables[a].tables[b].anreiseValue6.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[5] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue7) {
-                        _this.parts[6] = tables[a].tables[b].anreiseValue7.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[6] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue8) {
-                        _this.parts[7] = tables[a].tables[b].anreiseValue8.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[7] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue9) {
-                        _this.parts[8] = tables[a].tables[b].anreiseValue9.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[8] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue10) {
-                        _this.parts[9] = tables[a].tables[b].anreiseValue10.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[9] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue11) {
-                        _this.parts[10] = tables[a].tables[b].anreiseValue11.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[10] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue12) {
-                        _this.parts[11] = tables[a].tables[b].anreiseValue12.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[11] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue13) {
-                        _this.parts[12] = tables[a].tables[b].anreiseValue13.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[12] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue14) {
-                        _this.parts[13] = tables[a].tables[b].anreiseValue14.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[13] = "undefined";
-                    }
-                    if (tables[a].tables[b].anreiseValue15) {
-                        _this.parts[14] = tables[a].tables[b].anreiseValue15.match(/(\d+)/g);
-                    }
-                    else {
-                        _this.parts[14] = "undefined";
-                    }
-                    for (var c = 0; c <= 14; c++) {
-                        if (_this.parts[c]) {
-                            _this.date[c] = new Date(2018, _this.parts[c][1] - 1, _this.parts[c][0]);
-                            _this.parsedDate[c] = String(_this.date[c]).substring(0, 15);
-                        }
-                    }
-                    // note parts[1]-1
-                    //console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
-                    // Mon May 31 2010 00:00:00
-                    //this.tablesRestaurant[j].anreiseValue
-                    var dateToday = String(_this.dateTodayGenerated).substring(0, 15);
-                    console.log('Parsed Date --->: ' + _this.parsedDate[0]);
-                    console.log('this.dateGenerated --->: ' + dateToday);
-                    if (dateToday.indexOf(_this.parsedDate[0] || _this.parsedDate[1] || _this.parsedDate[2] || _this.parsedDate[3] || _this.parsedDate[4] || _this.parsedDate[5] || _this.parsedDate[6] || _this.parsedDate[7] || _this.parsedDate[8] || _this.parsedDate[9] || _this.parsedDate[10] || _this.parsedDate[11] || _this.parsedDate[12] || _this.parsedDate[13] || _this.parsedDate[14] || _this.parsedDate[15]) !== -1) {
-                        if (tables[a].department === "Panorama") {
-                            console.log(_this.tablesPanorama);
-                            console.log(_this.tablesPanorama[b]);
-                            _this.tablesPanorama[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Wintergarten") {
-                            _this.tablesWintergarten[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Sonnberg-Zirbn") {
-                            _this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
-                        }
-                        else if (tables[a].department === "Restaurant") {
-                            _this.tablesRestaurant[b].bgColor = "#0a7a74";
-                        }
+                    else if (this.tables[a].department === "Restaurant") {
+                        this.tablesRestaurant[b].bgColor = "#0a7a74";
                     }
                 }
             }
-        }, 1000);
+        }
     };
     return DepartmentsComponent;
 }());
@@ -1314,6 +1309,10 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showAlleBool'),
     __metadata("design:type", Boolean)
 ], DepartmentsComponent.prototype, "showAlleBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DepartmentsComponent.prototype, "tablesTempAbreise", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
     __metadata("design:type", String)
@@ -2988,7 +2987,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/digitalerTischplan/tischplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\"\n                        (reloadLists)=\"reloadLists($event)\"\n                       [newInformationEmployees]=\"newInformationEmployees\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\"\n                               (updateAzList)=\"updateAzList($event)\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
+module.exports = "<router-outlet></router-outlet>\n<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <app-navigation  [newInformationElements]=\"newInformationElements\"\n                       [tablesOccupied]=\"tablesOccupied\"\n                       [tablesTempAbreise]=\"tablesTempAbreise\"\n                       (getTablesOccupied)=\"tablesOccupied = $event\"\n                       (umsetzenExport)=\"umsetzenInfoVar = $event; umsetzen($event)\"\n                       (abreisenExport)=\"abreiseTablePlusIndex = $event; abreisenRemoval($event)\"\n                       (termExport)=\"term = $event\"\n                        (reloadLists)=\"reloadLists($event)\"\n                       [newInformationEmployees]=\"newInformationEmployees\">\n      </app-navigation><flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAlleBool]=\"showAlleBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAlleBoolChange)=\"showAlleBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNotizForm]=\"buttonBgColorNotizForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNotizForm]=\"fontColorNotizForm\"\n          [showNotizFormBool]=\"showNotizFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNotizFormBoolChange)=\"showNotizFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNotizFormBool]=\"showNotizFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [notizElements]=\"notizElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAlleBool]=\"showAlleBool\"\n                  (notizResponse)=\"notizElements=$event\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAlleBool]=\"showAlleBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <h3>Im-Haus-Liste</h3>\n          <app-im-haus-liste [imHausListeElemente]=\"imHausListeElemente\"></app-im-haus-liste>\n          <h3>Anreise-Liste</h3>\n          <app-anreise-liste [anreiseListeElemente]=\"anreiseListeElemente\"></app-anreise-liste>\n          <h3>Traces-Liste</h3>\n          <app-traces-liste [tracesListeElemente]=\"tracesListeElemente\" ></app-traces-liste>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAlleBool]=\"showAlleBool\"\n                               (updateAzList)=\"updateAzList($event)\"\n                                [tablesTempAbreise]=\"tablesTempAbreise\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\">\n</app-print>\n</html>\n"
 
 /***/ }),
 
@@ -3213,9 +3212,11 @@ var TischplanComponent = (function () {
     TischplanComponent.prototype.delete = function (informationElement, j, event) {
         this.navigationComponent.delete(informationElement, j, event);
     };
-    TischplanComponent.prototype.changeBgColorIfAnreise = function (tables) {
+    /*
+      changeBgColorIfAnreise(tables) {
         this.departmentsComponent.changeBgColorIfAnreise(tables);
-    };
+      }
+    */
     TischplanComponent.prototype.abreisenRemoval = function () {
         this.departmentsComponent.occupy(this.abreiseTablePlusIndex.abreisenExport, this.abreiseTablePlusIndex.b);
     };
@@ -3338,7 +3339,7 @@ var TischplanComponent = (function () {
                 console.log(_this.tablesWintergarten);
                 console.log(_this.tablesSonnbergZirbn);
                 console.log(_this.tablesRestaurant);
-                _this.changeBgColorIfAnreise(tables);
+                //this.changeBgColorIfAnreise(tables);
             }
             _this.tablesTempAbreise = tables;
             _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
