@@ -173,8 +173,10 @@ h6 {
   color: #FFFFFF;
   border: none;
   float: right;
-  margin-top: -38px;
+  margin-top: -39px;
   margin-right: 20px;
+  min-width: 30px;
+  min-height: 30px;
 }
 
 .Partner {
@@ -201,41 +203,54 @@ h6 {
   }
 }
 
+@media (min-width: 766px ) and  (max-width: 774px) {
+  .navbar-right {
+    margin-top: -23px;
+  }
+
+  .search-btn-default {
+    margin-top: 0px;
+    margin-left: 40px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+}
+
 @media (min-width: 500px ) and  (max-width: 774px) {
   .navbar-fixed-top {
-    display: -webkit-box;
+    display: block;
     max-height: 56px;
   }
   .container {
-    display: -webkit-inline-box;
+    display: flex;
     width: auto;
     max-height: 55px;
   }
   .navbar-nav {
     margin-top: 0;
     max-width: 79%;
-    display: -webkit-inline-box;
+    display: inline-flex;
     max-height: 50px;
   }
   .navbar-right{
-    display: inline-block;
+    display: inline-flex;
     max-width: 79%;
     margin-top: -32px;
     margin-right: 10px;
 
   }
   .navbar-left{
-    display: block;
+    display: inline-flex;
     margin-top: 31px;
   }
   .form-group {
-    display: block;
+    display: inline-flex;
   }
   .form-control{
     width: 110%;
   }
   .search-btn-default {
-    margin-top: -38px;
+    margin-top: 0px;
   }
 }
 
