@@ -283,11 +283,11 @@ export class TischplanComponent {
   delete(informationElement, j, event) {
     this.navigationComponent.delete(informationElement, j, event);
   }
-/*
+
   changeBgColorIfAnreise(tables) {
     this.departmentsComponent.changeBgColorIfAnreise(tables);
   }
-*/
+
   abreisenRemoval() {
     this.departmentsComponent.occupy(this.abreiseTablePlusIndex.abreisenExport, this.abreiseTablePlusIndex.b);
   }
@@ -410,7 +410,7 @@ export class TischplanComponent {
           console.log(this.tablesWintergarten);
           console.log(this.tablesSonnbergZirbn);
           console.log(this.tablesRestaurant);
-          //this.changeBgColorIfAnreise(tables);
+          this.changeBgColorIfAnreise(tables);
         }
 
 

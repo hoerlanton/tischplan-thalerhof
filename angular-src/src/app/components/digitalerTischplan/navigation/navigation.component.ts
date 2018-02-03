@@ -5,8 +5,6 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html',
@@ -36,7 +34,7 @@ export class NavigationComponent implements OnInit {
   zielTisch: any;
   tableInformation: any[] = [];
 
-  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router,) { }
+  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit, AfterViewChecked  } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit, AfterViewChecked, ChangeDetectorRef  } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
@@ -16,7 +16,7 @@ import { Http, Headers } from '@angular/http';
   styleUrls: ['../tischplan.component.css']
 })
 
-export class DepartmentsComponent implements AfterViewChecked {
+export class DepartmentsComponent {
 
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
@@ -47,7 +47,7 @@ export class DepartmentsComponent implements AfterViewChecked {
   b: any;
   tables: any;
 
-  constructor( private tischplanService: TischplanService) {
+  constructor( private tischplanService: TischplanService, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -173,7 +173,8 @@ export class DepartmentsComponent implements AfterViewChecked {
       });
   }
 
-  ngAfterViewChecked() {
+  changeBgColorIfAnreise(tables) {
+    setTimeout(() => {
       this.tables = this.tablesTempAbreise;
 
       console.log('================changeBgColorIfAnreise');
@@ -270,6 +271,7 @@ export class DepartmentsComponent implements AfterViewChecked {
           // Mon May 31 2010 00:00:00
           //this.tablesRestaurant[j].anreiseValue
           let dateToday = String(this.dateTodayGenerated).substring(0, 15);
+          this.cdr.detectChanges();
           console.log('Parsed Date --->: ' + this.parsedDate[0]);
           console.log('this.dateGenerated --->: ' + dateToday);
           if (dateToday.indexOf(this.parsedDate[0] || this.parsedDate[1] || this.parsedDate[2] || this.parsedDate[3] || this.parsedDate[4] || this.parsedDate[5] || this.parsedDate[6] || this.parsedDate[7] || this.parsedDate[8] || this.parsedDate[9] || this.parsedDate[10] || this.parsedDate[11] || this.parsedDate[12] || this.parsedDate[13] || this.parsedDate[14] || this.parsedDate[15]) !== -1) {
@@ -290,5 +292,6 @@ export class DepartmentsComponent implements AfterViewChecked {
           }
         }
       }
+    }, 1000);
   }
 }
