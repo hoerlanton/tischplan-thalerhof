@@ -34,7 +34,7 @@ export class TableplanComponent implements OnInit {
   buttonEntfernen: string;
 
   constructor(private tischplanService: TischplanService, private _navService: NavService) {
-    this.buttonMoveTable = "bc0000";
+    this.buttonMoveTable = "ff0000";
     this.buttonInfo = "ffffff";
     this.buttonHinzufuegen = "ffffff";
     this.buttonEntfernen = "ffffff";
@@ -146,16 +146,16 @@ export class TableplanComponent implements OnInit {
 
   mouseEnterMoveTableButton() {
     console.log("mouse enter : ");
-    if (this.buttonMoveTable === "bc0000") {
+    if (this.buttonMoveTable === "ff0000") {
       console.log('mouse enter1 :');
-      this.buttonMoveTable = "ff0000";
+      this.buttonMoveTable = "bc0000";
     }
   }
 
   mouseLeaveMoveTableButton() {
-    if (this.buttonMoveTable === "ff0000") {
+    if (this.buttonMoveTable === "bc0000") {
       console.log('mouse leave1 :');
-      this.buttonMoveTable = "bc0000";
+      this.buttonMoveTable = "ff0000";
     }
   }
 

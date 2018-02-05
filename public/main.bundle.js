@@ -2851,7 +2851,7 @@ var TableplanComponent = (function () {
         this.movedRestaurant = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.movedWintergarten = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.movedPanorama = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.buttonMoveTable = "bc0000";
+        this.buttonMoveTable = "ff0000";
         this.buttonInfo = "ffffff";
         this.buttonHinzufuegen = "ffffff";
         this.buttonEntfernen = "ffffff";
@@ -2957,15 +2957,15 @@ var TableplanComponent = (function () {
     };
     TableplanComponent.prototype.mouseEnterMoveTableButton = function () {
         console.log("mouse enter : ");
-        if (this.buttonMoveTable === "bc0000") {
+        if (this.buttonMoveTable === "ff0000") {
             console.log('mouse enter1 :');
-            this.buttonMoveTable = "ff0000";
+            this.buttonMoveTable = "bc0000";
         }
     };
     TableplanComponent.prototype.mouseLeaveMoveTableButton = function () {
-        if (this.buttonMoveTable === "ff0000") {
+        if (this.buttonMoveTable === "bc0000") {
             console.log('mouse leave1 :');
-            this.buttonMoveTable = "bc0000";
+            this.buttonMoveTable = "ff0000";
         }
     };
     TableplanComponent.prototype.mouseEnterInfoButton = function () {
