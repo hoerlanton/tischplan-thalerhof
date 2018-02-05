@@ -16,7 +16,8 @@
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; max-height: 240px; overflow: auto" class="dropdowndropdown" dropdown><b>Infos anzeigen</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableSonnbergZirbn.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableSonnbergZirbn.nameValue}}<br><b>Sprache:</b> {{tableSonnbergZirbn.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableSonnbergZirbn.zimmernummerValue}}<br><b>Preistyp: </b>{{tableSonnbergZirbn.preistypValue}}<br><b>Anreise: </b>{{tableSonnbergZirbn.anreiseValue}}<br><b>Abreise:</b> {{tableSonnbergZirbn.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableSonnbergZirbn.rbsouValue}}<br><b>Notiz2:</b> {{tableSonnbergZirbn.notiz2Value}}<b>Trace:</b> {{tableSonnbergZirbn.trace}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
@@ -77,6 +78,7 @@
                   <div class="dropdown-item"><b>Name:</b> {{tableSonnbergZirbn.nameValue15}}<br><b>Sprache:</b> {{tableSonnbergZirbn.spracheValue15}}<br><b>Zimmer Nummer: </b>{{tableSonnbergZirbn.zimmernummerValue15}}<br><b>Preistyp: </b>{{tableSonnbergZirbn.preistypValue15}}<br><b>Anreise: </b>{{tableSonnbergZirbn.anreiseValue15}}<br><b>Abreise:</b> {{tableSonnbergZirbn.abreiseValue15}}<br><b>Personen Anzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue15}}<br><b>Reisebüro: </b>{{tableSonnbergZirbn.rbsouValue15}}<br><b>Notiz2:</b> {{tableSonnbergZirbn.notiz2Value15}}<b>Trace:</b> {{tableSonnbergZirbn.trace15}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -98,6 +100,7 @@
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tablePanorama.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tablePanorama.nameValue}}<br><b>Sprache:</b> {{tablePanorama.spracheValue}}<br><b>Zimmer Nummer: </b>{{tablePanorama.zimmernummerValue}}<br><b>Preistyp: </b>{{tablePanorama.preistypValue}}<br><b>Anreise: </b>{{tablePanorama.anreiseValue}}<br><b>Abreise:</b> {{tablePanorama.abreiseValue}}<br><b>Personen Anzahl:</b>{{tablePanorama.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tablePanorama.rbsouValue}}<br><b>Notiz2:</b> {{tablePanorama.notiz2Value}}<b>Trace:</b> {{tablePanorama.trace}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
@@ -158,6 +161,7 @@
                   <div class="dropdown-item"><b>Name:</b> {{tablePanorama.nameValue15}}<br><b>Sprache:</b> {{tablePanorama.spracheValue15}}<br><b>Zimmer Nummer: </b>{{tablePanorama.zimmernummerValue15}}<br><b>Preistyp: </b>{{tablePanorama.preistypValue15}}<br><b>Anreise: </b>{{tablePanorama.anreiseValue15}}<br><b>Abreise:</b> {{tablePanorama.abreiseValue15}}<br><b>Personen Anzahl:</b>{{tablePanorama.personenAnzahlValue15}}<br><b>Reisebüro: </b>{{tablePanorama.rbsouValue15}}<br><b>Notiz2:</b> {{tablePanorama.notiz2Value15}}<b>Trace:</b> {{tablePanorama.trace15}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -179,6 +183,7 @@
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableRestaurant.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableRestaurant.nameValue}}<br><b>Sprache:</b> {{tableRestaurant.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableRestaurant.zimmernummerValue}}<br><b>Preistyp: </b>{{tableRestaurant.preistypValue}}<br><b>Anreise: </b>{{tableRestaurant.anreiseValue}}<br><b>Abreise:</b> {{tableRestaurant.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableRestaurant.rbsouValue}}<br><b>Notiz2:</b> {{tableRestaurant.notiz2Value}}<b>Trace:</b> {{tableRestaurant.trace}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
@@ -239,6 +244,7 @@
                   <div class="dropdown-item"><b>Name:</b> {{tableRestaurant.nameValue15}}<br><b>Sprache:</b> {{tableRestaurant.spracheValue15}}<br><b>Zimmer Nummer: </b>{{tableRestaurant.zimmernummerValue15}}<br><b>Preistyp: </b>{{tableRestaurant.preistypValue15}}<br><b>Anreise: </b>{{tableRestaurant.anreiseValue15}}<br><b>Abreise:</b> {{tableRestaurant.abreiseValue15}}<br><b>Personen Anzahl:</b>{{tableRestaurant.personenAnzahlValue15}}<br><b>Reisebüro: </b>{{tableRestaurant.rbsouValue15}}<br><b>Notiz2:</b> {{tableRestaurant.notiz2Value15}}<b>Trace:</b> {{tableRestaurant.trace15}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -260,6 +266,7 @@
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableWintergarten.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableWintergarten.nameValue}}<br><b>Sprache:</b> {{tableWintergarten.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableWintergarten.zimmernummerValue}}<br><b>Preistyp: </b>{{tableWintergarten.preistypValue}}<br><b>Anreise: </b>{{tableWintergarten.anreiseValue}}<br><b>Abreise:</b> {{tableWintergarten.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableWintergarten.rbsouValue}}<br><b>Notiz2:</b> {{tableWintergarten.notiz2Value}}<b>Trace:</b> {{tableWintergarten.trace}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
@@ -319,6 +326,7 @@
                 <div *ngIf="tableWintergarten.nameValue15">
                   <div class="dropdown-item"><b>Name:</b> {{tableWintergarten.nameValue15}}<br><b>Sprache:</b> {{tableWintergarten.spracheValue15}}<br><b>Zimmer Nummer: </b>{{tableWintergarten.zimmernummerValue15}}<br><b>Preistyp: </b>{{tableWintergarten.preistypValue15}}<br><b>Anreise: </b>{{tableWintergarten.anreiseValue15}}<br><b>Abreise:</b> {{tableWintergarten.abreiseValue15}}<br><b>Personen Anzahl:</b>{{tableWintergarten.personenAnzahlValue15}}<br><b>Reisebüro: </b>{{tableWintergarten.rbsouValue15}}<br><b>Notiz2:</b> {{tableWintergarten.notiz2Value15}}<b>Trace:</b> {{tableWintergarten.trace15}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
+                </div>
                 </div>
               </div>
             </div>
