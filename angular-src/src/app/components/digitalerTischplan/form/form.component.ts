@@ -40,7 +40,7 @@ export class FormComponent implements OnInit {
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
     this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
-    this.employees = ["Alexandra Lopion", "Julia Ackermann", "Torsten Streit", "Sabrina Schrötwieser", "Loreen Kumpfert", "Aylin Fiedler", "Julia Laue", "Richard Klöppel", "Tino Deisenroth", "Stefan Scheiber", "Dominic Mugambi", "Ralf Rohsmann", "Florian Thurner"];
+    this.employees = ["Alexandra Lopion", "Julia Ackermann", "Torsten Streit", "Sabrina Schrötwieser", "Loreen Kumpfert", "Aylin Fiedler", "Julia Laue", "Richard Klöffel", "Tino Deisenroth", "Stefan Scheiber", "Dominic Mugambi", "Ralf Rohsmann", "Florian Thurner"];
   }
 
   ngOnInit() {

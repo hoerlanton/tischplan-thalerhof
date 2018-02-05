@@ -2,6 +2,11 @@
   margin-top: 90px;
 }
 
+@media (min-width: 500px) {
+  .row4 {
+    margin-top: 60px;
+  }
+}
 
 @media (min-width: 1200px) {
   .btn-default {
@@ -10,8 +15,4 @@
   .btn-send {
     display: block;
   }
-  .row4 {
-    margin-top: 0px;
-  }
-
 }

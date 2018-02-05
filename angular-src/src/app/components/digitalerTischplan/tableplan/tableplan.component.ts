@@ -34,10 +34,10 @@ export class TableplanComponent implements OnInit {
   ngOnInit() {
   }
 
-  moveTable(table, j) {
+  addTable(table, j) {
     console.log("moveTable clicked");
     console.log('table :' + table.number + 'j' + j);
-    this.tischplanService.moveTable(table).subscribe(response => {
+    this.tischplanService.addTable(table).subscribe(response => {
       console.log('Response:' + JSON.stringify(response));
       //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
       console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
@@ -66,6 +66,40 @@ export class TableplanComponent implements OnInit {
       }
     });
   }
+
+  removeTable(table, j) {
+    console.log("moveTable clicked");
+    console.log('table :' + table.number + 'j' + j);
+    this.tischplanService.removeTable(table).subscribe(response => {
+      console.log('Response:' + JSON.stringify(response));
+      //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
+      console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
+      console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
+      console.log("response[0].tables.department" + response[0].tables[j].department);
+      if (response === null) {
+        return;
+      } else {
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.movedSonnbergZirbn.emit(response[0].tables);
+          //this.tablesSonnbergZirbn = response[0].tables;
+        }
+        else if (response[0].tables[j].department === "Panorama") {
+          this.movedPanorama.emit(response[0].tables);
+          //this.tablesPanorama = response[0].tables;
+          //this._navService.changeNav(response[0].tables);
+        }
+        else if (response[0].tables[j].department === "Restaurant") {
+          this.movedRestaurant.emit(response[0].tables);
+          //this.tablesRestaurant = response[0].tables;
+        }
+        else if (response[0].tables[j].department === "Wintergarten") {
+          this.movedWintergarten.emit(response[0].tables);
+          //this.tablesWintergarten = response[0].tables;
+        }
+      }
+    });
+  }
+
   getStyle(j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y) {
     if (j || k || l || m || n || o || p || q || r || s || t || u || v || w || x || y) {
       return "solid 3px red";

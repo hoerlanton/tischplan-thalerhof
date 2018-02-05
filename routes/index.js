@@ -7,14 +7,7 @@ const   express = require('express'),
     jwt = require('jsonwebtoken'),
     config = require('../config/database'),
     User = require('../models/user'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
-    moveTablesPanorama60s = require('./moveTablesPanorama60s.js'),
-    moveTablesPanorama70s = require('./moveTablesPanorama70s.js'),
-    moveTablesPanorama80s = require('./moveTablesPanorama80s.js'),
-    moveTablesSonnbergZirbn = require('./moveTablesSonnbergZirbn.js'),
-    moveTablesWintergarten = require('./moveTablesWintergarten.js'),
-    moveTablesRestaurant110 = require('./moveTablesRestaurant1-10.js'),
-    moveTablesRestaurant1024 = require('./moveTablesRestaurant10-24.js'),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tablesTemp', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
     anreiseliste = require('./anreiseListe.js'),
     imHausListe = require('./imHausListe.js'),
     traceListe = require('./traceListe.js'),
@@ -82,9 +75,12 @@ placeholder.addPlaceholder(req, res, db)});
 //Get Tables
 router.get('/tables', function(req, res, next) {
 table.getTable(req, res, db)});
-//moveTable
-router.post('/moveTable', function(req, res, next) {
-table.moveTable(req, res, db);});
+//removeTable
+router.post('/removeTable', function(req, res, next) {
+table.removeTable(req, res, db);});
+//addTable
+router.post('/addTable', function(req, res, next) {
+table.addTable(req, res, db);});
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
 table.occupyTable(req, res, db)});

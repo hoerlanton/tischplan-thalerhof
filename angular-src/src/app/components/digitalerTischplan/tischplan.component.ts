@@ -272,10 +272,11 @@ export class TischplanComponent {
     this.departmentmenuComponent.showPanorama();
   }
 
+  /*
   moveTable(table, j) {
     this.tableplanComponent.moveTable(table, j);
   }
-
+  */
   sendInformation(event) {
     this.formComponent.sendInformation(event);
   }

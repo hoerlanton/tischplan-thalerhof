@@ -5,8 +5,6 @@ html, body {
   background-color: #0a7a74;
 }
 
-
-
 .container-fluid {
   padding: 0 0 10px 0;
   margin: 0;
@@ -69,7 +67,6 @@ html, body {
   min-height: 100vh;
   border-bottom: 20px solid #0a7a74;
   box-sizing: border-box;
-  margin-top: 50px;
 }
 
 .row .upload-col {
@@ -267,17 +264,7 @@ html, body {
   color: #FFFFFF;
 }
 
-@media (max-width: 700px) {
-  .row4 {
-    margin-top: 90px;
-  }
-}
-
-@media (min-width: 700px) {
-
-  .row4 {
-    margin-top: 20px;
-  }
+@media (min-width: 701px) {
 
   .row .table-col {
     max-height: calc(100vh - 70px);
@@ -316,8 +303,6 @@ html, body {
   }
 }
 
-
-
 @media (min-width: 1200px) {
   .btn-default {
     display: inline-block;
@@ -325,10 +310,6 @@ html, body {
 
   .btn-send {
     display: block;
-  }
-
-  .row4 {
-    margin-top: 0px;
   }
 
   .printTwo {
@@ -354,8 +335,8 @@ html, body {
   }
 
   .print-col {
-    width: 50%;
-    margin-top: 70px;
+    width: 48%;
+    margin-left: 15px;
   }
 
   .row .upload-col {
@@ -372,6 +353,5 @@ html, body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-
 }
 
