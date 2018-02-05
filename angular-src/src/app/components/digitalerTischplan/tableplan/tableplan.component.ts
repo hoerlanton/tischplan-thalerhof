@@ -21,15 +21,24 @@ export class TableplanComponent implements OnInit {
   @Input('showAlleBool') showAlleBool: boolean;
   @Input('showTablePlanBool') showTablePlanBool: boolean;
   @Output()
-  movedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
+  movedSonnbergZirbn: EventEmitter<any> = new EventEmitter();
   @Output()
-  movedRestaurant:EventEmitter<any> = new EventEmitter();
+  movedRestaurant: EventEmitter<any> = new EventEmitter();
   @Output()
-  movedWintergarten:EventEmitter<any> = new EventEmitter();
+  movedWintergarten: EventEmitter<any> = new EventEmitter();
   @Output()
-  movedPanorama:EventEmitter<any> = new EventEmitter();
+  movedPanorama: EventEmitter<any> = new EventEmitter();
+  buttonMoveTable: string;
+  buttonInfo: string;
+  buttonHinzufuegen: string;
+  buttonEntfernen: string;
 
-  constructor(private tischplanService: TischplanService, private _navService:NavService) { }
+  constructor(private tischplanService: TischplanService, private _navService: NavService) {
+    this.buttonMoveTable = "bc0000";
+    this.buttonInfo = "ffffff";
+    this.buttonHinzufuegen = "ffffff";
+    this.buttonEntfernen = "ffffff";
+  }
 
   ngOnInit() {
   }
@@ -123,7 +132,7 @@ export class TableplanComponent implements OnInit {
     });
   }
 
-  getStyle(j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y) {
+  getStyle(j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) {
     if (j || k || l || m || n || o || p || q || r || s || t || u || v || w || x || y) {
       return "solid 3px red";
     } else {
@@ -133,5 +142,65 @@ export class TableplanComponent implements OnInit {
 
   none(event) {
     event.stopPropagation();
+  }
+
+  mouseEnterMoveTableButton() {
+    console.log("mouse enter : ");
+    if (this.buttonMoveTable === "bc0000") {
+      console.log('mouse enter1 :');
+      this.buttonMoveTable = "ff0000";
+    }
+  }
+
+  mouseLeaveMoveTableButton() {
+    if (this.buttonMoveTable === "ff0000") {
+      console.log('mouse leave1 :');
+      this.buttonMoveTable = "bc0000";
+    }
+  }
+
+  mouseEnterInfoButton() {
+    console.log("mouse enter : ");
+    if (this.buttonInfo === "ffffff") {
+      console.log('mouse enter1 :');
+      this.buttonInfo = "cfcfcf";
+    }
+  }
+
+  mouseLeaveInfoButton() {
+    if (this.buttonInfo === "cfcfcf") {
+      console.log('mouse leave1 :');
+      this.buttonInfo = "ffffff";
+    }
+  }
+
+  mouseEnterHinzufuegenButton() {
+    console.log("mouse enter : ");
+    if (this.buttonHinzufuegen === "ffffff") {
+      console.log('mouse enter1 :');
+      this.buttonHinzufuegen = "cfcfcf";
+    }
+  }
+
+  mouseLeaveHinzufuegenButton() {
+    if (this.buttonHinzufuegen === "cfcfcf") {
+      console.log('mouse leave1 :');
+      this.buttonHinzufuegen = "ffffff";
+    }
+  }
+
+  mouseEnterEntfernenButton() {
+    console.log("mouse enter : ");
+    if (this.buttonEntfernen === "ffffff") {
+      console.log('mouse enter1 :');
+      this.buttonEntfernen = "cfcfcf";
+    }
+  }
+
+  mouseLeaveEntfernenButton() {
+    if (this.buttonEntfernen === "cfcfcf") {
+      console.log('mouse leave1 :');
+      this.buttonEntfernen = "ffffff";
+    }
   }
 }

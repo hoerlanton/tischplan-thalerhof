@@ -8,16 +8,16 @@
               <p><b>{{tableSonnbergZirbn.number}} | {{tableSonnbergZirbn.personenAnzahlValue}} {{tableSonnbergZirbn.personenAnzahlValue2}} {{tableSonnbergZirbn.personenAnzahlValue3}} {{tableSonnbergZirbn.personenAnzahlValue4}} {{tableSonnbergZirbn.personenAnzahlValue5}} {{tableSonnbergZirbn.personenAnzahlValue6}} {{tableSonnbergZirbn.personenAnzahlValue7}} {{tableSonnbergZirbn.personenAnzahlValue8}} {{tableSonnbergZirbn.personenAnzahlValue9}} {{tableSonnbergZirbn.personenAnzahlValue10}}  {{tableSonnbergZirbn.personenAnzahlValue11}}  {{tableSonnbergZirbn.personenAnzahlValue12}}  {{tableSonnbergZirbn.personenAnzahlValue13}}  {{tableSonnbergZirbn.personenAnzahlValue14}}  {{tableSonnbergZirbn.personenAnzahlValue15}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div dropdownToggle type="button" style="background-color: red; color: white; padding: 10px;"  (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableSonnbergZirbn, j)" style="color: black"><b>Tisch hinzufügen</b></li>
-                  <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
-                  <li class="dropdown-item" (click)="removeTable(tableSonnbergZirbn, j)" style="color: black"><b>Tisch entfernen</b></li>
+              <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0; overflow: auto">
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="addTable(tableSonnbergZirbn, j)" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0"></li>
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="removeTable(tableSonnbergZirbn, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" ><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 0px; overflow: auto">
                 <div *ngIf="tableSonnbergZirbn.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableSonnbergZirbn.nameValue}}<br><b>Sprache:</b> {{tableSonnbergZirbn.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableSonnbergZirbn.zimmernummerValue}}<br><b>Preistyp: </b>{{tableSonnbergZirbn.preistypValue}}<br><b>Anreise: </b>{{tableSonnbergZirbn.anreiseValue}}<br><b>Abreise:</b> {{tableSonnbergZirbn.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableSonnbergZirbn.rbsouValue}}<br><b>Notiz2:</b> {{tableSonnbergZirbn.notiz2Value}}<b>Trace:</b> {{tableSonnbergZirbn.trace}}</div>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
@@ -91,15 +91,15 @@
               <p><b>{{tablePanorama.number}} | {{tablePanorama.personenAnzahlValue}} {{tablePanorama.personenAnzahlValue2}} {{tablePanorama.personenAnzahlValue3}} {{tablePanorama.personenAnzahlValue4}} {{tablePanorama.personenAnzahlValue5}} {{tablePanorama.personenAnzahlValue6}} {{tablePanorama.personenAnzahlValue7}} {{tablePanorama.personenAnzahlValue8}} {{tablePanorama.personenAnzahlValue9}} {{tablePanorama.personenAnzahlValue10}} {{tablePanorama.personenAnzahlValue11}} {{tablePanorama.personenAnzahlValue12}} {{tablePanorama.personenAnzahlValue13}} {{tablePanorama.personenAnzahlValue14}} {{tablePanorama.personenAnzahlValue15}}</b></p>
               </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div dropdownToggle type="button" style="background-color: red; color: white; padding: 10px;"  (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tablePanorama, j)" style="color: black"><b>Tisch hinzufügen</b></li>
-                  <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
-                  <li class="dropdown-item" (click)="removeTable(tablePanorama, j)" style="color: black"><b>Tisch entfernen</b></li>
+              <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 0px; margin: 0; overflow: auto">
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="addTable(tablePanorama, j)" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="removeTable(tablePanorama, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" ><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tablePanorama.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tablePanorama.nameValue}}<br><b>Sprache:</b> {{tablePanorama.spracheValue}}<br><b>Zimmer Nummer: </b>{{tablePanorama.zimmernummerValue}}<br><b>Preistyp: </b>{{tablePanorama.preistypValue}}<br><b>Anreise: </b>{{tablePanorama.anreiseValue}}<br><b>Abreise:</b> {{tablePanorama.abreiseValue}}<br><b>Personen Anzahl:</b>{{tablePanorama.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tablePanorama.rbsouValue}}<br><b>Notiz2:</b> {{tablePanorama.notiz2Value}}<b>Trace:</b> {{tablePanorama.trace}}</div>
@@ -174,15 +174,15 @@
               <p><b>{{tableRestaurant.number}} | {{tableRestaurant.personenAnzahlValue}} {{tableRestaurant.personenAnzahlValue2}} {{tableRestaurant.personenAnzahlValue3}} {{tableRestaurant.personenAnzahlValue4}} {{tableRestaurant.personenAnzahlValue5}} {{tableRestaurant.personenAnzahlValue6}} {{tableRestaurant.personenAnzahlValue7}} {{tableRestaurant.personenAnzahlValue8}} {{tableRestaurant.personenAnzahlValue9}} {{tableRestaurant.personenAnzahlValue10}}  {{tableRestaurant.personenAnzahlValue11}} {{tableRestaurant.personenAnzahlValue12}} {{tableRestaurant.personenAnzahlValue13}} {{tableRestaurant.personenAnzahlValue14}} {{tableRestaurant.personenAnzahlValue15}} </b></p>
               </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div dropdownToggle type="button" style="background-color: red; color: white; padding: 10px;"  (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableRestaurant, j)" style="color: black"><b>Tisch hinzufügen</b></li>
-                  <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
-                  <li class="dropdown-item" (click)="removeTable(tableRestaurant, j)" style="color: black"><b>Tisch entfernen</b></li>
+              <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0; padding: 0px; overflow: auto">
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="addTable(tableRestaurant, j)" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0"></li>
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="removeTable(tableRestaurant, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" ><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableRestaurant.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableRestaurant.nameValue}}<br><b>Sprache:</b> {{tableRestaurant.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableRestaurant.zimmernummerValue}}<br><b>Preistyp: </b>{{tableRestaurant.preistypValue}}<br><b>Anreise: </b>{{tableRestaurant.anreiseValue}}<br><b>Abreise:</b> {{tableRestaurant.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableRestaurant.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableRestaurant.rbsouValue}}<br><b>Notiz2:</b> {{tableRestaurant.notiz2Value}}<b>Trace:</b> {{tableRestaurant.trace}}</div>
@@ -257,15 +257,15 @@
               <p><b>{{tableWintergarten.number}} | {{tableWintergarten.personenAnzahlValue}} {{tableWintergarten.personenAnzahlValue2}} {{tableWintergarten.personenAnzahlValue3}} {{tableWintergarten.personenAnzahlValue4}} {{tableWintergarten.personenAnzahlValue5}} {{tableWintergarten.personenAnzahlValue6}} {{tableWintergarten.personenAnzahlValue7}} {{tableWintergarten.personenAnzahlValue8}} {{tableWintergarten.personenAnzahlValue9}} {{tableWintergarten.personenAnzahlValue10}} {{tableWintergarten.personenAnzahlValue11}} {{tableWintergarten.personenAnzahlValue12}} {{tableWintergarten.personenAnzahlValue13}} {{tableWintergarten.personenAnzahlValue14}} {{tableWintergarten.personenAnzahlValue15}}</b></p>
               </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div dropdownToggle type="button" style="background-color: red; color: white; padding: 10px;"  (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableWintergarten, j)" style="color: black"><b>Tisch hinzufügen</b></li>
-                  <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
-                  <li class="dropdown-item" (click)="removeTable(tableWintergarten, j)" style="color: black"><b>Tisch entfernen</b></li>
+              <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0; padding: 0px; overflow: auto">
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="addTable(tableWintergarten, j)" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0"></li>
+                  <li class="dropdown-item" style="padding: 10px; color: black" (click)="removeTable(tableWintergarten, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" ><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableWintergarten.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableWintergarten.nameValue}}<br><b>Sprache:</b> {{tableWintergarten.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableWintergarten.zimmernummerValue}}<br><b>Preistyp: </b>{{tableWintergarten.preistypValue}}<br><b>Anreise: </b>{{tableWintergarten.anreiseValue}}<br><b>Abreise:</b> {{tableWintergarten.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableWintergarten.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableWintergarten.rbsouValue}}<br><b>Notiz2:</b> {{tableWintergarten.notiz2Value}}<b>Trace:</b> {{tableWintergarten.trace}}</div>
