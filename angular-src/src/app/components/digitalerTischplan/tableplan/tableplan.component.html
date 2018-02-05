@@ -16,7 +16,7 @@
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; max-height: 240px; overflow: auto" class="dropdowndropdown" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px" class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                 <div *ngIf="tableSonnbergZirbn.nameValue">
                   <div class="dropdown-item"><b>Name:</b> {{tableSonnbergZirbn.nameValue}}<br><b>Sprache:</b> {{tableSonnbergZirbn.spracheValue}}<br><b>Zimmer Nummer: </b>{{tableSonnbergZirbn.zimmernummerValue}}<br><b>Preistyp: </b>{{tableSonnbergZirbn.preistypValue}}<br><b>Anreise: </b>{{tableSonnbergZirbn.anreiseValue}}<br><b>Abreise:</b> {{tableSonnbergZirbn.abreiseValue}}<br><b>Personen Anzahl:</b>{{tableSonnbergZirbn.personenAnzahlValue}}<br><b>Reisebüro: </b>{{tableSonnbergZirbn.rbsouValue}}<br><b>Notiz2:</b> {{tableSonnbergZirbn.notiz2Value}}<b>Trace:</b> {{tableSonnbergZirbn.trace}}</div>

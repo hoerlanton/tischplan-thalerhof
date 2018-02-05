@@ -119,10 +119,10 @@ export class TischplanComponent {
 
     this.buttonBgColorInfoForm = "0a7a74";
     this.buttonBgColorNotizForm = "0a7a74";
-    this.buttonBgColorShowTablePlan= "0a7a74";
+    this.buttonBgColorShowTablePlan = "0a7a74";
     this.fontColorInfoForm = "f3efe4";
     this.fontColorNotizForm = "f3efe4";
-    this.fontColorShowTablePlan ="f3efe4";
+    this.fontColorShowTablePlan = "f3efe4";
     this.dateGeneratedListe = new Date();
     this.buttonBgColor1 = "0a7a74";
     this.buttonBgColor2 = "0a7a74";
@@ -183,8 +183,8 @@ export class TischplanComponent {
         }
       });
 
-      this.getTables();
-      this.reloadLists();
+    this.getTables();
+    this.reloadLists();
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
       this.onDrag(value.slice(1));
@@ -273,10 +273,10 @@ export class TischplanComponent {
   }
 
   /*
-  moveTable(table, j) {
-    this.tableplanComponent.moveTable(table, j);
-  }
-  */
+   moveTable(table, j) {
+   this.tableplanComponent.moveTable(table, j);
+   }
+   */
   sendInformation(event) {
     this.formComponent.sendInformation(event);
   }
@@ -292,6 +292,7 @@ export class TischplanComponent {
   abreisenRemoval() {
     this.departmentsComponent.occupy(this.abreiseTablePlusIndex.abreisenExport, this.abreiseTablePlusIndex.b);
   }
+
   umsetzen() {
     this.departmentsComponent.addInformationToTable(this.umsetzenInfoVar.tableInformationExport, this.umsetzenInfoVar.indexZiel);
     this.departmentsComponent.occupyTableOnDrop(this.umsetzenInfoVar.tableToMove, this.umsetzenInfoVar.indexZiel);
@@ -300,7 +301,8 @@ export class TischplanComponent {
       this.departmentsComponent.occupy(this.umsetzenInfoVar.tableToMove, this.umsetzenInfoVar.indexQuell);
     }, 2000);
   }
-  reloadLists(){
+
+  reloadLists() {
     this.tischplanService.getImHausListe()
       .subscribe(imHausListeElemente => {
         if (imHausListeElemente === null) {
@@ -358,9 +360,9 @@ export class TischplanComponent {
       });
   }
 
-  updateAzList(){
+  updateAzList() {
     setTimeout(() => {
-     this.getTables();
+      this.getTables();
       setTimeout(() => {
         console.log('this.tablesWintergarten:');
         console.log(this.tablesWintergarten);
@@ -372,7 +374,7 @@ export class TischplanComponent {
     }, 1000);
   }
 
-  getTables(){
+  getTables() {
     console.log('2222222222222222222222------------------------------');
     this.tischplanService.getTables()
       .subscribe(tables => {
@@ -426,17 +428,3 @@ export class TischplanComponent {
       });
   }
 }
-
-
-
-
-//this.departmentsComponent.occupy(tableToMove, j);
-
-
-
-
-
-
-
-
-
