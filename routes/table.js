@@ -162,6 +162,9 @@ module.exports = {
         let data = JSON.stringify(req.body);
         let splitted = data.split("\\");
         let informationElements2 = [];
+        let valueAnreise = "nAnreise";
+        let valueTrace= "nTrace";
+        let infoElementString = "";
 
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(":"));
@@ -175,7 +178,9 @@ module.exports = {
         console.log("4");
         console.log(informationElements2.length);
 
-        if (informationElements2.length >= 10) {
+        infoElementString = JSON.stringify(informationElements2);
+
+        if (infoElementString.indexOf(valueAnreise) != -1 && infoElementString.indexOf(valueTrace) === -1) {
             console.log("Im-Haus-Liste");
             departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValue = informationElements2[9][0].toString().match(/\d+/);
@@ -184,7 +189,7 @@ module.exports = {
             //console.log(tableValue);
             //console.log(occupyTable);
 
-        } else if (informationElements2.length === 9) {
+        } else if (infoElementString.indexOf(valueAnreise) === -1) {
             console.log("Anreise");
             departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValue = informationElements2[8][0].toString().match(/\d+/);
