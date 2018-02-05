@@ -380,17 +380,19 @@ export class TischplanComponent {
           return;
         } else {
           console.log("TABLES LENGTH: " + tables.length);
-          tables[3].tables.sort(function (a, b) {
-            if (Number(a.number) < Number(b.number))
-              return -1;
-            if (Number(a.number) > Number(b.number))
-              return 1;
-            return 0;
-          });
+          for (let a = 0; a < tables.length; a++) {
+            tables[a].tables.sort(function (a, b) {
+              if (Number(a.number) < Number(b.number))
+                return -1;
+              if (Number(a.number) > Number(b.number))
+                return 1;
+              return 0;
+            });
+          }
 
-          let sorted = tables.sort();
+          let sortedTablesRestaurant = tables[3].tables.sort();
           console.log('sorted:');
-          console.log(sorted);
+          console.log(sortedTablesRestaurant);
 
           for (let a = 0; a < tables.length; a++) {
             if (tables[a].department === "Panorama") {

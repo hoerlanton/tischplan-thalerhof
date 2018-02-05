@@ -3349,16 +3349,18 @@ var TischplanComponent = (function () {
             }
             else {
                 console.log("TABLES LENGTH: " + tables.length);
-                tables[3].tables.sort(function (a, b) {
-                    if (Number(a.number) < Number(b.number))
-                        return -1;
-                    if (Number(a.number) > Number(b.number))
-                        return 1;
-                    return 0;
-                });
-                var sorted = tables.sort();
+                for (var a = 0; a < tables.length; a++) {
+                    tables[a].tables.sort(function (a, b) {
+                        if (Number(a.number) < Number(b.number))
+                            return -1;
+                        if (Number(a.number) > Number(b.number))
+                            return 1;
+                        return 0;
+                    });
+                }
+                var sortedTablesRestaurant = tables[3].tables.sort();
                 console.log('sorted:');
-                console.log(sorted);
+                console.log(sortedTablesRestaurant);
                 for (var a = 0; a < tables.length; a++) {
                     if (tables[a].department === "Panorama") {
                         _this.tablesPanorama = tables[a].tables;
