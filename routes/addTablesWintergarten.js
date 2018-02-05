@@ -173,7 +173,7 @@ module.exports = {
                     console.log("addTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '519' && topValue === '230' && leftValue === '70' && width === '30') {
+        } else if (tableNumber === '519' && topValue === '230' && leftValue === '70' && height === '30') {
             db.tables.update(
                 {
                     department: departmentValue,
@@ -181,9 +181,9 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "60",
-                        "tables.$.transformValue": "rotate(90deg)",
-                        "tables.$.topValue": " 180"
+                        "tables.$.height": "60",
+                        "tables.$.topValue": "190",
+                        "tables.$.transformValue": "rotate(0deg)",
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -208,7 +208,7 @@ module.exports = {
                     console.log("addTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '519' && topValue === '180' && leftValue === '70' && width === '60') {
+        } else if (tableNumber === '519' && topValue === '190' && leftValue === '70' && height === '60') {
             db.tables.update(
                 {
                     department: departmentValue,
@@ -216,8 +216,9 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "90",
-                        "tables.$.topValue": "130"
+                        "tables.$.height": "90",
+                        "tables.$.topValue": "130",
+                        "tables.$.transformValue": "rotate(0deg)",
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -242,7 +243,7 @@ module.exports = {
                     console.log("addTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '520' && topValue === '180' && leftValue === '50' && width === '30') {
+        } else if (tableNumber === '520' && topValue === '180' && leftValue === '50' && height === '30') {
             db.tables.update(
                 {
                     department: departmentValue,
@@ -250,9 +251,9 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "60",
+                        "tables.$.height": "60",
                         "tables.$.topValue": "130",
-                        "tables.$.transformValue": "rotate(90deg)"
+                        "tables.$.transformValue": "rotate(0deg)"
                     }
                 }, function (err, tables) {
                     if (err) {

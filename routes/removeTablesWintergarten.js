@@ -245,7 +245,57 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-        } else if (tableNumber === '519' && topValue === '130' && leftValue === '70' && width === '90') {
+         } else if (tableNumber === '519' && topValue === '190' && leftValue === '70' && height === '60') {
+             db.tables.update(
+                 {
+                     department: departmentValue,
+                     "tables.number": tableNumber
+                 },
+                 {
+                     $set: {
+                         "tables.$.height": "30",
+                         "tables.$.topValue": "230",
+                         "transformValue": "rotate(-40deg)"
+                     }
+                 }, function (err, tables) {
+                     if (err) {
+                         console.log("Error");
+                     }
+                     console.log("moveTable Update successful");
+                 });
+             db.tables.update(
+                 {
+                     department: departmentValue,
+                 }, {
+                     $push: {
+                         tables: {
+                             $each: [ {
+                                 "arrayIndex": "19",
+                                 "department": "Wintergarten",
+                                 "number": "520",
+                                 "topValue": "180",
+                                 "leftValue": "50",
+                                 "bgColor": "#ffffff",
+                                 "isBesetzt": "false",
+                                 "placeholder": "true",
+                                 "border": "solid 3px #f3efe4",
+                                 "width": "60",
+                                 "height": "30",
+                                 "transformValue": "rotate(-20deg)"
+                             }],
+                             $sort: {number: 1}
+                         }
+                     }
+                 },
+                 {
+                     multi: true
+                 }, function (err, tables) {
+                     if (err) {
+                         console.log("Error");
+                     }
+                     console.log("addTable Update successful");
+                 });
+        } else if (tableNumber === '519' && topValue === '130' && leftValue === '70' && height === '90') {
             db.tables.update(
                 {
                     department: departmentValue,
@@ -253,7 +303,8 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "90",
+                        "tables.$.height": "60",
+                        "tables.$.topValue": "190"
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -261,38 +312,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
-                {
-                    department: departmentValue,
-                }, {
-                    $push: {
-                        tables: {
-                            $each: [ {
-                                "arrayIndex": "19",
-                                "department": "Wintergarten",
-                                "number": "520",
-                                "topValue": "180",
-                                "leftValue": "50",
-                                "bgColor": "#ffffff",
-                                "isBesetzt": "false",
-                                "placeholder": "true",
-                                "border": "solid 3px #f3efe4",
-                                "width": "30",
-                                "height": "60",
-                                "transformValue": "rotate(70deg)"
-                            }],
-                            $sort: {number: 1}
-                        }
-                    }
-                },
-                {
-                    multi: true
-                }, function (err, tables) {
-                    if (err) {
-                        console.log("Error");
-                    }
-                    console.log("addTable Update successful");
-                });
+
             db.tables.update(
                 {
                     department: departmentValue,
@@ -309,9 +329,8 @@ module.exports = {
                                 "isBesetzt": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
-                                "width": "30",
-                                "height": "60",
-                                "transformValue": "rotate(90deg)"
+                                "width": "60",
+                                "height": "30",
                             }],
                             $sort: {number: 1}
                         }
@@ -325,7 +344,8 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-         } else if (tableNumber === '520' && topValue === '130' && leftValue === '50' && width === '60') {
+
+         } else if (tableNumber === '520' && topValue === '130' && leftValue === '50' && height === '60') {
              db.tables.update(
                  {
                      department: departmentValue,
@@ -333,9 +353,8 @@ module.exports = {
                  },
                  {
                      $set: {
-                         "tables.$.width": "30",
+                         "tables.$.height": "30",
                          "tables.$.topValue": "180",
-                         "tables.$.transformValue": "rotate(70deg)"
                      }
                  }, function (err, tables) {
                      if (err) {
@@ -359,9 +378,60 @@ module.exports = {
                                  "isBesetzt": "false",
                                  "placeholder": "true",
                                  "border": "solid 3px #f3efe4",
-                                 "width": "30",
-                                 "height": "60",
-                                 "transformValue": "rotate(90deg)"
+                                 "width": "60",
+                                 "height": "30",
+                                 "transformValue": "rotate(0deg)"
+                             }],
+                             $sort: {number: 1}
+                         }
+                     }
+                 },
+                 {
+                     multi: true
+                 }, function (err, tables) {
+                     if (err) {
+                         console.log("Error");
+                     }
+                     console.log("addTable Update successful");
+                 });
+         } else if (tableNumber === '523' && topValue === '110' && leftValue === '260' && width === '80' && height === '40') {
+             db.tables.update(
+                 {
+                     department: departmentValue,
+                     "tables.number": tableNumber
+                 },
+                 {
+                     $set: {
+                         "tables.$.width": "40",
+                         "tables.$.height": "40",
+                         "tables.$.transformValue": "rotate(45deg)",
+                         "tables.$.topValue": "180"
+                     }
+                 }, function (err, tables) {
+                     if (err) {
+                         console.log("Error");
+                     }
+                     console.log("moveTable Update successful");
+                 });
+             db.tables.update(
+                 {
+                     department: departmentValue,
+                 }, {
+                     $push: {
+                         tables: {
+                             $each: [{
+                                 "arrayIndex": "23",
+                                 "department": "Wintergarten",
+                                 "number": "524",
+                                 "topValue": "115",
+                                 "leftValue": "300",
+                                 "bgColor": "#ffffff",
+                                 "isBesetzt": "false",
+                                 "placeholder": "true",
+                                 "border": "solid 3px #f3efe4",
+                                 "width": "40",
+                                 "height": "40",
+                                 "transformValue": "rotate(45deg)"
                              }],
                              $sort: {number: 1}
                          }
@@ -383,11 +453,10 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.topValue": "180",
+                        "tables.$.topValue": "110",
                         "tables.$.leftValue": "260",
-                        "tables.$.width": "40",
+                        "tables.$.width": "80",
                         "tables.$.height": "40",
-                        "tables.$.transformValue": "rotate(45deg)"
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -396,38 +465,7 @@ module.exports = {
                     console.log("moveTable Update successful");
                 });
 
-            db.tables.update(
-                {
-                    department: departmentValue,
-                }, {
-                    $push: {
-                        tables: {
-                            $each: [{
-                                "arrayIndex": "23",
-                                "department": "Wintergarten",
-                                "number": "524",
-                                "topValue": "115",
-                                "leftValue": "300",
-                                "bgColor": "#ffffff",
-                                "isBesetzt": "false",
-                                "placeholder": "true",
-                                "border": "solid 3px #f3efe4",
-                                "width": "40",
-                                "height": "40",
-                                "transformValue": "rotate(45deg)"
-                            }],
-                            $sort: {number: 1}
-                        }
-                    }
-                },
-                {
-                    multi: true
-                }, function (err, tables) {
-                    if (err) {
-                        console.log("Error");
-                    }
-                    console.log("addTable Update successful");
-                });
+
             db.tables.update(
                 {
                     department: departmentValue,

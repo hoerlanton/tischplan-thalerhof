@@ -188,7 +188,6 @@ module.exports = {
             //console.log(departmentValueDB);
             //console.log(tableValue);
             //console.log(occupyTable);
-
         } else if (infoElementString.indexOf(valueAnreise) === -1) {
             console.log("Anreise");
             departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
@@ -444,7 +443,8 @@ module.exports = {
                     "tables.$.newTraceDate2": 1,
                     "tables.$.newTraceTableNumber": 1,
                     "tables.$.newTraceTableNumber1": 1,
-                    "tables.$.newTraceTableNumber2": 1
+                    "tables.$.newTraceTableNumber2": 1,
+                    "tables.$.date": 1
                 }
             },
             new: false
@@ -645,7 +645,7 @@ module.exports = {
             abreiseValue = informationElements2[4].substring(1, informationElements2[4].length);
             for (let i = 5; i < informationElements2.length - 1; i++) {
                 trace += informationElements2[i].substring(1, informationElements2[i].length) + ", ";
-            };
+            }
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
             tableValue = tableValueArray[0];

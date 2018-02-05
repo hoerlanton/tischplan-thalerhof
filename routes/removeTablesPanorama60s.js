@@ -110,8 +110,8 @@ module.exports = {
                 {
                     $set: {
                         "tables.$.topValue": "440",
-                        "tables.$.leftValue": "220",
-                        "tables.$.width": "30",
+                        "tables.$.leftValue": "250",
+                        "tables.$.width": "90",
                     }
                 }, function (err, tables) {
                     if (err) {

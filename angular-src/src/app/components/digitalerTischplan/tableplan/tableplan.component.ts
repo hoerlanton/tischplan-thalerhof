@@ -38,11 +38,23 @@ export class TableplanComponent implements OnInit {
     console.log("moveTable clicked");
     console.log('table :' + table.number + 'j' + j);
     this.tischplanService.addTable(table).subscribe(response => {
+
+      for (let a = 0; a < response[0].tables.length; a++) {
+        response[0].tables.sort(function (a, b) {
+          if (Number(a.number) < Number(b.number))
+            return -1;
+          if (Number(a.number) > Number(b.number))
+            return 1;
+          return 0;
+        });
+      }
+
       console.log('Response:' + JSON.stringify(response));
       //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
       console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
       console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
       console.log("response[0].tables.department" + response[0].tables[j].department);
+
       if (response === null) {
         return;
       } else {
@@ -71,6 +83,17 @@ export class TableplanComponent implements OnInit {
     console.log("moveTable clicked");
     console.log('table :' + table.number + 'j' + j);
     this.tischplanService.removeTable(table).subscribe(response => {
+
+      for (let a = 0; a < response[0].tables.length; a++) {
+        response[0].tables.sort(function (a, b) {
+          if (Number(a.number) < Number(b.number))
+            return -1;
+          if (Number(a.number) > Number(b.number))
+            return 1;
+          return 0;
+        });
+      }
+
       console.log('Response:' + JSON.stringify(response));
       //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
       console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));

@@ -365,7 +365,7 @@ module.exports = {
                     console.log("removeTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '19' && topValue === '200' && leftValue === '550') {
+        } else if (tableNumber === '19' && topValue === '200' && leftValue === '550'  && width === '30') {
                 db.tables.update(
                     {
                         department: departmentValue,
@@ -388,41 +388,6 @@ module.exports = {
                         $pull: {
                             tables: {
                                 "number": "20",
-                            }
-                        }
-                    },
-                    {
-                        multi: true
-                    }, function (err, tables) {
-                        if (err) {
-                            console.log("Error");
-                        }
-                        console.log("removeTable Update successful");
-                        console.log(tables);
-                    });
-            } else if (tableNumber === '19' && topValue === '200' && leftValue === '580' && width === '60') {
-                db.tables.update(
-                    {
-                        department: departmentValue,
-                        "tables.number": tableNumber
-                    },
-                    {
-                        $set: {
-                            "tables.$.topValue": "200",
-                            "tables.$.leftValue": "580",
-                            "tables.$.width": "90",
-                        }
-                    }, function (err, tables) {
-                        if (err) {
-                            console.log("Error");
-                        }
-                        console.log("moveTable Update successful");
-                    });
-                db.tables.update(
-                    {}, {
-                        $pull: {
-                            tables: {
-                                "number": "21",
                             }
                         }
                     },
@@ -470,7 +435,7 @@ module.exports = {
                         console.log("removeTable Update successful");
                         console.log(tables);
                     });
-        } else if (tableNumber === '23' && topValue === '370' && leftValue === '640' && width === '30') {
+        } else if (tableNumber === '23' && topValue === '370' && leftValue === '640' && width === '60') {
             db.tables.update(
                 {
                     department: departmentValue,
