@@ -272,11 +272,6 @@ export class TischplanComponent {
     this.departmentmenuComponent.showPanorama();
   }
 
-  /*
-   moveTable(table, j) {
-   this.tableplanComponent.moveTable(table, j);
-   }
-   */
   sendInformation(event) {
     this.formComponent.sendInformation(event);
   }
@@ -285,8 +280,8 @@ export class TischplanComponent {
     this.navigationComponent.delete(informationElement, j, event);
   }
 
-  changeBgColorIfAnreise(tables) {
-    this.departmentsComponent.changeBgColorIfAnreise(tables);
+  changeBgColorIfAnreise() {
+    this.departmentsComponent.changeBgColorIfAnreise();
   }
 
   abreisenRemoval() {
@@ -415,7 +410,7 @@ export class TischplanComponent {
           console.log(this.tablesWintergarten);
           console.log(this.tablesSonnbergZirbn);
           console.log(this.tablesRestaurant);
-          this.changeBgColorIfAnreise(tables);
+          this.changeBgColorIfAnreise();
         }
 
 

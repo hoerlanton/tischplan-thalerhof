@@ -28,6 +28,8 @@ export class TableplanComponent implements OnInit {
   movedWintergarten: EventEmitter<any> = new EventEmitter();
   @Output()
   movedPanorama: EventEmitter<any> = new EventEmitter();
+  @Output()
+  changeBgColorIfAnreise: EventEmitter<any> = new EventEmitter();
   buttonMoveTable: string;
   buttonInfo: string;
   buttonHinzufuegen: string;
@@ -85,6 +87,7 @@ export class TableplanComponent implements OnInit {
           //this.tablesWintergarten = response[0].tables;
         }
       }
+      this.changeBgColorIfAnreise.emit();
     });
   }
 
@@ -129,6 +132,7 @@ export class TableplanComponent implements OnInit {
           //this.tablesWintergarten = response[0].tables;
         }
       }
+      this.changeBgColorIfAnreise.emit();
     });
   }
 

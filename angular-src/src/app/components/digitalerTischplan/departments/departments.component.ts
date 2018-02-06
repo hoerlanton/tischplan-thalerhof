@@ -174,7 +174,7 @@ export class DepartmentsComponent {
       });
   }
 
-  changeBgColorIfAnreise(tables) {
+  changeBgColorIfAnreise() {
     setTimeout(() => {
       this.tables = this.tablesTempAbreise;
 
