@@ -303,7 +303,6 @@ export class TischplanComponent {
         if (imHausListeElemente === null) {
           return;
         } else {
-
           imHausListeElemente.sort(function (a, b) {
             if (a.name < b.name) return -1;
             if (a.name > b.name) return 1;
@@ -377,18 +376,28 @@ export class TischplanComponent {
           return;
         } else {
           console.log("TABLES LENGTH: " + tables.length);
+          /*
           for (let a = 0; a < tables.length; a++) {
-            tables[a].tables.sort(function (a, b) {
-              if (Number(a.number) < Number(b.number))
-                return -1;
-              if (Number(a.number) > Number(b.number))
-                return 1;
-              return 0;
-            });
+            tables[a].tables.sort((a, b) => a.number - b.number); // Ascending sort
+            console.log(tables[a].tables);
           }
+           */
+          console.log(tables[2].tables);
+          console.log(JSON.stringify(tables[2].tables));
+          tables[3].tables.sort(function (a, b) {
+                console.log(+a.number);
+                console.log(+b.number);
+                if (+a.number < +b.number)
+                  return -1;
+                if (+a.number > +b.number)
+                  return 1;
+                return 0;
+              });
 
-          let sortedTablesRestaurant = tables[3].tables.sort();
+          let sortedTablesRestaurant = tables[2].tables.sort();
           console.log('sorted:');
+          console.log('Wintergarten sorted??? :');
+          console.log(JSON.stringify(tables[2].tables));
           console.log(sortedTablesRestaurant);
 
           for (let a = 0; a < tables.length; a++) {

@@ -207,4 +207,12 @@ export class TableplanComponent implements OnInit {
       this.buttonEntfernen = "ffffff";
     }
   }
+
+  getStyleTrace(j) {
+    if (j) {
+      return "solid 3px red";
+    } else {
+      return "";
+    }
+  }
 }
