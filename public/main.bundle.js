@@ -3441,7 +3441,7 @@ var TischplanComponent = (function () {
                  */
                 console.log(tables[2].tables);
                 console.log(JSON.stringify(tables[2].tables));
-                tables[3].tables.sort(function (a, b) {
+                tables[2].tables.sort(function (a, b) {
                     console.log(+a.number);
                     console.log(+b.number);
                     if (+a.number < +b.number)
