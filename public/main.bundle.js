@@ -3439,22 +3439,19 @@ var TischplanComponent = (function () {
                   console.log(tables[a].tables);
                 }
                  */
-                console.log(tables[2].tables);
-                console.log(JSON.stringify(tables[2].tables));
-                tables[2].tables.sort(function (a, b) {
-                    console.log(+a.number);
-                    console.log(+b.number);
-                    if (+a.number < +b.number)
+                var sortedArray = tables[2].tables.sort(function (a, b) {
+                    console.log(a.number);
+                    console.log(b.number);
+                    if (Number(a.number) < Number(b.number))
                         return -1;
-                    if (+a.number > +b.number)
+                    if (Number(a.number) > Number(b.number))
                         return 1;
                     return 0;
                 });
-                var sortedTablesRestaurant = tables[2].tables.sort();
+                var sortedTablesRestaurant = tables[3].tables.sort();
                 console.log('sorted:');
-                console.log('Wintergarten sorted??? :');
-                console.log(JSON.stringify(tables[2].tables));
-                console.log(sortedTablesRestaurant);
+                console.log(sortedArray);
+                console.log(tables[2].tables);
                 for (var a = 0; a < tables.length; a++) {
                     if (tables[a].department === "Panorama") {
                         _this.tablesPanorama = tables[a].tables;
