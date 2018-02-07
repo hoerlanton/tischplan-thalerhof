@@ -1,5 +1,7 @@
 .row4 {
   margin-top: 90px;
+  min-height: 40px;
+  z-index: 1;
 }
 
 @media (min-width: 500px) {
