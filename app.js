@@ -15,7 +15,8 @@ const   bodyParser = require('body-parser'),
     passport = require('passport'),
     mongoose = require('mongoose'),
     configDatabase = require('./config/database'),
-    users = require('./routes/users');
+    users = require('./routes/users'),
+    excel2Json = require('node-excel-to-json');
 
 
 //Bodyparser middleware
@@ -100,6 +101,19 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     let data = '';
     let csvRow = '';
     let json = [];
+
+    excel2Json("./uploads/" + uploadedFileName, function(err, output) {
+        console.log(output);
+    });
+
+    excel2Json("./uploads/" + uploadedFileName, {
+        'convert_all_sheet': false,
+        'return_type': 'File',
+        'sheetName': 'survey'
+    }, function(err, output) {
+        console.log(output);
+    });
+
 
     var readStream = fs.createReadStream(String("./uploads/" + uploadedFileName), 'binary');
 

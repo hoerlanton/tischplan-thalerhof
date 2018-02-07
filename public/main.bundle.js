@@ -3433,7 +3433,7 @@ var TischplanComponent = (function () {
             }
             else {
                 console.log("tables[3].tables");
-                console.log(JSON.parse(tables[3].tables));
+                //console.log(JSON.parse(tables[3].tables));
                 /*
                 for (let a = 0; a < tables.length; a++) {
                   tables[a].tables.sort((a, b) => a.number - b.number); // Ascending sort
