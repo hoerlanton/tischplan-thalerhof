@@ -73,7 +73,7 @@ html, body {
   padding: 0;
   min-height: auto;
   box-sizing: border-box;
-  z-index: 0;
+  z-index: 2;
 }
 
 .row .upload-col {
@@ -83,6 +83,7 @@ html, body {
   min-height: calc(100vh - 70px);
   max-height: calc(100vh - 70px);
   border-radius: 3px;
+  z-index: 1;
 }
 
 .section3 {
@@ -335,7 +336,7 @@ html, body {
     background-color: #f3efe4;
     padding: 20px 10px 20px 10px;
     box-sizing: border-box;
-    width: 24%;
+    width: 23%;
     margin: 60px 0 0 10px;
 
   }
@@ -347,6 +348,7 @@ html, body {
   .print-col {
     width: 48%;
     margin-left: 15px;
+    margin-right: 15px;
   }
 
   .row .upload-col {

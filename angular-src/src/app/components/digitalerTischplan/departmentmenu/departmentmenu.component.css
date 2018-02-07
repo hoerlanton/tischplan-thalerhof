@@ -1,7 +1,50 @@
+p {
+  margin: 8px 0px 0px 0px;
+  text-align: center;
+}
+
+.dropdown-menu .divider {
+  margin: 0px;
+}
+
+.dropdown-menu {
+  overflow: auto;
+  margin: 0 0 0 20px;
+  width: 200px;
+}
+
 .row4 {
   margin-top: 90px;
   min-height: 40px;
   z-index: 1;
+}
+
+.showSonnbergZirbn, .showPanorama, .showRestaurant, .showWintergarten, .showAlle {
+  padding: 10px;
+}
+
+
+
+.col-xs-3 {
+  width: 35%;
+  min-height: 40px;
+  width: 21%;
+  border-radius: 3px;
+}
+
+.btn-group-departments {
+  height: 45px;
+  width: auto;
+  margin: 0px 10px 5px 0px;
+  float: left;
+  text-align: right;
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.abteilungsButton {
+  color: #FFFFFF;
+  border: none;
 }
 
 @media (min-width: 500px) {

@@ -376,7 +376,9 @@ export class TischplanComponent {
         if (tables === null) {
           return;
         } else {
-          console.log("TABLES LENGTH: " + tables.length);
+
+          console.log("tables[3].tables");
+          console.log(JSON.parse(tables[3].tables));
           /*
           for (let a = 0; a < tables.length; a++) {
             tables[a].tables.sort((a, b) => a.number - b.number); // Ascending sort
@@ -394,10 +396,35 @@ export class TischplanComponent {
                 return 0;
               });
 
-          let sortedTablesRestaurant = tables[3].tables.sort();
+          let testTables = [{ number: "512"}, {number: "501"}, {number:  "505"}, {number:  "507"}, {number:  "508"}, {number:  "509"}, {number:  "510"}, {number:  "511"}, {number:  "503"}, {number:  "513"}, {number:  "514"}, {number:  "515"}, {number:  "517"}, {number:  "519"}, {number:  "521"}, {number: "522"}, {number:  "523"}];
+
+          console.log(testTables);
+          testTables.sort(function (a, b) {
+            console.log(a.number);
+            console.log(b.number);
+            if (Number(a.number) < Number(b.number))
+              return -1;
+            if (Number(a.number) > Number(b.number))
+              return 1;
+            return 0;
+          });
+
+           tables[3].tables.sort(function (a, b) {
+            console.log(a.number);
+            console.log(b.number);
+            if (Number(a.number) < Number(b.number))
+              return -1;
+            if (Number(a.number) > Number(b.number))
+              return 1;
+            return 0;
+          });
+
+          let sortedTablesWintergarten = tables[3].tables.sort();
           console.log('sorted:');
           console.log(sortedArray);
-          console.log(tables[2].tables)
+          console.log(tables[3].tables);
+          console.log(sortedTablesWintergarten);
+          console.log(testTables);
 
           for (let a = 0; a < tables.length; a++) {
             if (tables[a].department === "Panorama") {
