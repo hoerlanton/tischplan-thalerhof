@@ -386,7 +386,7 @@ export class TischplanComponent {
           }
            */
 
-          let sortedArray: any[] = tables[2].tables.sort(function (a, b) {
+         tables[2].tables.sort(function (a, b) {
                 console.log(a.number);
                 console.log(b.number);
                 if (Number(a.number) < Number(b.number))
@@ -395,7 +395,7 @@ export class TischplanComponent {
                   return 1;
                 return 0;
               });
-
+          /*
           let testTables = [{ number: "512"}, {number: "501"}, {number:  "505"}, {number:  "507"}, {number:  "508"}, {number:  "509"}, {number:  "510"}, {number:  "511"}, {number:  "503"}, {number:  "513"}, {number:  "514"}, {number:  "515"}, {number:  "517"}, {number:  "519"}, {number:  "521"}, {number: "522"}, {number:  "523"}];
 
           console.log(testTables);
@@ -420,11 +420,12 @@ export class TischplanComponent {
           });
 
           let sortedTablesWintergarten = tables[3].tables.sort();
-          console.log('sorted:');
-          console.log(sortedArray);
+           */
+          console.log('sorted?:');
+          //console.log(sortedArray);
           console.log(tables[3].tables);
-          console.log(sortedTablesWintergarten);
-          console.log(testTables);
+          //console.log(sortedTablesWintergarten);
+          //console.log(testTables);
 
           for (let a = 0; a < tables.length; a++) {
             if (tables[a].department === "Panorama") {
