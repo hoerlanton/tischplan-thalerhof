@@ -188,7 +188,7 @@ module.exports = {
             //console.log(departmentValueDB);
             //console.log(tableValue);
             //console.log(occupyTable);
-        } else if (infoElementString.indexOf(valueAnreise) === -1) {
+        } else if (infoElementString.indexOf(valueAnreise) === -1 && informationElements2.length > 1) {
             console.log("Anreise");
             departmentValue = informationElements2[8][0].substring(1, informationElements2[8][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValue = informationElements2[8][0].toString().match(/\d+/);
