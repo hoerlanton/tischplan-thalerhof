@@ -213,6 +213,8 @@ export class NavigationComponent implements OnInit {
     console.log("UMSETZTEN CALLED");
     let quellTisch = this.quellTisch;
     let zielTisch = this.zielTisch;
+    this.tableInformation = [];
+
 
     //let targetTable = this.quellTisch;
     //let quellTischNumber = this.quellTisch;
@@ -249,6 +251,7 @@ export class NavigationComponent implements OnInit {
 
     let indexZiel = 0;
     let indexQuell = 0;
+
     tableToMove.number = this.quellTisch;
     tableToMove.targetTable = this.zielTisch;
     console.log(tableToMove);
