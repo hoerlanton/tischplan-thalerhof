@@ -2,7 +2,6 @@ import { Component, ViewChild} from '@angular/core';
 import { TischplanService } from '../../services/tischplan.service';
 import { DragulaService } from "ng2-dragula";
 import { ImHausListe } from '../../../../ImHausListe';
-import { AnreiseListe } from '../../../../AnreiseListe';
 import { Table } from '../../../../Table';
 import { PrintComponent }  from './print/print.component';
 import { DepartmentmenuComponent }  from './departmentmenu/departmentmenu.component';
@@ -10,8 +9,6 @@ import { FormComponent }  from './form/form.component';
 import { ImHausListeComponent } from './im-haus-liste/im-haus-liste.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TableplanComponent } from './tableplan/tableplan.component';
-import { AnreiseListeComponent } from './anreise-liste/anreise-liste.component';
-import { TracesListeComponent } from './traces-liste/traces-liste.component';
 import { DepartmentsComponent } from './departments/departments.component';
 import { NavService }   from '../../services/tables.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -37,10 +34,6 @@ export class TischplanComponent {
   private navigationComponent: NavigationComponent;
   @ViewChild(TableplanComponent)
   private tableplanComponent: TableplanComponent;
-  @ViewChild(AnreiseListeComponent)
-  private anreiseListeComponent: AnreiseListeComponent;
-  @ViewChild(TracesListeComponent)
-  private tracesListeComponent: TracesListeComponent;
 
   //item: any;
   subscription: Subscription;
@@ -63,7 +56,6 @@ export class TischplanComponent {
   showAlleBool: boolean;
   topValues: any[] = [];
   imHausListeElemente: ImHausListe[];
-  anreiseListeElemente: AnreiseListe[];
   tablesTemp: any[] = [];
   tempTablesArray: any[] = [];
   tempTablesArray2: any[] = [];
@@ -241,8 +233,6 @@ export class TischplanComponent {
     this.departmentsComponent.addInformationToTable(dataString, arrayIndex);
     this.departmentsComponent.occupyTableOnDrop(dataString, arrayIndex);
     this.imHausListeComponent.updateImHausListeElement(informationElements2);
-    this.anreiseListeComponent.updateAnreiseListeElement(informationElements2);
-    this.tracesListeComponent.updateTracesListeElement(informationElements2);
   }
 
   private onOver(args) {
@@ -312,47 +302,13 @@ export class TischplanComponent {
 
           this.imHausListeElemente = imHausListeElemente;
           console.log(this.imHausListeElemente);
+
+          setTimeout(() => {
+            this.imHausListeComponent.sortList();
+          }, 3000);
         }
       });
 
-    this.tischplanService.getAnreiseListe()
-      .subscribe(anreiseListeElemente => {
-        if (anreiseListeElemente === null) {
-          return;
-        } else {
-
-          anreiseListeElemente.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-          });
-
-          this.anreiseListeElemente = anreiseListeElemente;
-          console.log(this.anreiseListeElemente);
-        }
-      });
-
-    this.tischplanService.getTracesListe()
-      .subscribe(tracesListeElemente => {
-        if (tracesListeElemente === null) {
-          return;
-        } else {
-
-          tracesListeElemente.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-          });
-
-
-          console.log('92' + JSON.stringify(tracesListeElemente));
-          //console.log("2:" + tracesListeElemente[0].data[0]);
-          //console.log(tracesListeElemente[0].data.length);
-          //this.tracesListeElemente = tracesListeElemente[0].data;
-          this.tracesListeElemente = tracesListeElemente;
-          //this.formatTracesListeElements(tracesListeElemente);
-        }
-      });
   }
 
   updateAzList() {

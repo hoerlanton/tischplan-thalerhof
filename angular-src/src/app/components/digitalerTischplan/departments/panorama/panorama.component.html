@@ -1,222 +1,41 @@
 <div *ngIf="showPanoramaBool">
-  <div *ngFor="let tablePanorama of tablesPanorama | filter:term; let j = index;">
+  <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
     <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-      <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-      <h4><b> Tisch: {{tablePanorama.number}}</b> </h4><br>
-      <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
+      <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF"  type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+      <h4><b> Tisch:</b>{{tablePanorama.number}} </h4><br>
+      <div class='cards-container' id='containerBauernstube' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
           <div *ngIf="tablePanorama.isBesetzt === 'true'">
-            <div [style.border]="getStyle(tablesPanorama[j].trace)">
-            <p style="background-color: #FFFFFF; padding: 10px">
-              <b> Name:</b> {{tablePanorama.nameValue}}<br>
-              <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue}}<br>
-              <b> Anreise Datum:</b> {{tablePanorama.anreiseValue}}<br>
-              <b> Abreise Datum:</b> {{tablePanorama.abreiseValue}}<br>
-              <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue}}<br>
-              <b> Notiz2:</b> {{tablePanorama.notiz2Value}}<br>
-              <b> Trace:</b> {{tablePanorama.trace}}<br>
-            </p>
-            </div>
-            <div *ngIf="tablePanorama.nameValue2">
-              <div [style.border]="getStyle(tablesPanorama[j].trace2)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue2}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue2}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue2}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue2}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue2}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value2}}<br>
-                <b> Trace:</b> {{tablePanorama.trace2}}<br>
-              </p>
+            <div *ngFor="let group of tablePanorama.groups | filter:term; let j = index;">
+              <div [style.border]="getStyle(group.traceValue)">
+                <div *ngIf="group.nameValue">
+                  <p style="background-color: #FFFFFF; padding: 10px">
+                    <b> Name:</b> {{group.nameValue}}<br>
+                    <b> Zimmernummer:</b> {{group.zimmernummerValue}}<br>
+                    <b> Anreise Datum:</b> {{group.anreiseValue}}<br>
+                    <b> Abreise Datum:</b> {{group.abreiseValue}}<br>
+                    <b> Personenanzahl:</b> {{group.personenAnzahlValue}}<br>
+                    <b> Nation:</b> {{group.nationValue}}<br>
+                    <b> Sprache:</b> {{group.spracheValue}}<br>
+                    <b> Preis Typ:</b> {{group.preisTypValue}}<br>
+                    <b> Reisebüro:</b> {{group.notiz1Value}}<br>
+                    <b> Kategorie:</b> {{group.kategorieValue}}<br>
+                    <b> Notiz1:</b> {{group.notiz1Value}}<br>
+                    <b> Notiz2:</b> {{group.notiz2Value}}<br>
+                    <b> Trace:</b> {{group.traceValue}}<br>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue3">
-              <div [style.border]="getStyle(tablesPanorama[j].trace3)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue3}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue3}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue3}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue3}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue3}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value3}}<br>
-                <b> Trace:</b> {{tablePanorama.trace3}}<br>
-              </p>
-            </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue4">
-              <div [style.border]="getStyle(tablesPanorama[j].trace4)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue4}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue4}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue4}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue4}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue4}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value4}}<br>
-                <b> Trace:</b> {{tablePanorama.trace4}}<br>
-              </p>
-            </div>
-            <div *ngIf="tablePanorama.nameValue5">
-              <div [style.border]="getStyle(tablesPanorama[j].trace5)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue5}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue5}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue5}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue5}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue5}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value5}}<br>
-                <b> Trace:</b> {{tablePanorama.trace5}}<br>
-              </p>
+              <div *ngIf="group.newTraceName">
+                <p style="background-color: #FFFFFF; border: solid 3px red">
+                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}
+                </p>
               </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue6">
-              <div [style.border]="getStyle(tablesPanorama[j].trace6)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue6}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue6}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue6}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue6}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue6}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value6}}<br>
-                <b> Trace:</b> {{tablePanorama.trace6}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue7">
-              <div [style.border]="getStyle(tablesPanorama[j].trace7)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue7}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue7}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue7}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue7}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue7}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value7}}<br>
-                <b> Trace:</b> {{tablePanorama.trace7}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue8">
-              <div [style.border]="getStyle(tablesPanorama[j].trace8)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue8}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue8}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue8}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue8}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue8}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value8}}<br>
-                <b> Trace:</b> {{tablePanorama.trace8}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue9">
-              <div [style.border]="getStyle(tablesPanorama[j].trace9)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue9}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue9}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue9}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue9}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue9}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value9}}<br>
-                <b> Trace:</b> {{tablePanorama.trace9}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue10">
-              <div [style.border]="getStyle(tablesPanorama[j].trace10)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue10}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue10}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue10}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue10}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue10}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value10}}<br>
-                <b> Trace:</b> {{tablePanorama.trace10}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue11">
-              <div [style.border]="getStyle(tablesPanorama[j].trace11)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue11}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue11}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue11}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue11}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue11}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value11}}<br>
-                <b> Trace:</b> {{tablePanorama.trace11}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue12">
-              <div [style.border]="getStyle(tablesPanorama[j].trace12)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue12}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue12}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue12}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue12}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue12}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value12}}<br>
-                <b> Trace:</b> {{tablePanorama.trace12}}<br>
-              </p>
-            </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue13">
-              <div [style.border]="getStyle(tablesPanorama[j].trace13)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue13}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue13}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue13}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue13}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue13}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value13}}<br>
-                <b> Trace:</b> {{tablePanorama.trace13}}<br>
-              </p>
-            </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue14">
-              <div [style.border]="getStyle(tablesPanorama[j].trace14)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue14}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue14}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue14}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue14}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue14}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value14}}<br>
-                <b> Trace:</b> {{tablePanorama.trace14}}<br>
-              </p>
-            </div>
-            </div>
-            <div *ngIf="tablePanorama.nameValue15">
-              <div [style.border]="getStyle(tablesPanorama[j].trace15)">
-              <p style="background-color: #FFFFFF; padding: 10px">
-                <b> Name:</b> {{tablePanorama.nameValue15}}<br>
-                <b> Zimmernummer:</b> {{tablePanorama.zimmernummerValue15}}<br>
-                <b> Anreise Datum:</b> {{tablePanorama.anreiseValue15}}<br>
-                <b> Abreise Datum:</b> {{tablePanorama.abreiseValue15}}<br>
-                <b> Personenanzahl:</b> {{tablePanorama.personenAnzahlValue15}}<br>
-                <b> Notiz2:</b> {{tablePanorama.notiz2Value15}}<br>
-                <b> Trace:</b> {{tablePanorama.trace15}}<br>
-              </p>
-              </div>
-            </div>
-            <div *ngIf="tablePanorama.newTraceText">
-              <p style="background-color: #FFFFFF; border: solid 3px red">
-                <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee}} <br> <b> Name: </b>{{tablePanorama.newTraceName}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate}}
-              </p>
-            </div>
-            <div *ngIf="tablePanorama.newTraceText1">
-              <p style="background-color: #FFFFFF; border: solid 3px red">
-                <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber1}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText1}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber1}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee1}} <br> <b> Name: </b>{{tablePanorama.newTraceName1}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate1}}
-              </p>
-            </div>
-            <div *ngIf="tablePanorama.newTraceText2">
-              <p style="background-color: #FFFFFF; border: solid 3px red">
-                <b> Zimmernummer: </b>{{tablePanorama.newTraceRoomNumber2}}<br> <b> Neuer Trace: </b>{{tablePanorama.newTraceText2}} <br> <b> Tischnummer: </b>{{tablePanorama.newTraceTableNumber2}} <br> <b> Mitarbeiter: </b>{{tablePanorama.newTraceEmployee2}} <br> <b> Name: </b>{{tablePanorama.newTraceName2}} <br> <b> Datum: </b>{{tablePanorama.newTraceDate2}}
-              </p>
             </div>
           </div>
         </div>
         <div *ngIf="tablePanorama.placeholder === 'true'">
-          <p [dragula]='"evented-bag"' id="Panorama" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!  {{tablePanorama.number}} {{tablePanorama.department}} {{j}}</p>
+          <p [dragula]='"evented-bag"' id="Bauernstube" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tablePanorama.number}} {{tablePanorama.department}} {{j}}</p>
         </div>
       </div>
     </div>

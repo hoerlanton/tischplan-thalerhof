@@ -29,7 +29,7 @@ export class RestaurantComponent implements OnInit {
   }
 
   getStyle(j) {
-    if (j) {
+    if (j != "-") {
       return "solid 3px red";
     } else {
       return "";

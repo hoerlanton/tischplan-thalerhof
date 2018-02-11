@@ -31,96 +31,33 @@ module.exports = {
     },
     newInformationToTable: function (req, res, db) {
 
-        console.log("newInformationToTable post called");
-
-        let newInformation = req.body;
-
-        //console.log(req.body);
+        console.log("newInformationToTables post called");
         //Get guests from Mongo DB
 
-        setTimeout(function () {
-            db.tables.findOne(
-                {
-                    "tables.number": newInformation.tableNumber
-                },
-                {
-                    "tables.$": 1,
-                },
-                function (err, tablesfirst) {
-                    if (err) {
-                        res.send(err);
-                    }
-                    if (tablesfirst === null) {
-                        console.log("tablesfirst is null");
-                        return;
-                    }
-                    console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
-                    if (!("newTraceText" in tablesfirst.tables[0])) {
-                        db.tables.update(
-                            {
-                                "tables.number": newInformation.tableNumber,
-                            },
-                            {
-                                $set: {
-                                    "tables.$.newTraceText": newInformation.text,
-                                    "tables.$.newTraceRoomNumber": newInformation.roomNumber,
-                                    "tables.$.newTraceName": newInformation.name,
-                                    "tables.$.newTraceEmployee": newInformation.employee,
-                                    "tables.$.newTraceDate": newInformation.date,
-                                    "tables.$.newTraceTableNumber": newInformation.tableNumber
-                                }
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
-                                }
-                                console.log("addInformationToTable updated successfully");
-                            });
-                    } else if (!("newTraceText1" in tablesfirst.tables[0])) {
+        console.log(req.body);
+        let newInformation = req.body;
 
-                        db.tables.update(
-                            {
-                                "tables.number": newInformation.tableNumber,
-                            },
-                            {
-                                $set: {
-                                    "tables.$.newTraceText1": newInformation.text,
-                                    "tables.$.newTraceRoomNumber1": newInformation.roomNumber,
-                                    "tables.$.newTraceName1": newInformation.name,
-                                    "tables.$.newTraceEmployee1": newInformation.employee,
-                                    "tables.$.newTraceDate1": newInformation.date,
-                                    "tables.$.newTraceTableNumber1": newInformation.tableNumber
-                                }
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
-                                }
-                                console.log("addInformationToTable updated successfully");
-                            });
-                    } else if (!("newTraceText2" in tablesfirst.tables[0])) {
-
-                        db.tables.update(
-                            {
-                                "tables.number": newInformation.tableNumber,
-                            },
-                            {
-                                $set: {
-                                    "tables.$.newTraceText2": newInformation.text,
-                                    "tables.$.newTraceRoomNumber2": newInformation.roomNumber,
-                                    "tables.$.newTraceName2": newInformation.name,
-                                    "tables.$.newTraceEmployee2": newInformation.employee,
-                                    "tables.$.newTraceDate2": newInformation.date,
-                                    "tables.$.newTraceTableNumber2": newInformation.tableNumber
-
-                                }
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
-                                }
-                                console.log("addInformationToTable updated successfully");
-                            });
+        db.tables.update(
+            {
+                "tables.number": newInformation.tableNumber,
+            },
+            {
+                $push: {
+                    "tables.$.groups": {
+                        "newTraceText": newInformation.text,
+                        "newTraceRoomNumber": newInformation.roomNumber,
+                        "newTraceName": newInformation.name,
+                        "newTraceEmployee": newInformation.employee,
+                        "newTraceDate": newInformation.date,
+                        "newTraceTableNumber": newInformation.tableNumber
                     }
-                });
-        }, 300);
+                }
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("addInformationToTable updated successfully");
+            });
 
         setTimeout(function () {
             db.tables.findOne(
@@ -135,11 +72,10 @@ module.exports = {
                         res.send(err);
                     }
                     res.json(tables);
-                    //console.log(JSON.stringify(tables));
+                    console.log(JSON.stringify(tables));
                 });
         }, 500);
     },
-
     getInformationEmployees: function (req, res, db) {
         console.log("getInformationEmployees get called");
         //Get guests from Mongo DB

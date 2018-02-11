@@ -20,8 +20,6 @@ import { FormComponent } from './components/digitalerTischplan/form/form.compone
 import { TableplanComponent } from './components/digitalerTischplan/tableplan/tableplan.component';
 import { DepartmentmenuComponent } from './components/digitalerTischplan/departmentmenu/departmentmenu.component';
 import { ImHausListeComponent } from './components/digitalerTischplan/im-haus-liste/im-haus-liste.component';
-import { AnreiseListeComponent } from './components/digitalerTischplan/anreise-liste/anreise-liste.component';
-import { TracesListeComponent } from './components/digitalerTischplan/traces-liste/traces-liste.component';
 import { DepartmentsComponent } from './components/digitalerTischplan/departments/departments.component';
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -59,8 +57,6 @@ const appRoutes: Routes =  [
     TableplanComponent,
     DepartmentmenuComponent,
     ImHausListeComponent,
-    AnreiseListeComponent,
-    TracesListeComponent,
     DepartmentsComponent,
     AlleComponent,
     LoginComponent,

@@ -29,7 +29,8 @@ export class PanoramaComponent implements OnInit {
     this.occupied.emit({table, j});
   }
   getStyle(j) {
-    if (j) {
+    //console.log(j);
+    if (j != "-") {
   return "solid 3px red";
     } else {
       return "";

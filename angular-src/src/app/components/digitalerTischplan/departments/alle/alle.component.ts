@@ -14,6 +14,8 @@ export class AlleComponent implements OnInit {
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showAlleBool') showAlleBool: boolean;
   @Input('term') term: string;
+  @Input('tables') tables: any;
+
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
   dateGenerated: any;
@@ -30,7 +32,7 @@ export class AlleComponent implements OnInit {
   }
 
   getStyle(j) {
-    if (j) {
+    if (j != "-") {
       return "solid 3px red";
     } else {
       return "";

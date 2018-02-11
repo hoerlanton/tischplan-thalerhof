@@ -7,7 +7,7 @@ const   express = require('express'),
     jwt = require('jsonwebtoken'),
     config = require('../config/database'),
     User = require('../models/user'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tablesTemp', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
     anreiseliste = require('./anreiseListe.js'),
     imHausListe = require('./imHausListe.js'),
     traceListe = require('./traceListe.js'),
@@ -15,7 +15,9 @@ const   express = require('express'),
     notiz = require('./notiz.js'),
     placeholder = require('./placeholder.js'),
     table = require('./table.js'),
-    users = require('./users.js');
+    users = require('./users.js'),
+    tableAddInformation = require('./tableAddInformation.js');
+
 
 //Bodyparser middleware
 router.use(bodyParser.urlencoded({ extended: false}));
@@ -89,7 +91,7 @@ router.post('/dispenseTable', function(req, res, next) {
 table.dispenseTable(req, res, db)});
 //addInformationToTable
 router.post('/addInformationToTable', function(req, res, next) {
-table.addInformationToTable(req, res, db)});
+tableAddInformation.addInformationToTable(req, res, db)});
 //addInformationToTable
 router.get('/getNotiz', function(req, res, next) {
 notiz.getNotiz(req, res, db)});

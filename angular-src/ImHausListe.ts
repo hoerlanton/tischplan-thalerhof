@@ -1,11 +1,17 @@
 export class ImHausListe {
   name: string;
+  nation: string;
+  sprache: string;
   zimmernummer: string;
-  personenAnzahl: string;
+  kat: string;
+  pTyp: string;
   anreise: string;
   abreise: string;
-  notiz1: string;
+  erwKi: string;
+  rbSou: string;
   notiz2: string;
-  bemerkung: string;
+  trace: string;
+  notiz1: string;
   bgColor: string;
+  isAnreise: boolean;
 }
