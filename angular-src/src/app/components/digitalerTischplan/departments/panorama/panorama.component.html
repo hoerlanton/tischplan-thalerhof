@@ -3,10 +3,10 @@
     <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
       <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF"  type="button" class="btn btn-send" (click)="occupy(tablePanorama, j)">{{tablePanorama.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
       <h4><b> Tisch:</b>{{tablePanorama.number}} </h4><br>
-      <div class='cards-container' id='containerBauernstube' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
+      <div class='cards-container' id='containerPanorama' [ngStyle]="{'background-color': + tablePanorama.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + tablePanorama.bgColor}">
           <div *ngIf="tablePanorama.isBesetzt === 'true'">
-            <div *ngFor="let group of tablePanorama.groups | filter:term; let j = index;">
+            <div *ngFor="let group of tablePanorama.groups; let j = index;">
               <div [style.border]="getStyle(group.traceValue)">
                 <div *ngIf="group.nameValue">
                   <p style="background-color: #FFFFFF; padding: 10px">
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div *ngIf="tablePanorama.placeholder === 'true'">
-          <p [dragula]='"evented-bag"' id="Bauernstube" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tablePanorama.number}} {{tablePanorama.department}} {{j}}</p>
+          <p [dragula]='"evented-bag"' id="Panorama" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tablePanorama.number}} {{tablePanorama.department}} {{j}}</p>
         </div>
       </div>
     </div>

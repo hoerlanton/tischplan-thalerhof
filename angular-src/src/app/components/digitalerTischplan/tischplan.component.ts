@@ -133,6 +133,7 @@ export class TischplanComponent {
     this.showRestaurantBool = false;
     this.showWintergartenBool = false;
     this.showAlleBool = false;
+    this.term = "";
 
     this.tischplanService.getInformationElements()
       .subscribe(informationElemente => {
@@ -250,6 +251,11 @@ export class TischplanComponent {
     this.departmentmenuComponent.showWintergarten();
   }
 
+  transform(term){
+    this.departmentsComponent.transform(term);
+  }
+
+
   showRestaurant() {
     this.departmentmenuComponent.showRestaurant();
   }
@@ -341,16 +347,23 @@ export class TischplanComponent {
             console.log(tables[a].tables);
           }
            */
-
-         tables[2].tables.sort(function (a, b) {
-                console.log(a.number);
-                console.log(b.number);
+          for (let x = 0; x < tables.length; x++){
+            //console.log("tables[x].department");
+            //console.log(tables[x].department);
+            if (tables[x].department === "Restaurant") {
+              tables[x].tables.sort(function (a, b) {
+                //console.log(a.number);
+                //console.log(b.number);
                 if (Number(a.number) < Number(b.number))
                   return -1;
                 if (Number(a.number) > Number(b.number))
                   return 1;
                 return 0;
               });
+            }
+            }
+
+
           /*
           let testTables = [{ number: "512"}, {number: "501"}, {number:  "505"}, {number:  "507"}, {number:  "508"}, {number:  "509"}, {number:  "510"}, {number:  "511"}, {number:  "503"}, {number:  "513"}, {number:  "514"}, {number:  "515"}, {number:  "517"}, {number:  "519"}, {number:  "521"}, {number: "522"}, {number:  "523"}];
 
@@ -389,7 +402,7 @@ export class TischplanComponent {
             }
             else if (tables[a].department === "Wintergarten") {
               this.tablesWintergarten = tables[a].tables;
-              console.log('Test' + JSON.stringify(this.tablesWintergarten));
+              //console.log('Test' + JSON.stringify(this.tablesWintergarten));
             }
             else if (tables[a].department === "Sonnberg-Zirbn") {
               this.tablesSonnbergZirbn = tables[a].tables;
@@ -404,7 +417,6 @@ export class TischplanComponent {
           console.log(this.tablesRestaurant);
           this.changeBgColorIfAnreise();
         }
-
 
         this.tablesTempAbreise = tables;
         this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);

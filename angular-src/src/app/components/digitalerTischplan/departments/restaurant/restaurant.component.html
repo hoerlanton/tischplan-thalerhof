@@ -3,10 +3,10 @@
     <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
       <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF"  type="button" class="btn btn-send" (click)="occupy(tableRestaurant, j)">{{tableRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
       <h4><b> Tisch:</b>{{tableRestaurant.number}} </h4><br>
-      <div class='cards-container' id='containerBauernstube' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
+      <div class='cards-container' id='containerRestaurant' [ngStyle]="{'background-color': + tableRestaurant.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + tableRestaurant.bgColor}">
           <div *ngIf="tableRestaurant.isBesetzt === 'true'">
-            <div *ngFor="let group of tableRestaurant.groups | filter:term; let j = index;">
+            <div *ngFor="let group of tableRestaurant.groups; let j = index;">
               <div [style.border]="getStyle(group.traceValue)">
                 <div *ngIf="group.nameValue">
                   <p style="background-color: #FFFFFF; padding: 10px">
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div *ngIf="tableRestaurant.placeholder === 'true'">
-          <p [dragula]='"evented-bag"' id="Bauernstube" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}} {{j}}</p>
+          <p [dragula]='"evented-bag"' id="Restaurant" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}} {{j}}</p>
         </div>
       </div>
     </div>

@@ -72,7 +72,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
       </tr>
-      <div *ngFor="let table of tablesBauernstube">
+      <div *ngFor="let table of tablesSonnbergZirbn">
         <div *ngFor="let group of table.groups">
           <tr style="border: solid 1px black;">
             <div *ngIf="group.nameValue">
@@ -143,7 +143,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Neuer Trace</th>
       </tr>
-      <div *ngFor="let table of tablesWaeldlerStubeKristallStube">
+      <div *ngFor="let table of tablesPanorama">
         <div *ngFor="let group of table.groups">
           <tr style="border: solid 1px black;">
             <div *ngIf="group.nameValue">
@@ -214,7 +214,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Neuer Trace</th>
       </tr>
-      <div *ngFor="let table of tablesBerglerStubeHubertusStube">
+      <div *ngFor="let table of tablesRestaurant">
         <div *ngFor="let group of table.groups">
           <tr style="border: solid 1px black;">
             <div *ngIf="group.nameValue">
@@ -285,7 +285,7 @@
       <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Neuer Trace</th>
     </tr>
-    <div *ngFor="let table of tablesBerglerStubeHubertusStube">
+    <div *ngFor="let table of tablesWintergarten">
       <div *ngFor="let group of table.groups">
         <tr style="border: solid 1px black;">
           <div *ngIf="group.nameValue">

@@ -7,6 +7,10 @@ import { NavService }   from '../../../services/tables.service';
 import { TischplanComponent } from '../tischplan.component';
 import { DragulaService } from "ng2-dragula";
 import { Http, Headers } from '@angular/http';
+import {AlleComponent} from "./alle/alle.component";
+import {PanoramaComponent} from "./panorama/panorama.component";
+import {RestaurantComponent} from "./restaurant/restaurant.component";
+import {SonnbergZirbnComponent} from "./sonnberg-zirbn/sonnberg-zirbn.component";
 
 
 
@@ -30,7 +34,21 @@ export class DepartmentsComponent {
   @Input('showAlleBool') showAlleBool: boolean;
   @Input() tablesTempAbreise: any;
   @Input('term') term: string;
-  @Output()
+  @ViewChild(AlleComponent)
+  private alleComponent: AlleComponent;
+
+  @ViewChild(PanoramaComponent)
+  private panoramaComponent: PanoramaComponent;
+
+  @ViewChild(RestaurantComponent)
+  private restaurantComponent: RestaurantComponent;
+
+  @ViewChild(WintergartenComponent)
+  private wintergartenComponent: WintergartenComponent;
+
+  @ViewChild(SonnbergZirbnComponent)
+  private sonnbergZirbnComponent: SonnbergZirbnComponent;
+
   dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedRestaurant:EventEmitter<any> = new EventEmitter();
@@ -127,17 +145,17 @@ export class DepartmentsComponent {
           if (response === null) {
             return;
           } else {
-            if (response.tables[0].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
+            if (response[0].department === "Sonnberg-Zirbn") {
+              this.dispensedSonnbergZirbn.emit(response[0].tables);
             }
-            else if (response.tables[0].department === "Panorama") {
-              this.tablesPanorama[arrayIndex] = response.tables[0];
+            else if (response[0].department === "Panorama") {
+              this.dispensedPanorama.emit(response[0].tables);
             }
-            else if (response.tables[0].department === "Restaurant") {
-              this.tablesRestaurant[arrayIndex] = response.tables[0];
+            else if (response[0].department === "Restaurant") {
+              this.dispensedRestaurant.emit(response[0].tables);
             }
-            else if (response.tables[0].department === "Wintergarten") {
-              this.tablesWintergarten[arrayIndex] = response.tables[0];
+            else if (response[0].department === "Wintergarten") {
+              this.dispensedWintergarten.emit(response[0].tables);
             }
           }
         }
@@ -178,16 +196,20 @@ export class DepartmentsComponent {
   changeBgColorIfAnreise() {
     setTimeout(() => {
       this.tablesChangeBgColorIfAnreise = this.tablesTempAbreise;
-      console.log('=================================================changeBgColorIfAnreise');
-      console.log(this.tablesChangeBgColorIfAnreise);
+      //console.log('=================================================changeBgColorIfAnreise');
+      //console.log(this.tablesChangeBgColorIfAnreise);
       this.dateTodayGenerated = new Date();
+      this.parts = [];
+      this.parsedDate = [];
+      this.date = [];
+
 
       for (let a = 0; a < this.tablesChangeBgColorIfAnreise.length; a++) {
         for (let b = 0; b < this.tablesChangeBgColorIfAnreise[a].tables.length; b++) {
           if (this.tablesChangeBgColorIfAnreise[a].tables[b].groups) {
             for (let c = 0; c < this.tablesChangeBgColorIfAnreise[a].tables[b].groups.length; c++) {
               if (this.tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue) {
-                console.log('tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue: ' + c + " " + this.tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue);
+                //console.log('tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue: ' + c + " " + this.tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue);
                 this.parts[0] = this.tablesChangeBgColorIfAnreise[a].tables[b].groups[c].anreiseValue.match(/(\d+)/g);
               } else {
                 this.parts[0] = "undefined";
@@ -201,22 +223,30 @@ export class DepartmentsComponent {
               // Mon May 31 2010 00:00:00
               // this.tablesRestaurant[j].anreiseValue
               let dateToday = String(this.dateTodayGenerated).substring(0, 15);
-              console.log('Parsed Date --->: ' + this.parsedDate[0]);
-              console.log('this.dateGenerated --->: ' + dateToday);
+              //console.log('Parsed Date --->: ' + this.parsedDate[0]);
+              //console.log('this.dateGenerated --->: ' + dateToday);
               if (dateToday.indexOf(this.parsedDate[0]) !== -1) {
-                if (this.tables[a].department === "Panorama") {
-                  console.log(this.tablesPanorama);
-                  console.log(this.tablesPanorama[b]);
-                  this.tablesPanorama[b].bgColor = "#0a7a74";
+                if (this.tablesChangeBgColorIfAnreise[a].department === "Panorama") {
+                  //console.log(this.tablesPanorama);
+                  if (this.tablesPanorama[b]) {
+                    //console.log(this.tablesPanorama[b]);
+                    this.tablesPanorama[b].bgColor = "#0a7a74";
+                  }
                 }
-                else if (this.tables[a].department === "Wintergarten") {
-                  this.tablesWintergarten[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfAnreise[a].department === "Wintergarten") {
+                  if (this.tablesWintergarten[b]) {
+                    this.tablesWintergarten[b].bgColor = "#0a7a74";
+                  }
                 }
-                else if (this.tables[a].department === "Sonnberg-Zirbn") {
-                  this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfAnreise[a].department === "Sonnberg-Zirbn") {
+                  if (this.tablesSonnbergZirbn[b]) {
+                    this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                  }
                 }
-                else if (this.tables[a].department === "Restaurant") {
-                  this.tablesRestaurant[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfAnreise[a].department === "Restaurant") {
+                  if (this.tablesRestaurant[b]) {
+                    this.tablesRestaurant[b].bgColor = "#0a7a74";
+                  }
                 }
               }
             }
@@ -225,4 +255,19 @@ export class DepartmentsComponent {
       }
     }, 1000);
   }
+
+  transform(term) {
+      if (this.showPanoramaBool) {
+      this.panoramaComponent.transform(this.tablesPanorama, term);
+       } else if (this.showRestaurantBool) {
+       this.restaurantComponent.transform(this.tablesRestaurant, term);
+       } else if (this.showWintergartenBool) {
+       this.wintergartenComponent.transform(this.tablesWintergarten, term);
+       } else if (this.showSonnbergZirbnBool) {
+       this.sonnbergZirbnComponent.transform(this.tablesSonnbergZirbn, term);
+       } else if (this.showAlleBool) {
+        this.alleComponent.transform(this.tables, term);
+
+      }
+    }
 }

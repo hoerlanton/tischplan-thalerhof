@@ -26,6 +26,8 @@ export class NavigationComponent implements OnInit {
   termExport:EventEmitter<any> = new EventEmitter();
   @Output()
   reloadLists:EventEmitter<any> = new EventEmitter();
+  @Output()
+  transformExport:EventEmitter<any> = new EventEmitter();
   dateTodayGenerated: any;
   date: any[] = [];
   parts: any[] = [];
@@ -251,6 +253,7 @@ export class NavigationComponent implements OnInit {
     this.term = event.target.value;
     console.log(this.term);
     this.termExport.emit(this.term);
+    this.transformExport.emit(this.term);
   }
 
   onLogoutClick() {

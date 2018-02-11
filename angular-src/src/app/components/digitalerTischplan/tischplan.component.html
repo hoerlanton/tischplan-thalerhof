@@ -17,6 +17,7 @@
                  (getTablesOccupied)="tablesOccupied = $event"
                  (umsetzenExport)="umsetzenInfoVar = $event; umsetzen($event)"
                  (abreisenExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
+                 (transformExport)="term = $event; transform($event)"
                  (termExport)="term = $event"
                  (reloadLists)="reloadLists($event)"
                  [newInformationEmployees]="newInformationEmployees">

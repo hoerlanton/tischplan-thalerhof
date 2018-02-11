@@ -1904,7 +1904,7 @@ var Ng2SearchPipe = (function () {
             return items;
         return items.filter(function (item) {
             for (var property in item) {
-                if (item[property] === null) {
+                if (item[property] === null || item[property] === "undefined") {
                     continue;
                 }
                 if (item[property].toString().toLowerCase().includes(term.toLowerCase())) {
@@ -1925,6 +1925,7 @@ Ng2SearchPipe = __decorate([
 ], Ng2SearchPipe);
 exports.Ng2SearchPipe = Ng2SearchPipe;
 //# sourceMappingURL=ng2-filter.pipe.js.map
+
 
 /***/ }),
 
