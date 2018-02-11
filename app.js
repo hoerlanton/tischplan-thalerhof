@@ -22,12 +22,9 @@ const   bodyParser = require('body-parser'),
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
-//Bodyparser middleware
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
-//Throws errors if callbacks are not from facebook
-//{ verify: verifyRequestSignature } deleted from function because it throws errors if JSON.parse function is called
-app.use(bodyParser.json());
 
 //Setting port
 app.set('port', process.env.PORT || 8000);
