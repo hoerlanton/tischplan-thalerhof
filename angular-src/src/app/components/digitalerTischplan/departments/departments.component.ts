@@ -49,6 +49,7 @@ export class DepartmentsComponent {
   @ViewChild(SonnbergZirbnComponent)
   private sonnbergZirbnComponent: SonnbergZirbnComponent;
 
+  @Output()
   dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedRestaurant:EventEmitter<any> = new EventEmitter();

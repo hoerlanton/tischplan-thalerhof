@@ -5,8 +5,7 @@
         <div *ngFor="let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;">
           <div dropdownToggle type="button" class="t{{tableSonnbergZirbn.number}} table-item" [ngStyle]="{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}" [style.border]="getStyle(tablesSonnbergZirbn[j].groups)" dropdown>
             <div *ngIf="tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]">
-              <p><b>{{tableSonnbergZirbn.number}}</b></p>
-              <div *ngFor="let group of tableSonnbergZirbn.groups"><b>{{group.personenAnzahlValue}}</b></div>
+              <p><b>{{tableSonnbergZirbn.number}} <br>{{erwSonnbergZirbn[j]}}/{{kiSonnbergZirbn[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -40,8 +39,7 @@
         <div *ngFor="let tablePanorama of tablesPanorama; let j = index;">
           <div dropdownToggle type="button" class="t{{tablePanorama.number}} table-item" [ngStyle]="{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor, 'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}" [style.border]="getStyle(tablesPanorama[j].groups)" dropdown>
             <div *ngIf="tablesPanorama[j] !== tablesPanorama[j+1]">
-              <p><b>{{tablePanorama.number}}</b></p>
-              <div *ngFor="let group of tablePanorama.groups"><b>{{group.personenAnzahlValue}}</b></div>
+              <p><b>{{tablePanorama.number}} <br>{{erwPanorama[j]}}/{{kiPanorama[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -75,8 +73,7 @@
         <div *ngFor="let tableRestaurant of tablesRestaurant; let j = index;">
           <div dropdownToggle type="button" class="t{{tableRestaurant.number}} table-item" [ngStyle]="{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}" [style.border]="getStyle(tablesRestaurant[j].groups)" dropdown>
             <div *ngIf="tablesRestaurant[j] !== tablesRestaurant[j+1]">
-              <p><b>{{tableRestaurant.number}}</b></p>
-              <div *ngFor="let group of tableRestaurant.groups"><b>{{group.personenAnzahlValue}}</b></div>
+              <p><b>{{tableRestaurant.number}} <br>{{erwRestaurant[j]}}/{{kiRestaurant[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -110,8 +107,7 @@
         <div *ngFor="let tableWintergarten of tablesWintergarten; let j = index;">
           <div dropdownToggle type="button" class="t{{tableWintergarten.number}} table-item" [ngStyle]="{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor, 'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}" [style.border]="getStyle(tablesWintergarten[j].groups)" dropdown>
             <div *ngIf="tablesWintergarten[j] !== tablesWintergarten[j+1]">
-              <p><b>{{tableWintergarten.number}}</b></p>
-              <div *ngFor="let group of tableWintergarten.groups"><b>{{group.personenAnzahlValue}}</b></div>
+              <p><b>{{tableWintergarten.number}} <br>{{erwWintergarten[j]}}/{{kiWintergarten[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked } from '@angular/core';
 import { Table } from '../../../../../Table';
 import { TischplanService } from '../../../services/tischplan.service';
 import { NavService }   from '../../../services/tables.service';
@@ -9,7 +9,7 @@ import { NavService }   from '../../../services/tables.service';
   styleUrls: ['../tischplan.component.css']
 })
 
-export class TableplanComponent implements OnInit {
+export class TableplanComponent implements AfterViewChecked {
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
@@ -35,7 +35,14 @@ export class TableplanComponent implements OnInit {
   buttonHinzufuegen: string;
   buttonEntfernen: string;
   trace: boolean;
-
+  erwSonnbergZirbn: any[] = [];
+  kiSonnbergZirbn: any[] = [];
+  erwPanorama: any[] = [];
+  kiPanorama: any[] = [];
+  erwRestaurant: any[] = [];
+  kiRestaurant: any[] = [];
+  erwWintergarten: any[] = [];
+  kiWintergarten: any[] = [];
 
   constructor(private tischplanService: TischplanService, private _navService: NavService) {
     this.buttonMoveTable = "ff0000";
@@ -45,7 +52,8 @@ export class TableplanComponent implements OnInit {
     this.trace = false;
   }
 
-  ngOnInit() {
+  ngAfterViewChecked() {
+    this.sumUpPersonenAnzahl();
   }
 
   addTable(table, j) {
@@ -230,6 +238,102 @@ export class TableplanComponent implements OnInit {
       return "solid 3px red";
     } else {
       return "";
+    }
+  }
+
+  sumUpPersonenAnzahl(){
+    console.log("sumUpPersonenAnzahl called");
+    if (this.tablesSonnbergZirbn) {
+      for (let p = 0; p < this.tablesSonnbergZirbn.length; p++) {
+        this.erwSonnbergZirbn[p] = 0;
+        this.kiSonnbergZirbn[p] = 0;
+        if (this.tablesSonnbergZirbn[p].groups) {
+          for (let g = 0; g < this.tablesSonnbergZirbn[p].groups.length; g++) {
+            if (this.tablesSonnbergZirbn[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesSonnbergZirbn[p].groups[g].personenAnzahlValue.match(/\d+/g);
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.erwSonnbergZirbn[p] = this.erwSonnbergZirbn[p] + Number(erwKi[0]);
+                //console.log(this.erw[p]);
+              }
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.kiSonnbergZirbn[p] = this.kiSonnbergZirbn[p] + Number(erwKi[1]);
+                //console.log(this.ki[p]);
+              }
+            }
+          }
+        }
+      }
+    }
+    if (this.tablesPanorama) {
+      for (let p = 0; p < this.tablesPanorama.length; p++) {
+        this.erwPanorama[p] = 0;
+        this.kiPanorama[p] = 0;
+        if (this.tablesPanorama[p].groups) {
+          for (let g = 0; g < this.tablesPanorama[p].groups.length; g++) {
+            if (this.tablesPanorama[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesPanorama[p].groups[g].personenAnzahlValue.match(/\d+/g);
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.erwPanorama[p] = this.erwPanorama[p] + Number(erwKi[0]);
+                //console.log(this.erw[p]);
+              }
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.kiPanorama[p] = this.kiPanorama[p] + Number(erwKi[1]);
+                //console.log(this.ki[p]);
+              }
+            }
+          }
+        }
+      }
+    }
+    if (this.tablesRestaurant) {
+      for (let p = 0; p < this.tablesRestaurant.length; p++) {
+        this.erwRestaurant[p] = 0;
+        this.kiRestaurant[p] = 0;
+        if (this.tablesRestaurant[p].groups) {
+          for (let g = 0; g < this.tablesRestaurant[p].groups.length; g++) {
+            if (this.tablesRestaurant[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesRestaurant[p].groups[g].personenAnzahlValue.match(/\d+/g);
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.erwRestaurant[p] = this.erwRestaurant[p] + Number(erwKi[0]);
+                //console.log(this.erw[p]);
+              }
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.kiRestaurant[p] = this.kiRestaurant[p] + Number(erwKi[1]);
+                //console.log(this.ki[p]);
+              }
+            }
+          }
+        }
+      }
+    }
+    if (this.tablesWintergarten) {
+      for (let p = 0; p < this.tablesWintergarten.length; p++) {
+        this.erwWintergarten[p] = 0;
+        this.kiWintergarten[p] = 0;
+        if (this.tablesWintergarten[p].groups) {
+          for (let g = 0; g < this.tablesWintergarten[p].groups.length; g++) {
+            if (this.tablesWintergarten[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesWintergarten[p].groups[g].personenAnzahlValue.match(/\d+/g);
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.erwWintergarten[p] = this.erwWintergarten[p] + Number(erwKi[0]);
+                //console.log(this.erw[p]);
+              }
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.kiWintergarten[p] = this.kiWintergarten[p] + Number(erwKi[1]);
+                //console.log(this.ki[p]);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
