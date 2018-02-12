@@ -32,11 +32,12 @@ export class FormComponent implements OnInit {
   @Input('showAlleBool') showAlleBool: boolean;
   @Output()
   notizResponse:EventEmitter<any> = new EventEmitter();
-
+  parts: any[] = [];
   notizInput: string;
   departmentNotizInput: string;
   departments: any[] = [];
   employees: any[] = [];
+  notizDate: any;
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
     this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
@@ -121,9 +122,15 @@ export class FormComponent implements OnInit {
 
   sendNotiz(event) {
     event.preventDefault();
+
+    this.notizDate = String(new Date()).substring(0, 15);
+
+    console.log(this.notizDate);
+
     let newNotiz = {
       notizInput: this.notizInput,
       departmentNotizInput: this.departmentNotizInput,
+      date: this.notizDate
     };
     if (newNotiz.notizInput === undefined) {
       this._flashMessagesService.show('Die Nachricht ist leer ... ',
@@ -142,7 +149,8 @@ export class FormComponent implements OnInit {
         //console.log(Information[0].tables);
         this.notizResponse.emit(Notiz);
         this.notizElements = Notiz;
-        console.log('this.newInformationElements' + this.newInformationElements);
+        console.log(this.notizElements);
+        //console.log('this.newInformationElements' + this.newInformationElements);
       });
 
   }

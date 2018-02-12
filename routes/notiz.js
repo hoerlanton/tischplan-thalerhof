@@ -27,6 +27,7 @@ module.exports = {
             {
                 $set: {
                     "notizInput": newInformation.notizInput,
+                    "date": newInformation.date,
                 }
             }, function (err, tables) {
                 if (err) {

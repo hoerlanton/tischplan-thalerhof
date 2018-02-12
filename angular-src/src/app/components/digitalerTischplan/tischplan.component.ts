@@ -153,6 +153,7 @@ export class TischplanComponent {
 
           informationElemente.sort((a,b) => 0 - (a.numberOfTraces > b.numberOfTraces ? 1 : -1));
 
+
           this.newInformationEmployees = informationElemente;
           console.log(this.newInformationEmployees);
         }
@@ -382,9 +383,9 @@ export class TischplanComponent {
 
           let sortedTablesWintergarten = tables[3].tables.sort();
            */
-          //console.log('sorted?:');
+          console.log('sorted?:');
           //console.log(sortedArray);
-          //console.log(tables[3].tables);
+          console.log(tables[3].tables);
           //console.log(sortedTablesWintergarten);
           //console.log(testTables);
 
@@ -403,10 +404,10 @@ export class TischplanComponent {
               this.tablesRestaurant = tables[a].tables;
             }
           }
-          //console.log(this.tablesPanorama);
-          //console.log(this.tablesWintergarten);
-          //console.log(this.tablesSonnbergZirbn);
-          //console.log(this.tablesRestaurant);
+          console.log(this.tablesPanorama);
+          console.log(this.tablesWintergarten);
+          console.log(this.tablesSonnbergZirbn);
+          console.log(this.tablesRestaurant);
           this.changeBgColorIfAnreise();
         }
 
@@ -414,8 +415,8 @@ export class TischplanComponent {
         this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
         this.printComponent.formatAzListe(this.tables);
 
-        //console.log("this.tables");
-        //console.log(this.tables);
+        console.log("this.tables");
+        console.log(this.tables);
       });
   }
 }

@@ -5,7 +5,7 @@
         <div *ngFor="let notizElement of notizElements" >
           <div *ngIf="notizElement.departmentNotizInput === 'Panorama'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+              <p style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
@@ -14,7 +14,7 @@
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Restaurant'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+              <p style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br> <b> Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Sonnberg-Zirbn'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+              <p style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}<br> <b> Datum: </b>{{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
         <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Wintergarten'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}}</p>
+              <p style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br> <b> Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>

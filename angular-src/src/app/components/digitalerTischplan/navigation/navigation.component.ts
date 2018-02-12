@@ -41,7 +41,7 @@ export class NavigationComponent implements OnInit {
   abreiseAbbrechenButton: string;
   abreiseAusfuehrenButton: string;
 
-  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, public authService: AuthService, private router: Router) {
+  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, public authService: AuthService, private router: Router ) {
     this.printToCart1Button = "ffffff";
     this.printToCart2Button = "ffffff";
     this.printToCart3Button = "ffffff";
@@ -84,7 +84,6 @@ export class NavigationComponent implements OnInit {
     popupWinindow.document.close();
   }
 
-
   printToCart3(data) {
     console.log('This method is called from the parent component via ViewChild');
     let popupWinindow;
@@ -123,7 +122,6 @@ export class NavigationComponent implements OnInit {
     setTimeout(() => {
       this.reloadLists.emit();
     }, 3000);
-
   }
 
   dispenseIfAbreise() {
