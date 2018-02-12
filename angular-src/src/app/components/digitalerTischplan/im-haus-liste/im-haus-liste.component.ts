@@ -29,7 +29,7 @@ export class ImHausListeComponent implements OnInit {
   }
 
   sortList() {
-    this.dateTodayGenerated = new Date();
+    this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
     let dateToday = String(this.dateTodayGenerated).substring(0, 15);
     //console.log("===========================ANREISEN===============================");
     //console.log(dateToday);

@@ -2038,7 +2038,7 @@ var ImHausListeComponent = (function () {
         });
     };
     ImHausListeComponent.prototype.sortList = function () {
-        this.dateTodayGenerated = new Date();
+        this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
         var dateToday = String(this.dateTodayGenerated).substring(0, 15);
         //console.log("===========================ANREISEN===============================");
         //console.log(dateToday);
