@@ -2,7 +2,6 @@
  * Created by antonhorl on 08.02.18.
  */
 
-
 module.exports = {
     addInformationToTable: function (req, res, db) {
         console.log("addInformationToTable request made to /addInformationToTable");
@@ -40,7 +39,7 @@ module.exports = {
         console.log('informationElements2 length: -> ' + informationElements2.length);
         console.log(informationElements2);
 
-        if (informationElements2.length === 14) {
+        if (informationElements2.length >= 13) {
             console.log("Liste dropped");
 
             nameValue.push(informationElements2[0].substring(1, informationElements2[0].length));
@@ -55,8 +54,8 @@ module.exports = {
             reisebueroValue.push(informationElements2[9].substring(1, informationElements2[9].length));
             notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
             notiz2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
-            traceValue.push(informationElements2[12].substring(1, informationElements2[12].length));
-            bemerkungValue.push(informationElements2[13].substring(1, informationElements2[13].length));
+            traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[12].length));
+            bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
 
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
@@ -114,19 +113,21 @@ module.exports = {
             let umsetzen = JSON.parse(data);
             console.log("umsetzen");
             console.log(umsetzen);
-            for (let i = 0; i < umsetzen[0].groups.length; i++) {
-                zimmernummerValue.push(umsetzen[0].groups[i].zimmernummerValue);
-                nameValue.push(umsetzen[0].groups[i].nameValue);
-                personenAnzahlValue.push(umsetzen[0].groups[i].personenAnzahlValue);
-                anreiseValue.push(umsetzen[0].groups[i].anreiseValue);
-                abreiseValue.push(umsetzen[0].groups[i].abreiseValue);
-                traceValue.push(umsetzen[0].groups[i].traceValue);
-                notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
-                notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
-                bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
-                departmentValueDB = umsetzen[1].targetDepartment;
-                tableValue = umsetzen[1].targetTable;
-                umsetzen[0].department = umsetzen[1].targetDepartment;
+            if(umsetzen[0].groups) {
+                for (let i = 0; i < umsetzen[0].groups.length; i++) {
+                    zimmernummerValue.push(umsetzen[0].groups[i].zimmernummerValue);
+                    nameValue.push(umsetzen[0].groups[i].nameValue);
+                    personenAnzahlValue.push(umsetzen[0].groups[i].personenAnzahlValue);
+                    anreiseValue.push(umsetzen[0].groups[i].anreiseValue);
+                    abreiseValue.push(umsetzen[0].groups[i].abreiseValue);
+                    traceValue.push(umsetzen[0].groups[i].traceValue);
+                    notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
+                    notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
+                    bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
+                    departmentValueDB = umsetzen[1].targetDepartment;
+                    tableValue = umsetzen[1].targetTable;
+                    umsetzen[0].department = umsetzen[1].targetDepartment;
+                }
             }
             //console.log(" nameValue " + nameValue + " zimmernummerValue " + zimmernummerValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " notiz1Value " + notiz1Value + " notiz2Value " + notiz2Value + " bemerkungValue " + bemerkungValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
