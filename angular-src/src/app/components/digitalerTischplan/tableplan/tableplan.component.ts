@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Table } from '../../../../../Table';
 import { TischplanService } from '../../../services/tischplan.service';
 import { NavService }   from '../../../services/tables.service';
@@ -9,7 +9,7 @@ import { NavService }   from '../../../services/tables.service';
   styleUrls: ['../tischplan.component.css']
 })
 
-export class TableplanComponent implements AfterViewChecked {
+export class TableplanComponent implements AfterViewInit {
   @Input('tablesWintergarten') tablesWintergarten: Table[];
   @Input('showWintergartenBool') showWintergartenBool: boolean;
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
@@ -52,8 +52,7 @@ export class TableplanComponent implements AfterViewChecked {
     this.trace = false;
   }
 
-  ngAfterViewChecked() {
-    this.sumUpPersonenAnzahl();
+  ngAfterViewInit() {
   }
 
   addTable(table, j) {
