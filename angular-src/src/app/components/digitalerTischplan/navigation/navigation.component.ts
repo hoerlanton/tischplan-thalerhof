@@ -18,16 +18,16 @@ export class NavigationComponent implements OnInit {
   @Input('tablesOccupied') tablesOccupied: number;
   @Input('tablesTempAbreise') tablesTempAbreise: any[] = [];
   @Output()
-  umsetzenExport:EventEmitter<any> = new EventEmitter();
+  umsetzenExport: EventEmitter<any> = new EventEmitter();
   @Output()
-  abreisenExport:EventEmitter<any> = new EventEmitter();
+  abreisenExport: EventEmitter<any> = new EventEmitter();
   term: string;
   @Output()
-  termExport:EventEmitter<any> = new EventEmitter();
+  termExport: EventEmitter<any> = new EventEmitter();
   @Output()
-  reloadLists:EventEmitter<any> = new EventEmitter();
+  reloadLists: EventEmitter<any> = new EventEmitter();
   @Output()
-  transformExport:EventEmitter<any> = new EventEmitter();
+  transformExport: EventEmitter<any> = new EventEmitter();
   dateTodayGenerated: any;
   date: any[] = [];
   parts: any[] = [];
@@ -35,13 +35,24 @@ export class NavigationComponent implements OnInit {
   quellTisch: any;
   zielTisch: any;
   tableInformation: any[] = [];
+  printToCart1Button: string;
+  printToCart2Button: string;
+  printToCart3Button: string;
+  abreiseAbbrechenButton: string;
+  abreiseAusfuehrenButton: string;
 
-  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService,  public authService: AuthService, private router: Router) { }
+  constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, public authService: AuthService, private router: Router) {
+    this.printToCart1Button = "ffffff";
+    this.printToCart2Button = "ffffff";
+    this.printToCart3Button = "ffffff";
+    this.abreiseAbbrechenButton = "ffffff";
+    this.abreiseAusfuehrenButton = "ff0000";
+  }
 
   ngOnInit() {
   }
 
-  delete(informationElement, j, event){
+  delete(informationElement, j, event) {
     console.log(informationElement);
     console.log(j);
 
@@ -49,7 +60,7 @@ export class NavigationComponent implements OnInit {
 
     this.tischplanService.deleteInformationElement(informationElement)
       .subscribe(informationElement => {
-        this.newInformationElements.splice (j, 1);
+        this.newInformationElements.splice(j, 1);
       });
   }
 
@@ -64,7 +75,7 @@ export class NavigationComponent implements OnInit {
     popupWinindow.document.close();
   }
 
-  printToCart2(printSectionId2: string){
+  printToCart2(printSectionId2: string) {
     let popupWinindow;
     let innerContents = document.getElementById(printSectionId2).innerHTML;
     popupWinindow = window.open('', '_blank', 'width=1000,height=1000,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
@@ -97,7 +108,7 @@ export class NavigationComponent implements OnInit {
     this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 
-  upload(){
+  upload() {
     const formData: any = new FormData();
     const files: Array<File> = this.filesToUpload;
 
@@ -243,7 +254,7 @@ export class NavigationComponent implements OnInit {
   }
 
   keyDownFunction(event) {
-    if(event.keyCode == 13) {
+    if (event.keyCode == 13) {
       //alert('you just clicked enter');
       this.termExport.emit(this.term);
     }
@@ -266,5 +277,78 @@ export class NavigationComponent implements OnInit {
     return false;
   }
 
-  // ... your code
+  mouseEnterprintToCart1Button() {
+    //console.log("mouse enter : ");
+    if (this.printToCart1Button === "ffffff") {
+      //console.log('mouse enter1 :');
+      this.printToCart1Button = "cfcfcf";
+    }
+  }
+
+  mouseLeaveprintToCart1Button() {
+    if (this.printToCart1Button === "cfcfcf") {
+      //console.log('mouse leave1 :');
+      this.printToCart1Button = "ffffff";
+    }
+  }
+
+  mouseEnterprintToCart2Button() {
+    //console.log("mouse enter : ");
+    if (this.printToCart2Button === "ffffff") {
+      //console.log('mouse enter1 :');
+      this.printToCart2Button = "cfcfcf";
+    }
+  }
+
+  mouseLeaveprintToCart2Button() {
+    if (this.printToCart2Button === "cfcfcf") {
+      //console.log('mouse leave1 :');
+      this.printToCart2Button = "ffffff";
+    }
+  }
+
+  mouseEnterprintToCart3Button() {
+    //console.log("mouse enter : ");
+    if (this.printToCart3Button === "ffffff") {
+      //console.log('mouse enter1 :');
+      this.printToCart3Button = "cfcfcf";
+    }
+  }
+
+  mouseLeaveprintToCart3Button() {
+    if (this.printToCart3Button === "cfcfcf") {
+      //console.log('mouse leave1 :');
+      this.printToCart3Button = "ffffff";
+    }
+  }
+
+  mouseEnterAbreiseAusfuehrenButton() {
+    //console.log("mouse enter : ");
+    if (this.abreiseAusfuehrenButton === "ff0000") {
+      //console.log('mouse enter1 :');
+      this.abreiseAusfuehrenButton = "a00000";
+    }
+  }
+
+  mouseLeaveAbreiseAusfuehrenButton() {
+    if (this.abreiseAusfuehrenButton === "a00000") {
+      //console.log('mouse leave1 :');
+      this.abreiseAusfuehrenButton = "ff0000";
+    }
+  }
+
+  mouseEnterAbreiseAbbrechenButton() {
+    //console.log("mouse enter : ");
+    if (this.abreiseAbbrechenButton === "ffffff") {
+      //console.log('mouse enter1 :');
+      this.abreiseAbbrechenButton = "cfcfcf";
+    }
+  }
+
+  mouseLeaveAbreiseAbbrechenButton() {
+    if (this.abreiseAbbrechenButton === "cfcfcf") {
+      //console.log('mouse leave1 :');
+      this.abreiseAbbrechenButton = "ffffff";
+    }
+  }
 }

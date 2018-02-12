@@ -17,7 +17,7 @@
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
+              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
                   <div *ngFor="let group of tableSonnbergZirbn.groups">
                     <div *ngIf="group.nameValue">

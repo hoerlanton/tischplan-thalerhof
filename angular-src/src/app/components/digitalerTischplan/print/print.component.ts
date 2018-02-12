@@ -68,15 +68,15 @@ export class PrintComponent {
           };
           //console.log(this.tables[i].number);
           this.object = Object.assign(this.tables[i].groups[j], tempObject);
-          console.log("this.object");
-          console.log(this.object);
+          //console.log("this.object");
+          //console.log(this.object);
           this.tableTemp.push(this.object);
         }
       }
     }
 
-    console.log("this.tableTemp");
-    console.log(this.tableTemp);
+    //console.log("this.tableTemp");
+    //console.log(this.tableTemp);
 
 
     this.tables =  this.tableTemp.sort(function(a, b) {
@@ -100,9 +100,9 @@ export class PrintComponent {
     });
 
     for (let i: number = 0; i < this.tables.length; i++) {
-      console.log(i);
+      //console.log(i);
       if ("nameValue" in this.tables[i]) {
-        console.log("--->" + i);
+        //console.log("--->" + i);
         this.tableNumbers.push(this.tables[i].number);
       }
     }
@@ -117,11 +117,11 @@ export class PrintComponent {
     this.getTablesOccupied.emit(this.tablesOccupied);
     this.getTablesforAzListe.emit(this.tables);
 
-    console.log(this.tableTemp);
-    console.log(this.tables);
-    console.log("this.tablesOccupied" + this.tablesOccupied);
+    //console.log(this.tableTemp);
+    //console.log(this.tables);
+    //console.log("this.tablesOccupied" + this.tablesOccupied);
 
-    console.log(tables);
+    //console.log(tables);
 
     /*
      function filterByID(obj) {

@@ -27,10 +27,10 @@ export class SonnbergZirbnComponent implements OnInit {
   }
 
   getStyle(j) {
-    if (j == "-") {
-      return "";
-    } else {
+    if (j != "-") {
       return "solid 3px red";
+    } else {
+      return "";
     }
   }
 

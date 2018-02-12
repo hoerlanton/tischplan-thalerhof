@@ -31,7 +31,7 @@ export class PanoramaComponent implements OnInit {
   getStyle(j) {
     //console.log(j);
     if (j != "-") {
-  return "solid 3px red";
+      return "solid 3px red";
     } else {
       return "";
     }

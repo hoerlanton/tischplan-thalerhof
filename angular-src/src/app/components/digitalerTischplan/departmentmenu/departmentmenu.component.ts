@@ -55,7 +55,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
   ngAfterViewInit() {
   }
     showSonnbergZirbn() {
-      console.log("showSonnbergZirbn!");
+      //console.log("showSonnbergZirbn!");
 
       this.showSonnbergZirbnBool = true;
       this.showPanoramaBool = false;
@@ -90,10 +90,10 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
 
     showPanorama() {
-      console.log("showPanorama!");
+      //console.log("showPanorama!");
       this.showSonnbergZirbnBool = false;
       this.showPanoramaBool = true;
-      console.log(this.showPanoramaBool);
+      //console.log(this.showPanoramaBool);
       this.showRestaurantBool = false;
       this.showWintergartenBool = false;
       this.showAlleBool = false;
@@ -126,7 +126,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
 
     showRestaurant() {
-      console.log("showRestaurant!");
+      //console.log("showRestaurant!");
       this.showSonnbergZirbnBool = false;
       this.showPanoramaBool = false;
       this.showRestaurantBool = true;
@@ -160,7 +160,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
 
     showWintergarten() {
-      console.log("showWintergarten!");
+      //console.log("showWintergarten!");
       this.showSonnbergZirbnBool = false;
       this.showPanoramaBool = false;
       this.showRestaurantBool = false;
@@ -193,7 +193,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
       this.showAlleBoolChange.emit(this.showAlleBool);
     }
   showAlle() {
-    console.log("showAlle!");
+    //console.log("showAlle!");
     this.showSonnbergZirbnBool = false;
     this.showPanoramaBool = false;
     this.showRestaurantBool = false;
@@ -252,7 +252,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
   }
 
   showNotizForm() {
-    console.log("showNotizForm!");
+    //console.log("showNotizForm!");
     this.showNotizFormBool = true;
     this.showTablePlanBool = false;
     this.showInfoFormBool = false;
@@ -276,7 +276,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     this.showTablePlanBoolChange.emit(this.showTablePlanBool);
   }
   showTablePlan(){
-    console.log("showTablePlan!");
+    //console.log("showTablePlan!");
     this.showNotizFormBool = false;
     this.showTablePlanBool = true;
     this.showInfoFormBool = false;
@@ -301,165 +301,165 @@ export class DepartmentmenuComponent implements AfterViewInit {
   }
 
   mouseEnterShowInfoForm() {
-    console.log("mouse enter : ");
+    //console.log("mouse enter : ");
     if (this.buttonBgColorInfoForm === "0a7a74") {
-      console.log('mouse enter1 :');
+      //console.log('mouse enter1 :');
       this.buttonBgColorInfoForm = "154846";
     }
   }
 
   mouseLeaveShowInfoForm() {
     if (this.buttonBgColorInfoForm === "0a7a74") {
-      console.log('mouse leave1 :');
+      //console.log('mouse leave1 :');
       this.buttonBgColorInfoForm = "154846";
     } else if (this.buttonBgColorInfoForm === "154846") {
-      console.log('mouse leave2 :');
+      //console.log('mouse leave2 :');
       this.buttonBgColorInfoForm = "0a7a74";
     }
   }
 
   mouseEnterShowNotizForm() {
-    console.log("mouse enter : ");
+    //console.log("mouse enter : ");
     if (this.buttonBgColorNotizForm === "0a7a74") {
-      console.log('mouse enter1 :');
+      //console.log('mouse enter1 :');
       this.buttonBgColorNotizForm = "154846";
     }
   }
 
   mouseLeaveShowNotizForm() {
     if (this.buttonBgColorNotizForm === "0a7a74") {
-      console.log('mouse leave1 :');
+      //console.log('mouse leave1 :');
       this.buttonBgColorNotizForm = "154846";
     } else if (this.buttonBgColorNotizForm === "154846") {
-      console.log('mouse leave2 :');
+      //console.log('mouse leave2 :');
       this.buttonBgColorNotizForm = "0a7a74";
     }
   }
 
   mouseEnterShowTablePlan() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColorShowTablePlan === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColorShowTablePlan = "154846";
     }
   }
 
   mouseLeaveShowTablePlan() {
     if (this.buttonBgColorShowTablePlan === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColorShowTablePlan = "154846";
     } else if (this.buttonBgColorShowTablePlan === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColorShowTablePlan = "0a7a74";
     }
   }
 
 
   mouseEnterDropdownToggle() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColorDropdownToggle === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColorDropdownToggle = "154846";
     }
   }
 
   mouseLeaveDropdownToggle() {
     if (this.buttonBgColorDropdownToggle === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColorDropdownToggle = "154846";
     } else if (this.buttonBgColorDropdownToggle === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColorDropdownToggle = "0a7a74";
     }
   }
 
 
   mouseEnterSonnbergZirbn() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor1 === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColor1 = "154846";
     }
   }
 
   mouseLeaveSonnbergZirbn() {
     if (this.buttonBgColor1 === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor1 = "154846";
     } else if (this.buttonBgColor1 === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor1 = "0a7a74";
     }
   }
 
   mouseEnterPanorama() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor2 === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColor2 = "154846";
     }
   }
 
   mouseLeavePanorama() {
     if (this.buttonBgColor2 === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor2 = "154846";
     } else if (this.buttonBgColor2 === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor2 = "0a7a74";
     }
   }
 
   mouseEnterRestaurant() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor3 === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColor3 = "154846";
     }
   }
 
   mouseLeaveRestaurant() {
     if (this.buttonBgColor3 === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor3 = "154846";
     } else if (this.buttonBgColor3 === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor3 = "0a7a74";
     }
   }
 
   mouseEnterWintergarten() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor4 === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColor4 = "154846";
     }
   }
 
   mouseLeaveWintergarten() {
     if (this.buttonBgColor4 === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor4 = "154846";
     } else if (this.buttonBgColor4 === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor4 = "0a7a74";
     }
   }
 
   mouseEnterAlle() {
-    console.log("mouse enter mouseEnterShowTablePlan: ");
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor5 === "0a7a74") {
-      console.log('mouse enter1 mouseEnterShowTablePlan:');
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
       this.buttonBgColor5 = "154846";
     }
   }
 
   mouseLeaveAlle() {
     if (this.buttonBgColor5 === "0a7a74") {
-      console.log('mouse leave1 mouseEnterShowTablePlan:');
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor5 = "154846";
     } else if (this.buttonBgColor5 === "154846") {
-      console.log('mouse leave2 mouseEnterShowTablePlan:');
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor5 = "0a7a74";
     }
   }
