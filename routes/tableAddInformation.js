@@ -39,7 +39,7 @@ module.exports = {
         console.log('informationElements2 length: -> ' + informationElements2.length);
         console.log(informationElements2);
 
-        if (informationElements2.length >= 13) {
+        if (informationElements2.length > 12) {
             console.log("Liste dropped");
 
             nameValue.push(informationElements2[0].substring(1, informationElements2[0].length));
@@ -54,7 +54,7 @@ module.exports = {
             reisebueroValue.push(informationElements2[9].substring(1, informationElements2[9].length));
             notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
             notiz2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
-            traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[12].length));
+            traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[informationElements2.length - 2].length));
             //bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
