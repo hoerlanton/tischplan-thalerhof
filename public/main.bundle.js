@@ -1326,46 +1326,51 @@ var PanoramaComponent = (function () {
     PanoramaComponent.prototype.transform = function (tables, term) {
         console.log("term");
         console.log(term);
-        if (Array.isArray(tables) && tables.length && term && term.length) {
-            this.tablesPanorama = tables.filter(function (item) {
-                console.log(item);
-                var keys = Object.keys(item);
-                if (item.groups) {
-                    var keysGroups = Object.keys(item.groups);
-                    console.log(keys);
-                    console.log(keysGroups);
-                    console.log();
-                    if (Array.isArray(keys) && keys.length) {
-                        for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                            var key = keys_1[_i];
-                            if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                return true;
-                            }
-                            else if (item.groups) {
-                                for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                    var keyGroups = keysGroups_1[_a];
-                                    var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                    for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                        var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                        if (item.groups[keyGroups][keyGroupsGroups]) {
-                                            if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                return true;
+        if (term == "") {
+            this.tablesPanorama = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesPanorama = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+                            return false;
                         }
-                        return false;
+                        else {
+                            return false;
+                        }
                     }
-                    else {
-                        return false;
-                    }
-                }
-            });
-        }
-        else {
-            return tables;
+                });
+            }
+            else {
+                return tables;
+            }
         }
     };
     return PanoramaComponent;
@@ -1444,46 +1449,51 @@ var RestaurantComponent = (function () {
     RestaurantComponent.prototype.transform = function (tables, term) {
         console.log("term");
         console.log(term);
-        if (Array.isArray(tables) && tables.length && term && term.length) {
-            this.tablesRestaurant = tables.filter(function (item) {
-                console.log(item);
-                var keys = Object.keys(item);
-                if (item.groups) {
-                    var keysGroups = Object.keys(item.groups);
-                    console.log(keys);
-                    console.log(keysGroups);
-                    console.log();
-                    if (Array.isArray(keys) && keys.length) {
-                        for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                            var key = keys_1[_i];
-                            if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                return true;
-                            }
-                            else if (item.groups) {
-                                for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                    var keyGroups = keysGroups_1[_a];
-                                    var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                    for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                        var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                        if (item.groups[keyGroups][keyGroupsGroups]) {
-                                            if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                return true;
+        if (term == "") {
+            this.tablesRestaurant = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesRestaurant = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+                            return false;
                         }
-                        return false;
+                        else {
+                            return false;
+                        }
                     }
-                    else {
-                        return false;
-                    }
-                }
-            });
-        }
-        else {
-            return tables;
+                });
+            }
+            else {
+                return tables;
+            }
         }
     };
     return RestaurantComponent;
@@ -1561,46 +1571,51 @@ var SonnbergZirbnComponent = (function () {
     SonnbergZirbnComponent.prototype.transform = function (tables, term) {
         console.log("term");
         console.log(term);
-        if (Array.isArray(tables) && tables.length && term && term.length) {
-            this.tablesSonnbergZirbn = tables.filter(function (item) {
-                console.log(item);
-                var keys = Object.keys(item);
-                if (item.groups) {
-                    var keysGroups = Object.keys(item.groups);
-                    console.log(keys);
-                    console.log(keysGroups);
-                    console.log();
-                    if (Array.isArray(keys) && keys.length) {
-                        for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                            var key = keys_1[_i];
-                            if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                return true;
-                            }
-                            else if (item.groups) {
-                                for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                    var keyGroups = keysGroups_1[_a];
-                                    var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                    for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                        var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                        if (item.groups[keyGroups][keyGroupsGroups]) {
-                                            if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                return true;
+        if (term == "") {
+            this.tablesSonnbergZirbn = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesSonnbergZirbn = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+                            return false;
                         }
-                        return false;
+                        else {
+                            return false;
+                        }
                     }
-                    else {
-                        return false;
-                    }
-                }
-            });
-        }
-        else {
-            return tables;
+                });
+            }
+            else {
+                return tables;
+            }
         }
     };
     return SonnbergZirbnComponent;
@@ -1681,46 +1696,51 @@ var WintergartenComponent = (function () {
     WintergartenComponent.prototype.transform = function (tables, term) {
         console.log("term");
         console.log(term);
-        if (Array.isArray(tables) && tables.length && term && term.length) {
-            this.tablesWintergarten = tables.filter(function (item) {
-                console.log(item);
-                var keys = Object.keys(item);
-                if (item.groups) {
-                    var keysGroups = Object.keys(item.groups);
-                    console.log(keys);
-                    console.log(keysGroups);
-                    console.log();
-                    if (Array.isArray(keys) && keys.length) {
-                        for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                            var key = keys_1[_i];
-                            if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                return true;
-                            }
-                            else if (item.groups) {
-                                for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                    var keyGroups = keysGroups_1[_a];
-                                    var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                    for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                        var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                        if (item.groups[keyGroups][keyGroupsGroups]) {
-                                            if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                return true;
+        if (term == "") {
+            this.tablesWintergarten = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesWintergarten = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+                            return false;
                         }
-                        return false;
+                        else {
+                            return false;
+                        }
                     }
-                    else {
-                        return false;
-                    }
-                }
-            });
-        }
-        else {
-            return tables;
+                });
+            }
+            else {
+                return tables;
+            }
         }
     };
     return WintergartenComponent;
