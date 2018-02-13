@@ -76,6 +76,7 @@ module.exports = {
             else if (departmentValue === "Wintergarten") {
                 departmentValueDB = "Wintergarten";
             }
+            setTimeout(function () {
 
                 db.tables.update(
                     {
@@ -107,12 +108,13 @@ module.exports = {
                         }
                         console.log("addInformationToTable updated successfully");
                     });
+            }, 200);
+
         } else {
             console.log("umsetzen addInformationToTable");
             let umsetzen = JSON.parse(data);
             console.log("umsetzen");
             console.log(umsetzen);
-            if(umsetzen[0].groups) {
                 for (let i = 0; i < umsetzen[0].groups.length; i++) {
                     zimmernummerValue.push(umsetzen[0].groups[i].zimmernummerValue);
                     nameValue.push(umsetzen[0].groups[i].nameValue);
@@ -127,7 +129,6 @@ module.exports = {
                     tableValue = umsetzen[1].targetTable;
                     umsetzen[0].department = umsetzen[1].targetDepartment;
                 }
-            }
             //console.log(" nameValue " + nameValue + " zimmernummerValue " + zimmernummerValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " notiz1Value " + notiz1Value + " notiz2Value " + notiz2Value + " bemerkungValue " + bemerkungValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
 
@@ -184,20 +185,20 @@ module.exports = {
                         }
                     });
             }, 200);
-            setTimeout(function () {
-                db.tables.find(
-                    {
-                        department: departmentValueDB,
-                        "tables.number": tableValue
-                    }, function (err, tables) {
-                        if (err) {
-                            res.send(err);
-                        }
-                        res.json(tables);
-                        console.log("Add information to table response");
-                        console.log(JSON.stringify(tables));
-                    });
-            }, 1000);
         }
+        setTimeout(function () {
+            db.tables.find(
+                {
+                    department: departmentValueDB,
+                    "tables.number": tableValue
+                }, function (err, tables) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    res.json(tables);
+                    console.log("Add information to table response");
+                    console.log(JSON.stringify(tables));
+                });
+        }, 1000);
     }
 };
