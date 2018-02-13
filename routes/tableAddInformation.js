@@ -55,8 +55,7 @@ module.exports = {
             notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
             notiz2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
             traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[12].length));
-            bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
-
+            //bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
             tableValue = tableValueArray[0];
