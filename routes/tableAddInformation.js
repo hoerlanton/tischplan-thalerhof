@@ -52,7 +52,7 @@ module.exports = {
             abreiseValue.push(informationElements2[7].substring(1, informationElements2[7].length));
             personenAnzahlValue.push(informationElements2[8].substring(1, informationElements2[8].length));
             reisebueroValue.push(informationElements2[9].substring(1, informationElements2[9].length));
-            notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
+            //notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
             notiz2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
             traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[informationElements2.length - 2].length));
             //bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
