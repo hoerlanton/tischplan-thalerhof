@@ -20,6 +20,14 @@ export class PrintComponent {
   @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: string;
   @Input('showWintergartenBool') showWintergartenBool: string;
   @Input('tablesWintergarten') tablesWintergarten: string;
+  @Input('erwPanorama') erwPanorama: string;
+  @Input('erwRestaurant') erwRestaurant: string;
+  @Input('erwSonnbergZirbn') erwSonnbergZirbn: string;
+  @Input('erwWintergarten') erwWintergarten: string;
+  @Input('kiPanorama') kiPanorama: string;
+  @Input('kiRestaurant') kiRestaurant: string;
+  @Input('kiSonnbergZirbn') kiSonnbergZirbn: string;
+  @Input('kiWintergarten') kiWintergarten: string;
 
   @Output()
   getTablesOccupied:EventEmitter<number> = new EventEmitter();

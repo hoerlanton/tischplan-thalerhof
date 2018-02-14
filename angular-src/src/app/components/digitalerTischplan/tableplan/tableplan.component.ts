@@ -30,6 +30,23 @@ export class TableplanComponent implements AfterViewInit {
   movedPanorama: EventEmitter<any> = new EventEmitter();
   @Output()
   changeBgColorIfAnreise: EventEmitter<any> = new EventEmitter();
+  @Output()
+  kiWintergartenExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  erwWintergartenExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  erwRestaurantExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  kiRestaurantExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  erwPanoramaExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  kiPanoramaExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  erwSonnbergZirbnExport:EventEmitter<any> = new EventEmitter();
+  @Output()
+  kiSonnbergZirbnExport:EventEmitter<any> = new EventEmitter();
+
   buttonMoveTable: string;
   buttonInfo: string;
   buttonHinzufuegen: string;
@@ -334,5 +351,13 @@ export class TableplanComponent implements AfterViewInit {
         }
       }
     }
+    this.kiWintergartenExport.emit(this.kiWintergarten);
+    this.erwWintergartenExport.emit(this.erwWintergarten);
+    this.erwRestaurantExport.emit(this.erwRestaurant);
+    this.kiRestaurantExport.emit(this.kiRestaurant);
+    this.erwPanoramaExport.emit(this.erwPanorama);
+    this.kiPanoramaExport.emit(this.kiPanorama);
+    this.erwSonnbergZirbnExport.emit(this.erwSonnbergZirbn);
+    this.kiSonnbergZirbnExport.emit(this.kiSonnbergZirbn);
   }
 }

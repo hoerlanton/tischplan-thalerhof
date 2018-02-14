@@ -102,6 +102,14 @@ export class TischplanComponent {
   fontColorShowTablePlan: string;
   newInformationEmployees: any[] = [];
   history: string[] = [];
+  erwSonnbergZirbn: any[] = [];
+  kiSonnbergZirbn: any[] = [];
+  erwPanorama: any[] = [];
+  kiPanorama: any[] = [];
+  erwRestaurant: any[] = [];
+  kiRestaurant: any[] = [];
+  erwWintergarten: any[] = [];
+  kiWintergarten: any[] = [];
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService) {
 

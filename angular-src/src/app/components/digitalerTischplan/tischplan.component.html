@@ -95,7 +95,15 @@
                        (movedWintergarten)="tablesWintergarten = $event"
                        [showAlleBool]="showAlleBool"
                        [showTablePlanBool]="showTablePlanBool"
-                       (changeBgColorIfAnreise)="changeBgColorIfAnreise($event)">
+                       (changeBgColorIfAnreise)="changeBgColorIfAnreise($event)"
+                       (erwPanoramaExport)="erwPanorama=$event"
+                       (erwRestaurantExport)="erwRestaurant=$event"
+                       (erwSonnbergZirbnExport)="erwSonnbergZirbn=$event"
+                       (erwWintergartenExport)="erwWintergarten=$event"
+                       (kiPanoramaExport)="kiPanorama=$event"
+                       (kiRestaurantExport)="kiRestaurant=$event"
+                       (kiSonnbergZirbnExport)="kiSonnbergZirbn=$event"
+                       (kiWintergartenExport)="kiWintergarten=$event">
         </app-tableplan>
       </div>
       <div class="col-xs-12 col-lg-3 upload-col">
@@ -144,6 +152,16 @@
             [showWintergartenBool]="showWintergartenBool"
             [tablesWintergarten]="tablesWintergarten"
             (getTablesOccupied)="tablesOccupied = $event"
-            (getTablesforAzListe)="tables = $event">
+            (getTablesforAzListe)="tables = $event"
+            [erwPanorama]="erwPanorama"
+            [erwRestaurant]="erwRestaurant"
+            [erwSonnbergZirbn]="erwSonnbergZirbn"
+            [erwWintergarten]="erwWintergarten"
+            [kiPanorama]="kiPanorama"
+            [kiRestaurant]="kiRestaurant"
+            [kiSonnbergZirbn]="kiSonnbergZirbn"
+            [kiWintergarten]="kiWintergarten">
+
+>
 </app-print>
 </html>
