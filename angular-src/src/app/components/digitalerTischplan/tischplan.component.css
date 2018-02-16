@@ -23,7 +23,6 @@ span {
 
 .row {
   max-width: 100vw;
-  min-height: 100vh;
   padding: 0 15px 15px 15px;
   background-color: #0a7a74;
   margin: 0 0 0 0;
@@ -51,7 +50,8 @@ span {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   background-color: #0a7a74;
-  min-height: 100vh;
+  min-height: calc(100vh - 150px);
+  max-heigth: calc(100vh - 60px);
   top:-100px;
   z-index: -1;
 }
@@ -78,6 +78,8 @@ span {
   min-height: auto;
   box-sizing: border-box;
   z-index: 2;
+  max-height: calc(100vh - 60px);
+
 }
 
 .row .upload-col {
@@ -283,6 +285,14 @@ body html .row .container-fluid .upload-col .outer-cards h3 {
 
 @media (min-width: 701px) {
 
+
+  .row {
+    max-width: 100vw;
+    max-height: calc(100vh - 60px);
+    padding: 0 15px 15px 15px;
+    background-color: #0a7a74;
+  }
+
   .row .table-col {
     max-height: calc(100vh - 70px);
     min-height: calc(100vh - 70px);
@@ -302,6 +312,8 @@ body html .row .container-fluid .upload-col .outer-cards h3 {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     background-color: #0a7a74;
+    min-height: calc(100vh - 60px);
+    max-heigth: calc(100vh - 60px);
   }
 
   .row .inner-table {
@@ -321,6 +333,7 @@ body html .row .container-fluid .upload-col .outer-cards h3 {
   .print-col {
     margin-left: 15px;
     width: 65%;
+    max-height: calc(100vh - 60px);
   }
 }
 
@@ -337,6 +350,8 @@ body html .row .container-fluid .upload-col .outer-cards h3 {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     background-color: #0a7a74;
+    min-height: calc(100vh - 60px);
+    max-heigth: calc(100vh - 60px);
   }
 
   .row .table-col {
@@ -358,6 +373,8 @@ body html .row .container-fluid .upload-col .outer-cards h3 {
     width: 48%;
     margin-left: 15px;
     margin-right: 15px;
+    max-height: calc(100vh - 60px);
+
   }
 
   .row .upload-col {

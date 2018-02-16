@@ -184,7 +184,7 @@ module.exports = {
         let informationElements = req.body;
 
         let nameValue = informationElements[0].substring(1, informationElements[0].length);
-        let zimmernummerValue = informationElements[4].substring(1, informationElements[4].length);
+        let zimmernummerValue = informationElements[2].substring(1, informationElements[2].length);
 
         console.log(nameValue);
         console.log(zimmernummerValue);
