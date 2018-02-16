@@ -40,7 +40,7 @@
 <div class="row1">
   <div class='wrapper'>
     <div *ngFor="let imHausListeElement of imHausListeElemente">
-      <div *ngIf="imHausListeElement.isAnreise">
+      <div *ngIf="imHausListeElement.trace === '-' && imHausListeElement.isAnreise">
         <div class='cards-container' id='container2' [dragula]='"evented-bag"'>
           <div class="card" id="card2" [ngStyle]="{'background-color': '#' + imHausListeElement.bgColor}">
             <p> <b>Name:</b> {{imHausListeElement.name}}<br>
