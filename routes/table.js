@@ -246,29 +246,105 @@ module.exports = {
     dispenseTable: function (req, res, db) {
 
         console.log("dispenseTable request made to /dispenseTable");
-
         let dispenseTable = req.body;
+        console.log(dispenseTable);
+        console.log('dispenseTable.groups.length');
+        console.log(dispenseTable.groups.length);
+        console.log(dispenseTable.group );
 
         console.log("dispenseTable" + JSON.stringify(dispenseTable));
 
-        db.tables.findAndModify({
-            query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
-            update: {
-                $set: {
-                    "tables.$.bgColor": "#ffffff",
-                    "tables.$.isBesetzt": "false",
-                }, $unset: {
-                    "tables.$.groups": 1,
+        if (dispenseTable.groups.length > 1 && (dispenseTable.group === 0 || dispenseTable.group)) {
+            console.log('11111111111111111');
+            db.tables.findAndModify({
+                query: {department: dispenseTable.department, "tables.number": dispenseTable.number,  },
+                update: {
+                     $unset: {
+                        ["tables.$.groups." + dispenseTable.group] : 1,
+                    }
+                },
+                new: false
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
                 }
-            },
-            new: false
-        }, function (err, tables) {
-            if (err) {
-                console.log("Error");
-            }
-            console.log("No Error");
-        });
+                console.log("No Error");
+            });
+            setTimeout(function () {
+            db.tables.findAndModify({
+                query: {department: dispenseTable.department, "tables.number": dispenseTable.number,  },
+                update: {
+                         $pull : {
+                             "tables.$.groups": null
+                         }
 
+            },
+                new: false
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("No Error");
+            });
+
+            }, 200);
+
+        } else if (dispenseTable.groups.length === 1 && (dispenseTable.group === 0 || dispenseTable.group)) {
+                db.tables.findAndModify({
+                    query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
+                    update: {
+                        $set: {
+                            "tables.$.bgColor": "#ffffff",
+                            "tables.$.isBesetzt": "false",
+                        }, $unset: {
+                            ["tables.$.groups." + dispenseTable.group] : 1,
+                        }
+                    },
+                    new: false
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("No Error");
+                });
+            setTimeout(function () {
+
+                db.tables.findAndModify({
+                query: {department: dispenseTable.department, "tables.number": dispenseTable.number,  },
+                update: {
+                    $pull : {
+                        "tables.$.groups": null
+                    }
+
+                },
+                new: false
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("No Error");
+            });
+            }, 200);
+
+            } else {
+                db.tables.findAndModify({
+                    query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
+                    update: {
+                        $set: {
+                            "tables.$.bgColor": "#ffffff",
+                            "tables.$.isBesetzt": "false",
+                        }, $unset: {
+                            "tables.$.groups" : 1,
+            }
+            },
+                new: false
+            }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("No Error");
+                });
+            }
         setTimeout(function () {
             db.tables.find(
                 {
@@ -281,7 +357,8 @@ module.exports = {
                     res.json(tables);
                     console.log("Dispense Table: " + JSON.stringify(tables));
                 });
-        }, 100);
+        }, 500);
+
     },
 
 

@@ -161,6 +161,8 @@ export class NavigationComponent implements OnInit {
             console.log('Parsed Date --->: ' + this.parsedDate[0]);
             console.log('this.dateGenerated --->: ' + dateToday);
             let abreisenExport = tables[a].tables[b];
+            abreisenExport.group = c;
+            console.log(abreisenExport);
             if (dateToday.indexOf(this.parsedDate[0]) !== -1) {
               this.abreisenExport.emit({abreisenExport, b});
             }

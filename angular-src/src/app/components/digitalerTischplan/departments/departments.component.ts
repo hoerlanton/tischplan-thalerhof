@@ -110,8 +110,11 @@ export class DepartmentsComponent {
               console.log("Wintergarten" + JSON.stringify(response[0].tables));
             }
         }
+      setTimeout(() => {
       this.updateAzList.emit();
       this.updateImHausListeElement.emit(table);
+      }, 2000);
+
     });
 
     this.tischplanService.addPlaceholder(table).subscribe(response => {
@@ -206,7 +209,6 @@ export class DepartmentsComponent {
       this.parts = [];
       this.parsedDate = [];
       this.date = [];
-
 
       for (let a = 0; a < this.tablesChangeBgColorIfAnreise.length; a++) {
         for (let b = 0; b < this.tablesChangeBgColorIfAnreise[a].tables.length; b++) {
