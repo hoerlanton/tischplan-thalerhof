@@ -27,7 +27,13 @@ module.exports = {
             tableValue = "",
             tableValueArray = [],
             traceValue = [],
-            bemerkungValue = [];
+            bemerkungValue = [],
+            newTraceText = [],
+            newTraceRoomNumber = [],
+            newTraceName = [],
+            newTraceEmployee = [],
+            newTraceDate = [],
+            newTraceTableNumber = [];
 
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(/:(.+)/)[1]);
@@ -125,6 +131,12 @@ module.exports = {
                     notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
                     notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
                     bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
+                    newTraceText.push(umsetzen[0].groups[i].newTraceName);
+                    newTraceRoomNumber.push(umsetzen[0].groups[i].newTraceRoomNumber);
+                    newTraceName.push(umsetzen[0].groups[i].newTraceName);
+                    newTraceEmployee.push(umsetzen[0].groups[i].newTraceEmployee);
+                    newTraceDate.push(umsetzen[0].groups[i].newTraceDate);
+                    newTraceTableNumber.push(umsetzen[0].groups[i].newTraceTableNumber);
                     departmentValueDB = umsetzen[1].targetDepartment;
                     tableValue = umsetzen[1].targetTable;
                     umsetzen[0].department = umsetzen[1].targetDepartment;
@@ -152,7 +164,8 @@ module.exports = {
                         }
                         console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
                         for (let i = 0; i < umsetzen[0].groups.length; i++) {
-                            db.tables.update(
+                            if (nameValue[i]) {
+                                db.tables.update(
                                 {
                                     department: departmentValueDB,
                                     "tables.number": tableValue
@@ -182,6 +195,31 @@ module.exports = {
                                     }
                                     console.log("addInformationToTable updated successfully");
                                 });
+                        } else {
+                                db.tables.update(
+                                    {
+                                        department: departmentValueDB,
+                                        "tables.number": tableValue
+                                    },
+                                    {
+                                        $push: {
+                                            "tables.$.groups": {
+                                                "newTraceText" : newTraceText[i],
+                                                "newTraceRoomNumber": newTraceRoomNumber[i],
+                                                "newTraceName": newTraceName[i],
+                                                "newTraceEmployee": newTraceEmployee[i],
+                                                "newTraceDate": newTraceDate[i],
+                                                "newTraceTableNumber": newTraceTableNumber[i]
+                                            }
+                                        }
+                                    }, function (err, tables) {
+                                        if (err) {
+                                            console.log("Error");
+                                        }
+                                        console.log("addInformationToTable updated successfully");
+                                    });
+
+                            }
                         }
                     });
             }, 200);

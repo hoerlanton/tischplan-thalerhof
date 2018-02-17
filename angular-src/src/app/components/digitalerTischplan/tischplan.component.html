@@ -79,7 +79,8 @@
                   [showSonnbergZirbnBool]="showSonnbergZirbnBool"
                   [showWintergartenBool]="showWintergartenBool"
                   [showAlleBool]="showAlleBool"
-                  (notizResponse)="notizElements=$event">
+                  (notizResponse)="notizElements=$event"
+                  (changeColorIfAnreiseExport)="changeBgColorIfAnreise($event)">
         </app-form>
         <app-tableplan [tablesWintergarten]="tablesWintergarten"
                        [showWintergartenBool]="showWintergartenBool"
