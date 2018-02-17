@@ -183,35 +183,61 @@ module.exports = {
 
         let informationElements = req.body;
 
-        let nameValue = informationElements[0].substring(1, informationElements[0].length);
-        let zimmernummerValue = informationElements[2].substring(1, informationElements[2].length);
+        console.log(req.body);
 
-        console.log(nameValue);
-        console.log(zimmernummerValue);
+        let nameValueArray = [];
+        let zimmernummerValueArray = [];
+        let informationElementsString = JSON.stringify(informationElements);
 
-        db.imHausListe.update(
-            {
-                name: nameValue,
-                "zimmernummer": zimmernummerValue
-            },
-            {
-                $set: {
-                    "bgColor": "0a7a74",
-                }
-            }, function (err, tables) {
-                if (err) {
-                    console.log("Error");
-                }
-                console.log("occupyTable Update successful");
-            });
+        if (informationElementsString.indexOf("leftValue") != -1) {
+            for (let i = 0; i < informationElements.groups.length; i++) {
+                nameValueArray.push(informationElements.groups[i].nameValue);
+                zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
 
+                db.imHausListe.update(
+                    {
+                        name: nameValueArray[i],
+                        "zimmernummer": zimmernummerValueArray[i]
+                    },
+                    {
+                        $set: {
+                            "bgColor": "ffffff",
+                        }
+                    }, function (err, tables) {
+                        if (err) {
+                            console.log("Error");
+                        }
+                        console.log("occupyTable Update successful");
+                    });
+
+            }
+        } else {
+            nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
+            zimmernummerValueArray.push(informationElements[4].substring(1, informationElements[4].length));
+
+            console.log(nameValueArray[0]);
+            console.log(zimmernummerValueArray[0]);
+
+            db.imHausListe.update(
+                {
+                    name: nameValueArray[0],
+                    "zimmernummer": zimmernummerValueArray[0]
+                },
+                {
+                    $set: {
+                        "bgColor": "0a7a74",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("occupyTable Update successful");
+                });
+        }
 
         setTimeout(function () {
-            db.imHausListe.findOne(
-                {
-                    name: nameValue,
-                    "zimmernummer": zimmernummerValue
-                },
+            db.imHausListe.find(
+                {},
                 function (err, imHausListe) {
                     if (err) {
                         res.send(err);
@@ -221,6 +247,7 @@ module.exports = {
                     console.log(JSON.stringify(imHausListe));
                 });
         }, 700);
+
     },
     getImHausListe: function (req, res, db) {
         console.log("imHausListe get called");

@@ -59,6 +59,8 @@ export class DepartmentsComponent {
   dispensedPanorama:EventEmitter<any> = new EventEmitter();
   @Output()
   updateAzList:EventEmitter<any> = new EventEmitter();
+  @Output()
+  updateImHausListeElement:EventEmitter<any> = new EventEmitter();
   dateTodayGenerated: any;
   parts: any[] = [];
   date: any[] = [];
@@ -109,6 +111,7 @@ export class DepartmentsComponent {
             }
         }
       this.updateAzList.emit();
+      this.updateImHausListeElement.emit(table);
     });
 
     this.tischplanService.addPlaceholder(table).subscribe(response => {

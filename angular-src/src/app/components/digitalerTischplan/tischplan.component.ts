@@ -234,7 +234,7 @@ export class TischplanComponent {
     console.log('dataString' + dataString);
     this.departmentsComponent.addInformationToTable(dataString, arrayIndex);
     this.departmentsComponent.occupyTableOnDrop(dataString, arrayIndex);
-    this.imHausListeComponent.updateImHausListeElement(informationElements2);
+    this.updateImHausListeElement(informationElements2);
     this.tableplanComponent.sumUpPersonenAnzahl();
   }
 
@@ -285,6 +285,11 @@ export class TischplanComponent {
   abreisenRemoval() {
     this.departmentsComponent.occupy(this.abreiseTablePlusIndex.abreisenExport, this.abreiseTablePlusIndex.b);
   }
+
+  updateImHausListeElement(x) {
+    this.imHausListeComponent.updateImHausListeElement(x);
+  }
+
 
   umsetzen() {
     this.departmentsComponent.addInformationToTable(this.umsetzenInfoVar.tableInformationExport, this.umsetzenInfoVar.indexZiel);

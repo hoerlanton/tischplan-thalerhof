@@ -133,7 +133,8 @@
                                [showAlleBool]="showAlleBool"
                                (updateAzList)="updateAzList($event)"
                                [tablesTempAbreise]="tablesTempAbreise"
-                               [tables]="tables">
+                               [tables]="tables"
+                               (updateImHausListeElement)="updateImHausListeElement($event); table = $event;">
               </app-departments>
             </div>
           </div>
