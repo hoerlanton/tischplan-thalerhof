@@ -102,6 +102,8 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
 
     //let workbook2 = XLSX.utils.sheet_to_json(String("./uploads/" + uploadedFileName));
 
+    if (uploadedFileName.indexOf("xls") != -1){
+
     let workbook = XLSX.readFile(String("./uploads/" + uploadedFileName));
 
     //console.log(JSON.stringify(workbook.Props));
@@ -113,6 +115,10 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     imHausListe = JSON.stringify(workbook.Sheets[workbook.SheetNames[0]]);
     //console.log(JSON.stringify(workbook2));
     postImHausListeToDB();
+    res.send(req.files);
+    } else {
+        res.send(JSON.stringify("Error, falscher Datentyp"));
+    }
 });
 //data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1});
 //console.log(data);
@@ -192,7 +198,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
 function postImHausListeToDB() {
     // An object of options to indicate where to post to
     let post_options = {
-        //Change URL to hotelmessengertagbag.herokuapp.com if deploying
+        //Change URL to http://www.tischplan.servicio.io if deploying
         host: HOST_URL,
         port: '80',
         path: '/imHausListe',
