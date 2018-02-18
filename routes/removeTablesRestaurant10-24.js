@@ -463,7 +463,7 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-     } else if (tableNumber === '19' && topValue === '200' && leftValue === '550' && width === '60') {
+     } else if (tableNumber === '19' && topValue === '200' && leftValue === '580' && width === '60') {
          db.tables.update(
              {
                  department: departmentValue,
@@ -487,7 +487,7 @@ module.exports = {
              }, {
                  $push: {
                      tables: {
-                         $each: [{
+                         $each: [ {
                              "arrayIndex": "19",
                              "department": "Restaurant",
                              "number": "20",
@@ -520,7 +520,7 @@ module.exports = {
                     {
                         $set: {
                             "tables.$.topValue": "200",
-                            "tables.$.leftValue": "550",
+                            "tables.$.leftValue": "580",
                             "tables.$.width": "60",
                         }
                     }, function (err, tables) {

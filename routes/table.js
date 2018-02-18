@@ -249,11 +249,11 @@ module.exports = {
         let dispenseTable = req.body;
         console.log(dispenseTable);
         console.log('dispenseTable.groups.length');
-        console.log(dispenseTable.groups.length);
-        console.log(dispenseTable.group );
+        //console.log(dispenseTable.groups.length);
+        //console.log(dispenseTable.group );
 
         console.log("dispenseTable" + JSON.stringify(dispenseTable));
-
+        if (dispenseTable.groups != null) {
         if (dispenseTable.groups.length > 1 && (dispenseTable.group === 0 || dispenseTable.group)) {
             console.log('11111111111111111');
             db.tables.findAndModify({
@@ -345,6 +345,26 @@ module.exports = {
                     console.log("No Error");
                 });
             }
+        } else {
+            db.tables.findAndModify({
+                query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
+                update: {
+                    $set: {
+                        "tables.$.bgColor": "#ffffff",
+                        "tables.$.isBesetzt": "false",
+                    }, $unset: {
+                        "tables.$.groups" : 1,
+                    }
+                },
+                new: false
+            }, function (err, tables) {
+                if (err) {
+                    console.log("Error");
+                }
+                console.log("No Error");
+            });
+
+        }
         setTimeout(function () {
             db.tables.find(
                 {

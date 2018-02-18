@@ -131,6 +131,11 @@ module.exports = {
                     notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
                     notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
                     bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
+                    nationValue.push(umsetzen[0].groups[i].nationValue);
+                    kategorieValue.push(umsetzen[0].groups[i].kategorieValue);
+                    preisTypValue.push(umsetzen[0].groups[i].preisTypValue);
+                    reisebueroValue.push(umsetzen[0].groups[i].reisebueroValue);
+                    spracheValue.push(umsetzen[0].groups[i].spracheValue);
                     newTraceText.push(umsetzen[0].groups[i].newTraceName);
                     newTraceRoomNumber.push(umsetzen[0].groups[i].newTraceRoomNumber);
                     newTraceName.push(umsetzen[0].groups[i].newTraceName);
