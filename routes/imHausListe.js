@@ -183,7 +183,7 @@ module.exports = {
 
         let informationElements = req.body;
 
-        console.log(req.body);
+        //console.log(req.body);
 
         let nameValueArray = [];
         let zimmernummerValueArray = [];
@@ -248,7 +248,7 @@ module.exports = {
                     }
                     res.json(imHausListe);
                     console.log('imHausListe');
-                    //console.log(JSON.stringify(imHausListe));
+                    console.log(JSON.stringify(imHausListe));
                 });
         }, 700);
 

@@ -1012,8 +1012,10 @@ var DepartmentsComponent = (function () {
                     console.log("Wintergarten" + JSON.stringify(response[0].tables));
                 }
             }
-            _this.updateAzList.emit();
-            _this.updateImHausListeElement.emit(table);
+            setTimeout(function () {
+                _this.updateAzList.emit();
+                _this.updateImHausListeElement.emit(table);
+            }, 2000);
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
