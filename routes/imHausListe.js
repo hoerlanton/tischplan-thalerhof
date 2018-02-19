@@ -189,6 +189,10 @@ module.exports = {
         let zimmernummerValueArray = [];
         let informationElementsString = JSON.stringify(informationElements);
 
+        if (informationElementsString.indexOf("targetTable") != -1) {
+            return;
+        }
+
         if (informationElementsString.indexOf("leftValue") != -1) {
             for (let i = 0; i < informationElements.groups.length; i++) {
                 nameValueArray.push(informationElements.groups[i].nameValue);
