@@ -92,6 +92,7 @@ export class DepartmentsComponent {
       if (response === null) {
         return;
       } else {
+
         response[0].tables.sort(function (a, b) {
           if (Number(a.number) < Number(b.number))
             return -1;
@@ -99,6 +100,7 @@ export class DepartmentsComponent {
             return 1;
           return 0;
         });
+
             if (response[0].tables[j].department === "Sonnberg-Zirbn") {
               this.dispensedSonnbergZirbn.emit(response[0].tables);
             } else if (response[0].tables[j].department === "Panorama") {
@@ -119,8 +121,9 @@ export class DepartmentsComponent {
 
     this.tischplanService.addPlaceholder(table).subscribe(response => {
       console.log("Add placeholder!");
-      console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
       //console.log(this.tablesSonnbergZirbn[j].placeholder);
+      console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
+
       if (response === null) {
         return;
       } else {

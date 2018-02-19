@@ -328,11 +328,11 @@ export class TischplanComponent {
     setTimeout(() => {
       this.getTables();
       setTimeout(() => {
-        console.log('this.tablesWintergarten:');
-        console.log(this.tablesWintergarten);
+        //console.log('this.tablesWintergarten:');
+        //console.log(this.tablesWintergarten);
         this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
-        console.log('this.tables: in updateAzList');
-        console.log(this.tables);
+        //console.log('this.tables: in updateAzList');
+        //console.log(this.tables);
         this.printComponent.formatAzListe(this.tables);
       }, 3000);
     }, 1000);
@@ -346,7 +346,7 @@ export class TischplanComponent {
           return;
         } else {
 
-          console.log("tables[3].tables");
+          //console.log("tables[3].tables");
           //console.log(JSON.parse(tables[3].tables));
           /*
           for (let a = 0; a < tables.length; a++) {
@@ -397,9 +397,9 @@ export class TischplanComponent {
 
           let sortedTablesWintergarten = tables[3].tables.sort();
            */
-          console.log('sorted?:');
+          //console.log('sorted?:');
           //console.log(sortedArray);
-          console.log(tables[3].tables);
+          //console.log(tables[3].tables);
           //console.log(sortedTablesWintergarten);
           //console.log(testTables);
 
@@ -418,10 +418,10 @@ export class TischplanComponent {
               this.tablesRestaurant = tables[a].tables;
             }
           }
-          console.log(this.tablesPanorama);
-          console.log(this.tablesWintergarten);
-          console.log(this.tablesSonnbergZirbn);
-          console.log(this.tablesRestaurant);
+          //console.log(this.tablesPanorama);
+          //console.log(this.tablesWintergarten);
+          //console.log(this.tablesSonnbergZirbn);
+          //console.log(this.tablesRestaurant);
           this.changeBgColorIfAnreise();
         }
 
@@ -432,8 +432,8 @@ export class TischplanComponent {
           this.tableplanComponent.sumUpPersonenAnzahl();
         }, 1000);
 
-        console.log("this.tables");
-        console.log(this.tables);
+        //console.log("this.tables");
+        //console.log(this.tables);
       });
   }
 }

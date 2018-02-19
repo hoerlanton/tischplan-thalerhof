@@ -1019,8 +1019,8 @@ var DepartmentsComponent = (function () {
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
-            console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
             //console.log(this.tablesSonnbergZirbn[j].placeholder);
+            console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
             if (response === null) {
                 return;
             }
@@ -2433,14 +2433,16 @@ var NavigationComponent = (function () {
     };
     NavigationComponent.prototype.dispenseIfAbreise = function () {
         var tables = this.tablesTempAbreise;
+        var splittedGroups = 0;
         console.log('=================================================dispenseIfAbreise');
         this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
         for (var a = 0; a < tables.length; a++) {
             for (var b = 0; b < tables[a].tables.length; b++) {
                 if (tables[a].tables[b].groups) {
+                    var abreisenExport = tables[a].tables[b];
+                    abreisenExport.group = [];
                     for (var c = 0; c < tables[a].tables[b].groups.length; c++) {
                         if (tables[a].tables[b].groups[c].abreiseValue) {
-                            console.log('tables[a].tables[b].abreiseValue: ' + b + " " + tables[a].tables[b].anreiseValue);
                             this.parts[0] = tables[a].tables[b].groups[c].abreiseValue.match(/(\d+)/g);
                         }
                         else {
@@ -2450,17 +2452,13 @@ var NavigationComponent = (function () {
                             this.date[0] = new Date(2018, this.parts[0][1] - 1, this.parts[0][0]);
                             this.parsedDate[0] = String(this.date[0]).substring(0, 15);
                         }
-                        // note parts[1]-1
-                        // console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
-                        // Mon May 31 2010 00:00:00
-                        // this.tablesRestaurant[j].anreiseValue
                         var dateToday = String(this.dateTodayGenerated).substring(0, 15);
-                        console.log('Parsed Date --->: ' + this.parsedDate[0]);
-                        console.log('this.dateGenerated --->: ' + dateToday);
-                        var abreisenExport = tables[a].tables[b];
-                        abreisenExport.group = c;
-                        console.log(abreisenExport);
-                        if (dateToday.indexOf(this.parsedDate[0]) !== -1) {
+                        if (dateToday.indexOf(this.parsedDate[0]) !== -1 || tables[a].tables[b].groups[c].newTraceText) {
+                            abreisenExport.group.push(c);
+                            splittedGroups++;
+                        }
+                        if (c === (tables[a].tables[b].groups.length - 1) && (typeof abreisenExport.group !== 'undefined' && abreisenExport.group.length > 0)) {
+                            console.log("EEEEMMMMMMIIIIIIITTT");
                             this.abreisenExport.emit({ abreisenExport: abreisenExport, b: b });
                         }
                     }
@@ -3949,11 +3947,11 @@ var TischplanComponent = (function () {
         setTimeout(function () {
             _this.getTables();
             setTimeout(function () {
-                console.log('this.tablesWintergarten:');
-                console.log(_this.tablesWintergarten);
+                //console.log('this.tablesWintergarten:');
+                //console.log(this.tablesWintergarten);
                 _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
-                console.log('this.tables: in updateAzList');
-                console.log(_this.tables);
+                //console.log('this.tables: in updateAzList');
+                //console.log(this.tables);
                 _this.printComponent.formatAzListe(_this.tables);
             }, 3000);
         }, 1000);
@@ -3967,7 +3965,7 @@ var TischplanComponent = (function () {
                 return;
             }
             else {
-                console.log("tables[3].tables");
+                //console.log("tables[3].tables");
                 //console.log(JSON.parse(tables[3].tables));
                 /*
                 for (let a = 0; a < tables.length; a++) {
@@ -4016,9 +4014,9 @@ var TischplanComponent = (function () {
       
                 let sortedTablesWintergarten = tables[3].tables.sort();
                  */
-                console.log('sorted?:');
+                //console.log('sorted?:');
                 //console.log(sortedArray);
-                console.log(tables[3].tables);
+                //console.log(tables[3].tables);
                 //console.log(sortedTablesWintergarten);
                 //console.log(testTables);
                 for (var a = 0; a < tables.length; a++) {
@@ -4036,10 +4034,10 @@ var TischplanComponent = (function () {
                         _this.tablesRestaurant = tables[a].tables;
                     }
                 }
-                console.log(_this.tablesPanorama);
-                console.log(_this.tablesWintergarten);
-                console.log(_this.tablesSonnbergZirbn);
-                console.log(_this.tablesRestaurant);
+                //console.log(this.tablesPanorama);
+                //console.log(this.tablesWintergarten);
+                //console.log(this.tablesSonnbergZirbn);
+                //console.log(this.tablesRestaurant);
                 _this.changeBgColorIfAnreise();
             }
             _this.tablesTempAbreise = tables;
@@ -4048,8 +4046,8 @@ var TischplanComponent = (function () {
             setTimeout(function () {
                 _this.tableplanComponent.sumUpPersonenAnzahl();
             }, 1000);
-            console.log("this.tables");
-            console.log(_this.tables);
+            //console.log("this.tables");
+            //console.log(this.tables);
         });
     };
     return TischplanComponent;
