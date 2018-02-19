@@ -190,8 +190,8 @@ module.exports = {
         let informationElementsString = JSON.stringify(informationElements);
 
         if (informationElementsString.indexOf("targetTable") != -1) {
-            return;
-        }
+                console.log("BUG I GONNA KILL YOU !!!!")
+        } else {
 
         if (informationElementsString.indexOf("leftValue") != -1) {
             for (let i = 0; i < informationElements.groups.length; i++) {
@@ -237,7 +237,7 @@ module.exports = {
                     }
                     console.log("occupyTable Update successful");
                 });
-        }
+        }}
 
         setTimeout(function () {
             db.imHausListe.find(

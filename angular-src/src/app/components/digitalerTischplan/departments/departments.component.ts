@@ -113,8 +113,8 @@ export class DepartmentsComponent {
             }
         }
       setTimeout(() => {
-      this.updateAzList.emit();
-      this.updateImHausListeElement.emit(table);
+        this.updateAzList.emit();
+        this.updateImHausListeElement.emit(table);
       }, 2000);
     });
 

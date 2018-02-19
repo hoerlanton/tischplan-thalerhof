@@ -257,7 +257,6 @@ export class NavigationComponent implements OnInit {
         let tableInformationExport = this.tableInformation;
         this.umsetzenExport.emit({tableToMove, indexZiel, indexQuell, tableInformationExport});
       });
-
   }
 
   keyDownFunction(event) {
