@@ -183,15 +183,11 @@ module.exports = {
 
         let informationElements = req.body;
 
-        //console.log(req.body);
+        console.log(req.body);
 
         let nameValueArray = [];
         let zimmernummerValueArray = [];
         let informationElementsString = JSON.stringify(informationElements);
-
-        if (informationElementsString.indexOf("nameValue") === -1) {
-            return;
-        }
 
         if (informationElementsString.indexOf("leftValue") != -1) {
             for (let i = 0; i < informationElements.groups.length; i++) {
