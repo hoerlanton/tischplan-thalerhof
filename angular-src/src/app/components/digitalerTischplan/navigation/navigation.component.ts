@@ -163,7 +163,7 @@ export class NavigationComponent implements OnInit {
               console.log("EEEEMMMMMMIIIIIIITTT");
               setTimeout(() => {
                 this.abreisenExport.emit({abreisenExport, b});
-              }, 100 * a * c );
+              }, 100+ c *100 );
             }
           }
         }

@@ -2462,7 +2462,7 @@ var NavigationComponent = (function () {
                             console.log("EEEEMMMMMMIIIIIIITTT");
                             setTimeout(function () {
                                 _this.abreisenExport.emit({ abreisenExport: abreisenExport_1, b: b });
-                            }, 100 * a * c);
+                            }, 100 + c * 100);
                         }
                     }
                 }
