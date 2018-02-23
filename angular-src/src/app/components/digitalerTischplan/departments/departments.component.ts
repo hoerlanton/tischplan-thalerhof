@@ -88,8 +88,8 @@ export class DepartmentsComponent {
       console.log("Dispense Table:");
       console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
       console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
-      console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].department));
-      if (response === null) {
+      console.log(JSON.stringify(response));
+      if (response === null || typeof response[0].tables[j].groups == null) {
         return;
       } else {
 
@@ -101,29 +101,30 @@ export class DepartmentsComponent {
           return 0;
         });
 
-            if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-              this.dispensedSonnbergZirbn.emit(response[0].tables);
-            } else if (response[0].tables[j].department === "Panorama") {
-              this.dispensedPanorama.emit(response[0].tables);
-            } else if (response[0].tables[j].department === "Restaurant") {
-              this.dispensedRestaurant.emit(response[0].tables);
-            } else if (response[0].tables[j].department === "Wintergarten") {
-              this.dispensedWintergarten.emit(response[0].tables);
-              console.log("Wintergarten" + JSON.stringify(response[0].tables));
-            }
+        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+          this.dispensedSonnbergZirbn.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Panorama") {
+          this.dispensedPanorama.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Restaurant") {
+          this.dispensedRestaurant.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Wintergarten") {
+          this.dispensedWintergarten.emit(response[0].tables);
+          console.log("Wintergarten" + JSON.stringify(response[0].tables));
         }
-      setTimeout(() => {
+      }
+    },
+      error => console.log("Error: ", error),
+      () => {
         this.updateAzList.emit();
         this.updateImHausListeElement.emit(table);
-      }, 2000);
-    });
+      });
 
     this.tischplanService.addPlaceholder(table).subscribe(response => {
       console.log("Add placeholder!");
       //console.log(this.tablesSonnbergZirbn[j].placeholder);
-      console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
-
-      if (response === null) {
+      console.log("placeholder:" + JSON.stringify(response));
+/*
+      if (response === null || typeof response[0].tables[j].groups == null) {
         return;
       } else {
         {
@@ -141,7 +142,9 @@ export class DepartmentsComponent {
           }
         }
       }
+ */
     });
+
   }
 
   addInformationToTable(dataString, arrayIndex) {

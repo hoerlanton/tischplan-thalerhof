@@ -74,11 +74,14 @@ export class PrintComponent {
             placeholder: this.tables[i].placeholder,
             border: this.tables[i].border,
           };
-          //console.log(this.tables[i].number);
-          this.object = Object.assign(this.tables[i].groups[j], tempObject);
-          //console.log("this.object");
-          //console.log(this.object);
-          this.tableTemp.push(this.object);
+
+          if (this.tables[i].groups[j]) {
+            //console.log(this.tables[i].number);
+            this.object = Object.assign(this.tables[i].groups[j], tempObject);
+            //console.log("this.object");
+            //console.log(this.object);
+            this.tableTemp.push(this.object);
+          }
         }
       }
     }

@@ -14,6 +14,7 @@ module.exports = {
         let addPlaceholder = req.body;
 
         //console.log(occupyTable);
+        new Promise(function(resolve, reject) {
 
         db.tables.update(
             {
@@ -29,7 +30,10 @@ module.exports = {
                     console.log("Error");
                 }
                 console.log("No Error");
+                resolve(); // (*)
+
             });
+        }).then(function() { // (**)
 
         setTimeout(function () {
             db.tables.find(
@@ -41,9 +45,11 @@ module.exports = {
                         res.send(err);
                     }
                     res.json(tables);
-                    console.log(JSON.stringify(tables));
+                    //console.log(JSON.stringify(tables));
                 });
         }, 100);
+        });
+
 
     },
 

@@ -986,8 +986,8 @@ var DepartmentsComponent = (function () {
             console.log("Dispense Table:");
             console.log("bgColor:" + JSON.stringify(response[0].tables[j].bgColor));
             console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].isBesetzt));
-            console.log("isBesetzt:" + JSON.stringify(response[0].tables[j].department));
-            if (response === null) {
+            console.log(JSON.stringify(response));
+            if (response === null || typeof response[0].tables[j].groups == null) {
                 return;
             }
             else {
@@ -1012,34 +1012,34 @@ var DepartmentsComponent = (function () {
                     console.log("Wintergarten" + JSON.stringify(response[0].tables));
                 }
             }
-            setTimeout(function () {
-                _this.updateAzList.emit();
-                _this.updateImHausListeElement.emit(table);
-            }, 2000);
+        }, function (error) { return console.log("Error: ", error); }, function () {
+            _this.updateAzList.emit();
+            _this.updateImHausListeElement.emit(table);
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
             //console.log(this.tablesSonnbergZirbn[j].placeholder);
-            console.log("placeholder:" + JSON.stringify(response[0].tables[j].placeholder));
-            if (response === null) {
-                return;
-            }
-            else {
-                {
-                    if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                        _this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+            console.log("placeholder:" + JSON.stringify(response));
+            /*
+                  if (response === null || typeof response[0].tables[j].groups == null) {
+                    return;
+                  } else {
+                    {
+                      if (response[0].tables[j].department === "Sonnberg-Zirbn") {
+                        this.tablesSonnbergZirbn[j].placeholder = response[0].tables[j].placeholder;
+                      }
+                      else if (response[0].tables[j].department === "Panorama") {
+                        this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
+                      }
+                      else if (response[0].tables[j].department === "Restaurant") {
+                        this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
+                      }
+                      else if (response[0].tables[j].department === "Wintergarten") {
+                        this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
+                      }
                     }
-                    else if (response[0].tables[j].department === "Panorama") {
-                        _this.tablesPanorama[j].placeholder = response[0].tables[j].placeholder;
-                    }
-                    else if (response[0].tables[j].department === "Restaurant") {
-                        _this.tablesRestaurant[j].placeholder = response[0].tables[j].placeholder;
-                    }
-                    else if (response[0].tables[j].department === "Wintergarten") {
-                        _this.tablesWintergarten[j].placeholder = response[0].tables[j].placeholder;
-                    }
-                }
-            }
+                  }
+             */
         });
     };
     DepartmentsComponent.prototype.addInformationToTable = function (dataString, arrayIndex) {
@@ -2432,37 +2432,44 @@ var NavigationComponent = (function () {
         }, 3000);
     };
     NavigationComponent.prototype.dispenseIfAbreise = function () {
+        var _this = this;
         var tables = this.tablesTempAbreise;
         var splittedGroups = 0;
         console.log('=================================================dispenseIfAbreise');
         this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
         for (var a = 0; a < tables.length; a++) {
-            for (var b = 0; b < tables[a].tables.length; b++) {
+            var _loop_1 = function (b) {
                 if (tables[a].tables[b].groups) {
-                    var abreisenExport = tables[a].tables[b];
-                    abreisenExport.group = [];
+                    var abreisenExport_1 = tables[a].tables[b];
+                    abreisenExport_1.group = [];
                     for (var c = 0; c < tables[a].tables[b].groups.length; c++) {
                         if (tables[a].tables[b].groups[c].abreiseValue) {
-                            this.parts[0] = tables[a].tables[b].groups[c].abreiseValue.match(/(\d+)/g);
+                            this_1.parts[0] = tables[a].tables[b].groups[c].abreiseValue.match(/(\d+)/g);
                         }
                         else {
-                            this.parts[0] = "undefined";
+                            this_1.parts[0] = "undefined";
                         }
-                        if (this.parts[0]) {
-                            this.date[0] = new Date(2018, this.parts[0][1] - 1, this.parts[0][0]);
-                            this.parsedDate[0] = String(this.date[0]).substring(0, 15);
+                        if (this_1.parts[0]) {
+                            this_1.date[0] = new Date(2018, this_1.parts[0][1] - 1, this_1.parts[0][0]);
+                            this_1.parsedDate[0] = String(this_1.date[0]).substring(0, 15);
                         }
-                        var dateToday = String(this.dateTodayGenerated).substring(0, 15);
-                        if (dateToday.indexOf(this.parsedDate[0]) !== -1 || tables[a].tables[b].groups[c].newTraceText) {
-                            abreisenExport.group.push(c);
+                        var dateToday = String(this_1.dateTodayGenerated).substring(0, 15);
+                        if (dateToday.indexOf(this_1.parsedDate[0]) !== -1 || tables[a].tables[b].groups[c].newTraceText) {
+                            abreisenExport_1.group.push(c);
                             splittedGroups++;
                         }
-                        if (c === (tables[a].tables[b].groups.length - 1) && (typeof abreisenExport.group !== 'undefined' && abreisenExport.group.length > 0)) {
+                        if (c === (tables[a].tables[b].groups.length - 1) && (typeof abreisenExport_1.group !== 'undefined' && abreisenExport_1.group.length > 0)) {
                             console.log("EEEEMMMMMMIIIIIIITTT");
-                            this.abreisenExport.emit({ abreisenExport: abreisenExport, b: b });
+                            setTimeout(function () {
+                                _this.abreisenExport.emit({ abreisenExport: abreisenExport_1, b: b });
+                            }, 100 * a * c);
                         }
                     }
                 }
+            };
+            var this_1 = this;
+            for (var b = 0; b < tables[a].tables.length; b++) {
+                _loop_1(b);
             }
         }
     };
@@ -2747,11 +2754,13 @@ var PrintComponent = (function () {
                         placeholder: this.tables[i].placeholder,
                         border: this.tables[i].border,
                     };
-                    //console.log(this.tables[i].number);
-                    this.object = Object.assign(this.tables[i].groups[j], tempObject);
-                    //console.log("this.object");
-                    //console.log(this.object);
-                    this.tableTemp.push(this.object);
+                    if (this.tables[i].groups[j]) {
+                        //console.log(this.tables[i].number);
+                        this.object = Object.assign(this.tables[i].groups[j], tempObject);
+                        //console.log("this.object");
+                        //console.log(this.object);
+                        this.tableTemp.push(this.object);
+                    }
                 }
             }
         }

@@ -248,7 +248,7 @@ module.exports = {
                     }
                     res.json(imHausListe);
                     console.log('imHausListe');
-                    console.log(JSON.stringify(imHausListe));
+                    //console.log(JSON.stringify(imHausListe));
                 });
         }, 700);
 

@@ -161,7 +161,9 @@ export class NavigationComponent implements OnInit {
             }
             if(c === (tables[a].tables[b].groups.length -1) && (typeof abreisenExport.group !== 'undefined' && abreisenExport.group.length > 0)) {
               console.log("EEEEMMMMMMIIIIIIITTT");
-              this.abreisenExport.emit({abreisenExport, b});
+              setTimeout(() => {
+                this.abreisenExport.emit({abreisenExport, b});
+              }, 100 * a * c );
             }
           }
         }
