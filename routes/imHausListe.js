@@ -52,10 +52,39 @@ module.exports = {
 
             if (imHausListeData.data[accessorNameA] == null) {
                 break;
-            } else if (imHausListeData.data[accessorNameA].w === "Traces:" && !imHausListeData.data[accessorNameH]) {
+            } else if (imHausListeData.data[accessorNameA].w === "Traces:" &&  imHausListeData.data[accessorNameH] == null) {
+                console.log(row + "continue");
+                console.log(imHausListeData.data[accessorNameA].w);
+                console.log(imHausListeData.data[accessorNameH]);
                 continue;
             } else if (imHausListeData.data[accessorNameA].w === "Traces:" && imHausListeData.data[accessorNameH]) {
+                console.log(imHausListeData.data[accessorNameH]);
+                console.log(imHausListeData.data[accessorNameA].w);
                 trace[counter - 1] = imHausListeData.data[accessorNameH].w;
+                console.log("imHausListeData.data[accessorNameH].w");
+                console.log(imHausListeData.data[accessorNameH].w);
+                console.log("imHausListeData.data[H + (row + 1)]");
+                console.log(imHausListeData.data["H" + (row + 1)]);
+                console.log("imHausListeData.data[A + (row + 1)]");
+                console.log(imHausListeData.data["A" + (row + 1)]);
+                if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                    trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                    row++;
+                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        row++;
+                    }
+                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        row++;
+                    }
+                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        row++;
+                    }
+                    row--;
+                }
+
                 continue;
             } else {
                 if (imHausListeData.data[accessorNameA]) {
@@ -109,8 +138,8 @@ module.exports = {
                     rbSou.push("-");
                 }
                 if (imHausListeData.data[accessorNameL]) {
-                    console.log("imHausListeData.data[accessorNameL]" + row + "=");
-                    console.log(imHausListeData.data[accessorNameL]);
+                    //console.log("imHausListeData.data[accessorNameL]" + row + "=");
+                    //console.log(imHausListeData.data[accessorNameL]);
                     notiz2.push(imHausListeData.data[accessorNameL].w)
                 } else {
                     notiz2.push("-");
