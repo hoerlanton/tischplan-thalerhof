@@ -74,12 +74,24 @@ module.exports = {
                         trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
                         row++;
                     }
-                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
                         row++;
                     }
                     if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
                         trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        row++;
+                    }
+                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
+                        row++;
+                    }
+                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        row++;
+                    }
+                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
                         row++;
                     }
                     row--;
