@@ -16,11 +16,12 @@
                  [tablesTempAbreise]="tablesTempAbreise"
                  (getTablesOccupied)="tablesOccupied = $event"
                  (umsetzenExport)="umsetzenInfoVar = $event; umsetzen($event)"
-                 (abreisenExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
+                 (abreisenExportExport)="abreiseTablePlusIndex = $event; abreisenRemoval($event)"
                  (transformExport)="term = $event; transform($event)"
                  (termExport)="term = $event"
                  (reloadLists)="reloadLists($event)"
-                 [newInformationEmployees]="newInformationEmployees">
+                 [newInformationEmployees]="newInformationEmployees"
+                 (getTablesExport)="getTables($event)">
 </app-navigation>
   <div class="row">
     <div class="container-fluid">

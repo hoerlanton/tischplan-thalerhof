@@ -224,7 +224,7 @@ module.exports = {
 
         let informationElements = req.body;
 
-        //console.log(req.body);
+        console.log(req.body);
 
         let nameValueArray = [];
         let zimmernummerValueArray = [];

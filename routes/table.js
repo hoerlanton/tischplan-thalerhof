@@ -17,7 +17,8 @@ const
     addTablesWintergarten = require('./addTablesWintergarten.js'),
     addTablesRestaurant1024 = require('./addTablesRestaurant10-24.js'),
     addTablesRestaurant110 = require('./addTablesRestaurant1-10.js'),
-    Promise = require('promise');
+    Promise = require('promise'),
+    dateFns = require('date-fns');
 
 
 module.exports = {
@@ -247,130 +248,89 @@ module.exports = {
     dispenseTable: function (req, res, db) {
         console.log("dispenseTable request made to /dispenseTable");
         let dispenseTable = req.body;
-        console.log(dispenseTable.department);
-        console.log(dispenseTable.number);
-        //console.log(dispenseTable);
-        //console.log(dispenseTable.groups.length);
-        //console.log(dispenseTable.group );
-        //console.log("dispenseTable" + JSON.stringify(dispenseTable));
-        if (dispenseTable.groups != null) {
-            if (dispenseTable.group) {
-                if (dispenseTable.groups.length > dispenseTable.group.length) {
-                    new Promise(function(resolve, reject) {
-                        for (let i = 0; i < dispenseTable.group.length; i++) {
-                            if (dispenseTable.group.length === 1 && dispenseTable.groups[dispenseTable.group[i]].newTraceText) {
-                                break;
-                            }
-                            db.tables.findAndModify({
-                                query: {
-                                    department: dispenseTable.department,
-                                    "tables.number": dispenseTable.number
-                                },
-                                update: {
-                                    $unset: {
-                                        ["tables.$.groups." + dispenseTable.group[i]]: 1,
+        let today = dateFns.format(new Date(new Date().getTime() + 24 * 60 * 60 * 1000), 'DD.MM.');
+        console.log(today);
+        let tablesTemp3 = [];
+        let departments = ["Sonnberg-Zirbn", "Wintergarten", "Restaurant", "Panorama"];
+        if (dispenseTable.constructor === Array) {
+            console.log("dispenseTable[h].table.groups.length > dispenseTable[h].group.length");
+            new Promise(function (resolve, reject) {
+                db.tables.find({}, function (err, tables) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        tablesTemp3.push(tables);
+                        //console.log(tables);
+                        //tablesTemp3.push(tables);
+                        //console.log(tablesTemp3);
+                        //return tablesTemp3;
+                        setTimeout(() => resolve(), 1000);
+                    }
+                });
+            }).then(function () { // (**)
+                console.log("---------------------");
+                console.log(JSON.stringify(tablesTemp3[0]));
+                for (let i = tablesTemp3[0].length - 1; i >= 0; i--) {
+                    for (let k = tablesTemp3[0][i].tables.length - 1; k >= 0; k--) {
+                        if (tablesTemp3[0][i].tables[k].groups) {
+                            console.log(tablesTemp3[0][i].tables[k].groups);
+                            for (let j = tablesTemp3[0][i].tables[k].groups.length - 1; j >= 0; j--) {
+                                console.log("+");
+                                //console.log(tablesTemp2[0].tables[i]);
+                                if (tablesTemp3[0][i].tables[k].groups[j].abreiseValue === String(today)) {
+                                    //console.log(tablesTemp2[0].tables[i].groups[j].abreiseValue);
+                                    console.log(tablesTemp3[0][i].tables[k].groups[j].abreiseValue);
+                                    tablesTemp3[0][i].tables[k].groups.splice(j, 1);
+                                    console.log(tablesTemp3[0][i].tables[k].groups.length);
+                                    console.log(tablesTemp3[0][i].tables[k].groups);
+                                    if (tablesTemp3[0][i].tables[k].groups.length === 0) {
+                                        tablesTemp3[0][i].tables[k].bgColor = "#ffffff";
+                                        tablesTemp3[0][i].tables[k].isBesetzt = "false";
+                                        //delete tablesTemp3[0][i].tables[k]['groups'];
                                     }
-                                },
-                                multi: true
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
                                 }
-                            });
-                            if ( i === (dispenseTable.group.length - 1)) {  resolve(); }
+                            }
+                            for (let j = tablesTemp3[0][i].tables[k].groups.length - 1; j >= 0; j--) {
+                                //console.log(tablesTemp2[0].tables[i]);
+                                console.log("*");
+                                if (tablesTemp3[0][i].tables[k].groups.length === 1 && tablesTemp3[0][i].tables[k].groups[j].newTraceText) {
+                                    tablesTemp3[0][i].tables[k].groups.splice(j, 1);
+                                    tablesTemp3[0][i].tables[k].bgColor = "#ffffff";
+                                    tablesTemp3[0][i].tables[k].isBesetzt = "false";
+                                }
+                            }
                         }
-                    }).then(function() { // (**)
-                        console.log("removeNulls promise");
-                            db.tables.findAndModify({
-                                query: {
-                                    department: dispenseTable.department,
-                                    "tables.number": dispenseTable.number
-                                },
-                                update: {
-                                    $pull: {
-                                        "tables.$.groups": null
-                                    }
-                                },
-                                 multi: true
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
-                                }
-                                console.log(JSON.stringify(tables));
-                            });
-                            console.log();
-                    }).then(function() { // (**)
-                            console.log("SEND DATA promise");
-                            db.tables.find(
-                                {
-                                    department: dispenseTable.department,
-                                    "tables.number": dispenseTable.number
-                                }, function (err, tables) {
-                                    if (err) {
-                                        res.send(err);
-                                    }
-                                    res.json(tables);
-                                    //  console.log("Dispense Table: " + JSON.stringify(tables));
-                                });
-                    }).catch(reason => {
-                     console.log(reason)
+                    }
+                }
+                console.log("tablesTemp3 after");
+                console.log(JSON.stringify(tablesTemp3[0]));
+            }).then(function () { // (**)
+                for (let h = 0; h < departments.length; h++) {
+                    db.tables.remove({
+                        department: departments[h]
                     });
-                } else if (dispenseTable.groups.length === dispenseTable.group.length) {
-                    new Promise(function(resolve, reject) {
-                        db.tables.findAndModify({
-                            query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
-                            update: {
-                                $set: {
-                                    "tables.$.bgColor": "#ffffff",
-                                    "tables.$.isBesetzt": "false",
-                                }, $unset: {
-                                    "tables.$.groups" : 1,
-                                }
-                            },
-                            new: false
-                        }, function (err, tables) {
+                }
+            }).then(function () { // (**)
+                db.tables.save(tablesTemp3[0][0]);
+                db.tables.save(tablesTemp3[0][1]);
+                db.tables.save(tablesTemp3[0][2]);
+                db.tables.save(tablesTemp3[0][3]);
+            }).then(function () { // (**)
+                setTimeout(function () {
+                    console.log("Dispense Table1: ");
+                    db.tables.find(
+                        {}, function (err, tables) {
                             if (err) {
-                                console.log("Error");
+                                res.send(err);
                             }
-                            console.log("No Error");
-                            resolve(); // (*)
+                            console.log(tables);
+                            res.json(tables);
+                            //console.log("Dispense Table: " + JSON.stringify(tables));
                         });
-                    }).then(function() { // (**)
-                        console.log("removeNulls promise");
-                        setTimeout(function () {
-                            db.tables.findAndModify({
-                                query: {
-                                    department: dispenseTable.department,
-                                    "tables.number": dispenseTable.number
-                                },
-                                update: {
-                                    $pull: {
-                                        "tables.$.groups": null
-                                    }
-                                },
-                                new: false
-                            }, function (err, tables) {
-                                if (err) {
-                                    console.log("Error");
-                                }
-                            });
-                        }, 200);
-                    }).then(function() { // (**)
-                        setTimeout(function () {
-                            db.tables.find(
-                                {
-                                    department: dispenseTable.department,
-                                    "tables.number": dispenseTable.number
-                                }, function (err, tables) {
-                                    if (err) {
-                                        res.send(err);
-                                    }
-                                    res.json(tables);
-                                    //  console.log("Dispense Table: " + JSON.stringify(tables));
-                                });
-                        }, 400);
-                    });
-                } } else {
+                }, 500);
+            });
+        } else {
+            new Promise(function (resolve, reject) {
                 db.tables.findAndModify({
                     query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
                     update: {
@@ -378,7 +338,7 @@ module.exports = {
                             "tables.$.bgColor": "#ffffff",
                             "tables.$.isBesetzt": "false",
                         }, $unset: {
-                            "tables.$.groups" : 1,
+                            "tables.$.groups": 1,
                         }
                     },
                     new: false
@@ -388,7 +348,10 @@ module.exports = {
                     }
                     console.log("No Error");
                 });
+                resolve();
+            }).then(function () { // (**)
                 setTimeout(function () {
+                    console.log("Dispense Table2: ");
                     db.tables.find(
                         {
                             department: dispenseTable.department,
@@ -397,42 +360,12 @@ module.exports = {
                             if (err) {
                                 res.send(err);
                             }
+                            console.log(tables);
                             res.json(tables);
-                            //  console.log("Dispense Table: " + JSON.stringify(tables));
+                            //console.log("Dispense Table: " + JSON.stringify(tables));
                         });
                 }, 500);
-            }
-        } else {
-            db.tables.findAndModify({
-                query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
-                update: {
-                    $set: {
-                        "tables.$.bgColor": "#ffffff",
-                        "tables.$.isBesetzt": "false",
-                    }, $unset: {
-                        "tables.$.groups" : 1,
-                    }
-                },
-                new: false
-            }, function (err, tables) {
-                if (err) {
-                    console.log("Error");
-                }
-                console.log("No Error");
             });
-            setTimeout(function () {
-                db.tables.find(
-                    {
-                        department: dispenseTable.department,
-                        "tables.number": dispenseTable.number
-                    }, function (err, tables) {
-                        if (err) {
-                            res.send(err);
-                        }
-                        res.json(tables);
-                        //  console.log("Dispense Table: " + JSON.stringify(tables));
-                    });
-            }, 500);
         }
     }
 };

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.css']
 })
+
 export class NavigationComponent implements OnInit {
 
   filesToUpload: Array<File> = [];
@@ -20,10 +21,12 @@ export class NavigationComponent implements OnInit {
   @Output()
   umsetzenExport: EventEmitter<any> = new EventEmitter();
   @Output()
-  abreisenExport: EventEmitter<any> = new EventEmitter();
+  abreisenExportExport: EventEmitter<any> = new EventEmitter();
   term: string;
   @Output()
   termExport: EventEmitter<any> = new EventEmitter();
+  @Output()
+  getTablesExport: EventEmitter<any> = new EventEmitter();
   @Output()
   reloadLists: EventEmitter<any> = new EventEmitter();
   @Output()
@@ -136,14 +139,18 @@ export class NavigationComponent implements OnInit {
 
   dispenseIfAbreise() {
     let tables = this.tablesTempAbreise;
-    let splittedGroups = 0;
+    let abreisenExport = [];
+    let b = 0;
     console.log('=================================================dispenseIfAbreise');
     this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+    //Tomorrow new Date().getTime() + 24 * 60 * 60 * 1000
     for (let a = 0; a < tables.length; a++) {
       for (let b = 0; b < tables[a].tables.length; b++) {
         if (tables[a].tables[b].groups) {
-          let abreisenExport = tables[a].tables[b];
-          abreisenExport.group = [];
+          let abreisenExportObject = {
+            table: tables[a].tables[b],
+            group: []
+          };
           for (let c = 0; c < tables[a].tables[b].groups.length; c++) {
             if (tables[a].tables[b].groups[c].abreiseValue) {
               this.parts[0] = tables[a].tables[b].groups[c].abreiseValue.match(/(\d+)/g);
@@ -156,19 +163,21 @@ export class NavigationComponent implements OnInit {
             }
             let dateToday = String(this.dateTodayGenerated).substring(0, 15);
             if (dateToday.indexOf(this.parsedDate[0]) !== -1 || tables[a].tables[b].groups[c].newTraceText) {
-              abreisenExport.group.push(c);
-              splittedGroups++;
+              abreisenExportObject.group.push(c);
             }
-            if(c === (tables[a].tables[b].groups.length -1) && (typeof abreisenExport.group !== 'undefined' && abreisenExport.group.length > 0)) {
+            if(c === (tables[a].tables[b].groups.length -1) && (typeof abreisenExportObject.group !== 'undefined' && abreisenExportObject.group.length > 0)) {
               console.log("EEEEMMMMMMIIIIIIITTT");
-              setTimeout(() => {
-                this.abreisenExport.emit({abreisenExport, b});
-              }, 100+ c *100 );
+              abreisenExport.push(abreisenExportObject);
             }
           }
         }
       }
     }
+    console.log(abreisenExport);
+    setTimeout(() => {
+      this.abreisenExportExport.emit({abreisenExport, b});
+    }, 100);
+    this.getTablesExport.emit();
   }
 
   umsetzen() {
