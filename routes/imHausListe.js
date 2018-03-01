@@ -296,7 +296,7 @@ module.exports = {
     },
     getImHausListe: function (req, res, db) {
         console.log("imHausListe get called");
-//Get guests from Mongo DB
+        //Get guests from Mongo DB
         db.imHausListe.find(function (err, imHausListe) {
             if (err) {
                 res.send(err);

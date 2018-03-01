@@ -304,17 +304,21 @@ module.exports = {
                 }
                 console.log("tablesTemp3 after");
                 console.log(JSON.stringify(tablesTemp3[0]));
+
             }).then(function () { // (**)
-                for (let h = 0; h < departments.length; h++) {
-                    db.tables.remove({
-                        department: departments[h]
-                    });
-                }
-            }).then(function () { // (**)
-                db.tables.save(tablesTemp3[0][0]);
-                db.tables.save(tablesTemp3[0][1]);
-                db.tables.save(tablesTemp3[0][2]);
-                db.tables.save(tablesTemp3[0][3]);
+                db.tables.remove({
+                }, function (err, tables) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("removed");
+                        console.log(tables);
+                        db.tables.save(tablesTemp3[0][0]);
+                        db.tables.save(tablesTemp3[0][1]);
+                        db.tables.save(tablesTemp3[0][2]);
+                        db.tables.save(tablesTemp3[0][3]);
+                    }
+                });
             }).then(function () { // (**)
                 setTimeout(function () {
                     console.log("Dispense Table1: ");
