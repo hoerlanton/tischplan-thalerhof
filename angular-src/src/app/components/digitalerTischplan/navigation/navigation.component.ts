@@ -43,6 +43,8 @@ export class NavigationComponent implements OnInit {
   printToCart3Button: string;
   abreiseAbbrechenButton: string;
   abreiseAusfuehrenButton: string;
+  abreiseAusfuehrenMorgenButton: string;
+
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, public authService: AuthService, private router: Router ) {
     this.printToCart1Button = "ffffff";
@@ -50,6 +52,7 @@ export class NavigationComponent implements OnInit {
     this.printToCart3Button = "ffffff";
     this.abreiseAbbrechenButton = "ffffff";
     this.abreiseAusfuehrenButton = "ff0000";
+    this.abreiseAusfuehrenMorgenButton = "ff0000";
   }
 
   ngOnInit() {
@@ -137,19 +140,33 @@ export class NavigationComponent implements OnInit {
     }, 3000);
   }
 
+
+  dispenseIfAbreiseHeute() {
+    this.dateTodayGenerated = new Date(); //Today
+    this.dispenseIfAbreise();
+  }
+
+  dispenseIfAbreiseMorgen() {
+    console.log("dispenseIfAbreiseMorgen");
+    this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); //Tomorrow
+    this.dispenseIfAbreise();
+    console.log(this.dateTodayGenerated);
+  }
+
+
   dispenseIfAbreise() {
     let tables = this.tablesTempAbreise;
     let abreisenExport = [];
     let b = 0;
-    console.log('=================================================dispenseIfAbreise');
-    this.dateTodayGenerated = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+    console.log('dispenseIfAbreise');
     //Tomorrow new Date().getTime() + 24 * 60 * 60 * 1000
     for (let a = 0; a < tables.length; a++) {
       for (let b = 0; b < tables[a].tables.length; b++) {
         if (tables[a].tables[b].groups) {
           let abreisenExportObject = {
             table: tables[a].tables[b],
-            group: []
+            group: [],
+            date: String(this.dateTodayGenerated).substring(0, 15)
           };
           for (let c = 0; c < tables[a].tables[b].groups.length; c++) {
             if (tables[a].tables[b].groups[c].abreiseValue) {
@@ -351,6 +368,21 @@ export class NavigationComponent implements OnInit {
     if (this.abreiseAusfuehrenButton === "a00000") {
       //console.log('mouse leave1 :');
       this.abreiseAusfuehrenButton = "ff0000";
+    }
+  }
+
+  mouseEnterAbreiseMorgenAusfuehrenButton() {
+    //console.log("mouse enter : ");
+    if (this.abreiseAusfuehrenMorgenButton === "ff0000") {
+      //console.log('mouse enter1 :');
+      this.abreiseAusfuehrenMorgenButton = "a00000";
+    }
+  }
+
+  mouseLeaveAbreiseMorgenAusfuehrenButton() {
+    if (this.abreiseAusfuehrenMorgenButton === "a00000") {
+      //console.log('mouse leave1 :');
+      this.abreiseAusfuehrenMorgenButton = "ff0000";
     }
   }
 

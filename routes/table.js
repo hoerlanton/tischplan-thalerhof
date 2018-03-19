@@ -248,7 +248,7 @@ module.exports = {
     dispenseTable: function (req, res, db) {
         console.log("dispenseTable request made to /dispenseTable");
         let dispenseTable = req.body;
-        let today = dateFns.format(new Date(new Date().getTime() + 24 * 60 * 60 * 1000), 'DD.MM.');
+        let today = dateFns.format(dispenseTable[0].date, 'DD.MM.');
         console.log(today);
         let tablesTemp3 = [];
         let departments = ["Sonnberg-Zirbn", "Wintergarten", "Restaurant", "Panorama"];

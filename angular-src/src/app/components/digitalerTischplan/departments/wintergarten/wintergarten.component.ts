@@ -16,7 +16,8 @@ export class WintergartenComponent implements OnInit {
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
 
-  constructor(private tischplanService: TischplanService) { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

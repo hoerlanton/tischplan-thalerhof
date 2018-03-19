@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable, AfterViewInit, AfterViewChecked, ChangeDetectorRef  } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Injectable  } from '@angular/core';
 import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
@@ -69,7 +69,7 @@ export class DepartmentsComponent {
   b: any;
   tablesChangeBgColorIfAnreise: any;
 
-  constructor( private tischplanService: TischplanService, private cdr: ChangeDetectorRef) {
+  constructor( private tischplanService: TischplanService) {
   }
 
   ngOnInit() {

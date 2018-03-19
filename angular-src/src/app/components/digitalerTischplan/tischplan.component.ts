@@ -10,8 +10,6 @@ import { ImHausListeComponent } from './im-haus-liste/im-haus-liste.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TableplanComponent } from './tableplan/tableplan.component';
 import { DepartmentsComponent } from './departments/departments.component';
-import { NavService }   from '../../services/tables.service';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'tischplan',
@@ -35,8 +33,6 @@ export class TischplanComponent {
   @ViewChild(TableplanComponent)
   private tableplanComponent: TableplanComponent;
 
-  //item: any;
-  subscription: Subscription;
   buttonBgColor1: string;
   buttonBgColor2: string;
   buttonBgColor3: string;
@@ -51,7 +47,6 @@ export class TischplanComponent {
   buttonBgColorNotizForm: string;
   fontColorInfoForm: string;
   fontColorNotizForm: string;
-  showInfoshowNotizFormBoolFormBool: boolean;
   showNotizFormBool: boolean;
   showAlleBool: boolean;
   topValues: any[] = [];
@@ -87,12 +82,9 @@ export class TischplanComponent {
   tableNumbers: any[] = [];
   notizElements: any[] = [];
   term: string;
-  dateTodayGenerated: any;
   date: any[] = [];
   parts: any[] = [];
   parsedDate: any[] = [];
-  quellTisch: any;
-  zielTisch: any;
   tableInformation: any[] = [];
   tablesTempAbreise: any[] = [];
   abreiseTablePlusIndex: any;
@@ -112,10 +104,6 @@ export class TischplanComponent {
   kiWintergarten: any[] = [];
 
   constructor(private tischplanService: TischplanService, private dragulaService: DragulaService) {
-
-    //this.subscription = this._navService.navItem$
-    //  .subscribe(tables => this.tablesPanorama = tables);
-
 
     this.buttonBgColorInfoForm = "0a7a74";
     this.buttonBgColorNotizForm = "0a7a74";
@@ -290,7 +278,6 @@ export class TischplanComponent {
     this.imHausListeComponent.updateImHausListeElement(x);
   }
 
-
   umsetzen() {
     this.departmentsComponent.addInformationToTable(this.umsetzenInfoVar.tableInformationExport, this.umsetzenInfoVar.indexZiel);
     this.departmentsComponent.occupyTableOnDrop(this.umsetzenInfoVar.tableToMove, this.umsetzenInfoVar.indexZiel);
@@ -339,21 +326,14 @@ export class TischplanComponent {
   }
 
   getTables() {
-    console.log('2222222222222222222222------------------------------');
+    console.log('getTables called');
     this.tischplanService.getTables()
       .subscribe(tables => {
         if (tables === null) {
           return;
         } else {
-
           //console.log("tables[3].tables");
           //console.log(JSON.parse(tables[3].tables));
-          /*
-          for (let a = 0; a < tables.length; a++) {
-            tables[a].tables.sort((a, b) => a.number - b.number); // Ascending sort
-            console.log(tables[a].tables);
-          }
-           */
           for (let x = 0; x < tables.length; x++){
             //console.log("tables[x].department");
             //console.log(tables[x].department);
@@ -368,41 +348,12 @@ export class TischplanComponent {
                 return 0;
               });
             }
-            }
-
-
-          /*
-          let testTables = [{ number: "512"}, {number: "501"}, {number:  "505"}, {number:  "507"}, {number:  "508"}, {number:  "509"}, {number:  "510"}, {number:  "511"}, {number:  "503"}, {number:  "513"}, {number:  "514"}, {number:  "515"}, {number:  "517"}, {number:  "519"}, {number:  "521"}, {number: "522"}, {number:  "523"}];
-
-          console.log(testTables);
-          testTables.sort(function (a, b) {
-            console.log(a.number);
-            console.log(b.number);
-            if (Number(a.number) < Number(b.number))
-              return -1;
-            if (Number(a.number) > Number(b.number))
-              return 1;
-            return 0;
-          });
-
-           tables[3].tables.sort(function (a, b) {
-            console.log(a.number);
-            console.log(b.number);
-            if (Number(a.number) < Number(b.number))
-              return -1;
-            if (Number(a.number) > Number(b.number))
-              return 1;
-            return 0;
-          });
-
-          let sortedTablesWintergarten = tables[3].tables.sort();
-           */
+          }
           //console.log('sorted?:');
           //console.log(sortedArray);
           //console.log(tables[3].tables);
           //console.log(sortedTablesWintergarten);
           //console.log(testTables);
-
           for (let a = 0; a < tables.length; a++) {
             if (tables[a].department === "Panorama") {
               this.tablesPanorama = tables[a].tables;
@@ -424,14 +375,12 @@ export class TischplanComponent {
           //console.log(this.tablesRestaurant);
           this.changeBgColorIfAnreise();
         }
-
         this.tablesTempAbreise = tables;
         this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
         this.printComponent.formatAzListe(this.tables);
         setTimeout(() => {
           this.tableplanComponent.sumUpPersonenAnzahl();
         }, 1000);
-
         //console.log("this.tables");
         //console.log(this.tables);
       });
