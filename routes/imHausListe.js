@@ -70,33 +70,22 @@ module.exports = {
                 if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
                     trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
                     row++;
-                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
-                        row++;
-                    }
-                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
-                        row++;
-                    }
-                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
-                        row++;
-                    }
-                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
-                        row++;
-                    }
-                    if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
-                        row++;
-                    }
-                    if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
-                        trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
-                        row++;
+                    for (row; row < 10000; row++) {
+                        console.log("Loop for subtraces");
+                        console.log(row);
+                        console.log(imHausListeData.data["H" + (row + 1)] + imHausListeData.data["A" + (row + 1)]);
+                        if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
+                            trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
+                        }
+                        if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                            trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
+                        }
+                        if (imHausListeData.data["D" + (row  + 1)] == null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                            break;
+                        }
                     }
                     row--;
                 }
-
                 continue;
             } else {
                 if (imHausListeData.data[accessorNameA]) {
@@ -231,22 +220,46 @@ module.exports = {
         let informationElementsString = JSON.stringify(informationElements);
 
         if (informationElementsString.indexOf("targetTable") != -1) {
-                console.log("BUG I GONNA KILL YOU !!!!")
+            console.log("BUG I GONNA KILL YOU !!!!")
         } else {
 
-        if (informationElementsString.indexOf("leftValue") != -1) {
-            for (let i = 0; i < informationElements.groups.length; i++) {
-                nameValueArray.push(informationElements.groups[i].nameValue);
-                zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
+            if (informationElementsString.indexOf("leftValue") != -1) {
+                for (let i = 0; i < informationElements.groups.length; i++) {
+                    nameValueArray.push(informationElements.groups[i].nameValue);
+                    zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
+
+                    db.imHausListe.update(
+                        {
+                            name: nameValueArray[i],
+                            "zimmernummer": zimmernummerValueArray[i]
+                        },
+                        {
+                            $set: {
+                                "bgColor": "ffffff",
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("occupyTable Update successful");
+                        });
+
+                }
+            } else {
+                nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
+                zimmernummerValueArray.push(informationElements[4].substring(1, informationElements[4].length));
+
+                console.log(nameValueArray[0]);
+                console.log(zimmernummerValueArray[0]);
 
                 db.imHausListe.update(
                     {
-                        name: nameValueArray[i],
-                        "zimmernummer": zimmernummerValueArray[i]
+                        name: nameValueArray[0],
+                        "zimmernummer": zimmernummerValueArray[0]
                     },
                     {
                         $set: {
-                            "bgColor": "ffffff",
+                            "bgColor": "0a7a74",
                         }
                     }, function (err, tables) {
                         if (err) {
@@ -254,31 +267,7 @@ module.exports = {
                         }
                         console.log("occupyTable Update successful");
                     });
-
-            }
-        } else {
-            nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
-            zimmernummerValueArray.push(informationElements[4].substring(1, informationElements[4].length));
-
-            console.log(nameValueArray[0]);
-            console.log(zimmernummerValueArray[0]);
-
-            db.imHausListe.update(
-                {
-                    name: nameValueArray[0],
-                    "zimmernummer": zimmernummerValueArray[0]
-                },
-                {
-                    $set: {
-                        "bgColor": "0a7a74",
-                    }
-                }, function (err, tables) {
-                    if (err) {
-                        console.log("Error");
-                    }
-                    console.log("occupyTable Update successful");
-                });
-        }}
+            }}
 
         setTimeout(function () {
             db.imHausListe.find(
