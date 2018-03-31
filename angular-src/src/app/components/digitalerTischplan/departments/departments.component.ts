@@ -3,7 +3,6 @@ import { TischplanService } from '../../../services/tischplan.service';
 import { Table } from '../../../../../Table';
 import { WintergartenComponent } from './wintergarten/wintergarten.component';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { NavService }   from '../../../services/tables.service';
 import { TischplanComponent } from '../tischplan.component';
 import { DragulaService } from "ng2-dragula";
 import { Http, Headers } from '@angular/http';

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Table } from '../../../../../Table';
 import { TischplanService } from '../../../services/tischplan.service';
-import { NavService }   from '../../../services/tables.service';
 
 @Component({
   selector: 'app-tableplan',
@@ -61,7 +60,7 @@ export class TableplanComponent implements AfterViewInit {
   erwWintergarten: any[] = [];
   kiWintergarten: any[] = [];
 
-  constructor(private tischplanService: TischplanService, private _navService: NavService) {
+  constructor(private tischplanService: TischplanService) {
     this.buttonMoveTable = "ff0000";
     this.buttonInfo = "ffffff";
     this.buttonHinzufuegen = "ffffff";

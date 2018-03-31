@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TischplanComponent } from './components/digitalerTischplan/tischplan.component';
 import { PrintComponent } from './components/digitalerTischplan/print/print.component';
-import { NavService } from './services/tables.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DragulaModule } from 'ng2-dragula';
 import {NgClass} from '@angular/common';
@@ -76,7 +75,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     RouterModule.forChild(appRoutes)
   ],
-  providers: [NavService, ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

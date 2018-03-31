@@ -67,25 +67,27 @@ module.exports = {
                 console.log(imHausListeData.data["H" + (row + 1)]);
                 console.log("imHausListeData.data[A + (row + 1)]");
                 console.log(imHausListeData.data["A" + (row + 1)]);
-                if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
-                    trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
-                    row++;
+                let forLoopCounter = 0;
                     for (row; row < 10000; row++) {
                         console.log("Loop for subtraces");
                         console.log(row);
                         console.log(imHausListeData.data["H" + (row + 1)] + imHausListeData.data["A" + (row + 1)]);
+
+                        forLoopCounter++;
                         if (imHausListeData.data["H" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null) {
                             trace[counter - 1] += ", " + imHausListeData.data["H" + (row + 1)].w;
                         }
-                        if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                        if (imHausListeData.data["D" + (row + 1)] != null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["F" + (row + 1)] != null) {
                             trace[counter - 1] += ", " + imHausListeData.data["D" + (row + 1)].w;
                         }
                         if (imHausListeData.data["D" + (row  + 1)] == null && imHausListeData.data["A" + (row + 1)] == null  && imHausListeData.data["H" + (row + 1)] == null) {
+                            if (forLoopCounter > 1) {
+                                row--;
+                            }
                             break;
                         }
+
                     }
-                    row--;
-                }
                 continue;
             } else {
                 if (imHausListeData.data[accessorNameA]) {
