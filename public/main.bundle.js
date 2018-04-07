@@ -1018,7 +1018,13 @@ var DepartmentsComponent = (function () {
                 }
             }
             else {
-                _this.updateImHausListeElement.emit(table);
+                if (table.constructor === Array) {
+                    console.log("isarray");
+                    _this.updateImHausListeElement.emit(table[0].table);
+                }
+                else {
+                    _this.updateImHausListeElement.emit(table);
+                }
             }
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {

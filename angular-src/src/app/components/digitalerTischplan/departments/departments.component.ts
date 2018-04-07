@@ -11,8 +11,6 @@ import {PanoramaComponent} from "./panorama/panorama.component";
 import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {SonnbergZirbnComponent} from "./sonnberg-zirbn/sonnberg-zirbn.component";
 
-
-
 @Component({
   selector: 'app-departments',
   templateUrl: 'departments.component.html',
@@ -122,8 +120,12 @@ export class DepartmentsComponent {
             this.updateImHausListeElement.emit(table[i].table);
           }
         } else {
-          this.updateImHausListeElement.emit(table);
-
+          if (table.constructor === Array) {
+            console.log("isarray");
+            this.updateImHausListeElement.emit(table[0].table);
+          } else {
+            this.updateImHausListeElement.emit(table);
+          }
         }
       });
 
