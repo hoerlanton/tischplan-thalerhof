@@ -1,0 +1,168 @@
+<router-outlet></router-outlet>
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="<your-libs-directory>/object-assign.min.js"></script>
+  <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+</head>
+<div id="charge-error" class="alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>"><%= errMsg  %></div>
+<body>
+<app-navigation  [newInformationElements]="newInformationElements"
+                 [tablesOccupied]="tablesOccupied"
+                 [tablesTempDeparture]="tablesTempDeparture"
+                 (getTablesOccupied)="tablesOccupied = $event"
+                 (reseatExport)="reseatInfoVar = $event; reseat($event)"
+                 (departureExportExport)="departureTablePlusIndex = $event; departureRemoval($event)"
+                 (transformExport)="term = $event; transform($event)"
+                 (termExport)="term = $event"
+                 (reloadLists)="reloadLists($event)"
+                 [newInformationEmployees]="newInformationEmployees"
+                 (getTablesExport)="getTables($event)">
+</app-navigation>
+  <div class="row">
+    <div class="container-fluid">
+      <flash-messages></flash-messages>
+      <div class="col-xs-12 col-sm-8 col-lg-6 print-col">
+        <app-departmentmenu
+          [buttonBgColor1]="buttonBgColor1"
+          [buttonBgColor2]="buttonBgColor2"
+          [buttonBgColor3]="buttonBgColor3"
+          [buttonBgColor4]="buttonBgColor4"
+          [buttonBgColor5]="buttonBgColor5"
+          [fontColor1]="fontColor1"
+          [fontColor2]="fontColor2"
+          [fontColor3]="fontColor3"
+          [fontColor4]="fontColor4"
+          [fontColor5]="fontColor5"
+          [showPanoramaBool]="showPanoramaBool"
+          [showRestaurantBool]="showRestaurantBool"
+          [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+          [showWintergartenBool]="showWintergartenBool"
+          [showAllBool]="showAllBool"
+          (showSonnbergZirbnBoolChange)="showSonnbergZirbnBool=$event"
+          (showPanoramaBoolChange)="showPanoramaBool=$event"
+          (showRestaurantBoolChange)="showRestaurantBool=$event"
+          (showWintergartenBoolChange)="showWintergartenBool=$event"
+          (showAllBoolChange)="showAllBool=$event"
+          [buttonBgColorInfoForm]="buttonBgColorInfoForm"
+          [buttonBgColorNoteForm]="buttonBgColorNoteForm"
+          [fontColorInfoForm]="fontColorInfoForm"
+          [fontColorNoteForm]="fontColorNoteForm"
+          [showNoteFormBool]="showNoteFormBool"
+          [showInfoFormBool]="showInfoFormBool"
+          (showInfoFormBoolChange)="showInfoFormBool=$event"
+          (showNoteFormBoolChange)="showNoteFormBool=$event"
+          (showTablePlanBoolChange)="showTablePlanBool=$event"
+          [showTablePlanBool]="showTablePlanBool"
+          [buttonBgColorShowTablePlan]="buttonBgColorShowTablePlan"
+          [fontColorShowTablePlan]="fontColorShowTablePlan">
+        </app-departmentmenu><flash-messages></flash-messages>
+        <app-form [newInformationElements]="newInformationElements"
+                  [dateGenerated]="dateGenerated"
+                  [title]="title"
+                  [roomNumber]="roomNumber"
+                  [tableNumber]="tableNumber"
+                  [employee]="employee"
+                  [nameTraceInput]="nameTraceInput"
+                  [tablesPanorama]="tablesPanorama"
+                  [tablesRestaurant]="tablesRestaurant"
+                  [tablesSonnbergZirbn]="tablesSonnbergZirbn"
+                  [tablesWintergarten]="tablesWintergarten"
+                  [showNoteFormBool]="showNoteFormBool"
+                  [showInfoFormBool]="showInfoFormBool"
+                  [noteElements]="noteElements"
+                  [showPanoramaBool]="showPanoramaBool"
+                  [showRestaurantBool]="showRestaurantBool"
+                  [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+                  [showWintergartenBool]="showWintergartenBool"
+                  [showAllBool]="showAllBool"
+                  (noteResponse)="noteElements=$event"
+                  (changeColorIfArrivalExport)="changeBgColorIfArrival($event)">
+        </app-form>
+        <app-tableplan [tablesWintergarten]="tablesWintergarten"
+                       [showWintergartenBool]="showWintergartenBool"
+                       [tablesSonnbergZirbn]="tablesSonnbergZirbn"
+                       [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+                       [tablesPanorama]="tablesPanorama"
+                       [showPanoramaBool]="showPanoramaBool"
+                       [tablesRestaurant]="tablesRestaurant"
+                       [showRestaurantBool]="showRestaurantBool"
+                       (movedSonnbergZirbn)="tablesSonnbergZirbn = $event"
+                       (movedRestaurant)="tablesRestaurant = $event"
+                       (movedPanorama)="tablesPanorama = $event"
+                       (movedWintergarten)="tablesWintergarten = $event"
+                       [showAllBool]="showAllBool"
+                       [showTablePlanBool]="showTablePlanBool"
+                       (changeBgColorIfArrival)="changeBgColorIfArrival($event)"
+                       (adultPanoramaExport)="adultPanorama=$event"
+                       (adultRestaurantExport)="adultRestaurant=$event"
+                       (adultSonnbergZirbnExport)="adultSonnbergZirbn=$event"
+                       (adultWintergartenExport)="adultWintergarten=$event"
+                       (childPanoramaExport)="childPanorama=$event"
+                       (childRestaurantExport)="childRestaurant=$event"
+                       (childSonnbergZirbnExport)="childSonnbergZirbn=$event"
+                       (childWintergartenExport)="childWintergarten=$event">
+        </app-tableplan>
+      </div>
+      <div class="col-xs-12 col-lg-3 upload-col">
+        <div class="outer-cards">
+          <app-im-haus-list [imHausListElemente]="imHausListElemente"></app-im-haus-list>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-lg-3 table-col">
+        <h3 >Tisch Übersicht</h3>
+        <div class="inner-table" style="padding: 0px 0px 0px 0px;">
+          <div class="row3">
+            <div class='wrapper' id="wrapper">
+              <app-departments [tablesWintergarten]="tablesWintergarten"
+                               [showWintergartenBool]="showWintergartenBool"
+                               [tablesSonnbergZirbn]="tablesSonnbergZirbn"
+                               [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+                               [tablesPanorama]="tablesPanorama"
+                               [showPanoramaBool]="showPanoramaBool"
+                               [tablesRestaurant]="tablesRestaurant"
+                               [showRestaurantBool]="showRestaurantBool"
+                               (dispensedSonnbergZirbn)="tablesSonnbergZirbn=$event"
+                               (dispensedRestaurant)="tablesRestaurant=$event"
+                               (dispensedPanorama)="tablesPanorama=$event"
+                               (dispensedWintergarten)="tablesWintergarten=$event"
+                               [term]="term"
+                               [showAllBool]="showAllBool"
+                               (updateAzList)="updateAzList($event)"
+                               [tablesTempDeparture]="tablesTempDeparture"
+                               [tables]="tables"
+                               (updateImHausListElement)="updateImHausListElement($event); table = $event;">
+              </app-departments>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<app-print  [tables]="tables"
+            [dateGeneratedListe]="dateGeneratedListe"
+            [tablesPanorama]="tablesPanorama"
+            [showPanoramaBool]="showPanoramaBool"
+            [showRestaurantBool]="showRestaurantBool"
+            [tablesRestaurant]="tablesRestaurant"
+            [showSonnbergZirbnBool]="showSonnbergZirbnBool"
+            [tablesSonnbergZirbn]="tablesSonnbergZirbn"
+            [showWintergartenBool]="showWintergartenBool"
+            [tablesWintergarten]="tablesWintergarten"
+            (getTablesOccupied)="tablesOccupied = $event"
+            (getTablesforAzListe)="tables = $event"
+            [adultPanorama]="adultPanorama"
+            [adultRestaurant]="adultRestaurant"
+            [adultSonnbergZirbn]="adultSonnbergZirbn"
+            [adultWintergarten]="adultWintergarten"
+            [childPanorama]="childPanorama"
+            [childRestaurant]="childRestaurant"
+            [childSonnbergZirbn]="childSonnbergZirbn"
+            [childWintergarten]="childWintergarten">
+</app-print>
+</html>

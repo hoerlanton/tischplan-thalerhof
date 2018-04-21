@@ -3,31 +3,28 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { TischplanComponent } from './components/digitalerTischplan/tischplan.component';
-import { PrintComponent } from './components/digitalerTischplan/print/print.component';
+import { MainComponent } from './components/digital-table-plan/main.component';
+import { PrintComponent } from './components/digital-table-plan/print/print.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DragulaModule } from 'ng2-dragula';
-import {NgClass} from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import {DropdownModule} from "ng2-dropdown";
-import { WintergartenComponent } from './components/digitalerTischplan/departments/wintergarten/wintergarten.component';
-import { RestaurantComponent } from './components/digitalerTischplan/departments/restaurant/restaurant.component';
-import { PanoramaComponent } from './components/digitalerTischplan/departments/panorama/panorama.component';
-import { SonnbergZirbnComponent } from './components/digitalerTischplan/departments/sonnberg-zirbn/sonnberg-zirbn.component';
-import { NavigationComponent } from './components/digitalerTischplan/navigation/navigation.component';
-import { FormComponent } from './components/digitalerTischplan/form/form.component';
-import { TableplanComponent } from './components/digitalerTischplan/tableplan/tableplan.component';
-import { DepartmentmenuComponent } from './components/digitalerTischplan/departmentmenu/departmentmenu.component';
-import { ImHausListeComponent } from './components/digitalerTischplan/im-haus-liste/im-haus-liste.component';
-import { DepartmentsComponent } from './components/digitalerTischplan/departments/departments.component';
-import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
+import { WintergartenComponent } from './components/digital-table-plan/departments/wintergarten/wintergarten.component';
+import { RestaurantComponent } from './components/digital-table-plan/departments/restaurant/restaurant.component';
+import { PanoramaComponent } from './components/digital-table-plan/departments/panorama/panorama.component';
+import { SonnbergZirbnComponent } from './components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component';
+import { NavigationComponent } from './components/digital-table-plan/navigation/navigation.component';
+import { FormComponent } from './components/digital-table-plan/form/form.component';
+import { TableplanComponent } from './components/digital-table-plan/tableplan/tableplan.component';
+import { DepartmentmenuComponent } from './components/digital-table-plan/departmentmenu/departmentmenu.component';
+import { ImHausListComponent } from './components/digital-table-plan/im-haus-list/im-haus-list.component';
+import { DepartmentsComponent } from './components/digital-table-plan/departments/departments.component';
+import { AllComponent } from './components/digital-table-plan/departments/all/all.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/digitalerTischplan/login/login.component';
-import { RegisterComponent } from './components/digitalerTischplan/register/register.component';
-import { HomeComponent } from './components/digitalerTischplan/home/home.component';
-import { ProfileComponent } from './components/digitalerTischplan/profile/profile.component';
+import { LoginComponent } from './components/digital-table-plan/login/login.component';
+import { RegisterComponent } from './components/digital-table-plan/register/register.component';
+import { ProfileComponent } from './components/digital-table-plan/profile/profile.component';
 
 import { AuthGuard } from './guards/auth.guard';
 import { ValidateService } from './services/validate.service';
@@ -36,7 +33,7 @@ import { AuthService } from './services/auth.service';
 const appRoutes: Routes =  [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: TischplanComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: MainComponent, canActivate: [AuthGuard]},
   {path: 'dashboard', component: DepartmentsComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
@@ -45,7 +42,7 @@ const appRoutes: Routes =  [
 @NgModule({
   declarations: [
     AppComponent,
-    TischplanComponent,
+    MainComponent,
     PrintComponent,
     WintergartenComponent,
     RestaurantComponent,
@@ -55,9 +52,9 @@ const appRoutes: Routes =  [
     FormComponent,
     TableplanComponent,
     DepartmentmenuComponent,
-    ImHausListeComponent,
+    ImHausListComponent,
     DepartmentsComponent,
-    AlleComponent,
+    AllComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent

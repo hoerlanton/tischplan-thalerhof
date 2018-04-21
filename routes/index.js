@@ -1,4 +1,5 @@
-const   express = require('express'),
+const
+    express = require('express'),
     router = express.Router(),
     bodyParser = require('body-parser'),
     mongojs = require('mongojs'),
@@ -7,17 +8,14 @@ const   express = require('express'),
     jwt = require('jsonwebtoken'),
     config = require('../config/database'),
     User = require('../models/user'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['tracesListe', 'anreiseListe', 'imHausListe', 'tables', 'tablesTemp', 'newInformation', 'newNotizDb', 'newInformationToEmployee']),
-    anreiseliste = require('./anreiseListe.js'),
-    imHausListe = require('./imHausListe.js'),
-    traceListe = require('./traceListe.js'),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['list', 'tables', 'tablesTemp', 'newInformation', 'notes', 'newInformationToEmployee']),
+    list = require('./list.js'),
     information = require('./information.js'),
-    notiz = require('./notiz.js'),
+    note = require('./note.js'),
     placeholder = require('./placeholder.js'),
     table = require('./table.js'),
     users = require('./users.js'),
     tableAddInformation = require('./tableAddInformation.js');
-
 
 //Bodyparser middleware
 router.use(bodyParser.urlencoded({ extended: false}));
@@ -29,33 +27,15 @@ router.use(cors());
 
 //----->DB API<------//
 
-//Save AnreiseListe
-router.post('/anreiseListe', function(req, res, next) {
-anreiseliste.saveAnreiseListe(req, res, db)});
-//Update AnreiseListe
-router.post('/updateAnreiseListeElement', function(req, res, next) {
-anreiseliste.updateAnreiseListe(req, res, db)});
-//Get anreiseListe
-router.get('/anreiseListe', function(req, res, next) {
-anreiseliste.getAnreiseListe(req, res, db)});
 //Save ImHausListe
-router.post('/imHausListe', function(req, res, next) {
-imHausListe.saveImHausListe(req, res, db)});
+router.post('/saveImHausList', function(req, res, next) {
+list.saveImHausList(req, res, db)});
 //Update ImHausListe
-router.post('/updateImHausListeElement', function(req, res, next) {
-imHausListe.updateImHausListe(req, res, db)});
+router.post('/updateImHausListElement', function(req, res, next) {
+list.updateImHausList(req, res, db)});
 //Get imHausListe
-router.get('/imHausListe', function(req, res, next) {
-imHausListe.getImHausListe(req, res, db)});
-//Save TracesListe
-router.post('/tracesListe', function(req, res, next) {
-traceListe.saveTraceListe(req, res, db)});
-//Update TraceListe
-router.post('/updateTracesListeElement', function(req, res, next) {
-traceListe.updateTraceListe(req, res, db)});
-//Get TracesListe
-router.get('/tracesListe', function(req, res, next) {
-traceListe.getTraceListe(req, res, db)});
+router.get('/getImHausList', function(req, res, next) {
+list.getImHausList(req, res, db)});
 //Get Information
 router.get('/information', function(req, res, next) {
 information.getInformation(req, res, db)});
@@ -93,11 +73,11 @@ table.dispenseTable(req, res, db)});
 router.post('/addInformationToTable', function(req, res, next) {
 tableAddInformation.addInformationToTable(req, res, db)});
 //addInformationToTable
-router.get('/getNotiz', function(req, res, next) {
-notiz.getNotiz(req, res, db)});
+router.get('/getNote', function(req, res, next) {
+note.getNote(req, res, db)});
 //addInformationToTable
-router.post('/newNotiz', function(req, res, next) {
-notiz.newNotiz(req, res, db)});
+router.post('/newNote', function(req, res, next) {
+note.newNote(req, res, db)});
 //GetInformation Employees
 router.get('/informationEmployees', function(req, res, next) {
 information.getInformationEmployees(req, res, db)});
@@ -110,6 +90,5 @@ users.register(req, res, db)});
 //GetInformation Employees
 router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next) {
 users.profile(req, res, db)});
-
 
 module.exports = router;

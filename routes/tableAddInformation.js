@@ -12,22 +12,22 @@ module.exports = {
             informationElements2 = [],
             departmentValueDB = "",
             nameValue = [],
-            zimmernummerValue = [],
+            roomNumberValue = [],
             nationValue = [],
-            kategorieValue = [],
-            preisTypValue = [],
-            reisebueroValue = [],
-            spracheValue = [],
-            anreiseValue = [],
-            abreiseValue = [],
-            personenAnzahlValue = [],
-            notiz2Value = [],
-            notiz1Value = [],
+            categoryValue = [],
+            typeOfPriceValue = [],
+            sourceValue = [],
+            languageValue = [],
+            arrivalValue = [],
+            departureValue = [],
+            numberOfPersonsValue = [],
+            note2Value = [],
+            note1Value = [],
             departmentValue = "",
             tableValue = "",
             tableValueArray = [],
             traceValue = [],
-            bemerkungValue = [],
+            commentValue = [],
             newTraceText = [],
             newTraceRoomNumber = [],
             newTraceName = [],
@@ -50,18 +50,18 @@ module.exports = {
 
             nameValue.push(informationElements2[0].substring(1, informationElements2[0].length));
             nationValue.push(informationElements2[1].substring(1, informationElements2[1].length));
-            spracheValue.push(informationElements2[2].substring(1, informationElements2[2].length));
-            kategorieValue.push(informationElements2[3].substring(1, informationElements2[3].length));
-            zimmernummerValue.push(informationElements2[4].substring(1, informationElements2[4].length));
-            preisTypValue.push(informationElements2[5].substring(1, informationElements2[5].length));
-            anreiseValue.push(informationElements2[6].substring(1, informationElements2[6].length));
-            abreiseValue.push(informationElements2[7].substring(1, informationElements2[7].length));
-            personenAnzahlValue.push(informationElements2[8].substring(1, informationElements2[8].length));
-            reisebueroValue.push(informationElements2[9].substring(1, informationElements2[9].length));
-            //notiz1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
-            notiz2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
+            languageValue.push(informationElements2[2].substring(1, informationElements2[2].length));
+            categoryValue.push(informationElements2[3].substring(1, informationElements2[3].length));
+            roomNumberValue.push(informationElements2[4].substring(1, informationElements2[4].length));
+            typeOfPriceValue.push(informationElements2[5].substring(1, informationElements2[5].length));
+            arrivalValue.push(informationElements2[6].substring(1, informationElements2[6].length));
+            departureValue.push(informationElements2[7].substring(1, informationElements2[7].length));
+            numberOfPersonsValue.push(informationElements2[8].substring(1, informationElements2[8].length));
+            sourceValue.push(informationElements2[9].substring(1, informationElements2[9].length));
+            //note1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
+            note2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
             traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[informationElements2.length - 2].length));
-            //bemerkungValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
+            //commentValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
             tableValue = tableValueArray[0];
@@ -93,19 +93,19 @@ module.exports = {
                         $push: {
                             "tables.$.groups": {
                                 "nameValue": nameValue[0],
-                                "zimmernummerValue": zimmernummerValue[0],
-                                "anreiseValue": anreiseValue[0],
-                                "abreiseValue": abreiseValue[0],
-                                "personenAnzahlValue": personenAnzahlValue[0],
-                                "notiz2Value": notiz2Value[0],
-                                "notiz1Value": notiz1Value[0],
+                                "roomNumberValue": roomNumberValue[0],
+                                "arrivalValue": arrivalValue[0],
+                                "departureValue": departureValue[0],
+                                "numberOfPersonsValue": numberOfPersonsValue[0],
+                                "note2Value": note2Value[0],
+                                "note1Value": note1Value[0],
                                 "nationValue": nationValue[0],
-                                "kategorieValue": kategorieValue[0],
-                                "preisTypValue": preisTypValue[0],
-                                "reisebueroValue": reisebueroValue[0],
-                                "spracheValue": spracheValue[0],
+                                "categoryValue": categoryValue[0],
+                                "typeOfPriceValue": typeOfPriceValue[0],
+                                "sourceValue": sourceValue[0],
+                                "languageValue": languageValue[0],
                                 "traceValue": traceValue[0],
-                                "bemerkungValue": bemerkungValue[0],
+                                "commentValue": commentValue[0],
                             }
                         }
                     }, function (err, tables) {
@@ -117,37 +117,37 @@ module.exports = {
             }, 200);
 
         } else {
-            console.log("umsetzen addInformationToTable");
-            let umsetzen = JSON.parse(data);
-            console.log("umsetzen");
-            console.log(umsetzen);
-                for (let i = 0; i < umsetzen[0].groups.length; i++) {
-                    zimmernummerValue.push(umsetzen[0].groups[i].zimmernummerValue);
-                    nameValue.push(umsetzen[0].groups[i].nameValue);
-                    personenAnzahlValue.push(umsetzen[0].groups[i].personenAnzahlValue);
-                    anreiseValue.push(umsetzen[0].groups[i].anreiseValue);
-                    abreiseValue.push(umsetzen[0].groups[i].abreiseValue);
-                    traceValue.push(umsetzen[0].groups[i].traceValue);
-                    notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
-                    notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
-                    bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
-                    nationValue.push(umsetzen[0].groups[i].nationValue);
-                    kategorieValue.push(umsetzen[0].groups[i].kategorieValue);
-                    preisTypValue.push(umsetzen[0].groups[i].preisTypValue);
-                    reisebueroValue.push(umsetzen[0].groups[i].reisebueroValue);
-                    spracheValue.push(umsetzen[0].groups[i].spracheValue);
-                    newTraceText.push(umsetzen[0].groups[i].newTraceName);
-                    newTraceRoomNumber.push(umsetzen[0].groups[i].newTraceRoomNumber);
-                    newTraceName.push(umsetzen[0].groups[i].newTraceName);
-                    newTraceEmployee.push(umsetzen[0].groups[i].newTraceEmployee);
-                    newTraceDate.push(umsetzen[0].groups[i].newTraceDate);
-                    newTraceTableNumber.push(umsetzen[0].groups[i].newTraceTableNumber);
-                    departmentValueDB = umsetzen[1].targetDepartment;
-                    tableValue = umsetzen[1].targetTable;
-                    umsetzen[0].department = umsetzen[1].targetDepartment;
+            console.log("reseat addInformationToTable");
+            let reseat = JSON.parse(data);
+            console.log("reseat");
+            console.log(reseat);
+                for (let i = 0; i < reseat[0].groups.length; i++) {
+                    roomNumberValue.push(reseat[0].groups[i].roomNumberValue);
+                    nameValue.push(reseat[0].groups[i].nameValue);
+                    numberOfPersonsValue.push(reseat[0].groups[i].numberOfPersonsValue);
+                    arrivalValue.push(reseat[0].groups[i].arrivalValue);
+                    departureValue.push(reseat[0].groups[i].departureValue);
+                    traceValue.push(reseat[0].groups[i].traceValue);
+                    note2Value.push(reseat[0].groups[i].note2Value);
+                    note1Value.push(reseat[0].groups[i].note1Value);
+                    commentValue.push(reseat[0].groups[i].commentValue);
+                    nationValue.push(reseat[0].groups[i].nationValue);
+                    categoryValue.push(reseat[0].groups[i].categoryValue);
+                    typeOfPriceValue.push(reseat[0].groups[i].typeOfPriceValue);
+                    sourceValue.push(reseat[0].groups[i].sourceValue);
+                    languageValue.push(reseat[0].groups[i].languageValue);
+                    newTraceText.push(reseat[0].groups[i].newTraceName);
+                    newTraceRoomNumber.push(reseat[0].groups[i].newTraceRoomNumber);
+                    newTraceName.push(reseat[0].groups[i].newTraceName);
+                    newTraceEmployee.push(reseat[0].groups[i].newTraceEmployee);
+                    newTraceDate.push(reseat[0].groups[i].newTraceDate);
+                    newTraceTableNumber.push(reseat[0].groups[i].newTraceTableNumber);
+                    departmentValueDB = reseat[1].targetDepartment;
+                    tableValue = reseat[1].targetTable;
+                    reseat[0].department = reseat[1].targetDepartment;
                 }
-            //console.log(" nameValue " + nameValue + " zimmernummerValue " + zimmernummerValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " notiz1Value " + notiz1Value + " notiz2Value " + notiz2Value + " bemerkungValue " + bemerkungValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
+            //console.log(" nameValue " + nameValue + " roomNumberValue " + roomNumberValue + " arrivalValue " + arrivalValue + " departureValue " + departureValue + " numberOfPersonsValue " + numberOfPersonsValue + " note1Value " + note1Value + " note2Value " + note2Value + " commentValue " + commentValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
             setTimeout(function () {
                 db.tables.findOne(
@@ -168,7 +168,7 @@ module.exports = {
                             return;
                         }
                         console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
-                        for (let i = 0; i < umsetzen[0].groups.length; i++) {
+                        for (let i = 0; i < reseat[0].groups.length; i++) {
                             if (nameValue[i]) {
                                 db.tables.update(
                                 {
@@ -179,19 +179,19 @@ module.exports = {
                                     $push: {
                                         "tables.$.groups": {
                                             "nameValue": nameValue[i],
-                                            "zimmernummerValue": zimmernummerValue[i],
-                                            "anreiseValue": anreiseValue[i],
-                                            "abreiseValue": abreiseValue[i],
-                                            "personenAnzahlValue": personenAnzahlValue[i],
-                                            "notiz2Value": notiz2Value[i],
-                                            "notiz1Value": notiz1Value[i],
+                                            "roomNumberValue": roomNumberValue[i],
+                                            "arrivalValue": arrivalValue[i],
+                                            "departureValue": departureValue[i],
+                                            "numberOfPersonsValue": numberOfPersonsValue[i],
+                                            "note2Value": note2Value[i],
+                                            "note1Value": note1Value[i],
                                             "nationValue": nationValue[i],
-                                            "kategorieValue": kategorieValue[i],
-                                            "preisTypValue": preisTypValue[i],
-                                            "reisebueroValue": reisebueroValue[i],
-                                            "spracheValue": spracheValue[i],
+                                            "categoryValue": categoryValue[i],
+                                            "typeOfPriceValue": typeOfPriceValue[i],
+                                            "sourceValue": sourceValue[i],
+                                            "languageValue": languageValue[i],
                                             "traceValue": traceValue[i],
-                                            "bemerkungValue": bemerkungValue[i],
+                                            "commentValue": commentValue[i],
                                         }
                                     }
                                 }, function (err, tables) {

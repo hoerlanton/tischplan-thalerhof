@@ -3,19 +3,12 @@
  */
 
 module.exports = {
-
-
     addPlaceholder: function (req, res, db) {
-
-
         console.log("addPlaceholder request made to /addPlaceholder");
-
         //JSON string is parsed to a JSON object
         let addPlaceholder = req.body;
-
         //console.log(occupyTable);
         new Promise(function(resolve, reject) {
-
         db.tables.update(
             {
                 department: addPlaceholder.department,
@@ -34,7 +27,6 @@ module.exports = {
 
             });
         }).then(function() { // (**)
-
         setTimeout(function () {
             db.tables.find(
                 {
@@ -49,30 +41,18 @@ module.exports = {
                 });
         }, 100);
         });
-
-
     },
-
     removePlaceholder: function (req, res, db) {
-
-
         console.log("removePlaceholder request made to /removePlaceholder");
-
         let data = JSON.stringify(req.body);
         let splitted = data.split("\\");
         let departmentValue = "";
         let tableValue = "";
         let departmentValueDB = "";
         let informationElements2 = [];
-
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(":"));
         }
-
-        //JSON string is parsed to a JSON object
-        //console.log(JSON.stringify(req.body));
-        //console.log(splitted);
-
         if (informationElements2.length >= 10) {
             console.log("Im-Haus-Liste");
             departmentValue = informationElements2[9][0].substring(1, informationElements2[9][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
@@ -86,8 +66,6 @@ module.exports = {
             departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
         }
-
-
         if (departmentValue === "SonnbergZirbn") {
             departmentValueDB = "Sonnberg-Zirbn";
         }
@@ -100,11 +78,6 @@ module.exports = {
         else if (departmentValue === "Wintergarten") {
             departmentValueDB = "Wintergarten";
         }
-
-        //console.log(departmentValueDB);
-        //console.log(tableValue);
-        //console.log(occupyTable);
-
         db.tables.update(
             {
                 department: departmentValueDB,
@@ -120,7 +93,6 @@ module.exports = {
                 }
                 console.log("Updated successfully removePlaceholder");
             });
-
         setTimeout(function () {
             db.tables.findOne(
                 {

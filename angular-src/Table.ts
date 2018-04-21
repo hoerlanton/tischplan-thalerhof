@@ -4,7 +4,7 @@ export class Table {
   topValue: string;
   leftValue: string;
   bgColor: string;
-  isBesetzt: boolean;
+  isOccupied: boolean;
   placeholder: boolean;
   department: string;
   border: string;
@@ -14,19 +14,18 @@ export class Table {
   transformValue: string;
   groups: [{
     nameValue: string;
-    zimmernummerValue: string;
-    anreiseValue: string;
-    abreiseValue: string;
-    personenAnzahlValue: string;
-    notiz1Value: string;
-    notiz2Value: string;
+    roomNumberValue: string;
+    arrivalValue: string;
+    departureValue: string;
+    numberOfPersonsValue: string;
+    note1Value: string;
+    note2Value: string;
     trace: string;
-    bemerkungValue: string;
     nationValue: string;
-    kategorieValue: string;
-    preisTypValue: string;
-    reisebueroValue: string;
-    spracheValue: string;
+    categoryValue: string;
+    typeOfPriceValue: string;
+    sourceValue: string;
+    languageValue: string;
     departmentValue: string;
     traceValue: string;
     newTraceText: string;

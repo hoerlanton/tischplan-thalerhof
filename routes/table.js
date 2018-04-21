@@ -20,7 +20,6 @@ const
     Promise = require('promise'),
     dateFns = require('date-fns');
 
-
 module.exports = {
     getTable: function (req, res, db) {
 
@@ -38,31 +37,29 @@ module.exports = {
 
         console.log("removeTable request made to /moveTable");
 
-        let data = JSON.stringify(req.body);
-        let splitted = data.split(",");
-        let tableNumberBefore = splitted[2];
-        let departmentValueBefore = splitted[1];
-        let topValueBefore = splitted[3];
-        let leftValueBefore = splitted[4];
-        let widthValueBefore = splitted[9];
-        let heightValueBefore = splitted[10];
+        const data = JSON.stringify(req.body),
+         splitted = data.split(","),
+         tableNumberBefore = splitted[2],
+         departmentValueBefore = splitted[1],
+         topValueBefore = splitted[3],
+         leftValueBefore = splitted[4],
+         widthValueBefore = splitted[9],
+         heightValueBefore = splitted[10],
+         splitted2 = tableNumberBefore.split(":"),
+         splitted3 = departmentValueBefore.split(":"),
+         splitted4 = topValueBefore.split(":"),
+         splitted5 = leftValueBefore.split(":"),
+         splitted6 = widthValueBefore.split(":"),
+         splitted7 = heightValueBefore.split(":"),
+         tableNumber = splitted2[1].substring(1, splitted2[1].length - 1),
+         departmentValue = splitted3[1].substring(1, splitted3[1].length - 1),
+         topValue = splitted4[1].substring(1, splitted4[1].length - 1),
+         leftValue = splitted5[1].substring(1, splitted5[1].length - 1),
+         width = splitted6[1].substring(1, splitted6[1].length - 1),
+         heightArray = splitted7[1].toString().match(/\d+/),
+         height = heightArray[0];
 
-        let splitted2 = tableNumberBefore.split(":");
-        let splitted3 = departmentValueBefore.split(":");
-        let splitted4 = topValueBefore.split(":");
-        let splitted5 = leftValueBefore.split(":");
-        let splitted6 = widthValueBefore.split(":");
-        let splitted7 = heightValueBefore.split(":");
-
-        let tableNumber = splitted2[1].substring(1, splitted2[1].length - 1);
-        let departmentValue = splitted3[1].substring(1, splitted3[1].length - 1);
-        let topValue = splitted4[1].substring(1, splitted4[1].length - 1);
-        let leftValue = splitted5[1].substring(1, splitted5[1].length - 1);
-        let width = splitted6[1].substring(1, splitted6[1].length - 1);
-        let heightArray = splitted7[1].toString().match(/\d+/);
-        let height = heightArray[0];
-
-        console.log('data -> ' + data);
+        console.log('data ' + data);
         console.log('tableNumberBefore: ' + tableNumberBefore);
         console.log('departmentValueBefore: ' + departmentValueBefore);
         console.log('height: ' + height);
@@ -98,29 +95,27 @@ module.exports = {
 
         console.log("addTable request made to /moveTable");
 
-        let data = JSON.stringify(req.body);
-        let splitted = data.split(",");
-        let tableNumberBefore = splitted[2];
-        let departmentValueBefore = splitted[1];
-        let topValueBefore = splitted[3];
-        let leftValueBefore = splitted[4];
-        let widthValueBefore = splitted[9];
-        let heightValueBefore = splitted[10];
-
-        let splitted2 = tableNumberBefore.split(":");
-        let splitted3 = departmentValueBefore.split(":");
-        let splitted4 = topValueBefore.split(":");
-        let splitted5 = leftValueBefore.split(":");
-        let splitted6 = widthValueBefore.split(":");
-        let splitted7 = heightValueBefore.split(":");
-
-        let tableNumber = splitted2[1].substring(1, splitted2[1].length - 1);
-        let departmentValue = splitted3[1].substring(1, splitted3[1].length - 1);
-        let topValue = splitted4[1].substring(1, splitted4[1].length - 1);
-        let leftValue = splitted5[1].substring(1, splitted5[1].length - 1);
-        let width = splitted6[1].substring(1, splitted6[1].length - 1);
-        let heightArray = splitted7[1].toString().match(/\d+/);
-        let height = heightArray[0];
+        const data = JSON.stringify(req.body),
+         splitted = data.split(","),
+         tableNumberBefore = splitted[2],
+         departmentValueBefore = splitted[1],
+         topValueBefore = splitted[3],
+         leftValueBefore = splitted[4],
+         widthValueBefore = splitted[9],
+         heightValueBefore = splitted[10],
+         splitted2 = tableNumberBefore.split(":"),
+         splitted3 = departmentValueBefore.split(":"),
+         splitted4 = topValueBefore.split(":"),
+         splitted5 = leftValueBefore.split(":"),
+         splitted6 = widthValueBefore.split(":"),
+         splitted7 = heightValueBefore.split(":"),
+         tableNumber = splitted2[1].substring(1, splitted2[1].length - 1),
+         departmentValue = splitted3[1].substring(1, splitted3[1].length - 1),
+         topValue = splitted4[1].substring(1, splitted4[1].length - 1),
+         leftValue = splitted5[1].substring(1, splitted5[1].length - 1),
+         width = splitted6[1].substring(1, splitted6[1].length - 1),
+         heightArray = splitted7[1].toString().match(/\d+/),
+         height = heightArray[0];
 
         console.log('data -> ' + data);
         console.log('tableNumberBefore: ' + tableNumberBefore);
@@ -164,7 +159,6 @@ module.exports = {
         let data = JSON.stringify(req.body);
         let splitted = data.split("\\");
         let informationElements2 = [];
-        let value = "nAnreise";
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(":"));
         }
@@ -218,7 +212,7 @@ module.exports = {
             {
                 $set: {
                     "tables.$.bgColor": "#b7b7b7",
-                    "tables.$.isBesetzt": "true"
+                    "tables.$.isOccupied": "true"
                 }
             }, function (err, tables) {
                 if (err) {
@@ -258,10 +252,6 @@ module.exports = {
                         res.send(err);
                     } else {
                         tablesTemp3.push(tables);
-                        //console.log(tables);
-                        //tablesTemp3.push(tables);
-                        //console.log(tablesTemp3);
-                        //return tablesTemp3;
                         setTimeout(() => resolve(), 1000);
                     }
                 });
@@ -277,15 +267,15 @@ module.exports = {
                             for (let j = tablesTemp3[0][i].tables[k].groups.length - 1; j >= 0; j--) {
                                 console.log("+");
                                 //console.log(tablesTemp2[0].tables[i]);
-                                if (tablesTemp3[0][i].tables[k].groups[j].abreiseValue === String(today)) {
-                                    //console.log(tablesTemp2[0].tables[i].groups[j].abreiseValue);
-                                    console.log(tablesTemp3[0][i].tables[k].groups[j].abreiseValue);
+                                if (tablesTemp3[0][i].tables[k].groups[j].departureValue === String(today)) {
+                                    //console.log(tablesTemp2[0].tables[i].groups[j].departureValue);
+                                    console.log(tablesTemp3[0][i].tables[k].groups[j].departureValue);
                                     tablesTemp3[0][i].tables[k].groups.splice(j, 1);
                                     console.log(tablesTemp3[0][i].tables[k].groups.length);
                                     console.log(tablesTemp3[0][i].tables[k].groups);
                                     if (tablesTemp3[0][i].tables[k].groups.length === 0) {
                                         tablesTemp3[0][i].tables[k].bgColor = "#ffffff";
-                                        tablesTemp3[0][i].tables[k].isBesetzt = "false";
+                                        tablesTemp3[0][i].tables[k].isOccupied = "false";
                                         //delete tablesTemp3[0][i].tables[k]['groups'];
                                     }
                                 }
@@ -296,7 +286,7 @@ module.exports = {
                                 if (tablesTemp3[0][i].tables[k].groups.length === 1 && tablesTemp3[0][i].tables[k].groups[j].newTraceText) {
                                     tablesTemp3[0][i].tables[k].groups.splice(j, 1);
                                     tablesTemp3[0][i].tables[k].bgColor = "#ffffff";
-                                    tablesTemp3[0][i].tables[k].isBesetzt = "false";
+                                    tablesTemp3[0][i].tables[k].isOccupied = "false";
                                 }
                             }
                         }
@@ -340,7 +330,7 @@ module.exports = {
                     update: {
                         $set: {
                             "tables.$.bgColor": "#ffffff",
-                            "tables.$.isBesetzt": "false",
+                            "tables.$.isOccupied": "false",
                         }, $unset: {
                             "tables.$.groups": 1,
                         }

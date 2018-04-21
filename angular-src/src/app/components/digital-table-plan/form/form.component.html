@@ -1,0 +1,90 @@
+<div *ngIf="showNoteFormBool">
+  <div *ngIf="showAllBool === false">
+    <div class="note">
+      <div *ngIf="showPanoramaBool">
+        <div *ngFor="let noteElement of noteElements" >
+          <div *ngIf="noteElement.departmentNoteInput === 'Panorama'">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
+              <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br><b>  Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showRestaurantBool">
+        <div *ngFor="let noteElement of noteElements">
+          <div *ngIf="noteElement.departmentNoteInput === 'Restaurant'">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
+              <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showSonnbergZirbnBool">
+        <div *ngFor="let noteElement of noteElements">
+          <div *ngIf="noteElement.departmentNoteInput === 'Sonnberg-Zirbn'">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
+              <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}}<br> <b> Datum: </b>{{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showWintergartenBool">
+        <div *ngFor="let noteElement of noteElements">
+          <div *ngIf="noteElement.departmentNoteInput === 'Wintergarten'">
+            <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
+              <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="SendNote"  #myForm="ngForm" (submit)="sendNote($event); myForm.reset() ">
+    <div class="form-row">
+      <div class="form-group" style="min-height: 250px">
+        <div class="col-lg-12">
+          <label for="department" style="padding-bottom: 20px; color: #FFFFFF">Abteilung</label>
+          <select class="form-control"  id="department" style="margin-bottom: 10px; width: 100%" required [(ngModel)]="departmentNoteInput" placeholder="Abteilung auswählen" name="departmentNoteInput">
+            <option *ngFor="let department of departments"
+                    [value]="department">
+              {{department}}
+            </option>
+          </select>
+        </div>
+        <div class="col-lg-12">
+                <textarea id="noteText" rows="5" type="text" style="margin-bottom: 10px; margin-top: 20px" [(ngModel)]="noteInput" placeholder="Note hinzufügen" name="title" class="form-control" required>
+                </textarea>
+        </div>
+      </div>
+      <button type="button|submit|reset" style="float: right; margin: 10px 20px 0px 0px;" class="btn btn-primary">Hinzufügen</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="showInfoFormBool">
+  <form class="SendInformation" #myForm="ngForm" (submit)="sendInformation($event); myForm.reset() ">
+    <div class="form-row">
+      <div class="form-group">
+        <div class="col-lg-6 col-xs-6">
+          <input  class="form-control" style="margin-top: 20px" id="name" [(ngModel)]="nameTraceInput" name="Name" placeholder="Name">
+          <input  class="form-control" style="margin-top: 20px" id="roomNumber" [(ngModel)]="roomNumber" name="roomNumber" placeholder="Zimmer Nummer">
+        </div>
+        <div class="col-lg-6 col-xs-6">
+          <input  class="form-control" style="margin-top: 20px" id="tableNumber" [(ngModel)]="tableNumber" name="tableNumber" placeholder="Table Nummer">
+          <select  class="form-control" style="margin-top: 20px" id="employee" [(ngModel)]="employee" name="employee" placeholder="Mitarbeiter">
+            <option *ngFor="let employee of employees"
+                    [value]="employee">
+              {{employee}}
+            </option>
+          </select>
+        </div>
+        <div class="col-lg-12 col-xs-12">
+                <textarea id="informationText" rows="5" type="text" style="margin-bottom: 10px; margin-top: 20px" [(ngModel)]="title" placeholder="Trace hinzufügen" name="title" class="form-control" required>
+                </textarea>
+        </div>
+      </div>
+      <button type="button|submit|reset" style="float: right; margin: 10px 20px 0px 0px;" class="btn btn-primary">Hinzufügen</button>
+    </div>
+  </form>
+</div>
+
+

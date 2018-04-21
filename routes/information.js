@@ -14,7 +14,6 @@ module.exports = {
         });
     },
     deleteInformation: function (req, res, db) {
-
         //JSON string is parsed to a JSON object
         console.log("deleteInformation request made to /deleteInformation");
         let informationElementToDelete = req.body;
@@ -30,7 +29,6 @@ module.exports = {
         res.json(informationElementToDelete);
     },
     newInformationToTable: function (req, res, db) {
-
         console.log("newInformationToTables post called");
         //Get guests from Mongo DB
 
@@ -88,23 +86,17 @@ module.exports = {
     },
 
     newInformationToBox: function (req, res, db) {
-
-
-
         console.log("newInformationToBox post called");
         //Get guests from Mongo DB
 
         console.log(req.body);
         let newInformation = req.body;
-
-
         db.newInformation.save(newInformation, function (err, newInformation) {
             if (err) {
                 res.send(err);
             }
             res.json(newInformation);
         });
-
         setTimeout(function () {
             db.newInformationToEmployee.findOne(
                 {
@@ -132,8 +124,6 @@ module.exports = {
                             console.log("newInformationToEmployee updated successfully");
                         });
                 });
-
         });
-
     }
 };
