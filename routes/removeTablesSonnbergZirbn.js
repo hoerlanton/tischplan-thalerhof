@@ -5,7 +5,7 @@
 module.exports = {
     removeTable: function (db, tableNumber, departmentValue, topValue, leftValue, height, width) {
          if (tableNumber === '40' && topValue === '260' && leftValue === '630' && height === '80') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -22,7 +22,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -35,7 +35,7 @@ module.exports = {
                                 "topValue": "220",
                                 "leftValue": "630",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "60",
@@ -53,7 +53,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
         } else if (tableNumber === '48' && topValue === '260' && leftValue === '400' && height === '80') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -70,7 +70,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -83,7 +83,7 @@ module.exports = {
                                 "topValue": "340",
                                 "leftValue": "400",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "60",
@@ -101,7 +101,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
         } else if (tableNumber === '50' && topValue === '430') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -118,7 +118,7 @@ module.exports = {
                     console.log("moveTable Update successful");
                 });
 
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -131,7 +131,7 @@ module.exports = {
                                 "topValue": "400",
                                 "leftValue": "200",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "width": "60",
                                 "height": "30",
@@ -149,7 +149,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
         } else if (tableNumber === '52' && topValue === '280' && leftValue === '200') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -165,7 +165,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -178,7 +178,7 @@ module.exports = {
                                 "topValue": "280",
                                 "leftValue": "170",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "30",
@@ -197,7 +197,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
          } else if (tableNumber === '54' && topValue === '290' && leftValue === '50' && height === '60') {
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                      "tables.number": tableNumber
@@ -213,7 +213,7 @@ module.exports = {
                      }
                      console.log("moveTable Update successful");
                  });
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                  }, {
@@ -226,7 +226,7 @@ module.exports = {
                                  "topValue": "260",
                                  "leftValue": "50",
                                  "bgColor": "#ffffff",
-                                 "isBesetzt": "false",
+                                 "isOccupied": "false",
                                  "placeholder": "true",
                                  "border": "solid 3px #f3efe4",
                                  "width": "60",
@@ -245,7 +245,7 @@ module.exports = {
                      console.log("addTable Update successful");
                  });
          } else if (tableNumber === '54' && topValue === '260' && leftValue === '50' && height === '90') {
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                      "tables.number": tableNumber
@@ -261,7 +261,7 @@ module.exports = {
                      }
                      console.log("moveTable Update successful");
                  });
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                  }, {
@@ -274,7 +274,7 @@ module.exports = {
                                  "topValue": "200",
                                  "leftValue": "50",
                                  "bgColor": "#ffffff",
-                                 "isBesetzt": "false",
+                                 "isOccupied": "false",
                                  "placeholder": "true",
                                  "border": "solid 3px #f3efe4",
                                  "width": "60",
@@ -293,7 +293,7 @@ module.exports = {
                      console.log("addTable Update successful");
                  });
         } else if (tableNumber === '54' && topValue === '200' && leftValue === '50' && height === '120') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -312,7 +312,7 @@ module.exports = {
                 });
 
 
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -325,7 +325,7 @@ module.exports = {
                                 "topValue": "140",
                                 "leftValue": "50",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "60",
@@ -344,7 +344,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
          } else if (tableNumber === '55' && topValue === '230' && leftValue === '50' && height === '60') {
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                      "tables.number": tableNumber
@@ -361,7 +361,7 @@ module.exports = {
                      }
                      console.log("moveTable Update successful");
                  });
-             db.tables.update(
+             db.thalerhofTables.update(
                  {
                      department: departmentValue,
                  }, {
@@ -374,7 +374,7 @@ module.exports = {
                                  "topValue": "200",
                                  "leftValue": "50",
                                  "bgColor": "#ffffff",
-                                 "isBesetzt": "false",
+                                 "isOccupied": "false",
                                  "placeholder": "true",
                                  "border": "solid 3px #f3efe4",
                                  "width": "60",
@@ -393,7 +393,7 @@ module.exports = {
                      console.log("addTable Update successful");
                  });
         } else if (tableNumber === '55' && topValue === '200' && leftValue === '50' && height === '90') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -411,7 +411,7 @@ module.exports = {
                     console.log("moveTable Update successful");
                 });
 
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -424,7 +424,7 @@ module.exports = {
                                 "topValue": "140",
                                 "leftValue": "50",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "60",
@@ -443,7 +443,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
         } else if (tableNumber === '56' && topValue === '170' && leftValue === '50') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -460,7 +460,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -473,7 +473,7 @@ module.exports = {
                                 "topValue": "140",
                                 "leftValue": "50",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "60",
@@ -492,7 +492,7 @@ module.exports = {
                     console.log("addTable Update successful");
                 });
         } else if (tableNumber === '58' && topValue === '140' && leftValue === '170' && width === '60') {
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                     "tables.number": tableNumber
@@ -509,7 +509,7 @@ module.exports = {
                     }
                     console.log("moveTable Update successful");
                 });
-            db.tables.update(
+            db.thalerhofTables.update(
                 {
                     department: departmentValue,
                 }, {
@@ -522,7 +522,7 @@ module.exports = {
                                 "topValue": "140",
                                 "leftValue": "230",
                                 "bgColor": "#ffffff",
-                                "isBesetzt": "false",
+                                "isOccupied": "false",
                                 "placeholder": "true",
                                 "border": "solid 3px #f3efe4",
                                 "width": "30",

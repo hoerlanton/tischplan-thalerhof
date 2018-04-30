@@ -84,7 +84,7 @@ module.exports = {
             }
             setTimeout(function () {
 
-                db.tables.update(
+                db.thalerhofTables.update(
                     {
                         department: departmentValueDB,
                         "tables.number": tableValue
@@ -150,7 +150,7 @@ module.exports = {
             //console.log(" nameValue " + nameValue + " roomNumberValue " + roomNumberValue + " arrivalValue " + arrivalValue + " departureValue " + departureValue + " numberOfPersonsValue " + numberOfPersonsValue + " note1Value " + note1Value + " note2Value " + note2Value + " commentValue " + commentValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
             setTimeout(function () {
-                db.tables.findOne(
+                db.thalerhofTables.findOne(
                     {
                         department: departmentValueDB,
                         "tables.number": tableValue
@@ -170,7 +170,7 @@ module.exports = {
                         console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
                         for (let i = 0; i < reseat[0].groups.length; i++) {
                             if (nameValue[i]) {
-                                db.tables.update(
+                                db.thalerhofTables.update(
                                 {
                                     department: departmentValueDB,
                                     "tables.number": tableValue
@@ -201,7 +201,7 @@ module.exports = {
                                     console.log("addInformationToTable updated successfully");
                                 });
                         } else {
-                                db.tables.update(
+                                db.thalerhofTables.update(
                                     {
                                         department: departmentValueDB,
                                         "tables.number": tableValue
@@ -230,7 +230,7 @@ module.exports = {
             }, 200);
         }
         setTimeout(function () {
-            db.tables.find(
+            db.thalerhofTables.find(
                 {
                     department: departmentValueDB,
                     "tables.number": tableValue

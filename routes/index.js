@@ -8,7 +8,7 @@ const
     jwt = require('jsonwebtoken'),
     config = require('../config/database'),
     User = require('../models/user'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['list', 'tables', 'tablesTemp', 'newInformation', 'notes', 'newInformationToEmployee']),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['list', 'thalerhofTables', 'tablesTemp', 'newInformation', 'notes', 'newInformationToEmployee']),
     list = require('./list.js'),
     information = require('./information.js'),
     note = require('./note.js'),

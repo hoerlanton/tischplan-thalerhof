@@ -35,7 +35,7 @@ module.exports = {
         console.log(req.body);
         let newInformation = req.body;
 
-        db.tables.update(
+        db.thalerhofTables.update(
             {
                 "tables.number": newInformation.tableNumber,
             },
@@ -58,7 +58,7 @@ module.exports = {
             });
 
         setTimeout(function () {
-            db.tables.findOne(
+            db.thalerhofTables.findOne(
                 {
                     "tables.number": newInformation.tableNumber
                 },

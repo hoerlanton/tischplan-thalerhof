@@ -9,7 +9,7 @@ module.exports = {
         let addPlaceholder = req.body;
         //console.log(occupyTable);
         new Promise(function(resolve, reject) {
-        db.tables.update(
+        db.thalerhofTables.update(
             {
                 department: addPlaceholder.department,
                 "tables.number": addPlaceholder.number
@@ -28,7 +28,7 @@ module.exports = {
             });
         }).then(function() { // (**)
         setTimeout(function () {
-            db.tables.find(
+            db.thalerhofTables.find(
                 {
                     department: addPlaceholder.department,
                     "tables.number": addPlaceholder.number
@@ -78,7 +78,7 @@ module.exports = {
         else if (departmentValue === "Wintergarten") {
             departmentValueDB = "Wintergarten";
         }
-        db.tables.update(
+        db.thalerhofTables.update(
             {
                 department: departmentValueDB,
                 "tables.number": tableValue[0]
@@ -94,7 +94,7 @@ module.exports = {
                 console.log("Updated successfully removePlaceholder");
             });
         setTimeout(function () {
-            db.tables.findOne(
+            db.thalerhofTables.findOne(
                 {
                     department: departmentValueDB,
                     "tables.number": tableValue[0]
