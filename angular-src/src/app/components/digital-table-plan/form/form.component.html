@@ -1,36 +1,36 @@
 <div *ngIf="showNoteFormBool">
   <div *ngIf="showAllBool === false">
     <div class="note">
-      <div *ngIf="showPanoramaBool">
+      <div *ngIf="showWeinstubeBool">
         <div *ngFor="let noteElement of noteElements" >
-          <div *ngIf="noteElement.departmentNoteInput === 'Panorama'">
+          <div *ngIf="noteElement.departmentNoteInput === 'Weinstube'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br><b>  Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div *ngIf="showRestaurantBool">
+      <div *ngIf="showBarBool">
         <div *ngFor="let noteElement of noteElements">
-          <div *ngIf="noteElement.departmentNoteInput === 'Restaurant'">
+          <div *ngIf="noteElement.departmentNoteInput === 'Bar'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div *ngIf="showSonnbergZirbnBool">
+      <div *ngIf="showTerasseBool">
         <div *ngFor="let noteElement of noteElements">
-          <div *ngIf="noteElement.departmentNoteInput === 'Sonnberg-Zirbn'">
+          <div *ngIf="noteElement.departmentNoteInput === 'Terasse'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}}<br> <b> Datum: </b>{{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div *ngIf="showWintergartenBool">
+      <div *ngIf="showSpeisesaalBool">
         <div *ngFor="let noteElement of noteElements">
-          <div *ngIf="noteElement.departmentNoteInput === 'Wintergarten'">
+          <div *ngIf="noteElement.departmentNoteInput === 'Speisesaal'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
               <p style="color: white"> <b> Note: </b>{{noteElement.noteInput === '' ? "Keine Notiz" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? "" : noteElement.date}}</p>
             </div>

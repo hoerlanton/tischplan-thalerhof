@@ -49,10 +49,10 @@ export class MainService {
       .map(res => res.json());
   }
 
-  dispenseTable(tableSonnbergZirbn) {
+  dispenseTable(tableTerasse) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('dispenseTable', tableSonnbergZirbn, {headers: headers})
+    return this.http.post('dispenseTable', tableTerasse, {headers: headers})
       .map(res => res.json()
       );
   }
@@ -65,10 +65,10 @@ export class MainService {
       );
   }
 
-  addPlaceholder(tableSonnbergZirbn) {
+  addPlaceholder(tableTerasse) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('addPlaceholder', tableSonnbergZirbn, {headers: headers})
+    return this.http.post('addPlaceholder', tableTerasse, {headers: headers})
       .map(res => res.json()
       );
   }

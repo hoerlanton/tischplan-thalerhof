@@ -19,7 +19,7 @@ p {
   z-index: 1;
 }
 
-.showSonnbergZirbn, .showPanorama, .showRestaurant, .showWintergarten, .showAll {
+.showTerasse, .showWeinstube, .showBar, .showSpeisesaal, .showAll {
   padding: 10px;
 }
 

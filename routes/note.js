@@ -6,7 +6,7 @@ module.exports = {
     getNote: function (req, res, db) {
         console.log("tables get called");
         //Get guests from Mongo DB
-        db.notes.find(function (err, information) {
+        db.thalerhofNotes.find(function (err, information) {
             if (err) {
                 res.send(err);
             }
@@ -18,7 +18,7 @@ module.exports = {
         //Get guests from Mongo DB
         console.log(req.body);
         let newInformation = req.body;
-        db.notes.update(
+        db.thalerhofNotes.update(
             {
                 departmentNoteInput: newInformation.departmentNoteInput,
             },
@@ -35,7 +35,7 @@ module.exports = {
             });
 
         setTimeout(function () {
-            db.notes.find(
+            db.thalerhofNotes.find(
                 function (err, note) {
                     if (err) {
                         res.send(err);

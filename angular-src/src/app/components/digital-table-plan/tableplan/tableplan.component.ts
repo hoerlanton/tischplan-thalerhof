@@ -9,56 +9,75 @@ import { MainService } from '../../../services/main.service';
 })
 
 export class TableplanComponent implements AfterViewInit {
-  @Input('tablesWintergarten') tablesWintergarten: Table[];
-  @Input('showWintergartenBool') showWintergartenBool: boolean;
-  @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
-  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
-  @Input('tablesPanorama') tablesPanorama: Table[];
-  @Input('showPanoramaBool') showPanoramaBool: boolean;
-  @Input('tablesRestaurant') tablesRestaurant: Table[];
-  @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('tablesSpeisesaal') tablesSpeisesaal: Table[];
+  @Input('showSpeisesaalBool') showSpeisesaalBool: boolean;
+  @Input('tablesTerasse') tablesTerasse: Table[];
+  @Input('showTerasseBool') showTerasseBool: boolean;
+  @Input('tablesWeinstube') tablesWeinstube: Table[];
+  @Input('showWeinstubeBool') showWeinstubeBool: boolean;
+  @Input('tablesBar') tablesBar: Table[];
+  @Input('showBarBool') showBarBool: boolean;
   @Input('showAllBool') showAllBool: boolean;
   @Input('showTablePlanBool') showTablePlanBool: boolean;
-  @Output()
-  movedSonnbergZirbn: EventEmitter<any> = new EventEmitter();
-  @Output()
-  movedRestaurant: EventEmitter<any> = new EventEmitter();
-  @Output()
-  movedWintergarten: EventEmitter<any> = new EventEmitter();
-  @Output()
-  movedPanorama: EventEmitter<any> = new EventEmitter();
-  @Output()
-  changeBgColorIfArrival: EventEmitter<any> = new EventEmitter();
-  @Output()
-  childWintergartenExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  adultWintergartenExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  adultRestaurantExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  childRestaurantExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  adultPanoramaExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  childPanoramaExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  adultSonnbergZirbnExport:EventEmitter<any> = new EventEmitter();
-  @Output()
-  childSonnbergZirbnExport:EventEmitter<any> = new EventEmitter();
+  @Output()movedTerasse: EventEmitter<any> = new EventEmitter();
+  @Output()movedBar: EventEmitter<any> = new EventEmitter();
+  @Output()movedSpeisesaal: EventEmitter<any> = new EventEmitter();
+  @Output()movedWeinstube: EventEmitter<any> = new EventEmitter();
+  @Output()changeBgColorIfArrival: EventEmitter<any> = new EventEmitter();
+  @Output()adult1SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult2SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()child1SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()child2SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()child3SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()child4SpeisesaalExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult1BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult2BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()child1BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()child2BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()child3BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()child4BarExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult1WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult2WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()child1WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()child2WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()child3WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()child4WeinstubeExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult1TerasseExport: EventEmitter<any> = new EventEmitter();
+  @Output()adult2TerasseExport: EventEmitter<any> = new EventEmitter();
+  @Output()child1TerasseExport: EventEmitter<any> = new EventEmitter();
+  @Output()child2TerasseExport: EventEmitter<any> = new EventEmitter();
+  @Output()child3TerasseExport: EventEmitter<any> = new EventEmitter();
+  @Output()child4TerasseExport: EventEmitter<any> = new EventEmitter();
 
   buttonMoveTable: string;
   buttonInfo: string;
   buttonHinzufuegen: string;
   buttonEntfernen: string;
   trace: boolean;
-  adultSonnbergZirbn: any[] = [];
-  childSonnbergZirbn: any[] = [];
-  adultPanorama: any[] = [];
-  childPanorama: any[] = [];
-  adultRestaurant: any[] = [];
-  childRestaurant: any[] = [];
-  adultWintergarten: any[] = [];
-  childWintergarten: any[] = [];
+  adult1Terasse: any[] = [];
+  adult2Terasse: any[] = [];
+  child1Terasse: any[] = [];
+  child2Terasse: any[] = [];
+  child3Terasse: any[] = [];
+  child4Terasse: any[] = [];
+  adult1Weinstube: any[] = [];
+  adult2Weinstube: any[] = [];
+  child1Weinstube: any[] = [];
+  child2Weinstube: any[] = [];
+  child3Weinstube: any[] = [];
+  child4Weinstube: any[] = [];
+  adult1Bar: any[] = [];
+  adult2Bar: any[] = [];
+  child1Bar: any[] = [];
+  child2Bar: any[] = [];
+  child3Bar: any[] = [];
+  child4Bar: any[] = [];
+  adult1Speisesaal: any[] = [];
+  adult2Speisesaal: any[] = [];
+  child1Speisesaal: any[] = [];
+  child2Speisesaal: any[] = [];
+  child3Speisesaal: any[] = [];
+  child4Speisesaal: any[] = [];
 
   constructor(private mainService: MainService) {
     this.buttonMoveTable = "ff0000";
@@ -95,22 +114,22 @@ export class TableplanComponent implements AfterViewInit {
       if (response === null) {
         return;
       } else {
-        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-          this.movedSonnbergZirbn.emit(response[0].tables);
-          //this.tablesSonnbergZirbn = response[0].tables;
+        if (response[0].tables[j].department === "Terasse") {
+          this.movedTerasse.emit(response[0].tables);
+          //this.tablesTerasse = response[0].tables;
         }
-        else if (response[0].tables[j].department === "Panorama") {
-          this.movedPanorama.emit(response[0].tables);
-          //this.tablesPanorama = response[0].tables;
+        else if (response[0].tables[j].department === "Weinstube") {
+          this.movedWeinstube.emit(response[0].tables);
+          //this.tablesWeinstube = response[0].tables;
           //this._navService.changeNav(response[0].tables);
         }
-        else if (response[0].tables[j].department === "Restaurant") {
-          this.movedRestaurant.emit(response[0].tables);
-          //this.tablesRestaurant = response[0].tables;
+        else if (response[0].tables[j].department === "Bar") {
+          this.movedBar.emit(response[0].tables);
+          //this.tablesBar = response[0].tables;
         }
-        else if (response[0].tables[j].department === "Wintergarten") {
-          this.movedWintergarten.emit(response[0].tables);
-          //this.tablesWintergarten = response[0].tables;
+        else if (response[0].tables[j].department === "Speisesaal") {
+          this.movedSpeisesaal.emit(response[0].tables);
+          //this.tablesSpeisesaal = response[0].tables;
         }
       }
       this.changeBgColorIfArrival.emit();
@@ -140,22 +159,22 @@ export class TableplanComponent implements AfterViewInit {
       if (response === null) {
         return;
       } else {
-        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-          this.movedSonnbergZirbn.emit(response[0].tables);
-          //this.tablesSonnbergZirbn = response[0].tables;
+        if (response[0].tables[j].department === "Terasse") {
+          this.movedTerasse.emit(response[0].tables);
+          //this.tablesTerasse = response[0].tables;
         }
-        else if (response[0].tables[j].department === "Panorama") {
-          this.movedPanorama.emit(response[0].tables);
-          //this.tablesPanorama = response[0].tables;
+        else if (response[0].tables[j].department === "Weinstube") {
+          this.movedWeinstube.emit(response[0].tables);
+          //this.tablesWeinstube = response[0].tables;
           //this._navService.changeNav(response[0].tables);
         }
-        else if (response[0].tables[j].department === "Restaurant") {
-          this.movedRestaurant.emit(response[0].tables);
-          //this.tablesRestaurant = response[0].tables;
+        else if (response[0].tables[j].department === "Bar") {
+          this.movedBar.emit(response[0].tables);
+          //this.tablesBar = response[0].tables;
         }
-        else if (response[0].tables[j].department === "Wintergarten") {
-          this.movedWintergarten.emit(response[0].tables);
-          //this.tablesWintergarten = response[0].tables;
+        else if (response[0].tables[j].department === "Speisesaal") {
+          this.movedSpeisesaal.emit(response[0].tables);
+          //this.tablesSpeisesaal = response[0].tables;
         }
       }
       this.changeBgColorIfArrival.emit();
@@ -257,23 +276,31 @@ export class TableplanComponent implements AfterViewInit {
   }
 
   sumUpNumberOfPersons(){
-    console.log("sumUpNumberOfPersons calld");
-    if (this.tablesSonnbergZirbn) {
-      for (let p = 0; p < this.tablesSonnbergZirbn.length; p++) {
-        this.adultSonnbergZirbn[p] = 0;
-        this.childSonnbergZirbn[p] = 0;
-        if (this.tablesSonnbergZirbn[p].groups) {
-          for (let g = 0; g < this.tablesSonnbergZirbn[p].groups.length; g++) {
-            if (this.tablesSonnbergZirbn[p].groups[g].numberOfPersonsValue) {
-              let adult = this.tablesSonnbergZirbn[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+    console.log("sumUpNumberOfPersons called");
+    if (this.tablesTerasse) {
+      for (let p = 0; p < this.tablesTerasse.length; p++) {
+        this.adult1Terasse[p] = 0;
+        this.adult2Terasse[p] = 0;
+        this.child1Terasse[p] = 0;
+        this.child2Terasse[p] = 0;
+        this.child3Terasse[p] = 0;
+        this.child4Terasse[p] = 0;
+        if (this.tablesTerasse[p].groups) {
+          for (let g = 0; g < this.tablesTerasse[p].groups.length; g++) {
+            if (this.tablesTerasse[p].groups[g].numberOfPersonsValue) {
+              let adult = this.tablesTerasse[p].groups[g].numberOfPersonsValue.match(/\d+/g);
               if (adult != null) {
                 //console.log(adult);
-                this.adultSonnbergZirbn[p] = this.adultSonnbergZirbn[p] + Number(adult[0]);
+                this.adult1Terasse[p] = this.adult1Terasse[p] + Number(adult[0]);
+                this.adult2Terasse[p] = this.adult2Terasse[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.childSonnbergZirbn[p] = this.childSonnbergZirbn[p] + Number(adult[1]);
+                this.child1Terasse[p] = this.child1Terasse[p] + Number(adult[2]);
+                this.child2Terasse[p] = this.child2Terasse[p] + Number(adult[3]);
+                this.child3Terasse[p] = this.child3Terasse[p] + Number(adult[4]);
+                this.child4Terasse[p] = this.child4Terasse[p] + Number(adult[5]);
                 //console.log(this.child[p]);
               }
             }
@@ -281,22 +308,30 @@ export class TableplanComponent implements AfterViewInit {
         }
       }
     }
-    if (this.tablesPanorama) {
-      for (let p = 0; p < this.tablesPanorama.length; p++) {
-        this.adultPanorama[p] = 0;
-        this.childPanorama[p] = 0;
-        if (this.tablesPanorama[p].groups) {
-          for (let g = 0; g < this.tablesPanorama[p].groups.length; g++) {
-            if (this.tablesPanorama[p].groups[g].numberOfPersonsValue) {
-              let adult = this.tablesPanorama[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+    if (this.tablesWeinstube) {
+      for (let p = 0; p < this.tablesWeinstube.length; p++) {
+        this.adult1Weinstube[p] = 0;
+        this.adult2Weinstube[p] = 0;
+        this.child1Weinstube[p] = 0;
+        this.child2Weinstube[p] = 0;
+        this.child3Weinstube[p] = 0;
+        this.child4Weinstube[p] = 0;
+        if (this.tablesWeinstube[p].groups) {
+          for (let g = 0; g < this.tablesWeinstube[p].groups.length; g++) {
+            if (this.tablesWeinstube[p].groups[g].numberOfPersonsValue) {
+              let adult = this.tablesWeinstube[p].groups[g].numberOfPersonsValue.match(/\d+/g);
               if (adult != null) {
                 //console.log(adult);
-                this.adultPanorama[p] = this.adultPanorama[p] + Number(adult[0]);
+                this.adult1Weinstube[p] = this.adult1Weinstube[p] + Number(adult[0]);
+                this.adult2Weinstube[p] = this.adult2Weinstube[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.childPanorama[p] = this.childPanorama[p] + Number(adult[1]);
+                this.child1Weinstube[p] = this.child1Weinstube[p] + Number(adult[2]);
+                this.child2Weinstube[p] = this.child2Weinstube[p] + Number(adult[3]);
+                this.child3Weinstube[p] = this.child3Weinstube[p] + Number(adult[4]);
+                this.child4Weinstube[p] = this.child4Weinstube[p] + Number(adult[5]);
                 //console.log(this.child[p]);
               }
             }
@@ -304,22 +339,30 @@ export class TableplanComponent implements AfterViewInit {
         }
       }
     }
-    if (this.tablesRestaurant) {
-      for (let p = 0; p < this.tablesRestaurant.length; p++) {
-        this.adultRestaurant[p] = 0;
-        this.childRestaurant[p] = 0;
-        if (this.tablesRestaurant[p].groups) {
-          for (let g = 0; g < this.tablesRestaurant[p].groups.length; g++) {
-            if (this.tablesRestaurant[p].groups[g].numberOfPersonsValue) {
-              let adult = this.tablesRestaurant[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+    if (this.tablesBar) {
+      for (let p = 0; p < this.tablesBar.length; p++) {
+        this.adult1Bar[p] = 0;
+        this.adult2Bar[p] = 0;
+        this.child1Bar[p] = 0;
+        this.child2Bar[p] = 0;
+        this.child3Bar[p] = 0;
+        this.child4Bar[p] = 0;
+        if (this.tablesBar[p].groups) {
+          for (let g = 0; g < this.tablesBar[p].groups.length; g++) {
+            if (this.tablesBar[p].groups[g].numberOfPersonsValue) {
+              let adult = this.tablesBar[p].groups[g].numberOfPersonsValue.match(/\d+/g);
               if (adult != null) {
                 //console.log(adult);
-                this.adultRestaurant[p] = this.adultRestaurant[p] + Number(adult[0]);
+                this.adult1Bar[p] = this.adult1Bar[p] + Number(adult[0]);
+                this.adult2Bar[p] = this.adult2Bar[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.childRestaurant[p] = this.childRestaurant[p] + Number(adult[1]);
+                this.child1Bar[p] = this.child1Bar[p] + Number(adult[2]);
+                this.child2Bar[p] = this.child2Bar[p] + Number(adult[3]);
+                this.child3Bar[p] = this.child3Bar[p] + Number(adult[4]);
+                this.child4Bar[p] = this.child4Bar[p] + Number(adult[5]);
                 //console.log(this.child[p]);
               }
             }
@@ -327,22 +370,30 @@ export class TableplanComponent implements AfterViewInit {
         }
       }
     }
-    if (this.tablesWintergarten) {
-      for (let p = 0; p < this.tablesWintergarten.length; p++) {
-        this.adultWintergarten[p] = 0;
-        this.childWintergarten[p] = 0;
-        if (this.tablesWintergarten[p].groups) {
-          for (let g = 0; g < this.tablesWintergarten[p].groups.length; g++) {
-            if (this.tablesWintergarten[p].groups[g].numberOfPersonsValue) {
-              let adult = this.tablesWintergarten[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+    if (this.tablesSpeisesaal) {
+      for (let p = 0; p < this.tablesSpeisesaal.length; p++) {
+        this.adult1Speisesaal[p] = 0;
+        this.adult2Speisesaal[p] = 0;
+        this.child1Speisesaal[p] = 0;
+        this.child2Speisesaal[p] = 0;
+        this.child3Speisesaal[p] = 0;
+        this.child4Speisesaal[p] = 0;
+        if (this.tablesSpeisesaal[p].groups) {
+          for (let g = 0; g < this.tablesSpeisesaal[p].groups.length; g++) {
+            if (this.tablesSpeisesaal[p].groups[g].numberOfPersonsValue) {
+              let adult = this.tablesSpeisesaal[p].groups[g].numberOfPersonsValue.match(/\d+/g);
               if (adult != null) {
                 //console.log(adult);
-                this.adultWintergarten[p] = this.adultWintergarten[p] + Number(adult[0]);
+                this.adult1Speisesaal[p] = this.adult1Speisesaal[p] + Number(adult[0]);
+                this.adult2Speisesaal[p] = this.adult2Speisesaal[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.childWintergarten[p] = this.childWintergarten[p] + Number(adult[1]);
+                this.child1Speisesaal[p] = this.child1Speisesaal[p] + Number(adult[2]);
+                this.child2Speisesaal[p] = this.child2Speisesaal[p] + Number(adult[3]);
+                this.child3Speisesaal[p] = this.child3Speisesaal[p] + Number(adult[4]);
+                this.child4Speisesaal[p] = this.child4Speisesaal[p] + Number(adult[5]);
                 //console.log(this.child[p]);
               }
             }
@@ -350,13 +401,29 @@ export class TableplanComponent implements AfterViewInit {
         }
       }
     }
-    this.childWintergartenExport.emit(this.childWintergarten);
-    this.adultWintergartenExport.emit(this.adultWintergarten);
-    this.adultRestaurantExport.emit(this.adultRestaurant);
-    this.childRestaurantExport.emit(this.childRestaurant);
-    this.adultPanoramaExport.emit(this.adultPanorama);
-    this.childPanoramaExport.emit(this.childPanorama);
-    this.adultSonnbergZirbnExport.emit(this.adultSonnbergZirbn);
-    this.childSonnbergZirbnExport.emit(this.childSonnbergZirbn);
+    this.adult1SpeisesaalExport.emit(this.adult1Speisesaal);
+    this.adult2SpeisesaalExport.emit(this.adult2Speisesaal);
+    this.child1SpeisesaalExport.emit(this.child1Speisesaal);
+    this.child2SpeisesaalExport.emit(this.child2Speisesaal);
+    this.child3SpeisesaalExport.emit(this.child3Speisesaal);
+    this.child4SpeisesaalExport.emit(this.child4Speisesaal);
+    this.adult1BarExport.emit(this.adult1Bar);
+    this.adult2BarExport.emit(this.adult2Bar);
+    this.child1BarExport.emit(this.child1Bar);
+    this.child2BarExport.emit(this.child2Bar);
+    this.child3BarExport.emit(this.child3Bar);
+    this.child4BarExport.emit(this.child4Bar);
+    this.adult1WeinstubeExport.emit(this.adult1Weinstube);
+    this.adult2WeinstubeExport.emit(this.adult2Weinstube);
+    this.child1WeinstubeExport.emit(this.child1Weinstube);
+    this.child2WeinstubeExport.emit(this.child2Weinstube);
+    this.child3WeinstubeExport.emit(this.child3Weinstube);
+    this.child4WeinstubeExport.emit(this.child4Weinstube);
+    this.adult1TerasseExport.emit(this.adult1Terasse);
+    this.adult2TerasseExport.emit(this.adult2Terasse);
+    this.child1TerasseExport.emit(this.child1Terasse);
+    this.child2TerasseExport.emit(this.child2Terasse);
+    this.child3TerasseExport.emit(this.child3Terasse);
+    this.child4TerasseExport.emit(this.child4Terasse);
   }
 }

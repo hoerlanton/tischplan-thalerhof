@@ -4,7 +4,6 @@
       <div class='cards-container' id='containerTables' [ngStyle]="{'background-color': + table.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + table.bgColor}">
           <div *ngIf="table.isOccupied === 'true'">
-            <div [style.border]="getStyle(table.traceValue)">
               <div *ngIf="table.nameValue">
                 <p style="background-color: #FFFFFF; padding: 10px">
                   <b> Zimmernummer:</b> {{table.roomNumberValue}}<br>
@@ -13,16 +12,8 @@
                   <b> Abreise Datum:</b> {{table.departureValue}}<br>
                   <b> Personenanzahl:</b> {{table.numberOfPersonsValue}}<br>
                   <b> Nation:</b> {{table.nationValue}}<br>
-                  <b> Sprache:</b> {{table.languageValue}}<br>
-                  <b> Preis Typ:</b> {{table.typeOfPriceValue}}<br>
-                  <b> Reisebüro:</b> {{table.sourceValue}}<br>
-                  <b> Kategorie:</b> {{table.categoryValue}}<br>
-                  <b> Notiz1:</b> {{table.note1Value}}<br>
-                  <b> Notiz2:</b> {{table.note2Value}}<br>
-                  <b> Trace:</b> {{table.traceValue}}<br>
                 </p>
               </div>
-            </div>
             <div *ngIf="table.newTraceName">
               <p style="background-color: #FFFFFF; border: solid 3px red">
                 <b> Zimmernummer: </b>{{table.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{table.newTraceText}} <br> <b> Tischnummer: </b>{{table.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{table.newTraceEmployee}} <br> <b> Name: </b>{{table.newTraceName}} <br> <b> Datum: </b>{{table.newTraceDate}}

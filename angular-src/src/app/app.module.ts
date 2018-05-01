@@ -8,10 +8,10 @@ import { PrintComponent } from './components/digital-table-plan/print/print.comp
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DragulaModule } from 'ng2-dragula';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { WintergartenComponent } from './components/digital-table-plan/departments/wintergarten/wintergarten.component';
-import { RestaurantComponent } from './components/digital-table-plan/departments/restaurant/restaurant.component';
-import { PanoramaComponent } from './components/digital-table-plan/departments/panorama/panorama.component';
-import { SonnbergZirbnComponent } from './components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component';
+import { SpeisesaalComponent } from './components/digital-table-plan/departments/speisesaal/speisesaal.component';
+import { BarComponent } from './components/digital-table-plan/departments/bar/bar.component';
+import { WeinstubeComponent } from './components/digital-table-plan/departments/weinstube/weinstube.component';
+import { TerasseComponent } from './components/digital-table-plan/departments/terasse/terasse.component';
 import { NavigationComponent } from './components/digital-table-plan/navigation/navigation.component';
 import { FormComponent } from './components/digital-table-plan/form/form.component';
 import { TableplanComponent } from './components/digital-table-plan/tableplan/tableplan.component';
@@ -44,10 +44,10 @@ const appRoutes: Routes =  [
     AppComponent,
     MainComponent,
     PrintComponent,
-    WintergartenComponent,
-    RestaurantComponent,
-    PanoramaComponent,
-    SonnbergZirbnComponent,
+    SpeisesaalComponent,
+    BarComponent,
+    WeinstubeComponent,
+    TerasseComponent,
     NavigationComponent,
     FormComponent,
     TableplanComponent,

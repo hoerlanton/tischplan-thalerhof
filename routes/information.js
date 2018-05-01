@@ -6,7 +6,7 @@ module.exports = {
     getInformation: function (req, res, db) {
         console.log("tables get called");
         //Get guests from Mongo DB
-        db.newInformation.find(function (err, information) {
+        db.thalerhofNewInformation.find(function (err, information) {
             if (err) {
                 res.send(err);
             }
@@ -18,7 +18,7 @@ module.exports = {
         console.log("deleteInformation request made to /deleteInformation");
         let informationElementToDelete = req.body;
         console.log(JSON.stringify(informationElementToDelete));
-        db.newInformation.remove({
+        db.thalerhofNewInformation.remove({
 
                 roomNumber: informationElementToDelete.roomNumber,
                 text: informationElementToDelete.text
@@ -77,7 +77,7 @@ module.exports = {
     getInformationEmployees: function (req, res, db) {
         console.log("getInformationEmployees get called");
         //Get guests from Mongo DB
-        db.newInformationToEmployee.find(function (err, information) {
+        db.thalerhofNewInformationToEmployee.find(function (err, information) {
             if (err) {
                 res.send(err);
             }
@@ -91,14 +91,14 @@ module.exports = {
 
         console.log(req.body);
         let newInformation = req.body;
-        db.newInformation.save(newInformation, function (err, newInformation) {
+        db.thalerhofNewInformation.save(newInformation, function (err, newInformation) {
             if (err) {
                 res.send(err);
             }
             res.json(newInformation);
         });
         setTimeout(function () {
-            db.newInformationToEmployee.findOne(
+            db.thalerhofNewInformationToEmployee.findOne(
                 {
                     "employee": newInformation.employee
                 },
@@ -109,7 +109,7 @@ module.exports = {
                     if (err) {
                         res.send(err);
                     }
-                    db.newInformationToEmployee.update(
+                    db.thalerhofNewInformationToEmployee.update(
                         {
                             "employee": newInformation.employee
                         },

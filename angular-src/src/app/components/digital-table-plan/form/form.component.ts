@@ -18,17 +18,17 @@ export class FormComponent implements OnInit {
   @Input('tableNumber') tableNumber: string;
   @Input('nameTraceInput') nameTraceInput: string;
   @Input('employee') employee: string;
-  @Input('tablesRestaurant') tablesRestaurant: Table[];
-  @Input('tablesPanorama') tablesPanorama: Table[];
-  @Input('tablesWintergarten') tablesWintergarten: Table[];
-  @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
+  @Input('tablesBar') tablesBar: Table[];
+  @Input('tablesWeinstube') tablesWeinstube: Table[];
+  @Input('tablesSpeisesaal') tablesSpeisesaal: Table[];
+  @Input('tablesTerasse') tablesTerasse: Table[];
   @Input('showInfoFormBool') showInfoFormBool: boolean;
   @Input('showNoteFormBool') showNoteFormBool: boolean;
   @Input('noteElements') noteElements: any;
-  @Input('showWintergartenBool') showWintergartenBool: boolean;
-  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
-  @Input('showPanoramaBool') showPanoramaBool: boolean;
-  @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('showSpeisesaalBool') showSpeisesaalBool: boolean;
+  @Input('showTerasseBool') showTerasseBool: boolean;
+  @Input('showWeinstubeBool') showWeinstubeBool: boolean;
+  @Input('showBarBool') showBarBool: boolean;
   @Input('showAllBool') showAllBool: boolean;
   @Output()
   noteResponse:EventEmitter<any> = new EventEmitter();
@@ -42,8 +42,8 @@ export class FormComponent implements OnInit {
   noteDate: any;
 
   constructor(private mainService: MainService, private _flashMessagesService: FlashMessagesService) {
-    this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
-    this.employees = ["Alexandra Lopion", "Julia Ackermann", "Torsten Streit", "Sabrina Schrötwieser", "Loreen Kumpfert", "Aylin Fiedler", "Julia Laue", "Richard Klöffel", "Tino Deisenroth", "Stefan Scheiber", "Dominic Mugambi", "Ralf Rohsmann", "Florian Thurner"];
+    this.departments = ["Terasse", "Bar", "Speisesaal", "Weinstube"];
+    this.employees = ["Test1", "Test2", "Test3", "Test4"];
   }
 
   ngOnInit() {
@@ -82,28 +82,28 @@ export class FormComponent implements OnInit {
           if (Information === null) {
             return;
           } else {
-            if (Information.tables[0].department === "Sonnberg-Zirbn") {
-              for (let i = 0; i < this.tablesSonnbergZirbn.length; i++) {
-                if (this.tablesSonnbergZirbn[i].number === Information.tables[0].number) {
-                  this.tablesSonnbergZirbn[i] = Information.tables[0];
+            if (Information.tables[0].department === "Terasse") {
+              for (let i = 0; i < this.tablesTerasse.length; i++) {
+                if (this.tablesTerasse[i].number === Information.tables[0].number) {
+                  this.tablesTerasse[i] = Information.tables[0];
                 }
               }
-            } else if (Information.tables[0].department === "Panorama") {
-              for (let i = 0; i < this.tablesPanorama.length; i++) {
-                if (this.tablesPanorama[i].number === Information.tables[0].number) {
-                  this.tablesPanorama[i] = Information.tables[0];
+            } else if (Information.tables[0].department === "Weinstube") {
+              for (let i = 0; i < this.tablesWeinstube.length; i++) {
+                if (this.tablesWeinstube[i].number === Information.tables[0].number) {
+                  this.tablesWeinstube[i] = Information.tables[0];
                 }
               }
-            } else if (Information.tables[0].department === "Restaurant") {
-              for (let i = 0; i < this.tablesRestaurant.length; i++) {
-                if (this.tablesRestaurant[i].number === Information.tables[0].number) {
-                  this.tablesRestaurant[i] = Information.tables[0];
+            } else if (Information.tables[0].department === "Bar") {
+              for (let i = 0; i < this.tablesBar.length; i++) {
+                if (this.tablesBar[i].number === Information.tables[0].number) {
+                  this.tablesBar[i] = Information.tables[0];
                 }
               }
-            } else if (Information.tables[0].department === "Wintergarten") {
-              for (let i = 0; i < this.tablesWintergarten.length; i++) {
-                if (this.tablesWintergarten[i].number === Information.tables[0].number) {
-                  this.tablesWintergarten[i] = Information.tables[0];
+            } else if (Information.tables[0].department === "Speisesaal") {
+              for (let i = 0; i < this.tablesSpeisesaal.length; i++) {
+                if (this.tablesSpeisesaal[i].number === Information.tables[0].number) {
+                  this.tablesSpeisesaal[i] = Information.tables[0];
                 }
               }
             }

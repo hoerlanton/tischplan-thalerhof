@@ -66,17 +66,17 @@ module.exports = {
             departmentValue = informationElements2[informationElements2.length - 1][0].substring(1, informationElements2[informationElements2.length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValue = informationElements2[informationElements2.length - 1][0].toString().match(/\d+/);
         }
-        if (departmentValue === "SonnbergZirbn") {
-            departmentValueDB = "Sonnberg-Zirbn";
+        if (departmentValue === "Terasse") {
+            departmentValueDB = "Terasse";
         }
-        else if (departmentValue === "Panorama") {
-            departmentValueDB = "Panorama";
+        else if (departmentValue === "Weinstube") {
+            departmentValueDB = "Weinstube";
         }
-        else if (departmentValue === "Restaurant") {
-            departmentValueDB = "Restaurant";
+        else if (departmentValue === "Bar") {
+            departmentValueDB = "Bar";
         }
-        else if (departmentValue === "Wintergarten") {
-            departmentValueDB = "Wintergarten";
+        else if (departmentValue === "Speisesaal") {
+            departmentValueDB = "Speisesaal";
         }
         db.thalerhofTables.update(
             {

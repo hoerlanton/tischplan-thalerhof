@@ -17,15 +17,15 @@ export class DepartmentmenuComponent implements AfterViewInit {
   @Input('fontColor3') fontColor3: string;
   @Input('fontColor4') fontColor4: string;
   @Input('fontColor5') fontColor5: string;
-  @Input('showPanoramaBool') showPanoramaBool: boolean;
-  @Input('showRestaurantBool') showRestaurantBool: boolean;
-  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
-  @Input('showWintergartenBool') showWintergartenBool: boolean;
+  @Input('showWeinstubeBool') showWeinstubeBool: boolean;
+  @Input('showBarBool') showBarBool: boolean;
+  @Input('showTerasseBool') showTerasseBool: boolean;
+  @Input('showSpeisesaalBool') showSpeisesaalBool: boolean;
   @Input('showAllBool') showAllBool: boolean;
-  @Output() showSonnbergZirbnBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showPanoramaBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showRestaurantBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showWintergartenBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showTerasseBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showWeinstubeBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showBarBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showSpeisesaalBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showAllBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Input('buttonBgColorInfoForm') buttonBgColorInfoForm: string;
   @Input('fontColorInfoForm') fontColorInfoForm: string;
@@ -54,13 +54,13 @@ export class DepartmentmenuComponent implements AfterViewInit {
 
   ngAfterViewInit() {
   }
-    showSonnbergZirbn() {
-      //console.log("showSonnbergZirbn!");
+    showTerasse() {
+      //console.log("showTerasse!");
 
-      this.showSonnbergZirbnBool = true;
-      this.showPanoramaBool = false;
-      this.showRestaurantBool = false;
-      this.showWintergartenBool = false;
+      this.showTerasseBool = true;
+      this.showWeinstubeBool = false;
+      this.showBarBool = false;
+      this.showSpeisesaalBool = false;
       this.showAllBool = false;
       this.showDepartments = false;
 
@@ -82,20 +82,20 @@ export class DepartmentmenuComponent implements AfterViewInit {
       } else {
         this.fontColor1 = "f3efe4";
       }
-      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+      this.showTerasseBoolChange.emit(this.showTerasseBool);
+      this.showBarBoolChange.emit(this.showBarBool);
+      this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+      this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
       this.showAllBoolChange.emit(this.showAllBool);
     }
 
-    showPanorama() {
-      //console.log("showPanorama!");
-      this.showSonnbergZirbnBool = false;
-      this.showPanoramaBool = true;
-      //console.log(this.showPanoramaBool);
-      this.showRestaurantBool = false;
-      this.showWintergartenBool = false;
+    showWeinstube() {
+      //console.log("showWeinstube!");
+      this.showTerasseBool = false;
+      this.showWeinstubeBool = true;
+      //console.log(this.showWeinstubeBool);
+      this.showBarBool = false;
+      this.showSpeisesaalBool = false;
       this.showAllBool = false;
       this.showDepartments = false;
 
@@ -118,19 +118,19 @@ export class DepartmentmenuComponent implements AfterViewInit {
       } else {
         this.fontColor2 = "f3efe4";
       }
-      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+      this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+      this.showTerasseBoolChange.emit(this.showTerasseBool);
+      this.showBarBoolChange.emit(this.showBarBool);
+      this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
       this.showAllBoolChange.emit(this.showAllBool);
     }
 
-    showRestaurant() {
-      //console.log("showRestaurant!");
-      this.showSonnbergZirbnBool = false;
-      this.showPanoramaBool = false;
-      this.showRestaurantBool = true;
-      this.showWintergartenBool = false;
+    showBar() {
+      //console.log("showBar!");
+      this.showTerasseBool = false;
+      this.showWeinstubeBool = false;
+      this.showBarBool = true;
+      this.showSpeisesaalBool = false;
       this.showAllBool = false;
       this.showDepartments = false;
 
@@ -152,19 +152,19 @@ export class DepartmentmenuComponent implements AfterViewInit {
       } else {
         this.fontColor3 = "f3efe4";
       }
-      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+      this.showBarBoolChange.emit(this.showBarBool);
+      this.showTerasseBoolChange.emit(this.showTerasseBool);
+      this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+      this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
       this.showAllBoolChange.emit(this.showAllBool);
     }
 
-    showWintergarten() {
-      //console.log("showWintergarten!");
-      this.showSonnbergZirbnBool = false;
-      this.showPanoramaBool = false;
-      this.showRestaurantBool = false;
-      this.showWintergartenBool = true;
+    showSpeisesaal() {
+      //console.log("showSpeisesaal!");
+      this.showTerasseBool = false;
+      this.showWeinstubeBool = false;
+      this.showBarBool = false;
+      this.showSpeisesaalBool = true;
       this.showAllBool = false;
       this.showDepartments = false;
 
@@ -186,18 +186,18 @@ export class DepartmentmenuComponent implements AfterViewInit {
       } else {
         this.fontColor4 = "f3efe4";
       }
-      this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-      this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-      this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-      this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+      this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
+      this.showTerasseBoolChange.emit(this.showTerasseBool);
+      this.showBarBoolChange.emit(this.showBarBool);
+      this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
       this.showAllBoolChange.emit(this.showAllBool);
     }
   showAll() {
     //console.log("showAll!");
-    this.showSonnbergZirbnBool = false;
-    this.showPanoramaBool = false;
-    this.showRestaurantBool = false;
-    this.showWintergartenBool = false;
+    this.showTerasseBool = false;
+    this.showWeinstubeBool = false;
+    this.showBarBool = false;
+    this.showSpeisesaalBool = false;
     this.showAllBool = true;
     this.showDepartments = false;
 
@@ -219,10 +219,10 @@ export class DepartmentmenuComponent implements AfterViewInit {
     } else {
       this.fontColor5 = "f3efe4";
     }
-    this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-    this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-    this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-    this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+    this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
+    this.showTerasseBoolChange.emit(this.showTerasseBool);
+    this.showBarBoolChange.emit(this.showBarBool);
+    this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
     this.showAllBoolChange.emit(this.showAllBool);
   }
   showInfoForm() {
@@ -374,7 +374,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
   }
 
 
-  mouseEnterSonnbergZirbn() {
+  mouseEnterTerasse() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor1 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -382,7 +382,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseLeaveSonnbergZirbn() {
+  mouseLeaveTerasse() {
     if (this.buttonBgColor1 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor1 = "154846";
@@ -392,7 +392,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseEnterPanorama() {
+  mouseEnterWeinstube() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor2 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -400,7 +400,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseLeavePanorama() {
+  mouseLeaveWeinstube() {
     if (this.buttonBgColor2 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor2 = "154846";
@@ -410,7 +410,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseEnterRestaurant() {
+  mouseEnterBar() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor3 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -418,7 +418,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseLeaveRestaurant() {
+  mouseLeaveBar() {
     if (this.buttonBgColor3 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor3 = "154846";
@@ -428,7 +428,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseEnterWintergarten() {
+  mouseEnterSpeisesaal() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor4 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -436,7 +436,7 @@ export class DepartmentmenuComponent implements AfterViewInit {
     }
   }
 
-  mouseLeaveWintergarten() {
+  mouseLeaveSpeisesaal() {
     if (this.buttonBgColor4 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor4 = "154846";

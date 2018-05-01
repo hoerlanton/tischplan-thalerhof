@@ -12,22 +12,39 @@ export class PrintComponent {
 
   @Input('tables') tables: Table[];
   @Input('dateGeneratedListe') dateGeneratedListe: string;
-  @Input('tablesPanorama') tablesPanorama: string;
-  @Input('showPanoramaBool') showPanoramaBool: string;
-  @Input('showRestaurantBool') showRestaurantBool: string;
-  @Input('tablesRestaurant') tablesRestaurant: string;
-  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: string;
-  @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: string;
-  @Input('showWintergartenBool') showWintergartenBool: string;
-  @Input('tablesWintergarten') tablesWintergarten: string;
-  @Input('adultPanorama') adultPanorama: string;
-  @Input('adultRestaurant') adultRestaurant: string;
-  @Input('adultSonnbergZirbn') adultSonnbergZirbn: string;
-  @Input('adultWintergarten') adultWintergarten: string;
-  @Input('childPanorama') childPanorama: string;
-  @Input('childRestaurant') childRestaurant: string;
-  @Input('childSonnbergZirbn') childSonnbergZirbn: string;
-  @Input('childWintergarten') childWintergarten: string;
+  @Input('tablesWeinstube') tablesWeinstube: string;
+  @Input('showWeinstubeBool') showWeinstubeBool: string;
+  @Input('showBarBool') showBarBool: string;
+  @Input('tablesBar') tablesBar: string;
+  @Input('showTerasseBool') showTerasseBool: string;
+  @Input('tablesTerasse') tablesTerasse: string;
+  @Input('showSpeisesaalBool') showSpeisesaalBool: string;
+  @Input('tablesSpeisesaal') tablesSpeisesaal: string;
+  @Input('adult1Weinstube') adult1Weinstube: string;
+  @Input('adult2Weinstube') adult2Weinstube: string;
+  @Input('adult1Bar') adult1Bar: string;
+  @Input('adult2Bar') adult2Bar: string;
+  @Input('adult1Terasse') adult1Terasse: string;
+  @Input('adult2Terasse') adult2Terasse: string;
+  @Input('adult1Speisesaal') adult1Speisesaal: string;
+  @Input('adult2Speisesaal') adult2Speisesaal: string;
+  @Input('child1Weinstube') child1Weinstube: string;
+  @Input('child1Bar') child1Bar: string;
+  @Input('child1Terasse') child1Terasse: string;
+  @Input('child1Speisesaal') child1Speisesaal: string;
+  @Input('child2Weinstube') child2Weinstube: string;
+  @Input('child2Bar') child2Bar: string;
+  @Input('child2Terasse') child2Terasse: string;
+  @Input('child2Speisesaal') child2Speisesaal: string;
+  @Input('child3Weinstube') child3Weinstube: string;
+  @Input('child3Bar') child3Bar: string;
+  @Input('child3Terasse') child3Terasse: string;
+  @Input('child3Speisesaal') child3Speisesaal: string;
+  @Input('child4Weinstube') child4Weinstube: string;
+  @Input('child4Bar') child4Bar: string;
+  @Input('child4Terasse') child4Terasse: string;
+  @Input('child4Speisesaal') child4Speisesaal: string;
+
 
   @Output()
   getTablesOccupied:EventEmitter<number> = new EventEmitter();

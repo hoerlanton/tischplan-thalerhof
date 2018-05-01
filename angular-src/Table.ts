@@ -18,14 +18,7 @@ export class Table {
     arrivalValue: string;
     departureValue: string;
     numberOfPersonsValue: string;
-    note1Value: string;
-    note2Value: string;
-    trace: string;
     nationValue: string;
-    categoryValue: string;
-    typeOfPriceValue: string;
-    sourceValue: string;
-    languageValue: string;
     departmentValue: string;
     traceValue: string;
     newTraceText: string;

@@ -14,20 +14,12 @@ module.exports = {
             nameValue = [],
             roomNumberValue = [],
             nationValue = [],
-            categoryValue = [],
-            typeOfPriceValue = [],
-            sourceValue = [],
-            languageValue = [],
             arrivalValue = [],
             departureValue = [],
             numberOfPersonsValue = [],
-            note2Value = [],
-            note1Value = [],
             departmentValue = "",
             tableValue = "",
             tableValueArray = [],
-            traceValue = [],
-            commentValue = [],
             newTraceText = [],
             newTraceRoomNumber = [],
             newTraceName = [],
@@ -45,23 +37,15 @@ module.exports = {
         console.log('informationElements2 length: -> ' + informationElements2.length);
         console.log(informationElements2);
 
-        if (informationElements2.length > 12) {
+        if (informationElements2.length > 5) {
             console.log("Liste dropped");
 
             nameValue.push(informationElements2[0].substring(1, informationElements2[0].length));
             nationValue.push(informationElements2[1].substring(1, informationElements2[1].length));
-            languageValue.push(informationElements2[2].substring(1, informationElements2[2].length));
-            categoryValue.push(informationElements2[3].substring(1, informationElements2[3].length));
-            roomNumberValue.push(informationElements2[4].substring(1, informationElements2[4].length));
-            typeOfPriceValue.push(informationElements2[5].substring(1, informationElements2[5].length));
-            arrivalValue.push(informationElements2[6].substring(1, informationElements2[6].length));
-            departureValue.push(informationElements2[7].substring(1, informationElements2[7].length));
-            numberOfPersonsValue.push(informationElements2[8].substring(1, informationElements2[8].length));
-            sourceValue.push(informationElements2[9].substring(1, informationElements2[9].length));
-            //note1Value.push(informationElements2[10].substring(1, informationElements2[10].length));
-            note2Value.push(informationElements2[11].substring(1, informationElements2[11].length));
-            traceValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[informationElements2.length - 2].length));
-            //commentValue.push(informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length));
+            roomNumberValue.push(informationElements2[2].substring(1, informationElements2[2].length));
+            arrivalValue.push(informationElements2[3].substring(1, informationElements2[3].length));
+            departureValue.push(informationElements2[4].substring(1, informationElements2[4].length));
+            numberOfPersonsValue.push(informationElements2[5].substring(1, informationElements2[5].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
             tableValue = tableValueArray[0];
@@ -70,17 +54,17 @@ module.exports = {
             console.log(tableValue + " " + departmentValue);
 
 
-            if (departmentValue === "SonnbergZirbn") {
-                departmentValueDB = "Sonnberg-Zirbn";
+            if (departmentValue === "Terasse") {
+                departmentValueDB = "Terasse";
             }
-            else if (departmentValue === "Panorama") {
-                departmentValueDB = "Panorama";
+            else if (departmentValue === "Weinstube") {
+                departmentValueDB = "Weinstube";
             }
-            else if (departmentValue === "Restaurant") {
-                departmentValueDB = "Restaurant";
+            else if (departmentValue === "Bar") {
+                departmentValueDB = "Bar";
             }
-            else if (departmentValue === "Wintergarten") {
-                departmentValueDB = "Wintergarten";
+            else if (departmentValue === "Speisesaal") {
+                departmentValueDB = "Speisesaal";
             }
             setTimeout(function () {
 
@@ -97,15 +81,7 @@ module.exports = {
                                 "arrivalValue": arrivalValue[0],
                                 "departureValue": departureValue[0],
                                 "numberOfPersonsValue": numberOfPersonsValue[0],
-                                "note2Value": note2Value[0],
-                                "note1Value": note1Value[0],
                                 "nationValue": nationValue[0],
-                                "categoryValue": categoryValue[0],
-                                "typeOfPriceValue": typeOfPriceValue[0],
-                                "sourceValue": sourceValue[0],
-                                "languageValue": languageValue[0],
-                                "traceValue": traceValue[0],
-                                "commentValue": commentValue[0],
                             }
                         }
                     }, function (err, tables) {
@@ -127,15 +103,7 @@ module.exports = {
                     numberOfPersonsValue.push(reseat[0].groups[i].numberOfPersonsValue);
                     arrivalValue.push(reseat[0].groups[i].arrivalValue);
                     departureValue.push(reseat[0].groups[i].departureValue);
-                    traceValue.push(reseat[0].groups[i].traceValue);
-                    note2Value.push(reseat[0].groups[i].note2Value);
-                    note1Value.push(reseat[0].groups[i].note1Value);
-                    commentValue.push(reseat[0].groups[i].commentValue);
                     nationValue.push(reseat[0].groups[i].nationValue);
-                    categoryValue.push(reseat[0].groups[i].categoryValue);
-                    typeOfPriceValue.push(reseat[0].groups[i].typeOfPriceValue);
-                    sourceValue.push(reseat[0].groups[i].sourceValue);
-                    languageValue.push(reseat[0].groups[i].languageValue);
                     newTraceText.push(reseat[0].groups[i].newTraceName);
                     newTraceRoomNumber.push(reseat[0].groups[i].newTraceRoomNumber);
                     newTraceName.push(reseat[0].groups[i].newTraceName);
@@ -183,15 +151,7 @@ module.exports = {
                                             "arrivalValue": arrivalValue[i],
                                             "departureValue": departureValue[i],
                                             "numberOfPersonsValue": numberOfPersonsValue[i],
-                                            "note2Value": note2Value[i],
-                                            "note1Value": note1Value[i],
                                             "nationValue": nationValue[i],
-                                            "categoryValue": categoryValue[i],
-                                            "typeOfPriceValue": typeOfPriceValue[i],
-                                            "sourceValue": sourceValue[i],
-                                            "languageValue": languageValue[i],
-                                            "traceValue": traceValue[i],
-                                            "commentValue": commentValue[i],
                                         }
                                     }
                                 }, function (err, tables) {

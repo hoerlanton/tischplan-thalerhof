@@ -119,7 +119,7 @@
                                     <a href="../components/NavigationComponent.html" >NavigationComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/PanoramaComponent.html" >PanoramaComponent</a>
+                                    <a href="../components/WeinstubeComponent.html" >WeinstubeComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/PrintComponent.html" >PrintComponent</a>
@@ -131,10 +131,10 @@
                                     <a href="../components/RegisterComponent.html" >RegisterComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/RestaurantComponent.html" >RestaurantComponent</a>
+                                    <a href="../components/BarComponent.html" >BarComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/SonnbergZirbnComponent.html" >SonnbergZirbnComponent</a>
+                                    <a href="../components/TerasseComponent.html" >TerasseComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/TableplanComponent.html" >TableplanComponent</a>
@@ -143,7 +143,7 @@
                                     <a href="../components/TischplanComponent.html" >TischplanComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/WintergartenComponent.html" >WintergartenComponent</a>
+                                    <a href="../components/SpeisesaalComponent.html" >SpeisesaalComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -360,7 +360,7 @@
                                            <a href="../components/NavigationComponent.html" >NavigationComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/PanoramaComponent.html" >PanoramaComponent</a>
+                                           <a href="../components/WeinstubeComponent.html" >WeinstubeComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/PrintComponent.html" >PrintComponent</a>
@@ -372,10 +372,10 @@
                                            <a href="../components/RegisterComponent.html" >RegisterComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/RestaurantComponent.html" >RestaurantComponent</a>
+                                           <a href="../components/BarComponent.html" >BarComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/SonnbergZirbnComponent.html" >SonnbergZirbnComponent</a>
+                                           <a href="../components/TerasseComponent.html" >TerasseComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/TableplanComponent.html" >TableplanComponent</a>
@@ -384,7 +384,7 @@
                                            <a href="../components/TischplanComponent.html" >TischplanComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/WintergartenComponent.html" >WintergartenComponent</a>
+                                           <a href="../components/SpeisesaalComponent.html" >SpeisesaalComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -761,7 +761,7 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>addPlaceholder(tableSonnbergZirbn: )</code>
+            <code>addPlaceholder(tableTerasse: )</code>
                                 </td>
                             </tr>
 
@@ -786,7 +786,7 @@
                                                     </thead>
                                                     <tbody>
                                                             <tr>
-                                                                <td>tableSonnbergZirbn</td>
+                                                                <td>tableTerasse</td>
 
 
                                                                 <td>
@@ -956,7 +956,7 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>dispenseTable(tableSonnbergZirbn: )</code>
+            <code>dispenseTable(tableTerasse: )</code>
                                 </td>
                             </tr>
 
@@ -981,7 +981,7 @@
                                                     </thead>
                                                     <tbody>
                                                             <tr>
-                                                                <td>tableSonnbergZirbn</td>
+                                                                <td>tableTerasse</td>
 
 
                                                                 <td>
@@ -1959,10 +1959,10 @@ export class TischplanService {
       .map(res &#x3D;&gt; res.json());
   }
 
-  dispenseTable(tableSonnbergZirbn) {
+  dispenseTable(tableTerasse) {
     var headers &#x3D; new Headers();
     headers.append(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
-    return this.http.post(&#x27;dispenseTable&#x27;, tableSonnbergZirbn, {headers: headers})
+    return this.http.post(&#x27;dispenseTable&#x27;, tableTerasse, {headers: headers})
       .map(res &#x3D;&gt; res.json()
       );
   }
@@ -1975,10 +1975,10 @@ export class TischplanService {
       );
   }
 
-  addPlaceholder(tableSonnbergZirbn) {
+  addPlaceholder(tableTerasse) {
     var headers &#x3D; new Headers();
     headers.append(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
-    return this.http.post(&#x27;addPlaceholder&#x27;, tableSonnbergZirbn, {headers: headers})
+    return this.http.post(&#x27;addPlaceholder&#x27;, tableTerasse, {headers: headers})
       .map(res &#x3D;&gt; res.json()
       );
   }

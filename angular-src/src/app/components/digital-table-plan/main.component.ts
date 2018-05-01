@@ -59,16 +59,16 @@ export class MainComponent {
   tracesListeElemente: any[] = [];
   tables: any[] = [];
   uniqueTables: any[] = [];
-  tablesSonnbergZirbn: Table[] = [];
-  tablesPanorama: Table[] = [];
-  tablesRestaurant: Table[] = [];
-  tablesWintergarten: Table[] = [];
+  tablesTerasse: Table[] = [];
+  tablesWeinstube: Table[] = [];
+  tablesBar: Table[] = [];
+  tablesSpeisesaal: Table[] = [];
   filesToUpload: Array<File> = [];
   isDropped: any[] = [];
-  showSonnbergZirbnBool: boolean;
-  showPanoramaBool: boolean;
-  showRestaurantBool: boolean;
-  showWintergartenBool: boolean;
+  showTerasseBool: boolean;
+  showWeinstubeBool: boolean;
+  showBarBool: boolean;
+  showSpeisesaalBool: boolean;
   newInformationElements: any[] = [];
   dateGenerated: any;
   title: string;
@@ -94,14 +94,31 @@ export class MainComponent {
   fontColorShowTablePlan: string;
   newInformationEmployees: any[] = [];
   history: string[] = [];
-  adultSonnbergZirbn: any[] = [];
-  childSonnbergZirbn: any[] = [];
-  adultPanorama: any[] = [];
-  childPanorama: any[] = [];
-  adultRestaurant: any[] = [];
-  childRestaurant: any[] = [];
-  adultWintergarten: any[] = [];
-  childWintergarten: any[] = [];
+  adult1Terasse: any[] = [];
+  adult2Terasse: any[] = [];
+  child1Terasse: any[] = [];
+  child2Terasse: any[] = [];
+  child3Terasse: any[] = [];
+  child4Terasse: any[] = [];
+  adult1Weinstube: any[] = [];
+  adult2Weinstube: any[] = [];
+  child1Weinstube: any[] = [];
+  child2Weinstube: any[] = [];
+  child3Weinstube: any[] = [];
+  child4Weinstube: any[] = [];
+  adult1Bar: any[] = [];
+  adult2Bar: any[] = [];
+  child1Bar: any[] = [];
+  child2Bar: any[] = [];
+  child3Bar: any[] = [];
+  child4Bar: any[] = [];
+  adult1Speisesaal: any[] = [];
+  adult2Speisesaal: any[] = [];
+  child1Speisesaal: any[] = [];
+  child2Speisesaal: any[] = [];
+  child3Speisesaal: any[] = [];
+  child4Speisesaal: any[] = [];
+
 
   constructor(private mainService: MainService, private dragulaService: DragulaService) {
 
@@ -124,10 +141,10 @@ export class MainComponent {
     this.fontColor5 = "f3efe4";
     this.tablesOccupied = 0;
     this.backgroundColor = "ffffff";
-    this.showSonnbergZirbnBool = false;
-    this.showPanoramaBool = false;
-    this.showRestaurantBool = false;
-    this.showWintergartenBool = false;
+    this.showTerasseBool = false;
+    this.showWeinstubeBool = false;
+    this.showBarBool = false;
+    this.showSpeisesaalBool = false;
     this.showAllBool = false;
     this.term = "";
 
@@ -237,8 +254,8 @@ export class MainComponent {
   ngOnInit() {
   }
 
-  showWintergarten() {
-    this.departmentmenuComponent.showWintergarten();
+  showSpeisesaal() {
+    this.departmentmenuComponent.showSpeisesaal();
   }
 
   transform(term){
@@ -246,16 +263,16 @@ export class MainComponent {
   }
 
 
-  showRestaurant() {
-    this.departmentmenuComponent.showRestaurant();
+  showBar() {
+    this.departmentmenuComponent.showBar();
   }
 
-  showSonnbergZirbn() {
-    this.departmentmenuComponent.showWintergarten();
+  showTerasse() {
+    this.departmentmenuComponent.showSpeisesaal();
   }
 
-  showPanorama() {
-    this.departmentmenuComponent.showPanorama();
+  showWeinstube() {
+    this.departmentmenuComponent.showWeinstube();
   }
 
   sendInformation(event) {
@@ -315,9 +332,9 @@ export class MainComponent {
     setTimeout(() => {
       this.getTables();
       setTimeout(() => {
-        //console.log('this.tablesWintergarten:');
-        //console.log(this.tablesWintergarten);
-        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+        //console.log('this.tablesSpeisesaal:');
+        //console.log(this.tablesSpeisesaal);
+        this.tables = this.tablesSpeisesaal.concat(this.tablesBar).concat(this.tablesWeinstube).concat(this.tablesTerasse);
         //console.log('this.tables: in updateAzList');
         //console.log(this.tables);
         this.printComponent.formatAzList(this.tables);
@@ -337,7 +354,7 @@ export class MainComponent {
           for (let x = 0; x < tables.length; x++){
             //console.log("tables[x].department");
             //console.log(tables[x].department);
-            if (tables[x].department === "Restaurant") {
+            if (tables[x].department === "Bar") {
               tables[x].tables.sort(function (a, b) {
                 //console.log(a.number);
                 //console.log(b.number);
@@ -350,24 +367,24 @@ export class MainComponent {
             }
           }
           for (let a = 0; a < tables.length; a++) {
-            if (tables[a].department === "Panorama") {
-              this.tablesPanorama = tables[a].tables;
+            if (tables[a].department === "Weinstube") {
+              this.tablesWeinstube = tables[a].tables;
             }
-            else if (tables[a].department === "Wintergarten") {
-              this.tablesWintergarten = tables[a].tables;
-              //console.log('Test' + JSON.stringify(this.tablesWintergarten));
+            else if (tables[a].department === "Speisesaal") {
+              this.tablesSpeisesaal = tables[a].tables;
+              //console.log('Test' + JSON.stringify(this.tablesSpeisesaal));
             }
-            else if (tables[a].department === "Sonnberg-Zirbn") {
-              this.tablesSonnbergZirbn = tables[a].tables;
+            else if (tables[a].department === "Terasse") {
+              this.tablesTerasse = tables[a].tables;
             }
-            else if (tables[a].department === "Restaurant") {
-              this.tablesRestaurant = tables[a].tables;
+            else if (tables[a].department === "Bar") {
+              this.tablesBar = tables[a].tables;
             }
           }
           this.changeBgColorIfArrival();
         }
         this.tablesTempDeparture = tables;
-        this.tables = this.tablesWintergarten.concat(this.tablesRestaurant).concat(this.tablesPanorama).concat(this.tablesSonnbergZirbn);
+        this.tables = this.tablesSpeisesaal.concat(this.tablesBar).concat(this.tablesWeinstube).concat(this.tablesTerasse);
         this.printComponent.formatAzList(this.tables);
         setTimeout(() => {
           this.tableplanComponent.sumUpNumberOfPersons();

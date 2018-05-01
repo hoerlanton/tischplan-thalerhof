@@ -82,51 +82,51 @@
 <path fill="none" stroke="#000000" d="M2838,-187.2921C2838,-209.2057 2838,-243 2838,-243 2838,-243 1609.8602,-243 1609.8602,-243"/>
 <polygon fill="#000000" stroke="#000000" points="1609.8602,-239.5001 1599.8602,-243 1609.8601,-246.5001 1609.8602,-239.5001"/>
 </g>
-<!-- WintergartenComponent -->
+<!-- SpeisesaalComponent -->
 <g id="node4" class="node">
-<title>WintergartenComponent</title>
+<title>SpeisesaalComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="2765.6839,-187 2610.3161,-187 2610.3161,-151 2765.6839,-151 2765.6839,-187"/>
-<text text-anchor="middle" x="2688" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">WintergartenComponent</text>
+<text text-anchor="middle" x="2688" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SpeisesaalComponent</text>
 </g>
-<!-- WintergartenComponent&#45;&gt;AppModule -->
+<!-- SpeisesaalComponent&#45;&gt;AppModule -->
 <g id="edge5" class="edge">
-<title>WintergartenComponent&#45;&gt;AppModule</title>
+<title>SpeisesaalComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M2688,-187.0267C2688,-207.7672 2688,-239 2688,-239 2688,-239 1609.8956,-239 1609.8956,-239"/>
 <polygon fill="#000000" stroke="#000000" points="1609.8956,-235.5001 1599.8956,-239 1609.8956,-242.5001 1609.8956,-235.5001"/>
 </g>
-<!-- RestaurantComponent -->
+<!-- BarComponent -->
 <g id="node5" class="node">
-<title>RestaurantComponent</title>
+<title>BarComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="2592.6993,-187 2451.3007,-187 2451.3007,-151 2592.6993,-151 2592.6993,-187"/>
-<text text-anchor="middle" x="2522" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestaurantComponent</text>
+<text text-anchor="middle" x="2522" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">BarComponent</text>
 </g>
-<!-- RestaurantComponent&#45;&gt;AppModule -->
+<!-- BarComponent&#45;&gt;AppModule -->
 <g id="edge6" class="edge">
-<title>RestaurantComponent&#45;&gt;AppModule</title>
+<title>BarComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M2522,-187.308C2522,-207.1455 2522,-236 2522,-236 2522,-236 1609.7313,-236 1609.7313,-236"/>
 <polygon fill="#000000" stroke="#000000" points="1609.7313,-232.5001 1599.7313,-236 1609.7313,-239.5001 1609.7313,-232.5001"/>
 </g>
-<!-- PanoramaComponent -->
+<!-- WeinstubeComponent -->
 <g id="node6" class="node">
-<title>PanoramaComponent</title>
+<title>WeinstubeComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="2433.8104,-187 2296.1896,-187 2296.1896,-151 2433.8104,-151 2433.8104,-187"/>
-<text text-anchor="middle" x="2365" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanoramaComponent</text>
+<text text-anchor="middle" x="2365" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">WeinstubeComponent</text>
 </g>
-<!-- PanoramaComponent&#45;&gt;AppModule -->
+<!-- WeinstubeComponent&#45;&gt;AppModule -->
 <g id="edge7" class="edge">
-<title>PanoramaComponent&#45;&gt;AppModule</title>
+<title>WeinstubeComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M2365,-187.1686C2365,-206.0898 2365,-233 2365,-233 2365,-233 1609.6885,-233 1609.6885,-233"/>
 <polygon fill="#000000" stroke="#000000" points="1609.6885,-229.5001 1599.6885,-233 1609.6884,-236.5001 1609.6885,-229.5001"/>
 </g>
-<!-- SonnbergZirbnComponent -->
+<!-- TerasseComponent -->
 <g id="node7" class="node">
-<title>SonnbergZirbnComponent</title>
+<title>TerasseComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="2278.094,-187 2111.906,-187 2111.906,-151 2278.094,-151 2278.094,-187"/>
-<text text-anchor="middle" x="2195" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SonnbergZirbnComponent</text>
+<text text-anchor="middle" x="2195" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TerasseComponent</text>
 </g>
-<!-- SonnbergZirbnComponent&#45;&gt;AppModule -->
+<!-- TerasseComponent&#45;&gt;AppModule -->
 <g id="edge8" class="edge">
-<title>SonnbergZirbnComponent&#45;&gt;AppModule</title>
+<title>TerasseComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M2195,-187.302C2195,-205.2699 2195,-230 2195,-230 2195,-230 1609.7953,-230 1609.7953,-230"/>
 <polygon fill="#000000" stroke="#000000" points="1609.7954,-226.5001 1599.7953,-230 1609.7953,-233.5001 1609.7954,-226.5001"/>
 </g>

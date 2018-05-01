@@ -8,7 +8,7 @@ const
     jwt = require('jsonwebtoken'),
     config = require('../config/database'),
     User = require('../models/user'),
-    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['list', 'thalerhofTables', 'tablesTemp', 'newInformation', 'notes', 'newInformationToEmployee']),
+    db = mongojs('mongodb://anton:b2d4f6h8@ds127132.mlab.com:27132/servicio', ['thalerhofList', 'thalerhofTables', 'thalerhofNewInformation', 'thalerhofNotes', 'thalerhofNewInformationToEmployee']),
     list = require('./list.js'),
     information = require('./information.js'),
     note = require('./note.js'),
@@ -59,10 +59,10 @@ router.get('/tables', function(req, res, next) {
 table.getTable(req, res, db)});
 //removeTable
 router.post('/removeTable', function(req, res, next) {
-table.removeTable(req, res, db);});
+table.removeTable(req, res, db)});
 //addTable
 router.post('/addTable', function(req, res, next) {
-table.addTable(req, res, db);});
+table.addTable(req, res, db)});
 //occupyTable
 router.post('/occupyTable', function(req, res, next) {
 table.occupyTable(req, res, db)});

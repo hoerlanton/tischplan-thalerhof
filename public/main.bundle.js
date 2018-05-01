@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ "./src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,42 +13,31 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+webpackEmptyAsyncContext.id = "./src/$$_gendir lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/app.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.html":
+/***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.ts":
+/***/ "./src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,8 +55,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")],
+        template: __webpack_require__("./src/app/app.component.html"),
+        styles: [__webpack_require__("./src/app/app.component.css")],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]],
     })
 ], AppComponent);
@@ -76,44 +65,44 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.module.ts":
+/***/ "./src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_digital_table_plan_main_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_digital_table_plan_print_print_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/print/print.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_digital_table_plan_main_component__ = __webpack_require__("./src/app/components/digital-table-plan/main.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_digital_table_plan_print_print_component__ = __webpack_require__("./src/app/components/digital-table-plan/print/print.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_dragula__ = __webpack_require__("../../../../ng2-dragula/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_dragula__ = __webpack_require__("./node_modules/ng2-dragula/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_dragula___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_ng2_dragula__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_digital_table_plan_departments_wintergarten_wintergarten_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/wintergarten/wintergarten.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_digital_table_plan_departments_restaurant_restaurant_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/restaurant/restaurant.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_digital_table_plan_departments_panorama_panorama_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/panorama/panorama.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_digital_table_plan_departments_sonnberg_zirbn_sonnberg_zirbn_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_digital_table_plan_navigation_navigation_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/navigation/navigation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_digital_table_plan_form_form_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/form/form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_digital_table_plan_tableplan_tableplan_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/tableplan/tableplan.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_digital_table_plan_departmentmenu_departmentmenu_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_digital_table_plan_im_haus_list_im_haus_list_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_digital_table_plan_departments_departments_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/departments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_digital_table_plan_departments_all_all_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/all/all.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ng2_search_filter__ = __webpack_require__("../../../../ng2-search-filter/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap_dropdown__ = __webpack_require__("./node_modules/ngx-bootstrap/dropdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_digital_table_plan_departments_speisesaal_speisesaal_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/speisesaal/speisesaal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_digital_table_plan_departments_bar_bar_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/bar/bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_digital_table_plan_departments_weinstube_weinstube_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/weinstube/weinstube.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_digital_table_plan_departments_terasse_terasse_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/terasse/terasse.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_digital_table_plan_navigation_navigation_component__ = __webpack_require__("./src/app/components/digital-table-plan/navigation/navigation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_digital_table_plan_form_form_component__ = __webpack_require__("./src/app/components/digital-table-plan/form/form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_digital_table_plan_tableplan_tableplan_component__ = __webpack_require__("./src/app/components/digital-table-plan/tableplan/tableplan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_digital_table_plan_departmentmenu_departmentmenu_component__ = __webpack_require__("./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_digital_table_plan_im_haus_list_im_haus_list_component__ = __webpack_require__("./src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_digital_table_plan_departments_departments_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/departments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_digital_table_plan_departments_all_all_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/all/all.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ng2_search_filter__ = __webpack_require__("./node_modules/ng2-search-filter/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ng2_search_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_ng2_search_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_digital_table_plan_login_login_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_digital_table_plan_register_register_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_digital_table_plan_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_digital_table_plan_login_login_component__ = __webpack_require__("./src/app/components/digital-table-plan/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_digital_table_plan_register_register_component__ = __webpack_require__("./src/app/components/digital-table-plan/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_digital_table_plan_profile_profile_component__ = __webpack_require__("./src/app/components/digital-table-plan/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_validate_service__ = __webpack_require__("./src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,10 +158,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_5__components_digital_table_plan_main_component__["a" /* MainComponent */],
             __WEBPACK_IMPORTED_MODULE_6__components_digital_table_plan_print_print_component__["a" /* PrintComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_digital_table_plan_departments_wintergarten_wintergarten_component__["a" /* WintergartenComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_digital_table_plan_departments_restaurant_restaurant_component__["a" /* RestaurantComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_digital_table_plan_departments_panorama_panorama_component__["a" /* PanoramaComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_digital_table_plan_departments_sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_digital_table_plan_departments_speisesaal_speisesaal_component__["a" /* SpeisesaalComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_digital_table_plan_departments_bar_bar_component__["a" /* BarComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_digital_table_plan_departments_weinstube_weinstube_component__["a" /* WeinstubeComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_digital_table_plan_departments_terasse_terasse_component__["a" /* TerasseComponent */],
             __WEBPACK_IMPORTED_MODULE_14__components_digital_table_plan_navigation_navigation_component__["a" /* NavigationComponent */],
             __WEBPACK_IMPORTED_MODULE_15__components_digital_table_plan_form_form_component__["a" /* FormComponent */],
             __WEBPACK_IMPORTED_MODULE_16__components_digital_table_plan_tableplan_tableplan_component__["a" /* TableplanComponent */],
@@ -206,37 +195,26 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "p {\n  margin: 8px 0px 0px 0px;\n  text-align: center;\n}\n\n.dropdown-menu .divider {\n  margin: 0px;\n}\n\n.dropdown-menu {\n  overflow: auto;\n  margin: 0 0 0 20px;\n  width: 200px;\n}\n\n.row4 {\n  margin-top: 90px;\n  min-height: 40px;\n  z-index: 1;\n}\n\n.showSonnbergZirbn, .showPanorama, .showRestaurant, .showWintergarten, .showAll {\n  padding: 10px;\n}\n\n\n\n.col-xs-3 {\n  min-height: 40px;\n  width: 21%;\n  border-radius: 3px;\n}\n\n.btn-group-departments {\n  height: 45px;\n  width: auto;\n  margin: 0px 10px 5px 0px;\n  float: left;\n  text-align: right;\n  display:table-cell;\n  vertical-align:middle;\n}\n\n.abteilungsButton {\n  color: #FFFFFF;\n  border: none;\n}\n\n@media (min-width: 500px) {\n  .row4 {\n    margin-top: 60px;\n  }\n}\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n  .btn-send {\n    display: block;\n  }\n}\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.html":
+/***/ "./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row4\">\n  <div class=\"col-md-3 col-xs-3\">\n  <div class=\"btn-group-departments\" dropdown>\n  <button dropdownToggle type=\"button\" class=\"abteilungsButton\" [ngStyle]=\"{'background-color': '#' + buttonBgColorDropdownToggle}\"   (mouseenter)=\"mouseEnterDropdownToggle()\"  (mouseleave)=\"mouseLeaveDropdownToggle()\">\n    <div *ngIf=\"showDepartments\">\n     Abteilungen <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showAllBool\">\n      Alle <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showSonnbergZirbnBool\">\n      Sonnberg-<br>Zirbn <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showWintergartenBool\">\n       Wintergarten <br><i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showRestaurantBool\">\n      Restaurant <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showPanoramaBool\">\n       Panorama <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n  </button>\n  <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\">\n      <li role=\"menuitem\" class=\"showSonnbergZirbn\"  (click)=\"showSonnbergZirbn()\" (mouseenter)=\"mouseEnterSonnbergZirbn()\"  (mouseleave)=\"mouseLeaveSonnbergZirbn()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor1}\">Sonnberg-Zirbn</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showPanorama\"  (click)=\"showPanorama()\" (mouseenter)=\"mouseEnterPanorama()\"  (mouseleave)=\"mouseLeavePanorama()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor2}\">Panorama</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showRestaurant\" (click)=\"showRestaurant()\" (mouseenter)=\"mouseEnterRestaurant()\"  (mouseleave)=\"mouseLeaveRestaurant()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor3}\">Restaurant</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showWintergarten\" (click)=\"showWintergarten()\" (mouseenter)=\"mouseEnterWintergarten()\"  (mouseleave)=\"mouseLeaveWintergarten()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor4}\">Wintergarten</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showAll\" (click)=\"showAll()\" (mouseenter)=\"mouseEnterAll()\"  (mouseleave)=\"mouseLeaveAll()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor5}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor5}\">Alle</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n  </ul>\n</div>\n</div>\n  <div class=\"col-md-3 col-xs-3\" (click)=\"showInfoForm()\"  (mouseenter)=\"mouseEnterShowInfoForm()\"  (mouseleave)=\"mouseLeaveShowInfoForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorInfoForm}\">\n    <p [ngStyle]=\"{'color': '#' + fontColorInfoForm}\">Trace</p>\n  </div>\n  <div class=\"col-md-3 col-xs-3\"  (click)=\"showNoteForm()\"  (mouseenter)=\"mouseEnterShowNoteForm()\"  (mouseleave)=\"mouseLeaveShowNoteForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorNoteForm}\">\n    <p [ngStyle]=\"{'color': '#' + fontColorNoteForm}\">Notiz</p>\n  </div>\n  <div class=\"col-md-3 col-xs-3\" style=\"padding-left: 5px\" (click)=\"showTablePlan()\"  (mouseenter)=\"mouseEnterShowTablePlan()\"  (mouseleave)=\"mouseLeaveShowTablePlan()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorShowTablePlan}\">\n    <p  [ngStyle]=\"{'color': '#' + fontColorShowTablePlan}\">Tischplan</p>\n  </div>\n</div>\n\n\n\n"
+module.exports = "p {\n  margin: 8px 0px 0px 0px;\n  text-align: center;\n}\n\n.dropdown-menu .divider {\n  margin: 0px;\n}\n\n.dropdown-menu {\n  overflow: auto;\n  margin: 0 0 0 20px;\n  width: 200px;\n}\n\n.row4 {\n  margin-top: 90px;\n  min-height: 40px;\n  z-index: 1;\n}\n\n.showTerasse, .showWeinstube, .showBar, .showSpeisesaal, .showAll {\n  padding: 10px;\n}\n\n.col-xs-3 {\n  min-height: 40px;\n  width: 21%;\n  border-radius: 3px;\n}\n\n.btn-group-departments {\n  height: 45px;\n  width: auto;\n  margin: 0px 10px 5px 0px;\n  float: left;\n  text-align: right;\n  display:table-cell;\n  vertical-align:middle;\n}\n\n.abteilungsButton {\n  color: #FFFFFF;\n  border: none;\n}\n\n@media (min-width: 500px) {\n  .row4 {\n    margin-top: 60px;\n  }\n}\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n  .btn-send {\n    display: block;\n  }\n}\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts":
+/***/ "./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row4\">\n  <div class=\"col-md-3 col-xs-3\">\n  <div class=\"btn-group-departments\" dropdown>\n  <button dropdownToggle type=\"button\" class=\"abteilungsButton\" [ngStyle]=\"{'background-color': '#' + buttonBgColorDropdownToggle}\"   (mouseenter)=\"mouseEnterDropdownToggle()\"  (mouseleave)=\"mouseLeaveDropdownToggle()\">\n    <div *ngIf=\"showDepartments\">\n     Abteilungen <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showAllBool\">\n      Alle <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showTerasseBool\">\n      Terasse <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showSpeisesaalBool\">\n       Speisesaal <br><i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showBarBool\">\n      Bar <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n    <div *ngIf=\"showWeinstubeBool\">\n       Weinstube <i class=\"fa fa-th-large\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n    </div>\n  </button>\n  <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\">\n      <li role=\"menuitem\" class=\"showTerasse\"  (click)=\"showTerasse()\" (mouseenter)=\"mouseEnterTerasse()\"  (mouseleave)=\"mouseLeaveTerasse()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor1}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor1}\">Terasse</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showWeinstube\"  (click)=\"showWeinstube()\" (mouseenter)=\"mouseEnterWeinstube()\"  (mouseleave)=\"mouseLeaveWeinstube()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor2}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor2}\">Weinstube</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showBar\" (click)=\"showBar()\" (mouseenter)=\"mouseEnterBar()\"  (mouseleave)=\"mouseLeaveBar()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor3}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor3}\">Bar</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showSpeisesaal\" (click)=\"showSpeisesaal()\" (mouseenter)=\"mouseEnterSpeisesaal()\"  (mouseleave)=\"mouseLeaveSpeisesaal()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor4}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor4}\">Speisesaal</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n    <li role=\"menuitem\" class=\"showAll\" (click)=\"showAll()\" (mouseenter)=\"mouseEnterAll()\"  (mouseleave)=\"mouseLeaveAll()\" [ngStyle]=\"{'background-color': '#' + buttonBgColor5}\">\n        <p [ngStyle]=\"{'color': '#' + fontColor5}\">Alle</p>\n      </li>\n    <li class=\"divider dropdown-divider\"></li>\n  </ul>\n</div>\n</div>\n  <div class=\"col-md-3 col-xs-3\" (click)=\"showInfoForm()\"  (mouseenter)=\"mouseEnterShowInfoForm()\"  (mouseleave)=\"mouseLeaveShowInfoForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorInfoForm}\">\n    <p [ngStyle]=\"{'color': '#' + fontColorInfoForm}\">Trace</p>\n  </div>\n  <div class=\"col-md-3 col-xs-3\"  (click)=\"showNoteForm()\"  (mouseenter)=\"mouseEnterShowNoteForm()\"  (mouseleave)=\"mouseLeaveShowNoteForm()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorNoteForm}\">\n    <p [ngStyle]=\"{'color': '#' + fontColorNoteForm}\">Notiz</p>\n  </div>\n  <div class=\"col-md-3 col-xs-3\" style=\"padding-left: 5px\" (click)=\"showTablePlan()\"  (mouseenter)=\"mouseEnterShowTablePlan()\"  (mouseleave)=\"mouseLeaveShowTablePlan()\" [ngStyle]=\"{'background-color': '#' + buttonBgColorShowTablePlan}\">\n    <p  [ngStyle]=\"{'color': '#' + fontColorShowTablePlan}\">Tischplan</p>\n  </div>\n</div>\n\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentmenuComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -249,10 +227,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DepartmentmenuComponent = (function () {
     function DepartmentmenuComponent() {
-        this.showSonnbergZirbnBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.showPanoramaBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.showRestaurantBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.showWintergartenBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showTerasseBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showWeinstubeBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showBarBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showSpeisesaalBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.showAllBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.showNoteFormBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.showInfoFormBoolChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -267,12 +245,12 @@ var DepartmentmenuComponent = (function () {
     };
     DepartmentmenuComponent.prototype.ngAfterViewInit = function () {
     };
-    DepartmentmenuComponent.prototype.showSonnbergZirbn = function () {
-        //console.log("showSonnbergZirbn!");
-        this.showSonnbergZirbnBool = true;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = false;
+    DepartmentmenuComponent.prototype.showTerasse = function () {
+        //console.log("showTerasse!");
+        this.showTerasseBool = true;
+        this.showWeinstubeBool = false;
+        this.showBarBool = false;
+        this.showSpeisesaalBool = false;
         this.showAllBool = false;
         this.showDepartments = false;
         if (this.buttonBgColor1 === "154846") {
@@ -295,19 +273,19 @@ var DepartmentmenuComponent = (function () {
         else {
             this.fontColor1 = "f3efe4";
         }
-        this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-        this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-        this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-        this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+        this.showTerasseBoolChange.emit(this.showTerasseBool);
+        this.showBarBoolChange.emit(this.showBarBool);
+        this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+        this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
         this.showAllBoolChange.emit(this.showAllBool);
     };
-    DepartmentmenuComponent.prototype.showPanorama = function () {
-        //console.log("showPanorama!");
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = true;
-        //console.log(this.showPanoramaBool);
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = false;
+    DepartmentmenuComponent.prototype.showWeinstube = function () {
+        //console.log("showWeinstube!");
+        this.showTerasseBool = false;
+        this.showWeinstubeBool = true;
+        //console.log(this.showWeinstubeBool);
+        this.showBarBool = false;
+        this.showSpeisesaalBool = false;
         this.showAllBool = false;
         this.showDepartments = false;
         if (this.buttonBgColor2 === "154846") {
@@ -330,18 +308,18 @@ var DepartmentmenuComponent = (function () {
         else {
             this.fontColor2 = "f3efe4";
         }
-        this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-        this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-        this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-        this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+        this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+        this.showTerasseBoolChange.emit(this.showTerasseBool);
+        this.showBarBoolChange.emit(this.showBarBool);
+        this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
         this.showAllBoolChange.emit(this.showAllBool);
     };
-    DepartmentmenuComponent.prototype.showRestaurant = function () {
-        //console.log("showRestaurant!");
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = true;
-        this.showWintergartenBool = false;
+    DepartmentmenuComponent.prototype.showBar = function () {
+        //console.log("showBar!");
+        this.showTerasseBool = false;
+        this.showWeinstubeBool = false;
+        this.showBarBool = true;
+        this.showSpeisesaalBool = false;
         this.showAllBool = false;
         this.showDepartments = false;
         if (this.buttonBgColor3 === "154846") {
@@ -364,18 +342,18 @@ var DepartmentmenuComponent = (function () {
         else {
             this.fontColor3 = "f3efe4";
         }
-        this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-        this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-        this.showPanoramaBoolChange.emit(this.showPanoramaBool);
-        this.showWintergartenBoolChange.emit(this.showWintergartenBool);
+        this.showBarBoolChange.emit(this.showBarBool);
+        this.showTerasseBoolChange.emit(this.showTerasseBool);
+        this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
+        this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
         this.showAllBoolChange.emit(this.showAllBool);
     };
-    DepartmentmenuComponent.prototype.showWintergarten = function () {
-        //console.log("showWintergarten!");
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = true;
+    DepartmentmenuComponent.prototype.showSpeisesaal = function () {
+        //console.log("showSpeisesaal!");
+        this.showTerasseBool = false;
+        this.showWeinstubeBool = false;
+        this.showBarBool = false;
+        this.showSpeisesaalBool = true;
         this.showAllBool = false;
         this.showDepartments = false;
         if (this.buttonBgColor4 === "154846") {
@@ -398,18 +376,18 @@ var DepartmentmenuComponent = (function () {
         else {
             this.fontColor4 = "f3efe4";
         }
-        this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-        this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-        this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-        this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+        this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
+        this.showTerasseBoolChange.emit(this.showTerasseBool);
+        this.showBarBoolChange.emit(this.showBarBool);
+        this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
         this.showAllBoolChange.emit(this.showAllBool);
     };
     DepartmentmenuComponent.prototype.showAll = function () {
         //console.log("showAll!");
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = false;
+        this.showTerasseBool = false;
+        this.showWeinstubeBool = false;
+        this.showBarBool = false;
+        this.showSpeisesaalBool = false;
         this.showAllBool = true;
         this.showDepartments = false;
         if (this.buttonBgColor5 === "154846") {
@@ -432,10 +410,10 @@ var DepartmentmenuComponent = (function () {
         else {
             this.fontColor5 = "f3efe4";
         }
-        this.showWintergartenBoolChange.emit(this.showWintergartenBool);
-        this.showSonnbergZirbnBoolChange.emit(this.showSonnbergZirbnBool);
-        this.showRestaurantBoolChange.emit(this.showRestaurantBool);
-        this.showPanoramaBoolChange.emit(this.showPanoramaBool);
+        this.showSpeisesaalBoolChange.emit(this.showSpeisesaalBool);
+        this.showTerasseBoolChange.emit(this.showTerasseBool);
+        this.showBarBoolChange.emit(this.showBarBool);
+        this.showWeinstubeBoolChange.emit(this.showWeinstubeBool);
         this.showAllBoolChange.emit(this.showAllBool);
     };
     DepartmentmenuComponent.prototype.showInfoForm = function () {
@@ -581,14 +559,14 @@ var DepartmentmenuComponent = (function () {
             this.buttonBgColorDropdownToggle = "0a7a74";
         }
     };
-    DepartmentmenuComponent.prototype.mouseEnterSonnbergZirbn = function () {
+    DepartmentmenuComponent.prototype.mouseEnterTerasse = function () {
         //console.log("mouse enter mouseEnterShowTablePlan: ");
         if (this.buttonBgColor1 === "0a7a74") {
             //console.log('mouse enter1 mouseEnterShowTablePlan:');
             this.buttonBgColor1 = "154846";
         }
     };
-    DepartmentmenuComponent.prototype.mouseLeaveSonnbergZirbn = function () {
+    DepartmentmenuComponent.prototype.mouseLeaveTerasse = function () {
         if (this.buttonBgColor1 === "0a7a74") {
             //console.log('mouse leave1 mouseEnterShowTablePlan:');
             this.buttonBgColor1 = "154846";
@@ -598,14 +576,14 @@ var DepartmentmenuComponent = (function () {
             this.buttonBgColor1 = "0a7a74";
         }
     };
-    DepartmentmenuComponent.prototype.mouseEnterPanorama = function () {
+    DepartmentmenuComponent.prototype.mouseEnterWeinstube = function () {
         //console.log("mouse enter mouseEnterShowTablePlan: ");
         if (this.buttonBgColor2 === "0a7a74") {
             //console.log('mouse enter1 mouseEnterShowTablePlan:');
             this.buttonBgColor2 = "154846";
         }
     };
-    DepartmentmenuComponent.prototype.mouseLeavePanorama = function () {
+    DepartmentmenuComponent.prototype.mouseLeaveWeinstube = function () {
         if (this.buttonBgColor2 === "0a7a74") {
             //console.log('mouse leave1 mouseEnterShowTablePlan:');
             this.buttonBgColor2 = "154846";
@@ -615,14 +593,14 @@ var DepartmentmenuComponent = (function () {
             this.buttonBgColor2 = "0a7a74";
         }
     };
-    DepartmentmenuComponent.prototype.mouseEnterRestaurant = function () {
+    DepartmentmenuComponent.prototype.mouseEnterBar = function () {
         //console.log("mouse enter mouseEnterShowTablePlan: ");
         if (this.buttonBgColor3 === "0a7a74") {
             //console.log('mouse enter1 mouseEnterShowTablePlan:');
             this.buttonBgColor3 = "154846";
         }
     };
-    DepartmentmenuComponent.prototype.mouseLeaveRestaurant = function () {
+    DepartmentmenuComponent.prototype.mouseLeaveBar = function () {
         if (this.buttonBgColor3 === "0a7a74") {
             //console.log('mouse leave1 mouseEnterShowTablePlan:');
             this.buttonBgColor3 = "154846";
@@ -632,14 +610,14 @@ var DepartmentmenuComponent = (function () {
             this.buttonBgColor3 = "0a7a74";
         }
     };
-    DepartmentmenuComponent.prototype.mouseEnterWintergarten = function () {
+    DepartmentmenuComponent.prototype.mouseEnterSpeisesaal = function () {
         //console.log("mouse enter mouseEnterShowTablePlan: ");
         if (this.buttonBgColor4 === "0a7a74") {
             //console.log('mouse enter1 mouseEnterShowTablePlan:');
             this.buttonBgColor4 = "154846";
         }
     };
-    DepartmentmenuComponent.prototype.mouseLeaveWintergarten = function () {
+    DepartmentmenuComponent.prototype.mouseLeaveSpeisesaal = function () {
         if (this.buttonBgColor4 === "0a7a74") {
             //console.log('mouse leave1 mouseEnterShowTablePlan:');
             this.buttonBgColor4 = "154846";
@@ -709,21 +687,21 @@ __decorate([
     __metadata("design:type", String)
 ], DepartmentmenuComponent.prototype, "fontColor5", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", Boolean)
-], DepartmentmenuComponent.prototype, "showPanoramaBool", void 0);
+], DepartmentmenuComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
     __metadata("design:type", Boolean)
-], DepartmentmenuComponent.prototype, "showRestaurantBool", void 0);
+], DepartmentmenuComponent.prototype, "showBarBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
     __metadata("design:type", Boolean)
-], DepartmentmenuComponent.prototype, "showSonnbergZirbnBool", void 0);
+], DepartmentmenuComponent.prototype, "showTerasseBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
     __metadata("design:type", Boolean)
-], DepartmentmenuComponent.prototype, "showWintergartenBool", void 0);
+], DepartmentmenuComponent.prototype, "showSpeisesaalBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showAllBool'),
     __metadata("design:type", Boolean)
@@ -731,19 +709,19 @@ __decorate([
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], DepartmentmenuComponent.prototype, "showSonnbergZirbnBoolChange", void 0);
+], DepartmentmenuComponent.prototype, "showTerasseBoolChange", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _b || Object)
-], DepartmentmenuComponent.prototype, "showPanoramaBoolChange", void 0);
+], DepartmentmenuComponent.prototype, "showWeinstubeBoolChange", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _c || Object)
-], DepartmentmenuComponent.prototype, "showRestaurantBoolChange", void 0);
+], DepartmentmenuComponent.prototype, "showBarBoolChange", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _d || Object)
-], DepartmentmenuComponent.prototype, "showWintergartenBoolChange", void 0);
+], DepartmentmenuComponent.prototype, "showSpeisesaalBoolChange", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _e || Object)
@@ -799,8 +777,8 @@ __decorate([
 DepartmentmenuComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-departmentmenu',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.css")]
     }),
     __metadata("design:paramtypes", [])
 ], DepartmentmenuComponent);
@@ -810,19 +788,19 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/all/all.component.html":
+/***/ "./src/app/components/digital-table-plan/departments/all/all.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"showAllBool\">\n  <div *ngFor=\"let table of tables; let j = index;\">\n      <h4><b> Tisch:</b>{{table.number}} </h4><br>\n      <div class='cards-container' id='containerTables' [ngStyle]=\"{'background-color': + table.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + table.bgColor}\">\n          <div *ngIf=\"table.isOccupied === 'true'\">\n            <div [style.border]=\"getStyle(table.traceValue)\">\n              <div *ngIf=\"table.nameValue\">\n                <p style=\"background-color: #FFFFFF; padding: 10px\">\n                  <b> Zimmernummer:</b> {{table.roomNumberValue}}<br>\n                  <b> Name:</b> {{table.nameValue}}<br>\n                  <b> Anreise Datum:</b> {{table.arrivalValue}}<br>\n                  <b> Abreise Datum:</b> {{table.departureValue}}<br>\n                  <b> Personenanzahl:</b> {{table.numberOfPersonsValue}}<br>\n                  <b> Nation:</b> {{table.nationValue}}<br>\n                  <b> Sprache:</b> {{table.languageValue}}<br>\n                  <b> Preis Typ:</b> {{table.typeOfPriceValue}}<br>\n                  <b> Reisebüro:</b> {{table.sourceValue}}<br>\n                  <b> Kategorie:</b> {{table.categoryValue}}<br>\n                  <b> Notiz1:</b> {{table.note1Value}}<br>\n                  <b> Notiz2:</b> {{table.note2Value}}<br>\n                  <b> Trace:</b> {{table.traceValue}}<br>\n                </p>\n              </div>\n            </div>\n            <div *ngIf=\"table.newTraceName\">\n              <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                <b> Zimmernummer: </b>{{table.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{table.newTraceText}} <br> <b> Tischnummer: </b>{{table.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{table.newTraceEmployee}} <br> <b> Name: </b>{{table.newTraceName}} <br> <b> Datum: </b>{{table.newTraceDate}}\n              </p>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"table.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"tables\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px; text-align: center\">Listen-Element hier hin ziehen! <span>{{table.number}} {{table.department}} {{j}}</span></p>\n        </div>\n      </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"showAllBool\">\n  <div *ngFor=\"let table of tables; let j = index;\">\n      <h4><b> Tisch:</b>{{table.number}} </h4><br>\n      <div class='cards-container' id='containerTables' [ngStyle]=\"{'background-color': + table.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + table.bgColor}\">\n          <div *ngIf=\"table.isOccupied === 'true'\">\n              <div *ngIf=\"table.nameValue\">\n                <p style=\"background-color: #FFFFFF; padding: 10px\">\n                  <b> Zimmernummer:</b> {{table.roomNumberValue}}<br>\n                  <b> Name:</b> {{table.nameValue}}<br>\n                  <b> Anreise Datum:</b> {{table.arrivalValue}}<br>\n                  <b> Abreise Datum:</b> {{table.departureValue}}<br>\n                  <b> Personenanzahl:</b> {{table.numberOfPersonsValue}}<br>\n                  <b> Nation:</b> {{table.nationValue}}<br>\n                </p>\n              </div>\n            <div *ngIf=\"table.newTraceName\">\n              <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                <b> Zimmernummer: </b>{{table.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{table.newTraceText}} <br> <b> Tischnummer: </b>{{table.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{table.newTraceEmployee}} <br> <b> Name: </b>{{table.newTraceName}} <br> <b> Datum: </b>{{table.newTraceDate}}\n              </p>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"table.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"tables\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px; text-align: center\">Listen-Element hier hin ziehen! <span>{{table.number}} {{table.department}} {{j}}</span></p>\n        </div>\n      </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/all/all.component.ts":
+/***/ "./src/app/components/digital-table-plan/departments/all/all.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -909,8 +887,8 @@ AllComponent = __decorate([
     }),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-all',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/all/all.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/all/all.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [])
 ], AllComponent);
@@ -920,25 +898,148 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/departments.component.html":
+/***/ "./src/app/components/digital-table-plan/departments/bar/bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sonnberg-zirbn [term]=\"term\" [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\" [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\" (occupied)=\"occupied($event)\"></app-sonnberg-zirbn>\n<app-restaurant [term]=\"term\" [tablesRestaurant]=\"tablesRestaurant\" [showRestaurantBool]=\"showRestaurantBool\"  (occupied)=\"occupied($event)\"></app-restaurant>\n<app-panorama [term]=\"term\" [tablesPanorama]=\"tablesPanorama\" [showPanoramaBool]=\"showPanoramaBool\"  (occupied)=\"occupied($event)\"></app-panorama>\n<app-wintergarten [term]=\"term\" [tablesWintergarten]=\"tablesWintergarten\" [showWintergartenBool]=\"showWintergartenBool\"  (occupied)=\"occupied($event)\"></app-wintergarten>\n<app-all [term]=\"term\" [tables]=\"tables\" [tablesTempDeparture]=\"tablesTempDeparture\" [showAllBool]=\"showAllBool\" (occupied)=\"occupied($event)\"></app-all>\n"
+module.exports = "<div *ngIf=\"showBarBool\">\n  <div *ngFor=\"let tableBar of tablesBar; let j = index;\">\n    <div *ngIf=\"tablesBar[j] !== tablesBar[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableBar, j)\">{{tableBar.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableBar.number}} </h4><br>\n      <div class='cards-container' id='containerBar' [ngStyle]=\"{'background-color': + tableBar.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableBar.bgColor}\">\n          <div *ngIf=\"tableBar.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableBar.groups; let j = index;\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                  </p>\n                </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableBar.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Bar\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px;\">Listen-Element hier hin ziehen! {{tableBar.number}} {{tableBar.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/departments.component.ts":
+/***/ "./src/app/components/digital-table-plan/departments/bar/bar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BarComponent = (function () {
+    function BarComponent() {
+        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dateGenerated = new Date();
+    }
+    BarComponent.prototype.ngOnInit = function () {
+    };
+    BarComponent.prototype.occupy = function (table, j) {
+        this.occupied.emit({ table: table, j: j });
+    };
+    BarComponent.prototype.getStyle = function (j) {
+        if (j != "-") {
+            return "solid 3px red";
+        }
+        else {
+            return "";
+        }
+    };
+    BarComponent.prototype.transform = function (tables, term) {
+        console.log("term");
+        console.log(term);
+        if (term == "") {
+            this.tablesBar = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesBar = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            return false;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                });
+            }
+            else {
+                return tables;
+            }
+        }
+    };
+    return BarComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesBar'),
+    __metadata("design:type", Array)
+], BarComponent.prototype, "tablesBar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
+    __metadata("design:type", Boolean)
+], BarComponent.prototype, "showBarBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
+    __metadata("design:type", String)
+], BarComponent.prototype, "term", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], BarComponent.prototype, "occupied", void 0);
+BarComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-bar',
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/bar/bar.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], BarComponent);
+
+var _a;
+//# sourceMappingURL=bar.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/departments.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-terasse [term]=\"term\" [tablesTerasse]=\"tablesTerasse\" [showTerasseBool]=\"showTerasseBool\" (occupied)=\"occupied($event)\"></app-terasse>\n<app-bar [term]=\"term\" [tablesBar]=\"tablesBar\" [showBarBool]=\"showBarBool\"  (occupied)=\"occupied($event)\"></app-bar>\n<app-weinstube [term]=\"term\" [tablesWeinstube]=\"tablesWeinstube\" [showWeinstubeBool]=\"showWeinstubeBool\"  (occupied)=\"occupied($event)\"></app-weinstube>\n<app-speisesaal [term]=\"term\" [tablesSpeisesaal]=\"tablesSpeisesaal\" [showSpeisesaalBool]=\"showSpeisesaalBool\"  (occupied)=\"occupied($event)\"></app-speisesaal>\n<app-all [term]=\"term\" [tables]=\"tables\" [tablesTempDeparture]=\"tablesTempDeparture\" [showAllBool]=\"showAllBool\" (occupied)=\"occupied($event)\"></app-all>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/departments.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wintergarten_wintergarten_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/wintergarten/wintergarten.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_all_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/all/all.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__panorama_panorama_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/panorama/panorama.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__restaurant_restaurant_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/restaurant/restaurant.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sonnberg_zirbn_sonnberg_zirbn_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__speisesaal_speisesaal_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/speisesaal/speisesaal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_all_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/all/all.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weinstube_weinstube_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/weinstube/weinstube.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bar_bar_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/bar/bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__terasse_terasse_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/terasse/terasse.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -958,10 +1059,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DepartmentsComponent = (function () {
     function DepartmentsComponent(mainService) {
         this.mainService = mainService;
-        this.dispensedSonnbergZirbn = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.dispensedRestaurant = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.dispensedWintergarten = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.dispensedPanorama = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dispensedTerasse = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dispensedBar = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dispensedSpeisesaal = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dispensedWeinstube = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.updateAzList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.updateImHausListElement = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.parts = [];
@@ -995,18 +1096,18 @@ var DepartmentsComponent = (function () {
                         return 1;
                     return 0;
                 });
-                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                    _this.dispensedSonnbergZirbn.emit(response[0].tables);
+                if (response[0].tables[j].department === "Terasse") {
+                    _this.dispensedTerasse.emit(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Panorama") {
-                    _this.dispensedPanorama.emit(response[0].tables);
+                else if (response[0].tables[j].department === "Weinstube") {
+                    _this.dispensedWeinstube.emit(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Restaurant") {
-                    _this.dispensedRestaurant.emit(response[0].tables);
+                else if (response[0].tables[j].department === "Bar") {
+                    _this.dispensedBar.emit(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Wintergarten") {
-                    _this.dispensedWintergarten.emit(response[0].tables);
-                    console.log("Wintergarten" + JSON.stringify(response[0].tables));
+                else if (response[0].tables[j].department === "Speisesaal") {
+                    _this.dispensedSpeisesaal.emit(response[0].tables);
+                    console.log("Speisesaal" + JSON.stringify(response[0].tables));
                 }
             }
         }, function (error) { return console.log("Error: ", error); }, function () {
@@ -1029,7 +1130,7 @@ var DepartmentsComponent = (function () {
         });
         this.mainService.addPlaceholder(table).subscribe(function (response) {
             console.log("Add placeholder!");
-            //console.log(this.tablesSonnbergZirbn[j].placeholder);
+            //console.log(this.tablesTerasse[j].placeholder);
             console.log("placeholder:" + JSON.stringify(response));
         });
     };
@@ -1045,21 +1146,21 @@ var DepartmentsComponent = (function () {
                 return;
             }
             else {
-                if (response[0].department === "Sonnberg-Zirbn") {
-                    _this.dispensedSonnbergZirbn.emit(response[0].tables);
+                if (response[0].department === "Terasse") {
+                    _this.dispensedTerasse.emit(response[0].tables);
                 }
-                else if (response[0].department === "Panorama") {
-                    _this.dispensedPanorama.emit(response[0].tables);
+                else if (response[0].department === "Weinstube") {
+                    _this.dispensedWeinstube.emit(response[0].tables);
                 }
-                else if (response[0].department === "Restaurant") {
-                    _this.dispensedRestaurant.emit(response[0].tables);
+                else if (response[0].department === "Bar") {
+                    _this.dispensedBar.emit(response[0].tables);
                 }
-                else if (response[0].department === "Wintergarten") {
-                    _this.dispensedWintergarten.emit(response[0].tables);
+                else if (response[0].department === "Speisesaal") {
+                    _this.dispensedSpeisesaal.emit(response[0].tables);
                 }
             }
         }
-        // console.log(this.tablesSonnbergZirbn[arrayIndex]);
+        // console.log(this.tablesTerasse[arrayIndex]);
         );
     };
     ;
@@ -1077,17 +1178,17 @@ var DepartmentsComponent = (function () {
                 return;
             }
             else {
-                if (response.tables[0].department === "Sonnberg-Zirbn") {
-                    _this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
+                if (response.tables[0].department === "Terasse") {
+                    _this.tablesTerasse[arrayIndex] = response.tables[0];
                 }
-                else if (response.tables[0].department === "Panorama") {
-                    _this.tablesPanorama[arrayIndex] = response.tables[0];
+                else if (response.tables[0].department === "Weinstube") {
+                    _this.tablesWeinstube[arrayIndex] = response.tables[0];
                 }
-                else if (response.tables[0].department === "Restaurant") {
-                    _this.tablesRestaurant[arrayIndex] = response.tables[0];
+                else if (response.tables[0].department === "Bar") {
+                    _this.tablesBar[arrayIndex] = response.tables[0];
                 }
-                else if (response.tables[0].department === "Wintergarten") {
-                    _this.tablesWintergarten[arrayIndex] = response.tables[0];
+                else if (response.tables[0].department === "Speisesaal") {
+                    _this.tablesSpeisesaal[arrayIndex] = response.tables[0];
                 }
             }
             _this.updateAzList.emit();
@@ -1121,31 +1222,31 @@ var DepartmentsComponent = (function () {
                             // note parts[1]-1
                             // console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
                             // Mon May 31 2010 00:00:00
-                            // this.tablesRestaurant[j].arrivalValue
+                            // this.tablesBar[j].arrivalValue
                             var dateToday = String(_this.dateTodayGenerated).substring(0, 15);
                             //console.log('Parsed Date --->: ' + this.parsedDate[0]);
                             //console.log('this.dateGenerated --->: ' + dateToday);
                             if (dateToday.indexOf(_this.parsedDate[0]) !== -1) {
-                                if (_this.tablesChangeBgColorIfArrival[a].department === "Panorama") {
-                                    //console.log(this.tablesPanorama);
-                                    if (_this.tablesPanorama[b]) {
-                                        //console.log(this.tablesPanorama[b]);
-                                        _this.tablesPanorama[b].bgColor = "#0a7a74";
+                                if (_this.tablesChangeBgColorIfArrival[a].department === "Weinstube") {
+                                    //console.log(this.tablesWeinstube);
+                                    if (_this.tablesWeinstube[b]) {
+                                        //console.log(this.tablesWeinstube[b]);
+                                        _this.tablesWeinstube[b].bgColor = "#0a7a74";
                                     }
                                 }
-                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Wintergarten") {
-                                    if (_this.tablesWintergarten[b]) {
-                                        _this.tablesWintergarten[b].bgColor = "#0a7a74";
+                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Speisesaal") {
+                                    if (_this.tablesSpeisesaal[b]) {
+                                        _this.tablesSpeisesaal[b].bgColor = "#0a7a74";
                                     }
                                 }
-                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Sonnberg-Zirbn") {
-                                    if (_this.tablesSonnbergZirbn[b]) {
-                                        _this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Terasse") {
+                                    if (_this.tablesTerasse[b]) {
+                                        _this.tablesTerasse[b].bgColor = "#0a7a74";
                                     }
                                 }
-                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Restaurant") {
-                                    if (_this.tablesRestaurant[b]) {
-                                        _this.tablesRestaurant[b].bgColor = "#0a7a74";
+                                else if (_this.tablesChangeBgColorIfArrival[a].department === "Bar") {
+                                    if (_this.tablesBar[b]) {
+                                        _this.tablesBar[b].bgColor = "#0a7a74";
                                     }
                                 }
                             }
@@ -1156,17 +1257,17 @@ var DepartmentsComponent = (function () {
         }, 1000);
     };
     DepartmentsComponent.prototype.transform = function (term) {
-        if (this.showPanoramaBool) {
-            this.panoramaComponent.transform(this.tablesPanorama, term);
+        if (this.showWeinstubeBool) {
+            this.panoramaComponent.transform(this.tablesWeinstube, term);
         }
-        else if (this.showRestaurantBool) {
-            this.restaurantComponent.transform(this.tablesRestaurant, term);
+        else if (this.showBarBool) {
+            this.restaurantComponent.transform(this.tablesBar, term);
         }
-        else if (this.showWintergartenBool) {
-            this.wintergartenComponent.transform(this.tablesWintergarten, term);
+        else if (this.showSpeisesaalBool) {
+            this.wintergartenComponent.transform(this.tablesSpeisesaal, term);
         }
-        else if (this.showSonnbergZirbnBool) {
-            this.sonnbergZirbnComponent.transform(this.tablesSonnbergZirbn, term);
+        else if (this.showTerasseBool) {
+            this.sonnbergZirbnComponent.transform(this.tablesTerasse, term);
         }
         else if (this.showAllBool) {
             this.allComponent.transform(this.tables, term);
@@ -1175,41 +1276,41 @@ var DepartmentsComponent = (function () {
     return DepartmentsComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSpeisesaal'),
     __metadata("design:type", Array)
-], DepartmentsComponent.prototype, "tablesWintergarten", void 0);
+], DepartmentsComponent.prototype, "tablesSpeisesaal", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
     __metadata("design:type", Boolean)
-], DepartmentsComponent.prototype, "showWintergartenBool", void 0);
+], DepartmentsComponent.prototype, "showSpeisesaalBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesTerasse'),
     __metadata("design:type", Array)
-], DepartmentsComponent.prototype, "tablesSonnbergZirbn", void 0);
+], DepartmentsComponent.prototype, "tablesTerasse", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
     __metadata("design:type", Boolean)
-], DepartmentsComponent.prototype, "showSonnbergZirbnBool", void 0);
+], DepartmentsComponent.prototype, "showTerasseBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Array)
-], DepartmentsComponent.prototype, "tablesPanorama", void 0);
+], DepartmentsComponent.prototype, "tablesWeinstube", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tables'),
     __metadata("design:type", Object)
 ], DepartmentsComponent.prototype, "tables", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", Boolean)
-], DepartmentsComponent.prototype, "showPanoramaBool", void 0);
+], DepartmentsComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesBar'),
     __metadata("design:type", Array)
-], DepartmentsComponent.prototype, "tablesRestaurant", void 0);
+], DepartmentsComponent.prototype, "tablesBar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
     __metadata("design:type", Boolean)
-], DepartmentsComponent.prototype, "showRestaurantBool", void 0);
+], DepartmentsComponent.prototype, "showBarBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showAllBool'),
     __metadata("design:type", Boolean)
@@ -1227,37 +1328,37 @@ __decorate([
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__all_all_component__["a" /* AllComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__all_all_component__["a" /* AllComponent */]) === "function" && _a || Object)
 ], DepartmentsComponent.prototype, "allComponent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__panorama_panorama_component__["a" /* PanoramaComponent */]),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__panorama_panorama_component__["a" /* PanoramaComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__panorama_panorama_component__["a" /* PanoramaComponent */]) === "function" && _b || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__weinstube_weinstube_component__["a" /* WeinstubeComponent */]),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__weinstube_weinstube_component__["a" /* WeinstubeComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__weinstube_weinstube_component__["a" /* WeinstubeComponent */]) === "function" && _b || Object)
 ], DepartmentsComponent.prototype, "panoramaComponent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5__restaurant_restaurant_component__["a" /* RestaurantComponent */]),
-    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__restaurant_restaurant_component__["a" /* RestaurantComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__restaurant_restaurant_component__["a" /* RestaurantComponent */]) === "function" && _c || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5__bar_bar_component__["a" /* BarComponent */]),
+    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__bar_bar_component__["a" /* BarComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__bar_bar_component__["a" /* BarComponent */]) === "function" && _c || Object)
 ], DepartmentsComponent.prototype, "restaurantComponent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__wintergarten_wintergarten_component__["a" /* WintergartenComponent */]),
-    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__wintergarten_wintergarten_component__["a" /* WintergartenComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__wintergarten_wintergarten_component__["a" /* WintergartenComponent */]) === "function" && _d || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__speisesaal_speisesaal_component__["a" /* SpeisesaalComponent */]),
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__speisesaal_speisesaal_component__["a" /* SpeisesaalComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__speisesaal_speisesaal_component__["a" /* SpeisesaalComponent */]) === "function" && _d || Object)
 ], DepartmentsComponent.prototype, "wintergartenComponent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_6__sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */]),
-    __metadata("design:type", typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__sonnberg_zirbn_sonnberg_zirbn_component__["a" /* SonnbergZirbnComponent */]) === "function" && _e || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_6__terasse_terasse_component__["a" /* TerasseComponent */]),
+    __metadata("design:type", typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__terasse_terasse_component__["a" /* TerasseComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__terasse_terasse_component__["a" /* TerasseComponent */]) === "function" && _e || Object)
 ], DepartmentsComponent.prototype, "sonnbergZirbnComponent", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _f || Object)
-], DepartmentsComponent.prototype, "dispensedSonnbergZirbn", void 0);
+], DepartmentsComponent.prototype, "dispensedTerasse", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _g || Object)
-], DepartmentsComponent.prototype, "dispensedRestaurant", void 0);
+], DepartmentsComponent.prototype, "dispensedBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _h || Object)
-], DepartmentsComponent.prototype, "dispensedWintergarten", void 0);
+], DepartmentsComponent.prototype, "dispensedSpeisesaal", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _j || Object)
-], DepartmentsComponent.prototype, "dispensedPanorama", void 0);
+], DepartmentsComponent.prototype, "dispensedWeinstube", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _k || Object)
@@ -1269,8 +1370,8 @@ __decorate([
 DepartmentsComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-departments',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/departments.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/departments.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _m || Object])
 ], DepartmentsComponent);
@@ -1280,19 +1381,19 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/panorama/panorama.component.html":
+/***/ "./src/app/components/digital-table-plan/departments/speisesaal/speisesaal.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"showPanoramaBool\">\n  <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n    <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tablePanorama, j)\">{{tablePanorama.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tablePanorama.number}} </h4><br>\n      <div class='cards-container' id='containerPanorama' [ngStyle]=\"{'background-color': + tablePanorama.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tablePanorama.bgColor}\">\n          <div *ngIf=\"tablePanorama.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tablePanorama.groups; let j = index;\">\n              <div [style.border]=\"getStyle(group.traceValue)\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                    <b> Sprache:</b> {{group.languageValue}}<br>\n                    <b> Preis Typ:</b> {{group.typeOfPriceValue}}<br>\n                    <b> Reisebüro:</b> {{group.sourceValue}}<br>\n                    <b> Kategorie:</b> {{group.categoryValue}}<br>\n                    <b> Notiz1:</b> {{group.note1Value}}<br>\n                    <b> Notiz2:</b> {{group.note2Value}}<br>\n                    <b> Trace:</b> {{group.traceValue}}<br>\n                  </p>\n                </div>\n              </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tablePanorama.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Panorama\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px; text-align: center\"> Listen-Element hier hin ziehen! {{tablePanorama.number}} {{tablePanorama.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"showSpeisesaalBool\">\n  <div *ngFor=\"let tableSpeisesaal of tablesSpeisesaal; let j = index;\">\n    <div *ngIf=\"tablesSpeisesaal[j] !== tablesSpeisesaal[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableSpeisesaal, j)\">{{tableSpeisesaal.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableSpeisesaal.number}} </h4><br>\n      <div class='cards-container' id='containerSpeisesaal' [ngStyle]=\"{'background-color': + tableSpeisesaal.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableSpeisesaal.bgColor}\">\n          <div *ngIf=\"tableSpeisesaal.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableSpeisesaal.groups; let j = index;\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                  </p>\n                </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableSpeisesaal.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Speisesaal\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen! {{tableSpeisesaal.number}} {{tableSpeisesaal.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/panorama/panorama.component.ts":
+/***/ "./src/app/components/digital-table-plan/departments/speisesaal/speisesaal.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PanoramaComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeisesaalComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1303,17 +1404,261 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var PanoramaComponent = (function () {
-    function PanoramaComponent() {
+var SpeisesaalComponent = (function () {
+    function SpeisesaalComponent() {
+        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    SpeisesaalComponent.prototype.ngOnInit = function () {
+    };
+    SpeisesaalComponent.prototype.occupy = function (table, j) {
+        this.occupied.emit({ table: table, j: j });
+    };
+    SpeisesaalComponent.prototype.getStyle = function (j) {
+        if (j != "-") {
+            return "solid 3px red";
+        }
+        else {
+            return "";
+        }
+    };
+    SpeisesaalComponent.prototype.transform = function (tables, term) {
+        console.log("term");
+        console.log(term);
+        if (term == "") {
+            this.tablesSpeisesaal = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesSpeisesaal = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            return false;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                });
+            }
+            else {
+                return tables;
+            }
+        }
+    };
+    return SpeisesaalComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSpeisesaal'),
+    __metadata("design:type", Array)
+], SpeisesaalComponent.prototype, "tablesSpeisesaal", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
+    __metadata("design:type", Boolean)
+], SpeisesaalComponent.prototype, "showSpeisesaalBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
+    __metadata("design:type", String)
+], SpeisesaalComponent.prototype, "term", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], SpeisesaalComponent.prototype, "occupied", void 0);
+SpeisesaalComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-speisesaal',
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/speisesaal/speisesaal.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SpeisesaalComponent);
+
+var _a;
+//# sourceMappingURL=speisesaal.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/terasse/terasse.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"showTerasseBool\">\n  <div *ngFor=\"let tableTerasse of tablesTerasse; let j = index;\">\n    <div *ngIf=\"tablesTerasse[j] !== tablesTerasse[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableTerasse, j)\">{{tableTerasse.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableTerasse.number}} </h4><br>\n      <div class='cards-container' id='containerTerasse' [ngStyle]=\"{'background-color': + tableTerasse.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableTerasse.bgColor}\">\n          <div *ngIf=\"tableTerasse.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableTerasse.groups; let j = index;\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                  </p>\n                </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableTerasse.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Terasse\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px;\">Listen-Element hier hin ziehen! {{tableTerasse.number}} {{tableTerasse.department}} {{j}} </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/terasse/terasse.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TerasseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TerasseComponent = (function () {
+    function TerasseComponent() {
+        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    TerasseComponent.prototype.ngOnInit = function () {
+    };
+    TerasseComponent.prototype.occupy = function (table, j) {
+        this.occupied.emit({ table: table, j: j });
+    };
+    TerasseComponent.prototype.getStyle = function (j) {
+        if (j != "-") {
+            return "solid 3px red";
+        }
+        else {
+            return "";
+        }
+    };
+    TerasseComponent.prototype.transform = function (tables, term) {
+        console.log("term");
+        console.log(term);
+        if (term == "") {
+            this.tablesTerasse = tables;
+        }
+        else {
+            if (Array.isArray(tables) && tables.length && term && term.length) {
+                this.tablesTerasse = tables.filter(function (item) {
+                    console.log(item);
+                    var keys = Object.keys(item);
+                    if (item.groups) {
+                        var keysGroups = Object.keys(item.groups);
+                        console.log(keys);
+                        console.log(keysGroups);
+                        console.log();
+                        if (Array.isArray(keys) && keys.length) {
+                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                                var key = keys_1[_i];
+                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                    return true;
+                                }
+                                else if (item.groups) {
+                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
+                                        var keyGroups = keysGroups_1[_a];
+                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
+                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
+                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
+                                            if (item.groups[keyGroups][keyGroupsGroups]) {
+                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
+                                                    return true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            return false;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                });
+            }
+            else {
+                return tables;
+            }
+        }
+    };
+    return TerasseComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesTerasse'),
+    __metadata("design:type", Array)
+], TerasseComponent.prototype, "tablesTerasse", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
+    __metadata("design:type", Boolean)
+], TerasseComponent.prototype, "showTerasseBool", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
+    __metadata("design:type", String)
+], TerasseComponent.prototype, "term", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], TerasseComponent.prototype, "occupied", void 0);
+TerasseComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-terasse',
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/terasse/terasse.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], TerasseComponent);
+
+var _a;
+//# sourceMappingURL=terasse.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/weinstube/weinstube.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"showWeinstubeBool\">\n  <div *ngFor=\"let tableWeinstube of tablesWeinstube; let j = index;\">\n    <div *ngIf=\"tablesWeinstube[j] !== tablesWeinstube[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableWeinstube, j)\">{{tableWeinstube.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableWeinstube.number}} </h4><br>\n      <div class='cards-container' id='containerWeinstube' [ngStyle]=\"{'background-color': + tableWeinstube.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableWeinstube.bgColor}\">\n          <div *ngIf=\"tableWeinstube.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableWeinstube.groups; let j = index;\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                  </p>\n                </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableWeinstube.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Weinstube\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px; text-align: center\"> Listen-Element hier hin ziehen! {{tableWeinstube.number}} {{tableWeinstube.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/departments/weinstube/weinstube.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeinstubeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var WeinstubeComponent = (function () {
+    function WeinstubeComponent() {
         this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dateGenerated = new Date();
     }
-    PanoramaComponent.prototype.ngOnInit = function () {
+    WeinstubeComponent.prototype.ngOnInit = function () {
     };
-    PanoramaComponent.prototype.occupy = function (table, j) {
+    WeinstubeComponent.prototype.occupy = function (table, j) {
         this.occupied.emit({ table: table, j: j });
     };
-    PanoramaComponent.prototype.getStyle = function (j) {
+    WeinstubeComponent.prototype.getStyle = function (j) {
         //console.log(j);
         if (j != "-") {
             return "solid 3px red";
@@ -1322,15 +1667,15 @@ var PanoramaComponent = (function () {
             return "";
         }
     };
-    PanoramaComponent.prototype.transform = function (tables, term) {
+    WeinstubeComponent.prototype.transform = function (tables, term) {
         console.log("term");
         console.log(term);
         if (term == "") {
-            this.tablesPanorama = tables;
+            this.tablesWeinstube = tables;
         }
         else {
             if (Array.isArray(tables) && tables.length && term && term.length) {
-                this.tablesPanorama = tables.filter(function (item) {
+                this.tablesWeinstube = tables.filter(function (item) {
                     console.log(item);
                     var keys = Object.keys(item);
                     if (item.groups) {
@@ -1372,420 +1717,53 @@ var PanoramaComponent = (function () {
             }
         }
     };
-    return PanoramaComponent;
+    return WeinstubeComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWeinstube'),
     __metadata("design:type", Array)
-], PanoramaComponent.prototype, "tablesPanorama", void 0);
+], WeinstubeComponent.prototype, "tablesWeinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", Boolean)
-], PanoramaComponent.prototype, "showPanoramaBool", void 0);
+], WeinstubeComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
     __metadata("design:type", String)
-], PanoramaComponent.prototype, "term", void 0);
+], WeinstubeComponent.prototype, "term", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], PanoramaComponent.prototype, "occupied", void 0);
-PanoramaComponent = __decorate([
+], WeinstubeComponent.prototype, "occupied", void 0);
+WeinstubeComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-panorama',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/panorama/panorama.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        selector: 'app-weinstube',
+        template: __webpack_require__("./src/app/components/digital-table-plan/departments/weinstube/weinstube.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [])
-], PanoramaComponent);
+], WeinstubeComponent);
 
 var _a;
-//# sourceMappingURL=panorama.component.js.map
+//# sourceMappingURL=weinstube.component.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/restaurant/restaurant.component.html":
+/***/ "./src/app/components/digital-table-plan/form/form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"showRestaurantBool\">\n  <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n    <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableRestaurant, j)\">{{tableRestaurant.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableRestaurant.number}} </h4><br>\n      <div class='cards-container' id='containerRestaurant' [ngStyle]=\"{'background-color': + tableRestaurant.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableRestaurant.bgColor}\">\n          <div *ngIf=\"tableRestaurant.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableRestaurant.groups; let j = index;\">\n              <div [style.border]=\"getStyle(group.traceValue)\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                    <b> Sprache:</b> {{group.languageValue}}<br>\n                    <b> Preis Typ:</b> {{group.typeOfPriceValue}}<br>\n                    <b> Reisebüro:</b> {{group.sourceValue}}<br>\n                    <b> Kategorie:</b> {{group.categoryValue}}<br>\n                    <b> Notiz1:</b> {{group.note1Value}}<br>\n                    <b> Notiz2:</b> {{group.note2Value}}<br>\n                    <b> Trace:</b> {{group.traceValue}}<br>\n                  </p>\n                </div>\n              </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableRestaurant.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Restaurant\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px;\">Listen-Element hier hin ziehen! {{tableRestaurant.number}} {{tableRestaurant.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"showNoteFormBool\">\n  <div *ngIf=\"showAllBool === false\">\n    <div class=\"note\">\n      <div *ngIf=\"showWeinstubeBool\">\n        <div *ngFor=\"let noteElement of noteElements\" >\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Weinstube'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br><b>  Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showBarBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Bar'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showTerasseBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Terasse'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}}<br> <b> Datum: </b>{{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showSpeisesaalBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Speisesaal'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <form class=\"SendNote\"  #myForm=\"ngForm\" (submit)=\"sendNote($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\" style=\"min-height: 250px\">\n        <div class=\"col-lg-12\">\n          <label for=\"department\" style=\"padding-bottom: 20px; color: #FFFFFF\">Abteilung</label>\n          <select class=\"form-control\"  id=\"department\" style=\"margin-bottom: 10px; width: 100%\" required [(ngModel)]=\"departmentNoteInput\" placeholder=\"Abteilung auswählen\" name=\"departmentNoteInput\">\n            <option *ngFor=\"let department of departments\"\n                    [value]=\"department\">\n              {{department}}\n            </option>\n          </select>\n        </div>\n        <div class=\"col-lg-12\">\n                <textarea id=\"noteText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"noteInput\" placeholder=\"Note hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px;\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n<div *ngIf=\"showInfoFormBool\">\n  <form class=\"SendInformation\" #myForm=\"ngForm\" (submit)=\"sendInformation($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\">\n        <div class=\"col-lg-6 col-xs-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"name\" [(ngModel)]=\"nameTraceInput\" name=\"Name\" placeholder=\"Name\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"roomNumber\" [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Zimmer Nummer\">\n        </div>\n        <div class=\"col-lg-6 col-xs-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"tableNumber\" [(ngModel)]=\"tableNumber\" name=\"tableNumber\" placeholder=\"Table Nummer\">\n          <select  class=\"form-control\" style=\"margin-top: 20px\" id=\"employee\" [(ngModel)]=\"employee\" name=\"employee\" placeholder=\"Mitarbeiter\">\n            <option *ngFor=\"let employee of employees\"\n                    [value]=\"employee\">\n              {{employee}}\n            </option>\n          </select>\n        </div>\n        <div class=\"col-lg-12 col-xs-12\">\n                <textarea id=\"informationText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"title\" placeholder=\"Trace hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px;\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n\n\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/departments/restaurant/restaurant.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var RestaurantComponent = (function () {
-    function RestaurantComponent() {
-        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.dateGenerated = new Date();
-    }
-    RestaurantComponent.prototype.ngOnInit = function () {
-    };
-    RestaurantComponent.prototype.occupy = function (table, j) {
-        this.occupied.emit({ table: table, j: j });
-    };
-    RestaurantComponent.prototype.getStyle = function (j) {
-        if (j != "-") {
-            return "solid 3px red";
-        }
-        else {
-            return "";
-        }
-    };
-    RestaurantComponent.prototype.transform = function (tables, term) {
-        console.log("term");
-        console.log(term);
-        if (term == "") {
-            this.tablesRestaurant = tables;
-        }
-        else {
-            if (Array.isArray(tables) && tables.length && term && term.length) {
-                this.tablesRestaurant = tables.filter(function (item) {
-                    console.log(item);
-                    var keys = Object.keys(item);
-                    if (item.groups) {
-                        var keysGroups = Object.keys(item.groups);
-                        console.log(keys);
-                        console.log(keysGroups);
-                        console.log();
-                        if (Array.isArray(keys) && keys.length) {
-                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                                var key = keys_1[_i];
-                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                    return true;
-                                }
-                                else if (item.groups) {
-                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                        var keyGroups = keysGroups_1[_a];
-                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                            if (item.groups[keyGroups][keyGroupsGroups]) {
-                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                    return true;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            return false;
-                        }
-                        else {
-                            return false;
-                        }
-                    }
-                });
-            }
-            else {
-                return tables;
-            }
-        }
-    };
-    return RestaurantComponent;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesRestaurant'),
-    __metadata("design:type", Array)
-], RestaurantComponent.prototype, "tablesRestaurant", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
-    __metadata("design:type", Boolean)
-], RestaurantComponent.prototype, "showRestaurantBool", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
-    __metadata("design:type", String)
-], RestaurantComponent.prototype, "term", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], RestaurantComponent.prototype, "occupied", void 0);
-RestaurantComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-restaurant',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/restaurant/restaurant.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], RestaurantComponent);
-
-var _a;
-//# sourceMappingURL=restaurant.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div *ngIf=\"showSonnbergZirbnBool\">\n  <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n    <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableSonnbergZirbn, j)\">{{tableSonnbergZirbn.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableSonnbergZirbn.number}} </h4><br>\n      <div class='cards-container' id='containerSonnbergZirbn' [ngStyle]=\"{'background-color': + tableSonnbergZirbn.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableSonnbergZirbn.bgColor}\">\n          <div *ngIf=\"tableSonnbergZirbn.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableSonnbergZirbn.groups; let j = index;\">\n              <div [style.border]=\"getStyle(group.traceValue)\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                    <b> Sprache:</b> {{group.languageValue}}<br>\n                    <b> Preis Typ:</b> {{group.typeOfPriceValue}}<br>\n                    <b> Reisebüro:</b> {{group.sourceValue}}<br>\n                    <b> Kategorie:</b> {{group.categoryValue}}<br>\n                    <b> Notiz1:</b> {{group.note1Value}}<br>\n                    <b> Notiz2:</b> {{group.note2Value}}<br>\n                    <b> Trace:</b> {{group.traceValue}}<br>\n                  </p>\n                </div>\n              </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableSonnbergZirbn.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Sonnberg-Zirbn\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px;\">Listen-Element hier hin ziehen! {{tableSonnbergZirbn.number}} {{tableSonnbergZirbn.department}} {{j}} </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SonnbergZirbnComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SonnbergZirbnComponent = (function () {
-    function SonnbergZirbnComponent() {
-        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    SonnbergZirbnComponent.prototype.ngOnInit = function () {
-    };
-    SonnbergZirbnComponent.prototype.occupy = function (table, j) {
-        this.occupied.emit({ table: table, j: j });
-    };
-    SonnbergZirbnComponent.prototype.getStyle = function (j) {
-        if (j != "-") {
-            return "solid 3px red";
-        }
-        else {
-            return "";
-        }
-    };
-    SonnbergZirbnComponent.prototype.transform = function (tables, term) {
-        console.log("term");
-        console.log(term);
-        if (term == "") {
-            this.tablesSonnbergZirbn = tables;
-        }
-        else {
-            if (Array.isArray(tables) && tables.length && term && term.length) {
-                this.tablesSonnbergZirbn = tables.filter(function (item) {
-                    console.log(item);
-                    var keys = Object.keys(item);
-                    if (item.groups) {
-                        var keysGroups = Object.keys(item.groups);
-                        console.log(keys);
-                        console.log(keysGroups);
-                        console.log();
-                        if (Array.isArray(keys) && keys.length) {
-                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                                var key = keys_1[_i];
-                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                    return true;
-                                }
-                                else if (item.groups) {
-                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                        var keyGroups = keysGroups_1[_a];
-                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                            if (item.groups[keyGroups][keyGroupsGroups]) {
-                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                    return true;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            return false;
-                        }
-                        else {
-                            return false;
-                        }
-                    }
-                });
-            }
-            else {
-                return tables;
-            }
-        }
-    };
-    return SonnbergZirbnComponent;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
-    __metadata("design:type", Array)
-], SonnbergZirbnComponent.prototype, "tablesSonnbergZirbn", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
-    __metadata("design:type", Boolean)
-], SonnbergZirbnComponent.prototype, "showSonnbergZirbnBool", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
-    __metadata("design:type", String)
-], SonnbergZirbnComponent.prototype, "term", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], SonnbergZirbnComponent.prototype, "occupied", void 0);
-SonnbergZirbnComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-sonnberg-zirbn',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/sonnberg-zirbn/sonnberg-zirbn.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], SonnbergZirbnComponent);
-
-var _a;
-//# sourceMappingURL=sonnberg-zirbn.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/departments/wintergarten/wintergarten.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div *ngIf=\"showWintergartenBool\">\n  <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n    <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n      <button style=\"float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF\"  type=\"button\" class=\"btn btn-send\" (click)=\"occupy(tableWintergarten, j)\">{{tableWintergarten.isOccupied === 'true' ? 'FREI MACHEN' : ''}}</button>\n      <h4><b> Tisch:</b>{{tableWintergarten.number}} </h4><br>\n      <div class='cards-container' id='containerWintergarten' [ngStyle]=\"{'background-color': + tableWintergarten.bgColor}\">\n        <div class=\"table\" [ngStyle]=\"{'background-color': '#' + tableWintergarten.bgColor}\">\n          <div *ngIf=\"tableWintergarten.isOccupied === 'true'\">\n            <div *ngFor=\"let group of tableWintergarten.groups; let j = index;\">\n              <div [style.border]=\"getStyle(group.traceValue)\">\n                <div *ngIf=\"group.nameValue\">\n                  <p style=\"background-color: #FFFFFF; padding: 10px\">\n                    <b> Name:</b> {{group.nameValue}}<br>\n                    <b> Zimmernummer:</b> {{group.roomNumberValue}}<br>\n                    <b> Anreise Datum:</b> {{group.arrivalValue}}<br>\n                    <b> Abreise Datum:</b> {{group.departureValue}}<br>\n                    <b> Personenanzahl:</b> {{group.numberOfPersonsValue}}<br>\n                    <b> Nation:</b> {{group.nationValue}}<br>\n                    <b> Sprache:</b> {{group.languageValue}}<br>\n                    <b> Preis Typ:</b> {{group.typeOfPriceValue}}<br>\n                    <b> Reisebüro:</b> {{group.sourceValue}}<br>\n                    <b> Kategorie:</b> {{group.categoryValue}}<br>\n                    <b> Notiz1:</b> {{group.note1Value}}<br>\n                    <b> Notiz2:</b> {{group.note2Value}}<br>\n                    <b> Trace:</b> {{group.traceValue}}<br>\n                  </p>\n                </div>\n              </div>\n              <div *ngIf=\"group.newTraceName\">\n                <p style=\"background-color: #FFFFFF; border: solid 3px red\">\n                  <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"tableWintergarten.placeholder === 'true'\">\n          <p [dragula]='\"evented-bag\"' id=\"Wintergarten\" style=\"background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px\">Listen-Element hier hin ziehen! {{tableWintergarten.number}} {{tableWintergarten.department}} {{j}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/departments/wintergarten/wintergarten.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WintergartenComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var WintergartenComponent = (function () {
-    function WintergartenComponent() {
-        this.occupied = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    WintergartenComponent.prototype.ngOnInit = function () {
-    };
-    WintergartenComponent.prototype.occupy = function (table, j) {
-        this.occupied.emit({ table: table, j: j });
-    };
-    WintergartenComponent.prototype.getStyle = function (j) {
-        if (j != "-") {
-            return "solid 3px red";
-        }
-        else {
-            return "";
-        }
-    };
-    WintergartenComponent.prototype.transform = function (tables, term) {
-        console.log("term");
-        console.log(term);
-        if (term == "") {
-            this.tablesWintergarten = tables;
-        }
-        else {
-            if (Array.isArray(tables) && tables.length && term && term.length) {
-                this.tablesWintergarten = tables.filter(function (item) {
-                    console.log(item);
-                    var keys = Object.keys(item);
-                    if (item.groups) {
-                        var keysGroups = Object.keys(item.groups);
-                        console.log(keys);
-                        console.log(keysGroups);
-                        console.log();
-                        if (Array.isArray(keys) && keys.length) {
-                            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-                                var key = keys_1[_i];
-                                if (item.hasOwnProperty(key) && item[key] && item[key].length && (item[key].toString().toLowerCase().replace(/ /g, '')).includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                    return true;
-                                }
-                                else if (item.groups) {
-                                    for (var _a = 0, keysGroups_1 = keysGroups; _a < keysGroups_1.length; _a++) {
-                                        var keyGroups = keysGroups_1[_a];
-                                        var keysGroupsGroups = Object.keys(item.groups[keyGroups]);
-                                        for (var _b = 0, keysGroupsGroups_1 = keysGroupsGroups; _b < keysGroupsGroups_1.length; _b++) {
-                                            var keyGroupsGroups = keysGroupsGroups_1[_b];
-                                            if (item.groups[keyGroups][keyGroupsGroups]) {
-                                                if (item.groups[keyGroups][keyGroupsGroups].toString().toLowerCase().replace(/ /g, '').includes((term.toString().toLowerCase().replace(/ /g, '')))) {
-                                                    return true;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            return false;
-                        }
-                        else {
-                            return false;
-                        }
-                    }
-                });
-            }
-            else {
-                return tables;
-            }
-        }
-    };
-    return WintergartenComponent;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWintergarten'),
-    __metadata("design:type", Array)
-], WintergartenComponent.prototype, "tablesWintergarten", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
-    __metadata("design:type", Boolean)
-], WintergartenComponent.prototype, "showWintergartenBool", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('term'),
-    __metadata("design:type", String)
-], WintergartenComponent.prototype, "term", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], WintergartenComponent.prototype, "occupied", void 0);
-WintergartenComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-wintergarten',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/wintergarten/wintergarten.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], WintergartenComponent);
-
-var _a;
-//# sourceMappingURL=wintergarten.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/form/form.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div *ngIf=\"showNoteFormBool\">\n  <div *ngIf=\"showAllBool === false\">\n    <div class=\"note\">\n      <div *ngIf=\"showPanoramaBool\">\n        <div *ngFor=\"let noteElement of noteElements\" >\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Panorama'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br><b>  Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showRestaurantBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Restaurant'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showSonnbergZirbnBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Sonnberg-Zirbn'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}}<br> <b> Datum: </b>{{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showWintergartenBool\">\n        <div *ngFor=\"let noteElement of noteElements\">\n          <div *ngIf=\"noteElement.departmentNoteInput === 'Wintergarten'\">\n            <div style=\"border: solid 3px greenyellow; padding: 10px; margin: 20px;\">\n              <p style=\"color: white\"> <b> Note: </b>{{noteElement.noteInput === '' ? \"Keine Notiz\" : noteElement.noteInput}} <br> <b> Datum: </b> {{noteElement.noteInput === '' ? \"\" : noteElement.date}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <form class=\"SendNote\"  #myForm=\"ngForm\" (submit)=\"sendNote($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\" style=\"min-height: 250px\">\n        <div class=\"col-lg-12\">\n          <label for=\"department\" style=\"padding-bottom: 20px; color: #FFFFFF\">Abteilung</label>\n          <select class=\"form-control\"  id=\"department\" style=\"margin-bottom: 10px; width: 100%\" required [(ngModel)]=\"departmentNoteInput\" placeholder=\"Abteilung auswählen\" name=\"departmentNoteInput\">\n            <option *ngFor=\"let department of departments\"\n                    [value]=\"department\">\n              {{department}}\n            </option>\n          </select>\n        </div>\n        <div class=\"col-lg-12\">\n                <textarea id=\"noteText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"noteInput\" placeholder=\"Note hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px;\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n<div *ngIf=\"showInfoFormBool\">\n  <form class=\"SendInformation\" #myForm=\"ngForm\" (submit)=\"sendInformation($event); myForm.reset() \">\n    <div class=\"form-row\">\n      <div class=\"form-group\">\n        <div class=\"col-lg-6 col-xs-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"name\" [(ngModel)]=\"nameTraceInput\" name=\"Name\" placeholder=\"Name\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"roomNumber\" [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Zimmer Nummer\">\n        </div>\n        <div class=\"col-lg-6 col-xs-6\">\n          <input  class=\"form-control\" style=\"margin-top: 20px\" id=\"tableNumber\" [(ngModel)]=\"tableNumber\" name=\"tableNumber\" placeholder=\"Table Nummer\">\n          <select  class=\"form-control\" style=\"margin-top: 20px\" id=\"employee\" [(ngModel)]=\"employee\" name=\"employee\" placeholder=\"Mitarbeiter\">\n            <option *ngFor=\"let employee of employees\"\n                    [value]=\"employee\">\n              {{employee}}\n            </option>\n          </select>\n        </div>\n        <div class=\"col-lg-12 col-xs-12\">\n                <textarea id=\"informationText\" rows=\"5\" type=\"text\" style=\"margin-bottom: 10px; margin-top: 20px\" [(ngModel)]=\"title\" placeholder=\"Trace hinzufügen\" name=\"title\" class=\"form-control\" required>\n                </textarea>\n        </div>\n      </div>\n      <button type=\"button|submit|reset\" style=\"float: right; margin: 10px 20px 0px 0px;\" class=\"btn btn-primary\">Hinzufügen</button>\n    </div>\n  </form>\n</div>\n\n\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/form/form.component.ts":
+/***/ "./src/app/components/digital-table-plan/form/form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1809,8 +1787,8 @@ var FormComponent = (function () {
         this.parts = [];
         this.departments = [];
         this.employees = [];
-        this.departments = ["Sonnberg-Zirbn", "Restaurant", "Wintergarten", "Panorama"];
-        this.employees = ["Alexandra Lopion", "Julia Ackermann", "Torsten Streit", "Sabrina Schrötwieser", "Loreen Kumpfert", "Aylin Fiedler", "Julia Laue", "Richard Klöffel", "Tino Deisenroth", "Stefan Scheiber", "Dominic Mugambi", "Ralf Rohsmann", "Florian Thurner"];
+        this.departments = ["Terasse", "Bar", "Speisesaal", "Weinstube"];
+        this.employees = ["Test1", "Test2", "Test3", "Test4"];
     }
     FormComponent.prototype.ngOnInit = function () {
     };
@@ -1846,31 +1824,31 @@ var FormComponent = (function () {
                     return;
                 }
                 else {
-                    if (Information.tables[0].department === "Sonnberg-Zirbn") {
-                        for (var i = 0; i < _this.tablesSonnbergZirbn.length; i++) {
-                            if (_this.tablesSonnbergZirbn[i].number === Information.tables[0].number) {
-                                _this.tablesSonnbergZirbn[i] = Information.tables[0];
+                    if (Information.tables[0].department === "Terasse") {
+                        for (var i = 0; i < _this.tablesTerasse.length; i++) {
+                            if (_this.tablesTerasse[i].number === Information.tables[0].number) {
+                                _this.tablesTerasse[i] = Information.tables[0];
                             }
                         }
                     }
-                    else if (Information.tables[0].department === "Panorama") {
-                        for (var i = 0; i < _this.tablesPanorama.length; i++) {
-                            if (_this.tablesPanorama[i].number === Information.tables[0].number) {
-                                _this.tablesPanorama[i] = Information.tables[0];
+                    else if (Information.tables[0].department === "Weinstube") {
+                        for (var i = 0; i < _this.tablesWeinstube.length; i++) {
+                            if (_this.tablesWeinstube[i].number === Information.tables[0].number) {
+                                _this.tablesWeinstube[i] = Information.tables[0];
                             }
                         }
                     }
-                    else if (Information.tables[0].department === "Restaurant") {
-                        for (var i = 0; i < _this.tablesRestaurant.length; i++) {
-                            if (_this.tablesRestaurant[i].number === Information.tables[0].number) {
-                                _this.tablesRestaurant[i] = Information.tables[0];
+                    else if (Information.tables[0].department === "Bar") {
+                        for (var i = 0; i < _this.tablesBar.length; i++) {
+                            if (_this.tablesBar[i].number === Information.tables[0].number) {
+                                _this.tablesBar[i] = Information.tables[0];
                             }
                         }
                     }
-                    else if (Information.tables[0].department === "Wintergarten") {
-                        for (var i = 0; i < _this.tablesWintergarten.length; i++) {
-                            if (_this.tablesWintergarten[i].number === Information.tables[0].number) {
-                                _this.tablesWintergarten[i] = Information.tables[0];
+                    else if (Information.tables[0].department === "Speisesaal") {
+                        for (var i = 0; i < _this.tablesSpeisesaal.length; i++) {
+                            if (_this.tablesSpeisesaal[i].number === Information.tables[0].number) {
+                                _this.tablesSpeisesaal[i] = Information.tables[0];
                             }
                         }
                     }
@@ -1950,21 +1928,21 @@ __decorate([
     __metadata("design:type", String)
 ], FormComponent.prototype, "employee", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesBar'),
     __metadata("design:type", Array)
-], FormComponent.prototype, "tablesRestaurant", void 0);
+], FormComponent.prototype, "tablesBar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWeinstube'),
     __metadata("design:type", Array)
-], FormComponent.prototype, "tablesPanorama", void 0);
+], FormComponent.prototype, "tablesWeinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSpeisesaal'),
     __metadata("design:type", Array)
-], FormComponent.prototype, "tablesWintergarten", void 0);
+], FormComponent.prototype, "tablesSpeisesaal", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesTerasse'),
     __metadata("design:type", Array)
-], FormComponent.prototype, "tablesSonnbergZirbn", void 0);
+], FormComponent.prototype, "tablesTerasse", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showInfoFormBool'),
     __metadata("design:type", Boolean)
@@ -1978,21 +1956,21 @@ __decorate([
     __metadata("design:type", Object)
 ], FormComponent.prototype, "noteElements", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
     __metadata("design:type", Boolean)
-], FormComponent.prototype, "showWintergartenBool", void 0);
+], FormComponent.prototype, "showSpeisesaalBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
     __metadata("design:type", Boolean)
-], FormComponent.prototype, "showSonnbergZirbnBool", void 0);
+], FormComponent.prototype, "showTerasseBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", Boolean)
-], FormComponent.prototype, "showPanoramaBool", void 0);
+], FormComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
     __metadata("design:type", Boolean)
-], FormComponent.prototype, "showRestaurantBool", void 0);
+], FormComponent.prototype, "showBarBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showAllBool'),
     __metadata("design:type", Boolean)
@@ -2008,8 +1986,8 @@ __decorate([
 FormComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-form',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/form/form.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/form/form.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], FormComponent);
@@ -2019,20 +1997,20 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.html":
+/***/ "./src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3 style=\"margin-top: 0;margin-bottom: 0;color: #0a7a74;\">Im-Haus</h3>\n<div class=\"row1\">\n  <div class='wrapper'>\n    <div *ngFor=\"let imHausListElement of imHausListElemente\">\n      <div *ngIf=\"imHausListElement.trace === '-' && !imHausListElement.isArrival\">\n        <div class='cards-container' id='container1' [dragula]='\"evented-bag\"'>\n          <div class=\"card\" id=\"card1\" [ngStyle]=\"{'background-color': '#' + imHausListElement.bgColor}\">\n            <p> <b>Name:</b> {{imHausListElement.name}}<br>\n              <b>Nation:</b> {{imHausListElement.nation}}<br>\n              <b>Sprache:</b> {{imHausListElement.language}}<br>\n              <b>Kategorie:</b> {{imHausListElement.categorie}}<br>\n              <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>\n              <b>Preis Typ:</b> {{imHausListElement.typeOfPrice}}<br>\n              <b>Anreise:</b> {{imHausListElement.arrival}}<br>\n              <b>Abreise:</b> {{imHausListElement.departure}}<br>\n              <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>\n              <b>Reisebüro:</b> {{imHausListElement.source}}<br>\n              <b>Notiz1:</b> {{imHausListElement.note1}}<br>\n              <b>Notiz2:</b> {{imHausListElement.note2}}<br>\n              <b>Trace:</b> {{imHausListElement.trace}}<br>\n            </p>\n            <div *ngIf=\"imHausListElement.bgColor === '0a7a74'\">\n              <i class=\"fa fa-check\" style=\"float: right; color: white\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"arrivalTextButton\" style=\"height: 45px\">\n<h3 style=\"margin-top: 0;margin-bottom: 0;color: #0a7a74; max-width: 50%; float: left;\">Anreisen</h3><div class=\"btn-group\" style=\"float: right\" dropdown>\n  <button style=\"margin: 10px 0 0 0\" dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">Heute/Morgen<span class=\"caret\"></span></button>\n  <ul *dropdownMenu class=\"dropdown-menu\" style=\"padding: 0px; height: auto\" role=\"menu\">\n    <div style=\"margin: 0 0 0 0; padding: 10px\" class=\"changeToday\" (mouseenter)=\"mouseEnterChangeTodayButton()\"  (mouseleave)=\"mouseLeaveChangeTodayButton()\" (click)=\"changeDayToToday($event); sortList($event)\" [ngStyle]=\"{'background-color': '#' + bgColorToday}\"><p >Heute</p></div>\n    <div style=\"margin: 0 0 0 0; padding: 10px\" class=\"changeTomorrow\" (mouseenter)=\"mouseEnterChangeTomorrowButton()\"  (mouseleave)=\"mouseLeaveChangeTomorrowButton()\" (click)=\"changeDayToTomorrow($event); sortList($event)\" [ngStyle]=\"{'background-color': '#' + bgColorTomorrow}\"><p >Morgen</p></div>\n  </ul>\n</div>\n</div>\n<div class=\"row1\">\n  <div class='wrapper'>\n    <div *ngFor=\"let imHausListElement of imHausListElemente\">\n      <div *ngIf=\"imHausListElement.trace === '-' && imHausListElement.isArrival\">\n        <div class='cards-container' id='container2' [dragula]='\"evented-bag\"'>\n          <div class=\"card\" id=\"card2\" [ngStyle]=\"{'background-color': '#' + imHausListElement.bgColor}\">\n            <p> <b>Name:</b> {{imHausListElement.name}}<br>\n              <b>Nation:</b> {{imHausListElement.nation}}<br>\n              <b>Sprache:</b> {{imHausListElement.language}}<br>\n              <b>Kategorie:</b> {{imHausListElement.categorie}}<br>\n              <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>\n              <b>Preis Typ:</b> {{imHausListElement.typeOfPrice}}<br>\n              <b>Anreise:</b> {{imHausListElement.arrival}}<br>\n              <b>Abreise:</b> {{imHausListElement.departure}}<br>\n              <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>\n              <b>Reisebüro:</b> {{imHausListElement.source}}<br>\n              <b>Notiz1:</b> {{imHausListElement.note1}}<br>\n              <b>Notiz2:</b> {{imHausListElement.note2}}<br>\n              <b>Trace:</b> {{imHausListElement.trace}}<br>\n            </p>\n            <div *ngIf=\"imHausListElement.bgColor === '0a7a74'\">\n              <i class=\"fa fa-check\" style=\"float: right; color: white\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<h3 style=\"margin-top: 0;margin-bottom: 0;color: #0a7a74;\">Traces</h3>\n<div class=\"row1\">\n  <div class='wrapper'>\n    <div *ngFor=\"let imHausListElement of imHausListElemente\">\n      <div *ngIf=\"imHausListElement.trace != '-'\">\n        <div class='cards-container' id='container3' [dragula]='\"evented-bag\"'>\n          <div class=\"card\" id=\"card3\" [ngStyle]=\"{'background-color': '#' + imHausListElement.bgColor}\">\n            <p> <b>Name:</b> {{imHausListElement.name}}<br>\n              <b>Nation:</b> {{imHausListElement.nation}}<br>\n              <b>Sprache:</b> {{imHausListElement.language}}<br>\n              <b>Kategorie:</b> {{imHausListElement.categorie}}<br>\n              <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>\n              <b>Preis Typ:</b> {{imHausListElement.typeOfPrice}}<br>\n              <b>Anreise:</b> {{imHausListElement.arrival}}<br>\n              <b>Abreise:</b> {{imHausListElement.departure}}<br>\n              <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>\n              <b>Reisebüro:</b> {{imHausListElement.source}}<br>\n              <b>Notiz1:</b> {{imHausListElement.note1}}<br>\n              <b>Note2:</b> {{imHausListElement.note2}}<br>\n              <b>Trace:</b> {{imHausListElement.trace}}<br>\n            </p>\n            <div *ngIf=\"imHausListElement.bgColor === '0a7a74'\">\n              <i class=\"fa fa-check\" style=\"float: right; color: white\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<h3 style=\"margin-top: 0;margin-bottom: 0;color: #0a7a74;\">Im-Haus</h3>\n<div class=\"row1\">\n  <div class='wrapper'>\n    <div *ngFor=\"let imHausListElement of imHausListElemente\">\n      <div *ngIf=\"!imHausListElement.isArrival\">\n        <div class='cards-container' id='container1' [dragula]='\"evented-bag\"'>\n          <div class=\"card\" id=\"card1\" [ngStyle]=\"{'background-color': '#' + imHausListElement.bgColor}\">\n            <p> <b>Name:</b> {{imHausListElement.name}}<br>\n              <b>Nation:</b> {{imHausListElement.nation}}<br>\n              <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>\n              <b>Anreise:</b> {{imHausListElement.arrival}}<br>\n              <b>Abreise:</b> {{imHausListElement.departure}}<br>\n              <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>\n            </p>\n            <div *ngIf=\"imHausListElement.bgColor === '0a7a74'\">\n              <i class=\"fa fa-check\" style=\"float: right; color: white\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"arrivalTextButton\" style=\"height: 45px\">\n<h3 style=\"margin-top: 0;margin-bottom: 0;color: #0a7a74; max-width: 50%; float: left;\">Anreisen</h3><div class=\"btn-group\" style=\"float: right\" dropdown>\n  <button style=\"margin: 10px 0 0 0\" dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">Heute/Morgen<span class=\"caret\"></span></button>\n  <ul *dropdownMenu class=\"dropdown-menu\" style=\"padding: 0px; height: auto\" role=\"menu\">\n    <div style=\"margin: 0 0 0 0; padding: 10px\" class=\"changeToday\" (mouseenter)=\"mouseEnterChangeTodayButton()\"  (mouseleave)=\"mouseLeaveChangeTodayButton()\" (click)=\"changeDayToToday($event); sortList($event)\" [ngStyle]=\"{'background-color': '#' + bgColorToday}\"><p >Heute</p></div>\n    <div style=\"margin: 0 0 0 0; padding: 10px\" class=\"changeTomorrow\" (mouseenter)=\"mouseEnterChangeTomorrowButton()\"  (mouseleave)=\"mouseLeaveChangeTomorrowButton()\" (click)=\"changeDayToTomorrow($event); sortList($event)\" [ngStyle]=\"{'background-color': '#' + bgColorTomorrow}\"><p >Morgen</p></div>\n  </ul>\n</div>\n</div>\n<div class=\"row1\">\n  <div class='wrapper'>\n    <div *ngFor=\"let imHausListElement of imHausListElemente\">\n      <div *ngIf=\"imHausListElement.isArrival\">\n        <div class='cards-container' id='container2' [dragula]='\"evented-bag\"'>\n          <div class=\"card\" id=\"card2\" [ngStyle]=\"{'background-color': '#' + imHausListElement.bgColor}\">\n            <p> <b>Name:</b> {{imHausListElement.name}}<br>\n              <b>Nation:</b> {{imHausListElement.nation}}<br>\n              <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>\n              <b>Anreise:</b> {{imHausListElement.arrival}}<br>\n              <b>Abreise:</b> {{imHausListElement.departure}}<br>\n              <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>\n            </p>\n            <div *ngIf=\"imHausListElement.bgColor === '0a7a74'\">\n              <i class=\"fa fa-check\" style=\"float: right; color: white\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts":
+/***/ "./src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImHausListComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2162,8 +2140,8 @@ __decorate([
 ImHausListComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-im-haus-list',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _a || Object])
 ], ImHausListComponent);
@@ -2173,39 +2151,28 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/login/login.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/digital-table-plan/login/login.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "html, body {\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row {\n    height: 100%;\n    background-color: #0a7a74;\n    margin: 0;\n}\n\n.row .container-fluid {\n    background-color: #0a7a74;\n    height: 100vh;\n}\n\n.row .container-fluid .col-md-4 {\n    background-color: #0a7a74;\n    height: 100%;\n}\n\n\n\n\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = "html, body {\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    background-color: #0a7a74;\n}\n\n.row {\n    height: 100%;\n    background-color: #0a7a74;\n    margin: 0;\n}\n\n.row .container-fluid {\n    background-color: #0a7a74;\n    height: 100vh;\n}\n\n.row .container-fluid .col-md-4 {\n    background-color: #0a7a74;\n    height: 100%;\n}\n\n\n\n\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/login/login.component.html":
+/***/ "./src/app/components/digital-table-plan/login/login.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n</head>\n<body>\n<div class=\"row\">\n<div class=\"container-fluid\">\n    <div class=\"col-md-4  hidden-xs hidden-sm\">\n    </div>\n    <div class=\"col-md-4\" style=\"padding-top: 20px\">\n      <div class=\"brand\" style=\"text-align: center\"><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2017/05/servicio-logo-lang-weiss.png\" style=\"height: 45px; width: auto; margin-top:0px; margin-right: 10px; text-align: center; display:inline-block; vertical-align:middle;\"></div>\n      <h2 style=\"color: #FFFFFF\">Login</h2>\n      <form (submit)=\"onLoginSubmit()\">\n        <div class=\"form-group\">\n          <label style=\"color: #FFFFFF\">Benutzername</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\n        </div>\n        <div class=\"form-group\">\n          <label style=\"color: #FFFFFF\">Passwort</label>\n          <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\n        </div>\n        <input type=\"submit\" class=\"btn btn-primary\" style=\"background-color: #ffffff; color: #0a7a74\" value=\"Login\">\n      </form>\n    </div>\n    <div class=\"col-md-4  hidden-xs  hidden-sm\">\n    </div>\n</div>\n</div>\n</body>\n</html>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/login/login.component.ts":
+/***/ "./src/app/components/digital-table-plan/login/login.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2254,8 +2221,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/login/login.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/login/login.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/login/login.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/login/login.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], LoginComponent);
@@ -2265,47 +2232,36 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/main.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "html {\n  background-color: #0a7a74;\n}\n\nhtml, body {\n  padding: 0;\n  margin: 0;\n  height: 100vh;\n  background-color: #0a7a74;\n}\n\nspan {\n  color: #9d9d9d;\n}\n\n.container-fluid {\n  padding: 0 0 10px 0;\n  margin: 0;\n  height: 100vh;\n  max-width: 100vw;\n  background-color: #0a7a74;\n}\n\n.row {\n  max-width: 100vw;\n  min-height: 100vh;\n  padding: 0 15px 15px 15px;\n  background-color: #0a7a74;\n  margin: 0 0 0 0;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 115px;\n}\n\n.line1{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 95px;\n}\n\n.printTwo {\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n  background-color: #0a7a74;\n  max-height: calc(100vh - 241px);\n  top:-100px;\n  z-index: -1;\n}\n\n.row .inner-table {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  max-height: calc(100vh - 120px);\n}\n\n.row .table-col {\n  min-height: calc(100vh - 70px);\n  max-height: calc(100vh - 70px);\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  border-radius: 3px;\n  width: calc(100vw - 20px);\n  max-width: 100%;\n}\n\n.print-col {\n  padding: 0;\n  min-height: auto;\n  box-sizing: border-box;\n  z-index: 2;\n}\n\n.row .upload-col {\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 70px);\n  max-height: calc(100vh - 70px);\n  border-radius: 3px;\n  z-index: 1;\n}\n.section2 {\n  display: none;\n}\n\n.section3 {\n  display: none;\n}\n\n.row1 {\n  height: calc((100vh - 195px) / 3);\n  overflow: auto;\n}\n\n.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Table, .anleitung {\n  display: none;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px 10px 40px 10px;\n}\n\n\n.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n\n}\n\n#containerRestaurant, #containerPanorama, #containerWintergarten, #containerSonnbergZirbn {\n  border-radius: 3px;\n  border: solid 1px grey;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\nbody html .row .container-fluid .upload-col .outer-cards h3 {\n  margin-top: 0px;\n  margin-bottom: 0px;\n  color: #0a7a74;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.table-item {\n  position: absolute;\n}\n\n.btn-send {\n  display: none;\n}\n\n.xls {\n  margin-bottom: 30px;\n}\n\n.btn-default {\n  display: none;\n}\n\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin: 10px 20px 20px 0px;\n  border: none;\n}\n\n.btn-group-departments {\n  margin: 0px 10px 5px 0px;\n}\n\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n@media (min-width: 701px) {\n\n\n  .row {\n    max-width: 100vw;\n    max-height: calc(100vh - 60px);\n    padding: 0 15px 15px 15px;\n    background-color: #0a7a74;\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 70px);\n    min-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    max-width: calc(100vw - 20px);\n    width: 30%;\n    margin: 60px 0 0 10px;\n  }\n\n  .btn-group-departments {\n    margin: 0 10px 5px 20px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh - 60px);\n    max-height: calc(100vh - 60px);\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 121px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height:  calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n  }\n\n  .print-col {\n    margin-left: 15px;\n    width: 65%;\n    max-height: calc(100vh - 60px);\n  }\n}\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh - 60px);\n    max-height: calc(100vh - 60px);\n  }\n\n  .row .table-col {\n    min-height: calc(100vh - 70px);\n    max-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    width: 23%;\n    margin: 60px 0 0 10px;\n\n  }\n\n  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Table, .anleitung {\n    display: block;\n  }\n\n  .print-col {\n    width: 48%;\n    margin-left: 15px;\n    margin-right: 15px;\n    max-height: calc(100vh - 60px);\n\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    box-sizing: border-box;\n    min-height: calc(100vh - 70px);\n    max-height: calc(100vh - 70px);\n    margin-top: 60px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 125px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n}\n\n@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {\n  .navbar-nav {\n    display: inline-block;\n  }\n}\n\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/main.component.html":
+/***/ "./src/app/components/digital-table-plan/main.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n  <script src=\"node_modules/angular2/es6/dev/src/testing/shims_for_IE.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n<app-navigation  [newInformationElements]=\"newInformationElements\"\n                 [tablesOccupied]=\"tablesOccupied\"\n                 [tablesTempDeparture]=\"tablesTempDeparture\"\n                 (getTablesOccupied)=\"tablesOccupied = $event\"\n                 (reseatExport)=\"reseatInfoVar = $event; reseat($event)\"\n                 (departureExportExport)=\"departureTablePlusIndex = $event; departureRemoval($event)\"\n                 (transformExport)=\"term = $event; transform($event)\"\n                 (termExport)=\"term = $event\"\n                 (reloadLists)=\"reloadLists($event)\"\n                 [newInformationEmployees]=\"newInformationEmployees\"\n                 (getTablesExport)=\"getTables($event)\">\n</app-navigation>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showPanoramaBool]=\"showPanoramaBool\"\n          [showRestaurantBool]=\"showRestaurantBool\"\n          [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n          [showWintergartenBool]=\"showWintergartenBool\"\n          [showAllBool]=\"showAllBool\"\n          (showSonnbergZirbnBoolChange)=\"showSonnbergZirbnBool=$event\"\n          (showPanoramaBoolChange)=\"showPanoramaBool=$event\"\n          (showRestaurantBoolChange)=\"showRestaurantBool=$event\"\n          (showWintergartenBoolChange)=\"showWintergartenBool=$event\"\n          (showAllBoolChange)=\"showAllBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNoteForm]=\"buttonBgColorNoteForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNoteForm]=\"fontColorNoteForm\"\n          [showNoteFormBool]=\"showNoteFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNoteFormBoolChange)=\"showNoteFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesPanorama]=\"tablesPanorama\"\n                  [tablesRestaurant]=\"tablesRestaurant\"\n                  [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                  [tablesWintergarten]=\"tablesWintergarten\"\n                  [showNoteFormBool]=\"showNoteFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [noteElements]=\"noteElements\"\n                  [showPanoramaBool]=\"showPanoramaBool\"\n                  [showRestaurantBool]=\"showRestaurantBool\"\n                  [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                  [showWintergartenBool]=\"showWintergartenBool\"\n                  [showAllBool]=\"showAllBool\"\n                  (noteResponse)=\"noteElements=$event\"\n                  (changeColorIfArrivalExport)=\"changeBgColorIfArrival($event)\">\n        </app-form>\n        <app-tableplan [tablesWintergarten]=\"tablesWintergarten\"\n                       [showWintergartenBool]=\"showWintergartenBool\"\n                       [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                       [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                       [tablesPanorama]=\"tablesPanorama\"\n                       [showPanoramaBool]=\"showPanoramaBool\"\n                       [tablesRestaurant]=\"tablesRestaurant\"\n                       [showRestaurantBool]=\"showRestaurantBool\"\n                       (movedSonnbergZirbn)=\"tablesSonnbergZirbn = $event\"\n                       (movedRestaurant)=\"tablesRestaurant = $event\"\n                       (movedPanorama)=\"tablesPanorama = $event\"\n                       (movedWintergarten)=\"tablesWintergarten = $event\"\n                       [showAllBool]=\"showAllBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\"\n                       (changeBgColorIfArrival)=\"changeBgColorIfArrival($event)\"\n                       (adultPanoramaExport)=\"adultPanorama=$event\"\n                       (adultRestaurantExport)=\"adultRestaurant=$event\"\n                       (adultSonnbergZirbnExport)=\"adultSonnbergZirbn=$event\"\n                       (adultWintergartenExport)=\"adultWintergarten=$event\"\n                       (childPanoramaExport)=\"childPanorama=$event\"\n                       (childRestaurantExport)=\"childRestaurant=$event\"\n                       (childSonnbergZirbnExport)=\"childSonnbergZirbn=$event\"\n                       (childWintergartenExport)=\"childWintergarten=$event\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <app-im-haus-list [imHausListElemente]=\"imHausListElemente\"></app-im-haus-list>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesWintergarten]=\"tablesWintergarten\"\n                               [showWintergartenBool]=\"showWintergartenBool\"\n                               [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n                               [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n                               [tablesPanorama]=\"tablesPanorama\"\n                               [showPanoramaBool]=\"showPanoramaBool\"\n                               [tablesRestaurant]=\"tablesRestaurant\"\n                               [showRestaurantBool]=\"showRestaurantBool\"\n                               (dispensedSonnbergZirbn)=\"tablesSonnbergZirbn=$event\"\n                               (dispensedRestaurant)=\"tablesRestaurant=$event\"\n                               (dispensedPanorama)=\"tablesPanorama=$event\"\n                               (dispensedWintergarten)=\"tablesWintergarten=$event\"\n                               [term]=\"term\"\n                               [showAllBool]=\"showAllBool\"\n                               (updateAzList)=\"updateAzList($event)\"\n                               [tablesTempDeparture]=\"tablesTempDeparture\"\n                               [tables]=\"tables\"\n                               (updateImHausListElement)=\"updateImHausListElement($event); table = $event;\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesPanorama]=\"tablesPanorama\"\n            [showPanoramaBool]=\"showPanoramaBool\"\n            [showRestaurantBool]=\"showRestaurantBool\"\n            [tablesRestaurant]=\"tablesRestaurant\"\n            [showSonnbergZirbnBool]=\"showSonnbergZirbnBool\"\n            [tablesSonnbergZirbn]=\"tablesSonnbergZirbn\"\n            [showWintergartenBool]=\"showWintergartenBool\"\n            [tablesWintergarten]=\"tablesWintergarten\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\"\n            [adultPanorama]=\"adultPanorama\"\n            [adultRestaurant]=\"adultRestaurant\"\n            [adultSonnbergZirbn]=\"adultSonnbergZirbn\"\n            [adultWintergarten]=\"adultWintergarten\"\n            [childPanorama]=\"childPanorama\"\n            [childRestaurant]=\"childRestaurant\"\n            [childSonnbergZirbn]=\"childSonnbergZirbn\"\n            [childWintergarten]=\"childWintergarten\">\n</app-print>\n</html>\n"
+module.exports = "html {\n  background-color: #0a7a74;\n}\n\nhtml, body {\n  padding: 0;\n  margin: 0;\n  height: 100vh;\n  background-color: #0a7a74;\n}\n\nspan {\n  color: #9d9d9d;\n}\n\n.container-fluid {\n  padding: 0 0 10px 0;\n  margin: 0;\n  height: 100vh;\n  max-width: 100vw;\n  background-color: #0a7a74;\n}\n\n.row {\n  max-width: 100vw;\n  min-height: 100vh;\n  padding: 0 15px 15px 15px;\n  background-color: #0a7a74;\n  margin: 0 0 0 0;\n}\n\n.line{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 115px;\n}\n\n.line1{\n  width: 100%;\n  height: 20px;\n  border-bottom: solid 10px #0a7a74;\n  position: absolute;\n  right: 0px;\n  top: 95px;\n}\n\n.printTwo {\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n  background-color: #0a7a74;\n  max-height: calc(100vh - 241px);\n  top:-100px;\n  z-index: -1;\n}\n\n.row .inner-table {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  max-height: calc(100vh - 120px);\n}\n\n.row .table-col {\n  min-height: calc(100vh - 70px);\n  max-height: calc(100vh - 70px);\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  border-radius: 3px;\n  width: calc(100vw - 20px);\n  max-width: 100%;\n}\n\n.print-col {\n  padding: 0;\n  min-height: auto;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  z-index: 2;\n}\n\n.row .upload-col {\n  background-color: #f3efe4;\n  padding: 10px 10px 20px 10px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  min-height: calc(100vh - 70px);\n  max-height: calc(100vh - 70px);\n  border-radius: 3px;\n  z-index: 1;\n}\n\n.section2 {\n  display: none;\n}\n\n.section3 {\n  display: none;\n}\n\n.row1 {\n  height: calc((100vh - 195px) / 2);\n  overflow: auto;\n}\n\n.row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Table, .anleitung {\n  display: none;\n}\n\n.cards-container {\n  margin: 10px 0px 10px 0px;\n  padding: 10px 10px 40px 10px;\n}\n\n.row .container-fluid  .table-col .inner-table .row3 .wrapper .cards-container {\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n\n}\n\n#containerBar, #containerWeinstube, #containerSpeisesaal, #containerTerasse {\n  border-radius: 3px;\n  border: solid 1px grey;\n}\n\n.row .container-fluid .col-md-4 .row1 {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  width: 105%;\n  height: 232.5px;\n  padding-top: 20px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper {\n  overflow: auto;\n  margin: 0 0 0 0;\n  display: inline-block;\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container {\n  overflow: auto;\n  margin: 20px 40px 20px 0;\n  display: inline-block;\n  max-width: 100%;\n  border-radius: 3px;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 {\n  overflow: auto;\n  margin: 0 auto;\n  display: inline-block;\n  width: 100%;\n  height: 800px;\n  padding-top: 20px;\n}\n\n.row .container-fluid h3 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 0 auto;\n  display: inline-block;\n  color: #0a7a74;\n  position: relative;\n  text-align: center;\n}\n\n.row .container-fluid .col-md-4 h3 {\n  margin: 0 auto;\n  color: #0a7a74;\n  position: relative;\n}\n\nbody html .row .container-fluid .upload-col .outer-cards h3 {\n  margin-top: 0px;\n  margin-bottom: 0px;\n  color: #0a7a74;\n}\n\n.row1 .col {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n\n.row1 .col:nth-child(2) {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n\n.row1 .col:nth-child(3) {\n  -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n          order: 2;\n}\n\n.row .col-md-4 .row2 {\n  padding-bottom: 10px;\n  position: relative;\n  min-height: 100%;\n  border-bottom: 1px solid red;\n}\n\n.card {\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  border-radius: 3px;\n  border: solid 1px grey;\n  padding: 10px 10px 15px 10px;\n}\n\n.row .container-fluid .col-md-4 .row1 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .wrapper .container .card p {\n  /*padding:10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .row3 .row1 p {\n  /*padding: 10px 10px 10px 10px;*/\n  background: rgb(255,255,255); /* Fall-back for browsers that don support rgba */\n  background: rgba(255,255,255, 1);\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-4 .col-xs-12 .row1 .wrapper .container .card p {\n  /*padding: 10px 10px 10px 10px;*/\n  max-width: 100%;\n}\n\n.row .container-fluid .col-md-6 .row {\n  background-color: #eaf3f3;\n  padding: 20px 10px 20px 10px;\n  height: 100%;\n}\n\n.table-item {\n  position: absolute;\n}\n\n.btn-send {\n  display: none;\n}\n\n.xls {\n  margin-bottom: 30px;\n}\n\n.btn-default {\n  display: none;\n}\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin: 10px 20px 20px 0px;\n  border: none;\n}\n\n.btn-group-departments {\n  margin: 0px 10px 5px 0px;\n}\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n@media (min-width: 701px) {\n\n\n  .row {\n    max-width: 100vw;\n    max-height: calc(100vh - 60px);\n    padding: 0 15px 15px 15px;\n    background-color: #0a7a74;\n  }\n\n  .row .table-col {\n    max-height: calc(100vh - 70px);\n    min-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    max-width: calc(100vw - 20px);\n    width: 30%;\n    margin: 60px 0 0 10px;\n  }\n\n  .btn-group-departments {\n    margin: 0 10px 5px 20px;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh - 60px);\n    max-height: calc(100vh - 60px);\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 121px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    min-height:  calc(100vh - 10px);\n    max-height: calc(100vh - 10px);\n  }\n\n  .print-col {\n    margin-left: 15px;\n    width: 65%;\n    max-height: calc(100vh - 60px);\n  }\n}\n\n@media (min-width: 1200px) {\n  .btn-default {\n    display: inline-block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .printTwo {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    background-color: #0a7a74;\n    min-height: calc(100vh - 60px);\n    max-height: calc(100vh - 60px);\n  }\n\n  .row .table-col {\n    min-height: calc(100vh - 70px);\n    max-height: calc(100vh - 70px);\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    width: 23%;\n    margin: 60px 0 0 10px;\n\n  }\n\n  .row .upload-col, .printToCart2, .dropdown-toggle, .printToCart1, .printToCart3, .Table, .anleitung {\n    display: block;\n  }\n\n  .print-col {\n    width: 48%;\n    margin-left: 15px;\n    margin-right: 15px;\n    max-height: calc(100vh - 60px);\n\n  }\n\n  .row .upload-col {\n    background-color: #f3efe4;\n    padding: 20px 10px 20px 10px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    min-height: calc(100vh - 70px);\n    max-height: calc(100vh - 70px);\n    margin-top: 60px;\n  }\n\n  .row .inner-table {\n    max-height: calc(100vh - 125px);\n    overflow: auto;\n    -webkit-overflow-scrolling: touch;\n  }\n}\n\n@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {\n  .navbar-nav {\n    display: inline-block;\n  }\n}\n\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/main.component.ts":
+/***/ "./src/app/components/digital-table-plan/main.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>\n<html>\n<head>\n  <title>Dashboard</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"node_modules/core-js/client/shim.min.js\"></script>\n  <script src=\"<your-libs-directory>/object-assign.min.js\"></script>\n  <script src=\"node_modules/angular2/es6/dev/src/testing/shims_for_IE.js\"></script>\n</head>\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\"><%= errMsg  %></div>\n<body>\n<app-navigation  [newInformationElements]=\"newInformationElements\"\n                 [tablesOccupied]=\"tablesOccupied\"\n                 [tablesTempDeparture]=\"tablesTempDeparture\"\n                 (getTablesOccupied)=\"tablesOccupied = $event\"\n                 (reseatExport)=\"reseatInfoVar = $event; reseat($event)\"\n                 (departureExportExport)=\"departureTablePlusIndex = $event; departureRemoval($event)\"\n                 (transformExport)=\"term = $event; transform($event)\"\n                 (termExport)=\"term = $event\"\n                 (reloadLists)=\"reloadLists($event)\"\n                 [newInformationEmployees]=\"newInformationEmployees\"\n                 (getTablesExport)=\"getTables($event)\">\n</app-navigation>\n  <div class=\"row\">\n    <div class=\"container-fluid\">\n      <flash-messages></flash-messages>\n      <div class=\"col-xs-12 col-sm-8 col-lg-6 print-col\">\n        <app-departmentmenu\n          [buttonBgColor1]=\"buttonBgColor1\"\n          [buttonBgColor2]=\"buttonBgColor2\"\n          [buttonBgColor3]=\"buttonBgColor3\"\n          [buttonBgColor4]=\"buttonBgColor4\"\n          [buttonBgColor5]=\"buttonBgColor5\"\n          [fontColor1]=\"fontColor1\"\n          [fontColor2]=\"fontColor2\"\n          [fontColor3]=\"fontColor3\"\n          [fontColor4]=\"fontColor4\"\n          [fontColor5]=\"fontColor5\"\n          [showWeinstubeBool]=\"showWeinstubeBool\"\n          [showBarBool]=\"showBarBool\"\n          [showTerasseBool]=\"showTerasseBool\"\n          [showSpeisesaalBool]=\"showSpeisesaalBool\"\n          [showAllBool]=\"showAllBool\"\n          (showTerasseBoolChange)=\"showTerasseBool=$event\"\n          (showWeinstubeBoolChange)=\"showWeinstubeBool=$event\"\n          (showBarBoolChange)=\"showBarBool=$event\"\n          (showSpeisesaalBoolChange)=\"showSpeisesaalBool=$event\"\n          (showAllBoolChange)=\"showAllBool=$event\"\n          [buttonBgColorInfoForm]=\"buttonBgColorInfoForm\"\n          [buttonBgColorNoteForm]=\"buttonBgColorNoteForm\"\n          [fontColorInfoForm]=\"fontColorInfoForm\"\n          [fontColorNoteForm]=\"fontColorNoteForm\"\n          [showNoteFormBool]=\"showNoteFormBool\"\n          [showInfoFormBool]=\"showInfoFormBool\"\n          (showInfoFormBoolChange)=\"showInfoFormBool=$event\"\n          (showNoteFormBoolChange)=\"showNoteFormBool=$event\"\n          (showTablePlanBoolChange)=\"showTablePlanBool=$event\"\n          [showTablePlanBool]=\"showTablePlanBool\"\n          [buttonBgColorShowTablePlan]=\"buttonBgColorShowTablePlan\"\n          [fontColorShowTablePlan]=\"fontColorShowTablePlan\">\n        </app-departmentmenu><flash-messages></flash-messages>\n        <app-form [newInformationElements]=\"newInformationElements\"\n                  [dateGenerated]=\"dateGenerated\"\n                  [title]=\"title\"\n                  [roomNumber]=\"roomNumber\"\n                  [tableNumber]=\"tableNumber\"\n                  [employee]=\"employee\"\n                  [nameTraceInput]=\"nameTraceInput\"\n                  [tablesWeinstube]=\"tablesWeinstube\"\n                  [tablesBar]=\"tablesBar\"\n                  [tablesTerasse]=\"tablesTerasse\"\n                  [tablesSpeisesaal]=\"tablesSpeisesaal\"\n                  [showNoteFormBool]=\"showNoteFormBool\"\n                  [showInfoFormBool]=\"showInfoFormBool\"\n                  [noteElements]=\"noteElements\"\n                  [showWeinstubeBool]=\"showWeinstubeBool\"\n                  [showBarBool]=\"showBarBool\"\n                  [showTerasseBool]=\"showTerasseBool\"\n                  [showSpeisesaalBool]=\"showSpeisesaalBool\"\n                  [showAllBool]=\"showAllBool\"\n                  (noteResponse)=\"noteElements=$event\"\n                  (changeColorIfArrivalExport)=\"changeBgColorIfArrival($event)\">\n        </app-form>\n        <app-tableplan [tablesSpeisesaal]=\"tablesSpeisesaal\"\n                       [showSpeisesaalBool]=\"showSpeisesaalBool\"\n                       [tablesTerasse]=\"tablesTerasse\"\n                       [showTerasseBool]=\"showTerasseBool\"\n                       [tablesWeinstube]=\"tablesWeinstube\"\n                       [showWeinstubeBool]=\"showWeinstubeBool\"\n                       [tablesBar]=\"tablesBar\"\n                       [showBarBool]=\"showBarBool\"\n                       (movedTerasse)=\"tablesTerasse = $event\"\n                       (movedBar)=\"tablesBar = $event\"\n                       (movedWeinstube)=\"tablesWeinstube = $event\"\n                       (movedSpeisesaal)=\"tablesSpeisesaal = $event\"\n                       [showAllBool]=\"showAllBool\"\n                       [showTablePlanBool]=\"showTablePlanBool\"\n                       (changeBgColorIfArrival)=\"changeBgColorIfArrival($event)\"\n                       (adult1WeinstubeExport)=\"adult1Weinstube=$event\"\n                       (adult2WeinstubeExport)=\"adult2Weinstube=$event\"\n                       (adult1BarExport)=\"adult1Bar=$event\"\n                       (adult2BarExport)=\"adult2Bar=$event\"\n                       (adult1TerasseExport)=\"adult1Terasse=$event\"\n                       (adult2TerasseExport)=\"adult2Terasse=$event\"\n                       (adult1SpeisesaalExport)=\"adult1Speisesaal=$event\"\n                       (adult2SpeisesaalExport)=\"adult2Speisesaal=$event\"\n                       (child1WeinstubeExport)=\"child1Weinstube=$event\"\n                       (child2WeinstubeExport)=\"child2Weinstube=$event\"\n                       (child3WeinstubeExport)=\"child3Weinstube=$event\"\n                       (child4WeinstubeExport)=\"child4Weinstube=$event\"\n                       (child1BarExport)=\"child1Bar=$event\"\n                       (child2BarExport)=\"child2Bar=$event\"\n                       (child3BarExport)=\"child3Bar=$event\"\n                       (child4BarExport)=\"child4Bar=$event\"\n                       (child1TerasseExport)=\"child1Terasse=$event\"\n                       (child2TerasseExport)=\"child2Terasse=$event\"\n                       (child3TerasseExport)=\"child3Terasse=$event\"\n                       (child4TerasseExport)=\"child4Terasse=$event\"\n                       (child1SpeisesaalExport)=\"child1Speisesaal=$event\"\n                       (child2SpeisesaalExport)=\"child2Speisesaal=$event\"\n                       (child3SpeisesaalExport)=\"child3Speisesaal=$event\"\n                       (child4SpeisesaalExport)=\"child4Speisesaal=$event\">\n        </app-tableplan>\n      </div>\n      <div class=\"col-xs-12 col-lg-3 upload-col\">\n        <div class=\"outer-cards\">\n          <app-im-haus-list [imHausListElemente]=\"imHausListElemente\"></app-im-haus-list>\n        </div>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-lg-3 table-col\">\n        <h3 >Tisch Übersicht</h3>\n        <div class=\"inner-table\" style=\"padding: 0px 0px 0px 0px;\">\n          <div class=\"row3\">\n            <div class='wrapper' id=\"wrapper\">\n              <app-departments [tablesSpeisesaal]=\"tablesSpeisesaal\"\n                               [showSpeisesaalBool]=\"showSpeisesaalBool\"\n                               [tablesTerasse]=\"tablesTerasse\"\n                               [showTerasseBool]=\"showTerasseBool\"\n                               [tablesWeinstube]=\"tablesWeinstube\"\n                               [showWeinstubeBool]=\"showWeinstubeBool\"\n                               [tablesBar]=\"tablesBar\"\n                               [showBarBool]=\"showBarBool\"\n                               (dispensedTerasse)=\"tablesTerasse=$event\"\n                               (dispensedBar)=\"tablesBar=$event\"\n                               (dispensedWeinstube)=\"tablesWeinstube=$event\"\n                               (dispensedSpeisesaal)=\"tablesSpeisesaal=$event\"\n                               [term]=\"term\"\n                               [showAllBool]=\"showAllBool\"\n                               (updateAzList)=\"updateAzList($event)\"\n                               [tablesTempDeparture]=\"tablesTempDeparture\"\n                               [tables]=\"tables\"\n                               (updateImHausListElement)=\"updateImHausListElement($event); table = $event;\">\n              </app-departments>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<app-print  [tables]=\"tables\"\n            [dateGeneratedListe]=\"dateGeneratedListe\"\n            [tablesWeinstube]=\"tablesWeinstube\"\n            [showWeinstubeBool]=\"showWeinstubeBool\"\n            [showBarBool]=\"showBarBool\"\n            [tablesBar]=\"tablesBar\"\n            [showTerasseBool]=\"showTerasseBool\"\n            [tablesTerasse]=\"tablesTerasse\"\n            [showSpeisesaalBool]=\"showSpeisesaalBool\"\n            [tablesSpeisesaal]=\"tablesSpeisesaal\"\n            (getTablesOccupied)=\"tablesOccupied = $event\"\n            (getTablesforAzListe)=\"tables = $event\"\n            [adult1Weinstube]=\"adult1Weinstube\"\n            [adult2Weinstube]=\"adult2Weinstube\"\n            [adult1Bar]=\"adult1Bar\"\n            [adult2Bar]=\"adult2Bar\"\n            [adult1Terasse]=\"adult1Terasse\"\n            [adult2Terasse]=\"adult2Terasse\"\n            [adult1Speisesaal]=\"adult1Speisesaal\"\n            [adult2Speisesaal]=\"adult2Speisesaal\"\n            [child1Weinstube]=\"child1Weinstube\"\n            [child2Weinstube]=\"child2Weinstube\"\n            [child3Weinstube]=\"child3Weinstube\"\n            [child4Weinstube]=\"child4Weinstube\"\n            [child1Bar]=\"child1Bar\"\n            [child2Bar]=\"child2Bar\"\n            [child3Bar]=\"child3Bar\"\n            [child4Bar]=\"child4Bar\"\n            [child1Terasse]=\"child1Terasse\"\n            [child2Terasse]=\"child2Terasse\"\n            [child3Terasse]=\"child3Terasse\"\n            [child4Terasse]=\"child4Terasse\"\n            [child1Speisesaal]=\"child1Speisesaal\"\n            [child2Speisesaal]=\"child2Speisesaal\"\n            [child3Speisesaal]=\"child3Speisesaal\"\n            [child4Speisesaal]=\"child4Speisesaal\">\n</app-print>\n</html>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/main.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__ = __webpack_require__("../../../../ng2-dragula/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__ = __webpack_require__("./node_modules/ng2-dragula/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_dragula___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_dragula__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__print_print_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/print/print.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__departmentmenu_departmentmenu_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__form_form_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/form/form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__im_haus_list_im_haus_list_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__navigation_navigation_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/navigation/navigation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tableplan_tableplan_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/tableplan/tableplan.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__departments_departments_component__ = __webpack_require__("../../../../../src/app/components/digital-table-plan/departments/departments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__print_print_component__ = __webpack_require__("./src/app/components/digital-table-plan/print/print.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__departmentmenu_departmentmenu_component__ = __webpack_require__("./src/app/components/digital-table-plan/departmentmenu/departmentmenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__form_form_component__ = __webpack_require__("./src/app/components/digital-table-plan/form/form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__im_haus_list_im_haus_list_component__ = __webpack_require__("./src/app/components/digital-table-plan/im-haus-list/im-haus-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__navigation_navigation_component__ = __webpack_require__("./src/app/components/digital-table-plan/navigation/navigation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tableplan_tableplan_component__ = __webpack_require__("./src/app/components/digital-table-plan/tableplan/tableplan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__departments_departments_component__ = __webpack_require__("./src/app/components/digital-table-plan/departments/departments.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2339,10 +2295,10 @@ var MainComponent = (function () {
         this.tracesListeElemente = [];
         this.tables = [];
         this.uniqueTables = [];
-        this.tablesSonnbergZirbn = [];
-        this.tablesPanorama = [];
-        this.tablesRestaurant = [];
-        this.tablesWintergarten = [];
+        this.tablesTerasse = [];
+        this.tablesWeinstube = [];
+        this.tablesBar = [];
+        this.tablesSpeisesaal = [];
         this.filesToUpload = [];
         this.isDropped = [];
         this.newInformationElements = [];
@@ -2355,14 +2311,30 @@ var MainComponent = (function () {
         this.tablesTempDeparture = [];
         this.newInformationEmployees = [];
         this.history = [];
-        this.adultSonnbergZirbn = [];
-        this.childSonnbergZirbn = [];
-        this.adultPanorama = [];
-        this.childPanorama = [];
-        this.adultRestaurant = [];
-        this.childRestaurant = [];
-        this.adultWintergarten = [];
-        this.childWintergarten = [];
+        this.adult1Terasse = [];
+        this.adult2Terasse = [];
+        this.child1Terasse = [];
+        this.child2Terasse = [];
+        this.child3Terasse = [];
+        this.child4Terasse = [];
+        this.adult1Weinstube = [];
+        this.adult2Weinstube = [];
+        this.child1Weinstube = [];
+        this.child2Weinstube = [];
+        this.child3Weinstube = [];
+        this.child4Weinstube = [];
+        this.adult1Bar = [];
+        this.adult2Bar = [];
+        this.child1Bar = [];
+        this.child2Bar = [];
+        this.child3Bar = [];
+        this.child4Bar = [];
+        this.adult1Speisesaal = [];
+        this.adult2Speisesaal = [];
+        this.child1Speisesaal = [];
+        this.child2Speisesaal = [];
+        this.child3Speisesaal = [];
+        this.child4Speisesaal = [];
         this.buttonBgColorInfoForm = "0a7a74";
         this.buttonBgColorNoteForm = "0a7a74";
         this.buttonBgColorShowTablePlan = "0a7a74";
@@ -2382,10 +2354,10 @@ var MainComponent = (function () {
         this.fontColor5 = "f3efe4";
         this.tablesOccupied = 0;
         this.backgroundColor = "ffffff";
-        this.showSonnbergZirbnBool = false;
-        this.showPanoramaBool = false;
-        this.showRestaurantBool = false;
-        this.showWintergartenBool = false;
+        this.showTerasseBool = false;
+        this.showWeinstubeBool = false;
+        this.showBarBool = false;
+        this.showSpeisesaalBool = false;
         this.showAllBool = false;
         this.term = "";
         this.mainService.getInformationElements()
@@ -2485,20 +2457,20 @@ var MainComponent = (function () {
     };
     MainComponent.prototype.ngOnInit = function () {
     };
-    MainComponent.prototype.showWintergarten = function () {
-        this.departmentmenuComponent.showWintergarten();
+    MainComponent.prototype.showSpeisesaal = function () {
+        this.departmentmenuComponent.showSpeisesaal();
     };
     MainComponent.prototype.transform = function (term) {
         this.departmentsComponent.transform(term);
     };
-    MainComponent.prototype.showRestaurant = function () {
-        this.departmentmenuComponent.showRestaurant();
+    MainComponent.prototype.showBar = function () {
+        this.departmentmenuComponent.showBar();
     };
-    MainComponent.prototype.showSonnbergZirbn = function () {
-        this.departmentmenuComponent.showWintergarten();
+    MainComponent.prototype.showTerasse = function () {
+        this.departmentmenuComponent.showSpeisesaal();
     };
-    MainComponent.prototype.showPanorama = function () {
-        this.departmentmenuComponent.showPanorama();
+    MainComponent.prototype.showWeinstube = function () {
+        this.departmentmenuComponent.showWeinstube();
     };
     MainComponent.prototype.sendInformation = function (event) {
         this.formComponent.sendInformation(event);
@@ -2551,9 +2523,9 @@ var MainComponent = (function () {
         setTimeout(function () {
             _this.getTables();
             setTimeout(function () {
-                //console.log('this.tablesWintergarten:');
-                //console.log(this.tablesWintergarten);
-                _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
+                //console.log('this.tablesSpeisesaal:');
+                //console.log(this.tablesSpeisesaal);
+                _this.tables = _this.tablesSpeisesaal.concat(_this.tablesBar).concat(_this.tablesWeinstube).concat(_this.tablesTerasse);
                 //console.log('this.tables: in updateAzList');
                 //console.log(this.tables);
                 _this.printComponent.formatAzList(_this.tables);
@@ -2574,7 +2546,7 @@ var MainComponent = (function () {
                 for (var x = 0; x < tables.length; x++) {
                     //console.log("tables[x].department");
                     //console.log(tables[x].department);
-                    if (tables[x].department === "Restaurant") {
+                    if (tables[x].department === "Bar") {
                         tables[x].tables.sort(function (a, b) {
                             //console.log(a.number);
                             //console.log(b.number);
@@ -2587,24 +2559,24 @@ var MainComponent = (function () {
                     }
                 }
                 for (var a = 0; a < tables.length; a++) {
-                    if (tables[a].department === "Panorama") {
-                        _this.tablesPanorama = tables[a].tables;
+                    if (tables[a].department === "Weinstube") {
+                        _this.tablesWeinstube = tables[a].tables;
                     }
-                    else if (tables[a].department === "Wintergarten") {
-                        _this.tablesWintergarten = tables[a].tables;
-                        //console.log('Test' + JSON.stringify(this.tablesWintergarten));
+                    else if (tables[a].department === "Speisesaal") {
+                        _this.tablesSpeisesaal = tables[a].tables;
+                        //console.log('Test' + JSON.stringify(this.tablesSpeisesaal));
                     }
-                    else if (tables[a].department === "Sonnberg-Zirbn") {
-                        _this.tablesSonnbergZirbn = tables[a].tables;
+                    else if (tables[a].department === "Terasse") {
+                        _this.tablesTerasse = tables[a].tables;
                     }
-                    else if (tables[a].department === "Restaurant") {
-                        _this.tablesRestaurant = tables[a].tables;
+                    else if (tables[a].department === "Bar") {
+                        _this.tablesBar = tables[a].tables;
                     }
                 }
                 _this.changeBgColorIfArrival();
             }
             _this.tablesTempDeparture = tables;
-            _this.tables = _this.tablesWintergarten.concat(_this.tablesRestaurant).concat(_this.tablesPanorama).concat(_this.tablesSonnbergZirbn);
+            _this.tables = _this.tablesSpeisesaal.concat(_this.tablesBar).concat(_this.tablesWeinstube).concat(_this.tablesTerasse);
             _this.printComponent.formatAzList(_this.tables);
             setTimeout(function () {
                 _this.tableplanComponent.sumUpNumberOfPersons();
@@ -2644,8 +2616,8 @@ __decorate([
 MainComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'main',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/main.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_dragula__["DragulaService"]) === "function" && _j || Object])
 ], MainComponent);
@@ -2655,43 +2627,32 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/navigation/navigation.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".navbar-fixed-top {\n  max-width: 100%;\n  background-color: #0d2f2e;\n  border-radius: 0px;\n  max-height: 120px;\n  display: block;\n}\n\n.container {\n  max-height: 120px;\n  display: block;\n  padding: 0;\n  margin: 0\n}\n\nul.navbar-nav {\n  margin-right: 0px;\n  margin-top: 0px;\n  margin-bottom: 0px;\n  margin-left: 10px;\n  max-height:  40px;\n}\n\n.navbar-logout {\n  float: right;\n}\n\n.brand {\n  display: inline-block;\n  vertical-align: middle;\n  max-width: 30%;\n}\n\n.Table {\n  color: #0a7a74;\n  float: right;\n  margin-right: 10px;\n}\n\n.TableDiv{\n  background-color: #0a7a74;\n  border-radius: 50%;\n  height: 30px;\n  width: 30px;\n  text-align: center;\n  margin-top: 12px;\n  margin-left: 48px;\n  max-width: 50px;\n}\n\n.TableH3 {\n  color: #eaf3f3;\n  margin: 0;\n  line-height: 29px;\n  font-size: 20px;\n  -ms-flex-line-pack: center;\n      align-content: center;\n  align: center;\n}\n\n.dropdown-toggle {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n.dropdown-menu {\n  overflow: auto;\n  height: 350px;\n  width: 200px;\n  padding: 20px;\n}\n\n.xls {\n  width: 100%;\n  height: 100px;\n}\n\n.file {\n  float: left;\n  margin-top: 10px;\n  color: #0a7a74;\n}\n\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {\n  border: none;\n}\n\n.navbar-form {\n  margin: 11px 0 0 0;\n  box-shadow: none;\n  padding: 0;\n}\n\n.btn-send {\n  background-color: #0a7a74;\n  float: right;\n  color: white;\n  margin-right: 10px;\n  display: none;\n}\n\nh6 {\n  color: #0a7a74;\n}\n\n.navbar-right{\n\n}\n\n.btn-default {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  float: left;\n  vertical-align: middle;\n  margin: 10px 10px 5px 10px;\n  border: none;\n  display: none;\n}\n\n.btn-default:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n.btn-group {\n  height: 45px;\n  width: auto;\n  margin: 10px 10px 5px 10px;\n  float: left;\n  text-align: right;\n  display:none;\n  vertical-align:middle;\n}\n\n.menuitem {\n  padding: 5px;\n}\n\n.navbar-left {\n  max-width: 100%;\n  display: -webkit-inline-box;\n  border: none;\n}\n\n.form-group {\n  max-height: 45px;\n  margin: 0 5px 0 0;\n}\n\n.form-group-search {\n  float: left;\n  width: calc(100% - 52px);\n}\n\n.form-control {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  border: none;\n  height: 32px;\n  opacity: 80;\n  margin: 0px 0px 0px 0px;\n}\n\n.search-btn-default {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  border: none;\n  float: right;\n  margin-right: 10px;\n  min-width: 30px;\n  height: 32px;\n}\n\n.Partner {\n  height: 45px;\n  width: auto;\n  margin-top: 4px;\n  margin-bottom: 5px;\n  margin-right: 25px;\n  float: right;\n  text-align: right;\n  display:none;\n  vertical-align:middle;\n}\n\n.xls {\n  margin-bottom: 30px;\n}\n\n@media (max-width: 500px) {\n\n  .navbar-left {\n    display: block;\n  }\n}\n\n@media (min-width: 766px ) and  (max-width: 774px) {\n  .navbar-right {\n    margin-top: -23px;\n  }\n\n  .search-btn-default {\n    margin-top: 0px;\n    margin-left: 40px;\n    min-width: 30px;\n    min-height: 30px;\n  }\n}\n\n@media (min-width: 500px ) and  (max-width: 774px) {\n  .navbar-fixed-top {\n    display: block;\n    max-height: 56px;\n  }\n  .container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: auto;\n    max-height: 55px;\n  }\n  .navbar-nav {\n    margin-top: 0;\n\n    display: -webkit-inline-box;\n\n    display: -ms-inline-flexbox;\n\n    display: inline-flex;\n    max-height: 50px;\n  }\n  .navbar-right{\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    max-width: 79%;\n    margin-right: 10px;\n\n  }\n  .navbar-left{\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n  }\n  .form-group {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n  }\n  .form-control{\n\n  }\n  .search-btn-default {\n    margin-top: 0px;\n  }\n}\n\n@media (min-width: 775px) {\n  .Partner {\n    display: none;\n    max-width: 100%;\n    float: right;\n  }\n\n  .form-group {\n    display: block;\n  }\n\n  .form-group-search {\n    float: none;\n    width: auto;\n  }\n\n  .navbar-left {\n    float: right;\n  }\n\n  .navbar-right {\n    max-width: 100%;\n    margin-right: 10px;\n  }\n\n  .container {\n    display: block;\n    width: auto;\n  }\n\n  .navbar-fixed-top {\n    max-height: 45px;\n    display: block;\n  }\n\n  .btn-group {\n    display:none;\n  }\n\n  .brand {\n    max-width: 100%;\n  }\n\n  .partnerLi {\n    float: right;\n  }\n\n  .navbar-left {\n    display: block;\n    margin-top: 11px;\n  }\n\n  .search-btn-default {\n    float: right;\n    margin-right: 20px;\n    margin-top: 0px;\n  }\n\n  .Table {\n    margin-right: 0px;\n  }\n\n  .TableDiv{\n    margin-left: 35px;\n  }\n  .navbar-nav {\n\n  }\n\n}\n\n\n@media (min-width: 1250px) {\n  .btn-default {\n    display: block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .print-col {\n    width: 32%\n  }\n\n  .search-btn-default {\n    display: block;\n  }\n\n  .btn-group {\n    display: block;\n  }\n\n  .navbar-nav {\n    display: block;\n\n  }\n\n  .container {\n    display: block;\n    width: 100%;\n  }\n\n  .navbar-right {\n    max-width: 65%;\n    min-width: 50%;\n  }\n  .form-group {\n    margin: 0;\n    width: 70%;\n    max-height: 100%;\n    margin: 0 2px 20px 10px;\n  }\n\n  .form-control {\n    background-color: #0a7a74;\n    color: #FFFFFF;\n    border: none;\n    opacity: 80;\n    width: 135px;\n    margin: 0px 0px 0px 0px;\n  }\n\n  .TableDiv{\n    margin-left: 0px;\n  }\n}\n\n\n@media (min-width: 1650px) {\n  .Partner {\n    display: inline-block;\n    max-width: 100%;\n    float: right;\n  }\n}\n\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/digital-table-plan/navigation/navigation.component.html":
+/***/ "./src/app/components/digital-table-plan/navigation/navigation.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div class=\"container\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"brand\" ><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2018/01/servicio-logo-neu-laden-1.png\" (click)=\"brandClick()\" style=\"height: 45px; width: auto; margin-top:0px; margin-right: 10px; text-align: left; display:inline-block; vertical-align:middle;\"></li>\n    <li class=\"Belegte Table\" ><div class=\"TableDiv\"><h3 class=\"TableH3\">{{tablesOccupied}}</h3></div></li>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"><i class=\"fa fa-print\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" style=\"height: auto; padding: 0\" role=\"menu\">\n        <li class=\"printToCart1\" (click)=\"printToCart1('printSectionId1')\" (mouseenter)=\"mouseEnterprintToCart1Button()\"  (mouseleave)=\"mouseLeaveprintToCart1Button()\" [ngStyle]=\"{'background-color': '#' + printToCart1Button}\" style=\"display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">Tisch Übersicht Drucken</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li class=\"printToCart2\" (click)=\"printToCart2('printSectionId2')\"  (mouseenter)=\"mouseEnterprintToCart2Button()\"  (mouseleave)=\"mouseLeaveprintToCart2Button()\" [ngStyle]=\"{'background-color': '#' + printToCart2Button}\"  style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">Tisch Plan Drucken</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li class=\"printToCart3\" (click)=\"printToCart3('printSectionId3')\"   (mouseenter)=\"mouseEnterprintToCart3Button()\"  (mouseleave)=\"mouseLeaveprintToCart3Button()\" [ngStyle]=\"{'background-color': '#' + printToCart3Button}\"  style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">A-Z Liste Drucken</li>\n      </ul>\n    </div>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">XLS<i class=\"fa fa-upload\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" style=\"padding: 10px; height: auto\" role=\"menu\">\n        <div class=\"xls\" (click)=\"none($event)\" ><h6 >XLS-Datei hochladen</h6>\n          <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n            <input type=\"file\" style=\"max-width: 160px; min-height: 50px\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n            <button type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">XLS hochladen</button>\n          </form>\n        </div>\n      </ul>\n    </div>\n    <li class=\"navbar-logout\" *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"/\">LOGOUT</a></li>\n  </ul>\n  <ul class=\"nav navbar-nav navbar-right\" >\n    <div class=\"btn-group\"  dropdown>\n      <button dropdownToggle type=\"button\"  class=\"btn btn-primary dropdown-toggle\">Rangliste <i class=\"fa fa-gift\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"padding: 0\">\n        <div *ngFor=\"let newInformationEmployee of newInformationEmployees; let j = index;\">\n\n          <li role=\"menuitem\" class=\"menuitem\" (click)=\"none($event)\"> <b>Name: </b> {{newInformationEmployee.employee}} <br><b>Punkte: </b> {{newInformationEmployee.numberOfTraces}}</li>\n          <li class=\"divider dropdown-divider\"></li>\n        </div>\n      </ul>\n    </div>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">Abreisen <i class=\"fa fa-calendar-check-o\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"max-height: 130px; padding: 0\">\n        <li role=\"menuitem\" class=\"menuitem\" (mouseenter)=\"mouseEnterDepartureAbortButton()\"  (mouseleave)=\"mouseLeaveDepartureAbortButton()\" [ngStyle]=\"{'background-color': '#' + departureAbortButton}\" style=\"color: black;\">Abort</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li role=\"menuitem\" class=\"menuitem\" style=\"background-color: red; color: white;\" (mouseenter)=\"mouseEnterDepartureExecuteButton()\"  (mouseleave)=\"mouseLeaveDepartureExecuteButton()\" [ngStyle]=\"{'background-color': '#' + departureExecuteButton}\" style=\"color: white;\" (click)=\"dispenseIfDepartureToday()\"><b> Abreisen für Heute entfernen</b></li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li role=\"menuitem\" class=\"menuitem\" (mouseenter)=\"mouseEnterDepartureTomorrowExecuteButton()\"  (mouseleave)=\"mouseLeaveDepartureTomorrowExecuteButton()\" [ngStyle]=\"{'background-color': '#' + departureExecuteTomorrowButton}\" style=\"color: white;\" (click)=\"dispenseIfDepartureTomorrow()\"><b> Abreisen für Morgen entfernen</b></li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n      </ul>\n    </div>\n     <div class=\"btn-group\" dropdown>\n      <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\">Umsetzen <i class=\"fa fa-exchange\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"height: auto\">\n        <form class=\"SendInformation\" #myForm=\"ngForm\" (submit)=\"reseat($event)\">\n            <div class=\"form-group\" (click)=\"none($event)\">\n              <label for=\"sourceTable\">Quell-Tisch:</label>\n              <input class=\"form-control\" id=\"sourceTable\" [(ngModel)]=\"sourceTable\" name=\"sourceTable\" placeholder=\"Von Tablenummer:\" >\n            </div>\n            <div class=\"form-group\" (click)=\"none($event)\">\n              <label for=\"targetTable\">Ziel-Tisch</label>\n              <input class=\"form-control\" id=\"targetTable\" [(ngModel)]=\"targetTable\" name=\"targetTable\" placeholder=\"Zu Tablenummer:\" >\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" >Umsetzen <i class=\"fa fa-exchange\" aria-hidden=\"true\"></i></button>\n        </form>\n      </ul>\n    </div>\n    <div class=\"btn-group\"  dropdown>\n      <button dropdownToggle type=\"button\"  class=\"btn btn-primary dropdown-toggle\">Traces <i class=\"fa fa-folder-open\" aria-hidden=\"true\"></i> <span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"padding: 0\">\n        <div *ngFor=\"let newInformationElement of newInformationElements; let j = index;\">\n          <button type=\"submit\" class=\"btn btn-send\" style=\"margin: 10px\" (click)=\"delete(newInformationElement, j, $event)\">x</button>\n          <li role=\"menuitem\" style=\"padding: 10px;\" class=\"menuitem\" (click)=\"none($event)\"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br><b>Datum: </b> {{newInformationElement.date}}<br><b>Name: </b> {{newInformationElement.name}}<br><b>Mitarbeiter: </b> {{newInformationElement.employee}}</li>\n          <li class=\"divider dropdown-divider\"></li>\n        </div>\n      </ul>\n    </div>\n    <form class=\"navbar-form navbar-left\">\n      <div class=\"form-group form-group-search\">\n        <input type=\"text\" class=\"form-control\" (keyup)=\"onKey($event)\">\n      </div>\n      <button type=\"submit\" class=\"btn search-btn-default\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i></button>\n    </form>\n    <li class=\"partnerLi\" ><img class=\"Partner\" alt=\"Partner\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2018/01/SalzburgerHof_Marke_RGB.jpg\" ></li>\n  </ul>\n  </div>\n</nav>\n"
+module.exports = ".navbar-fixed-top {\n  max-width: 100%;\n  background-color: #0d2f2e;\n  border-radius: 0px;\n  max-height: 120px;\n  display: block;\n}\n\n.container {\n  max-height: 120px;\n  display: block;\n  padding: 0;\n  margin: 0\n}\n\nul.navbar-nav {\n  margin-right: 0px;\n  margin-top: 0px;\n  margin-bottom: 0px;\n  margin-left: 10px;\n  max-height:  40px;\n}\n\n.navbar-logout {\n  float: right;\n}\n\n.brand {\n  display: inline-block;\n  vertical-align: middle;\n  max-width: 30%;\n}\n\n.Table {\n  color: #0a7a74;\n  float: right;\n  margin-right: 10px;\n}\n\n.TableDiv{\n  background-color: #0a7a74;\n  border-radius: 50%;\n  height: 30px;\n  width: 30px;\n  text-align: center;\n  margin-top: 12px;\n  margin-left: 48px;\n  max-width: 50px;\n}\n\n.TableH3 {\n  color: #eaf3f3;\n  margin: 0;\n  line-height: 29px;\n  font-size: 20px;\n  -ms-flex-line-pack: center;\n      align-content: center;\n  align: center;\n}\n\n.dropdown-toggle {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n.dropdown-menu {\n  overflow: auto;\n  height: 350px;\n  width: 200px;\n  padding: 20px;\n}\n\n.xls {\n  width: 100%;\n  height: 100px;\n}\n\n.file {\n  float: left;\n  margin-top: 10px;\n  color: #0a7a74;\n}\n\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {\n  border: none;\n}\n\n.navbar-form {\n  margin: 11px 0 0 0;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  padding: 0;\n}\n\n.btn-send {\n  background-color: #0a7a74;\n  float: right;\n  color: white;\n  margin-right: 10px;\n  display: none;\n}\n\nh6 {\n  color: #0a7a74;\n}\n\n.navbar-right{\n\n}\n\n.btn-default {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  float: left;\n  vertical-align: middle;\n  margin: 10px 10px 5px 10px;\n  border: none;\n  display: none;\n}\n\n.btn-default:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary:hover {\n  background-color: #1f5452;\n  color: #FFFFFF;\n  margin-left: 20px;\n  border: none;\n}\n\n.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {\n  background-color: #1f5452;\n  color: #FFFFFF;\n}\n\n.btn-primary.focus, .btn-primary:focus {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n}\n\n.btn-group {\n  height: 45px;\n  width: auto;\n  margin: 10px 10px 5px 10px;\n  float: left;\n  text-align: right;\n  display:none;\n  vertical-align:middle;\n}\n\n.menuitem {\n  padding: 5px;\n}\n\n.navbar-left {\n  max-width: 100%;\n  display: -webkit-inline-box;\n  border: none;\n}\n\n.form-group {\n  max-height: 45px;\n  margin: 0 5px 0 0;\n}\n\n.form-group-search {\n  float: left;\n  width: calc(100% - 52px);\n}\n\n.form-control {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  border: none;\n  height: 32px;\n  opacity: 80;\n  margin: 0px 0px 0px 0px;\n}\n\n.search-btn-default {\n  background-color: #0a7a74;\n  color: #FFFFFF;\n  border: none;\n  float: right;\n  margin-right: 10px;\n  min-width: 30px;\n  height: 32px;\n}\n\n.Partner {\n  height: 45px;\n  width: auto;\n  margin-top: 4px;\n  margin-bottom: 5px;\n  margin-right: 25px;\n  float: right;\n  text-align: right;\n  display:none;\n  vertical-align:middle;\n}\n\n.xls {\n  margin-bottom: 30px;\n}\n\n@media (max-width: 500px) {\n\n  .navbar-left {\n    display: block;\n  }\n}\n\n@media (min-width: 766px ) and  (max-width: 774px) {\n  .navbar-right {\n    margin-top: -23px;\n  }\n\n  .search-btn-default {\n    margin-top: 0px;\n    margin-left: 40px;\n    min-width: 30px;\n    min-height: 30px;\n  }\n}\n\n@media (min-width: 500px ) and  (max-width: 774px) {\n  .navbar-fixed-top {\n    display: block;\n    max-height: 56px;\n  }\n  .container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: auto;\n    max-height: 55px;\n  }\n  .navbar-nav {\n    margin-top: 0;\n\n    display: -webkit-inline-box;\n\n    display: -ms-inline-flexbox;\n\n    display: inline-flex;\n    max-height: 50px;\n  }\n  .navbar-right{\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    max-width: 79%;\n    margin-right: 10px;\n\n  }\n  .navbar-left{\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n  }\n  .form-group {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n  }\n  .form-control{\n\n  }\n  .search-btn-default {\n    margin-top: 0px;\n  }\n}\n\n@media (min-width: 775px) {\n  .Partner {\n    display: none;\n    max-width: 100%;\n    float: right;\n  }\n\n  .form-group {\n    display: block;\n  }\n\n  .form-group-search {\n    float: none;\n    width: auto;\n  }\n\n  .navbar-left {\n    float: right;\n  }\n\n  .navbar-right {\n    max-width: 100%;\n    margin-right: 10px;\n  }\n\n  .container {\n    display: block;\n    width: auto;\n  }\n\n  .navbar-fixed-top {\n    max-height: 45px;\n    display: block;\n  }\n\n  .btn-group {\n    display:none;\n  }\n\n  .brand {\n    max-width: 100%;\n  }\n\n  .partnerLi {\n    float: right;\n  }\n\n  .navbar-left {\n    display: block;\n    margin-top: 11px;\n  }\n\n  .search-btn-default {\n    float: right;\n    margin-right: 20px;\n    margin-top: 0px;\n  }\n\n  .Table {\n    margin-right: 0px;\n  }\n\n  .TableDiv{\n    margin-left: 35px;\n  }\n  .navbar-nav {\n\n  }\n\n}\n\n@media (min-width: 1250px) {\n  .btn-default {\n    display: block;\n  }\n\n  .btn-send {\n    display: block;\n  }\n\n  .print-col {\n    width: 32%\n  }\n\n  .search-btn-default {\n    display: block;\n  }\n\n  .btn-group {\n    display: block;\n  }\n\n  .navbar-nav {\n    display: block;\n\n  }\n\n  .container {\n    display: block;\n    width: 100%;\n  }\n\n  .navbar-right {\n    max-width: 65%;\n    min-width: 50%;\n  }\n  .form-group {\n    margin: 0;\n    width: 70%;\n    max-height: 100%;\n    margin: 0 2px 20px 10px;\n  }\n\n  .form-control {\n    background-color: #0a7a74;\n    color: #FFFFFF;\n    border: none;\n    opacity: 80;\n    width: 135px;\n    margin: 0px 0px 0px 0px;\n  }\n\n  .TableDiv{\n    margin-left: 0px;\n  }\n}\n\n@media (min-width: 1650px) {\n  .Partner {\n    display: inline-block;\n    max-width: 100%;\n    float: right;\n  }\n}\n\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/navigation/navigation.component.ts":
+/***/ "./src/app/components/digital-table-plan/navigation/navigation.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div class=\"container\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"brand\" ><img alt=\"Brand\" href=\"http://www.servicio.io\" src=\"http://servicio.io/wp-content/uploads/2018/01/servicio-logo-neu-laden-1.png\" (click)=\"brandClick()\" style=\"height: 45px; width: auto; margin-top:0px; margin-right: 10px; text-align: left; display:inline-block; vertical-align:middle;\"></li>\n    <li class=\"Belegte Table\" ><div class=\"TableDiv\"><h3 class=\"TableH3\">{{tablesOccupied}}</h3></div></li>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"><i class=\"fa fa-print\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" style=\"height: auto; padding: 0\" role=\"menu\">\n        <li class=\"printToCart1\" (click)=\"printToCart1('printSectionId1')\" (mouseenter)=\"mouseEnterprintToCart1Button()\"  (mouseleave)=\"mouseLeaveprintToCart1Button()\" [ngStyle]=\"{'background-color': '#' + printToCart1Button}\" style=\"display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">Tisch Übersicht Drucken</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li class=\"printToCart2\" (click)=\"printToCart2('printSectionId2')\"  (mouseenter)=\"mouseEnterprintToCart2Button()\"  (mouseleave)=\"mouseLeaveprintToCart2Button()\" [ngStyle]=\"{'background-color': '#' + printToCart2Button}\"  style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">Tisch Plan Drucken</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li class=\"printToCart3\" (click)=\"printToCart3('printSectionId3')\"   (mouseenter)=\"mouseEnterprintToCart3Button()\"  (mouseleave)=\"mouseLeaveprintToCart3Button()\" [ngStyle]=\"{'background-color': '#' + printToCart3Button}\"  style=\"text-align: left; display:table-cell; vertical-align:middle; margin-top: 15px; margin-right: 0px; padding: 10px; width:200px;\">A-Z Liste Drucken</li>\n      </ul>\n    </div>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">CSV<i class=\"fa fa-upload\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" style=\"padding: 10px; height: auto\" role=\"menu\">\n        <div class=\"csv\" (click)=\"none($event)\" ><h6 >CSV-Datei hochladen</h6>\n          <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n            <input type=\"file\" style=\"max-width: 160px; min-height: 50px\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n            <button type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">CSV hochladen</button>\n          </form>\n        </div>\n      </ul>\n    </div>\n    <li class=\"navbar-logout\" *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"/\">LOGOUT</a></li>\n  </ul>\n  <ul class=\"nav navbar-nav navbar-right\" >\n    <div class=\"btn-group\"  dropdown>\n      <button dropdownToggle type=\"button\"  class=\"btn btn-primary dropdown-toggle\">Rangliste <i class=\"fa fa-gift\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"padding: 0\">\n        <div *ngFor=\"let newInformationEmployee of newInformationEmployees; let j = index;\">\n\n          <li role=\"menuitem\" class=\"menuitem\" (click)=\"none($event)\"> <b>Name: </b> {{newInformationEmployee.employee}} <br><b>Punkte: </b> {{newInformationEmployee.numberOfTraces}}</li>\n          <li class=\"divider dropdown-divider\"></li>\n        </div>\n      </ul>\n    </div>\n    <div class=\"btn-group\" dropdown>\n      <button dropdownToggle class=\"btn btn-primary dropdown-toggle\" type=\"button\">Abreisen <i class=\"fa fa-calendar-check-o\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"max-height: 130px; padding: 0\">\n        <li role=\"menuitem\" class=\"menuitem\" (mouseenter)=\"mouseEnterDepartureAbortButton()\"  (mouseleave)=\"mouseLeaveDepartureAbortButton()\" [ngStyle]=\"{'background-color': '#' + departureAbortButton}\" style=\"color: black;\">Abort</li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li role=\"menuitem\" class=\"menuitem\" style=\"background-color: red; color: white;\" (mouseenter)=\"mouseEnterDepartureExecuteButton()\"  (mouseleave)=\"mouseLeaveDepartureExecuteButton()\" [ngStyle]=\"{'background-color': '#' + departureExecuteButton}\" style=\"color: white;\" (click)=\"dispenseIfDepartureToday()\"><b> Abreisen für Heute entfernen</b></li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n        <li role=\"menuitem\" class=\"menuitem\" (mouseenter)=\"mouseEnterDepartureTomorrowExecuteButton()\"  (mouseleave)=\"mouseLeaveDepartureTomorrowExecuteButton()\" [ngStyle]=\"{'background-color': '#' + departureExecuteTomorrowButton}\" style=\"color: white;\" (click)=\"dispenseIfDepartureTomorrow()\"><b> Abreisen für Morgen entfernen</b></li>\n        <li class=\"divider dropdown-divider\" style=\"margin: 0\"></li>\n      </ul>\n    </div>\n     <div class=\"btn-group\" dropdown>\n      <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\">Umsetzen <i class=\"fa fa-exchange\" aria-hidden=\"true\"></i><span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"height: auto\">\n        <form class=\"SendInformation\" #myForm=\"ngForm\" (submit)=\"reseat($event)\">\n            <div class=\"form-group\" (click)=\"none($event)\">\n              <label for=\"sourceTable\">Quell-Tisch:</label>\n              <input class=\"form-control\" id=\"sourceTable\" [(ngModel)]=\"sourceTable\" name=\"sourceTable\" placeholder=\"Von Tablenummer:\" >\n            </div>\n            <div class=\"form-group\" (click)=\"none($event)\">\n              <label for=\"targetTable\">Ziel-Tisch</label>\n              <input class=\"form-control\" id=\"targetTable\" [(ngModel)]=\"targetTable\" name=\"targetTable\" placeholder=\"Zu Tablenummer:\" >\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" >Umsetzen <i class=\"fa fa-exchange\" aria-hidden=\"true\"></i></button>\n        </form>\n      </ul>\n    </div>\n    <div class=\"btn-group\"  dropdown>\n      <button dropdownToggle type=\"button\"  class=\"btn btn-primary dropdown-toggle\">Traces <i class=\"fa fa-folder-open\" aria-hidden=\"true\"></i> <span class=\"caret\"></span>\n      </button>\n      <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" style=\"padding: 0\">\n        <div *ngFor=\"let newInformationElement of newInformationElements; let j = index;\">\n          <button type=\"submit\" class=\"btn btn-send\" style=\"margin: 10px\" (click)=\"delete(newInformationElement, j, $event)\">x</button>\n          <li role=\"menuitem\" style=\"padding: 10px;\" class=\"menuitem\" (click)=\"none($event)\"> <b>Zimmer Nummer: </b> {{newInformationElement.roomNumber}} <br><b>Trace: </b> {{newInformationElement.text}} <br><b>Tisch: </b> {{newInformationElement.tableNumber}}<br><b>Datum: </b> {{newInformationElement.date}}<br><b>Name: </b> {{newInformationElement.name}}<br><b>Mitarbeiter: </b> {{newInformationElement.employee}}</li>\n          <li class=\"divider dropdown-divider\"></li>\n        </div>\n      </ul>\n    </div>\n    <form class=\"navbar-form navbar-left\">\n      <div class=\"form-group form-group-search\">\n        <input type=\"text\" class=\"form-control\" (keyup)=\"onKey($event)\">\n      </div>\n      <button type=\"submit\" class=\"btn search-btn-default\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i></button>\n    </form>\n    <li class=\"partnerLi\" ><img class=\"Partner\" alt=\"Partner\" style=\"background-color: white\" href=\"http://www.salzburgerhof.servicio.io/wlanlandingpage\" src=\"http://servicio.io/wp-content/uploads/2018/05/logo.png\" ></li>\n  </ul>\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/digital-table-plan/navigation/navigation.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2762,7 +2723,7 @@ var NavigationComponent = (function () {
         var innerContents = document.getElementById(printSectionId2).innerHTML;
         popupWinindow = window.open('', '_blank', 'width=1000,height=1000,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
         popupWinindow.document.open();
-        popupWinindow.document.write('<html><head><style> .row .t1 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t2 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t3 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t4 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t5 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t6 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t7 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t8 { width: 100px; height: 90px; border: solid 1px #0a7a74; position: absolute; } .row .t9 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t10 { width: 40px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t11 { width: 30px; height: 80px; border: solid 1px #0a7a74; position: absolute; } .row .t12 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t13 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t14 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t15 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t16 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t17 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t18 { position: absolute; } .row .t19 { position: absolute; }.row .t20 { position: absolute; } .row .t21 { position: absolute; }  .row .t22 { position: absolute; } .row .t23 { position: absolute; } .row .t24 { position: absolute; } .row .t40 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t41 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t42 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t43 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t44 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t45 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t46 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t47 { width: 80px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t48 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t49 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t50 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t51 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t52 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t53 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t54 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t55 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t56 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t57 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t58 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t59 { width: 60px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t60 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t61 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t62 { width: 30px; height: 60px; position: absolute; border: solid 1px #0a7a74; } .row .t63 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t64 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t65 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t66 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; } .row .t67 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t68 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t69 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t70 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t71 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t72 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t73 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t74 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t75 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t76 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t77 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t78 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t79 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t80 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t81 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t82 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t83 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t84 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t85 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t86 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t87 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t88 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t89 { width: 60px; height: 30px; border: solid 1px #0a7a74; position: absolute; } .row .t501 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t502 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; } .row .t503 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t504 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t505 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t506 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t507 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t508 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t509 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t510 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t511 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t512 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t513 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t514 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; border-radius: 50%; } .row .t515 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t516 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t517 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(10deg); } .row .t518 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(30deg); } .row .t519 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(50deg); } .row .t520 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(70deg); } .row .t521 { width: 30px; height: 60px; border: solid 1px #0a7a74; position: absolute; transform: rotate(90deg); } .row .t522 { width: 80px; height: 45px; border: solid 1px #0a7a74; position: absolute; } .row .t523 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t524 { width: 40px; height: 40px; border: solid 1px #0a7a74; position: absolute; transform: rotate(45deg); } .row .t525 { width: 40px; height: 40px; position: absolute; transform: rotate(45deg); } </style></head><body onload="window.print()">' + innerContents + '</html>');
+        popupWinindow.document.write('<html><head><style> .row .t201 { position: absolute; } .row .t202 { position: absolute; } .row .t204 { position: absolute; } .row .t244 { position: absolute; } .row .t118 { position: absolute; } .row .t103 { position: absolute; } .row .t130 { position: absolute; } .row .t131 { position: absolute; } .row .t132 { position: absolute; } .row .t133 { position: absolute; } .row .t134 { position: absolute; } .row .t135 { position: absolute; } .row .t136 { position: absolute; } .row .t137 { position: absolute; } .row .t138 { position: absolute; } .row .t104 { position: absolute; } .row .t105 { position: absolute; } .row .t106 { position: absolute; } .row .t107 { position: absolute; } .row .t108 { position: absolute; } .row .t109 { position: absolute; } .row .t110 { position: absolute; } .row .t111 { position: absolute; } .row .t112 { position: absolute; } .row .t113 { position: absolute; } .row .t114 { position: absolute; } .row .t115 { position: absolute; } .row .t116 { position: absolute; } .row .t117 { position: absolute; } .row .t118 { position: absolute; } .row .t119 { position: absolute; } .row .t129 { position: absolute; }  .row .t121 { position: absolute; }  .row .t203 { position: absolute; }</style></head><body onload="window.print()">' + innerContents + '</html>');
         popupWinindow.document.close();
     };
     NavigationComponent.prototype.printToCart3 = function (data) {
@@ -2880,33 +2841,33 @@ var NavigationComponent = (function () {
         console.log('sourceTableNumber' + sourceTable);
         var tableToMove = { department: "Empty", number: "0", targetTable: "0", targetDepartment: "Empty" };
         var j = 0;
-        if (Number(this.sourceTable) >= 40 && Number(this.sourceTable) <= 59) {
-            tableToMove.department = "Sonnberg-Zirbn";
+        if (Number(this.sourceTable) >= 0 && Number(this.sourceTable) <= 0) {
+            tableToMove.department = "Terasse";
             j = 0;
         }
-        else if (Number(this.sourceTable) >= 60 && Number(this.sourceTable) <= 89) {
-            tableToMove.department = "Panorama";
+        else if ((Number(this.sourceTable) >= 201 && Number(this.sourceTable) <= 205) || Number(this.sourceTable) == 244 || Number(this.sourceTable) == 118) {
+            tableToMove.department = "Weinstube";
             j = 1;
         }
-        else if (Number(this.sourceTable) >= 1 && Number(this.sourceTable) <= 24) {
-            tableToMove.department = "Restaurant";
+        else if ((Number(this.sourceTable) >= 130 && Number(this.sourceTable) <= 138) || Number(this.sourceTable) == 103) {
+            tableToMove.department = "Bar";
             j = 3;
         }
-        else if (Number(this.sourceTable) >= 501 && Number(this.sourceTable) <= 524) {
-            tableToMove.department = "Wintergarten";
+        else if ((Number(this.sourceTable) >= 107 && Number(this.sourceTable) <= 130) && Number(this.sourceTable) != 118) {
+            tableToMove.department = "Speisesaal";
             j = 2;
         }
-        if (Number(this.targetTable) >= 40 && Number(this.targetTable) <= 59) {
-            tableToMove.targetDepartment = "Sonnberg-Zirbn";
+        if (Number(this.targetTable) >= 0 && Number(this.targetTable) <= 0) {
+            tableToMove.targetDepartment = "Terasse";
         }
-        else if (Number(this.targetTable) >= 60 && Number(this.targetTable) <= 89) {
-            tableToMove.targetDepartment = "Panorama";
+        else if ((Number(this.targetTable) >= 201 && Number(this.targetTable) <= 205) || Number(this.targetTable) == 244 || Number(this.targetTable) == 118) {
+            tableToMove.targetDepartment = "Weinstube";
         }
-        else if (Number(this.targetTable) >= 1 && Number(this.targetTable) <= 24) {
-            tableToMove.targetDepartment = "Restaurant";
+        else if ((Number(this.targetTable) >= 130 && Number(this.targetTable) <= 138) || Number(this.targetTable) == 103) {
+            tableToMove.targetDepartment = "Bar";
         }
-        else if (Number(this.targetTable) >= 501 && Number(this.targetTable) <= 524) {
-            tableToMove.targetDepartment = "Wintergarten";
+        else if ((Number(this.targetTable) >= 107 && Number(this.targetTable) <= 130) && Number(this.targetTable) != 118) {
+            tableToMove.targetDepartment = "Speisesaal";
         }
         var indexTarget = 0;
         var indexSource = 0;
@@ -3097,8 +3058,8 @@ __decorate([
 NavigationComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-navigation',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/navigation/navigation.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/navigation/navigation.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/navigation/navigation.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/navigation/navigation.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]) === "function" && _l || Object])
 ], NavigationComponent);
@@ -3108,19 +3069,19 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/print/print.component.html":
+/***/ "./src/app/components/digital-table-plan/print/print.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"printSectionId3\" class=\"section3\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Kategorie</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Preis Typ</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Reisebüro</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Sprache</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">GRP</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Bemerkung</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz1</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz2</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Trace</th>\n    </tr>\n    <div *ngFor=\"let table of tables\">\n      <tr style=\"border: solid 1px black;\">\n        <div *ngIf=\"table.nameValue\">\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.roomNumberValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.nameValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.numberOfPersonsValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.nationValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.categoryValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.typeOfPriceValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.sourceValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.languageValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.arrivalValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.departureValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.bemerkungValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.note1Value}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.note2Value}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.traceValue}}</td>\n        </div>\n      </tr>\n    </div>\n  </table>\n</div>\n<div id=\"printSectionId1\" class=\"section3\">\n <div *ngIf=\"showSonnbergZirbnBool\">\n    <table style=\"border: solid 1px black; border-collapse: collapse;\">\n      <tr>\n        {{dateGeneratedListe}}\n      </tr>\n      <tr>\n        Sonnberg-Zirbn\n      </tr>\n      <tr style=\"border: solid 1px black;\">\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Kategorie</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Preis Typ</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Reisebüro</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Sprache</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">GRP</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Bemerkung</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz1</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz2</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Trace</th>\n      </tr>\n      <div *ngFor=\"let table of tablesSonnbergZirbn\">\n        <div *ngFor=\"let group of table.groups\">\n          <tr style=\"border: solid 1px black;\">\n            <div *ngIf=\"group.nameValue\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.categoryValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.typeOfPriceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.sourceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.languageValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.bemerkungValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note1Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note2Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.traceValue}}</td>\n            </div>\n            <div *ngIf=\"group.newTraceText\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n            </div>\n          </tr>\n        </div>\n      </div>\n    </table>\n  </div>\n  <div *ngIf=\"showPanoramaBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Panorama\n    </tr>\n      <tr style=\"border: solid 1px black;\">\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Kategorie</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Preis Typ</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Reisebüro</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Sprache</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">GRP</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Bemerkung</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz1</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz2</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Trace</th>\n      </tr>\n      <div *ngFor=\"let table of tablesPanorama\">\n        <div *ngFor=\"let group of table.groups\">\n          <tr style=\"border: solid 1px black;\">\n            <div *ngIf=\"group.nameValue\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.categoryValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.typeOfPriceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.sourceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.languageValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.bemerkungValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note1Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note2Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.traceValue}}</td>\n            </div>\n            <div *ngIf=\"group.newTraceText\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n            </div>\n          </tr>\n        </div>\n      </div>\n    </table>\n  </div>\n  <div *ngIf=\"showRestaurantBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Restaurant\n    </tr>\n      <tr style=\"border: solid 1px black;\">\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Kategorie</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Preis Typ</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Reisebüro</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Sprache</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">GRP</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Bemerkung</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz1</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz2</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Trace</th>\n      </tr>\n      <div *ngFor=\"let table of tablesRestaurant\">\n        <div *ngFor=\"let group of table.groups\">\n          <tr style=\"border: solid 1px black;\">\n            <div *ngIf=\"group.nameValue\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.categoryValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.typeOfPriceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.sourceValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.languageValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.bemerkungValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note1Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note2Value}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.traceValue}}</td>\n            </div>\n            <div *ngIf=\"group.newTraceText\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n            </div>\n          </tr>\n        </div>\n      </div>\n    </table>\n  </div>\n  <div *ngIf=\"showWintergartenBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Wintergarten\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Kategorie</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Preis Typ</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Reisebüro</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Sprache</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">GRP</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Bemerkung</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz1</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Notiz2</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Trace</th>\n    </tr>\n    <div *ngFor=\"let table of tablesWintergarten\">\n      <div *ngFor=\"let group of table.groups\">\n        <tr style=\"border: solid 1px black;\">\n          <div *ngIf=\"group.nameValue\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.categoryValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.typeOfPriceValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.sourceValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.languageValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.bemerkungValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note1Value}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.note2Value}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.traceValue}}</td>\n          </div>\n          <div *ngIf=\"group.newTraceText\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n          </div>\n        </tr>\n      </div>\n    </div>\n    </table>\n  </div>\n</div>\n<div id=\"printSectionId2\" class=\"section2\">\n  <div class=\"row\" style=\" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\">\n    <div *ngIf=\"showSonnbergZirbnBool\">\n      <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableSonnbergZirbn.number}} table-item\" [ngStyle]=\"{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}\" [style.border]=\"getStyle(tablesSonnbergZirbn[j].groups)\" dropdown>\n          <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n            <p><b>{{tableSonnbergZirbn.number}} <br>{{adultSonnbergZirbn[j]}}/{{childSonnbergZirbn[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showPanoramaBool\">\n      <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tablePanorama.number}} table-item\" [ngStyle]=\"{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor, 'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}\" [style.border]=\"getStyle(tablesPanorama[j].groups)\" dropdown>\n          <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n            <p><b>{{tablePanorama.number}} <br>{{adultPanorama[j]}}/{{childPanorama[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showRestaurantBool\">\n      <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableRestaurant.number}} table-item\" [ngStyle]=\"{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}\" [style.border]=\"getStyle(tablesRestaurant[j].groups)\" dropdown>\n          <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n            <p><b>{{tableRestaurant.number}} <br>{{adultRestaurant[j]}}/{{childRestaurant[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showWintergartenBool\">\n      <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableWintergarten.number}} table-item\" [ngStyle]=\"{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor, 'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border}\" [style.border]=\"getStyle(tablesWintergarten[j].groups)\" dropdown>\n          <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n            <p><b>{{tableWintergarten.number}} <br>{{adultWintergarten[j]}}/{{childWintergarten[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n"
+module.exports = "<div id=\"printSectionId3\" class=\"section3\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n    </tr>\n    <div *ngFor=\"let table of tables\">\n      <tr style=\"border: solid 1px black;\">\n        <div *ngIf=\"table.nameValue\">\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.roomNumberValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.nameValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.numberOfPersonsValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.nationValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.arrivalValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.departureValue}}</td>\n          <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n        </div>\n      </tr>\n    </div>\n  </table>\n</div>\n<div id=\"printSectionId1\" class=\"section3\">\n <div *ngIf=\"showTerasseBool\">\n    <table style=\"border: solid 1px black; border-collapse: collapse;\">\n      <tr>\n        {{dateGeneratedListe}}\n      </tr>\n      <tr>\n        Terasse\n      </tr>\n      <tr style=\"border: solid 1px black;\">\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n        <th style=\"border: solid 1px black; border-collapse: collapse;\">Sonderinformationen</th>\n      </tr>\n      <div *ngFor=\"let table of tablesTerasse\">\n        <div *ngFor=\"let group of table.groups\">\n          <tr style=\"border: solid 1px black;\">\n            <div *ngIf=\"group.nameValue\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            </div>\n            <div *ngIf=\"group.newTraceText\">\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n              <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n            </div>\n          </tr>\n        </div>\n      </div>\n    </table>\n  </div>\n  <div *ngIf=\"showWeinstubeBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Weinstube\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Sonderinformationen</th>\n    </tr>\n    <div *ngFor=\"let table of tablesWeinstube\">\n      <div *ngFor=\"let group of table.groups\">\n        <tr style=\"border: solid 1px black;\">\n          <div *ngIf=\"group.nameValue\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n          </div>\n          <div *ngIf=\"group.newTraceText\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n          </div>\n        </tr>\n      </div>\n    </div>\n    </table>\n  </div>\n  <div *ngIf=\"showBarBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Bar\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Sonderinformationen</th>\n    </tr>\n    <div *ngFor=\"let table of tablesBar\">\n      <div *ngFor=\"let group of table.groups\">\n        <tr style=\"border: solid 1px black;\">\n          <div *ngIf=\"group.nameValue\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n          </div>\n          <div *ngIf=\"group.newTraceText\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n          </div>\n        </tr>\n      </div>\n    </div>\n    </table>\n  </div>\n  <div *ngIf=\"showSpeisesaalBool\">\n  <table style=\"border: solid 1px black; border-collapse: collapse;\">\n    <tr>\n      {{dateGeneratedListe}}\n    </tr>\n    <tr>\n      Speisesaal\n    </tr>\n    <tr style=\"border: solid 1px black;\">\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Zimmernummer</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Name</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">PAX</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Nation</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Anreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Abreise</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Tisch</th>\n      <th style=\"border: solid 1px black; border-collapse: collapse;\">Sonderinformationen</th>\n    </tr>\n    <div *ngFor=\"let table of tablesSpeisesaal\">\n      <div *ngFor=\"let group of table.groups\">\n        <tr style=\"border: solid 1px black;\">\n          <div *ngIf=\"group.nameValue\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.roomNumberValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nameValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.numberOfPersonsValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.nationValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.arrivalValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.departureValue}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{table.number}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n          </div>\n          <div *ngIf=\"group.newTraceText\">\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceRoomNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceName}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\"></td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceTableNumber}}</td>\n            <td style=\"border: solid 1px black; border-collapse: collapse;\">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>\n          </div>\n        </tr>\n      </div>\n    </div>\n    </table>\n  </div>\n</div>\n<div id=\"printSectionId2\" class=\"section2\">\n  <div class=\"row\" style=\" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\">\n    <div *ngIf=\"showTerasseBool\">\n      <div *ngFor=\"let tableTerasse of tablesTerasse; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableTerasse.number}} table-item\" [ngStyle]=\"{'top': tableTerasse.topValue + 'px', 'left': tableTerasse.leftValue + 'px', 'background-color': + tableTerasse.bgColor, 'height': + tableTerasse.height + 'px', 'width': + tableTerasse.width + 'px', 'border': + tableTerasse.border}\" dropdown>\n          <div *ngIf=\"tablesTerasse[j] !== tablesTerasse[j+1]\">\n            <p><b>{{tableTerasse.number}} <br>{{adult1Terasse[j]}}/{{adult2Terasse[j]}}/{{child1Terasse[j]}}/{{child2Terasse[j]}}/{{child3Terasse[j]}}/{{child4Terasse[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showWeinstubeBool\">\n      <div *ngFor=\"let tableWeinstube of tablesWeinstube; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableWeinstube.number}} table-item\" [ngStyle]=\"{'top': tableWeinstube.topValue + 'px', 'left': tableWeinstube.leftValue + 'px', 'background-color': + tableWeinstube.bgColor, 'height': + tableWeinstube.height + 'px', 'width': + tableWeinstube.width + 'px', 'border': + tableWeinstube.border}\" dropdown>\n          <div *ngIf=\"tablesWeinstube[j] !== tablesWeinstube[j+1]\">\n            <p><b>{{tableWeinstube.number}} <br>{{adult1Weinstube[j]}}/{{adult2Weinstube[j]}}/{{child1Weinstube[j]}}/{{child2Weinstube[j]}}/{{child3Weinstube[j]}}/{{child4Weinstube[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showBarBool\">\n      <div *ngFor=\"let tableBar of tablesBar; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableBar.number}} table-item\" [ngStyle]=\"{'top': tableBar.topValue + 'px', 'left': tableBar.leftValue + 'px', 'background-color': + tableBar.bgColor, 'height': + tableBar.height + 'px', 'width': + tableBar.width + 'px', 'border': + tableBar.border}\"  dropdown>\n          <div *ngIf=\"tablesBar[j] !== tablesBar[j+1]\">\n            <p><b>{{tableBar.number}}  <br>{{adult1Bar[j]}}/{{adult2Bar[j]}}/{{child1Bar[j]}}/{{child2Bar[j]}}/{{child3Bar[j]}}/{{child4Bar[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"showSpeisesaalBool\">\n      <div *ngFor=\"let tableSpeisesaal of tablesSpeisesaal; let j = index;\">\n        <div dropdownToggle type=\"button\" class=\"t{{tableSpeisesaal.number}} table-item\" [ngStyle]=\"{'top': tableSpeisesaal.topValue + 'px', 'left': tableSpeisesaal.leftValue + 'px', 'background-color': + tableSpeisesaal.bgColor, 'height': + tableSpeisesaal.height + 'px', 'width': + tableSpeisesaal.width + 'px', 'border': + tableSpeisesaal.border}\"  dropdown>\n          <div *ngIf=\"tablesSpeisesaal[j] !== tablesSpeisesaal[j+1]\">\n            <p><b>{{tableSpeisesaal.number}}  <br>{{adult1Speisesaal[j]}}/{{adult2Speisesaal[j]}}/{{child1Speisesaal[j]}}/{{child2Speisesaal[j]}}/{{child3Speisesaal[j]}}/{{child4Speisesaal[j]}}</b></p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/print/print.component.ts":
+/***/ "./src/app/components/digital-table-plan/print/print.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrintComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3243,69 +3204,133 @@ __decorate([
     __metadata("design:type", String)
 ], PrintComponent.prototype, "dateGeneratedListe", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWeinstube'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "tablesPanorama", void 0);
+], PrintComponent.prototype, "tablesWeinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "showPanoramaBool", void 0);
+], PrintComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "showRestaurantBool", void 0);
+], PrintComponent.prototype, "showBarBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesBar'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "tablesRestaurant", void 0);
+], PrintComponent.prototype, "tablesBar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "showSonnbergZirbnBool", void 0);
+], PrintComponent.prototype, "showTerasseBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesTerasse'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "tablesSonnbergZirbn", void 0);
+], PrintComponent.prototype, "tablesTerasse", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "showWintergartenBool", void 0);
+], PrintComponent.prototype, "showSpeisesaalBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSpeisesaal'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "tablesWintergarten", void 0);
+], PrintComponent.prototype, "tablesSpeisesaal", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adultPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult1Weinstube'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "adultPanorama", void 0);
+], PrintComponent.prototype, "adult1Weinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adultRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult2Weinstube'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "adultRestaurant", void 0);
+], PrintComponent.prototype, "adult2Weinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adultSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult1Bar'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "adultSonnbergZirbn", void 0);
+], PrintComponent.prototype, "adult1Bar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adultWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult2Bar'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "adultWintergarten", void 0);
+], PrintComponent.prototype, "adult2Bar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('childPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult1Terasse'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "childPanorama", void 0);
+], PrintComponent.prototype, "adult1Terasse", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('childRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult2Terasse'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "childRestaurant", void 0);
+], PrintComponent.prototype, "adult2Terasse", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('childSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult1Speisesaal'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "childSonnbergZirbn", void 0);
+], PrintComponent.prototype, "adult1Speisesaal", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('childWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('adult2Speisesaal'),
     __metadata("design:type", String)
-], PrintComponent.prototype, "childWintergarten", void 0);
+], PrintComponent.prototype, "adult2Speisesaal", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child1Weinstube'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child1Weinstube", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child1Bar'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child1Bar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child1Terasse'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child1Terasse", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child1Speisesaal'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child1Speisesaal", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child2Weinstube'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child2Weinstube", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child2Bar'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child2Bar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child2Terasse'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child2Terasse", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child2Speisesaal'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child2Speisesaal", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child3Weinstube'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child3Weinstube", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child3Bar'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child3Bar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child3Terasse'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child3Terasse", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child3Speisesaal'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child3Speisesaal", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child4Weinstube'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child4Weinstube", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child4Bar'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child4Bar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child4Terasse'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child4Terasse", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('child4Speisesaal'),
+    __metadata("design:type", String)
+], PrintComponent.prototype, "child4Speisesaal", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
@@ -3317,8 +3342,8 @@ __decorate([
 PrintComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-print',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/print/print.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/print/print.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [])
 ], PrintComponent);
@@ -3328,21 +3353,21 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/profile/profile.component.html":
+/***/ "./src/app/components/digital-table-plan/profile/profile.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/profile/profile.component.ts":
+/***/ "./src/app/components/digital-table-plan/profile/profile.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3374,8 +3399,8 @@ var ProfileComponent = (function () {
 ProfileComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/profile/profile.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/profile/profile.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], ProfileComponent);
@@ -3385,24 +3410,24 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/register/register.component.html":
+/***/ "./src/app/components/digital-table-plan/register/register.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<h2 class=\"page-header\">Register</h2>\n<form (submit)=\"onRegisterSubmit()\">\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/register/register.component.ts":
+/***/ "./src/app/components/digital-table-plan/register/register.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("./src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3461,8 +3486,8 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-register',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/register/register.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/register/register.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
 ], RegisterComponent);
@@ -3472,20 +3497,20 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/tableplan/tableplan.component.html":
+/***/ "./src/app/components/digital-table-plan/tableplan/tableplan.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"showTablePlanBool\">\n  <div class=\"col-xs-12 printTwo\">\n    <div class=\"row\" style=\" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\">\n      <div *ngIf=\"showSonnbergZirbnBool\">\n        <div *ngFor=\"let tableSonnbergZirbn of tablesSonnbergZirbn; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableSonnbergZirbn.number}} table-item\" [ngStyle]=\"{'top': tableSonnbergZirbn.topValue + 'px', 'left': tableSonnbergZirbn.leftValue + 'px', 'background-color': + tableSonnbergZirbn.bgColor, 'height': + tableSonnbergZirbn.height + 'px', 'width': + tableSonnbergZirbn.width + 'px', 'border': + tableSonnbergZirbn.border}\" [style.border]=\"getStyle(tablesSonnbergZirbn[j].groups)\" dropdown>\n            <div *ngIf=\"tablesSonnbergZirbn[j] !== tablesSonnbergZirbn[j+1]\">\n              <p><b>{{tableSonnbergZirbn.number}} <br>{{adultSonnbergZirbn[j]}}/{{childSonnbergZirbn[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableSonnbergZirbn, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableSonnbergZirbn, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableSonnbergZirbn.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\" [style.border]=\"getStyleTrace(group.traceValue)\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.languageValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Preistyp: </b>{{group.typeOfPriceValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br><b>Kategorie: </b>{{group.categoryValue}}<br><b>Reisebüro: </b>{{group.sourceValue}}<br><b>Notiz1:</b> {{group.note1Value}}<br><b>Notiz2:</b> {{group.note2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showPanoramaBool\">\n        <div *ngFor=\"let tablePanorama of tablesPanorama; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tablePanorama.number}} table-item\" [ngStyle]=\"{'top': tablePanorama.topValue + 'px', 'left': tablePanorama.leftValue + 'px', 'background-color': + tablePanorama.bgColor, 'height': + tablePanorama.height + 'px', 'width': + tablePanorama.width + 'px', 'border': + tablePanorama.border}\" [style.border]=\"getStyle(tablesPanorama[j].groups)\" dropdown>\n            <div *ngIf=\"tablesPanorama[j] !== tablesPanorama[j+1]\">\n              <p><b>{{tablePanorama.number}} <br>{{adultPanorama[j]}}/{{childPanorama[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tablePanorama, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tablePanorama, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tablePanorama.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\" [style.border]=\"getStyleTrace(group.traceValue)\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.languageValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Preistyp: </b>{{group.typeOfPriceValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br><b>Kategorie: </b>{{group.categoryValue}}<br><b>Reisebüro: </b>{{group.sourceValue}}<br><b>Notiz1:</b> {{group.note1Value}}<br><b>Notiz2:</b> {{group.note2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showRestaurantBool\">\n        <div *ngFor=\"let tableRestaurant of tablesRestaurant; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableRestaurant.number}} table-item\" [ngStyle]=\"{'top': tableRestaurant.topValue + 'px', 'left': tableRestaurant.leftValue + 'px', 'background-color': + tableRestaurant.bgColor, 'height': + tableRestaurant.height + 'px', 'width': + tableRestaurant.width + 'px', 'border': + tableRestaurant.border}\" [style.border]=\"getStyle(tablesRestaurant[j].groups)\" dropdown>\n            <div *ngIf=\"tablesRestaurant[j] !== tablesRestaurant[j+1]\">\n              <p><b>{{tableRestaurant.number}} <br>{{adultRestaurant[j]}}/{{childRestaurant[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableRestaurant, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableRestaurant, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableRestaurant.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\" [style.border]=\"getStyleTrace(group.traceValue)\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.languageValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Preistyp: </b>{{group.typeOfPriceValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br><b>Kategorie: </b>{{group.categoryValue}}<br><b>Reisebüro: </b>{{group.sourceValue}}<br><b>Notiz1:</b> {{group.note1Value}}<br><b>Notiz2:</b> {{group.note2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showWintergartenBool\">\n        <div *ngFor=\"let tableWintergarten of tablesWintergarten; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableWintergarten.number}} table-item\" [ngStyle]=\"{'top': tableWintergarten.topValue + 'px', 'left': tableWintergarten.leftValue + 'px', 'background-color': + tableWintergarten.bgColor, 'height': + tableWintergarten.height + 'px', 'width': + tableWintergarten.width + 'px', 'border': + tableWintergarten.border, 'border-radius': + tableWintergarten.borderRadius, 'transform':  + tableWintergarten.transformValue}\" [style.border]=\"getStyle(tablesWintergarten[j].groups)\" dropdown>\n            <div *ngIf=\"tablesWintergarten[j] !== tablesWintergarten[j+1]\">\n              <p><b>{{tableWintergarten.number}} <br>{{adultWintergarten[j]}}/{{childWintergarten[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableWintergarten, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableWintergarten, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableWintergarten.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\" [style.border]=\"getStyleTrace(group.traceValue)\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.languageValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Preistyp: </b>{{group.typeOfPriceValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br><b>Kategorie: </b>{{group.categoryValue}}<br><b>Reisebüro: </b>{{group.sourceValue}}<br><b>Notiz1:</b> {{group.note1Value}}<br><b>Notiz2:</b> {{group.note2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showAllBool\">\n        <br>\n        <br>\n        <br>\n        <h1 style=\"color: white; margin-top: 200px\">Perfekt um eine Suche zu starten ;-)</h1>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"showTablePlanBool\">\n  <div class=\"col-xs-12 printTwo\">\n    <div class=\"row\" style=\" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;\">\n      <div *ngIf=\"showTerasseBool\">\n        <div *ngFor=\"let tableTerasse of tablesTerasse; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableTerasse.number}} table-item\" [ngStyle]=\"{'top': tableTerasse.topValue + 'px', 'left': tableTerasse.leftValue + 'px', 'background-color': + tableTerasse.bgColor, 'height': + tableTerasse.height + 'px', 'width': + tableTerasse.width + 'px', 'border': + tableTerasse.border}\" dropdown>\n            <div *ngIf=\"tablesTerasse[j] !== tablesTerasse[j+1]\">\n              <p><b>{{tableTerasse.number}} <br>{{adult1Terasse[j]}}/{{adult2Terasse[j]}}/{{child1Terasse[j]}}/{{child2Terasse[j]}}/{{child3Terasse[j]}}/{{child4Terasse[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableTerasse, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableTerasse, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableTerasse.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br></div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showWeinstubeBool\">\n        <div *ngFor=\"let tableWeinstube of tablesWeinstube; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableWeinstube.number}} table-item\" [ngStyle]=\"{'top': tableWeinstube.topValue + 'px', 'left': tableWeinstube.leftValue + 'px', 'background-color': + tableWeinstube.bgColor, 'height': + tableWeinstube.height + 'px', 'width': + tableWeinstube.width + 'px', 'border': + tableWeinstube.border}\" dropdown>\n            <div *ngIf=\"tablesWeinstube[j] !== tablesWeinstube[j+1]\">\n              <p><b>{{tableWeinstube.number}} <br>{{adult1Weinstube[j]}}/{{adult2Weinstube[j]}}/{{child1Weinstube[j]}}/{{child2Weinstube[j]}}/{{child3Weinstube[j]}}/{{child4Weinstube[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableWeinstube, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableWeinstube, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableWeinstube.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br></div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showBarBool\">\n        <div *ngFor=\"let tableBar of tablesBar; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableBar.number}} table-item\" [ngStyle]=\"{'top': tableBar.topValue + 'px', 'left': tableBar.leftValue + 'px', 'background-color': + tableBar.bgColor, 'height': + tableBar.height + 'px', 'width': + tableBar.width + 'px', 'border': + tableBar.border}\" dropdown>\n            <div *ngIf=\"tablesBar[j] !== tablesBar[j+1]\">\n              <p><b>{{tableBar.number}}  <br>{{adult1Bar[j]}}/{{adult2Bar[j]}}/{{child1Bar[j]}}/{{child2Bar[j]}}/{{child3Bar[j]}}/{{child4Bar[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableBar, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableBar, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableBar.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br></div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showSpeisesaalBool\">\n        <div *ngFor=\"let tableSpeisesaal of tablesSpeisesaal; let j = index;\">\n          <div dropdownToggle type=\"button\" class=\"t{{tableSpeisesaal.number}} table-item\" [ngStyle]=\"{'top': tableSpeisesaal.topValue + 'px', 'left': tableSpeisesaal.leftValue + 'px', 'background-color': + tableSpeisesaal.bgColor, 'height': + tableSpeisesaal.height + 'px', 'width': + tableSpeisesaal.width + 'px', 'border': + tableSpeisesaal.border, 'border-radius': + tableSpeisesaal.borderRadius, 'transform':  + tableSpeisesaal.transformValue}\" dropdown>\n            <div *ngIf=\"tablesSpeisesaal[j] !== tablesSpeisesaal[j+1]\">\n              <p><b>{{tableSpeisesaal.number}}  <br>{{adult1Speisesaal[j]}}/{{adult2Speisesaal[j]}}/{{child1Speisesaal[j]}}/{{child2Speisesaal[j]}}/{{child3Speisesaal[j]}}/{{child4Speisesaal[j]}}</b></p>\n            </div>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <div dropdownToggle type=\"button\" style=\"color: white; padding: 10px;\" (mouseenter)=\"mouseEnterMoveTableButton()\"  (mouseleave)=\"mouseLeaveMoveTableButton()\" [ngStyle]=\"{'background-color': '#' + buttonMoveTable}\" (click)=\"none($event)\" class=\"dropdownMoveTable\" dropdown><b>Tisch verschieben</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; margin: 0px;  padding: 0px; overflow: auto\">\n                  <li class=\"dropdown-item\" (click)=\"addTable(tableSpeisesaal, j)\" style=\"color: black; padding: 10px;\" (mouseenter)=\"mouseEnterHinzufuegenButton()\"  (mouseleave)=\"mouseLeaveHinzufuegenButton()\" [ngStyle]=\"{'background-color': '#' + buttonHinzufuegen}\" ><b>Tisch hinzufügen</b></li>\n                  <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0; \"></li>\n                  <li class=\"dropdown-item\" (click)=\"removeTable(tableSpeisesaal, j)\" (mouseenter)=\"mouseEnterEntfernenButton()\"  (mouseleave)=\"mouseLeaveEntfernenButton()\" [ngStyle]=\"{'background-color': '#' + buttonEntfernen}\" style=\"color: black; padding: 10px\"><b>Tisch entfernen</b></li>\n                </div>\n              </div>\n              <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0; margin: 0;\"></li>\n              <div dropdownToggle type=\"button\" (click)=\"none($event)\" style=\"padding: 10px; \" (mouseenter)=\"mouseEnterInfoButton()\"  (mouseleave)=\"mouseLeaveInfoButton()\" [ngStyle]=\"{'background-color': '#' + buttonInfo}\" class=\"dropdownShowinfo\"  class=\"dropdownShowinfo\" dropdown><b>Infos anzeigen</b>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"max-height: 240px; padding: 10px; overflow: auto\">\n                  <div *ngFor=\"let group of tableSpeisesaal.groups\">\n                    <div *ngIf=\"group.nameValue\">\n                      <div class=\"dropdown-item\"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Zimmer Nummer: </b>{{group.roomNumberValue}}<br><b>Anreise: </b>{{group.arrivalValue}}<br><b>Abreise:</b> {{group.departureValue}}<br><b>Personen Anzahl:</b>{{group.numberOfPersonsValue}}<br></div>\n                      <li class=\"divider dropdown-divider\" style=\"padding: 0 0 0 0\"></li>\n                    </div>\n                    <div *ngIf=\"group.newTraceText\">\n                      <div class=\"dropdown-item\"  style=\"background-color: #FFFFFF; border: solid 3px red\">\n                        <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"showAllBool\">\n        <br>\n        <br>\n        <br>\n        <h1 style=\"color: white; margin-top: 200px\">Perfekt um eine Suche zu starten ;-)</h1>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/digital-table-plan/tableplan/tableplan.component.ts":
+/***/ "./src/app/components/digital-table-plan/tableplan/tableplan.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableplanComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("../../../../../src/app/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_main_service__ = __webpack_require__("./src/app/services/main.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3500,27 +3525,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TableplanComponent = (function () {
     function TableplanComponent(mainService) {
         this.mainService = mainService;
-        this.movedSonnbergZirbn = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.movedRestaurant = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.movedWintergarten = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.movedPanorama = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.movedTerasse = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.movedBar = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.movedSpeisesaal = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.movedWeinstube = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.changeBgColorIfArrival = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.childWintergartenExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.adultWintergartenExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.adultRestaurantExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.childRestaurantExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.adultPanoramaExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.childPanoramaExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.adultSonnbergZirbnExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.childSonnbergZirbnExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.adultSonnbergZirbn = [];
-        this.childSonnbergZirbn = [];
-        this.adultPanorama = [];
-        this.childPanorama = [];
-        this.adultRestaurant = [];
-        this.childRestaurant = [];
-        this.adultWintergarten = [];
-        this.childWintergarten = [];
+        this.adult1SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult2SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child1SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child2SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child3SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child4SpeisesaalExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult1BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult2BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child1BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child2BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child3BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child4BarExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult1WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult2WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child1WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child2WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child3WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child4WeinstubeExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult1TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult2TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child1TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child2TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child3TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.child4TerasseExport = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.adult1Terasse = [];
+        this.adult2Terasse = [];
+        this.child1Terasse = [];
+        this.child2Terasse = [];
+        this.child3Terasse = [];
+        this.child4Terasse = [];
+        this.adult1Weinstube = [];
+        this.adult2Weinstube = [];
+        this.child1Weinstube = [];
+        this.child2Weinstube = [];
+        this.child3Weinstube = [];
+        this.child4Weinstube = [];
+        this.adult1Bar = [];
+        this.adult2Bar = [];
+        this.child1Bar = [];
+        this.child2Bar = [];
+        this.child3Bar = [];
+        this.child4Bar = [];
+        this.adult1Speisesaal = [];
+        this.adult2Speisesaal = [];
+        this.child1Speisesaal = [];
+        this.child2Speisesaal = [];
+        this.child3Speisesaal = [];
+        this.child4Speisesaal = [];
         this.buttonMoveTable = "ff0000";
         this.buttonInfo = "ffffff";
         this.buttonHinzufuegen = "ffffff";
@@ -3552,22 +3609,22 @@ var TableplanComponent = (function () {
                 return;
             }
             else {
-                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                    _this.movedSonnbergZirbn.emit(response[0].tables);
-                    //this.tablesSonnbergZirbn = response[0].tables;
+                if (response[0].tables[j].department === "Terasse") {
+                    _this.movedTerasse.emit(response[0].tables);
+                    //this.tablesTerasse = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Panorama") {
-                    _this.movedPanorama.emit(response[0].tables);
-                    //this.tablesPanorama = response[0].tables;
+                else if (response[0].tables[j].department === "Weinstube") {
+                    _this.movedWeinstube.emit(response[0].tables);
+                    //this.tablesWeinstube = response[0].tables;
                     //this._navService.changeNav(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Restaurant") {
-                    _this.movedRestaurant.emit(response[0].tables);
-                    //this.tablesRestaurant = response[0].tables;
+                else if (response[0].tables[j].department === "Bar") {
+                    _this.movedBar.emit(response[0].tables);
+                    //this.tablesBar = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Wintergarten") {
-                    _this.movedWintergarten.emit(response[0].tables);
-                    //this.tablesWintergarten = response[0].tables;
+                else if (response[0].tables[j].department === "Speisesaal") {
+                    _this.movedSpeisesaal.emit(response[0].tables);
+                    //this.tablesSpeisesaal = response[0].tables;
                 }
             }
             _this.changeBgColorIfArrival.emit();
@@ -3596,22 +3653,22 @@ var TableplanComponent = (function () {
                 return;
             }
             else {
-                if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-                    _this.movedSonnbergZirbn.emit(response[0].tables);
-                    //this.tablesSonnbergZirbn = response[0].tables;
+                if (response[0].tables[j].department === "Terasse") {
+                    _this.movedTerasse.emit(response[0].tables);
+                    //this.tablesTerasse = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Panorama") {
-                    _this.movedPanorama.emit(response[0].tables);
-                    //this.tablesPanorama = response[0].tables;
+                else if (response[0].tables[j].department === "Weinstube") {
+                    _this.movedWeinstube.emit(response[0].tables);
+                    //this.tablesWeinstube = response[0].tables;
                     //this._navService.changeNav(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Restaurant") {
-                    _this.movedRestaurant.emit(response[0].tables);
-                    //this.tablesRestaurant = response[0].tables;
+                else if (response[0].tables[j].department === "Bar") {
+                    _this.movedBar.emit(response[0].tables);
+                    //this.tablesBar = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Wintergarten") {
-                    _this.movedWintergarten.emit(response[0].tables);
-                    //this.tablesWintergarten = response[0].tables;
+                else if (response[0].tables[j].department === "Speisesaal") {
+                    _this.movedSpeisesaal.emit(response[0].tables);
+                    //this.tablesSpeisesaal = response[0].tables;
                 }
             }
             _this.changeBgColorIfArrival.emit();
@@ -3704,23 +3761,31 @@ var TableplanComponent = (function () {
         }
     };
     TableplanComponent.prototype.sumUpNumberOfPersons = function () {
-        console.log("sumUpNumberOfPersons calld");
-        if (this.tablesSonnbergZirbn) {
-            for (var p = 0; p < this.tablesSonnbergZirbn.length; p++) {
-                this.adultSonnbergZirbn[p] = 0;
-                this.childSonnbergZirbn[p] = 0;
-                if (this.tablesSonnbergZirbn[p].groups) {
-                    for (var g = 0; g < this.tablesSonnbergZirbn[p].groups.length; g++) {
-                        if (this.tablesSonnbergZirbn[p].groups[g].numberOfPersonsValue) {
-                            var adult = this.tablesSonnbergZirbn[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+        console.log("sumUpNumberOfPersons called");
+        if (this.tablesTerasse) {
+            for (var p = 0; p < this.tablesTerasse.length; p++) {
+                this.adult1Terasse[p] = 0;
+                this.adult2Terasse[p] = 0;
+                this.child1Terasse[p] = 0;
+                this.child2Terasse[p] = 0;
+                this.child3Terasse[p] = 0;
+                this.child4Terasse[p] = 0;
+                if (this.tablesTerasse[p].groups) {
+                    for (var g = 0; g < this.tablesTerasse[p].groups.length; g++) {
+                        if (this.tablesTerasse[p].groups[g].numberOfPersonsValue) {
+                            var adult = this.tablesTerasse[p].groups[g].numberOfPersonsValue.match(/\d+/g);
                             if (adult != null) {
                                 //console.log(adult);
-                                this.adultSonnbergZirbn[p] = this.adultSonnbergZirbn[p] + Number(adult[0]);
+                                this.adult1Terasse[p] = this.adult1Terasse[p] + Number(adult[0]);
+                                this.adult2Terasse[p] = this.adult2Terasse[p] + Number(adult[1]);
                                 //console.log(this.adult[p]);
                             }
                             if (adult != null) {
                                 //console.log(adult);
-                                this.childSonnbergZirbn[p] = this.childSonnbergZirbn[p] + Number(adult[1]);
+                                this.child1Terasse[p] = this.child1Terasse[p] + Number(adult[2]);
+                                this.child2Terasse[p] = this.child2Terasse[p] + Number(adult[3]);
+                                this.child3Terasse[p] = this.child3Terasse[p] + Number(adult[4]);
+                                this.child4Terasse[p] = this.child4Terasse[p] + Number(adult[5]);
                                 //console.log(this.child[p]);
                             }
                         }
@@ -3728,22 +3793,30 @@ var TableplanComponent = (function () {
                 }
             }
         }
-        if (this.tablesPanorama) {
-            for (var p = 0; p < this.tablesPanorama.length; p++) {
-                this.adultPanorama[p] = 0;
-                this.childPanorama[p] = 0;
-                if (this.tablesPanorama[p].groups) {
-                    for (var g = 0; g < this.tablesPanorama[p].groups.length; g++) {
-                        if (this.tablesPanorama[p].groups[g].numberOfPersonsValue) {
-                            var adult = this.tablesPanorama[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+        if (this.tablesWeinstube) {
+            for (var p = 0; p < this.tablesWeinstube.length; p++) {
+                this.adult1Weinstube[p] = 0;
+                this.adult2Weinstube[p] = 0;
+                this.child1Weinstube[p] = 0;
+                this.child2Weinstube[p] = 0;
+                this.child3Weinstube[p] = 0;
+                this.child4Weinstube[p] = 0;
+                if (this.tablesWeinstube[p].groups) {
+                    for (var g = 0; g < this.tablesWeinstube[p].groups.length; g++) {
+                        if (this.tablesWeinstube[p].groups[g].numberOfPersonsValue) {
+                            var adult = this.tablesWeinstube[p].groups[g].numberOfPersonsValue.match(/\d+/g);
                             if (adult != null) {
                                 //console.log(adult);
-                                this.adultPanorama[p] = this.adultPanorama[p] + Number(adult[0]);
+                                this.adult1Weinstube[p] = this.adult1Weinstube[p] + Number(adult[0]);
+                                this.adult2Weinstube[p] = this.adult2Weinstube[p] + Number(adult[1]);
                                 //console.log(this.adult[p]);
                             }
                             if (adult != null) {
                                 //console.log(adult);
-                                this.childPanorama[p] = this.childPanorama[p] + Number(adult[1]);
+                                this.child1Weinstube[p] = this.child1Weinstube[p] + Number(adult[2]);
+                                this.child2Weinstube[p] = this.child2Weinstube[p] + Number(adult[3]);
+                                this.child3Weinstube[p] = this.child3Weinstube[p] + Number(adult[4]);
+                                this.child4Weinstube[p] = this.child4Weinstube[p] + Number(adult[5]);
                                 //console.log(this.child[p]);
                             }
                         }
@@ -3751,22 +3824,30 @@ var TableplanComponent = (function () {
                 }
             }
         }
-        if (this.tablesRestaurant) {
-            for (var p = 0; p < this.tablesRestaurant.length; p++) {
-                this.adultRestaurant[p] = 0;
-                this.childRestaurant[p] = 0;
-                if (this.tablesRestaurant[p].groups) {
-                    for (var g = 0; g < this.tablesRestaurant[p].groups.length; g++) {
-                        if (this.tablesRestaurant[p].groups[g].numberOfPersonsValue) {
-                            var adult = this.tablesRestaurant[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+        if (this.tablesBar) {
+            for (var p = 0; p < this.tablesBar.length; p++) {
+                this.adult1Bar[p] = 0;
+                this.adult2Bar[p] = 0;
+                this.child1Bar[p] = 0;
+                this.child2Bar[p] = 0;
+                this.child3Bar[p] = 0;
+                this.child4Bar[p] = 0;
+                if (this.tablesBar[p].groups) {
+                    for (var g = 0; g < this.tablesBar[p].groups.length; g++) {
+                        if (this.tablesBar[p].groups[g].numberOfPersonsValue) {
+                            var adult = this.tablesBar[p].groups[g].numberOfPersonsValue.match(/\d+/g);
                             if (adult != null) {
                                 //console.log(adult);
-                                this.adultRestaurant[p] = this.adultRestaurant[p] + Number(adult[0]);
+                                this.adult1Bar[p] = this.adult1Bar[p] + Number(adult[0]);
+                                this.adult2Bar[p] = this.adult2Bar[p] + Number(adult[1]);
                                 //console.log(this.adult[p]);
                             }
                             if (adult != null) {
                                 //console.log(adult);
-                                this.childRestaurant[p] = this.childRestaurant[p] + Number(adult[1]);
+                                this.child1Bar[p] = this.child1Bar[p] + Number(adult[2]);
+                                this.child2Bar[p] = this.child2Bar[p] + Number(adult[3]);
+                                this.child3Bar[p] = this.child3Bar[p] + Number(adult[4]);
+                                this.child4Bar[p] = this.child4Bar[p] + Number(adult[5]);
                                 //console.log(this.child[p]);
                             }
                         }
@@ -3774,22 +3855,30 @@ var TableplanComponent = (function () {
                 }
             }
         }
-        if (this.tablesWintergarten) {
-            for (var p = 0; p < this.tablesWintergarten.length; p++) {
-                this.adultWintergarten[p] = 0;
-                this.childWintergarten[p] = 0;
-                if (this.tablesWintergarten[p].groups) {
-                    for (var g = 0; g < this.tablesWintergarten[p].groups.length; g++) {
-                        if (this.tablesWintergarten[p].groups[g].numberOfPersonsValue) {
-                            var adult = this.tablesWintergarten[p].groups[g].numberOfPersonsValue.match(/\d+/g);
+        if (this.tablesSpeisesaal) {
+            for (var p = 0; p < this.tablesSpeisesaal.length; p++) {
+                this.adult1Speisesaal[p] = 0;
+                this.adult2Speisesaal[p] = 0;
+                this.child1Speisesaal[p] = 0;
+                this.child2Speisesaal[p] = 0;
+                this.child3Speisesaal[p] = 0;
+                this.child4Speisesaal[p] = 0;
+                if (this.tablesSpeisesaal[p].groups) {
+                    for (var g = 0; g < this.tablesSpeisesaal[p].groups.length; g++) {
+                        if (this.tablesSpeisesaal[p].groups[g].numberOfPersonsValue) {
+                            var adult = this.tablesSpeisesaal[p].groups[g].numberOfPersonsValue.match(/\d+/g);
                             if (adult != null) {
                                 //console.log(adult);
-                                this.adultWintergarten[p] = this.adultWintergarten[p] + Number(adult[0]);
+                                this.adult1Speisesaal[p] = this.adult1Speisesaal[p] + Number(adult[0]);
+                                this.adult2Speisesaal[p] = this.adult2Speisesaal[p] + Number(adult[1]);
                                 //console.log(this.adult[p]);
                             }
                             if (adult != null) {
                                 //console.log(adult);
-                                this.childWintergarten[p] = this.childWintergarten[p] + Number(adult[1]);
+                                this.child1Speisesaal[p] = this.child1Speisesaal[p] + Number(adult[2]);
+                                this.child2Speisesaal[p] = this.child2Speisesaal[p] + Number(adult[3]);
+                                this.child3Speisesaal[p] = this.child3Speisesaal[p] + Number(adult[4]);
+                                this.child4Speisesaal[p] = this.child4Speisesaal[p] + Number(adult[5]);
                                 //console.log(this.child[p]);
                             }
                         }
@@ -3797,49 +3886,65 @@ var TableplanComponent = (function () {
                 }
             }
         }
-        this.childWintergartenExport.emit(this.childWintergarten);
-        this.adultWintergartenExport.emit(this.adultWintergarten);
-        this.adultRestaurantExport.emit(this.adultRestaurant);
-        this.childRestaurantExport.emit(this.childRestaurant);
-        this.adultPanoramaExport.emit(this.adultPanorama);
-        this.childPanoramaExport.emit(this.childPanorama);
-        this.adultSonnbergZirbnExport.emit(this.adultSonnbergZirbn);
-        this.childSonnbergZirbnExport.emit(this.childSonnbergZirbn);
+        this.adult1SpeisesaalExport.emit(this.adult1Speisesaal);
+        this.adult2SpeisesaalExport.emit(this.adult2Speisesaal);
+        this.child1SpeisesaalExport.emit(this.child1Speisesaal);
+        this.child2SpeisesaalExport.emit(this.child2Speisesaal);
+        this.child3SpeisesaalExport.emit(this.child3Speisesaal);
+        this.child4SpeisesaalExport.emit(this.child4Speisesaal);
+        this.adult1BarExport.emit(this.adult1Bar);
+        this.adult2BarExport.emit(this.adult2Bar);
+        this.child1BarExport.emit(this.child1Bar);
+        this.child2BarExport.emit(this.child2Bar);
+        this.child3BarExport.emit(this.child3Bar);
+        this.child4BarExport.emit(this.child4Bar);
+        this.adult1WeinstubeExport.emit(this.adult1Weinstube);
+        this.adult2WeinstubeExport.emit(this.adult2Weinstube);
+        this.child1WeinstubeExport.emit(this.child1Weinstube);
+        this.child2WeinstubeExport.emit(this.child2Weinstube);
+        this.child3WeinstubeExport.emit(this.child3Weinstube);
+        this.child4WeinstubeExport.emit(this.child4Weinstube);
+        this.adult1TerasseExport.emit(this.adult1Terasse);
+        this.adult2TerasseExport.emit(this.adult2Terasse);
+        this.child1TerasseExport.emit(this.child1Terasse);
+        this.child2TerasseExport.emit(this.child2Terasse);
+        this.child3TerasseExport.emit(this.child3Terasse);
+        this.child4TerasseExport.emit(this.child4Terasse);
     };
     return TableplanComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWintergarten'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSpeisesaal'),
     __metadata("design:type", Array)
-], TableplanComponent.prototype, "tablesWintergarten", void 0);
+], TableplanComponent.prototype, "tablesSpeisesaal", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWintergartenBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSpeisesaalBool'),
     __metadata("design:type", Boolean)
-], TableplanComponent.prototype, "showWintergartenBool", void 0);
+], TableplanComponent.prototype, "showSpeisesaalBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesSonnbergZirbn'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesTerasse'),
     __metadata("design:type", Array)
-], TableplanComponent.prototype, "tablesSonnbergZirbn", void 0);
+], TableplanComponent.prototype, "tablesTerasse", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showSonnbergZirbnBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showTerasseBool'),
     __metadata("design:type", Boolean)
-], TableplanComponent.prototype, "showSonnbergZirbnBool", void 0);
+], TableplanComponent.prototype, "showTerasseBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesPanorama'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesWeinstube'),
     __metadata("design:type", Array)
-], TableplanComponent.prototype, "tablesPanorama", void 0);
+], TableplanComponent.prototype, "tablesWeinstube", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showPanoramaBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showWeinstubeBool'),
     __metadata("design:type", Boolean)
-], TableplanComponent.prototype, "showPanoramaBool", void 0);
+], TableplanComponent.prototype, "showWeinstubeBool", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesRestaurant'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('tablesBar'),
     __metadata("design:type", Array)
-], TableplanComponent.prototype, "tablesRestaurant", void 0);
+], TableplanComponent.prototype, "tablesBar", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showRestaurantBool'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showBarBool'),
     __metadata("design:type", Boolean)
-], TableplanComponent.prototype, "showRestaurantBool", void 0);
+], TableplanComponent.prototype, "showBarBool", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('showAllBool'),
     __metadata("design:type", Boolean)
@@ -3851,19 +3956,19 @@ __decorate([
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
-], TableplanComponent.prototype, "movedSonnbergZirbn", void 0);
+], TableplanComponent.prototype, "movedTerasse", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _b || Object)
-], TableplanComponent.prototype, "movedRestaurant", void 0);
+], TableplanComponent.prototype, "movedBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _c || Object)
-], TableplanComponent.prototype, "movedWintergarten", void 0);
+], TableplanComponent.prototype, "movedSpeisesaal", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _d || Object)
-], TableplanComponent.prototype, "movedPanorama", void 0);
+], TableplanComponent.prototype, "movedWeinstube", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _e || Object)
@@ -3871,57 +3976,121 @@ __decorate([
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _f || Object)
-], TableplanComponent.prototype, "childWintergartenExport", void 0);
+], TableplanComponent.prototype, "adult1SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _g || Object)
-], TableplanComponent.prototype, "adultWintergartenExport", void 0);
+], TableplanComponent.prototype, "adult2SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _h || Object)
-], TableplanComponent.prototype, "adultRestaurantExport", void 0);
+], TableplanComponent.prototype, "child1SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _j || Object)
-], TableplanComponent.prototype, "childRestaurantExport", void 0);
+], TableplanComponent.prototype, "child2SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _k || Object)
-], TableplanComponent.prototype, "adultPanoramaExport", void 0);
+], TableplanComponent.prototype, "child3SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _l || Object)
-], TableplanComponent.prototype, "childPanoramaExport", void 0);
+], TableplanComponent.prototype, "child4SpeisesaalExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _m || Object)
-], TableplanComponent.prototype, "adultSonnbergZirbnExport", void 0);
+], TableplanComponent.prototype, "adult1BarExport", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _o || Object)
-], TableplanComponent.prototype, "childSonnbergZirbnExport", void 0);
+], TableplanComponent.prototype, "adult2BarExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _p || Object)
+], TableplanComponent.prototype, "child1BarExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _q || Object)
+], TableplanComponent.prototype, "child2BarExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _r || Object)
+], TableplanComponent.prototype, "child3BarExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _s || Object)
+], TableplanComponent.prototype, "child4BarExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _t || Object)
+], TableplanComponent.prototype, "adult1WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _u || Object)
+], TableplanComponent.prototype, "adult2WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _v || Object)
+], TableplanComponent.prototype, "child1WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_w = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _w || Object)
+], TableplanComponent.prototype, "child2WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_x = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _x || Object)
+], TableplanComponent.prototype, "child3WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_y = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _y || Object)
+], TableplanComponent.prototype, "child4WeinstubeExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_z = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _z || Object)
+], TableplanComponent.prototype, "adult1TerasseExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_0 = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _0 || Object)
+], TableplanComponent.prototype, "adult2TerasseExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_1 = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _1 || Object)
+], TableplanComponent.prototype, "child1TerasseExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_2 = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _2 || Object)
+], TableplanComponent.prototype, "child2TerasseExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_3 = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _3 || Object)
+], TableplanComponent.prototype, "child3TerasseExport", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_4 = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _4 || Object)
+], TableplanComponent.prototype, "child4TerasseExport", void 0);
 TableplanComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-tableplan',
-        template: __webpack_require__("../../../../../src/app/components/digital-table-plan/tableplan/tableplan.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/digital-table-plan/main.component.css")]
+        template: __webpack_require__("./src/app/components/digital-table-plan/tableplan/tableplan.component.html"),
+        styles: [__webpack_require__("./src/app/components/digital-table-plan/main.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _p || Object])
+    __metadata("design:paramtypes", [typeof (_5 = typeof __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_main_service__["a" /* MainService */]) === "function" && _5 || Object])
 ], TableplanComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5;
 //# sourceMappingURL=tableplan.component.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/guards/auth.guard.ts":
+/***/ "./src/app/guards/auth.guard.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3962,15 +4131,15 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ "./src/app/services/auth.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("./node_modules/angular2-jwt/angular2-jwt.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4055,14 +4224,14 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/main.service.ts":
+/***/ "./src/app/services/main.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4114,10 +4283,10 @@ var MainService = (function () {
         return this.http.post('addTable', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    MainService.prototype.dispenseTable = function (tableSonnbergZirbn) {
+    MainService.prototype.dispenseTable = function (tableTerasse) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('dispenseTable', tableSonnbergZirbn, { headers: headers })
+        return this.http.post('dispenseTable', tableTerasse, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     MainService.prototype.removePlaceholder = function (dataString) {
@@ -4126,10 +4295,10 @@ var MainService = (function () {
         return this.http.post('removePlaceholder', dataString, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    MainService.prototype.addPlaceholder = function (tableSonnbergZirbn) {
+    MainService.prototype.addPlaceholder = function (tableTerasse) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('addPlaceholder', tableSonnbergZirbn, { headers: headers })
+        return this.http.post('addPlaceholder', tableTerasse, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     MainService.prototype.addInformationToTable = function (dataString) {
@@ -4189,12 +4358,12 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/validate.service.ts":
+/***/ "./src/app/services/validate.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ValidateService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4231,7 +4400,7 @@ ValidateService = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/environments/environment.ts":
+/***/ "./src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4248,15 +4417,15 @@ var environment = {
 
 /***/ }),
 
-/***/ "../../../../../src/main.ts":
+/***/ "./src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 
 
 
@@ -4272,7 +4441,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("../../../../../src/main.ts");
+module.exports = __webpack_require__("./src/main.ts");
 
 
 /***/ })

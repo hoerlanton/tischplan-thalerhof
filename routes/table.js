@@ -3,20 +3,14 @@
  */
 
 const
-    removeTablesPanorama60s = require('./removeTablesPanorama60s.js'),
-    removeTablesPanorama70s = require('./removeTablesPanorama70s.js'),
-    removeTablesPanorama80s = require('./removeTablesPanorama80s.js'),
-    removeTablesSonnbergZirbn = require('./removeTablesSonnbergZirbn.js'),
-    removeTablesWintergarten = require('./removeTablesWintergarten.js'),
-    removeTablesRestaurant1024 = require('./removeTablesRestaurant10-24.js'),
-    removeTablesRestaurant110 = require('./removeTablesRestaurant1-10.js'),
-    addTablesPanorama60s = require('./addTablesPanorama60s.js'),
-    addTablesPanorama70s = require('./addTablesPanorama70s.js'),
-    addTablesPanorama80s = require('./addTablesPanorama80s.js'),
-    addTablesSonnbergZirbn = require('./addTablesSonnbergZirbn.js'),
-    addTablesWintergarten = require('./addTablesWintergarten.js'),
-    addTablesRestaurant1024 = require('./addTablesRestaurant10-24.js'),
-    addTablesRestaurant110 = require('./addTablesRestaurant1-10.js'),
+    removeTablesWeinstube = require('./removeTablesWeinstube.js'),
+    removeTablesTerasse = require('./removeTablesTerasse.js'),
+    removeTablesSpeisesaal = require('./removeTablesSpeisesaal.js'),
+    removeTablesBar = require('./removeTablesBar.js'),
+    addTablesWeinstube = require('./addTablesWeinstube.js'),
+    addTablesTerasse = require('./addTablesTerasse.js'),
+    addTablesSpeisesaal = require('./addTablesSpeisesaal.js'),
+    addTablesBar = require('./addTablesBar.js'),
     Promise = require('promise'),
     dateFns = require('date-fns');
 
@@ -69,13 +63,10 @@ module.exports = {
         console.log('topValue: ' + topValue);
         console.log('leftValue: ' + leftValue);
 
-        removeTablesPanorama60s.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesPanorama70s.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesPanorama80s.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesSonnbergZirbn.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesWintergarten.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesRestaurant110.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesRestaurant1024.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesWeinstube.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesTerasse.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesSpeisesaal.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesBar.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
             db.thalerhofTables.find(
@@ -94,7 +85,7 @@ module.exports = {
     addTable: function (req, res, db) {
 
         console.log("addTable request made to /moveTable");
-
+        console.log(req.body);
         const data = JSON.stringify(req.body),
          splitted = data.split(","),
          tableNumberBefore = splitted[2],
@@ -127,13 +118,10 @@ module.exports = {
         console.log('topValue: ' + topValue);
         console.log('leftValue: ' + leftValue);
 
-        addTablesPanorama60s.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesPanorama70s.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesPanorama80s.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesSonnbergZirbn.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesWintergarten.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesRestaurant110.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesRestaurant1024.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesWeinstube.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesTerasse.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesSpeisesaal.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesBar.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
             db.thalerhofTables.find(
@@ -191,17 +179,17 @@ module.exports = {
             console.log(departmentValueDB);
         }
 
-        if (departmentValue === "SonnbergZirbn") {
-            departmentValueDB = "Sonnberg-Zirbn";
+        if (departmentValue === "Terasse") {
+            departmentValueDB = "Terasse";
         }
-        else if (departmentValue === "Panorama") {
-            departmentValueDB = "Panorama";
+        else if (departmentValue === "Weinstube") {
+            departmentValueDB = "Weinstube";
         }
-        else if (departmentValue === "Restaurant") {
-            departmentValueDB = "Restaurant";
+        else if (departmentValue === "Bar") {
+            departmentValueDB = "Bar";
         }
-        else if (departmentValue === "Wintergarten") {
-            departmentValueDB = "Wintergarten";
+        else if (departmentValue === "Speisesaal") {
+            departmentValueDB = "Speisesaal";
         }
 
         db.thalerhofTables.update(
@@ -243,7 +231,7 @@ module.exports = {
         console.log("dispenseTable request made to /dispenseTable");
         let dispenseTable = req.body;
         let tablesTemp3 = [];
-        let departments = ["Sonnberg-Zirbn", "Wintergarten", "Restaurant", "Panorama"];
+        let departments = ["Terasse", "Speisesaal", "Bar", "Weinstube"];
         if (dispenseTable.constructor === Array) {
             console.log("dispenseTable[h].table.groups.length > dispenseTable[h].group.length");
             new Promise(function (resolve, reject) {
@@ -267,7 +255,7 @@ module.exports = {
                             for (let j = tablesTemp3[0][i].tables[k].groups.length - 1; j >= 0; j--) {
                                 console.log("+");
                                 //console.log(tablesTemp2[0].tables[i]);
-                                if (tablesTemp3[0][i].tables[k].groups[j].departureValue === String(today)) {
+                                if (tablesTemp3[0][i].tables[k].groups[j].departureValue.indexOf(String(today)) != -1 ) {
                                     //console.log(tablesTemp2[0].tables[i].groups[j].departureValue);
                                     console.log(tablesTemp3[0][i].tables[k].groups[j].departureValue);
                                     tablesTemp3[0][i].tables[k].groups.splice(j, 1);
@@ -306,7 +294,6 @@ module.exports = {
                         db.thalerhofTables.save(tablesTemp3[0][0]);
                         db.thalerhofTables.save(tablesTemp3[0][1]);
                         db.thalerhofTables.save(tablesTemp3[0][2]);
-                        db.thalerhofTables.save(tablesTemp3[0][3]);
                     }
                 });
             }).then(function () { // (**)

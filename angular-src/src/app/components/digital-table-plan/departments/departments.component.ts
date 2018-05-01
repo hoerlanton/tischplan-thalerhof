@@ -1,11 +1,11 @@
 import { Component, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MainService } from '../../../services/main.service';
 import { Table } from '../../../../../Table';
-import { WintergartenComponent } from './wintergarten/wintergarten.component';
+import { SpeisesaalComponent } from './speisesaal/speisesaal.component';
 import {AllComponent} from "./all/all.component";
-import {PanoramaComponent} from "./panorama/panorama.component";
-import {RestaurantComponent} from "./restaurant/restaurant.component";
-import {SonnbergZirbnComponent} from "./sonnberg-zirbn/sonnberg-zirbn.component";
+import {WeinstubeComponent} from "./weinstube/weinstube.component";
+import {BarComponent} from "./bar/bar.component";
+import {TerasseComponent} from "./terasse/terasse.component";
 
 @Component({
   selector: 'app-departments',
@@ -15,41 +15,41 @@ import {SonnbergZirbnComponent} from "./sonnberg-zirbn/sonnberg-zirbn.component"
 
 export class DepartmentsComponent {
 
-  @Input('tablesWintergarten') tablesWintergarten: Table[];
-  @Input('showWintergartenBool') showWintergartenBool: boolean;
-  @Input('tablesSonnbergZirbn') tablesSonnbergZirbn: Table[];
-  @Input('showSonnbergZirbnBool') showSonnbergZirbnBool: boolean;
-  @Input() tablesPanorama: Table[];
+  @Input('tablesSpeisesaal') tablesSpeisesaal: Table[];
+  @Input('showSpeisesaalBool') showSpeisesaalBool: boolean;
+  @Input('tablesTerasse') tablesTerasse: Table[];
+  @Input('showTerasseBool') showTerasseBool: boolean;
+  @Input() tablesWeinstube: Table[];
   @Input('tables') tables: any;
-  @Input('showPanoramaBool') showPanoramaBool: boolean;
-  @Input('tablesRestaurant') tablesRestaurant: Table[];
-  @Input('showRestaurantBool') showRestaurantBool: boolean;
+  @Input('showWeinstubeBool') showWeinstubeBool: boolean;
+  @Input('tablesBar') tablesBar: Table[];
+  @Input('showBarBool') showBarBool: boolean;
   @Input('showAllBool') showAllBool: boolean;
   @Input() tablesTempDeparture: any;
   @Input('term') term: string;
   @ViewChild(AllComponent)
   private allComponent: AllComponent;
 
-  @ViewChild(PanoramaComponent)
-  private panoramaComponent: PanoramaComponent;
+  @ViewChild(WeinstubeComponent)
+  private panoramaComponent: WeinstubeComponent;
 
-  @ViewChild(RestaurantComponent)
-  private restaurantComponent: RestaurantComponent;
+  @ViewChild(BarComponent)
+  private restaurantComponent: BarComponent;
 
-  @ViewChild(WintergartenComponent)
-  private wintergartenComponent: WintergartenComponent;
+  @ViewChild(SpeisesaalComponent)
+  private wintergartenComponent: SpeisesaalComponent;
 
-  @ViewChild(SonnbergZirbnComponent)
-  private sonnbergZirbnComponent: SonnbergZirbnComponent;
+  @ViewChild(TerasseComponent)
+  private sonnbergZirbnComponent: TerasseComponent;
 
   @Output()
-  dispensedSonnbergZirbn:EventEmitter<any> = new EventEmitter();
+  dispensedTerasse:EventEmitter<any> = new EventEmitter();
   @Output()
-  dispensedRestaurant:EventEmitter<any> = new EventEmitter();
+  dispensedBar:EventEmitter<any> = new EventEmitter();
   @Output()
-  dispensedWintergarten:EventEmitter<any> = new EventEmitter();
+  dispensedSpeisesaal:EventEmitter<any> = new EventEmitter();
   @Output()
-  dispensedPanorama:EventEmitter<any> = new EventEmitter();
+  dispensedWeinstube:EventEmitter<any> = new EventEmitter();
   @Output()
   updateAzList:EventEmitter<any> = new EventEmitter();
   @Output()
@@ -95,15 +95,15 @@ export class DepartmentsComponent {
           return 0;
         });
 
-        if (response[0].tables[j].department === "Sonnberg-Zirbn") {
-          this.dispensedSonnbergZirbn.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "Panorama") {
-          this.dispensedPanorama.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "Restaurant") {
-          this.dispensedRestaurant.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "Wintergarten") {
-          this.dispensedWintergarten.emit(response[0].tables);
-          console.log("Wintergarten" + JSON.stringify(response[0].tables));
+        if (response[0].tables[j].department === "Terasse") {
+          this.dispensedTerasse.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Weinstube") {
+          this.dispensedWeinstube.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Bar") {
+          this.dispensedBar.emit(response[0].tables);
+        } else if (response[0].tables[j].department === "Speisesaal") {
+          this.dispensedSpeisesaal.emit(response[0].tables);
+          console.log("Speisesaal" + JSON.stringify(response[0].tables));
         }
       }
     },
@@ -127,7 +127,7 @@ export class DepartmentsComponent {
 
     this.mainService.addPlaceholder(table).subscribe(response => {
       console.log("Add placeholder!");
-      //console.log(this.tablesSonnbergZirbn[j].placeholder);
+      //console.log(this.tablesTerasse[j].placeholder);
       console.log("placeholder:" + JSON.stringify(response));
 
     });
@@ -144,21 +144,21 @@ export class DepartmentsComponent {
           if (response === null) {
             return;
           } else {
-            if (response[0].department === "Sonnberg-Zirbn") {
-              this.dispensedSonnbergZirbn.emit(response[0].tables);
+            if (response[0].department === "Terasse") {
+              this.dispensedTerasse.emit(response[0].tables);
             }
-            else if (response[0].department === "Panorama") {
-              this.dispensedPanorama.emit(response[0].tables);
+            else if (response[0].department === "Weinstube") {
+              this.dispensedWeinstube.emit(response[0].tables);
             }
-            else if (response[0].department === "Restaurant") {
-              this.dispensedRestaurant.emit(response[0].tables);
+            else if (response[0].department === "Bar") {
+              this.dispensedBar.emit(response[0].tables);
             }
-            else if (response[0].department === "Wintergarten") {
-              this.dispensedWintergarten.emit(response[0].tables);
+            else if (response[0].department === "Speisesaal") {
+              this.dispensedSpeisesaal.emit(response[0].tables);
             }
           }
         }
-        // console.log(this.tablesSonnbergZirbn[arrayIndex]);
+        // console.log(this.tablesTerasse[arrayIndex]);
       )
   };
 
@@ -175,17 +175,17 @@ export class DepartmentsComponent {
         if (response === null) {
           return;
         } else {
-          if (response.tables[0].department === "Sonnberg-Zirbn") {
-            this.tablesSonnbergZirbn[arrayIndex] = response.tables[0];
+          if (response.tables[0].department === "Terasse") {
+            this.tablesTerasse[arrayIndex] = response.tables[0];
           }
-          else if (response.tables[0].department === "Panorama") {
-            this.tablesPanorama[arrayIndex] = response.tables[0];
+          else if (response.tables[0].department === "Weinstube") {
+            this.tablesWeinstube[arrayIndex] = response.tables[0];
           }
-          else if (response.tables[0].department === "Restaurant") {
-            this.tablesRestaurant[arrayIndex] = response.tables[0];
+          else if (response.tables[0].department === "Bar") {
+            this.tablesBar[arrayIndex] = response.tables[0];
           }
-          else if (response.tables[0].department === "Wintergarten") {
-            this.tablesWintergarten[arrayIndex] = response.tables[0];
+          else if (response.tables[0].department === "Speisesaal") {
+            this.tablesSpeisesaal[arrayIndex] = response.tables[0];
           }
         }
         this.updateAzList.emit();
@@ -219,31 +219,31 @@ export class DepartmentsComponent {
               // note parts[1]-1
               // console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);
               // Mon May 31 2010 00:00:00
-              // this.tablesRestaurant[j].arrivalValue
+              // this.tablesBar[j].arrivalValue
               let dateToday = String(this.dateTodayGenerated).substring(0, 15);
               //console.log('Parsed Date --->: ' + this.parsedDate[0]);
               //console.log('this.dateGenerated --->: ' + dateToday);
               if (dateToday.indexOf(this.parsedDate[0]) !== -1) {
-                if (this.tablesChangeBgColorIfArrival[a].department === "Panorama") {
-                  //console.log(this.tablesPanorama);
-                  if (this.tablesPanorama[b]) {
-                    //console.log(this.tablesPanorama[b]);
-                    this.tablesPanorama[b].bgColor = "#0a7a74";
+                if (this.tablesChangeBgColorIfArrival[a].department === "Weinstube") {
+                  //console.log(this.tablesWeinstube);
+                  if (this.tablesWeinstube[b]) {
+                    //console.log(this.tablesWeinstube[b]);
+                    this.tablesWeinstube[b].bgColor = "#0a7a74";
                   }
                 }
-                else if (this.tablesChangeBgColorIfArrival[a].department === "Wintergarten") {
-                  if (this.tablesWintergarten[b]) {
-                    this.tablesWintergarten[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfArrival[a].department === "Speisesaal") {
+                  if (this.tablesSpeisesaal[b]) {
+                    this.tablesSpeisesaal[b].bgColor = "#0a7a74";
                   }
                 }
-                else if (this.tablesChangeBgColorIfArrival[a].department === "Sonnberg-Zirbn") {
-                  if (this.tablesSonnbergZirbn[b]) {
-                    this.tablesSonnbergZirbn[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfArrival[a].department === "Terasse") {
+                  if (this.tablesTerasse[b]) {
+                    this.tablesTerasse[b].bgColor = "#0a7a74";
                   }
                 }
-                else if (this.tablesChangeBgColorIfArrival[a].department === "Restaurant") {
-                  if (this.tablesRestaurant[b]) {
-                    this.tablesRestaurant[b].bgColor = "#0a7a74";
+                else if (this.tablesChangeBgColorIfArrival[a].department === "Bar") {
+                  if (this.tablesBar[b]) {
+                    this.tablesBar[b].bgColor = "#0a7a74";
                   }
                 }
               }
@@ -255,14 +255,14 @@ export class DepartmentsComponent {
   }
 
   transform(term) {
-      if (this.showPanoramaBool) {
-      this.panoramaComponent.transform(this.tablesPanorama, term);
-       } else if (this.showRestaurantBool) {
-       this.restaurantComponent.transform(this.tablesRestaurant, term);
-       } else if (this.showWintergartenBool) {
-       this.wintergartenComponent.transform(this.tablesWintergarten, term);
-       } else if (this.showSonnbergZirbnBool) {
-       this.sonnbergZirbnComponent.transform(this.tablesSonnbergZirbn, term);
+      if (this.showWeinstubeBool) {
+      this.panoramaComponent.transform(this.tablesWeinstube, term);
+       } else if (this.showBarBool) {
+       this.restaurantComponent.transform(this.tablesBar, term);
+       } else if (this.showSpeisesaalBool) {
+       this.wintergartenComponent.transform(this.tablesSpeisesaal, term);
+       } else if (this.showTerasseBool) {
+       this.sonnbergZirbnComponent.transform(this.tablesTerasse, term);
        } else if (this.showAllBool) {
         this.allComponent.transform(this.tables, term);
 

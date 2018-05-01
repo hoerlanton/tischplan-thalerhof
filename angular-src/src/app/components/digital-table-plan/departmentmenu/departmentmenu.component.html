@@ -8,34 +8,34 @@
     <div *ngIf="showAllBool">
       Alle <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
-    <div *ngIf="showSonnbergZirbnBool">
-      Sonnberg-<br>Zirbn <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    <div *ngIf="showTerasseBool">
+      Terasse <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
-    <div *ngIf="showWintergartenBool">
-       Wintergarten <br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    <div *ngIf="showSpeisesaalBool">
+       Speisesaal <br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
-    <div *ngIf="showRestaurantBool">
-      Restaurant <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    <div *ngIf="showBarBool">
+      Bar <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
-    <div *ngIf="showPanoramaBool">
-       Panorama <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+    <div *ngIf="showWeinstubeBool">
+       Weinstube <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
   </button>
   <ul *dropdownMenu class="dropdown-menu" role="menu">
-      <li role="menuitem" class="showSonnbergZirbn"  (click)="showSonnbergZirbn()" (mouseenter)="mouseEnterSonnbergZirbn()"  (mouseleave)="mouseLeaveSonnbergZirbn()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
-        <p [ngStyle]="{'color': '#' + fontColor1}">Sonnberg-Zirbn</p>
+      <li role="menuitem" class="showTerasse"  (click)="showTerasse()" (mouseenter)="mouseEnterTerasse()"  (mouseleave)="mouseLeaveTerasse()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
+        <p [ngStyle]="{'color': '#' + fontColor1}">Terasse</p>
       </li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showPanorama"  (click)="showPanorama()" (mouseenter)="mouseEnterPanorama()"  (mouseleave)="mouseLeavePanorama()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
-        <p [ngStyle]="{'color': '#' + fontColor2}">Panorama</p>
+    <li role="menuitem" class="showWeinstube"  (click)="showWeinstube()" (mouseenter)="mouseEnterWeinstube()"  (mouseleave)="mouseLeaveWeinstube()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
+        <p [ngStyle]="{'color': '#' + fontColor2}">Weinstube</p>
       </li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showRestaurant" (click)="showRestaurant()" (mouseenter)="mouseEnterRestaurant()"  (mouseleave)="mouseLeaveRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
-        <p [ngStyle]="{'color': '#' + fontColor3}">Restaurant</p>
+    <li role="menuitem" class="showBar" (click)="showBar()" (mouseenter)="mouseEnterBar()"  (mouseleave)="mouseLeaveBar()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
+        <p [ngStyle]="{'color': '#' + fontColor3}">Bar</p>
       </li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem" class="showWintergarten" (click)="showWintergarten()" (mouseenter)="mouseEnterWintergarten()"  (mouseleave)="mouseLeaveWintergarten()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
-        <p [ngStyle]="{'color': '#' + fontColor4}">Wintergarten</p>
+    <li role="menuitem" class="showSpeisesaal" (click)="showSpeisesaal()" (mouseenter)="mouseEnterSpeisesaal()"  (mouseleave)="mouseLeaveSpeisesaal()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
+        <p [ngStyle]="{'color': '#' + fontColor4}">Speisesaal</p>
       </li>
     <li class="divider dropdown-divider"></li>
     <li role="menuitem" class="showAll" (click)="showAll()" (mouseenter)="mouseEnterAll()"  (mouseleave)="mouseLeaveAll()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">
