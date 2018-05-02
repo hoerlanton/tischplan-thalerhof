@@ -98,6 +98,206 @@ module.exports = {
                         }
                         console.log("addTable Update successful");
                     });
+        } else if (tableNumber === '130' && topValue === '140' && leftValue === '600' && height === '310') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.topValue": "250",
+                        "tables.$.height": "260",
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "600",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "135",
+                                "topValue": "140",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "100",
+                                "height": "50"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '130' && topValue === '250' && leftValue === '600' && height === '260') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.topValue": "340",
+                        "tables.$.height": "210",
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "600",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "134",
+                                "topValue": "250",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "100",
+                                "height": "50"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '130' && topValue === '340' && leftValue === '600' && height === '210') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.topValue": "420",
+                        "tables.$.height": "160",
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "600",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "133",
+                                "topValue": "340",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "100",
+                                "height": "50"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '130' && topValue === '420' && leftValue === '600' && height === '160') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.topValue": "500",
+                        "tables.$.height": "110",
+                        "tables.$.width": "90",
+                        "tables.$.leftValue": "600",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "132",
+                                "topValue": "420",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "100",
+                                "height": "50"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
         } else if (tableNumber === '131' && topValue === '420' && leftValue === '600' && height === '120') {
             db.thalerhofTables.update(
                 {

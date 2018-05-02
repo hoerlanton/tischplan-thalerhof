@@ -3602,27 +3602,27 @@ var TableplanComponent = (function () {
             }
             console.log('Response:' + JSON.stringify(response));
             //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
-            console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
-            console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-            console.log("response[0].tables.department" + response[0].tables[j].department);
+            //console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
+            //console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
+            //console.log("response[0].tables.department" + response[0].tables[j].department);
             if (response === null) {
                 return;
             }
             else {
-                if (response[0].tables[j].department === "Terasse") {
+                if (response[0].department === "Terasse") {
                     _this.movedTerasse.emit(response[0].tables);
                     //this.tablesTerasse = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Weinstube") {
+                else if (response[0].department === "Weinstube") {
                     _this.movedWeinstube.emit(response[0].tables);
                     //this.tablesWeinstube = response[0].tables;
                     //this._navService.changeNav(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Bar") {
+                else if (response[0].department === "Bar") {
                     _this.movedBar.emit(response[0].tables);
                     //this.tablesBar = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Speisesaal") {
+                else if (response[0].department === "Speisesaal") {
                     _this.movedSpeisesaal.emit(response[0].tables);
                     //this.tablesSpeisesaal = response[0].tables;
                 }
@@ -3646,27 +3646,27 @@ var TableplanComponent = (function () {
             }
             console.log('Response:' + JSON.stringify(response));
             //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
-            console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
-            console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-            console.log("response[0].tables.department" + response[0].tables[j].department);
+            //console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
+            //console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
+            //console.log("response[0].tables.department" + response[0].tables[j].department);
             if (response === null) {
                 return;
             }
             else {
-                if (response[0].tables[j].department === "Terasse") {
+                if (response[0].department === "Terasse") {
                     _this.movedTerasse.emit(response[0].tables);
                     //this.tablesTerasse = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Weinstube") {
+                else if (response[0].department === "Weinstube") {
                     _this.movedWeinstube.emit(response[0].tables);
                     //this.tablesWeinstube = response[0].tables;
                     //this._navService.changeNav(response[0].tables);
                 }
-                else if (response[0].tables[j].department === "Bar") {
+                else if (response[0].department === "Bar") {
                     _this.movedBar.emit(response[0].tables);
                     //this.tablesBar = response[0].tables;
                 }
-                else if (response[0].tables[j].department === "Speisesaal") {
+                else if (response[0].department === "Speisesaal") {
                     _this.movedSpeisesaal.emit(response[0].tables);
                     //this.tablesSpeisesaal = response[0].tables;
                 }
