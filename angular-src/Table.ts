@@ -17,6 +17,7 @@ export class Table {
     roomNumberValue: string;
     arrivalValue: string;
     departureValue: string;
+    priceValue: string;
     numberOfPersonsValue: string;
     nationValue: string;
     departmentValue: string;

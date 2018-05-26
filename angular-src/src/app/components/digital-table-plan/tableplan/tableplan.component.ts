@@ -25,25 +25,21 @@ export class TableplanComponent implements AfterViewInit {
   @Output()movedWeinstube: EventEmitter<any> = new EventEmitter();
   @Output()changeBgColorIfArrival: EventEmitter<any> = new EventEmitter();
   @Output()adult1SpeisesaalExport: EventEmitter<any> = new EventEmitter();
-  @Output()adult2SpeisesaalExport: EventEmitter<any> = new EventEmitter();
   @Output()child1SpeisesaalExport: EventEmitter<any> = new EventEmitter();
   @Output()child2SpeisesaalExport: EventEmitter<any> = new EventEmitter();
   @Output()child3SpeisesaalExport: EventEmitter<any> = new EventEmitter();
   @Output()child4SpeisesaalExport: EventEmitter<any> = new EventEmitter();
   @Output()adult1BarExport: EventEmitter<any> = new EventEmitter();
-  @Output()adult2BarExport: EventEmitter<any> = new EventEmitter();
   @Output()child1BarExport: EventEmitter<any> = new EventEmitter();
   @Output()child2BarExport: EventEmitter<any> = new EventEmitter();
   @Output()child3BarExport: EventEmitter<any> = new EventEmitter();
   @Output()child4BarExport: EventEmitter<any> = new EventEmitter();
   @Output()adult1WeinstubeExport: EventEmitter<any> = new EventEmitter();
-  @Output()adult2WeinstubeExport: EventEmitter<any> = new EventEmitter();
   @Output()child1WeinstubeExport: EventEmitter<any> = new EventEmitter();
   @Output()child2WeinstubeExport: EventEmitter<any> = new EventEmitter();
   @Output()child3WeinstubeExport: EventEmitter<any> = new EventEmitter();
   @Output()child4WeinstubeExport: EventEmitter<any> = new EventEmitter();
   @Output()adult1TerasseExport: EventEmitter<any> = new EventEmitter();
-  @Output()adult2TerasseExport: EventEmitter<any> = new EventEmitter();
   @Output()child1TerasseExport: EventEmitter<any> = new EventEmitter();
   @Output()child2TerasseExport: EventEmitter<any> = new EventEmitter();
   @Output()child3TerasseExport: EventEmitter<any> = new EventEmitter();
@@ -55,25 +51,21 @@ export class TableplanComponent implements AfterViewInit {
   buttonEntfernen: string;
   trace: boolean;
   adult1Terasse: any[] = [];
-  adult2Terasse: any[] = [];
   child1Terasse: any[] = [];
   child2Terasse: any[] = [];
   child3Terasse: any[] = [];
   child4Terasse: any[] = [];
   adult1Weinstube: any[] = [];
-  adult2Weinstube: any[] = [];
   child1Weinstube: any[] = [];
   child2Weinstube: any[] = [];
   child3Weinstube: any[] = [];
   child4Weinstube: any[] = [];
   adult1Bar: any[] = [];
-  adult2Bar: any[] = [];
   child1Bar: any[] = [];
   child2Bar: any[] = [];
   child3Bar: any[] = [];
   child4Bar: any[] = [];
   adult1Speisesaal: any[] = [];
-  adult2Speisesaal: any[] = [];
   child1Speisesaal: any[] = [];
   child2Speisesaal: any[] = [];
   child3Speisesaal: any[] = [];
@@ -190,7 +182,7 @@ export class TableplanComponent implements AfterViewInit {
       for (let b = 0; b < a.length; b++) {
         //console.log("LOOOOOOOOOOOOOOP");
         //console.log(a[b].traceValue);
-        if (a[b].traceValue != "-" || a[b].newTraceText) {
+        if (a[b].newTraceText) {
           this.trace = true;
         }
       }
@@ -280,7 +272,6 @@ export class TableplanComponent implements AfterViewInit {
     if (this.tablesTerasse) {
       for (let p = 0; p < this.tablesTerasse.length; p++) {
         this.adult1Terasse[p] = 0;
-        this.adult2Terasse[p] = 0;
         this.child1Terasse[p] = 0;
         this.child2Terasse[p] = 0;
         this.child3Terasse[p] = 0;
@@ -292,15 +283,14 @@ export class TableplanComponent implements AfterViewInit {
               if (adult != null) {
                 //console.log(adult);
                 this.adult1Terasse[p] = this.adult1Terasse[p] + Number(adult[0]);
-                this.adult2Terasse[p] = this.adult2Terasse[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.child1Terasse[p] = this.child1Terasse[p] + Number(adult[2]);
-                this.child2Terasse[p] = this.child2Terasse[p] + Number(adult[3]);
-                this.child3Terasse[p] = this.child3Terasse[p] + Number(adult[4]);
-                this.child4Terasse[p] = this.child4Terasse[p] + Number(adult[5]);
+                this.child1Terasse[p] = this.child1Terasse[p] + Number(adult[1]);
+                this.child2Terasse[p] = this.child2Terasse[p] + Number(adult[2]);
+                this.child3Terasse[p] = this.child3Terasse[p] + Number(adult[3]);
+                this.child4Terasse[p] = this.child4Terasse[p] + Number(adult[4]);
                 //console.log(this.child[p]);
               }
             }
@@ -311,7 +301,6 @@ export class TableplanComponent implements AfterViewInit {
     if (this.tablesWeinstube) {
       for (let p = 0; p < this.tablesWeinstube.length; p++) {
         this.adult1Weinstube[p] = 0;
-        this.adult2Weinstube[p] = 0;
         this.child1Weinstube[p] = 0;
         this.child2Weinstube[p] = 0;
         this.child3Weinstube[p] = 0;
@@ -323,15 +312,14 @@ export class TableplanComponent implements AfterViewInit {
               if (adult != null) {
                 //console.log(adult);
                 this.adult1Weinstube[p] = this.adult1Weinstube[p] + Number(adult[0]);
-                this.adult2Weinstube[p] = this.adult2Weinstube[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.child1Weinstube[p] = this.child1Weinstube[p] + Number(adult[2]);
-                this.child2Weinstube[p] = this.child2Weinstube[p] + Number(adult[3]);
-                this.child3Weinstube[p] = this.child3Weinstube[p] + Number(adult[4]);
-                this.child4Weinstube[p] = this.child4Weinstube[p] + Number(adult[5]);
+                this.child1Weinstube[p] = this.child1Weinstube[p] + Number(adult[1]);
+                this.child2Weinstube[p] = this.child2Weinstube[p] + Number(adult[2]);
+                this.child3Weinstube[p] = this.child3Weinstube[p] + Number(adult[3]);
+                this.child4Weinstube[p] = this.child4Weinstube[p] + Number(adult[4]);
                 //console.log(this.child[p]);
               }
             }
@@ -342,7 +330,6 @@ export class TableplanComponent implements AfterViewInit {
     if (this.tablesBar) {
       for (let p = 0; p < this.tablesBar.length; p++) {
         this.adult1Bar[p] = 0;
-        this.adult2Bar[p] = 0;
         this.child1Bar[p] = 0;
         this.child2Bar[p] = 0;
         this.child3Bar[p] = 0;
@@ -354,15 +341,14 @@ export class TableplanComponent implements AfterViewInit {
               if (adult != null) {
                 //console.log(adult);
                 this.adult1Bar[p] = this.adult1Bar[p] + Number(adult[0]);
-                this.adult2Bar[p] = this.adult2Bar[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.child1Bar[p] = this.child1Bar[p] + Number(adult[2]);
-                this.child2Bar[p] = this.child2Bar[p] + Number(adult[3]);
-                this.child3Bar[p] = this.child3Bar[p] + Number(adult[4]);
-                this.child4Bar[p] = this.child4Bar[p] + Number(adult[5]);
+                this.child1Bar[p] = this.child1Bar[p] + Number(adult[1]);
+                this.child2Bar[p] = this.child2Bar[p] + Number(adult[2]);
+                this.child3Bar[p] = this.child3Bar[p] + Number(adult[3]);
+                this.child4Bar[p] = this.child4Bar[p] + Number(adult[4]);
                 //console.log(this.child[p]);
               }
             }
@@ -373,7 +359,6 @@ export class TableplanComponent implements AfterViewInit {
     if (this.tablesSpeisesaal) {
       for (let p = 0; p < this.tablesSpeisesaal.length; p++) {
         this.adult1Speisesaal[p] = 0;
-        this.adult2Speisesaal[p] = 0;
         this.child1Speisesaal[p] = 0;
         this.child2Speisesaal[p] = 0;
         this.child3Speisesaal[p] = 0;
@@ -385,15 +370,14 @@ export class TableplanComponent implements AfterViewInit {
               if (adult != null) {
                 //console.log(adult);
                 this.adult1Speisesaal[p] = this.adult1Speisesaal[p] + Number(adult[0]);
-                this.adult2Speisesaal[p] = this.adult2Speisesaal[p] + Number(adult[1]);
                 //console.log(this.adult[p]);
               }
               if (adult != null) {
                 //console.log(adult);
-                this.child1Speisesaal[p] = this.child1Speisesaal[p] + Number(adult[2]);
-                this.child2Speisesaal[p] = this.child2Speisesaal[p] + Number(adult[3]);
-                this.child3Speisesaal[p] = this.child3Speisesaal[p] + Number(adult[4]);
-                this.child4Speisesaal[p] = this.child4Speisesaal[p] + Number(adult[5]);
+                this.child1Speisesaal[p] = this.child1Speisesaal[p] + Number(adult[1]);
+                this.child2Speisesaal[p] = this.child2Speisesaal[p] + Number(adult[2]);
+                this.child3Speisesaal[p] = this.child3Speisesaal[p] + Number(adult[3]);
+                this.child4Speisesaal[p] = this.child4Speisesaal[p] + Number(adult[4]);
                 //console.log(this.child[p]);
               }
             }
@@ -402,25 +386,21 @@ export class TableplanComponent implements AfterViewInit {
       }
     }
     this.adult1SpeisesaalExport.emit(this.adult1Speisesaal);
-    this.adult2SpeisesaalExport.emit(this.adult2Speisesaal);
     this.child1SpeisesaalExport.emit(this.child1Speisesaal);
     this.child2SpeisesaalExport.emit(this.child2Speisesaal);
     this.child3SpeisesaalExport.emit(this.child3Speisesaal);
     this.child4SpeisesaalExport.emit(this.child4Speisesaal);
     this.adult1BarExport.emit(this.adult1Bar);
-    this.adult2BarExport.emit(this.adult2Bar);
     this.child1BarExport.emit(this.child1Bar);
     this.child2BarExport.emit(this.child2Bar);
     this.child3BarExport.emit(this.child3Bar);
     this.child4BarExport.emit(this.child4Bar);
     this.adult1WeinstubeExport.emit(this.adult1Weinstube);
-    this.adult2WeinstubeExport.emit(this.adult2Weinstube);
     this.child1WeinstubeExport.emit(this.child1Weinstube);
     this.child2WeinstubeExport.emit(this.child2Weinstube);
     this.child3WeinstubeExport.emit(this.child3Weinstube);
     this.child4WeinstubeExport.emit(this.child4Weinstube);
     this.adult1TerasseExport.emit(this.adult1Terasse);
-    this.adult2TerasseExport.emit(this.adult2Terasse);
     this.child1TerasseExport.emit(this.child1Terasse);
     this.child2TerasseExport.emit(this.child2Terasse);
     this.child3TerasseExport.emit(this.child3Terasse);

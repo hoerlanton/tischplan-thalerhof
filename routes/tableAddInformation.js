@@ -14,6 +14,7 @@ module.exports = {
             nameValue = [],
             roomNumberValue = [],
             nationValue = [],
+            priceValue = [],
             arrivalValue = [],
             departureValue = [],
             numberOfPersonsValue = [],
@@ -45,7 +46,8 @@ module.exports = {
             roomNumberValue.push(informationElements2[2].substring(1, informationElements2[2].length));
             arrivalValue.push(informationElements2[3].substring(1, informationElements2[3].length));
             departureValue.push(informationElements2[4].substring(1, informationElements2[4].length));
-            numberOfPersonsValue.push(informationElements2[5].substring(1, informationElements2[5].length));
+            priceValue.push(informationElements2[5].substring(1, informationElements2[5].length));
+            numberOfPersonsValue.push(informationElements2[6].substring(1, informationElements2[6].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/);
             tableValue = tableValueArray[0];
@@ -80,6 +82,7 @@ module.exports = {
                                 "roomNumberValue": roomNumberValue[0],
                                 "arrivalValue": arrivalValue[0],
                                 "departureValue": departureValue[0],
+                                "priceValue": priceValue[0],
                                 "numberOfPersonsValue": numberOfPersonsValue[0],
                                 "nationValue": nationValue[0],
                             }
@@ -103,6 +106,7 @@ module.exports = {
                     numberOfPersonsValue.push(reseat[0].groups[i].numberOfPersonsValue);
                     arrivalValue.push(reseat[0].groups[i].arrivalValue);
                     departureValue.push(reseat[0].groups[i].departureValue);
+                    priceValue.push(reseat[0].groups[i].priceValue);
                     nationValue.push(reseat[0].groups[i].nationValue);
                     newTraceText.push(reseat[0].groups[i].newTraceName);
                     newTraceRoomNumber.push(reseat[0].groups[i].newTraceRoomNumber);
@@ -150,6 +154,7 @@ module.exports = {
                                             "roomNumberValue": roomNumberValue[i],
                                             "arrivalValue": arrivalValue[i],
                                             "departureValue": departureValue[i],
+                                            "priceValue": priceValue[i],
                                             "numberOfPersonsValue": numberOfPersonsValue[i],
                                             "nationValue": nationValue[i],
                                         }

@@ -21,13 +21,9 @@ export class PrintComponent {
   @Input('showSpeisesaalBool') showSpeisesaalBool: string;
   @Input('tablesSpeisesaal') tablesSpeisesaal: string;
   @Input('adult1Weinstube') adult1Weinstube: string;
-  @Input('adult2Weinstube') adult2Weinstube: string;
   @Input('adult1Bar') adult1Bar: string;
-  @Input('adult2Bar') adult2Bar: string;
   @Input('adult1Terasse') adult1Terasse: string;
-  @Input('adult2Terasse') adult2Terasse: string;
   @Input('adult1Speisesaal') adult1Speisesaal: string;
-  @Input('adult2Speisesaal') adult2Speisesaal: string;
   @Input('child1Weinstube') child1Weinstube: string;
   @Input('child1Bar') child1Bar: string;
   @Input('child1Terasse') child1Terasse: string;

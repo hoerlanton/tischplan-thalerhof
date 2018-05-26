@@ -1,4 +1,4 @@
-<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Im-Haus</h3>
+<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Zukünftige Anreisen</h3>
 <div class="row1">
   <div class='wrapper'>
     <div *ngFor="let imHausListElement of imHausListElemente">
@@ -10,6 +10,7 @@
               <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>
               <b>Anreise:</b> {{imHausListElement.arrival}}<br>
               <b>Abreise:</b> {{imHausListElement.departure}}<br>
+              <b>HP/F:</b> {{imHausListElement.price}}<br>
               <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>
             </p>
             <div *ngIf="imHausListElement.bgColor === '0a7a74'">
@@ -41,6 +42,7 @@
               <b>Zimmernummer:</b> {{imHausListElement.roomNumber}}<br>
               <b>Anreise:</b> {{imHausListElement.arrival}}<br>
               <b>Abreise:</b> {{imHausListElement.departure}}<br>
+              <b>HP/F:</b> {{imHausListElement.price}}<br>
               <b>Personen Anzahl:</b> {{imHausListElement.numberOfPersons}}<br>
             </p>
             <div *ngIf="imHausListElement.bgColor === '0a7a74'">

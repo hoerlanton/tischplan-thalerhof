@@ -13,6 +13,7 @@ module.exports = {
 
         let imHausListe = [];
         let imHausListeDataArray = [];
+        let LFNUMMER = [];
         imHausListeData.data = req.body;
         console.log("imHausListeData.data");
         console.log(imHausListeData.data);
@@ -29,6 +30,24 @@ module.exports = {
             console.log("imHausListeDataArrayConcat");
             console.log(imHausListeDataArrayConcat);
             imHausListeDataArrayConcatSplit = imHausListeDataArrayConcat.split(";");
+            if (LFNUMMER.indexOf(imHausListeDataArrayConcatSplit[1]) != -1) {
+                console.log("DUPLICATE");
+                console.log(LFNUMMER);
+                console.log(imHausListeDataArrayConcatSplit[1]);
+                continue;
+            }
+            LFNUMMER.push(imHausListeDataArrayConcatSplit[1]);
+            let indicesOpenBracket = [];
+            let indicesClosingBracket = [];
+            if (imHausListeDataArrayConcatSplit[7].indexOf("[") != -1) {
+                for(let i=0; i<imHausListeDataArrayConcatSplit[7].length;i++) {
+                    if (imHausListeDataArrayConcatSplit[7][i] === "[") indicesOpenBracket.push(i+1);
+                    if (imHausListeDataArrayConcatSplit[7][i] === "]") indicesClosingBracket.push(i);
+                }
+                imHausListeDataArrayConcatSplit[7] = "GRUPPE " + imHausListeDataArrayConcatSplit[7].substring(indicesOpenBracket[0], indicesClosingBracket[0]);
+            }
+
+
             //console.log(imHausListeDataArrayConcatSplit);
             imHausListe.push({
                 "name": imHausListeDataArrayConcatSplit[7],
@@ -36,7 +55,8 @@ module.exports = {
                 "roomNumber": imHausListeDataArrayConcatSplit[3],
                 "arrival": imHausListeDataArrayConcatSplit[8],
                 "departure": imHausListeDataArrayConcatSplit[9],
-                "numberOfPersons": imHausListeDataArrayConcatSplit[16] + '/' + imHausListeDataArrayConcatSplit[29] + '/' + imHausListeDataArrayConcatSplit[14] + '/' + imHausListeDataArrayConcatSplit[15] + '/' + imHausListeDataArrayConcatSplit[27] + '/' + imHausListeDataArrayConcatSplit[28],
+                "price": imHausListeDataArrayConcatSplit[10],
+                "numberOfPersons": imHausListeDataArrayConcatSplit[16] + '/' + imHausListeDataArrayConcatSplit[14] + '/' + imHausListeDataArrayConcatSplit[15] + '/' + imHausListeDataArrayConcatSplit[27] + '/' + imHausListeDataArrayConcatSplit[28],
                 "bgColor": 'ffffff'
             });
         }
