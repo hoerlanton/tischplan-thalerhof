@@ -10,6 +10,7 @@
       <th style="border: solid 1px black; border-collapse: collapse;">Nation</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
+      <th style="border: solid 1px black; border-collapse: collapse;">HP/F</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
     </tr>
     <div *ngFor="let table of tables">
@@ -21,6 +22,7 @@
           <td style="border: solid 1px black; border-collapse: collapse;">{{table.nationValue}}</td>
           <td style="border: solid 1px black; border-collapse: collapse;">{{table.arrivalValue}}</td>
           <td style="border: solid 1px black; border-collapse: collapse;">{{table.departureValue}}</td>
+          <td style="border: solid 1px black; border-collapse: collapse;">{{table.priceValue}}</td>
           <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
         </div>
       </tr>
@@ -43,6 +45,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Nation</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
+        <th style="border: solid 1px black; border-collapse: collapse;">HP/F</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Sonderinformationen</th>
       </tr>
@@ -56,12 +59,14 @@
               <td style="border: solid 1px black; border-collapse: collapse;">{{group.nationValue}}</td>
               <td style="border: solid 1px black; border-collapse: collapse;">{{group.arrivalValue}}</td>
               <td style="border: solid 1px black; border-collapse: collapse;">{{group.departureValue}}</td>
+              <td style="border: solid 1px black; border-collapse: collapse;">{{group.priceValue}}</td>
               <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
               <td style="border: solid 1px black; border-collapse: collapse;"></td>
             </div>
             <div *ngIf="group.newTraceText">
               <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceRoomNumber}}</td>
               <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceName}}</td>
+              <td style="border: solid 1px black; border-collapse: collapse;"></td>
               <td style="border: solid 1px black; border-collapse: collapse;"></td>
               <td style="border: solid 1px black; border-collapse: collapse;"></td>
               <td style="border: solid 1px black; border-collapse: collapse;"></td>
@@ -90,6 +95,7 @@
       <th style="border: solid 1px black; border-collapse: collapse;">Nation</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
+      <th style="border: solid 1px black; border-collapse: collapse;">HP/F</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Sonderinformationen</th>
     </tr>
@@ -103,12 +109,14 @@
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.nationValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.arrivalValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.departureValue}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;">{{group.priceValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
           </div>
           <div *ngIf="group.newTraceText">
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceRoomNumber}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceName}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
@@ -136,6 +144,7 @@
       <th style="border: solid 1px black; border-collapse: collapse;">Nation</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
+      <th style="border: solid 1px black; border-collapse: collapse;">HP/F</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Sonderinformationen</th>
     </tr>
@@ -149,12 +158,14 @@
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.nationValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.arrivalValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.departureValue}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;">{{group.priceValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
           </div>
           <div *ngIf="group.newTraceText">
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceRoomNumber}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceName}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
@@ -182,6 +193,7 @@
       <th style="border: solid 1px black; border-collapse: collapse;">Nation</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
+      <th style="border: solid 1px black; border-collapse: collapse;">HP/F</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
       <th style="border: solid 1px black; border-collapse: collapse;">Sonderinformationen</th>
     </tr>
@@ -195,12 +207,14 @@
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.nationValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.arrivalValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.departureValue}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;">{{group.priceValue}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
           </div>
           <div *ngIf="group.newTraceText">
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceRoomNumber}}</td>
             <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceName}}</td>
+            <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>
             <td style="border: solid 1px black; border-collapse: collapse;"></td>

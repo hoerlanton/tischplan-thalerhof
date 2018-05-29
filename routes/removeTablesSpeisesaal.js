@@ -32,8 +32,8 @@ module.exports = {
                             "bgColor": "#ffffff",
                             "placeholder": "true",
                             "border": "solid 3px #f3efe4",
-                            "width": "85",
-                            "height": "55"
+                            "width": "75",
+                            "height": "65"
                         }],
                         $sort: {number: 1}
                     }
@@ -78,8 +78,8 @@ module.exports = {
                              "bgColor": "#ffffff",
                              "placeholder": "true",
                              "border": "solid 3px #f3efe4",
-                             "width": "60",
-                             "height": "55"
+                             "width": "75",
+                             "height": "65"
                          }],
                          $sort: {number: 1}
                      }
@@ -101,7 +101,7 @@ module.exports = {
             {
                 $set: {
                     "tables.$.topValue": "510",
-                    "tables.$.height": "60",
+                    "tables.$.height": "65",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -125,8 +125,8 @@ module.exports = {
                             "bgColor": "#ffffff",
                             "placeholder": "true",
                             "border": "solid 3px #f3efe4",
-                            "width": "70",
-                            "height": "80"
+                            "width": "75",
+                            "height": "65"
                         }],
                         $sort: {number: 1}
                     }
@@ -172,8 +172,8 @@ module.exports = {
                             "bgColor": "#ffffff",
                             "placeholder": "true",
                             "border": "solid 3px #f3efe4",
-                            "width": "70",
-                            "height": "80"
+                            "width": "75",
+                            "height": "65"
                         }],
                         $sort: {number: 1}
                     }
@@ -243,7 +243,7 @@ module.exports = {
             {
                 $set: {
                     "tables.$.topValue": "390",
-                    "tables.$.height": "80",
+                    "tables.$.height": "65",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -267,8 +267,8 @@ module.exports = {
                             "bgColor": "#ffffff",
                             "placeholder": "true",
                             "border": "solid 3px #f3efe4",
-                            "width": "70",
-                            "height": "80"
+                            "width": "75",
+                            "height": "65"
                         }],
                         $sort: {number: 1}
                     }
@@ -386,7 +386,7 @@ module.exports = {
             {
                 $set: {
                     "tables.$.topValue": "240",
-                    "tables.$.height": "80",
+                    "tables.$.height": "65",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -810,7 +810,7 @@ module.exports = {
             },
             {
                 $set: {
-                    "tables.$.width": "85",
+                    "tables.$.width": "75",
                 }
             }, function (err, tables) {
                 if (err) {
@@ -834,8 +834,8 @@ module.exports = {
                             "bgColor": "#ffffff",
                             "placeholder": "true",
                             "border": "solid 3px #f3efe4",
-                            "width": "60",
-                            "height": "55"
+                            "width": "75",
+                            "height": "65"
                         }],
                         $sort: {number: 1}
                     }
