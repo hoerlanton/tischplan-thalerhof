@@ -2,6 +2,7 @@
   <table style="border: solid 1px black; border-collapse: collapse;">
     <tr>
       {{dateGeneratedListe}}
+      <p>Die Zahlen getrennt durch / in der PAX Spalte stehen für folgende Werte in dieser Reihenfolge: Anzahl Erwachsene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
     </tr>
     <tr style="border: solid 1px black;">
       <th style="border: solid 1px black; border-collapse: collapse;">Zimmernummer</th>
@@ -34,6 +35,7 @@
     <table style="border: solid 1px black; border-collapse: collapse;">
       <tr>
         {{dateGeneratedListe}}
+        <p>Die Zahlen getrennt durch / in der PAX Spalte stehen für folgende Werte in dieser Reihenfolge: Anzahl Erwachsene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
       </tr>
       <tr>
         Terasse
@@ -84,6 +86,7 @@
   <table style="border: solid 1px black; border-collapse: collapse;">
     <tr>
       {{dateGeneratedListe}}
+      <p>Die Zahlen getrennt durch / in der PAX Spalte stehen für folgende Werte in dieser Reihenfolge: Anzahl Erwachsene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
     </tr>
     <tr>
       Weinstube
@@ -133,6 +136,7 @@
   <table style="border: solid 1px black; border-collapse: collapse;">
     <tr>
       {{dateGeneratedListe}}
+      <p>Die Zahlen getrennt durch / in der PAX Spalte stehen für folgende Werte in dieser Reihenfolge: Anzahl Erwachsene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
     </tr>
     <tr>
       Bar
@@ -182,6 +186,7 @@
   <table style="border: solid 1px black; border-collapse: collapse;">
     <tr>
       {{dateGeneratedListe}}
+      <p>Die Zahlen getrennt durch / in der PAX Spalte stehen für folgende Werte in dieser Reihenfolge: Anzahl Erwachsene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
     </tr>
     <tr>
       Speisesaal
@@ -231,6 +236,7 @@
 <div id="printSectionId2" class="section2">
   <div class="row" style=" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;">
     <div *ngIf="showTerasseBool">
+      <p>Die Zahlen getrennt durch / stehen für folgende Werte in dieser Reihenfolge:  Anzahl Erwachsenene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
       <div *ngFor="let tableTerasse of tablesTerasse; let j = index;">
         <div dropdownToggle type="button" class="t{{tableTerasse.number}} table-item" [ngStyle]="{'top': tableTerasse.topValue + 'px', 'left': tableTerasse.leftValue + 'px', 'background-color': + tableTerasse.bgColor, 'height': + tableTerasse.height + 'px', 'width': + tableTerasse.width + 'px', 'border': + tableTerasse.border}" dropdown>
           <div *ngIf="tablesTerasse[j] !== tablesTerasse[j+1]">
@@ -240,6 +246,7 @@
       </div>
     </div>
     <div *ngIf="showWeinstubeBool">
+      <p>Die Zahlen getrennt durch / stehen für folgende Werte in dieser Reihenfolge:  Anzahl Erwachsenene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
       <div *ngFor="let tableWeinstube of tablesWeinstube; let j = index;">
         <div dropdownToggle type="button" class="t{{tableWeinstube.number}} table-item" [ngStyle]="{'top': tableWeinstube.topValue + 'px', 'left': tableWeinstube.leftValue + 'px', 'background-color': + tableWeinstube.bgColor, 'height': + tableWeinstube.height + 'px', 'width': + tableWeinstube.width + 'px', 'border': + tableWeinstube.border}" dropdown>
           <div *ngIf="tablesWeinstube[j] !== tablesWeinstube[j+1]">
@@ -249,6 +256,7 @@
       </div>
     </div>
     <div *ngIf="showBarBool">
+      <p>Die Zahlen getrennt durch / stehen für folgende Werte in dieser Reihenfolge:  Anzahl Erwachsenene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
       <div *ngFor="let tableBar of tablesBar; let j = index;">
         <div dropdownToggle type="button" class="t{{tableBar.number}} table-item" [ngStyle]="{'top': tableBar.topValue + 'px', 'left': tableBar.leftValue + 'px', 'background-color': + tableBar.bgColor, 'height': + tableBar.height + 'px', 'width': + tableBar.width + 'px', 'border': + tableBar.border}"  dropdown>
           <div *ngIf="tablesBar[j] !== tablesBar[j+1]">
@@ -258,6 +266,7 @@
       </div>
     </div>
     <div *ngIf="showSpeisesaalBool">
+      <p>Die Zahlen getrennt durch / stehen für folgende Werte in dieser Reihenfolge:  Anzahl Erwachsenene / Anzahl Kinder(K1) 0-3 Jahre / Anzahl Kinder(K2) 4-7 Jahre / Anzahl Kinder(K3) 8-11 Jahre / Anzahl Kinder(K4) 12-16 Jahre</p>
       <div *ngFor="let tableSpeisesaal of tablesSpeisesaal; let j = index;">
         <div dropdownToggle type="button" class="t{{tableSpeisesaal.number}} table-item" [ngStyle]="{'top': tableSpeisesaal.topValue + 'px', 'left': tableSpeisesaal.leftValue + 'px', 'background-color': + tableSpeisesaal.bgColor, 'height': + tableSpeisesaal.height + 'px', 'width': + tableSpeisesaal.width + 'px', 'border': + tableSpeisesaal.border}"  dropdown>
           <div *ngIf="tablesSpeisesaal[j] !== tablesSpeisesaal[j+1]">
