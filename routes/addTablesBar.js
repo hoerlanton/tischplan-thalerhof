@@ -600,6 +600,111 @@ module.exports = {
                     console.log("removeTable Update successful");
                     console.log(tables);
                 });
+        } else if (tableNumber === '135' && topValue === '140' && leftValue === '600' && width === '50') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "550",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "136",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("removeTable Update successful");
+                    console.log(tables);
+                });
+        } else if (tableNumber === '138' && topValue === '370' && leftValue === '330' && width === '65') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "550",
+                        "tables.$.topValue": "340",
+                        "tables.$.height": "70",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "133",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("removeTable Update successful");
+                    console.log(tables);
+                });
+        } else if (tableNumber === '137' && topValue === '230' && leftValue === '330' && width === '65') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "100",
+                        "tables.$.leftValue": "550",
+                        "tables.$.topValue": "250",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "134",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("removeTable Update successful");
+                    console.log(tables);
+                });
         }
     }
 };

@@ -835,6 +835,153 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
+        } else if (tableNumber === '135' && topValue === '140' && leftValue === '550' && width === '100') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "50",
+                        "tables.$.leftValue": "600",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "136",
+                                "topValue": "150",
+                                "leftValue": "330",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "65",
+                                "height": "65"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '138' && topValue === '340' && leftValue === '550' && width === '100') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "65",
+                        "tables.$.leftValue": "330",
+                        "tables.$.topValue": "370",
+                        "tables.$.height": "85",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [      {
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "133",
+                                "topValue": "340",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "50",
+                                "height": "70"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '137' && topValue === '250' && leftValue === '550' && width === '100') {
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "65",
+                        "tables.$.leftValue": "330",
+                        "tables.$.topValue": "230",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.thalerhofTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [      {
+                                "arrayIndex": "0",
+                                "department": "Bar",
+                                "number": "134",
+                                "topValue": "250",
+                                "leftValue": "600",
+                                "isOccupied": "false",
+                                "bgColor": "#ffffff",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "50",
+                                "height": "70"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
         }
     }
 };
