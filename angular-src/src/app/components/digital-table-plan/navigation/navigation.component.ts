@@ -41,6 +41,7 @@ export class NavigationComponent implements OnInit {
   printToCart1Button: string;
   printToCart2Button: string;
   printToCart3Button: string;
+  printToCart4Button: string;
   departureAbortButton: string;
   departureExecuteButton: string;
   departureExecuteTomorrowButton: string;
@@ -50,6 +51,7 @@ export class NavigationComponent implements OnInit {
     this.printToCart1Button = "ffffff";
     this.printToCart2Button = "ffffff";
     this.printToCart3Button = "ffffff";
+    this.printToCart4Button = "ffffff";
     this.departureAbortButton = "ffffff";
     this.departureExecuteButton = "ff0000";
     this.departureExecuteTomorrowButton = "ff0000";
@@ -91,6 +93,17 @@ export class NavigationComponent implements OnInit {
   }
 
   printToCart3(data) {
+    console.log('This method is calld from the parent component via ViewChild');
+    let popupWinindow;
+    let innerContents = document.getElementById(data).innerHTML;
+    console.log(innerContents);
+    popupWinindow = window.open('', '_blank', 'width=1000,height=1000,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+    popupWinindow.document.open();
+    popupWinindow.document.write('<html><head><style></style></head><body onload="window.print()">' + innerContents + '</html>');
+    popupWinindow.document.close();
+  }
+
+  printToCart4(data) {
     console.log('This method is calld from the parent component via ViewChild');
     let popupWinindow;
     let innerContents = document.getElementById(data).innerHTML;
@@ -353,6 +366,21 @@ export class NavigationComponent implements OnInit {
     if (this.printToCart3Button === "cfcfcf") {
       //console.log('mouse leave1 :');
       this.printToCart3Button = "ffffff";
+    }
+  }
+
+  mouseEnterprintToCart4Button() {
+    //console.log("mouse enter : ");
+    if (this.printToCart4Button === "ffffff") {
+      //console.log('mouse enter1 :');
+      this.printToCart4Button = "cfcfcf";
+    }
+  }
+
+  mouseLeaveprintToCart4Button() {
+    if (this.printToCart4Button === "cfcfcf") {
+      //console.log('mouse leave1 :');
+      this.printToCart4Button = "ffffff";
     }
   }
 

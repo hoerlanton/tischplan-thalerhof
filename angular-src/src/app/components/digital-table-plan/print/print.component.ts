@@ -57,6 +57,25 @@ export class PrintComponent {
   trace: boolean;
   tableTemp: any[] = [];
   object: any;
+  tablesTerasseSortedByDate: Table[];
+  sumOfGuests: any[] = [];
+  sumErwRestaurant: number;
+  sumKi1Restaurant: number;
+  sumKi2Restaurant: number;
+  sumKi3Restaurant: number;
+  sumKi4Restaurant: number;
+  sumOfGuestsHP: any[] = [];
+  sumOfGuestsF: any[] = [];
+  sumErwRestaurantHP: number;
+  sumKi1RestaurantHP: number;
+  sumKi2RestaurantHP: number;
+  sumKi3RestaurantHP: number;
+  sumKi4RestaurantHP: number;
+  sumErwRestaurantF: number;
+  sumKi1RestaurantF: number;
+  sumKi2RestaurantF: number;
+  sumKi3RestaurantF: number;
+  sumKi4RestaurantF: number;
 
   ngOnInit() {
   }
@@ -72,6 +91,25 @@ export class PrintComponent {
     this.tableNumbers = [];
     this.uniqueTables = [];
     this.tableTemp = [];
+    this.tablesTerasseSortedByDate = tables;
+    this.sumOfGuests = [0,0,0,0,0];
+    this.sumErwRestaurant = 0;
+    this.sumKi1Restaurant = 0;
+    this.sumKi2Restaurant = 0;
+    this.sumKi3Restaurant = 0;
+    this.sumKi4Restaurant = 0;
+    this.sumOfGuestsF = [0,0,0,0,0];
+    this.sumErwRestaurantF = 0;
+    this.sumKi1RestaurantF = 0;
+    this.sumKi2RestaurantF = 0;
+    this.sumKi3RestaurantF = 0;
+    this.sumKi4RestaurantF = 0;
+    this.sumOfGuestsHP = [0,0,0,0,0];
+    this.sumErwRestaurantHP = 0;
+    this.sumKi1RestaurantHP = 0;
+    this.sumKi2RestaurantHP = 0;
+    this.sumKi3RestaurantHP = 0;
+    this.sumKi4RestaurantHP = 0;
 
     //(<any>Object).assign( this.photos, photos )
 
@@ -93,11 +131,56 @@ export class PrintComponent {
             this.object = Object.assign(this.tables[i].groups[j], tempObject);
             //console.log("this.object");
             //console.log(this.object);
+
+            this.sumOfGuests = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+            if (this.tables[i].groups[j].priceValue.indexOf("H") != -1) {
+              this.sumOfGuestsHP = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+            } else if (this.tables[i].groups[j].priceValue.indexOf("F") != -1) {
+              this.sumOfGuestsF = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+            }
+
+            if (this.sumOfGuestsHP != null) {
+              //console.log(erwKi);
+              this.sumErwRestaurantHP += Number(this.sumOfGuestsHP[0]);
+              this.sumKi1RestaurantHP += Number(this.sumOfGuestsHP[1]);
+              this.sumKi2RestaurantHP += Number(this.sumOfGuestsHP[2]);
+              this.sumKi4RestaurantHP += Number(this.sumOfGuestsHP[3]);
+              this.sumKi4RestaurantHP += Number(this.sumOfGuestsHP[4]);
+
+              //console.log("this.object");
+              //console.log(this.object);
+              this.sumOfGuestsHP = [0,0,0,0,0];
+            }
+
+            if (this.sumOfGuestsF != null) {
+              console.log(this.sumOfGuestsF);
+              this.sumErwRestaurantF += Number(this.sumOfGuestsF[0]);
+              this.sumKi1RestaurantF += Number(this.sumOfGuestsF[1]);
+              this.sumKi2RestaurantF += Number(this.sumOfGuestsF[2]);
+              this.sumKi3RestaurantF += Number(this.sumOfGuestsF[3]);
+              this.sumKi4RestaurantF += Number(this.sumOfGuestsF[4]);
+
+              //console.log("this.object");
+              //console.log(this.object);
+              this.sumOfGuestsF = [0,0,0,0,0];
+            }
+
+            if (this.sumOfGuests != null) {
+              //console.log(erwKi);
+              this.sumErwRestaurant += Number(this.sumOfGuests[0]);
+              this.sumKi1Restaurant += Number(this.sumOfGuests[1]);
+              this.sumKi2Restaurant += Number(this.sumOfGuests[2]);
+              this.sumKi3Restaurant += Number(this.sumOfGuests[3]);
+              this.sumKi4Restaurant += Number(this.sumOfGuests[4]);
+            }
             this.tableTemp.push(this.object);
           }
         }
       }
     }
+
+
+
 
     //console.log("this.tableTemp");
     //console.log(this.tableTemp);
@@ -122,6 +205,28 @@ export class PrintComponent {
       return 0;
       //}
     });
+
+    this.tablesTerasseSortedByDate = this.tableTemp.sort(function(a, b) {
+      let arrivalValueA = 0;
+      let arrivalValueB = 0;
+      if (typeof a.arrivalValue !== "undefined" && a.arrivalValue !== null) {
+        arrivalValueA = a.arrivalValue; // ignore upper and lowercase
+      }
+      if (typeof b.arrivalValue !== "undefined" && b.arrivalValue !== null) {
+        arrivalValueB = b.arrivalValue; // ignore upper and lowercase
+      }
+      if (arrivalValueA < arrivalValueB) {
+        return -1;
+      }
+      if (arrivalValueA > arrivalValueB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+      //}
+    });
+
+    console.log(this.tablesTerasseSortedByDate);
 
     for (let i: number = 0; i < this.tables.length; i++) {
       //console.log(i);

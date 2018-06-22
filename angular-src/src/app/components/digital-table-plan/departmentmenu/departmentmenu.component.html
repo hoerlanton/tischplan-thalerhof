@@ -9,7 +9,7 @@
       Alle <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
     <div *ngIf="showTerasseBool">
-      Terasse <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+      Terrasse <i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
     </div>
     <div *ngIf="showSpeisesaalBool">
        Speisesaal <br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
@@ -23,7 +23,7 @@
   </button>
   <ul *dropdownMenu class="dropdown-menu" role="menu">
       <li role="menuitem" class="showTerasse"  (click)="showTerasse()" (mouseenter)="mouseEnterTerasse()"  (mouseleave)="mouseLeaveTerasse()" [ngStyle]="{'background-color': '#' + buttonBgColor1}">
-        <p [ngStyle]="{'color': '#' + fontColor1}">Terasse</p>
+        <p [ngStyle]="{'color': '#' + fontColor1}">Terrasse</p>
       </li>
     <li class="divider dropdown-divider"></li>
     <li role="menuitem" class="showWeinstube"  (click)="showWeinstube()" (mouseenter)="mouseEnterWeinstube()"  (mouseleave)="mouseLeaveWeinstube()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
