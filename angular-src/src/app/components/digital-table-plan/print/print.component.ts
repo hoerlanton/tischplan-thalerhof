@@ -10,16 +10,16 @@ import { Table } from '../../../../../Table';
 
 export class PrintComponent {
 
-  @Input('tables') tables: Table[];
+  @Input('tables') tables: any[] = [];
   @Input('dateGeneratedListe') dateGeneratedListe: string;
-  @Input('tablesWeinstube') tablesWeinstube: string;
-  @Input('showWeinstubeBool') showWeinstubeBool: string;
-  @Input('showBarBool') showBarBool: string;
-  @Input('tablesBar') tablesBar: string;
-  @Input('showTerasseBool') showTerasseBool: string;
-  @Input('tablesTerasse') tablesTerasse: string;
-  @Input('showSpeisesaalBool') showSpeisesaalBool: string;
-  @Input('tablesSpeisesaal') tablesSpeisesaal: string;
+  @Input('tablesWeinstube') tablesWeinstube: Table[];
+  @Input('showWeinstubeBool') showWeinstubeBool: boolean;
+  @Input('showBarBool') showBarBool: boolean;
+  @Input('tablesBar') tablesBar: Table[];
+  @Input('showTerasseBool') showTerasseBool: boolean;
+  @Input('tablesTerasse') tablesTerasse: Table[];
+  @Input('showSpeisesaalBool') showSpeisesaalBool: boolean;
+  @Input('tablesSpeisesaal') tablesSpeisesaal: Table[];
   @Input('adult1Weinstube') adult1Weinstube: string;
   @Input('adult1Bar') adult1Bar: string;
   @Input('adult1Terasse') adult1Terasse: string;
@@ -57,7 +57,8 @@ export class PrintComponent {
   trace: boolean;
   tableTemp: any[] = [];
   object: any;
-  tablesTerasseSortedByDate: Table[];
+  tablesSortedByDate: any[] = [];
+  tablesSortedByName: any[] = [];
   sumOfGuests: any[] = [];
   sumErwRestaurant: number;
   sumKi1Restaurant: number;
@@ -91,7 +92,6 @@ export class PrintComponent {
     this.tableNumbers = [];
     this.uniqueTables = [];
     this.tableTemp = [];
-    this.tablesTerasseSortedByDate = tables;
     this.sumOfGuests = [0,0,0,0,0];
     this.sumErwRestaurant = 0;
     this.sumKi1Restaurant = 0;
@@ -132,12 +132,17 @@ export class PrintComponent {
             //console.log("this.object");
             //console.log(this.object);
 
-            this.sumOfGuests = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
-            if (this.tables[i].groups[j].priceValue.indexOf("H") != -1) {
-              this.sumOfGuestsHP = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
-            } else if (this.tables[i].groups[j].priceValue.indexOf("F") != -1) {
-              this.sumOfGuestsF = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+            if (this.tables[i].groups[j].numberOfPersonsValue) {
+              this.sumOfGuests = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
             }
+            if (this.tables[i].groups[j].priceValue) {
+              if (this.tables[i].groups[j].priceValue.indexOf("H") != -1) {
+                this.sumOfGuestsHP = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+              } else if (this.tables[i].groups[j].priceValue.indexOf("F") != -1) {
+                this.sumOfGuestsF = this.tables[i].groups[j].numberOfPersonsValue.match(/\d+/g);
+              }
+            }
+
 
             if (this.sumOfGuestsHP != null) {
               //console.log(erwKi);
@@ -179,16 +184,12 @@ export class PrintComponent {
       }
     }
 
+    console.log("this.tableTemp");
+    console.log(this.tableTemp);
 
-
-
-    //console.log("this.tableTemp");
-    //console.log(this.tableTemp);
-
-
-    this.tables =  this.tableTemp.sort(function(a, b) {
-      let nameA = "";
-      let nameB = "";
+    this.tables = this.tableTemp.sort(function(a, b) {
+      let nameA = "A";
+      let nameB = "A";
       if (typeof a.nameValue !== "undefined" && a.nameValue !== null) {
         nameA = a.nameValue.toUpperCase(); // ignore upper and lowercase
       }
@@ -205,8 +206,12 @@ export class PrintComponent {
       return 0;
       //}
     });
+    console.log("this.tables");
+    console.log(this.tables);
 
-    this.tablesTerasseSortedByDate = this.tableTemp.sort(function(a, b) {
+    let myClonedArray  = Object.assign([], this.tableTemp);
+
+    this.tablesSortedByDate = myClonedArray.sort(function(a, b) {
       let arrivalValueA = 0;
       let arrivalValueB = 0;
       if (typeof a.arrivalValue !== "undefined" && a.arrivalValue !== null) {
@@ -226,7 +231,9 @@ export class PrintComponent {
       //}
     });
 
-    console.log(this.tablesTerasseSortedByDate);
+    console.log("this.tableTemp");
+    console.log(this.tableTemp);
+
 
     for (let i: number = 0; i < this.tables.length; i++) {
       //console.log(i);
